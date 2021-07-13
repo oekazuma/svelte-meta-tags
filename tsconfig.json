@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "esnext",
+    "importsNotUsedAsValues": "error",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "lib": ["esnext", "dom"],
+    "types": ["svelte"]
+  },
+  "include": ["src", "@types", "index.d.ts"]
+}
