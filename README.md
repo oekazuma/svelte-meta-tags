@@ -1,7 +1,7 @@
 # svelte-meta-tags
 :warning: Expect bugs!
 
-This is a plugin that facilitates the creation of meta tags for SEO in Svelte. (Made with SvelteKit)
+Svelte Meta Tags is a lightweight library for SEO in Svelte (Made with SvelteKit)
 
 ### Usage
 
