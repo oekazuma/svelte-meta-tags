@@ -4,6 +4,10 @@ A plugin that facilitates the creation of metatags for SEO in Svelte.
 
 ### Usage
 
+```shell
+npm i svelte-meta-tags
+```
+
 ```svelte
 <script>
   import MetaTags from 'svelte-meta-tags';
