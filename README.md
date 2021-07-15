@@ -1,6 +1,7 @@
 # svelte-meta-tags
+:warning: Expect bugs!
 
-A plugin that facilitates the creation of meta tags for SEO in Svelte.
+This is a plugin that facilitates the creation of meta tags for SEO in Svelte. (Made with SvelteKit)
 
 ### Usage
 

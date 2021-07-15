@@ -1,31 +1,40 @@
 {
   "name": "svelte-meta-tags",
-  "version": "0.0.3",
-  "description": "A plugin that facilitates the creation of meta tags for SEO in Svelte.",
+  "version": "0.1.0",
+  "description": "This is a plugin that facilitates the creation of meta tags for SEO in Svelte. (Made with SvelteKit)",
   "license": "MIT",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "svelte": "./src/index.js",
   "scripts": {
-    "develop": "rollup -cw",
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview",
+    "package": "svelte-kit package",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "format": "prettier --write --plugin-search-dir=. .",
-    "build": "rollup -c",
-    "prepublishOnly": "yarn build"
+    "release": "npm run package && npm publish package",
+    "prepublishOnly": "npm run package"
   },
-  "keywords": [
-    "svelte",
-    "metadata",
-    "seo",
-    "meta-tags",
-    "open-graph",
-    "svelte-meta-tags"
-  ],
-  "files": [
-    "src",
-    "dist",
-    "@types",
-    "index.d.ts"
-  ],
+  "dependencies": {
+    "schema-dts": "^0.8.3"
+  },
+  "devDependencies": {
+    "@sveltejs/kit": "next",
+    "@typescript-eslint/eslint-plugin": "^4.28.3",
+    "@typescript-eslint/parser": "^4.28.3",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-svelte3": "^3.2.0",
+    "prettier": "~2.3.2",
+    "prettier-plugin-svelte": "^2.3.1",
+    "svelte": "^3.38.3",
+    "svelte-check": "^2.2.2",
+    "svelte-preprocess": "^4.7.4",
+    "tslib": "^2.3.0",
+    "typescript": "^4.3.5",
+    "svelte2tsx": "^0.4.1"
+  },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/oekazuma/svelte-meta-tags"
@@ -33,14 +42,13 @@
   "bugs": {
     "url": "https://github.com/oekazuma/svelte-meta-tags/issues"
   },
-  "dependencies": {
-    "schema-dts": "^0.8.3"
-  },
-  "devDependencies": {
-    "@rollup/plugin-node-resolve": "^13.0.0",
-    "prettier": "^2.3.2",
-    "rollup": "^2.53.1",
-    "rollup-plugin-svelte": "^7.1.0",
-    "svelte": "^3.38.3"
-  }
+  "keywords": [
+    "svelte",
+    "svelteKit",
+    "metadata",
+    "seo",
+    "meta-tags",
+    "open-graph",
+    "svelte-meta-tags"
+  ]
 }

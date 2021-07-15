@@ -1,7 +1,6 @@
-/// <reference types="svelte" />
 import { SvelteComponentTyped } from 'svelte';
 import { Thing, WithContext } from 'schema-dts';
-import { OpenGraph, Twitter } from './@types/MetaTags';
+import { OpenGraph, Twitter } from './types';
 
 export interface MetaTagsProps {
   title?: string;
@@ -15,4 +14,8 @@ export interface MetaTagsProps {
   jsonLd?: Thing | WithContext<Thing>;
 }
 
-export default class MetaTags extends SvelteComponentTyped<MetaTagsProps, {}, {}> {}
+export default class MetaTags extends SvelteComponentTyped<
+  MetaTagsProps,
+  Record<string, never>,
+  Record<string, never>
+> {}
