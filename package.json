@@ -17,7 +17,8 @@
     "metadata",
     "seo",
     "meta-tags",
-    "open-graph"
+    "open-graph",
+    "svelte-meta-tags"
   ],
   "files": [
     "src",
