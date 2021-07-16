@@ -3,9 +3,8 @@ import { Thing, WithContext } from 'schema-dts';
 import { OpenGraph, Twitter } from './types';
 
 export interface MetaTagsProps {
+  robots?: string;
   title?: string;
-  noindex?: boolean;
-  nofollow?: boolean;
   description?: string;
   keywords?: string;
   canonical?: string;

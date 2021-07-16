@@ -1,7 +1,6 @@
 <script>
+  export let robots = 'index,follow';
   export let title = undefined;
-  export let noindex = false;
-  export let nofollow = false;
   export let description = undefined;
   export let keywords = undefined;
   export let canonical = undefined;
@@ -11,18 +10,12 @@
 </script>
 
 <svelte:head>
+  <meta name="robots" content={robots} />
+
   {#if title}
     <title>{title}</title>
+    <meta name="title" content={title} />
   {/if}
-
-  <meta
-    name="robots"
-    content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`}
-  />
-  <meta
-    name="googlebot"
-    content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`}
-  />
 
   {#if description}
     <meta name="description" content={description} />
