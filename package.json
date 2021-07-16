@@ -12,8 +12,7 @@
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "format": "prettier --write --plugin-search-dir=. .",
-    "release": "npm run package && npm publish package",
-    "prepublishOnly": "npm run package"
+    "release": "npm run package && npm publish package"
   },
   "dependencies": {
     "schema-dts": "^0.8.3"
@@ -35,13 +34,6 @@
     "svelte2tsx": "^0.4.1"
   },
   "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/oekazuma/svelte-meta-tags"
-  },
-  "bugs": {
-    "url": "https://github.com/oekazuma/svelte-meta-tags/issues"
-  },
   "keywords": [
     "svelte",
     "svelteKit",
@@ -50,5 +42,9 @@
     "meta-tags",
     "open-graph",
     "svelte-meta-tags"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oekazuma/svelte-meta-tags"
+  }
 }
