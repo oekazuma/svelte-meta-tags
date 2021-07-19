@@ -1,21 +1,27 @@
 import { SvelteComponentTyped } from 'svelte';
 import { Thing, WithContext } from 'schema-dts';
-import { OpenGraph, Twitter, Facebook } from './types';
+import {
+  AdditionalRobotsProps,
+  MobileAlternate,
+  LanguageAlternate,
+  Twitter,
+  Facebook,
+  OpenGraph
+} from './types';
 
 export interface MetaTagsProps {
-  robots?: string;
   title?: string;
+  noindex?: boolean;
+  nofollow?: boolean;
+  robotsProps?: AdditionalRobotsProps;
   description?: string;
-  keywords?: string;
   canonical?: string;
+  mobileAlternate?: MobileAlternate;
+  languageAlternates?: ReadonlyArray<LanguageAlternate>;
   twitter?: Twitter;
   facebook?: Facebook;
   openGraph?: OpenGraph;
   jsonLd?: Thing | WithContext<Thing>;
 }
 
-export default class MetaTags extends SvelteComponentTyped<
-  MetaTagsProps,
-  Record<string, never>,
-  Record<string, never>
-> {}
+export default class MetaTags extends SvelteComponentTyped<MetaTagsProps> {}
