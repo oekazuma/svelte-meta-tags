@@ -24,9 +24,7 @@ export interface OpenGraphImage {
 }
 
 export interface Twitter {
+  cardType?: string;
   site?: string;
-  title?: string;
-  description?: string;
-  image?: string;
-  imageAlt?: string;
+  handle?: string;
 }

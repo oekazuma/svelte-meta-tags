@@ -29,6 +29,18 @@
     <meta name="keywords" content={keywords} />
   {/if}
 
+  {#if twitter}
+    {#if twitter.cardType}
+      <meta name="twitter:card" content={twitter.cardType} />
+    {/if}
+    {#if twitter.site}
+      <meta name="twitter:site" content={twitter.site} />
+    {/if}
+    {#if twitter.handle}
+      <meta name="twitter:creator" content={twitter.handle} />
+    {/if}
+  {/if}
+
   {#if openGraph}
     {#if openGraph.title}
       <meta property="og:title" content={openGraph.title} />
@@ -89,25 +101,6 @@
           <meta property="og:image:height" content={image.height.toString()} />
         {/if}
       {/each}
-    {/if}
-  {/if}
-
-  {#if twitter}
-    <meta name="twitter:card" content="summary_large_image" />
-    {#if twitter.site}
-      <meta name="twitter:site" content={twitter.site} />
-    {/if}
-    {#if twitter.title}
-      <meta name="twitter:title" content={twitter.title} />
-    {/if}
-    {#if twitter.description}
-      <meta name="twitter:description" content={twitter.description} />
-    {/if}
-    {#if twitter.image}
-      <meta name="twitter:image" content={twitter.image} />
-    {/if}
-    {#if twitter.imageAlt}
-      <meta name="twitter:image:alt" content={twitter.imageAlt} />
     {/if}
   {/if}
 
