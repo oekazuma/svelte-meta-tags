@@ -14,7 +14,6 @@
 
   {#if title}
     <title>{title}</title>
-    <meta name="title" content={title} />
   {/if}
 
   {#if description}
