@@ -28,3 +28,7 @@ export interface Twitter {
   site?: string;
   handle?: string;
 }
+
+export interface Facebook {
+  appId?: string;
+}

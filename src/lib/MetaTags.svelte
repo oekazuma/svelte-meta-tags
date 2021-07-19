@@ -4,8 +4,9 @@
   export let description = undefined;
   export let keywords = undefined;
   export let canonical = undefined;
-  export let openGraph = undefined;
   export let twitter = undefined;
+  export let facebook = undefined;
+  export let openGraph = undefined;
   export let jsonLd = undefined;
 </script>
 
@@ -38,6 +39,10 @@
     {#if twitter.handle}
       <meta name="twitter:creator" content={twitter.handle} />
     {/if}
+  {/if}
+
+  {#if facebook}
+    <meta property="fb:app_id" content={facebook.appId} />
   {/if}
 
   {#if openGraph}

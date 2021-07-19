@@ -42,6 +42,7 @@ yarn add svelte-meta-tags
 | `twitter.cardType`                 | string                        | The card type, which will be one of `summary`, `summary_large_image`, `app`, or `player`          |
 | `twitter.site`                     | string                        | @username for the website used in the card footer .                                               |
 | `twitter.handle`                   | string                        | @username for the content creator / author (outputs as `twitter:creator`)                         |
+| `facebook.appId`                   | string                        | Used for Facebook Insights, you must add a facebook app ID to your page to for it                 |
 | `openGraph.type`                   | string                        | The type of your object. Depending on the type you specify, other properties may also be required |
 | `openGraph.title`                  | string                        | The open graph title, this can be different than your meta title.                                 |
 | `openGraph.description`            | string                        | The open graph description, this can be different than your meta description.                     |

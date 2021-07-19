@@ -4,4 +4,4 @@
 
 <MetaTags title="Example Title" description="Example Description." />
 
-<h1>Svelte-Kit-Meta-Tags</h1>
+<h1>Svelte-Meta-Tags</h1>

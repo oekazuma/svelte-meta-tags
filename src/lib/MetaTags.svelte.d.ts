@@ -1,6 +1,6 @@
 import { SvelteComponentTyped } from 'svelte';
 import { Thing, WithContext } from 'schema-dts';
-import { OpenGraph, Twitter } from './types';
+import { OpenGraph, Twitter, Facebook } from './types';
 
 export interface MetaTagsProps {
   robots?: string;
@@ -8,8 +8,9 @@ export interface MetaTagsProps {
   description?: string;
   keywords?: string;
   canonical?: string;
-  openGraph?: OpenGraph;
   twitter?: Twitter;
+  facebook?: Facebook;
+  openGraph?: OpenGraph;
   jsonLd?: Thing | WithContext<Thing>;
 }
 
