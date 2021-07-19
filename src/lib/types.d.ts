@@ -58,6 +58,11 @@ export interface OpenGraphVideo {
   series?: string;
 }
 
+export interface OpenGraphVideoActors {
+  profile: string;
+  role?: string;
+}
+
 export interface Twitter {
   cardType?: string;
   site?: string;
