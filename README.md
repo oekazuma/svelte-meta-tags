@@ -37,7 +37,7 @@ yarn add svelte-meta-tags
 | `title`                            | string                  | Sets the page meta title.                                                                                             |
 | `noindex`                          | boolean (default false) | Sets whether page should be indexed or not                                                                            |
 | `nofollow`                         | boolean (default false) | Sets whether page should be followed or not                                                                           |
-| `additionRobotsProps`              | Object                  | Set the more meta information for the X-Robots-Tag                                                                    |
+| `additionRobotsProps`              | Object                  | Set the more meta information for the `X-Robots-Tag`                                                                    |
 | `description`                      | string                  | Sets the page meta description.                                                                                       |
 | `canonical`                        | string                  | Set the page canonical url.                                                                                           |
 | `mobileAlternate.media`            | string                  | Set what screen size the mobile website should be served from                                                         |
