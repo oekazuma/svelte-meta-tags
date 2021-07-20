@@ -1,5 +1,5 @@
 <script>
-  import MetaTags from '$lib/MetaTags.svelte';
+  import MetaTags from 'svelte-meta-tags';
 </script>
 
 <MetaTags title="Example Title" description="Example Description." />

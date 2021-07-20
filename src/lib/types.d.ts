@@ -1,3 +1,33 @@
+export interface MobileAlternate {
+  media: string;
+  href: string;
+}
+
+export interface LanguageAlternate {
+  hrefLang: string;
+  href: string;
+}
+
+export interface AdditionalRobotsProps {
+  nosnippet?: boolean;
+  maxSnippet?: number;
+  maxImagePreview?: 'none' | 'standard' | 'large';
+  maxVideoPreview?: number;
+  noarchive?: boolean;
+  unavailableAfter?: string;
+  noimageindex?: boolean;
+  notranslate?: boolean;
+}
+export interface Twitter {
+  cardType?: string;
+  site?: string;
+  handle?: string;
+}
+
+export interface Facebook {
+  appId?: string;
+}
+
 export interface OpenGraph {
   url?: string;
   type?: string;
@@ -12,13 +42,13 @@ export interface OpenGraph {
   article?: OpenGraphArticle;
   video?: OpenGraphVideo;
 }
-export interface OpenGraphImages {
+interface OpenGraphImages {
   url: string;
   alt?: string;
   width?: number;
   height?: number;
 }
-export interface OpenGraphVideos {
+interface OpenGraphVideos {
   url: string;
   alt?: string;
   width?: number;
@@ -26,20 +56,20 @@ export interface OpenGraphVideos {
   secureUrl?: string;
   type?: string;
 }
-export interface OpenGraphProfile {
+interface OpenGraphProfile {
   firstName?: string;
   lastName?: string;
   username?: string;
   gender?: string;
 }
 
-export interface OpenGraphBook {
+interface OpenGraphBook {
   authors?: ReadonlyArray<string>;
   isbn?: string;
   releaseDate?: string;
   tags?: ReadonlyArray<string>;
 }
-export interface OpenGraphArticle {
+interface OpenGraphArticle {
   publishedTime?: string;
   modifiedTime?: string;
   expirationTime?: string;
@@ -48,7 +78,7 @@ export interface OpenGraphArticle {
   tags?: ReadonlyArray<string>;
 }
 
-export interface OpenGraphVideo {
+interface OpenGraphVideo {
   actors?: ReadonlyArray<OpenGraphVideoActors>;
   directors?: ReadonlyArray<string>;
   writers?: ReadonlyArray<string>;
@@ -58,40 +88,46 @@ export interface OpenGraphVideo {
   series?: string;
 }
 
-export interface OpenGraphVideoActors {
+interface OpenGraphVideoActors {
   profile: string;
   role?: string;
 }
 
-export interface Twitter {
-  cardType?: string;
-  site?: string;
-  handle?: string;
+interface BaseMetaTag {
+  content: string;
+  keyOverride?: string;
 }
 
-export interface Facebook {
-  appId?: string;
+interface HTML5MetaTag extends BaseMetaTag {
+  name: string;
+  property?: undefined;
+  httpEquiv?: undefined;
 }
 
-export interface MobileAlternate {
-  media: string;
+interface RDFaMetaTag extends BaseMetaTag {
+  property: string;
+  name?: undefined;
+  httpEquiv?: undefined;
+}
+
+interface HTTPEquivMetaTag extends BaseMetaTag {
+  httpEquiv:
+    | 'content-security-policy'
+    | 'content-type'
+    | 'default-style'
+    | 'x-ua-compatible'
+    | 'refresh';
+  name?: undefined;
+  property?: undefined;
+}
+
+export type MetaTag = HTML5MetaTag | RDFaMetaTag | HTTPEquivMetaTag;
+
+export interface LinkTag {
+  rel: string;
   href: string;
+  sizes?: string;
+  type?: string;
+  color?: string;
+  keyOverride?: string;
 }
-
-export interface LanguageAlternate {
-  hrefLang: string;
-  href: string;
-}
-
-export interface AdditionalRobotsProps {
-  nosnippet?: boolean;
-  maxSnippet?: number;
-  maxImagePreview?: ImagePrevSize;
-  maxVideoPreview?: number;
-  noarchive?: boolean;
-  unavailableAfter?: string;
-  noimageindex?: boolean;
-  notranslate?: boolean;
-}
-
-export type ImagePrevSize = 'none' | 'standard' | 'large';

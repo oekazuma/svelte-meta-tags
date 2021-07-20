@@ -6,7 +6,9 @@ import {
   LanguageAlternate,
   Twitter,
   Facebook,
-  OpenGraph
+  OpenGraph,
+  MetaTag,
+  LinkTag
 } from './types';
 
 export interface MetaTagsProps {
@@ -21,6 +23,8 @@ export interface MetaTagsProps {
   twitter?: Twitter;
   facebook?: Facebook;
   openGraph?: OpenGraph;
+  additionalMetaTags?: ReadonlyArray<MetaTag>;
+  additionalLinkTags?: ReadonlyArray<LinkTag>;
   jsonLd?: Thing | WithContext<Thing>;
 }
 

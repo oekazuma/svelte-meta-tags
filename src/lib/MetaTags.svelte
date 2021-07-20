@@ -10,6 +10,8 @@
   export let facebook = undefined;
   export let openGraph = undefined;
   export let canonical = undefined;
+  export let additionalMetaTags = undefined;
+  export let additionalLinkTags = undefined;
   export let jsonLd = undefined;
 
   let robotsParams = '';
@@ -53,6 +55,10 @@
 
   {#if description}
     <meta name="description" content={description} />
+  {/if}
+
+  {#if canonical}
+    <link rel="canonical" href={canonical} />
   {/if}
 
   {#if mobileAlternate}
@@ -249,8 +255,16 @@
     {/if}
   {/if}
 
-  {#if canonical}
-    <link rel="canonical" href={canonical} />
+  {#if additionalMetaTags && additionalMetaTags.length > 0}
+    {#each additionalMetaTags as tag}
+      <meta {...tag} />
+    {/each}
+  {/if}
+
+  {#if additionalLinkTags?.length}
+    {#each additionalLinkTags as tag}
+      <link {...tag} />
+    {/each}
   {/if}
 
   {#if jsonLd}
