@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/svelte-meta-tags)](https://www.npmjs.com/package/svelte-meta-tags) [![npm](https://img.shields.io/npm/l/svelte-meta-tags)](https://opensource.org/licenses/MIT)
 
-:warning: There may be some disruptive changes before v1.0.0!
+:warning: There may be some breaking changes before v1.0.0!
 
 Svelte Meta Tags is a lightweight library for SEO in Svelte (Made with SvelteKit)
 
@@ -22,12 +22,55 @@ yarn add svelte-meta-tags
 
 ### Usage
 
+**Example with just title and description:**
+
 ```svelte
 <script>
   import MetaTags from 'svelte-meta-tags';
 </script>
 
 <MetaTags title="Example Title" description="Example Description." />
+```
+
+**Typical page example:**
+
+```svelte
+<script>
+  import MetaTags from 'svelte-meta-tags';
+</script>
+
+<MetaTags
+  title="Using More of Config"
+  description="This example uses more of the available config options."
+  canonical="https://www.canonical.ie/"
+  openGraph={{
+    url: 'https://www.url.ie/a',
+    title: 'Open Graph Title',
+    description: 'Open Graph Description',
+    images: [
+      {
+        url: 'https://www.example.ie/og-image-01.jpg',
+        width: 800,
+        height: 600,
+        alt: 'Og Image Alt'
+      },
+      {
+        url: 'https://www.example.ie/og-image-02.jpg',
+        width: 900,
+        height: 800,
+        alt: 'Og Image Alt Second'
+      },
+      { url: 'https://www.example.ie/og-image-03.jpg' },
+      { url: 'https://www.example.ie/og-image-04.jpg' }
+    ],
+    site_name: 'SiteName'
+  }}
+  twitter={{
+    handle: '@handle',
+    site: '@site',
+    cardType: 'summary_large_image'
+  }}
+/>
 ```
 
 ### Properties
@@ -37,7 +80,7 @@ yarn add svelte-meta-tags
 | `title`                            | string                  | Sets the page meta title.                                                                                             |
 | `noindex`                          | boolean (default false) | Sets whether page should be indexed or not                                                                            |
 | `nofollow`                         | boolean (default false) | Sets whether page should be followed or not                                                                           |
-| `additionRobotsProps`              | Object                  | Set the more meta information for the `X-Robots-Tag`                                                                    |
+| `additionRobotsProps`              | Object                  | Set the more meta information for the `X-Robots-Tag`                                                                  |
 | `description`                      | string                  | Sets the page meta description.                                                                                       |
 | `canonical`                        | string                  | Set the page canonical url.                                                                                           |
 | `mobileAlternate.media`            | string                  | Set what screen size the mobile website should be served from                                                         |
