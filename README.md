@@ -43,6 +43,8 @@ yarn add svelte-meta-tags
 | `mobileAlternate.media`            | string                  | Set what screen size the mobile website should be served from                                                         |
 | `mobileAlternate.href`             | string                  | Set the mobile page alternate url                                                                                     |
 | `languageAlternates`               | array                   | Set the language of the alternate urls. Expects array of objects with the shape: `{ hrefLang: string, href: string }` |
+| `additionalMetaTags`               | array                   | Allows you to add a meta tag that is not documented here.                                                             |
+| `additionalLinkTags`               | array                   | Allows you to add a link tag that is not documented here.                                                             |
 | `twitter.cardType`                 | string                  | The card type, which will be one of `summary`, `summary_large_image`, `app`, or `player`                              |
 | `twitter.site`                     | string                  | @username for the website used in the card footer .                                                                   |
 | `twitter.handle`                   | string                  | @username for the content creator / author (outputs as `twitter:creator`)                                             |
