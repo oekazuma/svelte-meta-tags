@@ -130,7 +130,7 @@ Example:
   import MetaTags from 'svelte-meta-tags';
 </script>
 
-<MetaTag
+<MetaTags
   robotsProps={{
     nosnippet: true,
     notranslate: true,
@@ -164,14 +164,14 @@ This link relation is used to indicate a relation between a desktop and a mobile
 
 Example:
 
-```svelte
+```js
 mobileAlternate={{
   media: 'only screen and (max-width: 640px)',
   href: 'https://m.canonical.ie'
 }}
 ```
 
-```svelte
+```js
 languageAlternates={[
   {
     hrefLang: 'de-AT',
@@ -188,7 +188,7 @@ This allows you to add any other meta tags that are not covered in the `config`.
 
 Example:
 
-```svelte
+```js
 additionalMetaTags={[
   {
     property: 'dc:creator',
@@ -209,7 +209,7 @@ Invalid Examples:
 
 These are invalid as they contain more than one of `name`, `property` and `httpEquiv` on the same entry.
 
-```svelte
+```js
 additionalMetaTags={[
   {
     property: 'dc:creator',
@@ -231,7 +231,7 @@ Example:
 
 If you pass:
 
-```svelte
+```js
 additionalMetaTags={[
   {
     property: 'dc:creator',
@@ -258,7 +258,7 @@ This allows you to add any other link tags that are not covered in the `config`.
 
 Example:
 
-```svelte
+```js
 additionalLinkTags={[
   {
     rel: 'icon',
