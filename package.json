@@ -33,6 +33,9 @@
     "typescript": "^4.3.5",
     "svelte2tsx": "^0.4.2"
   },
+  "peerDependencies": {
+		"svelte": "^3.34.0"
+	},
   "type": "module",
   "keywords": [
     "svelte",
