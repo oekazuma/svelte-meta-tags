@@ -127,7 +127,7 @@
 
         {#if openGraph.book.tags && openGraph.book.tags.length}
           {#each openGraph.book.tags as tag}
-            <meta property="book:tags" content={tag} />
+            <meta property="book:tag" content={tag} />
           {/each}
         {/if}
       {:else if openGraph.type.toLowerCase() === 'article' && openGraph.article}
