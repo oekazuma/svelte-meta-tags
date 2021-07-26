@@ -12,6 +12,7 @@
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "format": "prettier --write --plugin-search-dir=. .",
+    "prepare": "husky install",
     "release": "npm run package && npm publish package"
   },
   "dependencies": {
@@ -24,6 +25,8 @@
     "eslint": "^7.31.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-svelte3": "^3.2.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.1",
     "prettier": "~2.3.2",
     "prettier-plugin-svelte": "^2.3.1",
     "svelte": "3.40.1",
@@ -37,6 +40,13 @@
     "svelte": "^3.34.0"
   },
   "type": "module",
+  "lint-staged": {
+    "*.{js,ts,svelte,md,html,css,json}": "pnpm format",
+    "*.{js,ts,svelte}": [
+      "pnpm lint",
+      "pnpm check"
+    ]
+  },
   "keywords": [
     "svelte",
     "svelteKit",
