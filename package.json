@@ -13,7 +13,7 @@
     "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
     "format": "prettier --write --plugin-search-dir=. .",
     "prepare": "husky install",
-    "release": "npm run package && npm publish package"
+    "release": "pnpm package && pnpm publish package"
   },
   "dependencies": {
     "schema-dts": "^0.9.0"
