@@ -4,7 +4,7 @@
 
 :warning: There may be some breaking changes before v1.0.0!
 
-Svelte Meta Tags is a lightweight library for SEO in Svelte (Made with SvelteKit)
+Svelte Meta Tags is a lightweight library for SEO in Svelte (Made with SvelteKit) [Demo](https://svelte.dev/repl/ffd783c9b8e54d97b6b7cac6eadace42)
 
 This library is inspired by [next-seo](https://github.com/garmeeh/next-seo)
 
