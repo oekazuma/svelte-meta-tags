@@ -1,6 +1,6 @@
 {
   "name": "svelte-meta-tags",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "A lightweight library for SEO in Svelte (Made with SvelteKit)",
   "license": "MIT",
   "scripts": {
