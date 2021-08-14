@@ -35,7 +35,7 @@
     "svelte-check": "^2.2.4",
     "svelte-preprocess": "^4.7.4",
     "svelte2tsx": "^0.4.5",
-    "tslib": "^2.3.0",
+    "tslib": "^2.3.1",
     "typescript": "^4.3.5"
   },
   "peerDependencies": {
