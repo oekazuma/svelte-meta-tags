@@ -1,23 +1,37 @@
 name: CI
-on: [push]
+
+on: push
+
 jobs:
   ci:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-      - name: Run Prettier
-        run: pnpm format
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Cache ~/.pnpm-store
+        uses: actions/cache@main
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.node-version }}
+      - run: npm install -g pnpm
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
       - name: Run ESLint
         run: pnpm lint
 
-      - name: Run SvelteCheck
+      - name: Run svelte-check
         run: pnpm check
 
-      - name: Cypress run
+      - name: Run Cypress
         uses: cypress-io/github-action@v2
         with:
           start: pnpm preview
