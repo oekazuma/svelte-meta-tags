@@ -1,7 +1,7 @@
 {
   "name": "svelte-meta-tags",
   "version": "1.0.0",
-  "description": "A lightweight library for SEO in Svelte (Made with SvelteKit)",
+  "description": "Svelte Meta Tags is a plug in that makes managing your SEO easier in Svelte projects.",
   "license": "MIT",
   "scripts": {
     "dev": "svelte-kit dev",
