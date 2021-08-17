@@ -1,0 +1,25 @@
+name: CI
+on: [push]
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Run Prettier
+        run: pnpm format
+
+      - name: Run ESLint
+        run: pnpm lint
+
+      - name: Run SvelteCheck
+        run: pnpm check
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          start: pnpm preview
+          wait-on: 'http://localhost:3000'
+          config-file: cypress.json
