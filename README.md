@@ -1,4 +1,4 @@
-<img src="./static/logo.svg" alt="svelte-meta-tags" width="512" />
+<img src="./.github/logo.svg" alt="svelte-meta-tags" width="512" />
 
 [![npm](https://img.shields.io/npm/v/svelte-meta-tags)](https://www.npmjs.com/package/svelte-meta-tags) [![npm](https://img.shields.io/npm/l/svelte-meta-tags)](https://opensource.org/licenses/MIT)
 
