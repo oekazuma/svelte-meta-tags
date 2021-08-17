@@ -1,16 +1,17 @@
 <img src="./.github/logo.svg" alt="svelte-meta-tags" width="512" />
 
-[![npm](https://img.shields.io/npm/v/svelte-meta-tags)](https://www.npmjs.com/package/svelte-meta-tags) [![npm](https://img.shields.io/npm/l/svelte-meta-tags)](https://opensource.org/licenses/MIT)
+[![CI](https://github.com/oekazuma/svelte-meta-tags/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/oekazuma/svelte-meta-tags/actions/workflows/ci.yml)
+[![download](https://img.shields.io/npm/dt/svelte-meta-tags.svg)](https://www.npmjs.com/package/svelte-meta-tags)
+[![npm](https://img.shields.io/npm/v/svelte-meta-tags)](https://www.npmjs.com/package/svelte-meta-tags)
+[![MIT](https://img.shields.io/npm/l/svelte-meta-tags)](https://opensource.org/licenses/MIT)
 
-:warning: There may be some breaking changes before v1.0.0!
-
-Svelte Meta Tags is a lightweight library for SEO in Svelte (Made with SvelteKit)
+Svelte Meta Tags is a plug in that makes managing your SEO easier in Svelte projects.
 
 [Demo](https://svelte.dev/repl/ffd783c9b8e54d97b6b7cac6eadace42)
 
 This library is inspired by [next-seo](https://github.com/garmeeh/next-seo)
 
-### Installing
+### 📦 Installing
 
 ```shell
 npm install --save svelte-meta-tags
@@ -22,13 +23,7 @@ or
 yarn add svelte-meta-tags
 ```
 
-or
-
-```shell
-pnpm add svelte-meta-tags
-```
-
-### Usage
+### 🚀 Usage
 
 **Example with just title and description:**
 
