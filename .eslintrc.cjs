@@ -1,8 +1,13 @@
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier'],
-  plugins: ['svelte3', '@typescript-eslint'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+    'plugin:cypress/recommended'
+  ],
+  plugins: ['svelte3', '@typescript-eslint', 'cypress'],
   ignorePatterns: ['*.cjs'],
   overrides: [{ files: ['*.svelte'], processor: 'svelte3/svelte3' }],
   settings: {
@@ -15,6 +20,7 @@ module.exports = {
   env: {
     browser: true,
     es2017: true,
-    node: true
+    node: true,
+    'cypress/globals': true
   }
 };
