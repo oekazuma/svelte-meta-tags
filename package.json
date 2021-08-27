@@ -94,6 +94,11 @@
           "test",
           "BREAKING CHANGE"
         ]
+      ],
+      "body-max-line-length": [
+        2,
+        "always",
+        200
       ]
     }
   },
