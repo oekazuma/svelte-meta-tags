@@ -4,9 +4,6 @@
   "description": "Svelte Meta Tags is a plug in that makes managing your SEO easier in Svelte projects.",
   "license": "MIT",
   "type": "module",
-  "files": [
-    "package"
-  ],
   "keywords": [
     "svelte",
     "svelteKit",
@@ -113,7 +110,12 @@
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       "@semantic-release/changelog",
-      "@semantic-release/npm",
+      [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "package"
+        }
+      ],
       "@semantic-release/github",
       "@semantic-release/git"
     ],
