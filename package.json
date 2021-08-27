@@ -3,6 +3,7 @@
   "version": "1.0.2",
   "description": "Svelte Meta Tags is a plug in that makes managing your SEO easier in Svelte projects.",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
@@ -46,7 +47,6 @@
   "peerDependencies": {
     "svelte": "^3.39.0"
   },
-  "type": "module",
   "lint-staged": {
     "*.{js,ts,svelte,md,html,css,json}": "pnpm format",
     "*.{js,ts,svelte}": [
@@ -77,6 +77,12 @@
         ]
       ]
     }
+  },
+  "renovate": {
+    "extends": [
+      "config:base"
+    ],
+    "timezone": "Asia/Tokyo"
   },
   "keywords": [
     "svelte",
