@@ -16,18 +16,17 @@
     "cy:run": "cypress run",
     "test": "pnpm cy:run",
     "prepare": "husky install",
-    "commitmsg": "commitlint -e $GIT_PARAMS",
     "release": "pnpm package && pnpm publish package"
   },
   "dependencies": {
-    "schema-dts": "0.10.0"
+    "schema-dts": "0.11.0"
   },
   "devDependencies": {
     "@commitlint/cli": "13.1.0",
     "@commitlint/config-conventional": "13.1.0",
     "@sveltejs/kit": "1.0.0-next.158",
-    "@typescript-eslint/eslint-plugin": "^4.29.1",
-    "@typescript-eslint/parser": "^4.29.1",
+    "@typescript-eslint/eslint-plugin": "4.29.3",
+    "@typescript-eslint/parser": "4.29.3",
     "cypress": "8.3.1",
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.3.0",
@@ -64,6 +63,7 @@
         2,
         "always",
         [
+          "build",
           "ci",
           "chore",
           "docs",
