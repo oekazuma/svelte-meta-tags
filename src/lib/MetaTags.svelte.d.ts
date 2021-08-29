@@ -1,5 +1,4 @@
 import { SvelteComponentTyped } from 'svelte';
-import { Thing, WithContext } from 'schema-dts';
 import {
   AdditionalRobotsProps,
   MobileAlternate,
@@ -25,7 +24,6 @@ export interface MetaTagsProps {
   openGraph?: OpenGraph;
   additionalMetaTags?: ReadonlyArray<MetaTag>;
   additionalLinkTags?: ReadonlyArray<LinkTag>;
-  jsonLd?: Thing | WithContext<Thing>;
 }
 
 export default class MetaTags extends SvelteComponentTyped<MetaTagsProps> {}

@@ -12,7 +12,6 @@
   export let canonical = undefined;
   export let additionalMetaTags = undefined;
   export let additionalLinkTags = undefined;
-  export let jsonLd = undefined;
 
   let robotsParams = '';
   if (robotsProps) {
@@ -265,11 +264,5 @@
     {#each additionalLinkTags as tag}
       <link {...tag} />
     {/each}
-  {/if}
-
-  {#if jsonLd}
-    {@html `<script type="application/ld+json">${
-      JSON.stringify({ '@context': 'https://schema.org', ...jsonLd }) + '<'
-    }/script>`}
   {/if}
 </svelte:head>
