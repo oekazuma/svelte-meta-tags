@@ -499,11 +499,43 @@ describe('Svelte Meta Tags', () => {
   it('JSON-LD SEO loads correctly', () => {
     cy.visit('/jsonld');
     cy.get('h1').should('contain', 'JSON-LD SEO');
+    cy.get('head title').should('contain', 'JSON-LD Page Title | Svelte Meta Tags');
+    cy.get('head meta[name="description"]').should(
+      'have.attr',
+      'content',
+      'Description of JSON-LD page'
+    );
+    cy.get('head meta[name="robots"]').should('have.attr', 'content', 'index,follow');
+    cy.get('head meta[name="googlebot"]').should('have.attr', 'content', 'index,follow');
     cy.get('head script[type="application/ld+json"]')
-      .should('have.length', 1)
+      .should('have.length', 2)
       .then((tags) => {
-        const jsonLD = JSON.parse(tags[0].innerHTML);
-        expect(jsonLD).to.deep.equal({
+        const breadcrumbJsonLD = JSON.parse(tags[0].innerHTML);
+        expect(breadcrumbJsonLD).to.deep.equal({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Books',
+              item: 'https://example.com/books'
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Science Fiction',
+              item: 'https://example.com/books/sciencefiction'
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name: 'Award Winners'
+            }
+          ]
+        });
+        const newsArticleJsonLD = JSON.parse(tags[1].innerHTML);
+        expect(newsArticleJsonLD).to.deep.equal({
           '@context': 'https://schema.org',
           '@type': 'NewsArticle',
           mainEntityOfPage: {
