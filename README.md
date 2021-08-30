@@ -120,7 +120,7 @@ yarn add svelte-meta-tags
 | `openGraph.article.authors`        | string[]                | Writers of the article.                                                                                                                |
 | `openGraph.article.section`        | string                  | A high-level section name. E.g. Technology                                                                                             |
 | `openGraph.article.tags`           | string[]                | Tag words associated with this article.                                                                                                |
-| `jsonLd`                           | object                  | Data in `ld+json` format. NOTE: It will stop working in v.2.0.0! [Details](#json-ld-warning)                                           |
+| `jsonLd`                           | object                  | Data in `ld+json` format. NOTE: It will stop working in v2.0.0! [Details](#json-ld-warning)                                            |
 
 #### robotsProps
 
