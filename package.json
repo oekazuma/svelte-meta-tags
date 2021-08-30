@@ -99,12 +99,6 @@
       ]
     }
   },
-  "renovate": {
-    "extends": [
-      "config:base"
-    ],
-    "timezone": "Asia/Tokyo"
-  },
   "release": {
     "plugins": [
       "@semantic-release/commit-analyzer",
