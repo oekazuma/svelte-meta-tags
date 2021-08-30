@@ -1,3 +1,9 @@
+# [1.1.0](https://github.com/oekazuma/svelte-meta-tags/compare/v1.0.5...v1.1.0) (2021-08-30)
+
+### Features
+
+- separate JSON-LD from MetaTags component ([43698ab](https://github.com/oekazuma/svelte-meta-tags/commit/43698ab9b98781f3b9ff246640c1e29ab772ba75))
+
 ## [1.0.5](https://github.com/oekazuma/svelte-meta-tags/compare/v1.0.4...v1.0.5) (2021-08-30)
 
 ### Bug Fixes
