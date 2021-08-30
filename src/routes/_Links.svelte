@@ -21,6 +21,9 @@
     <a href="/profile"> Profile SEO </a>
   </li>
   <li>
-    <a href="/jsonld"> JSON-LD SEO </a>
+    <a href="/oldJsonld"> OLD JSON-LD SEO </a>
+  </li>
+  <li>
+    <a href="/newJsonld"> NEW JSON-LD SEO </a>
   </li>
 </ul>
