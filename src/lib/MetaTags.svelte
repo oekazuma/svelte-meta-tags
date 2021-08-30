@@ -37,6 +37,12 @@
       notranslate ? ',notranslate' : ''
     }`;
   }
+
+  if (typeof jsonLd !== 'undefined') {
+    console.warn(
+      '[WARNING]: JSON-LD will soon be completely separated from the <MetaTags/> component and will no longer work. Please import and use `JsonLd`.'
+    );
+  }
 </script>
 
 <svelte:head>

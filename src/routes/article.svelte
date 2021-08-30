@@ -1,6 +1,5 @@
 <script>
   import MetaTags from 'svelte-meta-tags';
-  import Links from './_Links.svelte';
 </script>
 
 <MetaTags
@@ -58,4 +57,3 @@
 />
 
 <h1>Article SEO</h1>
-<Links />

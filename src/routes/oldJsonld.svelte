@@ -1,9 +1,10 @@
 <script>
   import MetaTags from 'svelte-meta-tags';
-  import Links from './_Links.svelte';
 </script>
 
 <MetaTags
+  title="OLD JSON-LD Page Title | Svelte Meta Tags"
+  description="Description of OLD JSON-LD page"
   jsonLd={{
     '@type': 'NewsArticle',
     mainEntityOfPage: {
@@ -33,5 +34,4 @@
   }}
 />
 
-<h1>JSON-LD SEO</h1>
-<Links />
+<h1>OLD JSON-LD SEO</h1>

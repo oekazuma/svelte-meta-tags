@@ -120,7 +120,7 @@ yarn add svelte-meta-tags
 | `openGraph.article.authors`        | string[]                | Writers of the article.                                                                                                                |
 | `openGraph.article.section`        | string                  | A high-level section name. E.g. Technology                                                                                             |
 | `openGraph.article.tags`           | string[]                | Tag words associated with this article.                                                                                                |
-| `jsonLd`                           | object                  | Data in `ld+json` format.                                                                                                              |
+| `jsonLd`                           | object                  | Data in `ld+json` format. NOTE: It will stop working in v.2.0.0! [Details](#json-ld-warning)                                           |
 
 #### robotsProps
 
@@ -482,21 +482,31 @@ Full info on [http://ogp.me/](http://ogp.me/#type_video)
 
 JSON-LD allow for more customized and rich representation for example in search results.
 
+It can also be used when multiple JSON-LDs are needed.
+
 To discover all the different content types JSON-LD offers check out: https://developers.google.com/search/docs/guides/search-gallery
+
+**NOTE: This plugin uses [schema-dts](https://github.com/google/schema-dts), so it supports more than just usage examples.**
+
+### JSON-LD Warning
+
+In v2.0.0, JSON-LD will be completely separated from the `<MetaTags/>` component. Please use the `<JsonLd/>` component from now on!
 
 ### JSON-LD Examples
 
+#### Article
+
 ```svelte
 <script>
-  import MetaTags from 'svelte-meta-tags';
+  import { JsonLd } from 'svelte-meta-tags';
 </script>
 
-<MetaTags
-  jsonLd={{
-    '@type': 'NewsArticle',
+<JsonLd
+  schema={{
+    '@type': 'Article',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': 'https://google.com/article'
+      '@id': 'https://example.com/article'
     },
     headline: 'Article headline',
     image: [
@@ -515,9 +525,166 @@ To discover all the different content types JSON-LD offers check out: https://de
       name: 'Google',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://google.com/logo.jpg'
+        url: 'https://example.com/logo.jpg'
       }
     }
+  }}
+/>
+```
+
+#### Breadcrumb
+
+```svelte
+<script>
+  import { JsonLd } from 'svelte-meta-tags';
+</script>
+
+<JsonLd
+  schema={{
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Books',
+        item: 'https://example.com/books'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Science Fiction',
+        item: 'https://example.com/books/sciencefiction'
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'Award Winners'
+      }
+    ]
+  }}
+/>
+```
+
+#### Product
+
+```svelte
+<script>
+  import { JsonLd } from 'svelte-meta-tags';
+</script>
+
+<JsonLd
+  schema={{
+    '@type': 'Product',
+    name: 'Executive Anvil',
+    image: [
+      'https://example.com/photos/1x1/photo.jpg',
+      'https://example.com/photos/4x3/photo.jpg',
+      'https://example.com/photos/16x9/photo.jpg'
+    ],
+    description:
+      "Sleeker than ACME's Classic Anvil, the Executive Anvil is perfect for the business traveler looking for something to drop from a height.",
+    sku: '0446310786',
+    mpn: '925872',
+    brand: {
+      '@type': 'Brand',
+      name: 'ACME'
+    },
+    review: {
+      '@type': 'Review',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '4',
+        bestRating: '5'
+      },
+      author: {
+        '@type': 'Person',
+        name: 'Fred Benson'
+      }
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.4',
+      reviewCount: '89'
+    },
+    offers: {
+      '@type': 'Offer',
+      url: 'https://example.com/anvil',
+      priceCurrency: 'USD',
+      price: '119.99',
+      priceValidUntil: '2020-11-20',
+      itemCondition: 'https://schema.org/UsedCondition',
+      availability: 'https://schema.org/InStock'
+    }
+  }}
+/>
+```
+
+#### Course
+
+```svelte
+<script>
+  import { JsonLd } from 'svelte-meta-tags';
+</script>
+
+<JsonLd
+  schema={{
+    '@type': 'Course',
+    name: 'Introduction to Computer Science and Programming',
+    description: 'Introductory CS course laying out the basics.',
+    provider: {
+      '@type': 'Organization',
+      name: 'University of Technology - Eureka',
+      sameAs: 'http://www.ut-eureka.edu'
+    }
+  }}
+/>
+```
+
+#### DataSet
+
+```svelte
+<script>
+  import { JsonLd } from 'svelte-meta-tags';
+</script>
+
+<JsonLd
+  schema={{
+    '@type': 'Dataset',
+    name: 'name of the dataset',
+    description: 'The description needs to be at least 50 characters long',
+    license: 'https//www.example.com'
+  }}
+/>
+```
+
+#### FAQ
+
+```svelte
+<script>
+  import { JsonLd } from 'svelte-meta-tags';
+</script>
+
+<JsonLd
+  schema={{
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How long is the delivery time?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: '3-5 business days.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Where can I find information about product recalls?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Read more on under information.'
+        }
+      }
+    ]
   }}
 />
 ```
