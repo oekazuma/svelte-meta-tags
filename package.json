@@ -75,23 +75,6 @@
       "@commitlint/config-conventional"
     ],
     "rules": {
-      "type-enum": [
-        2,
-        "always",
-        [
-          "build",
-          "ci",
-          "chore",
-          "docs",
-          "feat",
-          "fix",
-          "refactor",
-          "revert",
-          "style",
-          "test",
-          "BREAKING CHANGE"
-        ]
-      ],
       "body-max-line-length": [
         2,
         "always",
