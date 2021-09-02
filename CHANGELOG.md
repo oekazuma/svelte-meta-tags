@@ -1,3 +1,9 @@
+## [1.1.1](https://github.com/oekazuma/svelte-meta-tags/compare/v1.1.0...v1.1.1) (2021-09-02)
+
+### Bug Fixes
+
+- update package.json ([cd0574c](https://github.com/oekazuma/svelte-meta-tags/commit/cd0574cf04050d3f8a031556ff20628aa390c671))
+
 # [1.1.0](https://github.com/oekazuma/svelte-meta-tags/compare/v1.0.5...v1.1.0) (2021-08-30)
 
 ### Features
