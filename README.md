@@ -5,7 +5,7 @@
 [![npm](https://img.shields.io/npm/v/svelte-meta-tags)](https://www.npmjs.com/package/svelte-meta-tags)
 [![MIT](https://img.shields.io/npm/l/svelte-meta-tags)](https://opensource.org/licenses/MIT)
 
-Svelte Meta Tags is a plug in that makes managing your SEO easier in Svelte projects.
+Svelte Meta Tags is a plugin that makes managing your SEO easier in Svelte projects.
 
 [Demo](https://svelte.dev/repl/ffd783c9b8e54d97b6b7cac6eadace42)
 
@@ -14,7 +14,7 @@ This library is inspired by [next-seo](https://github.com/garmeeh/next-seo)
 ### 📦 Installing
 
 ```shell
-npm install --save svelte-meta-tags
+npm install svelte-meta-tags
 ```
 
 or
@@ -120,7 +120,7 @@ yarn add svelte-meta-tags
 | `openGraph.article.authors`        | string[]                | Writers of the article.                                                                                                                |
 | `openGraph.article.section`        | string                  | A high-level section name. E.g. Technology                                                                                             |
 | `openGraph.article.tags`           | string[]                | Tag words associated with this article.                                                                                                |
-| `jsonLd`                           | object                  | Data in `ld+json` format. NOTE: It will stop working in v2.0.0! [Details](#json-ld-warning)                                            |
+| `jsonLd`                           | object                  | Data in `ld+json` format. **NOTE: It will stop working in v2.0.0!** [Details](#json-ld-warning)                                        |
 
 #### robotsProps
 
