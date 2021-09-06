@@ -5,7 +5,7 @@ specifiers:
   '@commitlint/config-conventional': 13.1.0
   '@semantic-release/changelog': 5.0.1
   '@semantic-release/git': 9.0.1
-  '@sveltejs/kit': 1.0.0-next.162
+  '@sveltejs/kit': 1.0.0-next.163
   '@typescript-eslint/eslint-plugin': 4.30.0
   '@typescript-eslint/parser': 4.30.0
   cypress: 8.3.1
@@ -34,7 +34,7 @@ devDependencies:
   '@commitlint/config-conventional': 13.1.0
   '@semantic-release/changelog': 5.0.1_semantic-release@17.4.7
   '@semantic-release/git': 9.0.1_semantic-release@17.4.7
-  '@sveltejs/kit': 1.0.0-next.162_svelte@3.42.4
+  '@sveltejs/kit': 1.0.0-next.163_svelte@3.42.4
   '@typescript-eslint/eslint-plugin': 4.30.0_8a8a2d3eaa9257455a03c16dce5f55b3
   '@typescript-eslint/parser': 4.30.0_eslint@7.32.0+typescript@4.4.2
   cypress: 8.3.1
@@ -538,14 +538,14 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.162_svelte@3.42.4:
-    resolution: {integrity: sha512-fLJNGXeTFtwy1p91mWh+Sr+wgi0vEPgXN0uIUvofzQSNp7MDwxw2noDCogyHgxHhU3uDf2+Osz3aJC2fCsbIbw==}
+  /@sveltejs/kit/1.0.0-next.163_svelte@3.42.4:
+    resolution: {integrity: sha512-dtL/gTqVsjKqs3B3rHLgyMxCM4UCWJtUT0tZW/t6IKOk3R2aytvjTxTp0fDWnogdHt3JnyFz8mb/3AGphG8O8g==}
     engines: {node: ^12.20 || >=14.13}
     hasBin: true
     peerDependencies:
       svelte: ^3.39.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.0-next.21_svelte@3.42.4+vite@2.5.3
+      '@sveltejs/vite-plugin-svelte': 1.0.0-next.22_svelte@3.42.4+vite@2.5.3
       cheap-watch: 1.0.3
       sade: 1.7.4
       svelte: 3.42.4
@@ -555,8 +555,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/1.0.0-next.21_svelte@3.42.4+vite@2.5.3:
-    resolution: {integrity: sha512-JjPnoQoI1+VXHjguE1bWyFYdZvPN6VTZ5RsFRpju45zICas1N5jAuOqKTbhQ1G+eEMCbhhB6zjZgQQRtaXPhNQ==}
+  /@sveltejs/vite-plugin-svelte/1.0.0-next.22_svelte@3.42.4+vite@2.5.3:
+    resolution: {integrity: sha512-B1O/GMIxpE4iJ3/FBUJ3oYGKHhJ99G9uFARsb8kVeReLDPhtZGXTM+7brLDefJuedbKkRkGEEkbGOVuEuEBo3g==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
     peerDependencies:
       diff-match-patch: ^1.0.5
