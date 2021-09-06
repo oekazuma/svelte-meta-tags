@@ -21,7 +21,7 @@ specifiers:
   semantic-release: 17.4.7
   svelte: 3.42.4
   svelte-check: 2.2.5
-  svelte-preprocess: 4.9.0
+  svelte-preprocess: 4.9.1
   svelte2tsx: 0.4.5
   tslib: 2.3.1
   typescript: 4.4.2
@@ -49,7 +49,7 @@ devDependencies:
   semantic-release: 17.4.7
   svelte: 3.42.4
   svelte-check: 2.2.5_svelte@3.42.4
-  svelte-preprocess: 4.9.0_svelte@3.42.4+typescript@4.4.2
+  svelte-preprocess: 4.9.1_svelte@3.42.4+typescript@4.4.2
   svelte2tsx: 0.4.5_svelte@3.42.4+typescript@4.4.2
   tslib: 2.3.1
   typescript: 4.4.2
@@ -3765,8 +3765,8 @@ packages:
       typescript: 4.4.2
     dev: true
 
-  /svelte-preprocess/4.9.0_svelte@3.42.4+typescript@4.4.2:
-    resolution: {integrity: sha512-9eMgTn6qOe9z/q4rSXO1G3vXudOAJC54q7QL4s0e5qZ/94Hqca/aVLyL0FUwt1Q52Hq9WGJ4oxQK/DIArcDeAA==}
+  /svelte-preprocess/4.9.1_svelte@3.42.4+typescript@4.4.2:
+    resolution: {integrity: sha512-nNGilNME8T7a1Yuisdo6MDfpVxHURR4Vj9rGsgdd1EfoS7H+8SF3qaVE92aJQt2IhTB7+BshBqBLeVP080gnpg==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
     peerDependencies:
@@ -3781,7 +3781,7 @@ packages:
       stylus: ^0.54.7
       sugarss: ^2.0.0
       svelte: ^3.23.0
-      typescript: ^3.9.5 || ^4.0.0
+      typescript: ^4.4.2
     peerDependenciesMeta:
       '@babel/core':
         optional: true
