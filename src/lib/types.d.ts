@@ -1,3 +1,5 @@
+import { Thing, WithContext } from 'schema-dts';
+
 export interface MobileAlternate {
   media: string;
   href: string;
@@ -130,4 +132,25 @@ export interface LinkTag {
   type?: string;
   color?: string;
   keyOverride?: string;
+}
+
+export interface MetaTagsProps {
+  title?: string;
+  noindex?: boolean;
+  nofollow?: boolean;
+  robotsProps?: AdditionalRobotsProps;
+  description?: string;
+  canonical?: string;
+  mobileAlternate?: MobileAlternate;
+  languageAlternates?: ReadonlyArray<LanguageAlternate>;
+  twitter?: Twitter;
+  facebook?: Facebook;
+  openGraph?: OpenGraph;
+  additionalMetaTags?: ReadonlyArray<MetaTag>;
+  additionalLinkTags?: ReadonlyArray<LinkTag>;
+  jsonLd?: Thing | WithContext<Thing>;
+}
+
+export interface JsonLdProps {
+  schema: Thing | WithContext<Thing>;
 }
