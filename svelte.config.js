@@ -5,9 +5,6 @@ import path from 'path';
 const config = {
   preprocess: preprocess(),
   kit: {
-    package: {
-      emitTypes: false
-    },
     vite: {
       resolve: {
         alias: {
