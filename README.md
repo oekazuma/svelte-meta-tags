@@ -13,8 +13,8 @@ This library is inspired by [next-seo](https://github.com/garmeeh/next-seo)
 
 **Table of Contents**
 
-- [Installing](#installing)
-- [Usage](#usage)
+- [Installing](#-installing)
+- [Usage](#-usage)
 - [Properties](#properties)
   - [robotsProps](#robotsprops)
   - [Alternate](#alternate)
