@@ -691,14 +691,13 @@ In v2.0.0, JSON-LD will be completely separated from the `<MetaTags/>` component
 
 ## Types Import
 
-You can import and use types such as `MetaTagsProps` and `JsonLdProps`.
+You can import and use the types `MetaTagsProps` and `JsonLdProps`.
 
 ### Types Import Examples
 
 ```svelte
 <script lang="ts">
-  import MetaTags, { JsonLd } from 'svelte-meta-tags';
-  import type { MetaTagsProps, JsonLdProps } from 'svelte-meta-tags';
+  import MetaTags, { JsonLd, MetaTagsProps, JsonLdProps } from 'svelte-meta-tags';
 
   const metatags: MetaTagsProps = {
     title: 'Types Page Title | Svelte Meta Tags',
