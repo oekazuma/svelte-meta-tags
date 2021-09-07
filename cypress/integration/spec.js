@@ -611,4 +611,88 @@ describe('Svelte Meta Tags', () => {
         });
       });
   });
+
+  it('Types SEO loads correctly', () => {
+    cy.visit('/types');
+    cy.get('h1').should('contain', 'Types SEO');
+    cy.get('head title').should('contain', 'Types Page Title | Svelte Meta Tags');
+    cy.get('head meta[name="description"]').should(
+      'have.attr',
+      'content',
+      'Description of Types page'
+    );
+    cy.get('head meta[name="robots"]').should('have.attr', 'content', 'index,follow');
+    cy.get('head meta[name="googlebot"]').should('have.attr', 'content', 'index,follow');
+    cy.get('head meta[property="og:type"]').should('have.attr', 'content', 'website');
+    cy.get('head meta[property="og:locale"]').should('have.attr', 'content', 'en_IE');
+    cy.get('head meta[property="og:url"]').should(
+      'have.attr',
+      'content',
+      'https://www.example.com/page'
+    );
+    cy.get('head meta[property="og:title"]').should('have.attr', 'content', 'Open Graph Title');
+    cy.get('head meta[property="og:description"]').should(
+      'have.attr',
+      'content',
+      'Open Graph Description'
+    );
+    cy.get('head meta[property="og:image"]')
+      .should('have.length', 1)
+      .then((tags) => {
+        expect(tags[0].content).to.equal('https://www.example.ie/og-image.jpg');
+      });
+    cy.get('head meta[property="og:image:alt"]')
+      .should('have.length', 1)
+      .then((tags) => {
+        expect(tags[0].content).to.equal('Og Image Alt');
+      });
+    cy.get('head meta[property="og:image:width"]')
+      .should('have.length', 1)
+      .then((tags) => {
+        expect(tags[0].content).to.equal('800');
+      });
+    cy.get('head meta[property="og:image:height"]')
+      .should('have.length', 1)
+      .then((tags) => {
+        expect(tags[0].content).to.equal('600');
+      });
+    cy.get('head meta[property="og:site_name"]').should('have.attr', 'content', 'SiteName');
+    cy.get('head meta[property="fb:app_id"]').should('have.attr', 'content', '1234567890');
+    cy.get('head meta[name="twitter:site"]').should('have.attr', 'content', '@site');
+    cy.get('head meta[name="twitter:creator"]').should('have.attr', 'content', '@handle');
+    cy.get('head meta[name="twitter:card"]').should('have.attr', 'content', 'summary_large_image');
+    cy.get('head script[type="application/ld+json"]')
+      .should('have.length', 1)
+      .then((tags) => {
+        const newsArticleJsonLD = JSON.parse(tags[0].innerHTML);
+        expect(newsArticleJsonLD).to.deep.equal({
+          '@context': 'https://schema.org',
+          '@type': 'NewsArticle',
+          mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': 'https://google.com/article'
+          },
+          headline: 'Article headline',
+          image: [
+            'https://example.com/photos/1x1/photo.jpg',
+            'https://example.com/photos/4x3/photo.jpg',
+            'https://example.com/photos/16x9/photo.jpg'
+          ],
+          datePublished: '2015-02-05T08:00:00+08:00',
+          dateModified: '2015-02-05T09:20:00+08:00',
+          author: {
+            '@type': 'Person',
+            name: 'John Doe'
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Google',
+            logo: {
+              '@type': 'ImageObject',
+              url: 'https://google.com/logo.jpg'
+            }
+          }
+        });
+      });
+  });
 });
