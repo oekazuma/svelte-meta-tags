@@ -26,4 +26,7 @@
   <li>
     <a href="/newJsonld"> NEW JSON-LD SEO </a>
   </li>
+  <li>
+    <a href="/types"> Types SEO </a>
+  </li>
 </ul>
