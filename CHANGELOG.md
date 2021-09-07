@@ -1,3 +1,9 @@
+# [1.2.0](https://github.com/oekazuma/svelte-meta-tags/compare/v1.1.1...v1.2.0) (2021-09-07)
+
+### Features
+
+- import types to make them easier to use ([cdceda7](https://github.com/oekazuma/svelte-meta-tags/commit/cdceda73204d668f80cb2773b73e252e53d0d6a1))
+
 ## [1.1.1](https://github.com/oekazuma/svelte-meta-tags/compare/v1.1.0...v1.1.1) (2021-09-02)
 
 ### Bug Fixes
