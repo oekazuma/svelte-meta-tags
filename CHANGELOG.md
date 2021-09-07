@@ -1,3 +1,9 @@
+## [1.2.2](https://github.com/oekazuma/svelte-meta-tags/compare/v1.2.1...v1.2.2) (2021-09-07)
+
+### Bug Fixes
+
+- fix types in package.json ([7be485a](https://github.com/oekazuma/svelte-meta-tags/commit/7be485a880203ce2038ea91768031fbbf66d32b5))
+
 ## [1.2.1](https://github.com/oekazuma/svelte-meta-tags/compare/v1.2.0...v1.2.1) (2021-09-07)
 
 ### Bug Fixes
