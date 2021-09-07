@@ -1,3 +1,9 @@
+## [1.2.1](https://github.com/oekazuma/svelte-meta-tags/compare/v1.2.0...v1.2.1) (2021-09-07)
+
+### Bug Fixes
+
+- restore the emitTypes setting of package ([20d8a85](https://github.com/oekazuma/svelte-meta-tags/commit/20d8a85ab0f76a1a7c270cdf3a1062eb83c1aa59))
+
 # [1.2.0](https://github.com/oekazuma/svelte-meta-tags/compare/v1.1.1...v1.2.0) (2021-09-07)
 
 ### Features
