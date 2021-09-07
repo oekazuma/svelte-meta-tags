@@ -11,6 +11,34 @@ Svelte Meta Tags is a plugin that makes managing your SEO easier in Svelte proje
 
 This library is inspired by [next-seo](https://github.com/garmeeh/next-seo)
 
+**Table of Contents**
+
+- [Installing](#installing)
+- [Usage](#usage)
+- [Properties](#properties)
+  - [robotsProps](#robotsprops)
+  - [Alternate](#alternate)
+  - [Additional Meta Tags](#additional-meta-tags)
+  - [Additional Link Tags](#additional-link-tags)
+- [Open Graph](#open-graph)
+  - [Open Graph Examples](#open-graph-examples)
+    - [Basic](#basic)
+    - [Video](#video)
+    - [Article](#article)
+    - [Book](#book)
+    - [Profile](#profile)
+- [JSON-LD](#json-ld)
+  - [Using schema-dts](#using-schema-dts)
+  - [JSON-LD Examples](#json-ld-examples)
+    - [Article](#article)
+    - [Breadcrumb](#breadcrumb)
+    - [Product](#product)
+    - [Course](#course)
+    - [DataSet](#dataset)
+    - [FAQ](#faq)
+- [Types Import](#types-import)
+- [Types Import Examples](#types-import-examples)
+
 ### 📦 Installing
 
 ```shell
@@ -293,15 +321,15 @@ For the full specification please check out <http://ogp.me/>
 
 Svelte Meta Tags currently supports:
 
-- [basic](#basic)
-- [video](#video)
-- [article](#article)
-- [book](#book)
-- [profile](#profile)
+- [Basic](#basic)
+- [Video](#video)
+- [Article](#article)
+- [Book](#book)
+- [Profile](#profile)
 
 ### Open Graph Examples
 
-#### basic
+#### Basic
 
 ```svelte
 <script>
@@ -482,15 +510,15 @@ Full info on [http://ogp.me/](http://ogp.me/#type_video)
 
 JSON-LD allow for more customized and rich representation for example in search results.
 
-It can also be used when multiple JSON-LDs are needed.
-
 To discover all the different content types JSON-LD offers check out: https://developers.google.com/search/docs/guides/search-gallery
 
-**NOTE: This plugin uses [schema-dts](https://github.com/google/schema-dts), so it supports more than just usage examples.**
+It is also possible to use multiple `<JsonLd />` components in a single page.
 
-### JSON-LD Warning
+**NOTE: In v2.0.0, JSON-LD will be completely separated from the `<MetaTags/>` component. Please use the `<JsonLd/>` component from now on!**
 
-In v2.0.0, JSON-LD will be completely separated from the `<MetaTags/>` component. Please use the `<JsonLd/>` component from now on!
+### Using `schema-dts`
+
+This plugin uses [schema-dts](https://github.com/google/schema-dts), so it also provides types other than the usage examples below.
 
 ### JSON-LD Examples
 
