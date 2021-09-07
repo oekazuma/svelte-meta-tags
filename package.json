@@ -7,7 +7,7 @@
   "svelte": "index.js",
   "main": "index.js",
   "module": "index.js",
-  "types": "type.d.ts",
+  "types": "index.d.ts",
   "keywords": [
     "svelte",
     "svelteKit",
