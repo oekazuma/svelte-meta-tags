@@ -97,7 +97,6 @@ interface OpenGraphVideoActors {
 
 interface BaseMetaTag {
   content: string;
-  keyOverride?: string;
 }
 
 interface HTML5MetaTag extends BaseMetaTag {
@@ -131,7 +130,6 @@ export interface LinkTag {
   sizes?: string;
   type?: string;
   color?: string;
-  keyOverride?: string;
 }
 
 export interface MetaTagsProps {
