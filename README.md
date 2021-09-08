@@ -37,7 +37,7 @@ This library is inspired by [next-seo](https://github.com/garmeeh/next-seo)
     - [DataSet](#dataset)
     - [FAQ](#faq)
 - [Types Import](#types-import)
-- [Types Import Examples](#types-import-examples)
+  - [Types Import Examples](#types-import-examples)
 
 ### 📦 Installing
 
