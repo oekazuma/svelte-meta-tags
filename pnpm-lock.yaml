@@ -20,7 +20,7 @@ specifiers:
   schema-dts: 1.0.0
   semantic-release: 17.4.7
   svelte: 3.42.5
-  svelte-check: 2.2.5
+  svelte-check: 2.2.6
   svelte-preprocess: 4.9.4
   svelte2tsx: 0.4.5
   tslib: 2.3.1
@@ -48,7 +48,7 @@ devDependencies:
   prettier-plugin-svelte: 2.4.0_prettier@2.4.0+svelte@3.42.5
   semantic-release: 17.4.7
   svelte: 3.42.5
-  svelte-check: 2.2.5_svelte@3.42.5
+  svelte-check: 2.2.6_svelte@3.42.5
   svelte-preprocess: 4.9.4_svelte@3.42.5+typescript@4.4.3
   svelte2tsx: 0.4.5_svelte@3.42.5+typescript@4.4.3
   tslib: 2.3.1
@@ -3679,22 +3679,22 @@ packages:
       supports-color: 7.2.0
     dev: true
 
-  /svelte-check/2.2.5_svelte@3.42.5:
-    resolution: {integrity: sha512-EstDoqxjqWStWELh7Z0qytqUDl/ikdNEr21dveNc4fUDnhnqO2F2jHEufqoNnC3GfBji3GIUHvoXsp/I5lMbCg==}
+  /svelte-check/2.2.6_svelte@3.42.5:
+    resolution: {integrity: sha512-oJux/afbmcZO+N+ADXB88h6XANLie8Y2rh2qBlhgfkpr2c3t/q/T0w2JWrHqagaDL8zeNwO8a8RVFBkrRox8gg==}
     hasBin: true
     peerDependencies:
       svelte: ^3.24.0
     dependencies:
       chalk: 4.1.2
       chokidar: 3.5.2
-      glob: 7.1.7
+      fast-glob: 3.2.7
       import-fresh: 3.3.0
       minimist: 1.2.5
       sade: 1.7.4
       source-map: 0.7.3
       svelte: 3.42.5
-      svelte-preprocess: 4.8.0_svelte@3.42.5+typescript@4.4.2
-      typescript: 4.4.2
+      svelte-preprocess: 4.9.4_svelte@3.42.5+typescript@4.4.3
+      typescript: 4.4.3
     transitivePeerDependencies:
       - '@babel/core'
       - coffeescript
@@ -3714,55 +3714,6 @@ packages:
       svelte: '>=3.19.0'
     dependencies:
       svelte: 3.42.5
-    dev: true
-
-  /svelte-preprocess/4.8.0_svelte@3.42.5+typescript@4.4.2:
-    resolution: {integrity: sha512-i9Z17cwGlp+kuSSv3kJWdAdAP2L26A5yMzHHdDj8YL+86sN64Yz5/gfjQp3Xb6fiaToo4sB+wTpid/23Gz0yvw==}
-    engines: {node: '>= 9.11.2'}
-    requiresBuild: true
-    peerDependencies:
-      '@babel/core': ^7.10.2
-      coffeescript: ^2.5.1
-      less: ^3.11.3
-      node-sass: '*'
-      postcss: ^7 || ^8
-      postcss-load-config: ^2.1.0 || ^3.0.0
-      pug: ^3.0.0
-      sass: ^1.26.8
-      stylus: ^0.54.7
-      sugarss: ^2.0.0
-      svelte: ^3.23.0
-      typescript: ^3.9.5 || ^4.0.0
-    peerDependenciesMeta:
-      '@babel/core':
-        optional: true
-      coffeescript:
-        optional: true
-      less:
-        optional: true
-      node-sass:
-        optional: true
-      postcss:
-        optional: true
-      postcss-load-config:
-        optional: true
-      pug:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      typescript:
-        optional: true
-    dependencies:
-      '@types/pug': 2.0.5
-      '@types/sass': 1.16.1
-      detect-indent: 6.1.0
-      strip-indent: 3.0.0
-      svelte: 3.42.5
-      typescript: 4.4.2
     dev: true
 
   /svelte-preprocess/4.9.4_svelte@3.42.5+typescript@4.4.3:
@@ -3990,12 +3941,6 @@ packages:
   /type-fest/0.8.1:
     resolution: {integrity: sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==}
     engines: {node: '>=8'}
-    dev: true
-
-  /typescript/4.4.2:
-    resolution: {integrity: sha512-gzP+t5W4hdy4c+68bfcv0t400HVJMMd2+H9B7gae1nQlBzCqvrXX+6GL/b3GAgyTH966pzrZ70/fRjwAtZksSQ==}
-    engines: {node: '>=4.2.0'}
-    hasBin: true
     dev: true
 
   /typescript/4.4.3:
