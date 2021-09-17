@@ -5,7 +5,7 @@ specifiers:
   '@commitlint/config-conventional': 13.1.0
   '@semantic-release/changelog': 5.0.1
   '@semantic-release/git': 9.0.1
-  '@sveltejs/kit': 1.0.0-next.168
+  '@sveltejs/kit': 1.0.0-next.169
   '@typescript-eslint/eslint-plugin': 4.31.1
   '@typescript-eslint/parser': 4.31.1
   cypress: 8.4.0
@@ -34,7 +34,7 @@ devDependencies:
   '@commitlint/config-conventional': 13.1.0
   '@semantic-release/changelog': 5.0.1_semantic-release@17.4.7
   '@semantic-release/git': 9.0.1_semantic-release@17.4.7
-  '@sveltejs/kit': 1.0.0-next.168_svelte@3.42.6
+  '@sveltejs/kit': 1.0.0-next.169_svelte@3.42.6
   '@typescript-eslint/eslint-plugin': 4.31.1_e2d3c88d378335c4183365c112128ce9
   '@typescript-eslint/parser': 4.31.1_eslint@7.32.0+typescript@4.4.3
   cypress: 8.4.0
@@ -538,15 +538,15 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.168_svelte@3.42.6:
-    resolution: {integrity: sha512-BHVqLp3d8BCPD0kuNueoV5YxyfLfgAC9wU6PCbOGIhn1gw4mvpiVbeEn7NKeVkTkl88bu/QtAITLsIx1+4flTA==}
+  /@sveltejs/kit/1.0.0-next.169_svelte@3.42.6:
+    resolution: {integrity: sha512-MtYsQIIB35qVHrEDD7yzZejga/0mOHnvS6qy0zkcpyZxbbDu9/BUTBAGHrCiL2qvajI94eUPSzjWaCbRap809g==}
     engines: {node: ^12.20 || >=14.13}
     hasBin: true
     peerDependencies:
       svelte: ^3.39.0
     dependencies:
       '@sveltejs/vite-plugin-svelte': 1.0.0-next.24_svelte@3.42.6+vite@2.5.7
-      cheap-watch: 1.0.3
+      cheap-watch: 1.0.4
       sade: 1.7.4
       svelte: 3.42.6
       vite: 2.5.7
@@ -1009,8 +1009,8 @@ packages:
       supports-color: 7.2.0
     dev: true
 
-  /cheap-watch/1.0.3:
-    resolution: {integrity: sha512-xC5CruMhLzjPwJ5ecUxGu1uGmwJQykUhqd2QrCrYbwvsFYdRyviu6jG9+pccwDXJR/OpmOTOJ9yLFunVgQu9wg==}
+  /cheap-watch/1.0.4:
+    resolution: {integrity: sha512-QR/9FrtRL5fjfUJBhAKCdi0lSRQ3rVRRum3GF9wDKp2TJbEIMGhUEr2yU8lORzm9Isdjx7/k9S0DFDx+z5VGtw==}
     engines: {node: '>=8'}
     dev: true
 
