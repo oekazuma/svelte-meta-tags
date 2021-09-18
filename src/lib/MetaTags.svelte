@@ -12,7 +12,6 @@
   export let canonical = undefined;
   export let additionalMetaTags = undefined;
   export let additionalLinkTags = undefined;
-  export let jsonLd = undefined;
 
   let robotsParams = '';
   if (robotsProps) {
@@ -36,12 +35,6 @@
     }${maxVideoPreview ? `,max-video-preview:${maxVideoPreview}` : ''}${
       notranslate ? ',notranslate' : ''
     }`;
-  }
-
-  if (typeof jsonLd !== 'undefined') {
-    console.warn(
-      '[WARNING]: JSON-LD will soon be completely separated from the <MetaTags/> component and will no longer work. Please import and use `JsonLd`.'
-    );
   }
 </script>
 
@@ -271,11 +264,5 @@
     {#each additionalLinkTags as tag}
       <link {...tag} />
     {/each}
-  {/if}
-
-  {#if jsonLd}
-    {@html `<script type="application/ld+json">${
-      JSON.stringify({ '@context': 'https://schema.org', ...jsonLd }) + '<'
-    }/script>`}
   {/if}
 </svelte:head>

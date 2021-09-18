@@ -146,7 +146,6 @@ export interface MetaTagsProps {
   openGraph?: OpenGraph;
   additionalMetaTags?: ReadonlyArray<MetaTag>;
   additionalLinkTags?: ReadonlyArray<LinkTag>;
-  jsonLd?: Thing | WithContext<Thing>;
 }
 
 export interface JsonLdProps {

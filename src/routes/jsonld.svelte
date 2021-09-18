@@ -1,11 +1,36 @@
 <script>
-  import MetaTags from 'svelte-meta-tags';
+  import { MetaTags, JsonLd } from 'svelte-meta-tags';
 </script>
 
-<MetaTags
-  title="OLD JSON-LD Page Title | Svelte Meta Tags"
-  description="Description of OLD JSON-LD page"
-  jsonLd={{
+<MetaTags title="JSON-LD Page Title | Svelte Meta Tags" description="Description of JSON-LD page" />
+
+<JsonLd
+  schema={{
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Books',
+        item: 'https://example.com/books'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Science Fiction',
+        item: 'https://example.com/books/sciencefiction'
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'Award Winners'
+      }
+    ]
+  }}
+/>
+
+<JsonLd
+  schema={{
     '@type': 'NewsArticle',
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -34,4 +59,4 @@
   }}
 />
 
-<h1>OLD JSON-LD SEO</h1>
+<h1>JSON-LD SEO</h1>

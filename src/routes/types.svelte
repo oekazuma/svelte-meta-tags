@@ -1,5 +1,5 @@
 <script lang="ts">
-  import MetaTags, { JsonLd, MetaTagsProps, JsonLdProps } from 'svelte-meta-tags';
+  import { MetaTags, JsonLd, MetaTagsProps, JsonLdProps } from 'svelte-meta-tags';
 
   const metatags: MetaTagsProps = {
     title: 'Types Page Title | Svelte Meta Tags',
