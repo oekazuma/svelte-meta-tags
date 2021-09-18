@@ -1,3 +1,16 @@
+# [2.0.0](https://github.com/oekazuma/svelte-meta-tags/compare/v1.2.2...v2.0.0) (2021-09-18)
+
+### chore
+
+- change name the MetaTags export ([d40b535](https://github.com/oekazuma/svelte-meta-tags/commit/d40b535249be8b629ba1034358865aa08993927c))
+- remove jsonLd property from MetaTags component ([a05ae2b](https://github.com/oekazuma/svelte-meta-tags/commit/a05ae2b72a8605253a50249e8f76ee76cbe1411d))
+
+### BREAKING CHANGES
+
+- Change the way import is written.
+- Remove jsonLd parameter from MetaTags component.
+  Please use the JsonLd component from now on.
+
 ## [1.2.2](https://github.com/oekazuma/svelte-meta-tags/compare/v1.2.1...v1.2.2) (2021-09-07)
 
 ### Bug Fixes
