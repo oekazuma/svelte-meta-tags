@@ -8,7 +8,7 @@ specifiers:
   '@sveltejs/kit': 1.0.0-next.169
   '@typescript-eslint/eslint-plugin': 4.31.1
   '@typescript-eslint/parser': 4.31.1
-  cypress: 8.4.0
+  cypress: 8.4.1
   eslint: 7.32.0
   eslint-config-prettier: 8.3.0
   eslint-plugin-cypress: 2.12.1
@@ -37,7 +37,7 @@ devDependencies:
   '@sveltejs/kit': 1.0.0-next.169_svelte@3.42.6
   '@typescript-eslint/eslint-plugin': 4.31.1_e2d3c88d378335c4183365c112128ce9
   '@typescript-eslint/parser': 4.31.1_eslint@7.32.0+typescript@4.4.3
-  cypress: 8.4.0
+  cypress: 8.4.1
   eslint: 7.32.0
   eslint-config-prettier: 8.3.0_eslint@7.32.0
   eslint-plugin-cypress: 2.12.1_eslint@7.32.0
@@ -1238,8 +1238,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /cypress/8.4.0:
-    resolution: {integrity: sha512-RtVgGFR06ikyMaq/VqapeqOjGaIA42PpK7F0qe1MCiFArfUuJECsLmeYaOA+1TlmNUgJNMSF5fWKkZIJr5Uc7w==}
+  /cypress/8.4.1:
+    resolution: {integrity: sha512-itJXq0Vx3sXCUrDyBi2IUrkxVu/gTTp1VhjB5tzGgkeCR8Ae+/T8WV63rsZ7fS8Tpq7LPPXiyoM/sEdOX7cR6A==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     requiresBuild: true
