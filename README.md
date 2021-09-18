@@ -57,7 +57,7 @@ yarn add svelte-meta-tags
 
 ```svelte
 <script>
-  import MetaTags from 'svelte-meta-tags';
+  import { MetaTags } from 'svelte-meta-tags';
 </script>
 
 <MetaTags title="Example Title" description="Example Description." />
@@ -67,7 +67,7 @@ yarn add svelte-meta-tags
 
 ```svelte
 <script>
-  import MetaTags from 'svelte-meta-tags';
+  import { MetaTags } from 'svelte-meta-tags';
 </script>
 
 <MetaTags
@@ -157,7 +157,7 @@ Example:
 
 ```svelte
 <script>
-  import MetaTags from 'svelte-meta-tags';
+  import { MetaTags } from 'svelte-meta-tags';
 </script>
 
 <MetaTags
@@ -333,7 +333,7 @@ Svelte Meta Tags currently supports:
 
 ```svelte
 <script>
-  import MetaTags from 'svelte-meta-tags';
+  import { MetaTags } from 'svelte-meta-tags';
 </script>
 
 <MetaTags
@@ -366,7 +366,7 @@ Full info on [http://ogp.me/](http://ogp.me/#type_video)
 
 ```svelte
 <script>
-  import MetaTags from 'svelte-meta-tags';
+  import { MetaTags } from 'svelte-meta-tags';
 </script>
 
 <MetaTags
@@ -409,7 +409,7 @@ Full info on [http://ogp.me/](http://ogp.me/#type_video)
 
 ```svelte
 <script>
-  import MetaTags from 'svelte-meta-tags';
+  import { MetaTags } from 'svelte-meta-tags';
 </script>
 
 <MetaTags
@@ -445,7 +445,7 @@ Full info on [http://ogp.me/](http://ogp.me/#type_video)
 
 ```svelte
 <script>
-  import MetaTags from 'svelte-meta-tags';
+  import { MetaTags } from 'svelte-meta-tags';
 </script>
 
 <MetaTags
@@ -479,7 +479,7 @@ Full info on [http://ogp.me/](http://ogp.me/#type_video)
 
 ```svelte
 <script>
-  import MetaTags from 'svelte-meta-tags';
+  import { MetaTags } from 'svelte-meta-tags';
 </script>
 
 <MetaTags
@@ -723,7 +723,7 @@ You can import and use the types `MetaTagsProps` and `JsonLdProps`.
 
 ```svelte
 <script lang="ts">
-  import MetaTags, { JsonLd, MetaTagsProps, JsonLdProps } from 'svelte-meta-tags';
+  import { MetaTags, JsonLd, MetaTagsProps, JsonLdProps } from 'svelte-meta-tags';
 
   const metatags: MetaTagsProps = {
     title: 'Types Page Title | Svelte Meta Tags',

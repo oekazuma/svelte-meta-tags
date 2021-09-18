@@ -1,5 +1,5 @@
 <script>
-  import MetaTags, { JsonLd } from 'svelte-meta-tags';
+  import { MetaTags, JsonLd } from 'svelte-meta-tags';
 </script>
 
 <MetaTags title="JSON-LD Page Title | Svelte Meta Tags" description="Description of JSON-LD page" />
