@@ -496,60 +496,14 @@ describe('Svelte Meta Tags', () => {
     cy.get('head meta[name="twitter:card"]').should('have.attr', 'content', 'summary_large_image');
   });
 
-  it('OLD JSON-LD SEO loads correctly', () => {
-    cy.visit('/oldJsonld');
-    cy.get('h1').should('contain', 'OLD JSON-LD SEO');
-    cy.get('head title').should('contain', 'OLD JSON-LD Page Title | Svelte Meta Tags');
+  it('JSON-LD SEO loads correctly', () => {
+    cy.visit('/jsonld');
+    cy.get('h1').should('contain', 'JSON-LD SEO');
+    cy.get('head title').should('contain', 'JSON-LD Page Title | Svelte Meta Tags');
     cy.get('head meta[name="description"]').should(
       'have.attr',
       'content',
-      'Description of OLD JSON-LD page'
-    );
-    cy.get('head meta[name="robots"]').should('have.attr', 'content', 'index,follow');
-    cy.get('head meta[name="googlebot"]').should('have.attr', 'content', 'index,follow');
-    cy.get('head script[type="application/ld+json"]')
-      .should('have.length', 1)
-      .then((tags) => {
-        const newsArticleJsonLD = JSON.parse(tags[0].innerHTML);
-        expect(newsArticleJsonLD).to.deep.equal({
-          '@context': 'https://schema.org',
-          '@type': 'NewsArticle',
-          mainEntityOfPage: {
-            '@type': 'WebPage',
-            '@id': 'https://google.com/article'
-          },
-          headline: 'Article headline',
-          image: [
-            'https://example.com/photos/1x1/photo.jpg',
-            'https://example.com/photos/4x3/photo.jpg',
-            'https://example.com/photos/16x9/photo.jpg'
-          ],
-          datePublished: '2015-02-05T08:00:00+08:00',
-          dateModified: '2015-02-05T09:20:00+08:00',
-          author: {
-            '@type': 'Person',
-            name: 'John Doe'
-          },
-          publisher: {
-            '@type': 'Organization',
-            name: 'Google',
-            logo: {
-              '@type': 'ImageObject',
-              url: 'https://google.com/logo.jpg'
-            }
-          }
-        });
-      });
-  });
-
-  it('NEW JSON-LD SEO loads correctly', () => {
-    cy.visit('/newJsonld');
-    cy.get('h1').should('contain', 'NEW JSON-LD SEO');
-    cy.get('head title').should('contain', 'NEW JSON-LD Page Title | Svelte Meta Tags');
-    cy.get('head meta[name="description"]').should(
-      'have.attr',
-      'content',
-      'Description of NEW JSON-LD page'
+      'Description of JSON-LD page'
     );
     cy.get('head meta[name="robots"]').should('have.attr', 'content', 'index,follow');
     cy.get('head meta[name="googlebot"]').should('have.attr', 'content', 'index,follow');
@@ -580,8 +534,8 @@ describe('Svelte Meta Tags', () => {
             }
           ]
         });
-        const newsArticleJsonLD = JSON.parse(tags[1].innerHTML);
-        expect(newsArticleJsonLD).to.deep.equal({
+        const articleJsonLD = JSON.parse(tags[1].innerHTML);
+        expect(articleJsonLD).to.deep.equal({
           '@context': 'https://schema.org',
           '@type': 'NewsArticle',
           mainEntityOfPage: {

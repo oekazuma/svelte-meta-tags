@@ -148,7 +148,6 @@ yarn add svelte-meta-tags
 | `openGraph.article.authors`        | string[]                | Writers of the article.                                                                                                                |
 | `openGraph.article.section`        | string                  | A high-level section name. E.g. Technology                                                                                             |
 | `openGraph.article.tags`           | string[]                | Tag words associated with this article.                                                                                                |
-| `jsonLd`                           | object                  | Data in `ld+json` format. **NOTE: It will stop working in v2.0.0!** [Details](#json-ld-warning)                                        |
 
 #### robotsProps
 
@@ -514,8 +513,6 @@ JSON-LD allow for more customized and rich representation for example in search 
 To discover all the different content types JSON-LD offers check out: https://developers.google.com/search/docs/guides/search-gallery
 
 It is also possible to use multiple `<JsonLd />` components in a single page.
-
-**NOTE: In v2.0.0, JSON-LD will be completely separated from the `<MetaTags/>` component. Please use the `<JsonLd/>` component from now on!**
 
 ### Using `schema-dts`
 
