@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@commitlint/cli': 13.1.0
   '@commitlint/config-conventional': 13.1.0
-  '@semantic-release/changelog': 5.0.1
+  '@semantic-release/changelog': 6.0.0
   '@semantic-release/git': 10.0.0
   '@sveltejs/kit': 1.0.0-next.170
   '@typescript-eslint/eslint-plugin': 4.31.2
@@ -32,7 +32,7 @@ dependencies:
 devDependencies:
   '@commitlint/cli': 13.1.0
   '@commitlint/config-conventional': 13.1.0
-  '@semantic-release/changelog': 5.0.1_semantic-release@18.0.0
+  '@semantic-release/changelog': 6.0.0_semantic-release@18.0.0
   '@semantic-release/git': 10.0.0_semantic-release@18.0.0
   '@sveltejs/kit': 1.0.0-next.170_svelte@3.42.6
   '@typescript-eslint/eslint-plugin': 4.31.2_3815fab247b4312be6d1f55eb1f81298
@@ -414,11 +414,11 @@ packages:
       picomatch: 2.3.0
     dev: true
 
-  /@semantic-release/changelog/5.0.1_semantic-release@18.0.0:
-    resolution: {integrity: sha512-unvqHo5jk4dvAf2nZ3aw4imrlwQ2I50eVVvq9D47Qc3R+keNqepx1vDYwkjF8guFXnOYaYcR28yrZWno1hFbiw==}
-    engines: {node: '>=10.18'}
+  /@semantic-release/changelog/6.0.0_semantic-release@18.0.0:
+    resolution: {integrity: sha512-X01Me+QVMykvILockNGlXXl3dgr1QqpbRQsknQoOJQCXQGXoqY3DNQ3rBQuI8/SUK7RZwYLctg0NbPNArlo6eQ==}
+    engines: {node: '>=14.17'}
     peerDependencies:
-      semantic-release: '>=15.8.0 <18.0.0'
+      semantic-release: '>=18.0.0'
     dependencies:
       '@semantic-release/error': 2.2.0
       aggregate-error: 3.1.0
