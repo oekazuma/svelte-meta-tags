@@ -21,7 +21,7 @@ specifiers:
   semantic-release: 18.0.0
   svelte: 3.43.1
   svelte-check: 2.2.6
-  svelte-preprocess: 4.9.7
+  svelte-preprocess: 4.9.8
   svelte2tsx: 0.4.7
   tslib: 2.3.1
   typescript: 4.4.3
@@ -49,7 +49,7 @@ devDependencies:
   semantic-release: 18.0.0
   svelte: 3.43.1
   svelte-check: 2.2.6_svelte@3.43.1
-  svelte-preprocess: 4.9.7_svelte@3.43.1+typescript@4.4.3
+  svelte-preprocess: 4.9.8_svelte@3.43.1+typescript@4.4.3
   svelte2tsx: 0.4.7_svelte@3.43.1+typescript@4.4.3
   tslib: 2.3.1
   typescript: 4.4.3
@@ -3992,8 +3992,8 @@ packages:
       typescript: 4.4.3
     dev: true
 
-  /svelte-preprocess/4.9.7_svelte@3.43.1+typescript@4.4.3:
-    resolution: {integrity: sha512-jPiizMqGTp4X3Hv00qTPbGH2r5khuqNazzlqSXZNJKo44nLVQYMyDYM1rOq3MRrzCs5Xk3J48k67u8c6fGBsvQ==}
+  /svelte-preprocess/4.9.8_svelte@3.43.1+typescript@4.4.3:
+    resolution: {integrity: sha512-EQS/oRZzMtYdAprppZxY3HcysKh11w54MgA63ybtL+TAZ4hVqYOnhw41JVJjWN9dhPnNjjLzvbZ2tMhTsla1Og==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
     peerDependencies:
