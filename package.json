@@ -58,7 +58,7 @@
     "prettier-plugin-svelte": "2.4.0",
     "semantic-release": "18.0.0",
     "svelte": "3.43.1",
-    "svelte-check": "2.2.6",
+    "svelte-check": "2.2.7",
     "svelte-preprocess": "4.9.8",
     "svelte2tsx": "0.4.7",
     "tslib": "2.3.1",
