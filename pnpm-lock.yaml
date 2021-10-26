@@ -14,7 +14,7 @@ specifiers:
   eslint-plugin-cypress: 2.12.1
   eslint-plugin-svelte3: 3.2.1
   husky: 7.0.4
-  lint-staged: 11.2.5
+  lint-staged: 11.2.6
   prettier: 2.4.1
   prettier-plugin-svelte: 2.4.0
   schema-dts: 1.0.0
@@ -43,7 +43,7 @@ devDependencies:
   eslint-plugin-cypress: 2.12.1_eslint@8.1.0
   eslint-plugin-svelte3: 3.2.1_eslint@8.1.0+svelte@3.44.0
   husky: 7.0.4
-  lint-staged: 11.2.5
+  lint-staged: 11.2.6
   prettier: 2.4.1
   prettier-plugin-svelte: 2.4.0_prettier@2.4.1+svelte@3.44.0
   semantic-release: 18.0.0
@@ -2586,27 +2586,21 @@ packages:
       type-check: 0.4.0
     dev: true
 
-  /lilconfig/2.0.3:
-    resolution: {integrity: sha512-EHKqr/+ZvdKCifpNrJCKxBTgk5XupZA3y/aCPY9mxfgBzmgh93Mt/WqjjQ38oMxXuvDokaKiM3lAgvSH2sjtHg==}
-    engines: {node: '>=10'}
-    dev: true
-
   /lines-and-columns/1.1.6:
     resolution: {integrity: sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=}
     dev: true
 
-  /lint-staged/11.2.5:
-    resolution: {integrity: sha512-bD6FeKyRtMA3jXcNg/J0fuJmwDN8yaoTdqliFcEl8pFTHiP9NYwQCeZwBoZ8FEXx4lj/pli3oFehr86XYvMNEA==}
+  /lint-staged/11.2.6:
+    resolution: {integrity: sha512-Vti55pUnpvPE0J9936lKl0ngVeTdSZpEdTNhASbkaWX7J5R9OEifo1INBGQuGW4zmy6OG+TcWPJ3m5yuy5Q8Tg==}
     hasBin: true
     dependencies:
       cli-truncate: 2.1.0
       colorette: 1.4.0
       commander: 8.2.0
+      cosmiconfig: 7.0.1
       debug: 4.3.2_supports-color@8.1.1
       enquirer: 2.3.6
       execa: 5.1.1
-      js-yaml: 4.1.0
-      lilconfig: 2.0.3
       listr2: 3.12.2_enquirer@2.3.6
       micromatch: 4.0.4
       normalize-path: 3.0.0
