@@ -1,5 +1,5 @@
 <script>
-  export let title = undefined;
+  export let title = '';
   export let noindex = false;
   export let nofollow = false;
   export let robotsProps = undefined;
@@ -39,9 +39,7 @@
 </script>
 
 <svelte:head>
-  {#if title}
     <title>{title}</title>
-  {/if}
 
   <meta
     name="robots"
