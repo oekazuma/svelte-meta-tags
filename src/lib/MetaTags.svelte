@@ -39,7 +39,7 @@
 </script>
 
 <svelte:head>
-    <title>{title}</title>
+  <title>{title}</title>
 
   <meta
     name="robots"
