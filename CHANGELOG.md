@@ -1,3 +1,9 @@
+# [2.1.0](https://github.com/oekazuma/svelte-meta-tags/compare/v2.0.0...v2.1.0) (2021-11-04)
+
+### Features
+
+- allow title to be dynamically changed ([b9acefb](https://github.com/oekazuma/svelte-meta-tags/commit/b9acefbea7c64b5434837ffecc17423dcf0ce2d3))
+
 # [2.0.0](https://github.com/oekazuma/svelte-meta-tags/compare/v1.2.2...v2.0.0) (2021-09-18)
 
 ### chore
