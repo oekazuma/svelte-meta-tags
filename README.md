@@ -16,6 +16,8 @@ This library is inspired by [next-seo](https://github.com/garmeeh/next-seo)
 - [Installing](#-installing)
 - [Usage](#-usage)
 - [Properties](#properties)
+  - [Twitter](#twitter)
+  - [Facebook](#facebook)
   - [robotsProps](#robotsprops)
   - [Alternate](#alternate)
   - [Additional Meta Tags](#additional-meta-tags)
@@ -148,6 +150,20 @@ yarn add svelte-meta-tags
 | `openGraph.article.authors`        | string[]                | Writers of the article.                                                                                                                |
 | `openGraph.article.section`        | string                  | A high-level section name. E.g. Technology                                                                                             |
 | `openGraph.article.tags`           | string[]                | Tag words associated with this article.                                                                                                |
+
+#### Twitter
+
+Twitter will read the `og:title`, `og:image` and `og:description` tags for their card, this is why `svelte-meta-tags` omits `twitter:title`, `twitter:image` and `twitter:description` so not to duplicate.
+
+#### Facebook
+
+```js
+facebook={{
+  appId: '1234567890',
+}}
+```
+
+Add this to your SEO config to include the fb:app_id meta if you need to enable Facebook insights for your site. Information regarding this can be found in facebook's [documentation](https://developers.facebook.com/docs/sharing/webmasters/)
 
 #### robotsProps
 
