@@ -16,7 +16,7 @@ specifiers:
   husky: 7.0.4
   lint-staged: 12.0.2
   prettier: 2.4.1
-  prettier-plugin-svelte: 2.4.0
+  prettier-plugin-svelte: 2.5.0
   schema-dts: 1.0.0
   semantic-release: 18.0.0
   svelte: 3.44.1
@@ -45,7 +45,7 @@ devDependencies:
   husky: 7.0.4
   lint-staged: 12.0.2
   prettier: 2.4.1
-  prettier-plugin-svelte: 2.4.0_prettier@2.4.1+svelte@3.44.1
+  prettier-plugin-svelte: 2.5.0_prettier@2.4.1+svelte@3.44.1
   semantic-release: 18.0.0
   svelte: 3.44.1
   svelte-check: 2.2.7_svelte@3.44.1
@@ -3292,8 +3292,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier-plugin-svelte/2.4.0_prettier@2.4.1+svelte@3.44.1:
-    resolution: {integrity: sha512-JwJ9bOz4XHLQtiLnX4mTSSDUdhu12WH8sTwy/XTDCSyPlah6IcV7NWeYBZscPEcceu2YnW8Y9sJCP40Z2UH9GA==}
+  /prettier-plugin-svelte/2.5.0_prettier@2.4.1+svelte@3.44.1:
+    resolution: {integrity: sha512-+iHY2uGChOngrgKielJUnqo74gIL/EO5oeWm8MftFWjEi213lq9QYTOwm1pv4lI1nA61tdgf80CF2i5zMcu1kw==}
     peerDependencies:
       prettier: ^1.16.4 || ^2.0.0
       svelte: ^3.2.0
