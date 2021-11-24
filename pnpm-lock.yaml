@@ -18,7 +18,7 @@ specifiers:
   prettier: 2.4.1
   prettier-plugin-svelte: 2.5.0
   schema-dts: 1.0.0
-  semantic-release: 18.0.0
+  semantic-release: 18.0.1
   svelte: 3.44.2
   svelte-check: 2.2.10
   svelte-preprocess: 4.9.8
@@ -32,8 +32,8 @@ dependencies:
 devDependencies:
   '@commitlint/cli': 15.0.0
   '@commitlint/config-conventional': 15.0.0
-  '@semantic-release/changelog': 6.0.1_semantic-release@18.0.0
-  '@semantic-release/git': 10.0.1_semantic-release@18.0.0
+  '@semantic-release/changelog': 6.0.1_semantic-release@18.0.1
+  '@semantic-release/git': 10.0.1_semantic-release@18.0.1
   '@sveltejs/kit': 1.0.0-next.198_svelte@3.44.2
   '@typescript-eslint/eslint-plugin': 5.4.0_8fbd82ef37e23da98dfca9805cf945cd
   '@typescript-eslint/parser': 5.4.0_eslint@8.3.0+typescript@4.4.4
@@ -46,7 +46,7 @@ devDependencies:
   lint-staged: 12.1.2
   prettier: 2.4.1
   prettier-plugin-svelte: 2.5.0_prettier@2.4.1+svelte@3.44.2
-  semantic-release: 18.0.0
+  semantic-release: 18.0.1
   svelte: 3.44.2
   svelte-check: 2.2.10_svelte@3.44.2
   svelte-preprocess: 4.9.8_svelte@3.44.2+typescript@4.4.4
@@ -165,7 +165,7 @@ packages:
     dependencies:
       '@commitlint/types': 15.0.0
       conventional-changelog-angular: 5.0.12
-      conventional-commits-parser: 3.2.2
+      conventional-commits-parser: 3.2.3
     dev: true
 
   /@commitlint/read/15.0.0:
@@ -425,7 +425,7 @@ packages:
       picomatch: 2.3.0
     dev: true
 
-  /@semantic-release/changelog/6.0.1_semantic-release@18.0.0:
+  /@semantic-release/changelog/6.0.1_semantic-release@18.0.1:
     resolution: {integrity: sha512-FT+tAGdWHr0RCM3EpWegWnvXJ05LQtBkQUaQRIExONoXjVjLuOILNm4DEKNaV+GAQyJjbLRVs57ti//GypH6PA==}
     engines: {node: '>=14.17'}
     peerDependencies:
@@ -435,23 +435,23 @@ packages:
       aggregate-error: 3.1.0
       fs-extra: 9.1.0
       lodash: 4.17.21
-      semantic-release: 18.0.0
+      semantic-release: 18.0.1
     dev: true
 
-  /@semantic-release/commit-analyzer/9.0.1_semantic-release@18.0.0:
-    resolution: {integrity: sha512-ncNsnrLmiykhgNZUXNvhhAjNN0me7VGIb0X5hu3ogyi5DDPapjGAHdEffO5vi+HX1BFWLRD/Ximx5PjGAKjAqQ==}
+  /@semantic-release/commit-analyzer/9.0.2_semantic-release@18.0.1:
+    resolution: {integrity: sha512-E+dr6L+xIHZkX4zNMe6Rnwg4YQrWNXK+rNsvwOPpdFppvZO1olE2fIgWhv89TkQErygevbjsZFSIxp+u6w2e5g==}
     engines: {node: '>=14.17'}
     peerDependencies:
       semantic-release: '>=18.0.0-beta.1'
     dependencies:
       conventional-changelog-angular: 5.0.12
       conventional-commits-filter: 2.0.7
-      conventional-commits-parser: 3.2.2
+      conventional-commits-parser: 3.2.3
       debug: 4.3.2
       import-from: 4.0.0
       lodash: 4.17.21
       micromatch: 4.0.4
-      semantic-release: 18.0.0
+      semantic-release: 18.0.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -465,7 +465,7 @@ packages:
     engines: {node: '>=14.17'}
     dev: true
 
-  /@semantic-release/git/10.0.1_semantic-release@18.0.0:
+  /@semantic-release/git/10.0.1_semantic-release@18.0.1:
     resolution: {integrity: sha512-eWrx5KguUcU2wUPaO6sfvZI0wPafUKAMNC18aXY4EnNcrZL86dEmpNVnC9uMpGZkmZJ9EfCVJBQx4pV4EMGT1w==}
     engines: {node: '>=14.17'}
     peerDependencies:
@@ -479,12 +479,12 @@ packages:
       lodash: 4.17.21
       micromatch: 4.0.4
       p-reduce: 2.1.0
-      semantic-release: 18.0.0
+      semantic-release: 18.0.1
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@semantic-release/github/8.0.0_semantic-release@18.0.0:
+  /@semantic-release/github/8.0.0_semantic-release@18.0.1:
     resolution: {integrity: sha512-TSDlqWeUo7fWlbp6SAMu0T/980s3/SC155ua4rhFj89hC2MYVXDI8o7Mgc5Qw21phQb6+PxHIe5DbFjg9CbeNQ==}
     engines: {node: '>=14.17'}
     peerDependencies:
@@ -505,13 +505,13 @@ packages:
       mime: 2.5.2
       p-filter: 2.1.0
       p-retry: 4.6.1
-      semantic-release: 18.0.0
+      semantic-release: 18.0.1
       url-join: 4.0.1
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@semantic-release/npm/8.0.0_semantic-release@18.0.0:
+  /@semantic-release/npm/8.0.0_semantic-release@18.0.1:
     resolution: {integrity: sha512-MAlynjIaN5XwBEzsq3xbZ8I+riD9zhLvpPqGCPaZ0j/ySbR0Sg3YG1MYv03fC1aygPFFC5RwefMxKids9llvDg==}
     engines: {node: '>=14.17'}
     peerDependencies:
@@ -528,12 +528,12 @@ packages:
       rc: 1.2.8
       read-pkg: 5.2.0
       registry-auth-token: 4.2.1
-      semantic-release: 18.0.0
+      semantic-release: 18.0.1
       semver: 7.3.5
       tempy: 1.0.1
     dev: true
 
-  /@semantic-release/release-notes-generator/10.0.2_semantic-release@18.0.0:
+  /@semantic-release/release-notes-generator/10.0.2_semantic-release@18.0.1:
     resolution: {integrity: sha512-I4eavIcDan8fNQHskZ2cbWkFMimvgxNkqR2UfuYNwYBgswEl3SJsN8XMf9gZWObt6nXDc2QfDwhjy8DjTZqS3w==}
     engines: {node: '>=14.17'}
     peerDependencies:
@@ -542,14 +542,14 @@ packages:
       conventional-changelog-angular: 5.0.12
       conventional-changelog-writer: 5.0.0
       conventional-commits-filter: 2.0.7
-      conventional-commits-parser: 3.2.2
+      conventional-commits-parser: 3.2.3
       debug: 4.3.2
       get-stream: 6.0.1
       import-from: 4.0.0
       into-stream: 6.0.0
       lodash: 4.17.21
       read-pkg-up: 7.0.1
-      semantic-release: 18.0.0
+      semantic-release: 18.0.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1234,8 +1234,8 @@ packages:
       modify-values: 1.0.1
     dev: true
 
-  /conventional-commits-parser/3.2.2:
-    resolution: {integrity: sha512-Jr9KAKgqAkwXMRHjxDwO/zOCDKod1XdAESHAGuJX38iZ7ZzVti/tvVoysO0suMsdAObp9NQ2rHSsSbnAqZ5f5g==}
+  /conventional-commits-parser/3.2.3:
+    resolution: {integrity: sha512-YyRDR7On9H07ICFpRm/igcdjIqebXbvf4Cff+Pf0BrBys1i1EOzx9iFXNlAbdrLAR8jf7bkUYkDAr8pEy0q4Pw==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -3567,16 +3567,16 @@ packages:
       typescript: 4.4.4
     dev: false
 
-  /semantic-release/18.0.0:
-    resolution: {integrity: sha512-/Szyhq5DTZCYry/aZqpBbK/kqv10ydn6oiiaYOXtPgDbAIkqidZcQOm+mfYFJ0sBTUaOYCKMlcPMgJycP7jDYQ==}
+  /semantic-release/18.0.1:
+    resolution: {integrity: sha512-xTdKCaEnCzHr+Fqyhg/5I8P9pvY9z7WHa8TFCYIwcdPbuzAtQShOTzw3VNPsqBT+Yq1kFyBQFBKBYkGOlqWmfA==}
     engines: {node: '>=14.17'}
     hasBin: true
     dependencies:
-      '@semantic-release/commit-analyzer': 9.0.1_semantic-release@18.0.0
+      '@semantic-release/commit-analyzer': 9.0.2_semantic-release@18.0.1
       '@semantic-release/error': 3.0.0
-      '@semantic-release/github': 8.0.0_semantic-release@18.0.0
-      '@semantic-release/npm': 8.0.0_semantic-release@18.0.0
-      '@semantic-release/release-notes-generator': 10.0.2_semantic-release@18.0.0
+      '@semantic-release/github': 8.0.0_semantic-release@18.0.1
+      '@semantic-release/npm': 8.0.0_semantic-release@18.0.1
+      '@semantic-release/release-notes-generator': 10.0.2_semantic-release@18.0.1
       aggregate-error: 3.1.0
       cosmiconfig: 7.0.1
       debug: 4.3.2
