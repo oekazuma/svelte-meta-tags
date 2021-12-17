@@ -103,5 +103,10 @@
     "branches": [
       "main"
     ]
+  },
+  "engines": {
+    "npm": "forbidden, use pnpm",
+    "pnpm": ">=6",
+    "yarn": "forbidden, use pnpm"
   }
 }
