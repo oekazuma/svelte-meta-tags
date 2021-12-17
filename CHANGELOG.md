@@ -1,3 +1,9 @@
+# [2.2.0](https://github.com/oekazuma/svelte-meta-tags/compare/v2.1.0...v2.2.0) (2021-12-17)
+
+### Features
+
+- improved Twitter's CardType type definition ([13b11fd](https://github.com/oekazuma/svelte-meta-tags/commit/13b11fd2e9f6625e1cd0802e825f312f37988666))
+
 # [2.1.0](https://github.com/oekazuma/svelte-meta-tags/compare/v2.0.0...v2.1.0) (2021-11-04)
 
 ### Features
