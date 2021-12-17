@@ -21,7 +21,7 @@ export interface AdditionalRobotsProps {
   notranslate?: boolean;
 }
 export interface Twitter {
-  cardType?: string;
+  cardType?: 'summary' | 'summary_large_image' | 'app' | 'player';
   site?: string;
   handle?: string;
 }
