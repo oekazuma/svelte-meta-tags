@@ -149,5 +149,5 @@ export interface MetaTagsProps {
 }
 
 export interface JsonLdProps {
-  schema: Thing | WithContext<Thing>;
+  schema?: Thing | WithContext<Thing>;
 }
