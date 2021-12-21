@@ -1,3 +1,9 @@
+## [2.2.1](https://github.com/oekazuma/svelte-meta-tags/compare/v2.2.0...v2.2.1) (2021-12-21)
+
+### Bug Fixes
+
+- make the schema property of jsonLdProps not mandatory ([15f00f9](https://github.com/oekazuma/svelte-meta-tags/commit/15f00f9940fdcb8ac9a8c8f6ed51782bd5789ebd))
+
 # [2.2.0](https://github.com/oekazuma/svelte-meta-tags/compare/v2.1.0...v2.2.0) (2021-12-17)
 
 ### Features
