@@ -1,3 +1,9 @@
+## [2.2.2](https://github.com/oekazuma/svelte-meta-tags/compare/v2.2.1...v2.2.2) (2021-12-26)
+
+### Bug Fixes
+
+- revert changes so that npm and yarn can also be used for installation ([f536977](https://github.com/oekazuma/svelte-meta-tags/commit/f536977550948f675f4207b80dc5aca96cc535a0))
+
 ## [2.2.1](https://github.com/oekazuma/svelte-meta-tags/compare/v2.2.0...v2.2.1) (2021-12-21)
 
 ### Bug Fixes
