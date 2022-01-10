@@ -57,6 +57,12 @@ or
 yarn add svelte-meta-tags
 ```
 
+or
+
+```shell
+pnpm add svelte-meta-tags
+```
+
 ### 🚀 Usage
 
 **Example with just title and description:**
