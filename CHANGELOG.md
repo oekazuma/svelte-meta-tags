@@ -1,3 +1,9 @@
+## [2.2.3](https://github.com/oekazuma/svelte-meta-tags/compare/v2.2.2...v2.2.3) (2022-01-14)
+
+### Bug Fixes
+
+- fix path to type definitions ([7c49639](https://github.com/oekazuma/svelte-meta-tags/commit/7c49639c1f08fe6ee6ea3e036c9982b1c1979c77))
+
 ## [2.2.2](https://github.com/oekazuma/svelte-meta-tags/compare/v2.2.1...v2.2.2) (2021-12-26)
 
 ### Bug Fixes
