@@ -4,10 +4,6 @@
   "description": "Svelte Meta Tags is a plugin that makes managing your SEO easier in Svelte projects.",
   "license": "MIT",
   "type": "module",
-  "svelte": "index.js",
-  "main": "index.js",
-  "module": "index.js",
-  "types": "index.d.ts",
   "keywords": [
     "svelte",
     "svelteKit",
