@@ -20,7 +20,7 @@ specifiers:
   schema-dts: 1.0.0
   semantic-release: 18.0.1
   svelte: 3.46.1
-  svelte-check: 2.2.12
+  svelte-check: 2.3.0
   svelte-preprocess: 4.10.1
   svelte2tsx: 0.4.13
   tslib: 2.3.1
@@ -48,7 +48,7 @@ devDependencies:
   prettier-plugin-svelte: 2.5.1_prettier@2.5.1+svelte@3.46.1
   semantic-release: 18.0.1
   svelte: 3.46.1
-  svelte-check: 2.2.12_svelte@3.46.1
+  svelte-check: 2.3.0_svelte@3.46.1
   svelte-preprocess: 4.10.1_svelte@3.46.1+typescript@4.5.4
   svelte2tsx: 0.4.13_svelte@3.46.1+typescript@4.5.4
   tslib: 2.3.1
@@ -3971,8 +3971,8 @@ packages:
       supports-color: 7.2.0
     dev: true
 
-  /svelte-check/2.2.12_svelte@3.46.1:
-    resolution: {integrity: sha512-ryQSuZaZSOrhrJWU7dE/Gyq/xGwgjPEkur6GMjeNIjYH0BIDKId6YKXWI14CE2BZl7Ra5zrBDEc548kX6TcnlQ==}
+  /svelte-check/2.3.0_svelte@3.46.1:
+    resolution: {integrity: sha512-SBKdJyUmxzPmJf/ZPqDSQOoa9JzOcgEpV7u3UaYcgVn7fA0veZ3FA5JgLU8KYtf84Gp6guBVcrC7XKLjJa5SXQ==}
     hasBin: true
     peerDependencies:
       svelte: ^3.24.0
