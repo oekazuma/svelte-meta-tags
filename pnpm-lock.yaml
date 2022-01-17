@@ -21,7 +21,7 @@ specifiers:
   semantic-release: 18.0.1
   svelte: 3.46.2
   svelte-check: 2.3.0
-  svelte-preprocess: 4.10.1
+  svelte-preprocess: 4.10.2
   svelte2tsx: 0.4.14
   tslib: 2.3.1
   typescript: 4.5.4
@@ -49,7 +49,7 @@ devDependencies:
   semantic-release: 18.0.1
   svelte: 3.46.2
   svelte-check: 2.3.0_svelte@3.46.2
-  svelte-preprocess: 4.10.1_svelte@3.46.2+typescript@4.5.4
+  svelte-preprocess: 4.10.2_svelte@3.46.2+typescript@4.5.4
   svelte2tsx: 0.4.14_svelte@3.46.2+typescript@4.5.4
   tslib: 2.3.1
   typescript: 4.5.4
@@ -3987,7 +3987,7 @@ packages:
       sade: 1.7.4
       source-map: 0.7.3
       svelte: 3.46.2
-      svelte-preprocess: 4.10.1_svelte@3.46.2+typescript@4.5.4
+      svelte-preprocess: 4.10.2_svelte@3.46.2+typescript@4.5.4
       typescript: 4.5.4
     transitivePeerDependencies:
       - '@babel/core'
@@ -4010,20 +4010,20 @@ packages:
       svelte: 3.46.2
     dev: true
 
-  /svelte-preprocess/4.10.1_svelte@3.46.2+typescript@4.5.4:
-    resolution: {integrity: sha512-NSNloaylf+o9UeyUR2KvpdxrAyMdHl3U7rMnoP06/sG0iwJvlUM4TpMno13RaNqovh4AAoGsx1jeYcIyuGUXMw==}
+  /svelte-preprocess/4.10.2_svelte@3.46.2+typescript@4.5.4:
+    resolution: {integrity: sha512-aPpkCreSo8EL/y8kJSa1trhiX0oyAtTjlNNM7BNjRAsMJ8Yy2LtqHt0zyd4pQPXt+D4PzbO3qTjjio3kwOxDlA==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
     peerDependencies:
       '@babel/core': ^7.10.2
       coffeescript: ^2.5.1
-      less: ^3.11.3
+      less: ^3.11.3 || ^4.0.0
       node-sass: '*'
       postcss: ^7 || ^8
       postcss-load-config: ^2.1.0 || ^3.0.0
       pug: ^3.0.0
       sass: ^1.26.8
-      stylus: ^0.54.7
+      stylus: ^0.55.0
       sugarss: ^2.0.0
       svelte: ^3.23.0
       typescript: ^4.5.2
