@@ -14,7 +14,7 @@ specifiers:
   eslint-plugin-cypress: 2.12.1
   eslint-plugin-svelte3: 3.4.0
   husky: 7.0.4
-  lint-staged: 12.2.1
+  lint-staged: 12.2.2
   prettier: 2.5.1
   prettier-plugin-svelte: 2.6.0
   schema-dts: 1.0.0
@@ -43,7 +43,7 @@ devDependencies:
   eslint-plugin-cypress: 2.12.1_eslint@8.7.0
   eslint-plugin-svelte3: 3.4.0_eslint@8.7.0+svelte@3.46.2
   husky: 7.0.4
-  lint-staged: 12.2.1
+  lint-staged: 12.2.2
   prettier: 2.5.1
   prettier-plugin-svelte: 2.6.0_prettier@2.5.1+svelte@3.46.2
   semantic-release: 19.0.2
@@ -2672,8 +2672,8 @@ packages:
     resolution: {integrity: sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=}
     dev: true
 
-  /lint-staged/12.2.1:
-    resolution: {integrity: sha512-VCVcA9C2Vt5HHxSR4EZVZFJcQRJH984CGBeY+cJ/xed4mBd+JidbM/xbKcCq5ASaygAV0iITtdsCTnID7h/1OQ==}
+  /lint-staged/12.2.2:
+    resolution: {integrity: sha512-bcHEoM1M/f+K1BYdHcEuIn8K+zMOSJR3mkny6PAuQiTgcSUcRbUWaUD6porAYypxF4k1vYZZ2HutZt1p94Z1jQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
