@@ -42,7 +42,7 @@
     "@semantic-release/git": "10.0.1",
     "@sveltejs/kit": "1.0.0-next.240",
     "@typescript-eslint/eslint-plugin": "5.10.1",
-    "@typescript-eslint/parser": "5.10.0",
+    "@typescript-eslint/parser": "5.10.1",
     "cypress": "9.3.1",
     "eslint": "8.7.0",
     "eslint-config-prettier": "8.3.0",
