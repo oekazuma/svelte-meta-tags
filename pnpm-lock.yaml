@@ -5,7 +5,7 @@ specifiers:
   '@commitlint/config-conventional': 16.0.0
   '@semantic-release/changelog': 6.0.1
   '@semantic-release/git': 10.0.1
-  '@sveltejs/kit': 1.0.0-next.241
+  '@sveltejs/kit': 1.0.0-next.245
   '@typescript-eslint/eslint-plugin': 5.10.1
   '@typescript-eslint/parser': 5.10.1
   cypress: 9.3.1
@@ -34,7 +34,7 @@ devDependencies:
   '@commitlint/config-conventional': 16.0.0
   '@semantic-release/changelog': 6.0.1_semantic-release@19.0.2
   '@semantic-release/git': 10.0.1_semantic-release@19.0.2
-  '@sveltejs/kit': 1.0.0-next.241_svelte@3.46.3
+  '@sveltejs/kit': 1.0.0-next.245_svelte@3.46.3
   '@typescript-eslint/eslint-plugin': 5.10.1_0f442f6b60390429061d5d9b6bcaaba6
   '@typescript-eslint/parser': 5.10.1_eslint@8.7.0+typescript@4.5.5
   cypress: 9.3.1
@@ -569,8 +569,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.241_svelte@3.46.3:
-    resolution: {integrity: sha512-KuRXJEoSPloGxv3HYniZT2u04zwkYFk1lE1pLOyX96D5Po8CxIhBJlSo3YjTBNJ+AbN5a3T2zxLSw6azecdd7Q==}
+  /@sveltejs/kit/1.0.0-next.245_svelte@3.46.3:
+    resolution: {integrity: sha512-tvgzGA0nLsYNoCHfC0SCRbWWdLY4xP6Uyv3oy+J+5VOUOhzOjh3xiP6LKvF4PLf0t3lJXybcVWzi8vqU3kfjug==}
     engines: {node: '>=14.13'}
     hasBin: true
     peerDependencies:
