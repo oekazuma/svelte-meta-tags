@@ -78,6 +78,18 @@
     {#if twitter.handle}
       <meta name="twitter:creator" content={twitter.handle} />
     {/if}
+    {#if twitter.title}
+      <meta name="twitter:title" content={twitter.title} />
+    {/if}
+    {#if twitter.description}
+      <meta name="twitter:description" content={twitter.description} />
+    {/if}
+    {#if twitter.image}
+      <meta name="twitter:image" content={twitter.image} />
+    {/if}
+    {#if twitter.imageAlt}
+      <meta name="twitter:image:alt" content={twitter.imageAlt} />
+    {/if}
   {/if}
 
   {#if facebook}

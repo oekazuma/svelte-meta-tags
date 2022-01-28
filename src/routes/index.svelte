@@ -25,7 +25,11 @@
   twitter={{
     handle: '@handle',
     site: '@site',
-    cardType: 'summary_large_image'
+    cardType: 'summary_large_image',
+    title: 'Normal | Svelte Meta Tags',
+    description: 'Description',
+    image: 'https://www.example.ie/twitter-image.jpg',
+    imageAlt: 'Twitter image alt'
   }}
   facebook={{
     appId: '1234567890'
