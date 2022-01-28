@@ -1,3 +1,9 @@
+# [2.3.0](https://github.com/oekazuma/svelte-meta-tags/compare/v2.2.3...v2.3.0) (2022-01-28)
+
+### Features
+
+- add twitter title description image imageAlt ([e3270f5](https://github.com/oekazuma/svelte-meta-tags/commit/e3270f54fda56483a192d34dfc9d589c7949fc5b))
+
 ## [2.2.3](https://github.com/oekazuma/svelte-meta-tags/compare/v2.2.2...v2.2.3) (2022-01-14)
 
 ### Bug Fixes
