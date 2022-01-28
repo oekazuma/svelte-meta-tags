@@ -42,9 +42,25 @@ describe('Svelte Meta Tags', () => {
       });
     cy.get('head meta[property="og:site_name"]').should('have.attr', 'content', 'SiteName');
     cy.get('head meta[property="fb:app_id"]').should('have.attr', 'content', '1234567890');
+    cy.get('head meta[name="twitter:card"]').should('have.attr', 'content', 'summary_large_image');
     cy.get('head meta[name="twitter:site"]').should('have.attr', 'content', '@site');
     cy.get('head meta[name="twitter:creator"]').should('have.attr', 'content', '@handle');
-    cy.get('head meta[name="twitter:card"]').should('have.attr', 'content', 'summary_large_image');
+    cy.get('head meta[name="twitter:title"]').should(
+      'have.attr',
+      'content',
+      'Normal | Svelte Meta Tags'
+    );
+    cy.get('head meta[name="twitter:description"]').should('have.attr', 'content', 'Description');
+    cy.get('head meta[name="twitter:image"]').should(
+      'have.attr',
+      'content',
+      'https://www.example.ie/twitter-image.jpg'
+    );
+    cy.get('head meta[name="twitter:image:alt"]').should(
+      'have.attr',
+      'content',
+      'Twitter image alt'
+    );
     cy.get('head link[rel="icon"]').should('have.attr', 'href', 'https://www.test.ie/favicon.ico');
     cy.get('head link[rel="apple-touch-icon"]')
       .should('have.length', 2)
