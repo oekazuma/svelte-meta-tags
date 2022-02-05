@@ -15,12 +15,15 @@ module.exports = {
   },
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 2019
+    ecmaVersion: 2020
   },
   env: {
     browser: true,
     es2017: true,
     node: true,
     'cypress/globals': true
+  },
+  rules: {
+    '@typescript-eslint/no-empty-interface': 'off'
   }
 };
