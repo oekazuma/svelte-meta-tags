@@ -769,7 +769,8 @@ You can import and use the types `MetaTagsProps` and `JsonLdProps`.
 
 ```svelte
 <script lang="ts">
-  import { MetaTags, JsonLd, MetaTagsProps, JsonLdProps } from 'svelte-meta-tags';
+  import { MetaTags, JsonLd } from 'svelte-meta-tags';
+  import type { MetaTagsProps, JsonLdProps } from 'svelte-meta-tags';
 
   const metatags: MetaTagsProps = {
     title: 'Types Page Title | Svelte Meta Tags',
