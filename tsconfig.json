@@ -9,6 +9,11 @@
 			to enforce using \`import type\` instead of \`import\` for Types.
 			*/
     "importsNotUsedAsValues": "error",
+    /**
+			TypeScript doesn't know about import usages in the template because it only sees the
+			script of a Svelte file. Therefore preserve all value imports. Requires TS 4.5 or higher.
+		*/
+    "preserveValueImports": true,
     "isolatedModules": true,
     "resolveJsonModule": true,
     /**
