@@ -3,13 +3,18 @@
   "extends": ["config:base", ":timezone(Asia/Tokyo)"],
   "labels": ["dependencies", "renovate"],
   "schedule": ["after 10pm and before 5am every weekday", "every weekend"],
-  "dependencyDashboard": true,
   "packageRules": [
     {
+      "groupName": "dependencies",
+      "matchDepTypes": ["dependencies"]
+    },
+    {
+      "groupName": "devDependencies",
+      "matchDepTypes": ["devDependencies"]
+    },
+    {
       "groupName": "linters",
-      "extends": ["packages:linters"],
-      "packageNames": ["prettier"],
-      "packagePatterns": ["^@typescript-eslint/"]
+      "matchPackagePrefixes": ["eslint", "@typescript-eslint/", "prettier"]
     }
   ]
 }
