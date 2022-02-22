@@ -40,7 +40,7 @@
     "@commitlint/config-conventional": "16.2.1",
     "@semantic-release/changelog": "6.0.1",
     "@semantic-release/git": "10.0.1",
-    "@sveltejs/kit": "1.0.0-next.278",
+    "@sveltejs/kit": "1.0.0-next.282",
     "@typescript-eslint/eslint-plugin": "5.12.1",
     "@typescript-eslint/parser": "5.12.1",
     "cypress": "9.5.0",
