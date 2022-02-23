@@ -5,7 +5,7 @@ specifiers:
   '@commitlint/config-conventional': 16.2.1
   '@semantic-release/changelog': 6.0.1
   '@semantic-release/git': 10.0.1
-  '@sveltejs/kit': 1.0.0-next.282
+  '@sveltejs/kit': 1.0.0-next.284
   '@typescript-eslint/eslint-plugin': 5.12.1
   '@typescript-eslint/parser': 5.12.1
   cypress: 9.5.0
@@ -21,7 +21,7 @@ specifiers:
   semantic-release: 19.0.2
   svelte: 3.46.4
   svelte-check: 2.4.5
-  svelte-preprocess: 4.10.3
+  svelte-preprocess: 4.10.4
   svelte2tsx: 0.5.5
   tslib: 2.3.1
   typescript: 4.5.5
@@ -34,7 +34,7 @@ devDependencies:
   '@commitlint/config-conventional': 16.2.1
   '@semantic-release/changelog': 6.0.1_semantic-release@19.0.2
   '@semantic-release/git': 10.0.1_semantic-release@19.0.2
-  '@sveltejs/kit': 1.0.0-next.282_svelte@3.46.4
+  '@sveltejs/kit': 1.0.0-next.284_svelte@3.46.4
   '@typescript-eslint/eslint-plugin': 5.12.1_aa3af6382115a42a71cc388b7b2c30b3
   '@typescript-eslint/parser': 5.12.1_eslint@8.9.0+typescript@4.5.5
   cypress: 9.5.0
@@ -49,7 +49,7 @@ devDependencies:
   semantic-release: 19.0.2
   svelte: 3.46.4
   svelte-check: 2.4.5_svelte@3.46.4
-  svelte-preprocess: 4.10.3_svelte@3.46.4+typescript@4.5.5
+  svelte-preprocess: 4.10.4_svelte@3.46.4+typescript@4.5.5
   svelte2tsx: 0.5.5_svelte@3.46.4+typescript@4.5.5
   tslib: 2.3.1
   typescript: 4.5.5
@@ -568,8 +568,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.282_svelte@3.46.4:
-    resolution: {integrity: sha512-EE6YrJLcMbYDZINQoC6brXdoxIjwmtHjGb4KXn9g7a69anYw8inBuupt9l9gn+HppTOlH95bP7PreEl09HbgJA==}
+  /@sveltejs/kit/1.0.0-next.284_svelte@3.46.4:
+    resolution: {integrity: sha512-bcvvRLgbCF5S36REqpODpCEjmvF0sOq9UDA5oHar+N2mr94L8LylN7XbBphE/NZ0GsZfDN6pZ7tVmaaAWLO+fA==}
     engines: {node: '>=14.13'}
     hasBin: true
     peerDependencies:
@@ -4032,7 +4032,7 @@ packages:
       sade: 1.7.4
       source-map: 0.7.3
       svelte: 3.46.4
-      svelte-preprocess: 4.10.3_svelte@3.46.4+typescript@4.5.5
+      svelte-preprocess: 4.10.4_svelte@3.46.4+typescript@4.5.5
       typescript: 4.5.5
     transitivePeerDependencies:
       - '@babel/core'
@@ -4055,8 +4055,8 @@ packages:
       svelte: 3.46.4
     dev: true
 
-  /svelte-preprocess/4.10.3_svelte@3.46.4+typescript@4.5.5:
-    resolution: {integrity: sha512-ttw17lJfb/dx2ZJT9sesaXT5l7mPQ9Apx1H496Kli3Hkk7orIRGpOw6rCPkRNzr6ueVPqb4vzodS5x7sBFhKHw==}
+  /svelte-preprocess/4.10.4_svelte@3.46.4+typescript@4.5.5:
+    resolution: {integrity: sha512-fuwol0N4UoHsNQolLFbMqWivqcJ9N0vfWO9IuPAiX/5okfoGXURyJ6nECbuEIv0nU3M8Xe2I1ONNje2buk7l6A==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
     peerDependencies:
