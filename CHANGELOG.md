@@ -1,3 +1,9 @@
+## [2.3.1](https://github.com/oekazuma/svelte-meta-tags/compare/v2.3.0...v2.3.1) (2022-02-25)
+
+### Bug Fixes
+
+- fix lint error in `@typescript-eslint/no-empty-interface` ([6f41cc4](https://github.com/oekazuma/svelte-meta-tags/commit/6f41cc4e0d0022b1be6c778d4520bdd7b0188127))
+
 # [2.3.0](https://github.com/oekazuma/svelte-meta-tags/compare/v2.2.3...v2.3.0) (2022-01-28)
 
 ### Features
