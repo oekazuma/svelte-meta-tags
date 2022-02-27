@@ -17,7 +17,7 @@ specifiers:
   lint-staged: 12.3.4
   prettier: 2.5.1
   prettier-plugin-svelte: 2.6.0
-  schema-dts: 1.0.0
+  schema-dts: 1.1.0
   semantic-release: 19.0.2
   svelte: 3.46.4
   svelte-check: 2.4.5
@@ -27,7 +27,7 @@ specifiers:
   typescript: 4.5.5
 
 dependencies:
-  schema-dts: 1.0.0_typescript@4.5.5
+  schema-dts: 1.1.0_typescript@4.5.5
 
 devDependencies:
   '@commitlint/cli': 16.2.1
@@ -3676,8 +3676,8 @@ packages:
       rimraf: 2.7.1
     dev: true
 
-  /schema-dts/1.0.0_typescript@4.5.5:
-    resolution: {integrity: sha512-9t8gnY3RW2CbpuvA0pIpcaHFXkJTeNnWR4uaWI+PiYSfpuEeMw+2Q0Gac6YTnQb1B8TR6/+G71gQWuSE7dq6Zw==}
+  /schema-dts/1.1.0_typescript@4.5.5:
+    resolution: {integrity: sha512-vdmbs/5ycj4zyKpZIDqTcy+IZi4s7c38RVAYuDmRi7zgxUT8wRWPMLzg0jr7FjdVunYu9yZ00F3+XcZTTFcTOQ==}
     peerDependencies:
       typescript: '>=4.1.0'
     dependencies:
