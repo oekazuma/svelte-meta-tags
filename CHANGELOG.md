@@ -1,3 +1,9 @@
+## [2.3.2](https://github.com/oekazuma/svelte-meta-tags/compare/v2.3.1...v2.3.2) (2022-02-28)
+
+### Bug Fixes
+
+- **deps:** update dependency schema-dts to v1.1.0 ([d57c99d](https://github.com/oekazuma/svelte-meta-tags/commit/d57c99d89b5071e1e2045892ee2814a7105251ce))
+
 ## [2.3.1](https://github.com/oekazuma/svelte-meta-tags/compare/v2.3.0...v2.3.1) (2022-02-25)
 
 ### Bug Fixes
