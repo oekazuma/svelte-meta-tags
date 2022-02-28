@@ -33,7 +33,7 @@
     "release": "pnpm package && semantic-release"
   },
   "dependencies": {
-    "schema-dts": "1.0.0"
+    "schema-dts": "1.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "16.2.1",
