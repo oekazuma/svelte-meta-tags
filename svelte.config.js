@@ -1,3 +1,4 @@
+import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
 import path from 'path';
 
@@ -5,10 +6,11 @@ import path from 'path';
 const config = {
   preprocess: preprocess(),
   kit: {
+    adapter: adapter(),
     vite: {
       resolve: {
         alias: {
-          'svelte-meta-tags': path.resolve(process.cwd(), './src/lib/index.ts')
+          'svelte-meta-tags': path.resolve('src/lib')
         }
       }
     }
