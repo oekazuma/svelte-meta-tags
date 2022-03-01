@@ -40,7 +40,7 @@
     "@commitlint/config-conventional": "16.2.1",
     "@semantic-release/changelog": "6.0.1",
     "@semantic-release/git": "10.0.1",
-    "@sveltejs/adapter-auto": "^1.0.0-next.30",
+    "@sveltejs/adapter-auto": "1.0.0-next.30",
     "@sveltejs/kit": "1.0.0-next.288",
     "@typescript-eslint/eslint-plugin": "5.13.0",
     "@typescript-eslint/parser": "5.13.0",

@@ -16,5 +16,6 @@
       "groupName": "linters",
       "matchPackagePrefixes": ["eslint", "@typescript-eslint/", "prettier"]
     }
-  ]
+  ],
+  "ignoreDeps": ["typescript"]
 }
