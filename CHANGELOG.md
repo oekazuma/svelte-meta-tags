@@ -1,3 +1,9 @@
+## [2.3.4](https://github.com/oekazuma/svelte-meta-tags/compare/v2.3.3...v2.3.4) (2022-03-03)
+
+### Bug Fixes
+
+- add pnpm build to release command ([1c01f61](https://github.com/oekazuma/svelte-meta-tags/commit/1c01f619c5cd1dee51c58f4067fd315907fb4753))
+
 ## [2.3.3](https://github.com/oekazuma/svelte-meta-tags/compare/v2.3.2...v2.3.3) (2022-03-03)
 
 ### Bug Fixes
