@@ -1,3 +1,10 @@
+## [2.3.3](https://github.com/oekazuma/svelte-meta-tags/compare/v2.3.2...v2.3.3) (2022-03-03)
+
+### Bug Fixes
+
+- fix tsconfig.json ([bd54216](https://github.com/oekazuma/svelte-meta-tags/commit/bd542167bc0f377157d7337b9eb2e9b58d63a625))
+- fix tsconfig.json ([ed1c73d](https://github.com/oekazuma/svelte-meta-tags/commit/ed1c73db2e7faab1f07d1b44d2be57970c701153))
+
 ## [2.3.2](https://github.com/oekazuma/svelte-meta-tags/compare/v2.3.1...v2.3.2) (2022-02-28)
 
 ### Bug Fixes
