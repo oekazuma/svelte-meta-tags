@@ -25,6 +25,8 @@ jobs:
       - run: npm install -g pnpm
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+      - name: Run Build
+        run: pnpm build
       - name: Run Prettier
         run: pnpm format
       - name: Run ESLint
