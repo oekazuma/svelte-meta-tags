@@ -15,7 +15,14 @@
     {
       "groupName": "linters",
       "matchPackagePrefixes": ["eslint", "@typescript-eslint/", "prettier"]
+    },
+    {
+      "groupName": "typescript",
+      "matchPackageNames": ["typescript"]
+    },
+    {
+      "groupName": "sveltekit",
+      "matchPackagePrefixes": ["@sveltejs/"]
     }
-  ],
-  "ignoreDeps": ["typescript"]
+  ]
 }
