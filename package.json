@@ -65,7 +65,7 @@
     "svelte": "^3.39.0"
   },
   "lint-staged": {
-    "*.{js,ts,svelte,md,html,css,json}": "pnpm format",
+    "*.{js,ts,cjs,svelte,md,html,css,json,yml,yaml}": "pnpm format",
     "*.{js,ts,svelte}": [
       "pnpm lint",
       "pnpm check"
