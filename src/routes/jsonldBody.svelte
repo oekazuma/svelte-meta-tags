@@ -2,9 +2,13 @@
   import { MetaTags, JsonLd } from 'svelte-meta-tags';
 </script>
 
-<MetaTags title="JSON-LD Page Title | Svelte Meta Tags" description="Description of JSON-LD page" />
+<MetaTags
+  title="JSON-LD Body Page Title | Svelte Meta Tags"
+  description="Description of JSON-LD Body page"
+/>
 
 <JsonLd
+  output="body"
   schema={{
     '@type': 'BreadcrumbList',
     itemListElement: [
@@ -30,6 +34,7 @@
 />
 
 <JsonLd
+  output="body"
   schema={{
     '@type': 'NewsArticle',
     mainEntityOfPage: {
@@ -59,4 +64,4 @@
   }}
 />
 
-<h1>JSON-LD SEO</h1>
+<h1>JSON-LD Body SEO</h1>

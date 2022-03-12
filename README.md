@@ -19,7 +19,7 @@ This library is inspired by [next-seo](https://github.com/garmeeh/next-seo)
 
 - [Installing](#-installing)
 - [Usage](#-usage)
-- [Properties](#properties)
+- [MetaTags Properties](#metatags-properties)
   - [Twitter](#twitter)
   - [Facebook](#facebook)
   - [robotsProps](#robotsprops)
@@ -35,6 +35,7 @@ This library is inspired by [next-seo](https://github.com/garmeeh/next-seo)
     - [Profile](#profile)
 - [JSON-LD](#json-ld)
   - [Using schema-dts](#using-schema-dts)
+  - [JSON-LD Properties](#json-ld-properties)
   - [JSON-LD Examples](#json-ld-examples)
     - [Article](#article)
     - [Breadcrumb](#breadcrumb)
@@ -123,7 +124,7 @@ pnpm add -D svelte-meta-tags
 />
 ```
 
-### Properties
+### MetaTags Properties
 
 | Property                           | Type                    | Description                                                                                                                                                                                                                                                                                                                                           |
 | ---------------------------------- | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -563,6 +564,13 @@ It is also possible to use multiple `<JsonLd />` components in a single page.
 ### Using `schema-dts`
 
 This plugin uses [schema-dts](https://github.com/google/schema-dts), so it also provides types other than the usage examples below.
+
+### JSON-LD Properties
+
+| Property | Type                  | Description                                                                                          |
+| -------- | --------------------- | ---------------------------------------------------------------------------------------------------- |
+| `output` | string (default head) | Sets whether json-ld is output to `<head>` or `<body>`. Possible values are either `head` or `body`. |
+| `schema` | Object                | Data in `ld+json` format. [See Examples](#json-ld-examples)                                          |
 
 ### JSON-LD Examples
 

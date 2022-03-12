@@ -21,7 +21,10 @@
     <a href="/profile"> Profile SEO </a>
   </li>
   <li>
-    <a href="/jsonld"> JSON-LD SEO </a>
+    <a href="/jsonldHead"> JSON-LD Head SEO </a>
+  </li>
+  <li>
+    <a href="/jsonldBody"> JSON-LD Body SEO </a>
   </li>
   <li>
     <a href="/types"> Types SEO </a>

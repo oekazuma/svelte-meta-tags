@@ -512,18 +512,89 @@ describe('Svelte Meta Tags', () => {
     cy.get('head meta[name="twitter:card"]').should('have.attr', 'content', 'summary_large_image');
   });
 
-  it('JSON-LD SEO loads correctly', () => {
-    cy.visit('/jsonld');
-    cy.get('h1').should('contain', 'JSON-LD SEO');
-    cy.get('head title').should('contain', 'JSON-LD Page Title | Svelte Meta Tags');
+  it('JSON-LD Head SEO loads correctly', () => {
+    cy.visit('/jsonldHead');
+    cy.get('h1').should('contain', 'JSON-LD Head SEO');
+    cy.get('head title').should('contain', 'JSON-LD Head Page Title | Svelte Meta Tags');
     cy.get('head meta[name="description"]').should(
       'have.attr',
       'content',
-      'Description of JSON-LD page'
+      'Description of JSON-LD Head page'
     );
     cy.get('head meta[name="robots"]').should('have.attr', 'content', 'index,follow');
     cy.get('head meta[name="googlebot"]').should('have.attr', 'content', 'index,follow');
     cy.get('head script[type="application/ld+json"]')
+      .should('have.length', 2)
+      .then((tags) => {
+        const breadcrumbJsonLD = JSON.parse(tags[0].innerHTML);
+        expect(breadcrumbJsonLD).to.deep.equal({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Books',
+              item: 'https://example.com/books'
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: 'Science Fiction',
+              item: 'https://example.com/books/sciencefiction'
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name: 'Award Winners'
+            }
+          ]
+        });
+        const articleJsonLD = JSON.parse(tags[1].innerHTML);
+        expect(articleJsonLD).to.deep.equal({
+          '@context': 'https://schema.org',
+          '@type': 'NewsArticle',
+          mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': 'https://google.com/article'
+          },
+          headline: 'Article headline',
+          image: [
+            'https://example.com/photos/1x1/photo.jpg',
+            'https://example.com/photos/4x3/photo.jpg',
+            'https://example.com/photos/16x9/photo.jpg'
+          ],
+          datePublished: '2015-02-05T08:00:00+08:00',
+          dateModified: '2015-02-05T09:20:00+08:00',
+          author: {
+            '@type': 'Person',
+            name: 'John Doe'
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Google',
+            logo: {
+              '@type': 'ImageObject',
+              url: 'https://google.com/logo.jpg'
+            }
+          }
+        });
+      });
+  });
+
+  it('JSON-LD Body SEO loads correctly', () => {
+    cy.visit('/jsonldBody');
+    cy.get('h1').should('contain', 'JSON-LD Body SEO');
+    cy.get('head title').should('contain', 'JSON-LD Body Page Title | Svelte Meta Tags');
+    cy.get('head meta[name="description"]').should(
+      'have.attr',
+      'content',
+      'Description of JSON-LD Body page'
+    );
+    cy.get('head meta[name="robots"]').should('have.attr', 'content', 'index,follow');
+    cy.get('head meta[name="googlebot"]').should('have.attr', 'content', 'index,follow');
+    cy.get('body')
+      .find('script[type="application/ld+json"]')
       .should('have.length', 2)
       .then((tags) => {
         const breadcrumbJsonLD = JSON.parse(tags[0].innerHTML);
