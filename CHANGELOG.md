@@ -1,3 +1,9 @@
+# [2.4.0](https://github.com/oekazuma/svelte-meta-tags/compare/v2.3.4...v2.4.0) (2022-03-12)
+
+### Features
+
+- add a property that allows selection of whether to output JSON-LD in the head or in the body ([91c9c38](https://github.com/oekazuma/svelte-meta-tags/commit/91c9c3861d5cc9168a6b3d90c2cf734f5c03f890))
+
 ## [2.3.4](https://github.com/oekazuma/svelte-meta-tags/compare/v2.3.3...v2.3.4) (2022-03-03)
 
 ### Bug Fixes
