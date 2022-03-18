@@ -50,7 +50,7 @@
     "eslint-plugin-cypress": "2.12.1",
     "eslint-plugin-svelte3": "3.4.1",
     "husky": "7.0.4",
-    "lint-staged": "12.3.6",
+    "lint-staged": "12.3.7",
     "prettier": "2.6.0",
     "prettier-plugin-svelte": "2.6.0",
     "semantic-release": "19.0.2",
