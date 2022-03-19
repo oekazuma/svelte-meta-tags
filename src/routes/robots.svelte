@@ -3,7 +3,7 @@
 </script>
 
 <MetaTags
-  title="Robots meta title"
+  title="Robots meta title | Svelte Meta Tags"
   robotsProps={{
     nosnippet: true,
     notranslate: true,
@@ -15,4 +15,4 @@
   }}
 />
 
-<h1>Robots props</h1>
+<h1>Robots props SEO</h1>

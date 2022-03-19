@@ -76,8 +76,8 @@ describe('Svelte Meta Tags', () => {
 
   it('SEO Robots props applied correctly', () => {
     cy.visit('/robots');
-    cy.get('h1').should('contain', 'Robots props');
-    cy.get('head title').should('contain', 'Robots meta title');
+    cy.get('h1').should('contain', 'Robots props SEO');
+    cy.get('head title').should('contain', 'Robots meta title | Svelte Meta Tags');
     cy.get('head meta[name="robots"]').should(
       'have.attr',
       'content',
