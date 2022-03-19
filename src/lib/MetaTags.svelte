@@ -1,5 +1,6 @@
 <script>
   export let title = '';
+  export let titleTemplate = '';
   export let noindex = false;
   export let nofollow = false;
   export let robotsProps = undefined;
@@ -12,6 +13,10 @@
   export let canonical = undefined;
   export let additionalMetaTags = undefined;
   export let additionalLinkTags = undefined;
+
+  if (titleTemplate) {
+    title = titleTemplate.replace(/%s/g, title);
+  }
 
   let robotsParams = '';
   if (robotsProps) {
