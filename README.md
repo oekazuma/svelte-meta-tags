@@ -129,6 +129,7 @@ pnpm add -D svelte-meta-tags
 | Property                           | Type                    | Description                                                                                                                                                                                                                                                                                                                                           |
 | ---------------------------------- | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `title`                            | string                  | Sets the page meta title.                                                                                                                                                                                                                                                                                                                             |
+| `titleTemplate`                    | string                  | Allows you to set default title template that will be added to your title [More Info](#title-template)                                                                                                                                                                                                                                                |
 | `noindex`                          | boolean (default false) | Sets whether page should be indexed or not                                                                                                                                                                                                                                                                                                            |
 | `nofollow`                         | boolean (default false) | Sets whether page should be followed or not                                                                                                                                                                                                                                                                                                           |
 | `additionRobotsProps`              | Object                  | Set the more meta information for the `X-Robots-Tag` [More Info](#robotsprops)                                                                                                                                                                                                                                                                        |
@@ -169,6 +170,22 @@ pnpm add -D svelte-meta-tags
 | `openGraph.article.authors`        | string[]                | Writers of the article.                                                                                                                                                                                                                                                                                                                               |
 | `openGraph.article.section`        | string                  | A high-level section name. E.g. Technology                                                                                                                                                                                                                                                                                                            |
 | `openGraph.article.tags`           | string[]                | Tag words associated with this article.                                                                                                                                                                                                                                                                                                               |
+
+#### Title Template
+
+Replaces `%s` with your title string
+
+```js
+title = 'This is my title';
+titleTemplate = 'Svelte Meta Tags | %s';
+// outputs: Svelte Meta Tags | This is my title
+```
+
+```js
+title = 'This is my title';
+titleTemplate = '%s | Svelte Meta Tags';
+// outputs: This is my title | Svelte Meta Tags
+```
 
 #### Twitter
 

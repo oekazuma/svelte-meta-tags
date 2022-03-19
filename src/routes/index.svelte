@@ -3,7 +3,8 @@
 </script>
 
 <MetaTags
-  title="Normal | Svelte Meta Tags"
+  title="Normal"
+  titleTemplate="%s | Svelte Meta Tags"
   description="Description"
   canonical="https://www.canonical.ie/"
   openGraph={{
