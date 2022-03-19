@@ -1,3 +1,9 @@
+# [2.5.0](https://github.com/oekazuma/svelte-meta-tags/compare/v2.4.0...v2.5.0) (2022-03-19)
+
+### Features
+
+- add titleTemplate property ([3a252e5](https://github.com/oekazuma/svelte-meta-tags/commit/3a252e5783d04456e32539d8bd3ca7646809fd0d))
+
 # [2.4.0](https://github.com/oekazuma/svelte-meta-tags/compare/v2.3.4...v2.4.0) (2022-03-12)
 
 ### Features
