@@ -86,6 +86,7 @@ pnpm add -D svelte-meta-tags
 
 <MetaTags
   title="Using More of Config"
+  titleTemplate="%s | Svelte Meta Tags"
   description="This example uses more of the available config options."
   canonical="https://www.canonical.ie/"
   openGraph={{
@@ -176,15 +177,15 @@ pnpm add -D svelte-meta-tags
 
 Replaces `%s` with your title string
 
-```js
-title = 'This is my title';
-titleTemplate = 'Svelte Meta Tags | %s';
+```
+title = 'This is my title'
+titleTemplate = 'Svelte Meta Tags | %s'
 // outputs: Svelte Meta Tags | This is my title
 ```
 
-```js
-title = 'This is my title';
-titleTemplate = '%s | Svelte Meta Tags';
+```
+title = 'This is my title'
+titleTemplate = '%s | Svelte Meta Tags'
 // outputs: This is my title | Svelte Meta Tags
 ```
 
