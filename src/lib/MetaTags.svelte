@@ -14,9 +14,7 @@
   export let additionalMetaTags = undefined;
   export let additionalLinkTags = undefined;
 
-  if (titleTemplate) {
-    title = titleTemplate.replace(/%s/g, title);
-  }
+  $: updateTitle = titleTemplate ? titleTemplate.replace(/%s/g, title) : title;
 
   let robotsParams = '';
   if (robotsProps) {
@@ -44,7 +42,7 @@
 </script>
 
 <svelte:head>
-  <title>{title}</title>
+  <title>{updateTitle}</title>
 
   <meta
     name="robots"
@@ -216,8 +214,8 @@
       {/if}
     {/if}
 
-    {#if openGraph.title || title}
-      <meta property="og:title" content={openGraph.title || title} />
+    {#if openGraph.title || updateTitle}
+      <meta property="og:title" content={openGraph.title || updateTitle} />
     {/if}
 
     {#if openGraph.description || description}
