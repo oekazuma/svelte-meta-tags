@@ -1,3 +1,9 @@
+## [2.5.1](https://github.com/oekazuma/svelte-meta-tags/compare/v2.5.0...v2.5.1) (2022-03-22)
+
+### Bug Fixes
+
+- fix title to be reactive([a19d30b](https://github.com/oekazuma/svelte-meta-tags/commit/a19d30bad9938d78360aea126012bfd7061fff3f))
+
 # [2.5.0](https://github.com/oekazuma/svelte-meta-tags/compare/v2.4.0...v2.5.0) (2022-03-19)
 
 ### Features
