@@ -51,7 +51,7 @@
     "eslint-plugin-svelte3": "3.4.1",
     "husky": "7.0.4",
     "lint-staged": "12.3.7",
-    "prettier": "2.6.1",
+    "prettier": "2.6.2",
     "prettier-plugin-svelte": "2.6.0",
     "semantic-release": "19.0.2",
     "svelte": "3.46.6",
