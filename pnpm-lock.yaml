@@ -22,7 +22,7 @@ specifiers:
   semantic-release: 19.0.2
   svelte: 3.46.6
   svelte-check: 2.4.6
-  svelte-preprocess: 4.10.4
+  svelte-preprocess: 4.10.5
   svelte2tsx: 0.5.6
   tslib: 2.3.1
   typescript: 4.6.3
@@ -51,7 +51,7 @@ devDependencies:
   semantic-release: 19.0.2
   svelte: 3.46.6
   svelte-check: 2.4.6_svelte@3.46.6
-  svelte-preprocess: 4.10.4_svelte@3.46.6+typescript@4.6.3
+  svelte-preprocess: 4.10.5_svelte@3.46.6+typescript@4.6.3
   svelte2tsx: 0.5.6_svelte@3.46.6+typescript@4.6.3
   tslib: 2.3.1
   typescript: 4.6.3
@@ -3058,7 +3058,7 @@ packages:
     resolution: {integrity: sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==}
     hasBin: true
     dependencies:
-      minimist: 1.2.5
+      minimist: 1.2.6
     dev: true
 
   /modify-values/1.0.1:
@@ -3894,7 +3894,7 @@ packages:
     hasBin: true
     dependencies:
       buffer-crc32: 0.2.13
-      minimist: 1.2.5
+      minimist: 1.2.6
       sander: 0.5.1
       sourcemap-codec: 1.4.8
     dev: true
@@ -4114,7 +4114,7 @@ packages:
       sade: 1.8.1
       source-map: 0.7.3
       svelte: 3.46.6
-      svelte-preprocess: 4.10.4_svelte@3.46.6+typescript@4.6.3
+      svelte-preprocess: 4.10.5_svelte@3.46.6+typescript@4.6.3
       typescript: 4.6.3
     transitivePeerDependencies:
       - '@babel/core'
@@ -4138,8 +4138,8 @@ packages:
       svelte: 3.46.6
     dev: true
 
-  /svelte-preprocess/4.10.4_svelte@3.46.6+typescript@4.6.3:
-    resolution: {integrity: sha512-fuwol0N4UoHsNQolLFbMqWivqcJ9N0vfWO9IuPAiX/5okfoGXURyJ6nECbuEIv0nU3M8Xe2I1ONNje2buk7l6A==}
+  /svelte-preprocess/4.10.5_svelte@3.46.6+typescript@4.6.3:
+    resolution: {integrity: sha512-VKXPRScCzAZqeBZOGq4LLwtNrAu++mVn7XvQox3eFDV7Ciq0Lg70Q8QWjH9iXF7J+pMlXhPsSFwpCb2E+hoeyA==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
     peerDependencies:
