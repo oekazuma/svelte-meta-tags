@@ -1,10 +1,8 @@
-## [2.5.3](https://github.com/oekazuma/svelte-meta-tags/compare/v2.5.2...v2.5.3) (2022-05-06)
-
-### Bug Fixes
+~~[2.5.3](https://github.com/oekazuma/svelte-meta-tags/compare/v2.5.2...v2.5.3) (2022-05-06)~~
 
 - escaping content in script tags ([25bf038](https://github.com/oekazuma/svelte-meta-tags/commit/25bf038a485697249ecc9633166599b0652f3550))
 
-## [2.5.2](https://github.com/oekazuma/svelte-meta-tags/compare/v2.5.1...v2.5.2) (2022-05-06)
+~~[2.5.2](https://github.com/oekazuma/svelte-meta-tags/compare/v2.5.1...v2.5.2) (2022-05-06)~~
 
 - version bump for package
 
