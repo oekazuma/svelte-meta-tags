@@ -2,8 +2,7 @@
   export let output = 'head';
   export let schema = undefined;
 
-  const jsonSchema = (schema) =>
-    JSON.stringify({ '@context': 'https://schema.org', ...schema }, null, 2);
+  const jsonSchema = (schema) => JSON.stringify({ '@context': 'https://schema.org', ...schema });
 </script>
 
 <svelte:head>
