@@ -1,3 +1,9 @@
+## [2.5.5](https://github.com/oekazuma/svelte-meta-tags/compare/v2.5.4...v2.5.5) (2022-05-06)
+
+### Bug Fixes
+
+- revert JSON.stringify options back to previous ([5160cec](https://github.com/oekazuma/svelte-meta-tags/commit/5160cec32f50a29a8e59aa87f851557444ad26a3))
+
 ## [2.5.4](https://github.com/oekazuma/svelte-meta-tags/compare/v2.5.3...v2.5.4) (2022-05-06)
 
 ### Bug Fixes
