@@ -63,42 +63,5 @@
   },
   "peerDependencies": {
     "svelte": "^3.39.0"
-  },
-  "lint-staged": {
-    "*.{js,ts,cjs,svelte,md,html,css,json,yml,yaml}": "pnpm format",
-    "*.{js,ts,svelte}": [
-      "pnpm lint",
-      "pnpm check"
-    ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ],
-    "rules": {
-      "body-max-line-length": [
-        2,
-        "always",
-        200
-      ]
-    }
-  },
-  "release": {
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
-      [
-        "@semantic-release/npm",
-        {
-          "pkgRoot": "package"
-        }
-      ],
-      "@semantic-release/github",
-      "@semantic-release/git"
-    ],
-    "branches": [
-      "main"
-    ]
   }
 }
