@@ -41,7 +41,7 @@
     "@semantic-release/changelog": "6.0.1",
     "@semantic-release/git": "10.0.1",
     "@sveltejs/adapter-auto": "1.0.0-next.40",
-    "@sveltejs/kit": "1.0.0-next.324",
+    "@sveltejs/kit": "1.0.0-next.326",
     "@typescript-eslint/eslint-plugin": "5.21.0",
     "@typescript-eslint/parser": "5.21.0",
     "cypress": "9.6.0",
