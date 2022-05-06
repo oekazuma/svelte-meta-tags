@@ -4,7 +4,7 @@
 
 - escaping content in script tags ([25bf038](https://github.com/oekazuma/svelte-meta-tags/commit/25bf038a485697249ecc9633166599b0652f3550))
 
-## [2.5.2](https://github.com/oekazuma/svelte-meta-tags/compare/v2.5.1...v2.5.2) (2022-05-07)
+## [2.5.2](https://github.com/oekazuma/svelte-meta-tags/compare/v2.5.1...v2.5.2) (2022-05-06)
 
 - version bump for package
 
