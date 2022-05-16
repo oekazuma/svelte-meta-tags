@@ -10,7 +10,7 @@ export interface LanguageAlternate {
   href: string;
 }
 
-export interface AdditionalRobotsProps {
+export interface AdditionalRobots {
   nosnippet?: boolean;
   maxSnippet?: number;
   maxImagePreview?: 'none' | 'standard' | 'large';
@@ -141,7 +141,7 @@ export interface MetaTagsProps {
   titleTemplate?: string;
   noindex?: boolean;
   nofollow?: boolean;
-  robotsProps?: AdditionalRobotsProps;
+  robotsProps?: AdditionalRobots;
   description?: string;
   canonical?: string;
   mobileAlternate?: MobileAlternate;
