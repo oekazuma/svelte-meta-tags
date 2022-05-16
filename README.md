@@ -1043,18 +1043,6 @@ interface HTTPEquivMetaTag extends BaseMetaTag {
 }
 ```
 
-### LinkTag
-
-```ts
-interface LinkTag {
-  rel: string;
-  href: string;
-  sizes?: string;
-  type?: string;
-  color?: string;
-}
-```
-
 ## License
 
 MIT
