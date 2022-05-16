@@ -44,8 +44,8 @@ This library is inspired by [next-seo](https://github.com/garmeeh/next-seo)
     - [Course](#course)
     - [DataSet](#dataset)
     - [FAQ](#faq)
-- [Types Import](#types-import)
-  - [Types Import Examples](#types-import-examples)
+- [Types](#types)
+- [Additional types](#additional-types)
 
 ### 📦 Installing
 
@@ -788,85 +788,259 @@ This plugin uses [schema-dts](https://github.com/google/schema-dts), so it also 
 />
 ```
 
-## Types Import
+## Types
 
-You can import and use the types `MetaTagsProps` and `JsonLdProps`.
+The following types can be imported from `svelte-meta-tags`
 
-### Types Import Examples
+### MetaTagsProps
 
-```svelte
-<script lang="ts">
-  import { MetaTags, JsonLd } from 'svelte-meta-tags';
-  import type { MetaTagsProps, JsonLdProps } from 'svelte-meta-tags';
+```ts
+interface MetaTagsProps {
+  title?: string;
+  titleTemplate?: string;
+  noindex?: boolean;
+  nofollow?: boolean;
+  robotsProps?: AdditionalRobotsProps;
+  description?: string;
+  canonical?: string;
+  mobileAlternate?: MobileAlternate;
+  languageAlternates?: ReadonlyArray<LanguageAlternate>;
+  twitter?: Twitter;
+  facebook?: Facebook;
+  openGraph?: OpenGraph;
+  additionalMetaTags?: ReadonlyArray<MetaTag>;
+  additionalLinkTags?: ReadonlyArray<LinkTag>;
+}
+```
 
-  const metatags: MetaTagsProps = {
-    title: 'Types Page Title | Svelte Meta Tags',
-    description: 'Description of Types page',
-    canonical: 'https://www.canonical.ie/',
-    openGraph: {
-      type: 'website',
-      url: 'https://www.example.com/page',
-      locale: 'en_IE',
-      title: 'Open Graph Title',
-      description: 'Open Graph Description',
-      images: [
-        {
-          url: 'https://www.example.ie/og-image.jpg',
-          width: 800,
-          height: 600,
-          alt: 'Og Image Alt'
-        }
-      ],
-      site_name: 'SiteName'
-    },
-    twitter: {
-      handle: '@handle',
-      site: '@site',
-      cardType: 'summary_large_image',
-      title: 'Types Page Title | Svelte Meta Tags',
-      description: 'Description of Types page',
-      image: 'https://www.example.ie/twitter-image.jpg',
-      imageAlt: 'Twitter image alt'
-    },
-    facebook: {
-      appId: '1234567890'
-    }
-  };
+### JsonLdProps
 
-  const jsonld: JsonLdProps = {
-    schema: {
-      '@type': 'NewsArticle',
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': 'https://google.com/article'
-      },
-      headline: 'Article headline',
-      image: [
-        'https://example.com/photos/1x1/photo.jpg',
-        'https://example.com/photos/4x3/photo.jpg',
-        'https://example.com/photos/16x9/photo.jpg'
-      ],
-      datePublished: '2015-02-05T08:00:00+08:00',
-      dateModified: '2015-02-05T09:20:00+08:00',
-      author: {
-        '@type': 'Person',
-        name: 'John Doe'
-      },
-      publisher: {
-        '@type': 'Organization',
-        name: 'Google',
-        logo: {
-          '@type': 'ImageObject',
-          url: 'https://google.com/logo.jpg'
-        }
-      }
-    }
-  };
-</script>
+```ts
+interface JsonLdProps {
+  output?: 'head' | 'body';
+  schema?: Thing | WithContext<Thing>;
+}
+```
 
-<MetaTags {...metatags} />
+### AdditionalRobotsProps
 
-<JsonLd {...jsonld} />
+```ts
+interface AdditionalRobotsProps {
+  nosnippet?: boolean;
+  maxSnippet?: number;
+  maxImagePreview?: 'none' | 'standard' | 'large';
+  maxVideoPreview?: number;
+  noarchive?: boolean;
+  unavailableAfter?: string;
+  noimageindex?: boolean;
+  notranslate?: boolean;
+}
+```
+
+### MobileAlternate
+
+```ts
+interface MobileAlternate {
+  media: string;
+  href: string;
+}
+```
+
+### LanguageAlternate
+
+```ts
+interface LanguageAlternate {
+  hrefLang: string;
+  href: string;
+}
+```
+
+### Twitter
+
+```ts
+interface Twitter {
+  cardType?: 'summary' | 'summary_large_image' | 'app' | 'player';
+  site?: string;
+  handle?: string;
+  title?: string;
+  description?: string;
+  image?: string;
+  imageAlt?: string;
+}
+```
+
+### Facebook
+
+```ts
+interface Facebook {
+  appId?: string;
+}
+```
+
+### OpenGraph
+
+```ts
+interface OpenGraph {
+  url?: string;
+  type?: string;
+  title?: string;
+  description?: string;
+  images?: ReadonlyArray<OpenGraphImages>;
+  videos?: ReadonlyArray<OpenGraphVideos>;
+  locale?: string;
+  site_name?: string;
+  profile?: OpenGraphProfile;
+  book?: OpenGraphBook;
+  article?: OpenGraphArticle;
+  video?: OpenGraphVideo;
+}
+```
+
+### MetaTag
+
+```ts
+type MetaTag = HTML5MetaTag | RDFaMetaTag | HTTPEquivMetaTag;
+```
+
+### LinkTag
+
+```ts
+interface LinkTag {
+  rel: string;
+  href: string;
+  sizes?: string;
+  type?: string;
+  color?: string;
+}
+```
+
+## Additional types
+
+The following are referenced by the public types documented above, but cannot be imported directly
+
+### OpenGraphImages
+
+```ts
+interface OpenGraphImages {
+  url: string;
+  alt?: string;
+  width?: number;
+  height?: number;
+}
+```
+
+### OpenGraphVideos
+
+```ts
+interface OpenGraphVideos {
+  url: string;
+  alt?: string;
+  width?: number;
+  height?: number;
+  secureUrl?: string;
+  type?: string;
+}
+```
+
+### OpenGraphProfile
+
+```ts
+interface OpenGraphProfile {
+  firstName?: string;
+  lastName?: string;
+  username?: string;
+  gender?: string;
+}
+```
+
+### OpenGraphBook
+
+```ts
+interface OpenGraphBook {
+  authors?: ReadonlyArray<string>;
+  isbn?: string;
+  releaseDate?: string;
+  tags?: ReadonlyArray<string>;
+}
+```
+
+### OpenGraphArticle
+
+```ts
+interface OpenGraphArticle {
+  publishedTime?: string;
+  modifiedTime?: string;
+  expirationTime?: string;
+  authors?: ReadonlyArray<string>;
+  section?: string;
+  tags?: ReadonlyArray<string>;
+}
+```
+
+### OpenGraphVideo
+
+```ts
+interface OpenGraphVideo {
+  actors?: ReadonlyArray<OpenGraphVideoActors>;
+  directors?: ReadonlyArray<string>;
+  writers?: ReadonlyArray<string>;
+  duration?: number;
+  releaseDate?: string;
+  tags?: ReadonlyArray<string>;
+  series?: string;
+}
+```
+
+### OpenGraphVideoActors
+
+```ts
+interface OpenGraphVideoActors {
+  profile: string;
+  role?: string;
+}
+```
+
+### BaseMetaTag
+
+```ts
+interface BaseMetaTag {
+  content: string;
+}
+```
+
+### HTML5MetaTag
+
+```ts
+interface HTML5MetaTag extends BaseMetaTag {
+  name: string;
+  property?: undefined;
+  httpEquiv?: undefined;
+}
+```
+
+### RDFaMetaTag
+
+```ts
+interface RDFaMetaTag extends BaseMetaTag {
+  property: string;
+  name?: undefined;
+  httpEquiv?: undefined;
+}
+```
+
+### HTTPEquivMetaTag
+
+```ts
+interface HTTPEquivMetaTag extends BaseMetaTag {
+  httpEquiv:
+    | 'content-security-policy'
+    | 'content-type'
+    | 'default-style'
+    | 'x-ua-compatible'
+    | 'refresh';
+  name?: undefined;
+  property?: undefined;
+}
 ```
 
 ## License
