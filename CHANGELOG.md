@@ -1,3 +1,9 @@
+# [2.6.0](https://github.com/oekazuma/svelte-meta-tags/compare/v2.5.5...v2.6.0) (2022-05-16)
+
+### Features
+
+- allow all public type definitions to be retrieved ([3e04e2f](https://github.com/oekazuma/svelte-meta-tags/commit/3e04e2fd8ff8446709a7d015b5819971cb42765d))
+
 ## [2.5.5](https://github.com/oekazuma/svelte-meta-tags/compare/v2.5.4...v2.5.5) (2022-05-06)
 
 ### Bug Fixes
