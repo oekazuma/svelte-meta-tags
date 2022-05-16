@@ -800,7 +800,7 @@ interface MetaTagsProps {
   titleTemplate?: string;
   noindex?: boolean;
   nofollow?: boolean;
-  robotsProps?: AdditionalRobots;
+  robotsProps?: AdditionalRobotsProps;
   description?: string;
   canonical?: string;
   mobileAlternate?: MobileAlternate;
@@ -822,10 +822,10 @@ interface JsonLdProps {
 }
 ```
 
-### AdditionalRobots
+### AdditionalRobotsProps
 
 ```ts
-interface AdditionalRobots {
+interface AdditionalRobotsProps {
   nosnippet?: boolean;
   maxSnippet?: number;
   maxImagePreview?: 'none' | 'standard' | 'large';
