@@ -26,7 +26,4 @@
   <li>
     <a href="/jsonldBody"> JSON-LD Body SEO </a>
   </li>
-  <li>
-    <a href="/types"> Types SEO </a>
-  </li>
 </ul>
