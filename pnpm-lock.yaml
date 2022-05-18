@@ -6,7 +6,7 @@ specifiers:
   '@semantic-release/changelog': 6.0.1
   '@semantic-release/git': 10.0.1
   '@sveltejs/adapter-auto': 1.0.0-next.43
-  '@sveltejs/kit': 1.0.0-next.333
+  '@sveltejs/kit': 1.0.0-next.334
   '@typescript-eslint/eslint-plugin': 5.25.0
   '@typescript-eslint/parser': 5.25.0
   cypress: 9.6.1
@@ -36,7 +36,7 @@ devDependencies:
   '@semantic-release/changelog': 6.0.1_semantic-release@19.0.2
   '@semantic-release/git': 10.0.1_semantic-release@19.0.2
   '@sveltejs/adapter-auto': 1.0.0-next.43
-  '@sveltejs/kit': 1.0.0-next.333_svelte@3.48.0
+  '@sveltejs/kit': 1.0.0-next.334_svelte@3.48.0
   '@typescript-eslint/eslint-plugin': 5.25.0_qo2hgs5jt7x2a3p77h2rutcdae
   '@typescript-eslint/parser': 5.25.0_hcfsmds2fshutdssjqluwm76uu
   cypress: 9.6.1
@@ -637,8 +637,8 @@ packages:
       esbuild: 0.14.39
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.333_svelte@3.48.0:
-    resolution: {integrity: sha512-gaj68NCVVKnzDPALzNbaP2xMaNvCZYxoreEGF6P8/bPAh4X6yB5OrgmtensoizPxSJW6d/Lz4LVw71LPmrQgkw==}
+  /@sveltejs/kit/1.0.0-next.334_svelte@3.48.0:
+    resolution: {integrity: sha512-HPMF1oYBfyOG6wfU0Y6F4SID8jphue9yF+PXJqVTDBL5Z2WBG2ogum6MavE8aWhq+g2H6w5y0jNT8+8DO2KTCA==}
     engines: {node: '>=16'}
     hasBin: true
     peerDependencies:
