@@ -5,8 +5,8 @@ specifiers:
   '@commitlint/config-conventional': 17.0.0
   '@semantic-release/changelog': 6.0.1
   '@semantic-release/git': 10.0.1
-  '@sveltejs/adapter-auto': 1.0.0-next.44
-  '@sveltejs/kit': 1.0.0-next.338
+  '@sveltejs/adapter-auto': 1.0.0-next.45
+  '@sveltejs/kit': 1.0.0-next.341
   '@typescript-eslint/eslint-plugin': 5.26.0
   '@typescript-eslint/parser': 5.26.0
   cypress: 9.6.1
@@ -35,8 +35,8 @@ devDependencies:
   '@commitlint/config-conventional': 17.0.0
   '@semantic-release/changelog': 6.0.1_semantic-release@19.0.2
   '@semantic-release/git': 10.0.1_semantic-release@19.0.2
-  '@sveltejs/adapter-auto': 1.0.0-next.44
-  '@sveltejs/kit': 1.0.0-next.338_svelte@3.48.0
+  '@sveltejs/adapter-auto': 1.0.0-next.45
+  '@sveltejs/kit': 1.0.0-next.341_svelte@3.48.0
   '@typescript-eslint/eslint-plugin': 5.26.0_gu4clceiw6ditaem5r577qrdpi
   '@typescript-eslint/parser': 5.26.0_utdtartgf6fqqgkivzeynh76la
   cypress: 9.6.1
@@ -608,12 +608,12 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/adapter-auto/1.0.0-next.44:
-    resolution: {integrity: sha512-uTZDLMImGKRZRh2r5mRwmCvKyzldTGxTa9Ec12yxhaYGSvpg/TlCiwGAnX9ZemzTJtSZUU8dW3tJLrN0YPw3bg==}
+  /@sveltejs/adapter-auto/1.0.0-next.45:
+    resolution: {integrity: sha512-lO1Ifm87jyWUU4SuIKvJ+eD3cW0tZcEWpTP66ga1uOEaJeFzxD/eNFbKAu2XiAQKLF7YRIFjiLBh8iyMPOu3IQ==}
     dependencies:
       '@sveltejs/adapter-cloudflare': 1.0.0-next.19
-      '@sveltejs/adapter-netlify': 1.0.0-next.58
-      '@sveltejs/adapter-vercel': 1.0.0-next.53
+      '@sveltejs/adapter-netlify': 1.0.0-next.59
+      '@sveltejs/adapter-vercel': 1.0.0-next.54
     dev: true
 
   /@sveltejs/adapter-cloudflare/1.0.0-next.19:
@@ -623,22 +623,23 @@ packages:
       worktop: 0.8.0-next.13
     dev: true
 
-  /@sveltejs/adapter-netlify/1.0.0-next.58:
-    resolution: {integrity: sha512-ZkL9mop/oTLfSj3tPCnTjQw7cKfoYLiptDzTypv7l+HDfE7SCFzJuK7YenjTMPoKTakFVfYAEEVIdJEySZt5MQ==}
+  /@sveltejs/adapter-netlify/1.0.0-next.59:
+    resolution: {integrity: sha512-iDOxkUxgCKU1NyHX7QR7ywWYfpJaP9WptHedJCnNGoUgzs067KBdOofXmmawfDkFiFaruIB4MjYGA+SiMHwfKQ==}
     dependencies:
       '@iarna/toml': 2.2.5
       esbuild: 0.14.39
+      set-cookie-parser: 2.4.8
       tiny-glob: 0.2.9
     dev: true
 
-  /@sveltejs/adapter-vercel/1.0.0-next.53:
-    resolution: {integrity: sha512-MmeQxvUYP9UeNuVPd50ZeskzvIqIasyo1Ooa0SUPqoQ41IH+dnkT0+oGJplpX7Ii3gmTbJgleYkV6X6huWQESg==}
+  /@sveltejs/adapter-vercel/1.0.0-next.54:
+    resolution: {integrity: sha512-DnKexL3QzUcJlxUE6Mhi9Re3McSfVwvCqyd1UcBDpJK6rLmu8ASlcB9o/FY5RJIF3A+agfeypcQ4OFQJQH0nPQ==}
     dependencies:
       esbuild: 0.14.39
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.338_svelte@3.48.0:
-    resolution: {integrity: sha512-tqzSHB9ONjmUS8qsYUkypI1eg+FuyKVN5t0wEfIufv7X6ECK1xIRwU1A0igmNLPhqhTqAt3QNmFn2An0/8LbnQ==}
+  /@sveltejs/kit/1.0.0-next.341_svelte@3.48.0:
+    resolution: {integrity: sha512-WxVallEl6vm07e0nfJWfET5fUADcgRuJz28NkaTAwVoZrVXFPxobdSw9I6wgDp51C3MvWVCUQLfk1W23iC0RXA==}
     engines: {node: '>=16'}
     hasBin: true
     peerDependencies:
@@ -3863,6 +3864,10 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
+    dev: true
+
+  /set-cookie-parser/2.4.8:
+    resolution: {integrity: sha512-edRH8mBKEWNVIVMKejNnuJxleqYE/ZSdcT8/Nem9/mmosx12pctd80s2Oy00KNZzrogMZS5mauK2/ymL1bvlvg==}
     dev: true
 
   /shebang-command/2.0.0:
