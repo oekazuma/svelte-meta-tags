@@ -1,16 +1,20 @@
 <script>
   export let output = 'head';
-  export let schema = undefined;
+  export let schema = {};
 
-  const jsonSchema = (schema) => JSON.stringify({ '@context': 'https://schema.org', ...schema });
+  $: isValid = schema && typeof schema === 'object';
+  $: json = `${'<scri' + 'pt type="application/ld+json">'}${JSON.stringify({
+    '@context': 'https://schema.org',
+    ...schema
+  })}${'</scri' + 'pt>'}`;
 </script>
 
 <svelte:head>
-  {#if schema && output === 'head'}
-    {@html `${'<scri' + 'pt type="application/ld+json">'}${jsonSchema(schema)}${'</scri' + 'pt>'}`}
+  {#if isValid && output === 'head'}
+    {@html json}
   {/if}
 </svelte:head>
 
-{#if schema && output === 'body'}
-  {@html `${'<scri' + 'pt type="application/ld+json">'}${jsonSchema(schema)}${'</scri' + 'pt>'}`}
+{#if isValid && output === 'body'}
+  {@html json}
 {/if}
