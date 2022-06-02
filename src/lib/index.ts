@@ -10,5 +10,5 @@ export type {
   Facebook,
   OpenGraph,
   MetaTag,
-  LinkTag
+  LinkTag,
 } from './types';

@@ -5,7 +5,7 @@
   $: isValid = schema && typeof schema === 'object';
   $: json = `${'<scri' + 'pt type="application/ld+json">'}${JSON.stringify({
     '@context': 'https://schema.org',
-    ...schema
+    ...schema,
   })}${'</scri' + 'pt>'}`;
 </script>
 

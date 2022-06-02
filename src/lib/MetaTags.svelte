@@ -26,28 +26,21 @@
       noarchive,
       noimageindex,
       notranslate,
-      unavailableAfter
+      unavailableAfter,
     } = robotsProps;
 
-    robotsParams = `${nosnippet ? ',nosnippet' : ''}${
-      maxSnippet ? `,max-snippet:${maxSnippet}` : ''
-    }${maxImagePreview ? `,max-image-preview:${maxImagePreview}` : ''}${
-      noarchive ? ',noarchive' : ''
-    }${unavailableAfter ? `,unavailable_after:${unavailableAfter}` : ''}${
+    robotsParams = `${nosnippet ? ',nosnippet' : ''}${maxSnippet ? `,max-snippet:${maxSnippet}` : ''}${
+      maxImagePreview ? `,max-image-preview:${maxImagePreview}` : ''
+    }${noarchive ? ',noarchive' : ''}${unavailableAfter ? `,unavailable_after:${unavailableAfter}` : ''}${
       noimageindex ? ',noimageindex' : ''
-    }${maxVideoPreview ? `,max-video-preview:${maxVideoPreview}` : ''}${
-      notranslate ? ',notranslate' : ''
-    }`;
+    }${maxVideoPreview ? `,max-video-preview:${maxVideoPreview}` : ''}${notranslate ? ',notranslate' : ''}`;
   }
 </script>
 
 <svelte:head>
   <title>{updatedTitle}</title>
 
-  <meta
-    name="robots"
-    content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}${robotsParams}`}
-  />
+  <meta name="robots" content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}${robotsParams}`} />
   <meta
     name="googlebot"
     content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}${robotsParams}`}

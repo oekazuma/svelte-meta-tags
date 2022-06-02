@@ -9,17 +9,9 @@ describe('Svelte Meta Tags', () => {
     cy.get('head meta[name="googlebot"]').should('have.attr', 'content', 'index,follow');
     cy.get('head meta[property="og:type"]').should('have.attr', 'content', 'website');
     cy.get('head meta[property="og:locale"]').should('have.attr', 'content', 'en_IE');
-    cy.get('head meta[property="og:url"]').should(
-      'have.attr',
-      'content',
-      'https://www.example.com/page'
-    );
+    cy.get('head meta[property="og:url"]').should('have.attr', 'content', 'https://www.example.com/page');
     cy.get('head meta[property="og:title"]').should('have.attr', 'content', 'Open Graph Title');
-    cy.get('head meta[property="og:description"]').should(
-      'have.attr',
-      'content',
-      'Open Graph Description'
-    );
+    cy.get('head meta[property="og:description"]').should('have.attr', 'content', 'Open Graph Description');
     cy.get('head meta[property="og:image"]')
       .should('have.length', 1)
       .then((tags) => {
@@ -45,22 +37,14 @@ describe('Svelte Meta Tags', () => {
     cy.get('head meta[name="twitter:card"]').should('have.attr', 'content', 'summary_large_image');
     cy.get('head meta[name="twitter:site"]').should('have.attr', 'content', '@site');
     cy.get('head meta[name="twitter:creator"]').should('have.attr', 'content', '@handle');
-    cy.get('head meta[name="twitter:title"]').should(
-      'have.attr',
-      'content',
-      'Normal | Svelte Meta Tags'
-    );
+    cy.get('head meta[name="twitter:title"]').should('have.attr', 'content', 'Normal | Svelte Meta Tags');
     cy.get('head meta[name="twitter:description"]').should('have.attr', 'content', 'Description');
     cy.get('head meta[name="twitter:image"]').should(
       'have.attr',
       'content',
       'https://www.example.ie/twitter-image.jpg'
     );
-    cy.get('head meta[name="twitter:image:alt"]').should(
-      'have.attr',
-      'content',
-      'Twitter image alt'
-    );
+    cy.get('head meta[name="twitter:image:alt"]').should('have.attr', 'content', 'Twitter image alt');
     cy.get('head link[rel="icon"]').should('have.attr', 'href', 'https://www.test.ie/favicon.ico');
     cy.get('head link[rel="apple-touch-icon"]')
       .should('have.length', 2)
@@ -95,11 +79,7 @@ describe('Svelte Meta Tags', () => {
     cy.get('h1').should('contain', 'Another SEO');
     cy.get('head title').should('contain', 'Another | Svelte Meta Tags');
     cy.get('head meta[name="description"]').should('have.attr', 'content', 'Description Another');
-    cy.get('head link[rel="canonical"]').should(
-      'have.attr',
-      'href',
-      'https://www.canonical.ie/another'
-    );
+    cy.get('head link[rel="canonical"]').should('have.attr', 'href', 'https://www.canonical.ie/another');
     cy.get('head meta[name="robots"]').should('have.attr', 'content', 'noindex,nofollow');
     cy.get('head meta[name="googlebot"]').should('have.attr', 'content', 'noindex,nofollow');
     cy.get('head link[rel="alternate"]')
@@ -110,21 +90,9 @@ describe('Svelte Meta Tags', () => {
         expect(tags[1].href).to.equal('https://www.canonical.ie/de');
         expect(tags[1].hreflang).to.equal('de-AT');
       });
-    cy.get('head meta[property="og:url"]').should(
-      'have.attr',
-      'content',
-      'https://www.url.ie/another'
-    );
-    cy.get('head meta[property="og:title"]').should(
-      'have.attr',
-      'content',
-      'Open Graph Title Another'
-    );
-    cy.get('head meta[property="og:description"]').should(
-      'have.attr',
-      'content',
-      'Open Graph Description Another'
-    );
+    cy.get('head meta[property="og:url"]').should('have.attr', 'content', 'https://www.url.ie/another');
+    cy.get('head meta[property="og:title"]').should('have.attr', 'content', 'Open Graph Title Another');
+    cy.get('head meta[property="og:description"]').should('have.attr', 'content', 'Open Graph Description Another');
 
     cy.get('head meta[property="og:image"]')
       .should('have.length', 2)
@@ -156,29 +124,17 @@ describe('Svelte Meta Tags', () => {
     cy.get('head meta[property="og:site_name"]').should('have.attr', 'content', 'SiteName Another');
     cy.get('head meta[property="dc:creator"]').should('have.attr', 'content', 'Jane Doe');
     cy.get('head meta[name="application-name"]').should('have.attr', 'content', 'Svelte-Meta-Tags');
-    cy.get('head meta[http-equiv="x-ua-compatible"]').should(
-      'have.attr',
-      'content',
-      'IE=edge; chrome=1'
-    );
+    cy.get('head meta[http-equiv="x-ua-compatible"]').should('have.attr', 'content', 'IE=edge; chrome=1');
   });
 
   it('Video SEO loads correctly', () => {
     cy.visit('/video');
     cy.get('h1').should('contain', 'Video SEO');
     cy.get('head title').should('contain', 'Video Page Title | Svelte Meta Tags');
-    cy.get('head meta[name="description"]').should(
-      'have.attr',
-      'content',
-      'Description of video page'
-    );
+    cy.get('head meta[name="description"]').should('have.attr', 'content', 'Description of video page');
     cy.get('head meta[property="og:type"]').should('have.attr', 'content', 'video.movie');
     cy.get('head meta[property="video:duration"]').should('have.attr', 'content', '680000');
-    cy.get('head meta[property="video:release_date"]').should(
-      'have.attr',
-      'content',
-      '2022-12-21T22:04:11Z'
-    );
+    cy.get('head meta[property="video:release_date"]').should('have.attr', 'content', '2022-12-21T22:04:11Z');
     cy.get('head meta[property="video:actor"]')
       .should('have.length', 2)
       .then((actors) => {
@@ -194,22 +150,14 @@ describe('Svelte Meta Tags', () => {
     cy.get('head meta[property="video:director"]')
       .should('have.length', 2)
       .then((directors) => {
-        expect(directors[0].content).to.equal(
-          'https://www.example.com/directors/@firstnameA-lastnameA'
-        );
-        expect(directors[1].content).to.equal(
-          'https://www.example.com/directors/@firstnameB-lastnameB'
-        );
+        expect(directors[0].content).to.equal('https://www.example.com/directors/@firstnameA-lastnameA');
+        expect(directors[1].content).to.equal('https://www.example.com/directors/@firstnameB-lastnameB');
       });
     cy.get('head meta[property="video:writer"]')
       .should('have.length', 2)
       .then((writers) => {
-        expect(writers[0].content).to.equal(
-          'https://www.example.com/writers/@firstnameA-lastnameA'
-        );
-        expect(writers[1].content).to.equal(
-          'https://www.example.com/writers/@firstnameB-lastnameB'
-        );
+        expect(writers[0].content).to.equal('https://www.example.com/writers/@firstnameA-lastnameA');
+        expect(writers[1].content).to.equal('https://www.example.com/writers/@firstnameB-lastnameB');
       });
     cy.get('head meta[property="video:tag"]')
       .should('have.length', 3)
@@ -218,21 +166,9 @@ describe('Svelte Meta Tags', () => {
         expect(tags[1].content).to.equal('Tag B');
         expect(tags[2].content).to.equal('Tag C');
       });
-    cy.get('head meta[property="og:url"]').should(
-      'have.attr',
-      'content',
-      'https://www.example.com/videos/video-title'
-    );
-    cy.get('head meta[property="og:title"]').should(
-      'have.attr',
-      'content',
-      'Open Graph Video Title'
-    );
-    cy.get('head meta[property="og:description"]').should(
-      'have.attr',
-      'content',
-      'Description of open graph video'
-    );
+    cy.get('head meta[property="og:url"]').should('have.attr', 'content', 'https://www.example.com/videos/video-title');
+    cy.get('head meta[property="og:title"]').should('have.attr', 'content', 'Open Graph Video Title');
+    cy.get('head meta[property="og:description"]').should('have.attr', 'content', 'Description of open graph video');
     cy.get('head meta[property="og:image"]')
       .should('have.length', 4)
       .then((tags) => {
@@ -275,27 +211,11 @@ describe('Svelte Meta Tags', () => {
     cy.visit('/article');
     cy.get('h1').should('contain', 'Article SEO');
     cy.get('head title').should('contain', 'Article Page Title | Svelte Meta Tags');
-    cy.get('head meta[name="description"]').should(
-      'have.attr',
-      'content',
-      'Description of article page'
-    );
+    cy.get('head meta[name="description"]').should('have.attr', 'content', 'Description of article page');
     cy.get('head meta[property="og:type"]').should('have.attr', 'content', 'article');
-    cy.get('head meta[property="article:published_time"]').should(
-      'have.attr',
-      'content',
-      '2017-06-21T23:04:13Z'
-    );
-    cy.get('head meta[property="article:modified_time"]').should(
-      'have.attr',
-      'content',
-      '2018-01-21T18:04:43Z'
-    );
-    cy.get('head meta[property="article:expiration_time"]').should(
-      'have.attr',
-      'content',
-      '2022-12-21T22:04:11Z'
-    );
+    cy.get('head meta[property="article:published_time"]').should('have.attr', 'content', '2017-06-21T23:04:13Z');
+    cy.get('head meta[property="article:modified_time"]').should('have.attr', 'content', '2018-01-21T18:04:43Z');
+    cy.get('head meta[property="article:expiration_time"]').should('have.attr', 'content', '2022-12-21T22:04:11Z');
     cy.get('head meta[property="article:author"]')
       .should('have.length', 2)
       .then((tags) => {
@@ -315,16 +235,8 @@ describe('Svelte Meta Tags', () => {
       'content',
       'https://www.example.com/articles/article-title'
     );
-    cy.get('head meta[property="og:title"]').should(
-      'have.attr',
-      'content',
-      'Open Graph Article Title'
-    );
-    cy.get('head meta[property="og:description"]').should(
-      'have.attr',
-      'content',
-      'Description of open graph article'
-    );
+    cy.get('head meta[property="og:title"]').should('have.attr', 'content', 'Open Graph Article Title');
+    cy.get('head meta[property="og:description"]').should('have.attr', 'content', 'Description of open graph article');
     cy.get('head meta[property="og:image"]')
       .should('have.length', 4)
       .then((tags) => {
@@ -367,17 +279,9 @@ describe('Svelte Meta Tags', () => {
     cy.visit('/book');
     cy.get('h1').should('contain', 'Book SEO');
     cy.get('head title').should('contain', 'Book Page Title | Svelte Meta Tags');
-    cy.get('head meta[name="description"]').should(
-      'have.attr',
-      'content',
-      'Description of book page'
-    );
+    cy.get('head meta[name="description"]').should('have.attr', 'content', 'Description of book page');
     cy.get('head meta[property="og:type"]').should('have.attr', 'content', 'book');
-    cy.get('head meta[property="book:release_date"]').should(
-      'have.attr',
-      'content',
-      '2018-09-17T11:08:13Z'
-    );
+    cy.get('head meta[property="book:release_date"]').should('have.attr', 'content', '2018-09-17T11:08:13Z');
     cy.get('head meta[property="book:author"]')
       .should('have.length', 2)
       .then((tags) => {
@@ -392,21 +296,9 @@ describe('Svelte Meta Tags', () => {
         expect(tags[1].content).to.equal('Tag B');
         expect(tags[2].content).to.equal('Tag C');
       });
-    cy.get('head meta[property="og:url"]').should(
-      'have.attr',
-      'content',
-      'https://www.example.com/books/book-title'
-    );
-    cy.get('head meta[property="og:title"]').should(
-      'have.attr',
-      'content',
-      'Open Graph Book Title'
-    );
-    cy.get('head meta[property="og:description"]').should(
-      'have.attr',
-      'content',
-      'Description of open graph book'
-    );
+    cy.get('head meta[property="og:url"]').should('have.attr', 'content', 'https://www.example.com/books/book-title');
+    cy.get('head meta[property="og:title"]').should('have.attr', 'content', 'Open Graph Book Title');
+    cy.get('head meta[property="og:description"]').should('have.attr', 'content', 'Description of open graph book');
     cy.get('head meta[property="og:image"]')
       .should('have.length', 4)
       .then((tags) => {
@@ -449,31 +341,15 @@ describe('Svelte Meta Tags', () => {
     cy.visit('/profile');
     cy.get('h1').should('contain', 'Profile SEO');
     cy.get('head title').should('contain', 'Profile Page Title | Svelte Meta Tags');
-    cy.get('head meta[name="description"]').should(
-      'have.attr',
-      'content',
-      'Description of profile page'
-    );
+    cy.get('head meta[name="description"]').should('have.attr', 'content', 'Description of profile page');
     cy.get('head meta[property="og:type"]').should('have.attr', 'content', 'profile');
     cy.get('head meta[property="profile:first_name"]').should('have.attr', 'content', 'First');
     cy.get('head meta[property="profile:last_name"]').should('have.attr', 'content', 'Last');
     cy.get('head meta[property="profile:username"]').should('have.attr', 'content', 'firstlast123');
     cy.get('head meta[property="profile:gender"]').should('have.attr', 'content', 'male');
-    cy.get('head meta[property="og:url"]').should(
-      'have.attr',
-      'content',
-      'https://www.example.com/@firstlast123'
-    );
-    cy.get('head meta[property="og:title"]').should(
-      'have.attr',
-      'content',
-      'Open Graph Profile Title'
-    );
-    cy.get('head meta[property="og:description"]').should(
-      'have.attr',
-      'content',
-      'Description of open graph profile'
-    );
+    cy.get('head meta[property="og:url"]').should('have.attr', 'content', 'https://www.example.com/@firstlast123');
+    cy.get('head meta[property="og:title"]').should('have.attr', 'content', 'Open Graph Profile Title');
+    cy.get('head meta[property="og:description"]').should('have.attr', 'content', 'Description of open graph profile');
     cy.get('head meta[property="og:image"]')
       .should('have.length', 4)
       .then((tags) => {
@@ -516,11 +392,7 @@ describe('Svelte Meta Tags', () => {
     cy.visit('/jsonldHead');
     cy.get('h1').should('contain', 'JSON-LD Head SEO');
     cy.get('head title').should('contain', 'JSON-LD Head Page Title | Svelte Meta Tags');
-    cy.get('head meta[name="description"]').should(
-      'have.attr',
-      'content',
-      'Description of JSON-LD Head page'
-    );
+    cy.get('head meta[name="description"]').should('have.attr', 'content', 'Description of JSON-LD Head page');
     cy.get('head meta[name="robots"]').should('have.attr', 'content', 'index,follow');
     cy.get('head meta[name="googlebot"]').should('have.attr', 'content', 'index,follow');
     cy.get('head script[type="application/ld+json"]')
@@ -535,20 +407,20 @@ describe('Svelte Meta Tags', () => {
               '@type': 'ListItem',
               position: 1,
               name: 'Books',
-              item: 'https://example.com/books'
+              item: 'https://example.com/books',
             },
             {
               '@type': 'ListItem',
               position: 2,
               name: 'Science Fiction',
-              item: 'https://example.com/books/sciencefiction'
+              item: 'https://example.com/books/sciencefiction',
             },
             {
               '@type': 'ListItem',
               position: 3,
-              name: 'Award Winners'
-            }
-          ]
+              name: 'Award Winners',
+            },
+          ],
         });
         const articleJsonLD = JSON.parse(tags[1].innerHTML);
         expect(articleJsonLD).to.deep.equal({
@@ -556,28 +428,28 @@ describe('Svelte Meta Tags', () => {
           '@type': 'NewsArticle',
           mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': 'https://google.com/article'
+            '@id': 'https://google.com/article',
           },
           headline: 'Article headline',
           image: [
             'https://example.com/photos/1x1/photo.jpg',
             'https://example.com/photos/4x3/photo.jpg',
-            'https://example.com/photos/16x9/photo.jpg'
+            'https://example.com/photos/16x9/photo.jpg',
           ],
           datePublished: '2015-02-05T08:00:00+08:00',
           dateModified: '2015-02-05T09:20:00+08:00',
           author: {
             '@type': 'Person',
-            name: 'John Doe'
+            name: 'John Doe',
           },
           publisher: {
             '@type': 'Organization',
             name: 'Google',
             logo: {
               '@type': 'ImageObject',
-              url: 'https://google.com/logo.jpg'
-            }
-          }
+              url: 'https://google.com/logo.jpg',
+            },
+          },
         });
       });
   });
@@ -586,11 +458,7 @@ describe('Svelte Meta Tags', () => {
     cy.visit('/jsonldBody');
     cy.get('h1').should('contain', 'JSON-LD Body SEO');
     cy.get('head title').should('contain', 'JSON-LD Body Page Title | Svelte Meta Tags');
-    cy.get('head meta[name="description"]').should(
-      'have.attr',
-      'content',
-      'Description of JSON-LD Body page'
-    );
+    cy.get('head meta[name="description"]').should('have.attr', 'content', 'Description of JSON-LD Body page');
     cy.get('head meta[name="robots"]').should('have.attr', 'content', 'index,follow');
     cy.get('head meta[name="googlebot"]').should('have.attr', 'content', 'index,follow');
     cy.get('body')
@@ -606,20 +474,20 @@ describe('Svelte Meta Tags', () => {
               '@type': 'ListItem',
               position: 1,
               name: 'Books',
-              item: 'https://example.com/books'
+              item: 'https://example.com/books',
             },
             {
               '@type': 'ListItem',
               position: 2,
               name: 'Science Fiction',
-              item: 'https://example.com/books/sciencefiction'
+              item: 'https://example.com/books/sciencefiction',
             },
             {
               '@type': 'ListItem',
               position: 3,
-              name: 'Award Winners'
-            }
-          ]
+              name: 'Award Winners',
+            },
+          ],
         });
         const articleJsonLD = JSON.parse(tags[1].innerHTML);
         expect(articleJsonLD).to.deep.equal({
@@ -627,28 +495,28 @@ describe('Svelte Meta Tags', () => {
           '@type': 'NewsArticle',
           mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': 'https://google.com/article'
+            '@id': 'https://google.com/article',
           },
           headline: 'Article headline',
           image: [
             'https://example.com/photos/1x1/photo.jpg',
             'https://example.com/photos/4x3/photo.jpg',
-            'https://example.com/photos/16x9/photo.jpg'
+            'https://example.com/photos/16x9/photo.jpg',
           ],
           datePublished: '2015-02-05T08:00:00+08:00',
           dateModified: '2015-02-05T09:20:00+08:00',
           author: {
             '@type': 'Person',
-            name: 'John Doe'
+            name: 'John Doe',
           },
           publisher: {
             '@type': 'Organization',
             name: 'Google',
             logo: {
               '@type': 'ImageObject',
-              url: 'https://google.com/logo.jpg'
-            }
-          }
+              url: 'https://google.com/logo.jpg',
+            },
+          },
         });
       });
   });
