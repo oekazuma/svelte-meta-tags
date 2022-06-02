@@ -34,3 +34,4 @@ jobs:
           build: pnpm build
           start: pnpm preview
           wait-on: 'http://localhost:3000'
+          config-file: cypress.config.ts
