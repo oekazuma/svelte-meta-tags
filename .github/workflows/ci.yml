@@ -28,10 +28,9 @@ jobs:
       - name: Run svelte-check
         run: pnpm check
       - name: Run Cypress
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         with:
           install: false
           build: pnpm build
           start: pnpm preview
           wait-on: 'http://localhost:3000'
-          config-file: cypress.json
