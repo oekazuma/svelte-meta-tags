@@ -22,7 +22,7 @@ specifiers:
   semantic-release: 19.0.2
   svelte: 3.48.0
   svelte-check: 2.7.2
-  svelte-preprocess: 4.10.6
+  svelte-preprocess: 4.10.7
   svelte2tsx: 0.5.10
   tslib: 2.4.0
   typescript: 4.7.2
@@ -51,7 +51,7 @@ devDependencies:
   semantic-release: 19.0.2
   svelte: 3.48.0
   svelte-check: 2.7.2_svelte@3.48.0
-  svelte-preprocess: 4.10.6_rxzurg3hjloskwsrdpptpplucy
+  svelte-preprocess: 4.10.7_rxzurg3hjloskwsrdpptpplucy
   svelte2tsx: 0.5.10_rxzurg3hjloskwsrdpptpplucy
   tslib: 2.4.0
   typescript: 4.7.2
@@ -4575,7 +4575,7 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 3.48.0
-      svelte-preprocess: 4.10.6_rxzurg3hjloskwsrdpptpplucy
+      svelte-preprocess: 4.10.7_rxzurg3hjloskwsrdpptpplucy
       typescript: 4.7.2
     transitivePeerDependencies:
       - '@babel/core'
@@ -4599,8 +4599,8 @@ packages:
       svelte: 3.48.0
     dev: true
 
-  /svelte-preprocess/4.10.6_rxzurg3hjloskwsrdpptpplucy:
-    resolution: {integrity: sha512-I2SV1w/AveMvgIQlUF/ZOO3PYVnhxfcpNyGt8pxpUVhPfyfL/CZBkkw/KPfuFix5FJ9TnnNYMhACK3DtSaYVVQ==}
+  /svelte-preprocess/4.10.7_rxzurg3hjloskwsrdpptpplucy:
+    resolution: {integrity: sha512-sNPBnqYD6FnmdBrUmBCaqS00RyCsCpj2BG58A1JBswNF7b0OKviwxqVrOL/CKyJrLSClrSeqQv5BXNg2RUbPOw==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
     peerDependencies:
@@ -4609,7 +4609,7 @@ packages:
       less: ^3.11.3 || ^4.0.0
       node-sass: '*'
       postcss: ^7 || ^8
-      postcss-load-config: ^2.1.0 || ^3.0.0
+      postcss-load-config: ^2.1.0 || ^3.0.0 || ^4.0.0
       pug: ^3.0.0
       sass: ^1.26.8
       stylus: ^0.55.0
