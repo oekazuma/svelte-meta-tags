@@ -53,7 +53,7 @@
     "lint-staged": "13.0.1",
     "prettier": "2.6.2",
     "prettier-plugin-svelte": "2.7.0",
-    "semantic-release": "19.0.2",
+    "semantic-release": "19.0.3",
     "svelte": "3.48.0",
     "svelte-check": "2.7.2",
     "svelte-preprocess": "4.10.7",
