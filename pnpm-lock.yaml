@@ -21,9 +21,9 @@ specifiers:
   schema-dts: 1.1.0
   semantic-release: 19.0.3
   svelte: 3.48.0
-  svelte-check: 2.7.2
+  svelte-check: 2.8.0
   svelte-preprocess: 4.10.7
-  svelte2tsx: 0.5.10
+  svelte2tsx: 0.5.11
   tslib: 2.4.0
   typescript: 4.7.4
 
@@ -50,9 +50,9 @@ devDependencies:
   prettier-plugin-svelte: 2.7.0_hkopcrdgm3iqdwvvzss26f6wjy
   semantic-release: 19.0.3
   svelte: 3.48.0
-  svelte-check: 2.7.2_svelte@3.48.0
+  svelte-check: 2.8.0_svelte@3.48.0
   svelte-preprocess: 4.10.7_lvfi2wesz6u4l5rfbnetbucfmm
-  svelte2tsx: 0.5.10_lvfi2wesz6u4l5rfbnetbucfmm
+  svelte2tsx: 0.5.11_lvfi2wesz6u4l5rfbnetbucfmm
   tslib: 2.4.0
   typescript: 4.7.4
 
@@ -4580,8 +4580,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svelte-check/2.7.2_svelte@3.48.0:
-    resolution: {integrity: sha512-TuVX4YtXHbRM8sVuK5Jk+mKWdm3f0d6hvAC6qCTp8yUszGZewpEBCo2V5fRWZCiz+0J4OCiDHOS+DFMxv39rJA==}
+  /svelte-check/2.8.0_svelte@3.48.0:
+    resolution: {integrity: sha512-HRL66BxffMAZusqe5I5k26mRWQ+BobGd9Rxm3onh7ZVu0nTk8YTKJ9vu3LVPjUGLU9IX7zS+jmwPVhJYdXJ8vg==}
     hasBin: true
     peerDependencies:
       svelte: ^3.24.0
@@ -4673,8 +4673,8 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
-  /svelte2tsx/0.5.10_lvfi2wesz6u4l5rfbnetbucfmm:
-    resolution: {integrity: sha512-nokQ0HTTWMcNX6tLrDLiOmJCuqjKZU9nCZ6/mVuCL3nusXdbp+9nv69VG2pCy7uQC66kV4Ls+j0WfvvJuGVnkg==}
+  /svelte2tsx/0.5.11_lvfi2wesz6u4l5rfbnetbucfmm:
+    resolution: {integrity: sha512-Is95G1wqNvEUJZ9DITRS2zfMwVJRZztMduPs1vJJ0cm65WUg/avBl5vBXjHycQL/qmFpaqa3NG4qWnf7bCHPag==}
     peerDependencies:
       svelte: ^3.24
       typescript: ^4.1.2
