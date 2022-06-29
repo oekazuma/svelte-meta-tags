@@ -44,7 +44,7 @@
     "@sveltejs/kit": "1.0.0-next.355",
     "@typescript-eslint/eslint-plugin": "5.28.0",
     "@typescript-eslint/parser": "5.28.0",
-    "cypress": "10.2.0",
+    "cypress": "10.3.0",
     "eslint": "8.17.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-cypress": "2.12.1",
