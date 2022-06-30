@@ -5,8 +5,8 @@ specifiers:
   '@commitlint/config-conventional': 17.0.3
   '@semantic-release/changelog': 6.0.1
   '@semantic-release/git': 10.0.1
-  '@sveltejs/adapter-auto': 1.0.0-next.52
-  '@sveltejs/kit': 1.0.0-next.355
+  '@sveltejs/adapter-auto': 1.0.0-next.53
+  '@sveltejs/kit': 1.0.0-next.357
   '@typescript-eslint/eslint-plugin': 5.28.0
   '@typescript-eslint/parser': 5.28.0
   cypress: 10.3.0
@@ -35,8 +35,8 @@ devDependencies:
   '@commitlint/config-conventional': 17.0.3
   '@semantic-release/changelog': 6.0.1_semantic-release@19.0.3
   '@semantic-release/git': 10.0.1_semantic-release@19.0.3
-  '@sveltejs/adapter-auto': 1.0.0-next.52
-  '@sveltejs/kit': 1.0.0-next.355_svelte@3.48.0
+  '@sveltejs/adapter-auto': 1.0.0-next.53
+  '@sveltejs/kit': 1.0.0-next.357_svelte@3.48.0
   '@typescript-eslint/eslint-plugin': 5.28.0_bwdgjzdjqqu6lnspjrilve2nye
   '@typescript-eslint/parser': 5.28.0_n4lrrl552kqf5nk4rgej5xdcha
   cypress: 10.3.0
@@ -629,26 +629,26 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/adapter-auto/1.0.0-next.52:
-    resolution: {integrity: sha512-jOuC7RauiwGg7BQQEZxBGcwtwynNqQSuGJ7MJ9kk5WIrFCMrZSclwnpO1yLmUUYFKvJ61Z7bvVoDqm6+CgLEaw==}
+  /@sveltejs/adapter-auto/1.0.0-next.53:
+    resolution: {integrity: sha512-LyaeU0rkcymGWvV/3K26AZxqG/+ZQHwa+hrx3xsbmOykjQ2WQPTXRVwmH23zV4A5ABvni76LRMsQOoqWzP3G9Q==}
     dependencies:
-      '@sveltejs/adapter-cloudflare': 1.0.0-next.23
-      '@sveltejs/adapter-netlify': 1.0.0-next.65
+      '@sveltejs/adapter-cloudflare': 1.0.0-next.24
+      '@sveltejs/adapter-netlify': 1.0.0-next.66
       '@sveltejs/adapter-vercel': 1.0.0-next.59
     transitivePeerDependencies:
       - encoding
       - supports-color
     dev: true
 
-  /@sveltejs/adapter-cloudflare/1.0.0-next.23:
-    resolution: {integrity: sha512-WaDE25Ib3Q9kM1BBxvGxr57vfExg0Q1Wu2H3dSFV4Apw18UHKS89P/U6wd4u4zAzAw+Mcm8gduX/rRs5z0YMwA==}
+  /@sveltejs/adapter-cloudflare/1.0.0-next.24:
+    resolution: {integrity: sha512-g1QSrjWYjM6sfJB+pQn52EIfbVFjpk23GYsj5PLt2Gi3zRNfLRbpkFkPeyAOZbAfT4k/9lUqfLW+pkh+W3yxlg==}
     dependencies:
       esbuild: 0.14.42
       worktop: 0.8.0-next.14
     dev: true
 
-  /@sveltejs/adapter-netlify/1.0.0-next.65:
-    resolution: {integrity: sha512-81LYVqT0Fez7xqvOdE9ITD7b5kxdzzXjXwJ0ISBfJYt6wqg0fmABm3mcDy3opXau7DoQkhkhnlqkharTHfhJQg==}
+  /@sveltejs/adapter-netlify/1.0.0-next.66:
+    resolution: {integrity: sha512-UypTRnTd+R1O6SaDdc8l3A3c9/mQF8xLNoVb3Ay5ipb7uPU5WmjVYjfLVGyeVy67gztFfeFC/9Esu4OI2Ayx1A==}
     dependencies:
       '@iarna/toml': 2.2.5
       esbuild: 0.14.42
@@ -666,8 +666,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.355_svelte@3.48.0:
-    resolution: {integrity: sha512-4M+BZL/kKgw5tMRkAYcpg38hxMX80iz6H9+nv2v6VzvKhD4Pw6zatzMs2D6PCT2uBHnrKGrUCheBBcK8kZdWKg==}
+  /@sveltejs/kit/1.0.0-next.357_svelte@3.48.0:
+    resolution: {integrity: sha512-nCAehVybIEpQNnPu61V/EFVdfDb1nBSiQUfW9EcSSDEUbyAMCVBOKZZuzQ0qQDp3xniqRkyDzpBA4wN+ADxHBw==}
     engines: {node: '>=16.7'}
     hasBin: true
     peerDependencies:
