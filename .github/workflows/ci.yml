@@ -12,13 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7.1.0
+        uses: pnpm/action-setup@v2.2.2
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
+          cache: pnpm
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Run Build
@@ -33,4 +32,4 @@ jobs:
           install: false
           build: pnpm build
           start: pnpm preview
-          wait-on: 'http://localhost:3000'
+          wait-on: 'http://localhost:4173/'
