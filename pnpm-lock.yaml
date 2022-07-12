@@ -26,7 +26,7 @@ specifiers:
   svelte2tsx: 0.5.11
   tslib: 2.4.0
   typescript: 4.7.4
-  vite: ^2.9.14
+  vite: 2.9.14
 
 dependencies:
   schema-dts: 1.1.0_typescript@4.7.4
