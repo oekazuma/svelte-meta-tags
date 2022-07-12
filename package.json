@@ -18,9 +18,9 @@
     "url": "https://github.com/oekazuma/svelte-meta-tags"
   },
   "scripts": {
-    "dev": "svelte-kit dev",
-    "build": "svelte-kit build",
-    "preview": "svelte-kit preview",
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
     "package": "svelte-kit package",
     "prepare": "svelte-kit sync && husky install",
     "check": "svelte-check --tsconfig ./tsconfig.json",
@@ -59,7 +59,8 @@
     "svelte-preprocess": "4.10.7",
     "svelte2tsx": "0.5.11",
     "tslib": "2.4.0",
-    "typescript": "4.7.4"
+    "typescript": "4.7.4",
+    "vite": "^2.9.14"
   },
   "peerDependencies": {
     "svelte": "^3.39.0"
