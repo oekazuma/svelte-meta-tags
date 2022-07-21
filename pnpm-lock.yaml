@@ -9,7 +9,7 @@ specifiers:
   '@sveltejs/kit': 1.0.0-next.379
   '@typescript-eslint/eslint-plugin': 5.30.7
   '@typescript-eslint/parser': 5.30.7
-  cypress: 10.3.0
+  cypress: 10.3.1
   eslint: 8.20.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-cypress: 2.12.1
@@ -23,7 +23,7 @@ specifiers:
   svelte: 3.49.0
   svelte-check: 2.8.0
   svelte-preprocess: 4.10.7
-  svelte2tsx: 0.5.11
+  svelte2tsx: 0.5.12
   tslib: 2.4.0
   typescript: 4.7.4
   vite: 3.0.2
@@ -40,7 +40,7 @@ devDependencies:
   '@sveltejs/kit': 1.0.0-next.379_svelte@3.49.0+vite@3.0.2
   '@typescript-eslint/eslint-plugin': 5.30.7_6wltbjakwuqm7awqswigmiuhd4
   '@typescript-eslint/parser': 5.30.7_he2ccbldppg44uulnyq4rwocfa
-  cypress: 10.3.0
+  cypress: 10.3.1
   eslint: 8.20.0
   eslint-config-prettier: 8.5.0_eslint@8.20.0
   eslint-plugin-cypress: 2.12.1_eslint@8.20.0
@@ -53,7 +53,7 @@ devDependencies:
   svelte: 3.49.0
   svelte-check: 2.8.0_svelte@3.49.0
   svelte-preprocess: 4.10.7_uslzfc62di2n2otc2tvfklnwji
-  svelte2tsx: 0.5.11_uslzfc62di2n2otc2tvfklnwji
+  svelte2tsx: 0.5.12_uslzfc62di2n2otc2tvfklnwji
   tslib: 2.4.0
   typescript: 4.7.4
   vite: 3.0.2
@@ -794,7 +794,7 @@ packages:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
     requiresBuild: true
     dependencies:
-      '@types/node': 14.18.22
+      '@types/node': 18.0.6
     dev: true
     optional: true
 
@@ -1520,8 +1520,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /cypress/10.3.0:
-    resolution: {integrity: sha512-txkQWKzvBVnWdCuKs5Xc08gjpO89W2Dom2wpZgT9zWZT5jXxqPIxqP/NC1YArtkpmp3fN5HW8aDjYBizHLUFvg==}
+  /cypress/10.3.1:
+    resolution: {integrity: sha512-As9HrExjAgpgjCnbiQCuPdw5sWKx5HUJcK2EOKziu642akwufr/GUeqL5UnCPYXTyyibvEdWT/pSC2qnGW/e5w==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     requiresBuild: true
@@ -3788,7 +3788,7 @@ packages:
     dev: true
 
   /proxy-from-env/1.0.0:
-    resolution: {integrity: sha1-M8UDmPcOp+uW0h97gXYwpVeRx+4=}
+    resolution: {integrity: sha512-F2JHgJQ1iqwnHDcQjVBsq3n/uoaFL+iPW/eAeL7kVxy/2RrWaN4WroKjjvbsoRtv0ftelNyC01bjRhn/bhcf4A==}
     dev: true
 
   /psl/1.9.0:
@@ -4485,8 +4485,8 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
-  /svelte2tsx/0.5.11_uslzfc62di2n2otc2tvfklnwji:
-    resolution: {integrity: sha512-Is95G1wqNvEUJZ9DITRS2zfMwVJRZztMduPs1vJJ0cm65WUg/avBl5vBXjHycQL/qmFpaqa3NG4qWnf7bCHPag==}
+  /svelte2tsx/0.5.12_uslzfc62di2n2otc2tvfklnwji:
+    resolution: {integrity: sha512-43ayMivmh1IDCgb+4YDf54YuOJZGCUKFpp37RbfjGgNU+Pmb9HhP+zRXa1pMh4mwSTBfqZS0FbJZP3Q8CSxvvg==}
     peerDependencies:
       svelte: ^3.24
       typescript: ^4.1.2
@@ -4767,7 +4767,7 @@ packages:
     dev: true
 
   /verror/1.10.0:
-    resolution: {integrity: sha1-OhBcoXBTr1XW4nDB+CiGguGNpAA=}
+    resolution: {integrity: sha512-ZZKSmDAEFOijERBLkmYfJ+vmk3w+7hOLYDNkRCuRuMJGEmqYNCNLyBBFwWKVMhfwaEF3WOd0Zlw86U/WC/+nYw==}
     engines: {'0': node >=0.6.0}
     dependencies:
       assert-plus: 1.0.0

@@ -44,7 +44,7 @@
     "@sveltejs/kit": "1.0.0-next.379",
     "@typescript-eslint/eslint-plugin": "5.30.7",
     "@typescript-eslint/parser": "5.30.7",
-    "cypress": "10.3.0",
+    "cypress": "10.3.1",
     "eslint": "8.20.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-cypress": "2.12.1",
@@ -57,7 +57,7 @@
     "svelte": "3.49.0",
     "svelte-check": "2.8.0",
     "svelte-preprocess": "4.10.7",
-    "svelte2tsx": "0.5.11",
+    "svelte2tsx": "0.5.12",
     "tslib": "2.4.0",
     "typescript": "4.7.4",
     "vite": "3.0.2"
