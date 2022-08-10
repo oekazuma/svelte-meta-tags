@@ -32,9 +32,6 @@
     "test": "pnpm cy:run",
     "release": "pnpm build && pnpm package && semantic-release"
   },
-  "dependencies": {
-    "schema-dts": "1.1.0"
-  },
   "devDependencies": {
     "@commitlint/cli": "17.0.3",
     "@commitlint/config-conventional": "17.0.3",
@@ -53,16 +50,14 @@
     "lint-staged": "13.0.3",
     "prettier": "2.7.1",
     "prettier-plugin-svelte": "2.7.0",
+    "schema-dts": "1.1.0",
     "semantic-release": "19.0.3",
-    "svelte": "3.49.0",
+    "svelte": "^3.39.0",
     "svelte-check": "2.8.0",
     "svelte-preprocess": "4.10.7",
     "svelte2tsx": "0.5.13",
     "tslib": "2.4.0",
     "typescript": "4.7.4",
     "vite": "3.0.5"
-  },
-  "peerDependencies": {
-    "svelte": "^3.39.0"
   }
 }
