@@ -31,6 +31,5 @@ jobs:
       - name: Run Cypress
         uses: cypress-io/github-action@v4
         with:
-          build: npx cypress info
           start: pnpm preview
           wait-on: 'http://localhost:4173/'
