@@ -31,7 +31,8 @@ jobs:
       - name: Run Cypress
         uses: cypress-io/github-action@v4
         with:
-          runTests: false
           build: pnpm build
           start: pnpm preview
           wait-on: 'http://localhost:4173/'
+        env:
+          CYPRESS_INSTALL_BINARY: 0
