@@ -21,7 +21,7 @@ jobs:
           node-version: '16.x'
           cache: pnpm
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install
       - name: Run Build
         run: pnpm build
       - name: Run ESLint
@@ -30,7 +30,6 @@ jobs:
         run: pnpm check
       - name: Run Cypress
         uses: cypress-io/github-action@v4
-        run: pnpm cypress install
         with:
           build: pnpm build
           start: pnpm preview
