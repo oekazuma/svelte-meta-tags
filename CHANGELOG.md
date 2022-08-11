@@ -1,6 +1,10 @@
+# [2.6.2](https://github.com/oekazuma/svelte-meta-tags/compare/v2.6.1...v2.6.2) (2022-08-11)
+
+- trim production dependencies([2008183](https://github.com/oekazuma/svelte-meta-tags/commit/2008183b0a712cc6288e188cabdb14c85f93b0ee))
+
 # [2.6.1](https://github.com/oekazuma/svelte-meta-tags/compare/v2.6.0...v2.6.1) (2022-05-27)
 
-- clean up JSON-LD([6d107c0](https://github.com/oekazuma/svelte-meta-tags/commit/16d107c09546ffd6b2f8312a6851d46bd0da6ae1))
+- clean up JSON-LD ([16d107c](https://github.com/oekazuma/svelte-meta-tags/commit/16d107c09546ffd6b2f8312a6851d46bd0da6ae1))
 
 # [2.6.0](https://github.com/oekazuma/svelte-meta-tags/compare/v2.5.5...v2.6.0) (2022-05-16)
 
