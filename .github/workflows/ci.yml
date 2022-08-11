@@ -30,6 +30,8 @@ jobs:
         run: pnpm check
       - name: Run Cypress
         uses: cypress-io/github-action@v4
+        environment:
+          CYPRESS_CACHE_FOLDER: '~/.cache/Cypress'
         with:
           build: pnpm build
           start: pnpm preview
