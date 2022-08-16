@@ -9,7 +9,7 @@ specifiers:
   '@sveltejs/kit': ^1.0.0-next.405
   '@typescript-eslint/eslint-plugin': ^5.33.1
   '@typescript-eslint/parser': ^5.33.1
-  cypress: ^10.4.0
+  cypress: ^10.5.0
   eslint: ^8.22.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-cypress: ^2.12.1
@@ -26,7 +26,7 @@ specifiers:
   svelte2tsx: ^0.5.13
   tslib: ^2.4.0
   typescript: ^4.7.4
-  vite: ^3.0.5
+  vite: ^3.0.7
 
 devDependencies:
   '@commitlint/cli': 17.0.3
@@ -34,10 +34,10 @@ devDependencies:
   '@semantic-release/changelog': 6.0.1_semantic-release@19.0.3
   '@semantic-release/git': 10.0.1_semantic-release@19.0.3
   '@sveltejs/adapter-auto': 1.0.0-next.64
-  '@sveltejs/kit': 1.0.0-next.405_svelte@3.49.0+vite@3.0.5
+  '@sveltejs/kit': 1.0.0-next.405_svelte@3.49.0+vite@3.0.7
   '@typescript-eslint/eslint-plugin': 5.33.1_vsoshirnpb7xw6mr7xomgfas2i
   '@typescript-eslint/parser': 5.33.1_4rv7y5c6xz3vfxwhbrcxxi73bq
-  cypress: 10.4.0
+  cypress: 10.5.0
   eslint: 8.22.0
   eslint-config-prettier: 8.5.0_eslint@8.22.0
   eslint-plugin-cypress: 2.12.1_eslint@8.22.0
@@ -54,7 +54,7 @@ devDependencies:
   svelte2tsx: 0.5.13_uslzfc62di2n2otc2tvfklnwji
   tslib: 2.4.0
   typescript: 4.7.4
-  vite: 3.0.5
+  vite: 3.0.7
 
 packages:
 
@@ -693,7 +693,7 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.405_svelte@3.49.0+vite@3.0.5:
+  /@sveltejs/kit/1.0.0-next.405_svelte@3.49.0+vite@3.0.7:
     resolution: {integrity: sha512-jHSa74F7k+hC+0fof75g/xm/+1M5sM66Qt6v8eLLMSgjkp36Lb5xOioBhbl6w0NYoE5xysLsBWuu+yHytfvCBA==}
     engines: {node: '>=16.9'}
     hasBin: true
@@ -702,18 +702,18 @@ packages:
       svelte: ^3.44.0
       vite: ^3.0.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.1_svelte@3.49.0+vite@3.0.5
+      '@sveltejs/vite-plugin-svelte': 1.0.1_svelte@3.49.0+vite@3.0.7
       chokidar: 3.5.3
       sade: 1.8.1
       svelte: 3.49.0
       tiny-glob: 0.2.9
-      vite: 3.0.5
+      vite: 3.0.7
     transitivePeerDependencies:
       - diff-match-patch
       - supports-color
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/1.0.1_svelte@3.49.0+vite@3.0.5:
+  /@sveltejs/vite-plugin-svelte/1.0.1_svelte@3.49.0+vite@3.0.7:
     resolution: {integrity: sha512-PorCgUounn0VXcpeJu+hOweZODKmGuLHsLomwqSj+p26IwjjGffmYQfVHtiTWq+NqaUuuHWWG7vPge6UFw4Aeg==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
@@ -731,7 +731,7 @@ packages:
       magic-string: 0.26.2
       svelte: 3.49.0
       svelte-hmr: 0.14.12_svelte@3.49.0
-      vite: 3.0.5
+      vite: 3.0.7
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -807,7 +807,7 @@ packages:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
     requiresBuild: true
     dependencies:
-      '@types/node': 14.18.23
+      '@types/node': 18.7.1
     dev: true
     optional: true
 
@@ -1538,8 +1538,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /cypress/10.4.0:
-    resolution: {integrity: sha512-OM7F8MRE01SHQRVVzunid1ZK1m90XTxYnl+7uZfIrB4CYqUDCrZEeSyCXzIbsS6qcaijVCAhqDL60SxG8N6hew==}
+  /cypress/10.5.0:
+    resolution: {integrity: sha512-m1oP/2Au+81moyHGg6Mxro8wo5F5rXjtea9SPXn7ezUT3qNHk43bif3K/6Wz7nuaNUiN9/UM+B4c03kCp8vniw==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     requiresBuild: true
@@ -4803,8 +4803,8 @@ packages:
       extsprintf: 1.3.0
     dev: true
 
-  /vite/3.0.5:
-    resolution: {integrity: sha512-bRvrt9Tw8EGW4jj64aYFTnVg134E8hgDxyl/eEHnxiGqYk7/pTPss6CWlurqPOUzqvEoZkZ58Ws+Iu8MB87iMA==}
+  /vite/3.0.7:
+    resolution: {integrity: sha512-dILhvKba1mbP1wCezVQx/qhEK7/+jVn9ciadEcyKMMhZpsuAi/eWZfJRMkmYlkSFG7Qq9NvJbgFq4XOBxugJsA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
