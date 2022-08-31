@@ -28,4 +28,4 @@ All the code for the library is located in the `src/lib` directory.
 
 The `src/routes` directory contains a fully working SvelteKit app. This will be used for end-to-end testing. You can run `pnpm dev` to run this app. You can also run it in a production build by running `pnpm build` and `pnpm preview`.
 
-To run Cypress, you can run `pnpm build` and `pnpm preview` and `pnpm test`.
+To run Playwright, you can run `pnpm test`.
