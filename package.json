@@ -31,8 +31,8 @@
     "release": "pnpm build && pnpm package && semantic-release"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.0.3",
-    "@commitlint/config-conventional": "^17.0.3",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@playwright/test": "^1.25.1",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
@@ -51,9 +51,9 @@
     "schema-dts": "^1.1.0",
     "semantic-release": "^19.0.5",
     "svelte": "^3.49.0",
-    "svelte-check": "^2.8.1",
+    "svelte-check": "^2.9.0",
     "svelte-preprocess": "^4.10.7",
-    "svelte2tsx": "^0.5.14",
+    "svelte2tsx": "^0.5.16",
     "tslib": "^2.4.0",
     "typescript": "^4.7.4",
     "vite": "^3.0.9"
