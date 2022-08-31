@@ -28,11 +28,7 @@ jobs:
         run: pnpm lint
       - name: Run svelte-check
         run: pnpm check
-      - name: Run Cypress
-        uses: cypress-io/github-action@v4
-        with:
-          runTests: false
-          install: false
-          build: pnpm build
-          start: pnpm preview
-          wait-on: 'http://localhost:4173/'
+      - name: Install Playwright
+        run: pnpm playwright install
+      - name: Run Playwright
+        run: pnpm test
