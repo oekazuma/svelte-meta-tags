@@ -1,3 +1,7 @@
+# [2.6.3](https://github.com/oekazuma/svelte-meta-tags/compare/v2.6.2...v2.6.3) (2022-08-31)
+
+- add schema-dts to dependencies([9824e38](https://github.com/oekazuma/svelte-meta-tags/commit/9824e388728e37009aa06f56642ec4a2b9520921))
+
 # [2.6.2](https://github.com/oekazuma/svelte-meta-tags/compare/v2.6.1...v2.6.2) (2022-08-11)
 
 - trim production dependencies([2008183](https://github.com/oekazuma/svelte-meta-tags/commit/2008183b0a712cc6288e188cabdb14c85f93b0ee))
