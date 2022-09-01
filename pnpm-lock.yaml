@@ -4,7 +4,7 @@ specifiers:
   '@playwright/test': ^1.25.1
   '@sveltejs/adapter-auto': ^1.0.0-next.71
   '@sveltejs/kit': ^1.0.0-next.460
-  '@sveltejs/package': 1.0.0-next.3
+  '@sveltejs/package': ^1.0.0-next.3
   '@typescript-eslint/eslint-plugin': ^5.36.1
   '@typescript-eslint/parser': ^5.36.1
   eslint: ^8.23.0
@@ -23,6 +23,9 @@ specifiers:
   typescript: ^4.8.2
   vite: ^3.1.0-beta.1
 
+dependencies:
+  schema-dts: 1.1.0_typescript@4.8.2
+
 devDependencies:
   '@playwright/test': 1.25.1
   '@sveltejs/adapter-auto': 1.0.0-next.71
@@ -37,7 +40,6 @@ devDependencies:
   lint-staged: 13.0.3
   prettier: 2.7.1
   prettier-plugin-svelte: 2.7.0_o3ioganyptcsrh6x4hnxvjkpqi
-  schema-dts: 1.1.0_typescript@4.8.2
   svelte: 3.49.0
   svelte-check: 2.9.0_svelte@3.49.0
   svelte-preprocess: 4.10.7_k5n4uipe6734vn7334tf7n5ml4
@@ -2058,7 +2060,7 @@ packages:
       typescript: '>=4.1.0'
     dependencies:
       typescript: 4.8.2
-    dev: true
+    dev: false
 
   /semver/6.3.0:
     resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==}
@@ -2415,7 +2417,6 @@ packages:
     resolution: {integrity: sha512-C0I1UsrrDHo2fYI5oaCGbSejwX4ch+9Y5jTQELvovfmFkK3HHSZJB8MSJcWLmCUBzQBchCrZ9rMRV6GuNrvGtw==}
     engines: {node: '>=4.2.0'}
     hasBin: true
-    dev: true
 
   /undici/5.10.0:
     resolution: {integrity: sha512-c8HsD3IbwmjjbLvoZuRI26TZic+TSEe8FPMLLOkN1AfYRhdjnKBU6yL+IwcSCbdZiX4e5t0lfMDLDCqj4Sq70g==}
