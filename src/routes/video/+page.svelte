@@ -14,57 +14,57 @@
       actors: [
         {
           profile: 'https://www.example.com/actors/@firstnameA-lastnameA',
-          role: 'Protagonist',
+          role: 'Protagonist'
         },
         {
           profile: 'https://www.example.com/actors/@firstnameB-lastnameB',
-          role: 'Antagonist',
-        },
+          role: 'Antagonist'
+        }
       ],
       directors: [
         'https://www.example.com/directors/@firstnameA-lastnameA',
-        'https://www.example.com/directors/@firstnameB-lastnameB',
+        'https://www.example.com/directors/@firstnameB-lastnameB'
       ],
       writers: [
         'https://www.example.com/writers/@firstnameA-lastnameA',
-        'https://www.example.com/writers/@firstnameB-lastnameB',
+        'https://www.example.com/writers/@firstnameB-lastnameB'
       ],
       duration: 680000,
       releaseDate: '2022-12-21T22:04:11Z',
-      tags: ['Tag A', 'Tag B', 'Tag C'],
+      tags: ['Tag A', 'Tag B', 'Tag C']
     },
     images: [
       {
         url: 'https://www.test.ie/og-image-video-title-01.jpg',
         width: 850,
         height: 650,
-        alt: 'Og Image Alt Video Title A',
+        alt: 'Og Image Alt Video Title A'
       },
       {
         url: 'https://www.test.ie/og-image-video-title-02.jpg',
         width: 950,
         height: 850,
-        alt: 'Og Image Alt Video Title B',
+        alt: 'Og Image Alt Video Title B'
       },
       {
         url: 'https://www.test.ie/og-image-video-title-03.jpg',
         width: 600,
         height: 400,
-        alt: 'Og Image Alt Video Title C',
+        alt: 'Og Image Alt Video Title C'
       },
       {
         url: 'https://www.test.ie/og-image-video-title-04.jpg',
         width: 400,
         height: 400,
-        alt: 'Og Image Alt Video Title D',
-      },
+        alt: 'Og Image Alt Video Title D'
+      }
     ],
-    site_name: 'SiteName',
+    site_name: 'SiteName'
   }}
   twitter={{
     handle: '@handle',
     site: '@site',
-    cardType: 'summary_large_image',
+    cardType: 'summary_large_image'
   }}
 />
 

@@ -18,10 +18,10 @@
         url: 'https://www.example.ie/og-image.jpg',
         width: 800,
         height: 600,
-        alt: 'Og Image Alt',
-      },
+        alt: 'Og Image Alt'
+      }
     ],
-    site_name: 'SiteName',
+    site_name: 'SiteName'
   }}
   twitter={{
     handle: '@handle',
@@ -30,35 +30,35 @@
     title: 'Normal | Svelte Meta Tags',
     description: 'Description',
     image: 'https://www.example.ie/twitter-image.jpg',
-    imageAlt: 'Twitter image alt',
+    imageAlt: 'Twitter image alt'
   }}
   facebook={{
-    appId: '1234567890',
+    appId: '1234567890'
   }}
   additionalLinkTags={[
     {
       rel: 'icon',
-      href: 'https://www.test.ie/favicon.ico',
+      href: 'https://www.test.ie/favicon.ico'
     },
     {
       rel: 'apple-touch-icon',
       href: 'https://www.test.ie/touch-icon-ipad.jpg',
-      sizes: '76x76',
+      sizes: '76x76'
     },
     {
       rel: 'apple-touch-icon',
       href: 'https://www.test.ie/touch-icon-iphone-retina.jpg',
-      sizes: '120x120',
+      sizes: '120x120'
     },
     {
       rel: 'mask-icon',
       href: 'https://www.test.ie/safari-pinned-tab.svg',
-      color: '#193860',
+      color: '#193860'
     },
     {
       rel: 'manifest',
-      href: '/manifest.json',
-    },
+      href: '/manifest.json'
+    }
   ]}
 />
 
