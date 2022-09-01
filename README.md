@@ -11,10 +11,6 @@ Svelte Meta Tags is a plugin that makes managing your SEO easier in Svelte proje
 
 This library is inspired by [next-seo](https://github.com/garmeeh/next-seo)
 
-**Would you like to support this project?**
-
-<a href="https://www.buymeacoffee.com/oekazuma" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-orange.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
-
 **Table of Contents**
 
 - [Installing](#-installing)
