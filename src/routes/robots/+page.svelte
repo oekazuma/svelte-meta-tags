@@ -11,7 +11,7 @@
     noarchive: true,
     maxSnippet: -1,
     maxImagePreview: 'none',
-    maxVideoPreview: -1,
+    maxVideoPreview: -1
   }}
 />
 

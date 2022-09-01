@@ -1,5 +1,5 @@
 <script>
-  import Links from './_Links.svelte';
+  import Links from './Links.svelte';
 </script>
 
 <slot />

@@ -26,7 +26,7 @@
       noarchive,
       noimageindex,
       notranslate,
-      unavailableAfter,
+      unavailableAfter
     } = robotsProps;
 
     robotsParams = `${nosnippet ? ',nosnippet' : ''}${maxSnippet ? `,max-snippet:${maxSnippet}` : ''}${

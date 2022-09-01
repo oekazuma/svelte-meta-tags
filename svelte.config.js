@@ -7,9 +7,9 @@ const config = {
   kit: {
     adapter: adapter(),
     alias: {
-      'svelte-meta-tags': 'src/lib',
-    },
-  },
+      'svelte-meta-tags': 'src/lib'
+    }
+  }
 };
 
 export default config;

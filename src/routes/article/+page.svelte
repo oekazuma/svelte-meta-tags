@@ -16,43 +16,43 @@
       expirationTime: '2022-12-21T22:04:11Z',
       authors: [
         'https://www.example.com/authors/@firstnameA-lastnameA',
-        'https://www.example.com/authors/@firstnameB-lastnameB',
+        'https://www.example.com/authors/@firstnameB-lastnameB'
       ],
       section: 'Section II',
-      tags: ['Tag A', 'Tag B', 'Tag C'],
+      tags: ['Tag A', 'Tag B', 'Tag C']
     },
     images: [
       {
         url: 'https://www.test.ie/og-image-article-title-01.jpg',
         width: 850,
         height: 650,
-        alt: 'Og Image Alt Article Title A',
+        alt: 'Og Image Alt Article Title A'
       },
       {
         url: 'https://www.test.ie/og-image-article-title-02.jpg',
         width: 950,
         height: 850,
-        alt: 'Og Image Alt Article Title B',
+        alt: 'Og Image Alt Article Title B'
       },
       {
         url: 'https://www.test.ie/og-image-article-title-03.jpg',
         width: 600,
         height: 400,
-        alt: 'Og Image Alt Article Title C',
+        alt: 'Og Image Alt Article Title C'
       },
       {
         url: 'https://www.test.ie/og-image-article-title-04.jpg',
         width: 400,
         height: 400,
-        alt: 'Og Image Alt Article Title D',
-      },
+        alt: 'Og Image Alt Article Title D'
+      }
     ],
-    site_name: 'SiteName',
+    site_name: 'SiteName'
   }}
   twitter={{
     handle: '@handle',
     site: '@site',
-    cardType: 'summary_large_image',
+    cardType: 'summary_large_image'
   }}
 />
 
