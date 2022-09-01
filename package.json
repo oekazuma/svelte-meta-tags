@@ -34,7 +34,6 @@
     "@sveltejs/adapter-auto": "^1.0.0-next.71",
     "@sveltejs/kit": "^1.0.0-next.460",
     "@sveltejs/package": "1.0.0-next.3",
-    "@types/node": "^18.7.14",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "eslint": "^8.23.0",

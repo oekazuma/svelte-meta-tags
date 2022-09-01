@@ -29,6 +29,6 @@ jobs:
       - name: Run svelte-check
         run: pnpm check
       - name: Install Playwright
-        run: pnpm playwright install
+        run: pnpm playwright install --with-deps
       - name: Run Playwright
         run: pnpm test
