@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@playwright/test': ^1.25.1
   '@sveltejs/adapter-auto': ^1.0.0-next.71
-  '@sveltejs/kit': ^1.0.0-next.460
+  '@sveltejs/kit': ^1.0.0-next.461
   '@sveltejs/package': ^1.0.0-next.3
   '@typescript-eslint/eslint-plugin': ^5.36.1
   '@typescript-eslint/parser': ^5.36.1
@@ -29,7 +29,7 @@ dependencies:
 devDependencies:
   '@playwright/test': 1.25.1
   '@sveltejs/adapter-auto': 1.0.0-next.71
-  '@sveltejs/kit': 1.0.0-next.460_fhgkwirxvgjw2igda6zmhiisma
+  '@sveltejs/kit': 1.0.0-next.461_fhgkwirxvgjw2igda6zmhiisma
   '@sveltejs/package': 1.0.0-next.3_k5n4uipe6734vn7334tf7n5ml4
   '@typescript-eslint/eslint-plugin': 5.36.1_lbwfnm54o3pmr3ypeqp3btnera
   '@typescript-eslint/parser': 5.36.1_yqf6kl63nyoq5megxukfnom5rm
@@ -222,8 +222,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.460_fhgkwirxvgjw2igda6zmhiisma:
-    resolution: {integrity: sha512-bwDkwzEN72+1K5FXqBQGrYOwyA6V5sSSec/A6qXMTfh4uycFTiIQh/e2ki3pxfG0SwijrUo43FEbdKLyBiuDgQ==}
+  /@sveltejs/kit/1.0.0-next.461_fhgkwirxvgjw2igda6zmhiisma:
+    resolution: {integrity: sha512-REe/ZIjE9F6ndEtCn4oPXpGWjiyLtOVWKJ73q53I3zxxoohL8OG6Zy0tnrdSvQj0nOBFTyQ4QXeYFn4TAO5oSw==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
