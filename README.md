@@ -98,18 +98,18 @@ pnpm add -D svelte-meta-tags
         url: 'https://www.example.ie/og-image-01.jpg',
         width: 800,
         height: 600,
-        alt: 'Og Image Alt',
+        alt: 'Og Image Alt'
       },
       {
         url: 'https://www.example.ie/og-image-02.jpg',
         width: 900,
         height: 800,
-        alt: 'Og Image Alt Second',
+        alt: 'Og Image Alt Second'
       },
       { url: 'https://www.example.ie/og-image-03.jpg' },
-      { url: 'https://www.example.ie/og-image-04.jpg' },
+      { url: 'https://www.example.ie/og-image-04.jpg' }
     ],
-    site_name: 'SiteName',
+    site_name: 'SiteName'
   }}
   twitter={{
     handle: '@handle',
@@ -118,10 +118,10 @@ pnpm add -D svelte-meta-tags
     title: 'Using More of Config',
     description: 'This example uses more of the available config options.',
     image: 'https://www.example.ie/twitter-image.jpg',
-    imageAlt: 'Twitter image alt',
+    imageAlt: 'Twitter image alt'
   }}
   facebook={{
-    appId: '1234567890',
+    appId: '1234567890'
   }}
 />
 ```
@@ -235,7 +235,7 @@ Example:
     maxVideoPreview: -1,
     notranslate: true,
     noimageindex: true,
-    unavailableAfter: '25 Jun 2010 15:00:00 PST',
+    unavailableAfter: '25 Jun 2010 15:00:00 PST'
   }}
 />
 ```
@@ -413,15 +413,15 @@ Svelte Meta Tags currently supports:
         url: 'https://www.example.ie/og-image.jpg',
         width: 800,
         height: 600,
-        alt: 'Og Image Alt',
+        alt: 'Og Image Alt'
       },
       {
         url: 'https://www.example.ie/og-image-2.jpg',
         width: 800,
         height: 600,
-        alt: 'Og Image Alt 2',
-      },
-    ],
+        alt: 'Og Image Alt 2'
+      }
+    ]
   }}
 />
 ```
@@ -447,26 +447,26 @@ Full info on [http://ogp.me/](http://ogp.me/#type_video)
       actors: [
         {
           profile: 'https://www.example.com/actors/@firstnameA-lastnameA',
-          role: 'Protagonist',
+          role: 'Protagonist'
         },
         {
           profile: 'https://www.example.com/actors/@firstnameB-lastnameB',
-          role: 'Antagonist',
-        },
+          role: 'Antagonist'
+        }
       ],
       directors: [
         'https://www.example.com/directors/@firstnameA-lastnameA',
-        'https://www.example.com/directors/@firstnameB-lastnameB',
+        'https://www.example.com/directors/@firstnameB-lastnameB'
       ],
       writers: [
         'https://www.example.com/writers/@firstnameA-lastnameA',
-        'https://www.example.com/writers/@firstnameB-lastnameB',
+        'https://www.example.com/writers/@firstnameB-lastnameB'
       ],
       duration: 680000,
       releaseDate: '2022-12-21T22:04:11Z',
-      tags: ['Tag A', 'Tag B', 'Tag C'],
+      tags: ['Tag A', 'Tag B', 'Tag C']
     },
-    site_name: 'SiteName',
+    site_name: 'SiteName'
   }}
 />
 ```
@@ -491,18 +491,18 @@ Full info on [http://ogp.me/](http://ogp.me/#type_video)
       section: 'Section II',
       authors: [
         'https://www.example.com/authors/@firstnameA-lastnameA',
-        'https://www.example.com/authors/@firstnameB-lastnameB',
+        'https://www.example.com/authors/@firstnameB-lastnameB'
       ],
-      tags: ['Tag A', 'Tag B', 'Tag C'],
+      tags: ['Tag A', 'Tag B', 'Tag C']
     },
     images: [
       {
         url: 'https://www.test.ie/images/cover.jpg',
         width: 850,
         height: 650,
-        alt: 'Photo of text',
-      },
-    ],
+        alt: 'Photo of text'
+      }
+    ]
   }}
 />
 ```
@@ -525,18 +525,18 @@ Full info on [http://ogp.me/](http://ogp.me/#type_video)
       isbn: '978-3-16-148410-0',
       authors: [
         'https://www.example.com/authors/@firstnameA-lastnameA',
-        'https://www.example.com/authors/@firstnameB-lastnameB',
+        'https://www.example.com/authors/@firstnameB-lastnameB'
       ],
-      tags: ['Tag A', 'Tag B', 'Tag C'],
+      tags: ['Tag A', 'Tag B', 'Tag C']
     },
     images: [
       {
         url: 'https://www.test.ie/images/book.jpg',
         width: 850,
         height: 650,
-        alt: 'Cover of the book',
-      },
-    ],
+        alt: 'Cover of the book'
+      }
+    ]
   }}
 />
 ```
@@ -558,16 +558,16 @@ Full info on [http://ogp.me/](http://ogp.me/#type_video)
       firstName: 'First',
       lastName: 'Last',
       username: 'firstlast123',
-      gender: 'female',
+      gender: 'female'
     },
     images: [
       {
         url: 'https://www.test.ie/images/profile.jpg',
         width: 850,
         height: 650,
-        alt: 'Profile Photo',
-      },
-    ],
+        alt: 'Profile Photo'
+      }
+    ]
   }}
 />
 ```
@@ -605,28 +605,28 @@ This plugin uses [schema-dts](https://github.com/google/schema-dts), so it also 
     '@type': 'Article',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': 'https://example.com/article',
+      '@id': 'https://example.com/article'
     },
     headline: 'Article headline',
     image: [
       'https://example.com/photos/1x1/photo.jpg',
       'https://example.com/photos/4x3/photo.jpg',
-      'https://example.com/photos/16x9/photo.jpg',
+      'https://example.com/photos/16x9/photo.jpg'
     ],
     datePublished: '2015-02-05T08:00:00+08:00',
     dateModified: '2015-02-05T09:20:00+08:00',
     author: {
       '@type': 'Person',
-      name: 'John Doe',
+      name: 'John Doe'
     },
     publisher: {
       '@type': 'Organization',
       name: 'Google',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://example.com/logo.jpg',
-      },
-    },
+        url: 'https://example.com/logo.jpg'
+      }
+    }
   }}
 />
 ```
@@ -646,20 +646,20 @@ This plugin uses [schema-dts](https://github.com/google/schema-dts), so it also 
         '@type': 'ListItem',
         position: 1,
         name: 'Books',
-        item: 'https://example.com/books',
+        item: 'https://example.com/books'
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Science Fiction',
-        item: 'https://example.com/books/sciencefiction',
+        item: 'https://example.com/books/sciencefiction'
       },
       {
         '@type': 'ListItem',
         position: 3,
-        name: 'Award Winners',
-      },
-    ],
+        name: 'Award Winners'
+      }
+    ]
   }}
 />
 ```
@@ -678,7 +678,7 @@ This plugin uses [schema-dts](https://github.com/google/schema-dts), so it also 
     image: [
       'https://example.com/photos/1x1/photo.jpg',
       'https://example.com/photos/4x3/photo.jpg',
-      'https://example.com/photos/16x9/photo.jpg',
+      'https://example.com/photos/16x9/photo.jpg'
     ],
     description:
       "Sleeker than ACME's Classic Anvil, the Executive Anvil is perfect for the business traveler looking for something to drop from a height.",
@@ -686,24 +686,24 @@ This plugin uses [schema-dts](https://github.com/google/schema-dts), so it also 
     mpn: '925872',
     brand: {
       '@type': 'Brand',
-      name: 'ACME',
+      name: 'ACME'
     },
     review: {
       '@type': 'Review',
       reviewRating: {
         '@type': 'Rating',
         ratingValue: '4',
-        bestRating: '5',
+        bestRating: '5'
       },
       author: {
         '@type': 'Person',
-        name: 'Fred Benson',
-      },
+        name: 'Fred Benson'
+      }
     },
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.4',
-      reviewCount: '89',
+      reviewCount: '89'
     },
     offers: {
       '@type': 'Offer',
@@ -712,8 +712,8 @@ This plugin uses [schema-dts](https://github.com/google/schema-dts), so it also 
       price: '119.99',
       priceValidUntil: '2020-11-20',
       itemCondition: 'https://schema.org/UsedCondition',
-      availability: 'https://schema.org/InStock',
-    },
+      availability: 'https://schema.org/InStock'
+    }
   }}
 />
 ```
@@ -733,8 +733,8 @@ This plugin uses [schema-dts](https://github.com/google/schema-dts), so it also 
     provider: {
       '@type': 'Organization',
       name: 'University of Technology - Eureka',
-      sameAs: 'http://www.ut-eureka.edu',
-    },
+      sameAs: 'http://www.ut-eureka.edu'
+    }
   }}
 />
 ```
@@ -751,7 +751,7 @@ This plugin uses [schema-dts](https://github.com/google/schema-dts), so it also 
     '@type': 'Dataset',
     name: 'name of the dataset',
     description: 'The description needs to be at least 50 characters long',
-    license: 'https//www.example.com',
+    license: 'https//www.example.com'
   }}
 />
 ```
@@ -772,18 +772,18 @@ This plugin uses [schema-dts](https://github.com/google/schema-dts), so it also 
         name: 'How long is the delivery time?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: '3-5 business days.',
-        },
+          text: '3-5 business days.'
+        }
       },
       {
         '@type': 'Question',
         name: 'Where can I find information about product recalls?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Read more on under information.',
-        },
-      },
-    ],
+          text: 'Read more on under information.'
+        }
+      }
+    ]
   }}
 />
 ```
