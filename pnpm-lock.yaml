@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@playwright/test': ^1.25.1
   '@sveltejs/adapter-auto': ^1.0.0-next.71
-  '@sveltejs/kit': ^1.0.0-next.469
+  '@sveltejs/kit': ^1.0.0-next.471
   '@sveltejs/package': ^1.0.0-next.3
   '@typescript-eslint/eslint-plugin': ^5.36.2
   '@typescript-eslint/parser': ^5.36.2
@@ -29,7 +29,7 @@ dependencies:
 devDependencies:
   '@playwright/test': 1.25.1
   '@sveltejs/adapter-auto': 1.0.0-next.71
-  '@sveltejs/kit': 1.0.0-next.469_svelte@3.50.0+vite@3.1.0
+  '@sveltejs/kit': 1.0.0-next.471_svelte@3.50.0+vite@3.1.0
   '@sveltejs/package': 1.0.0-next.3_25vz5gl6ox2pgh3uo5abz3kk6y
   '@typescript-eslint/eslint-plugin': 5.36.2_iurrlxgqcgk5svigzxakafpeuu
   '@typescript-eslint/parser': 5.36.2_yqf6kl63nyoq5megxukfnom5rm
@@ -231,16 +231,16 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.469_svelte@3.50.0+vite@3.1.0:
-    resolution: {integrity: sha512-gNQ52zeGpQo/Fl1jEK7pLFpt5Nl3SOvgR3a7dXVFYk+M6njAGmlhwlxianDp/iBa3T+Aky62L01ARnVP3DTCnw==}
+  /@sveltejs/kit/1.0.0-next.471_svelte@3.50.0+vite@3.1.0:
+    resolution: {integrity: sha512-0uByoMKVXNPckO1MfMIsqOAvCKYAEDaGaVtUYw+6ZvRnTNA77UIGaX9x4RIL9rcc0xQOxTGNR4Xj+0SUCIqmEw==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
     peerDependencies:
       svelte: ^3.44.0
-      vite: ^3.1.0-beta.1
+      vite: ^3.1.0
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.4_svelte@3.50.0+vite@3.1.0
+      '@sveltejs/vite-plugin-svelte': 1.0.5_svelte@3.50.0+vite@3.1.0
       cookie: 0.5.0
       devalue: 3.1.2
       kleur: 4.1.5
@@ -275,13 +275,13 @@ packages:
       - typescript
     dev: true
 
-  /@sveltejs/vite-plugin-svelte/1.0.4_svelte@3.50.0+vite@3.1.0:
-    resolution: {integrity: sha512-UZco2fdj0OVuRWC0SUJjEOftITc2IeHLFJNp00ym9MuQ9dShnlO4P29G8KUxRlcS7kSpzHuko6eCR9MOALj7lQ==}
+  /@sveltejs/vite-plugin-svelte/1.0.5_svelte@3.50.0+vite@3.1.0:
+    resolution: {integrity: sha512-CmSdSow0Dr5ua1A11BQMtreWnE0JZmkVIcRU/yG3PKbycKUpXjNdgYTWFSbStLB0vdlGnBbm2+Y4sBVj+C+TIw==}
     engines: {node: ^14.18.0 || >= 16}
     peerDependencies:
       diff-match-patch: ^1.0.5
       svelte: ^3.44.0
-      vite: ^3.0.0 || ^3.1.0-beta.1
+      vite: ^3.0.0
     peerDependenciesMeta:
       diff-match-patch:
         optional: true
