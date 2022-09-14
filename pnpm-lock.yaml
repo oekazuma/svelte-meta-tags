@@ -2,8 +2,8 @@ lockfileVersion: 5.4
 
 specifiers:
   '@playwright/test': ^1.25.2
-  '@sveltejs/adapter-auto': ^1.0.0-next.73
-  '@sveltejs/kit': ^1.0.0-next.481
+  '@sveltejs/adapter-auto': ^1.0.0-next.74
+  '@sveltejs/kit': ^1.0.0-next.483
   '@sveltejs/package': ^1.0.0-next.3
   '@typescript-eslint/eslint-plugin': ^5.37.0
   '@typescript-eslint/parser': ^5.37.0
@@ -27,8 +27,8 @@ dependencies:
 
 devDependencies:
   '@playwright/test': 1.25.2
-  '@sveltejs/adapter-auto': 1.0.0-next.73
-  '@sveltejs/kit': 1.0.0-next.481_svelte@3.50.1+vite@3.1.0
+  '@sveltejs/adapter-auto': 1.0.0-next.74
+  '@sveltejs/kit': 1.0.0-next.483_svelte@3.50.1+vite@3.1.0
   '@sveltejs/package': 1.0.0-next.3_iprco5tylfmvffqgrvqxc46njy
   '@typescript-eslint/eslint-plugin': 5.37.0_22c5fnooleyfkzrkkgdmel5kmi
   '@typescript-eslint/parser': 5.37.0_irgkl5vooow2ydyo6aokmferha
@@ -182,12 +182,12 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /@sveltejs/adapter-auto/1.0.0-next.73:
-    resolution: {integrity: sha512-KvCnZtpyfJ6mhCX5jSTn/C4KfBe22VNcTLaHKBhdp/DUDDHJHX4so9nfSAXIC6TuLpxsKnA6dDKLVojlMe9H6g==}
+  /@sveltejs/adapter-auto/1.0.0-next.74:
+    resolution: {integrity: sha512-oQV7eyXQboF2x4oanGt9D6eXnunEsfndGoJmy0HqAErX2r7LT5EN4mTyU4IkG8THKcrT15eYhGrCCeGj5Lo+Bg==}
     dependencies:
       '@sveltejs/adapter-cloudflare': 1.0.0-next.33
       '@sveltejs/adapter-netlify': 1.0.0-next.77
-      '@sveltejs/adapter-vercel': 1.0.0-next.74
+      '@sveltejs/adapter-vercel': 1.0.0-next.75
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -209,8 +209,8 @@ packages:
       set-cookie-parser: 2.5.1
     dev: true
 
-  /@sveltejs/adapter-vercel/1.0.0-next.74:
-    resolution: {integrity: sha512-BMAeib/aH0JdCyMncnugZteVMc47DfKtqE49BpH8JtiIBna34mkYevUWFLyIEVjoNUu2hHr9GMZXBI0q7JL8tQ==}
+  /@sveltejs/adapter-vercel/1.0.0-next.75:
+    resolution: {integrity: sha512-aFy24cx/N7fiTkmSMKB/9BTPJe5Dqre7mUMGwzguugr8FlZw/uvkjcNoqr7XrLqPCB+C550vQOJ/KeEV0g3NwQ==}
     dependencies:
       '@vercel/nft': 0.22.0
       esbuild: 0.15.6
@@ -219,8 +219,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.481_svelte@3.50.1+vite@3.1.0:
-    resolution: {integrity: sha512-rgt6KKjUmx/S/a/duntAp+yds9F3fSm6uq8nvfWHuT1aVGSC5sOdNDrKqck7PCUc9/GPJ6WJu3et5R69hqevRw==}
+  /@sveltejs/kit/1.0.0-next.483_svelte@3.50.1+vite@3.1.0:
+    resolution: {integrity: sha512-0aiVdVJSy1kiK7xp4bw81qjDkErVaA6oIPlpbjsIYe2UYfeg3aRtST41b6XzLbyg61qLlHVGoM5WTLTIdLnbAQ==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
