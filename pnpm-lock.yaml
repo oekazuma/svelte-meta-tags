@@ -18,7 +18,6 @@ specifiers:
   svelte: ^3.50.1
   svelte-check: ^2.9.0
   svelte-preprocess: ^4.10.7
-  svelte2tsx: ^0.5.16
   tslib: ^2.4.0
   typescript: ^4.8.3
   vite: ^3.1.0
@@ -43,7 +42,6 @@ devDependencies:
   svelte: 3.50.1
   svelte-check: 2.9.0_svelte@3.50.1
   svelte-preprocess: 4.10.7_iprco5tylfmvffqgrvqxc46njy
-  svelte2tsx: 0.5.16_iprco5tylfmvffqgrvqxc46njy
   tslib: 2.4.0
   typescript: 4.8.3
   vite: 3.1.0
