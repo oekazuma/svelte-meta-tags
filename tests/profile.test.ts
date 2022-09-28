@@ -2,8 +2,8 @@ import { test, expect } from '@playwright/test';
 
 test('Profile SEO loads correctly', async ({ page }) => {
   await page.goto('/profile');
+  await expect(page).toHaveTitle('Profile Page Title | Svelte Meta Tags');
   await expect(page.locator('h1')).toContainText('Profile SEO');
-  await expect(page.locator('head title')).toContainText('Profile Page Title | Svelte Meta Tags');
   await expect(page.locator('head meta[name="description"]')).toHaveAttribute('content', 'Description of profile page');
   await expect(page.locator('head meta[property="og:type"]')).toHaveAttribute('content', 'profile');
   await expect(page.locator('head meta[property="profile:first_name"]')).toHaveAttribute('content', 'First');

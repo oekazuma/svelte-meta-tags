@@ -2,8 +2,8 @@ import { test, expect } from '@playwright/test';
 
 test('Video SEO loads correctly', async ({ page }) => {
   await page.goto('/video');
+  await expect(page).toHaveTitle('Video Page Title | Svelte Meta Tags');
   await expect(page.locator('h1')).toContainText('Video SEO');
-  await expect(page.locator('head title')).toContainText('Video Page Title | Svelte Meta Tags');
   await expect(page.locator('head meta[name="description"]')).toHaveAttribute('content', 'Description of video page');
   await expect(page.locator('head meta[property="og:type"]')).toHaveAttribute('content', 'video.movie');
   await expect(page.locator('head meta[property="video:duration"]')).toHaveAttribute('content', '680000');
