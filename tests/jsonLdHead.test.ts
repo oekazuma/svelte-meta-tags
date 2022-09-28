@@ -2,8 +2,8 @@ import { test, expect } from '@playwright/test';
 
 test('JSON-LD Head SEO loads correctly', async ({ page }) => {
   await page.goto('/jsonldHead');
+  await expect(page).toHaveTitle('JSON-LD Head Page Title | Svelte Meta Tags');
   await expect(page.locator('h1')).toContainText('JSON-LD Head SEO');
-  await expect(page.locator('head title')).toContainText('JSON-LD Head Page Title | Svelte Meta Tags');
   await expect(page.locator('head meta[name="description"]')).toHaveAttribute(
     'content',
     'Description of JSON-LD Head page'

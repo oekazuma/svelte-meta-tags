@@ -2,8 +2,8 @@ import { test, expect } from '@playwright/test';
 
 test('Another pattern SEO loads correctly', async ({ page }) => {
   await page.goto('/another');
+  await expect(page).toHaveTitle('Another | Svelte Meta Tags');
   await expect(page.locator('h1')).toContainText('Another SEO');
-  await expect(page.locator('head title')).toContainText('Another | Svelte Meta Tags');
   await expect(page.locator('head meta[name="description"]')).toHaveAttribute('content', 'Description Another');
   await expect(page.locator('head link[rel="canonical"]')).toHaveAttribute('href', 'https://www.canonical.ie/another');
   await expect(page.locator('head meta[name="robots"]')).toHaveAttribute('content', 'noindex,nofollow');
