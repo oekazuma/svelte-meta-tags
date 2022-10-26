@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('Normal SEO loads correctly', async ({ page }) => {
+test('Normal SEO loads correctly', async ({ page, baseURL }) => {
   await page.goto('/');
   await expect(page).toHaveTitle('Normal | Svelte Meta Tags');
   await expect(page.locator('h1')).toContainText('Normal SEO');
@@ -41,7 +41,7 @@ test('Normal SEO loads correctly', async ({ page }) => {
     'https://www.example.ie/twitter-image.jpg'
   );
   await expect(page.locator('head meta[name="twitter:image:alt"]')).toHaveAttribute('content', 'Twitter image alt');
-  await expect(page.locator('head link[rel="icon"]')).toHaveAttribute('href', 'https://www.test.ie/favicon.ico');
+  await expect(page.locator('head link[rel="icon"]')).toHaveAttribute('href', `${baseURL}/favicon.ico`);
   const appleTouchIcon = page.locator('head link[rel="apple-touch-icon"]');
   await expect(appleTouchIcon).toHaveCount(2);
   await expect(appleTouchIcon.nth(0)).toHaveAttribute('sizes', '76x76');
@@ -49,5 +49,5 @@ test('Normal SEO loads correctly', async ({ page }) => {
   const maskIcon = page.locator('head link[rel="mask-icon"]');
   await expect(maskIcon).toHaveAttribute('href', 'https://www.test.ie/safari-pinned-tab.svg');
   await expect(maskIcon).toHaveAttribute('color', '#193860');
-  await expect(page.locator('head link[rel="manifest"]')).toHaveAttribute('href', '/manifest.json');
+  await expect(page.locator('head link[rel="manifest"]')).toHaveAttribute('href', 'https://www.test.ie/manifest.json');
 });

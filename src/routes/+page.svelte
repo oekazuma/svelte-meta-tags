@@ -38,7 +38,7 @@
   additionalLinkTags={[
     {
       rel: 'icon',
-      href: 'https://www.test.ie/favicon.ico'
+      href: '/favicon.ico'
     },
     {
       rel: 'apple-touch-icon',
@@ -57,7 +57,7 @@
     },
     {
       rel: 'manifest',
-      href: '/manifest.json'
+      href: 'https://www.test.ie/manifest.json'
     }
   ]}
 />

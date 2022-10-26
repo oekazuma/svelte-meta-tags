@@ -364,7 +364,7 @@ additionalLinkTags={[
   },
   {
     rel: 'manifest',
-    href: '/manifest.json'
+    href: 'https://www.test.ie/manifest.json'
   }
 ]}
 ```
@@ -374,7 +374,7 @@ it will result in this being rendered:
 ```html
 <link rel="icon" href="https://www.test.ie/favicon.ico" />
 <link rel="apple-touch-icon" href="https://www.test.ie/touch-icon-ipad.jpg" sizes="76x76" />
-<link rel="manifest" href="/manifest.json" />
+<link rel="manifest" href="https://www.test.ie/manifest.json" />
 ```
 
 ## Open Graph
