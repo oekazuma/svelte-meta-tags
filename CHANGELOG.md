@@ -1,12 +1,16 @@
-# [2.6.3](https://github.com/oekazuma/svelte-meta-tags/compare/v2.6.2...v2.6.3) (2022-08-31)
+## [2.6.4](https://github.com/oekazuma/svelte-meta-tags/compare/v2.6.3...v2.6.4) (2022-11-16)
+
+- add Svelte to peerDependencies([2d99894](https://github.com/oekazuma/svelte-meta-tags/commit/2d9989454e5ed51d9f4d0d9e9300ba933d0c0ffa))
+
+## [2.6.3](https://github.com/oekazuma/svelte-meta-tags/compare/v2.6.2...v2.6.3) (2022-08-31)
 
 - add schema-dts to dependencies([9824e38](https://github.com/oekazuma/svelte-meta-tags/commit/9824e388728e37009aa06f56642ec4a2b9520921))
 
-# [2.6.2](https://github.com/oekazuma/svelte-meta-tags/compare/v2.6.1...v2.6.2) (2022-08-11)
+## [2.6.2](https://github.com/oekazuma/svelte-meta-tags/compare/v2.6.1...v2.6.2) (2022-08-11)
 
 - trim production dependencies([2008183](https://github.com/oekazuma/svelte-meta-tags/commit/2008183b0a712cc6288e188cabdb14c85f93b0ee))
 
-# [2.6.1](https://github.com/oekazuma/svelte-meta-tags/compare/v2.6.0...v2.6.1) (2022-05-27)
+## [2.6.1](https://github.com/oekazuma/svelte-meta-tags/compare/v2.6.0...v2.6.1) (2022-05-27)
 
 - clean up JSON-LD ([16d107c](https://github.com/oekazuma/svelte-meta-tags/commit/16d107c09546ffd6b2f8312a6851d46bd0da6ae1))
 
