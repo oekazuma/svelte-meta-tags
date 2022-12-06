@@ -47,11 +47,11 @@
     "prettier": "^2.8.0",
     "prettier-plugin-svelte": "^2.8.1",
     "svelte": "^3.53.1",
-    "svelte-check": "^2.10.0",
+    "svelte-check": "^2.10.1",
     "svelte-preprocess": "^4.10.7",
     "tslib": "^2.4.1",
     "typescript": "^4.9.3",
-    "vite": "^3.2.4"
+    "vite": "^3.2.5"
   },
   "peerDependencies": {
     "svelte": "^3.44.0"
