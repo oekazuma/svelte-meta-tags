@@ -25,8 +25,8 @@
     "prepare": "husky install",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "prettier --check --cache --plugin-search-dir=. . && eslint .",
-    "format": "prettier --write --cache --plugin-search-dir=. .",
+    "lint": "prettier --plugin-search-dir . --check . --cache && eslint .",
+    "format": "prettier --plugin-search-dir . --write . --cache",
     "test": "playwright test"
   },
   "dependencies": {
