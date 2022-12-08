@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@playwright/test': ^1.28.1
   '@sveltejs/adapter-auto': ^1.0.0-next.90
-  '@sveltejs/kit': ^1.0.0-next.572
+  '@sveltejs/kit': ^1.0.0-next.575
   '@sveltejs/package': ^1.0.0-next.6
   '@typescript-eslint/eslint-plugin': ^5.46.0
   '@typescript-eslint/parser': ^5.46.0
@@ -28,7 +28,7 @@ dependencies:
 devDependencies:
   '@playwright/test': 1.28.1
   '@sveltejs/adapter-auto': 1.0.0-next.90
-  '@sveltejs/kit': 1.0.0-next.572_svelte@3.54.0+vite@3.2.5
+  '@sveltejs/kit': 1.0.0-next.575_svelte@3.54.0+vite@3.2.5
   '@sveltejs/package': 1.0.0-next.6_vjccw6zkwqrmxudvmy4reaayx4
   '@typescript-eslint/eslint-plugin': 5.46.0_5mle7isnkfgjmrghnnczirv6iy
   '@typescript-eslint/parser': 5.46.0_ha6vam6werchizxrnqvarmz2zu
@@ -159,8 +159,8 @@ packages:
       import-meta-resolve: 2.2.0
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.572_svelte@3.54.0+vite@3.2.5:
-    resolution: {integrity: sha512-PiKEr55L/uJyMKvDPdyoa5MlAYQwdgs8HLMbr28YcCBmhw/v6V7gutKOKdqeXc3YwKEFVS3z7TvW6c7eDokJdQ==}
+  /@sveltejs/kit/1.0.0-next.575_svelte@3.54.0+vite@3.2.5:
+    resolution: {integrity: sha512-34ZxZLih2nRGa96YwzUuUp8Bah6l+EHsvNrFz9Zvce0xkMYfsIRrNZaLjSYgS5YOtN9as3inUaGm8E/AExIkWg==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -180,7 +180,7 @@ packages:
       sirv: 2.0.2
       svelte: 3.54.0
       tiny-glob: 0.2.9
-      undici: 5.13.0
+      undici: 5.14.0
       vite: 3.2.5
     transitivePeerDependencies:
       - supports-color
@@ -2107,8 +2107,8 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
 
-  /undici/5.13.0:
-    resolution: {integrity: sha512-UDZKtwb2k7KRsK4SdXWG7ErXiL7yTGgLWvk2AXO1JMjgjh404nFo6tWSCM2xMpJwMPx3J8i/vfqEh1zOqvj82Q==}
+  /undici/5.14.0:
+    resolution: {integrity: sha512-yJlHYw6yXPPsuOH0x2Ib1Km61vu4hLiRRQoafs+WUgX1vO64vgnxiCEN9dpIrhZyHFsai3F0AEj4P9zy19enEQ==}
     engines: {node: '>=12.18'}
     dependencies:
       busboy: 1.6.0
