@@ -1,3 +1,7 @@
+## [2.6.5](https://github.com/oekazuma/svelte-meta-tags/compare/v2.6.4...v2.6.5) (2023-01-19)
+
+- rewrite document text for clarity([892bcb3](https://github.com/oekazuma/svelte-meta-tags/commit/892bcb302763d80089cfeb34b34bfbd33269cbf0))
+
 ## [2.6.4](https://github.com/oekazuma/svelte-meta-tags/compare/v2.6.3...v2.6.4) (2022-11-16)
 
 - add Svelte to peerDependencies([2d99894](https://github.com/oekazuma/svelte-meta-tags/commit/2d9989454e5ed51d9f4d0d9e9300ba933d0c0ffa))
