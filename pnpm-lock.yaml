@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@playwright/test': ^1.30.0
-  '@sveltejs/adapter-auto': ^1.0.3
+  '@sveltejs/adapter-auto': ^2.0.0
   '@sveltejs/kit': ^1.5.0
   '@sveltejs/package': ^1.0.2
   '@typescript-eslint/eslint-plugin': ^5.51.0
@@ -26,7 +26,7 @@ dependencies:
 
 devDependencies:
   '@playwright/test': 1.30.0
-  '@sveltejs/adapter-auto': 1.0.3_@sveltejs+kit@1.5.0
+  '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.5.0
   '@sveltejs/kit': 1.5.0_svelte@3.55.1+vite@4.1.1
   '@sveltejs/package': 1.0.2_4x7phaipmicbaooxtnresslofa
   '@typescript-eslint/eslint-plugin': 5.51.0_b635kmla6dsb4frxfihkw4m47e
@@ -331,8 +331,8 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
-  /@sveltejs/adapter-auto/1.0.3_@sveltejs+kit@1.5.0:
-    resolution: {integrity: sha512-hc7O12YQqvZ1CD4fo1gMJuPzBZvuoG5kwxb2RRoz4fVoB8B2vuPO2cY751Ln0G6T/HMrAf8kCqw6Pg+wbxcstw==}
+  /@sveltejs/adapter-auto/2.0.0_@sveltejs+kit@1.5.0:
+    resolution: {integrity: sha512-b+gkHFZgD771kgV3aO4avHFd7y1zhmMYy9i6xOK7m/rwmwaRO8gnF5zBc0Rgca80B2PMU1bKNxyBTHA14OzUAQ==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
