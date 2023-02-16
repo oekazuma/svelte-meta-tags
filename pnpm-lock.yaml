@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@playwright/test': ^1.30.0
   '@sveltejs/adapter-auto': ^2.0.0
-  '@sveltejs/kit': ^1.7.0
+  '@sveltejs/kit': ^1.7.1
   '@sveltejs/package': ^1.0.2
   '@typescript-eslint/eslint-plugin': ^5.52.0
   '@typescript-eslint/parser': ^5.52.0
@@ -26,8 +26,8 @@ dependencies:
 
 devDependencies:
   '@playwright/test': 1.30.0
-  '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.7.0
-  '@sveltejs/kit': 1.7.0_svelte@3.55.1+vite@4.1.1
+  '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.7.1
+  '@sveltejs/kit': 1.7.1_svelte@3.55.1+vite@4.1.1
   '@sveltejs/package': 1.0.2_4x7phaipmicbaooxtnresslofa
   '@typescript-eslint/eslint-plugin': 5.52.0_6cfvjsbua5ptj65675bqcn6oza
   '@typescript-eslint/parser': 5.52.0_7kw3g6rralp5ps6mg3uyzz6azm
@@ -331,17 +331,17 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
-  /@sveltejs/adapter-auto/2.0.0_@sveltejs+kit@1.7.0:
+  /@sveltejs/adapter-auto/2.0.0_@sveltejs+kit@1.7.1:
     resolution: {integrity: sha512-b+gkHFZgD771kgV3aO4avHFd7y1zhmMYy9i6xOK7m/rwmwaRO8gnF5zBc0Rgca80B2PMU1bKNxyBTHA14OzUAQ==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
-      '@sveltejs/kit': 1.7.0_svelte@3.55.1+vite@4.1.1
+      '@sveltejs/kit': 1.7.1_svelte@3.55.1+vite@4.1.1
       import-meta-resolve: 2.2.0
     dev: true
 
-  /@sveltejs/kit/1.7.0_svelte@3.55.1+vite@4.1.1:
-    resolution: {integrity: sha512-Pxrf56vJEaWM64L26gEz3A9C1I4TOoERcxw04CImNR5Mcf6UGTITnEx9T8xGgqrZKhftl25izbxXinoKPFDTYw==}
+  /@sveltejs/kit/1.7.1_svelte@3.55.1+vite@4.1.1:
+    resolution: {integrity: sha512-epaQCaZ/D3Qr/SgrRKHv+MpM6rz8JdaXSjOjas8t7PbDJl88KpqYWUvsmyuJQn/yNNGar23kENyy4NueNnjIKQ==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
@@ -355,14 +355,14 @@ packages:
       devalue: 4.2.3
       esm-env: 1.0.0
       kleur: 4.1.5
-      magic-string: 0.27.0
+      magic-string: 0.29.0
       mime: 3.0.0
       sade: 1.8.1
       set-cookie-parser: 2.5.1
       sirv: 2.0.2
       svelte: 3.55.1
       tiny-glob: 0.2.9
-      undici: 5.18.0
+      undici: 5.19.1
       vite: 4.1.1
     transitivePeerDependencies:
       - supports-color
@@ -1407,6 +1407,13 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
+  /magic-string/0.29.0:
+    resolution: {integrity: sha512-WcfidHrDjMY+eLjlU+8OvwREqHwpgCeKVBUpQ3OhYYuvfaYCUgcbuBzappNzZvg/v8onU3oQj+BYpkOJe9Iw4Q==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.14
+    dev: true
+
   /merge-stream/2.0.0:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
     dev: true
@@ -2097,8 +2104,8 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
 
-  /undici/5.18.0:
-    resolution: {integrity: sha512-1iVwbhonhFytNdg0P4PqyIAXbdlVZVebtPDvuM36m66mRw4OGrCm2MYynJv/UENFLdP13J1nPVQzVE2zTs1OeA==}
+  /undici/5.19.1:
+    resolution: {integrity: sha512-YiZ61LPIgY73E7syxCDxxa3LV2yl3sN8spnIuTct60boiiRaE1J8mNWHO8Im2Zi/sFrPusjLlmRPrsyraSqX6A==}
     engines: {node: '>=12.18'}
     dependencies:
       busboy: 1.6.0
