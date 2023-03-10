@@ -1,3 +1,8 @@
+## [2.7.0](https://github.com/oekazuma/svelte-meta-tags/compare/v2.6.5...v2.7.0) (2023-03-10)
+
+- allow array in JSON-LD schema ([d805767](https://github.com/oekazuma/svelte-meta-tags/commit/d8057677a9af816e34478620232b935058cede39))
+- update dependency schema-dts to ^1.1.2 ([92d1be3](https://github.com/oekazuma/svelte-meta-tags/commit/92d1be388ba7ca8619fd0700bcba7bee0b177b73))
+
 ## [2.6.5](https://github.com/oekazuma/svelte-meta-tags/compare/v2.6.4...v2.6.5) (2023-01-19)
 
 - rewrite document text for clarity([892bcb3](https://github.com/oekazuma/svelte-meta-tags/commit/892bcb302763d80089cfeb34b34bfbd33269cbf0))
