@@ -4,7 +4,7 @@ specifiers:
   '@playwright/test': ^1.31.2
   '@sveltejs/adapter-auto': ^2.0.0
   '@sveltejs/kit': ^1.11.0
-  '@sveltejs/package': ^1.0.2
+  '@sveltejs/package': ^2.0.2
   '@typescript-eslint/eslint-plugin': ^5.54.1
   '@typescript-eslint/parser': ^5.54.1
   eslint: ^8.35.0
@@ -28,7 +28,7 @@ devDependencies:
   '@playwright/test': 1.31.2
   '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.11.0
   '@sveltejs/kit': 1.11.0_svelte@3.56.0+vite@4.1.4
-  '@sveltejs/package': 1.0.2_rx3ssngbibhj4vpczagsdyy47u
+  '@sveltejs/package': 2.0.2_rx3ssngbibhj4vpczagsdyy47u
   '@typescript-eslint/eslint-plugin': 5.54.1_mlk7dnz565t663n4razh6a6v6i
   '@typescript-eslint/parser': 5.54.1_ycpbpc6yetojsgtrx3mwntkhsu
   eslint: 8.35.0
@@ -375,8 +375,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/package/1.0.2_rx3ssngbibhj4vpczagsdyy47u:
-    resolution: {integrity: sha512-VY9U+05d9uNFDj7ScKRlHORYlfPSHwJewBjV+V2RsnViexpLFPUrboC9SiPYDCpLnbeqwXerxhO6twGHUBGeIA==}
+  /@sveltejs/package/2.0.2_rx3ssngbibhj4vpczagsdyy47u:
+    resolution: {integrity: sha512-cCOCcO8yMHnhHyaR51nQtvKZ3o/vSU9UYI1EXLT1j2CKNPMuH1/g6JNwKcNNrtQGwwquudc69ZeYy8D/TDNwEw==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     peerDependencies:
