@@ -574,7 +574,7 @@ JSON-LD allows for more customized and richer display, such as in search results
 
 To discover all the different content types that JSON-LD offers, go to: https://developers.google.com/search/docs/guides/search-gallery
 
-It is also possible to use multiple `<JsonLd />` components in a single page.
+Tips: If you want to handle multiple JSON-LDs on one page, pass an array to the `schema`.
 
 ### Using `schema-dts`
 
@@ -784,6 +784,68 @@ This plugin uses [schema-dts](https://github.com/google/schema-dts), so it provi
 />
 ```
 
+### JSON-LD Multiple Examples
+
+```svelte
+<script>
+  import { JsonLd } from 'svelte-meta-tags';
+</script>
+
+<JsonLd
+  schema={[
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Books',
+          item: 'https://example.com/books'
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Science Fiction',
+          item: 'https://example.com/books/sciencefiction'
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Award Winners'
+        }
+      ]
+    },
+    {
+      '@type': 'NewsArticle',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': 'https://google.com/article'
+      },
+      headline: 'Article headline',
+      image: [
+        'https://example.com/photos/1x1/photo.jpg',
+        'https://example.com/photos/4x3/photo.jpg',
+        'https://example.com/photos/16x9/photo.jpg'
+      ],
+      datePublished: '2015-02-05T08:00:00+08:00',
+      dateModified: '2015-02-05T09:20:00+08:00',
+      author: {
+        '@type': 'Person',
+        name: 'John Doe'
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Google',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://google.com/logo.jpg'
+        }
+      }
+    }
+  ]}
+/>
+```
+
 ## Types
 
 The following types can be imported from `svelte-meta-tags`
@@ -814,7 +876,7 @@ interface MetaTagsProps {
 ```ts
 interface JsonLdProps {
   output?: 'head' | 'body';
-  schema?: Thing | WithContext<Thing>;
+  schema?: Thing | WithContext<Thing> | Thing[] | WithContext<Thing>[];
 }
 ```
 
