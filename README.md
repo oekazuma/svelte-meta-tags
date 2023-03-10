@@ -40,6 +40,7 @@ This library is inspired by [next-seo](https://github.com/garmeeh/next-seo)
     - [Course](#course)
     - [DataSet](#dataset)
     - [FAQ](#faq)
+  - [JSON-LD Multiple Examples](#json-ld-multiple-examples)
 - [Types](#types)
 - [Additional types](#additional-types)
 
