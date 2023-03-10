@@ -14,7 +14,7 @@ specifiers:
   lint-staged: ^13.1.2
   prettier: ^2.8.4
   prettier-plugin-svelte: ^2.9.0
-  schema-dts: ^1.1.0
+  schema-dts: ^1.1.2
   svelte: ^3.56.0
   svelte-check: ^3.1.0
   tslib: ^2.5.0
@@ -22,7 +22,7 @@ specifiers:
   vite: ^4.1.4
 
 dependencies:
-  schema-dts: 1.1.0_typescript@4.9.5
+  schema-dts: 1.1.2_typescript@4.9.5
 
 devDependencies:
   '@playwright/test': 1.31.2
@@ -1777,8 +1777,8 @@ packages:
       rimraf: 2.7.1
     dev: true
 
-  /schema-dts/1.1.0_typescript@4.9.5:
-    resolution: {integrity: sha512-vdmbs/5ycj4zyKpZIDqTcy+IZi4s7c38RVAYuDmRi7zgxUT8wRWPMLzg0jr7FjdVunYu9yZ00F3+XcZTTFcTOQ==}
+  /schema-dts/1.1.2_typescript@4.9.5:
+    resolution: {integrity: sha512-MpNwH0dZJHinVxk9bT8XUdjKTxMYrA5bLtrrGmFA6PTLwlOKnhi67XoRd6/ty+Djt6ZC0slR57qFhZDNMI6DhQ==}
     peerDependencies:
       typescript: '>=4.1.0'
     dependencies:
