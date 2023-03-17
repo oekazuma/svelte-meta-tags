@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@playwright/test': ^1.31.2
   '@sveltejs/adapter-auto': ^2.0.0
-  '@sveltejs/kit': ^1.11.0
+  '@sveltejs/kit': ^1.12.0
   '@sveltejs/package': ^2.0.2
   '@typescript-eslint/eslint-plugin': ^5.55.0
   '@typescript-eslint/parser': ^5.55.0
@@ -27,8 +27,8 @@ dependencies:
 
 devDependencies:
   '@playwright/test': 1.31.2
-  '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.11.0
-  '@sveltejs/kit': 1.11.0_svelte@3.57.0+vite@4.1.4
+  '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.12.0
+  '@sveltejs/kit': 1.12.0_svelte@3.57.0+vite@4.1.4
   '@sveltejs/package': 2.0.2_wkdgp32a7s6524odeddpfzb52q
   '@typescript-eslint/eslint-plugin': 5.55.0_342y7v4tc7ytrrysmit6jo4wri
   '@typescript-eslint/parser': 5.55.0_vgl77cfdswitgr47lm5swmv43m
@@ -355,17 +355,17 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
-  /@sveltejs/adapter-auto/2.0.0_@sveltejs+kit@1.11.0:
+  /@sveltejs/adapter-auto/2.0.0_@sveltejs+kit@1.12.0:
     resolution: {integrity: sha512-b+gkHFZgD771kgV3aO4avHFd7y1zhmMYy9i6xOK7m/rwmwaRO8gnF5zBc0Rgca80B2PMU1bKNxyBTHA14OzUAQ==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
     dependencies:
-      '@sveltejs/kit': 1.11.0_svelte@3.57.0+vite@4.1.4
+      '@sveltejs/kit': 1.12.0_svelte@3.57.0+vite@4.1.4
       import-meta-resolve: 2.2.1
     dev: true
 
-  /@sveltejs/kit/1.11.0_svelte@3.57.0+vite@4.1.4:
-    resolution: {integrity: sha512-PwViZcMoLgEU/jhLoSyjf5hSrHS67wvSm0ifBo4prP9irpGa5HuPOZeVDTL5tPDSBoKxtdYi1zlGdoiJfO86jA==}
+  /@sveltejs/kit/1.12.0_svelte@3.57.0+vite@4.1.4:
+    resolution: {integrity: sha512-hhOtaL3jS7p4A3O34m8RlM+K5OSyrEyFUIh4iqsv6e8BDvupzNSxGa7J9+Gfjb+Z1yZCxjvxJ8Flb2Cj0g8cLg==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
     requiresBuild: true
@@ -386,7 +386,7 @@ packages:
       sirv: 2.0.2
       svelte: 3.57.0
       tiny-glob: 0.2.9
-      undici: 5.20.0
+      undici: 5.21.0
       vite: 4.1.4
     transitivePeerDependencies:
       - supports-color
@@ -2195,8 +2195,8 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
 
-  /undici/5.20.0:
-    resolution: {integrity: sha512-J3j60dYzuo6Eevbawwp1sdg16k5Tf768bxYK4TUJRH7cBM4kFCbf3mOnM/0E3vQYXvpxITbbWmBafaDbxLDz3g==}
+  /undici/5.21.0:
+    resolution: {integrity: sha512-HOjK8l6a57b2ZGXOcUsI5NLfoTrfmbOl90ixJDl0AEFG4wgHNDQxtZy15/ZQp7HhjkpaGlp/eneMgtsu1dIlUA==}
     engines: {node: '>=12.18'}
     dependencies:
       busboy: 1.6.0
