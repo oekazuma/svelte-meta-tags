@@ -31,8 +31,8 @@ devDependencies:
     specifier: ^8.8.0
     version: 8.8.0(eslint@8.39.0)
   eslint-plugin-svelte:
-    specifier: ^2.27.2
-    version: 2.27.2(eslint@8.39.0)(svelte@3.58.0)
+    specifier: ^2.27.3
+    version: 2.27.3(eslint@8.39.0)(svelte@3.58.0)
   husky:
     specifier: ^8.0.3
     version: 8.0.3
@@ -924,8 +924,8 @@ packages:
       eslint: 8.39.0
     dev: true
 
-  /eslint-plugin-svelte@2.27.2(eslint@8.39.0)(svelte@3.58.0):
-    resolution: {integrity: sha512-1tIl65TMF0MtY26+O/1Y5S5HEFc0vRzzoX3m9FHI6VuiruqFU9PBr8WzoqdaSPlcL/q7xPUzQYl4Fzg/3GBpcg==}
+  /eslint-plugin-svelte@2.27.3(eslint@8.39.0)(svelte@3.58.0):
+    resolution: {integrity: sha512-LPri23kkKeeh+TkYr9FndQEy2Q5BhOrIwatnLdXx6hUtTIolohzrTJhWMK3k8BwitVBnJGl5CDVWNkV80tmdkQ==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0-0
