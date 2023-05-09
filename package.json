@@ -28,6 +28,7 @@
     "format": "prettier --plugin-search-dir . --write .",
     "test": "playwright test",
     "prepare": "husky install",
+    "prepublishOnly": "pnpm package",
     "release": "changeset publish"
   },
   "dependencies": {
