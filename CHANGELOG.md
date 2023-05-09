@@ -1,3 +1,10 @@
+## 2.7.1
+
+### Patch Changes
+
+- 153909d: chore: improved exports in package.json
+- b7d57cc: chore: change release method to Changesets
+
 ## [2.7.0](https://github.com/oekazuma/svelte-meta-tags/compare/v2.6.5...v2.7.0) (2023-03-10)
 
 - allow array in JSON-LD schema ([d805767](https://github.com/oekazuma/svelte-meta-tags/commit/d8057677a9af816e34478620232b935058cede39))
