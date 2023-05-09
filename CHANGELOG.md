@@ -1,5 +1,11 @@
 ## 2.7.1
 
+## 2.7.2
+
+### Patch Changes
+
+- 1368af8: fix: fix a release error. Do not use v2.7.1!
+
 ### Patch Changes
 
 - 153909d: chore: improved exports in package.json
