@@ -29,3 +29,7 @@ All the code for the library is located in the `src/lib` directory.
 The `src/routes` directory contains a fully working SvelteKit app. This will be used for end-to-end testing. You can run `pnpm dev` to run this app. You can also run it in a production build by running `pnpm build` and `pnpm preview`.
 
 To run Playwright, you can run `pnpm test`.
+
+## Releases
+
+The [Changesets GitHub action](https://github.com/changesets/action#with-publishing) will create and update a PR that applies changesets and publishes new versions of changed packages to npm.

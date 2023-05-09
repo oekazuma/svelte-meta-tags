@@ -25,14 +25,16 @@
     "prepare": "husky install",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "prettier --plugin-search-dir . --check . --cache && eslint .",
-    "format": "prettier --plugin-search-dir . --write . --cache",
-    "test": "playwright test"
+    "lint": "prettier --plugin-search-dir . --check . && eslint .",
+    "format": "prettier --plugin-search-dir . --write .",
+    "test": "playwright test",
+    "release": "changeset publish"
   },
   "dependencies": {
     "schema-dts": "^1.1.2"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.1",
     "@playwright/test": "^1.33.0",
     "@sveltejs/adapter-auto": "^2.0.1",
     "@sveltejs/kit": "^1.16.2",
