@@ -34,8 +34,8 @@ devDependencies:
     specifier: ^8.8.0
     version: 8.8.0(eslint@8.40.0)
   eslint-plugin-svelte:
-    specifier: ^2.27.4
-    version: 2.27.4(eslint@8.40.0)(svelte@3.59.1)
+    specifier: ^2.28.0
+    version: 2.28.0(eslint@8.40.0)(svelte@3.59.1)
   husky:
     specifier: ^8.0.3
     version: 8.0.3
@@ -1458,8 +1458,8 @@ packages:
       eslint: 8.40.0
     dev: true
 
-  /eslint-plugin-svelte@2.27.4(eslint@8.40.0)(svelte@3.59.1):
-    resolution: {integrity: sha512-P1VPNgM0a6AGWU/qlk3Jf/55B4TIF6V0vlkRrZsqe+Um3SeCbH8dSakI/WJ4kwupYr7lMzHIbnjFXpzemXqzVw==}
+  /eslint-plugin-svelte@2.28.0(eslint@8.40.0)(svelte@3.59.1):
+    resolution: {integrity: sha512-bXPXKnjq5uKoVAQtC2E0L1Vp+mmJ3nlC9jyz8zwfZ99pQROL2h7Hes01QdYil1vxgh6tLXl5YVpZ2wwyAbBz5g==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0-0
@@ -1478,7 +1478,7 @@ packages:
       postcss-load-config: 3.1.4(postcss@8.4.23)
       postcss-safe-parser: 6.0.0(postcss@8.4.23)
       svelte: 3.59.1
-      svelte-eslint-parser: 0.27.0(svelte@3.59.1)
+      svelte-eslint-parser: 0.28.0(svelte@3.59.1)
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -3309,8 +3309,8 @@ packages:
       - sugarss
     dev: true
 
-  /svelte-eslint-parser@0.27.0(svelte@3.59.1):
-    resolution: {integrity: sha512-x9cBbCZwLdCnNE3yPqGhvAqEl9FCILC6AaV2xRtwzaMCpvpqO7ceONXj9xka3fQFczSqLzkwOxP4Ln4cIQNqXg==}
+  /svelte-eslint-parser@0.28.0(svelte@3.59.1):
+    resolution: {integrity: sha512-qWg5M3CIp7LkcdG5bpn44QEd48UxvgxG5L+Sbl701EG8Wujht7EqJuJhqgzvO3bbI9ENbWCXK49eCcwiNnpMzw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       svelte: ^3.37.0
