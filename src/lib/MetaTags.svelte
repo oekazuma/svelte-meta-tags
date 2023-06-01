@@ -1,17 +1,44 @@
 <script>
+  /** @type {import("./types").MetaTagsProps['title']} */
   export let title = '';
+
+  /** @type {import("./types").MetaTagsProps['titleTemplate']} */
   export let titleTemplate = '';
+
+  /** @type {import("./types").MetaTagsProps['noindex']} */
   export let noindex = false;
+
+  /** @type {import("./types").MetaTagsProps['nofollow']} */
   export let nofollow = false;
+
+  /** @type {import("./types").MetaTagsProps['robotsProps']} */
   export let robotsProps = undefined;
+
+  /** @type {import("./types").MetaTagsProps['description']} */
   export let description = undefined;
+
+  /** @type {import("./types").MetaTagsProps['mobileAlternate']} */
   export let mobileAlternate = undefined;
+
+  /** @type {import("./types").MetaTagsProps['languageAlternates']} */
   export let languageAlternates = undefined;
+
+  /** @type {import("./types").MetaTagsProps['twitter']} */
   export let twitter = undefined;
+
+  /** @type {import("./types").MetaTagsProps['facebook']} */
   export let facebook = undefined;
+
+  /** @type {import("./types").MetaTagsProps['openGraph']} */
   export let openGraph = undefined;
+
+  /** @type {import("./types").MetaTagsProps['canonical']} */
   export let canonical = undefined;
+
+  /** @type {import("./types").MetaTagsProps['additionalMetaTags']} */
   export let additionalMetaTags = undefined;
+
+  /** @type {import("./types").MetaTagsProps['additionalLinkTags']} */
   export let additionalLinkTags = undefined;
 
   $: updatedTitle = titleTemplate ? titleTemplate.replace(/%s/g, title) : title;

@@ -1,9 +1,15 @@
 <script>
+  /** @type {import("./types").JsonLdProps['output']} */
   export let output = 'head';
-  export let schema = {};
+
+  /** @type {import("./types").JsonLdProps['schema']} */
+  export let schema = undefined;
 
   $: isValid = schema && typeof schema === 'object';
 
+  /**
+   * @param {import("./types").JsonLdProps['schema']} schema
+   */
   function createSchema(schema) {
     const addContext = (context) => ({ '@context': 'https://schema.org', ...context });
 
