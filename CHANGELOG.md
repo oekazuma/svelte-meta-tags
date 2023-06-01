@@ -1,5 +1,15 @@
 ## 2.7.2
 
+## 2.8.0
+
+### Minor Changes
+
+- 6c0f23e: feat: support Svelte4
+
+### Patch Changes
+
+- ad62f4f: chore: migration svelte.d.ts generation to be done by svelte-package
+
 ### Patch Changes
 
 - 1368af8: fix: fix a release error. Do not use v2.7.1!

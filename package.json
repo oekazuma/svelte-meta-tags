@@ -1,6 +1,6 @@
 {
   "name": "svelte-meta-tags",
-  "version": "2.7.2",
+  "version": "2.8.0",
   "description": "Svelte Meta Tags is a plugin that makes managing your SEO easier in Svelte projects.",
   "license": "MIT",
   "type": "module",
