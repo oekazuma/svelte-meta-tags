@@ -1,5 +1,5 @@
 ---
-'svelte-meta-tags': minor
+'svelte-meta-tags': patch
 ---
 
-migration svelte.d.ts generation to be done by svelte-package
+chore: migration svelte.d.ts generation to be done by svelte-package
