@@ -53,8 +53,8 @@ devDependencies:
     specifier: ^2.10.1
     version: 2.10.1(prettier@2.8.8)(svelte@4.0.1)
   publint:
-    specifier: ^0.1.12
-    version: 0.1.12
+    specifier: ^0.1.13
+    version: 0.1.13
   svelte:
     specifier: ^4.0.1
     version: 4.0.1
@@ -2936,8 +2936,8 @@ packages:
     resolution: {integrity: sha512-b/YwNhb8lk1Zz2+bXXpS/LK9OisiZZ1SNsSLxN1x2OXVEhW2Ckr/7mWE5vrC1ZTiJlD9g19jWszTmJsB+oEpFQ==}
     dev: true
 
-  /publint@0.1.12:
-    resolution: {integrity: sha512-8LxkO430t/SOhUl0qXQWdXq34m6oyLcPhE4Kc8eXhOEnB82vCHcShPQ2kH53n/ksC7jWdRWDP7MPGxKJbntQfg==}
+  /publint@0.1.13:
+    resolution: {integrity: sha512-CEm8A12UiwUN1hcUtmcCcGo8Y7ued36jfpkmJ8h6fw7JcIYQCKb7ybl2mTKq11iC5DBEXTYw/LR6VB18hOwM/w==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
