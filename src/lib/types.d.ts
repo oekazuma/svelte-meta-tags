@@ -136,6 +136,7 @@ export interface MetaTagsProps {
   titleTemplate?: string;
   noindex?: boolean;
   nofollow?: boolean;
+  robots?: string | boolean;
   robotsProps?: AdditionalRobotsProps;
   description?: string;
   canonical?: string;

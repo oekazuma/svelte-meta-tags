@@ -11,6 +11,9 @@
   /** @type {import("./types").MetaTagsProps['nofollow']} */
   export let nofollow = false;
 
+  /** @type {import("./types").MetaTagsProps['robots']} */
+  export let robots = undefined;
+
   /** @type {import("./types").MetaTagsProps['robotsProps']} */
   export let robotsProps = undefined;
 
@@ -64,14 +67,23 @@
   }
 </script>
 
+<!-- svelte-ignore empty-block -->
 <svelte:head>
   <title>{updatedTitle}</title>
 
-  <meta name="robots" content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}${robotsParams}`} />
-  <meta
-    name="googlebot"
-    content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}${robotsParams}`}
-  />
+  {#if robots}
+    <meta name="robots" content={`${robots}${robotsParams}`} />
+    <meta name="googlebot" content={`${robots}${robotsParams}`} />
+  {:else if robots === false}{:else}
+    <meta
+      name="robots"
+      content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}${robotsParams}`}
+    />
+    <meta
+      name="googlebot"
+      content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}${robotsParams}`}
+    />
+  {/if}
 
   {#if description}
     <meta name="description" content={description} />
