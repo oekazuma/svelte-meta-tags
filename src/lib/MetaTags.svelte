@@ -67,22 +67,23 @@
   }
 </script>
 
-<!-- svelte-ignore empty-block -->
 <svelte:head>
   <title>{updatedTitle}</title>
 
-  {#if robots}
-    <meta name="robots" content={`${robots}${robotsParams}`} />
-    <meta name="googlebot" content={`${robots}${robotsParams}`} />
-  {:else if robots === false}{:else}
-    <meta
-      name="robots"
-      content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}${robotsParams}`}
-    />
-    <meta
-      name="googlebot"
-      content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}${robotsParams}`}
-    />
+  {#if robots !== false}
+    {#if robots}
+      <meta name="robots" content={`${robots}${robotsParams}`} />
+      <meta name="googlebot" content={`${robots}${robotsParams}`} />
+    {:else}
+      <meta
+        name="robots"
+        content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}${robotsParams}`}
+      />
+      <meta
+        name="googlebot"
+        content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}${robotsParams}`}
+      />
+    {/if}
   {/if}
 
   {#if description}
