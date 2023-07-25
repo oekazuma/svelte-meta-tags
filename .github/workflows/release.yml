@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2.2.4
+      - uses: pnpm/action-setup@v2.3.0
         with:
           version: latest
       - name: Setup Node.js
