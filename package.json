@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
-    "@playwright/test": "^1.36.1",
+    "@playwright/test": "^1.36.2",
     "@sveltejs/adapter-auto": "^2.1.0",
     "@sveltejs/kit": "^1.22.3",
     "@sveltejs/package": "^2.2.0",
