@@ -46,7 +46,7 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-svelte": "^2.32.4",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.3",
+    "lint-staged": "^14.0.0",
     "prettier": "^3.0.1",
     "prettier-plugin-svelte": "^3.0.3",
     "publint": "^0.2.0",
