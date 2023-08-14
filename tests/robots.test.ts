@@ -8,8 +8,4 @@ test('Robots props SEO applied correctly', async ({ page }) => {
     'content',
     'index,follow,nosnippet,max-snippet:-1,max-image-preview:none,noarchive,noimageindex,max-video-preview:-1,notranslate'
   );
-  await expect(page.locator('head meta[name="googlebot"]')).toHaveAttribute(
-    'content',
-    'index,follow,nosnippet,max-snippet:-1,max-image-preview:none,noarchive,noimageindex,max-video-preview:-1,notranslate'
-  );
 });

@@ -7,7 +7,6 @@ test('Another pattern SEO loads correctly', async ({ page }) => {
   await expect(page.locator('head meta[name="description"]')).toHaveAttribute('content', 'Description Another');
   await expect(page.locator('head link[rel="canonical"]')).toHaveAttribute('href', 'https://www.canonical.ie/another');
   await expect(page.locator('head meta[name="robots"]')).toHaveAttribute('content', 'noindex,nofollow');
-  await expect(page.locator('head meta[name="googlebot"]')).toHaveAttribute('content', 'noindex,nofollow');
   const alternate = page.locator('head link[rel="alternate"]');
   await expect(alternate).toHaveCount(2);
   await expect(alternate.nth(0)).toHaveAttribute('media', 'only screen and (max-width: 640px)');

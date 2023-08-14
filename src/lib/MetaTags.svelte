@@ -5,6 +5,12 @@
   /** @type {import("./types").MetaTagsProps['titleTemplate']} */
   export let titleTemplate = '';
 
+  /** @type {import("./types").MetaTagsProps['robots']} */
+  export let robots = true;
+
+  /** @type {import("./types").MetaTagsProps['googlebot']} */
+  export let googlebot = false;
+
   /** @type {import("./types").MetaTagsProps['noindex']} */
   export let noindex = false;
 
@@ -67,11 +73,19 @@
 <svelte:head>
   <title>{updatedTitle}</title>
 
-  <meta name="robots" content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}${robotsParams}`} />
-  <meta
-    name="googlebot"
-    content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}${robotsParams}`}
-  />
+  {#if robots}
+    <meta
+      name="robots"
+      content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}${robotsParams}`}
+    />
+  {/if}
+
+  {#if googlebot}
+    <meta
+      name="googlebot"
+      content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}${robotsParams}`}
+    />
+  {/if}
 
   {#if description}
     <meta name="description" content={description} />

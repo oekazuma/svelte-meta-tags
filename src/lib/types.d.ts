@@ -134,6 +134,8 @@ export interface LinkTag {
 export interface MetaTagsProps {
   title?: string;
   titleTemplate?: string;
+  robots?: boolean;
+  googlebot?: boolean;
   noindex?: boolean;
   nofollow?: boolean;
   robotsProps?: AdditionalRobotsProps;
