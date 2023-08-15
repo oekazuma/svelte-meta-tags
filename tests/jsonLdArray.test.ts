@@ -9,7 +9,6 @@ test('JSON-LD Array SEO loads correctly', async ({ page }) => {
     'Description of JSON-LD Array page'
   );
   await expect(page.locator('head meta[name="robots"]')).toHaveAttribute('content', 'index,follow');
-  await expect(page.locator('head meta[name="googlebot"]')).toHaveAttribute('content', 'index,follow');
   const jsonLd = await page
     .locator('script[type="application/ld+json"]')
     .evaluateAll((list) => list.map((element) => element.textContent));

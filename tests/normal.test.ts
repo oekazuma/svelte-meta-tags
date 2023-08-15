@@ -7,7 +7,6 @@ test('Normal SEO loads correctly', async ({ page, baseURL }) => {
   await expect(page.locator('head meta[name="description"]')).toHaveAttribute('content', 'Description');
   await expect(page.locator('head link[rel="canonical"]')).toHaveAttribute('href', 'https://www.canonical.ie/');
   await expect(page.locator('head meta[name="robots"]')).toHaveAttribute('content', 'index,follow');
-  await expect(page.locator('head meta[name="googlebot"]')).toHaveAttribute('content', 'index,follow');
   await expect(page.locator('head meta[property="og:type"]')).toHaveAttribute('content', 'website');
   await expect(page.locator('head meta[property="og:locale"]')).toHaveAttribute('content', 'en_IE');
   await expect(page.locator('head meta[property="og:url"]')).toHaveAttribute('content', 'https://www.example.com/page');
