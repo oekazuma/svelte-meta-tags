@@ -68,10 +68,6 @@
   <title>{updatedTitle}</title>
 
   <meta name="robots" content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}${robotsParams}`} />
-  <meta
-    name="googlebot"
-    content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}${robotsParams}`}
-  />
 
   {#if description}
     <meta name="description" content={description} />
