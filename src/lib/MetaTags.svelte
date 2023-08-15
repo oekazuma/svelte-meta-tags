@@ -5,14 +5,11 @@
   /** @type {import("./types").MetaTagsProps['titleTemplate']} */
   export let titleTemplate = '';
 
-  /** @type {import("./types").MetaTagsProps['noindex']} */
-  export let noindex = false;
+  /** @type {import("./types").MetaTagsProps['robots']} */
+  export let robots = 'index,follow';
 
-  /** @type {import("./types").MetaTagsProps['nofollow']} */
-  export let nofollow = false;
-
-  /** @type {import("./types").MetaTagsProps['robotsProps']} */
-  export let robotsProps = undefined;
+  /** @type {import("./types").MetaTagsProps['additionalRobotsProps']} */
+  export let additionalRobotsProps = undefined;
 
   /** @type {import("./types").MetaTagsProps['description']} */
   export let description = undefined;
@@ -44,7 +41,7 @@
   $: updatedTitle = titleTemplate ? titleTemplate.replace(/%s/g, title) : title;
 
   let robotsParams = '';
-  if (robotsProps) {
+  if (additionalRobotsProps) {
     const {
       nosnippet,
       maxSnippet,
@@ -54,7 +51,7 @@
       noimageindex,
       notranslate,
       unavailableAfter
-    } = robotsProps;
+    } = additionalRobotsProps;
 
     robotsParams = `${nosnippet ? ',nosnippet' : ''}${maxSnippet ? `,max-snippet:${maxSnippet}` : ''}${
       maxImagePreview ? `,max-image-preview:${maxImagePreview}` : ''
@@ -62,12 +59,18 @@
       noimageindex ? ',noimageindex' : ''
     }${maxVideoPreview ? `,max-video-preview:${maxVideoPreview}` : ''}${notranslate ? ',notranslate' : ''}`;
   }
+
+  $: if (!robots && additionalRobotsProps) {
+    console.warn('additionalRobotsProps cannot be used when robots is set to false');
+  }
 </script>
 
 <svelte:head>
   <title>{updatedTitle}</title>
 
-  <meta name="robots" content={`${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}${robotsParams}`} />
+  {#if robots !== false}
+    <meta name="robots" content="{robots}{robotsParams}" />
+  {/if}
 
   {#if description}
     <meta name="description" content={description} />

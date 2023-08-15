@@ -6,6 +6,15 @@
     <a href="/robots"> Robots props </a>
   </li>
   <li>
+    <a href="/robots/another"> Another Robots props </a>
+  </li>
+  <li>
+    <a href="/robots/googlebot"> GoogleBot Robots props </a>
+  </li>
+  <li>
+    <a href="/additionalRobots"> Additional Robots props </a>
+  </li>
+  <li>
     <a href="/another"> Another SEO </a>
   </li>
   <li>

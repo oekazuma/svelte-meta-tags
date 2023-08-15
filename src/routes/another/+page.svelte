@@ -3,9 +3,8 @@
 </script>
 
 <MetaTags
-  noindex={true}
-  nofollow={true}
   title="Another | Svelte Meta Tags"
+  robots="noindex,nofollow"
   description="Description Another"
   canonical="https://www.canonical.ie/another"
   languageAlternates={[

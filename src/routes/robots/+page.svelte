@@ -2,17 +2,6 @@
   import { MetaTags } from 'svelte-meta-tags';
 </script>
 
-<MetaTags
-  title="Robots meta title | Svelte Meta Tags"
-  robotsProps={{
-    nosnippet: true,
-    notranslate: true,
-    noimageindex: true,
-    noarchive: true,
-    maxSnippet: -1,
-    maxImagePreview: 'none',
-    maxVideoPreview: -1
-  }}
-/>
+<MetaTags title="Robots meta title | Svelte Meta Tags" robots="noindex,nofollow" />
 
 <h1>Robots props SEO</h1>
