@@ -135,7 +135,7 @@ export interface MetaTagsProps {
   title?: string;
   titleTemplate?: string;
   robots?: string | boolean;
-  additionalRobotsProps?: Robots extends true ? AdditionalRobotsProps : never;
+  additionalRobotsProps?: AdditionalRobotsProps;
   description?: string;
   canonical?: string;
   mobileAlternate?: MobileAlternate;
