@@ -2838,8 +2838,8 @@ packages:
     resolution: {integrity: sha512-b/YwNhb8lk1Zz2+bXXpS/LK9OisiZZ1SNsSLxN1x2OXVEhW2Ckr/7mWE5vrC1ZTiJlD9g19jWszTmJsB+oEpFQ==}
     dev: true
 
-  /publint@0.2.0:
-    resolution: {integrity: sha512-h8lxdjhQjpDw+A4BgY4sE7Z4CU3x5tCGGpERVdKGDQmWMtr1P7kvptJS2P10HhmNnS7Yeny37zfQE5+xRZ6nig==}
+  /publint@0.2.1:
+    resolution: {integrity: sha512-WdNOjBRgfvy1yigbcmxQMvMFQPaIVXatclpWsYjyKvewdr2GuQX4larT9fi/tJ9Q/CxhvwCjvvQRMYhHOLA5BQ==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
@@ -3509,8 +3509,8 @@ packages:
       typescript: 5.1.6
     dev: true
 
-  /tslib@2.6.1:
-    resolution: {integrity: sha512-t0hLfiEKfMUoqhG+U1oid7Pva4bbDPHYfJNiB7BiIjRkj1pyC++4N3huJfqY6aRH6VTB0rvtzQwjM4K6qpfOig==}
+  /tslib@2.6.2:
+    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
     dev: true
 
   /tslib@2.6.2:
