@@ -27,6 +27,8 @@ jobs:
         run: pnpm lint
       - name: Run Build
         run: pnpm build
+      - name: Run svelte-package
+        run: pnpm package
       - name: Install Playwright
         run: pnpm playwright install --with-deps
       - name: Run Playwright
