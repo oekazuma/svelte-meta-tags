@@ -7,7 +7,7 @@ const checkConsoleMessagesFor = (expectedMessage) => (msg) => {
 test('Another Robots props SEO applied correctly', async ({ page }) => {
   let isMessageFound = false;
 
-  page.on('console', msg => {
+  page.on('console', (msg) => {
     isMessageFound = checkConsoleMessagesFor('additionalRobotsProps cannot be used when robots is set to false')(msg);
   });
 
