@@ -1,81 +1,30 @@
 {
-  "name": "svelte-meta-tags",
-  "version": "2.8.0",
-  "description": "Svelte Meta Tags is a plugin that makes managing your SEO easier in Svelte projects.",
-  "license": "MIT",
+  "name": "@svelte-meta-tags/monorepo",
   "type": "module",
-  "keywords": [
-    "svelte",
-    "svelteKit",
-    "metadata",
-    "seo",
-    "meta-tags",
-    "open-graph",
-    "svelte-meta-tags"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/oekazuma/svelte-meta-tags"
-  },
+  "private": true,
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "preview": "vite preview",
-    "package": "svelte-kit sync && svelte-package && publint",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "dev": "pnpm -r dev",
+    "build": "pnpm -r build",
+    "preview": "pnpm -r preview",
+    "package": "pnpm -r package",
+    "check": "pnpm -r check",
     "lint": "prettier --check . --plugin prettier-plugin-svelte && eslint .",
     "format": "prettier --write . --plugin prettier-plugin-svelte",
-    "test": "playwright test",
-    "prepare": "husky install",
-    "prepublishOnly": "pnpm package",
+    "test": "pnpm -r test",
     "release": "changeset publish"
-  },
-  "dependencies": {
-    "schema-dts": "^1.1.2"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
-    "@playwright/test": "^1.37.0",
-    "@sveltejs/adapter-auto": "^2.1.0",
-    "@sveltejs/kit": "^1.22.6",
-    "@sveltejs/package": "^2.2.1",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.4.0",
     "eslint": "^8.47.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-svelte": "^2.32.4",
-    "husky": "^8.0.3",
-    "lint-staged": "^14.0.0",
     "prettier": "^3.0.1",
-    "prettier-plugin-svelte": "^3.0.3",
-    "publint": "^0.2.0",
-    "svelte": "^4.2.0",
-    "svelte-check": "^3.5.0",
-    "tslib": "^2.6.1",
-    "typescript": "^5.1.6",
-    "vite": "^4.4.9"
+    "prettier-plugin-svelte": "^3.0.3"
   },
-  "peerDependencies": {
-    "svelte": "^3.55.0 || ^4.0.0"
-  },
-  "exports": {
-    "./JsonLd.svelte": {
-      "types": "./dist/JsonLd.svelte.d.ts",
-      "svelte": "./dist/JsonLd.svelte"
-    },
-    "./MetaTags.svelte": {
-      "types": "./dist/MetaTags.svelte.d.ts",
-      "svelte": "./dist/MetaTags.svelte"
-    },
-    ".": {
-      "types": "./dist/index.d.ts",
-      "svelte": "./dist/index.js"
-    }
-  },
-  "files": [
-    "dist"
-  ],
-  "svelte": "./dist/index.js",
-  "types": "./dist/index.d.ts"
+  "packageManager": "pnpm@8.6.12",
+  "engines": {
+    "pnpm": "8.x"
+  }
 }
