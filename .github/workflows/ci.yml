@@ -17,18 +17,18 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: '18.17.1'
           cache: pnpm
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+      - name: Run svelte-package
+        run: pnpm package
       - name: Run svelte-check
         run: pnpm check
       - name: Run ESLint
         run: pnpm lint
       - name: Run Build
         run: pnpm build
-      - name: Run svelte-package
-        run: pnpm package
       - name: Install Playwright
         run: pnpm playwright install --with-deps
       - name: Run Playwright
