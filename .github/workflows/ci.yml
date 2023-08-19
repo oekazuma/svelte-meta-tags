@@ -30,6 +30,6 @@ jobs:
       - name: Run Build
         run: pnpm build
       - name: Install Playwright
-        run: pnpm playwright install --with-deps
+        run: pnpx playwright install --with-deps
       - name: Run Playwright
         run: pnpm test
