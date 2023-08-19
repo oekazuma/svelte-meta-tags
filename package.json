@@ -3,14 +3,14 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "pnpm package && pnpm -r dev",
-    "build": "pnpm package && pnpm -r build",
+    "dev": "pnpm -r dev",
+    "build": "pnpm -r build",
     "preview": "pnpm -r preview",
     "package": "pnpm -r package",
     "check": "pnpm -r check",
     "lint": "prettier --check . --plugin prettier-plugin-svelte && eslint .",
     "format": "prettier --write . --plugin prettier-plugin-svelte",
-    "test": "pnpm package && pnpm -r test",
+    "test": "pnpm -r test",
     "release": "changeset publish"
   },
   "devDependencies": {
