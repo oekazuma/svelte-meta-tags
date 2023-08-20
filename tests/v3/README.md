@@ -1,3 +1,3 @@
 # v3
 
-test if svelte-meta-tags works in a Svelte v4 environment.
+test if svelte-meta-tags works in a Svelte v3 environment.

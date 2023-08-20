@@ -1,5 +1,5 @@
 {
-  "name": "v3",
+  "name": "v4",
   "private": true,
   "scripts": {
     "dev": "vite dev",
