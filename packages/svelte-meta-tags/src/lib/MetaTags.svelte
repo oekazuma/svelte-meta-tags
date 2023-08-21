@@ -1,44 +1,21 @@
-<script>
-  /** @type {import("./types").MetaTagsProps['title']} */
-  export let title = '';
+<script lang="ts">
+  import type { MetaTagsProps } from './types';
 
-  /** @type {import("./types").MetaTagsProps['titleTemplate']} */
-  export let titleTemplate = '';
+  export let title: MetaTagsProps['title'] = '';
+  export let titleTemplate: MetaTagsProps['titleTemplate'] = '';
+  export let robots: MetaTagsProps['robots'] = 'index,follow';
+  export let additionalRobotsProps: MetaTagsProps['additionalRobotsProps'] = undefined;
+  export let description: MetaTagsProps['description'] = undefined;
+  export let mobileAlternate: MetaTagsProps['mobileAlternate'] = undefined;
+  export let languageAlternates: MetaTagsProps['languageAlternates'] = undefined;
+  export let twitter: MetaTagsProps['twitter'] = undefined;
+  export let facebook: MetaTagsProps['facebook'] = undefined;
+  export let openGraph: MetaTagsProps['openGraph'] = undefined;
+  export let canonical: MetaTagsProps['canonical'] = undefined;
+  export let additionalMetaTags: MetaTagsProps['additionalRobotsProps'] = undefined;
+  export let additionalLinkTags: MetaTagsProps['additionalLinkTags'] = undefined;
 
-  /** @type {import("./types").MetaTagsProps['robots']} */
-  export let robots = 'index,follow';
-
-  /** @type {import("./types").MetaTagsProps['additionalRobotsProps']} */
-  export let additionalRobotsProps = undefined;
-
-  /** @type {import("./types").MetaTagsProps['description']} */
-  export let description = undefined;
-
-  /** @type {import("./types").MetaTagsProps['mobileAlternate']} */
-  export let mobileAlternate = undefined;
-
-  /** @type {import("./types").MetaTagsProps['languageAlternates']} */
-  export let languageAlternates = undefined;
-
-  /** @type {import("./types").MetaTagsProps['twitter']} */
-  export let twitter = undefined;
-
-  /** @type {import("./types").MetaTagsProps['facebook']} */
-  export let facebook = undefined;
-
-  /** @type {import("./types").MetaTagsProps['openGraph']} */
-  export let openGraph = undefined;
-
-  /** @type {import("./types").MetaTagsProps['canonical']} */
-  export let canonical = undefined;
-
-  /** @type {import("./types").MetaTagsProps['additionalMetaTags']} */
-  export let additionalMetaTags = undefined;
-
-  /** @type {import("./types").MetaTagsProps['additionalLinkTags']} */
-  export let additionalLinkTags = undefined;
-
-  $: updatedTitle = titleTemplate ? titleTemplate.replace(/%s/g, title) : title;
+  $: updatedTitle = titleTemplate ? (title ? titleTemplate.replace(/%s/g, title) : title) : title;
 
   let robotsParams = '';
   if (additionalRobotsProps) {
@@ -190,7 +167,7 @@
           {/each}
         {/if}
       {:else if openGraph.type.toLowerCase() === 'video.movie' || openGraph.type.toLowerCase() === 'video.episode' || openGraph.type.toLowerCase() === 'video.tv_show' || (openGraph.type.toLowerCase() === 'video.other' && openGraph.video)}
-        {#if openGraph.video.actors && openGraph.video.actors.length}
+        {#if openGraph.video?.actors && openGraph.video.actors.length}
           {#each openGraph.video.actors as actor}
             {#if actor.profile}
               <meta property="video:actor" content={actor.profile} />
@@ -201,33 +178,33 @@
           {/each}
         {/if}
 
-        {#if openGraph.video.directors && openGraph.video.directors.length}
+        {#if openGraph.video?.directors && openGraph.video.directors.length}
           {#each openGraph.video.directors as director}
             <meta property="video:director" content={director} />
           {/each}
         {/if}
 
-        {#if openGraph.video.writers && openGraph.video.writers.length}
+        {#if openGraph.video?.writers && openGraph.video.writers.length}
           {#each openGraph.video.writers as writer}
             <meta property="video:writer" content={writer} />
           {/each}
         {/if}
 
-        {#if openGraph.video.duration}
+        {#if openGraph.video?.duration}
           <meta property="video:duration" content={openGraph.video.duration.toString()} />
         {/if}
 
-        {#if openGraph.video.releaseDate}
+        {#if openGraph.video?.releaseDate}
           <meta property="video:release_date" content={openGraph.video.releaseDate} />
         {/if}
 
-        {#if openGraph.video.tags && openGraph.video.tags.length}
+        {#if openGraph.video?.tags && openGraph.video.tags.length}
           {#each openGraph.video.tags as tag}
             <meta property="video:tag" content={tag} />
           {/each}
         {/if}
 
-        {#if openGraph.video.series}
+        {#if openGraph.video?.series}
           <meta property="video:series" content={openGraph.video.series} />
         {/if}
       {/if}
@@ -286,7 +263,7 @@
     {/if}
   {/if}
 
-  {#if additionalMetaTags && additionalMetaTags.length > 0}
+  {#if additionalMetaTags && Object.keys(additionalMetaTags).length > 0}
     {#each additionalMetaTags as tag}
       <meta {...tag} />
     {/each}
