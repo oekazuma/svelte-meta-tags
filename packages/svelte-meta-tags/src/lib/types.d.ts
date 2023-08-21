@@ -40,24 +40,38 @@ export interface OpenGraph {
   type?: string;
   title?: string;
   description?: string;
-  images?: ReadonlyArray<OpenGraphMedia>;
-  videos?: ReadonlyArray<OpenGraphMedia>;
-  audio?: ReadonlyArray<OpenGraphMedia>;
+  images?: ReadonlyArray<OpenGraphImage>;
+  videos?: ReadonlyArray<OpenGraphVideo>;
+  audio?: ReadonlyArray<OpenGraphAudio>;
   locale?: string;
-  site_name?: string;
+  siteName?: string;
   profile?: OpenGraphProfile;
   book?: OpenGraphBook;
   article?: OpenGraphArticle;
   video?: OpenGraphVideo;
 }
 
-interface OpenGraphMedia {
+interface OpenGraphImage {
   url: string;
+  secureUrl?: string;
+  type?: string;
   width?: number;
   height?: number;
   alt?: string;
-  type?: string;
+}
+
+interface OpenGraphVideo {
+  url: string;
   secureUrl?: string;
+  type?: string;
+  width?: number;
+  height?: number;
+}
+
+interface OpenGraphAudio {
+  url: string;
+  secureUrl?: string;
+  type?: string;
 }
 
 interface OpenGraphProfile {

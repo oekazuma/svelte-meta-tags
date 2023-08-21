@@ -230,15 +230,18 @@
         {#if image.height}
           <meta property="og:image:height" content={image.height.toString()} />
         {/if}
+        {#if image.secureUrl}
+          <meta property="og:image:secure_url" content={image.secureUrl.toString()} />
+        {/if}
+        {#if image.type}
+          <meta property="og:image:type" content={image.type.toString()} />
+        {/if}
       {/each}
     {/if}
 
     {#if openGraph.videos && openGraph.videos.length}
       {#each openGraph.videos as video}
         <meta property="og:video" content={video.url} />
-        {#if video.alt}
-          <meta property="og:video:alt" content={video.alt} />
-        {/if}
         {#if video.width}
           <meta property="og:video:width" content={video.width.toString()} />
         {/if}
@@ -254,12 +257,24 @@
       {/each}
     {/if}
 
+    {#if openGraph.audio && openGraph.audio.length}
+      {#each openGraph.audio as audio}
+        <meta property="og:audio" content={audio.url} />
+        {#if audio.secureUrl}
+          <meta property="og:audio:secure_url" content={audio.secureUrl.toString()} />
+        {/if}
+        {#if audio.type}
+          <meta property="og:audio:type" content={audio.type.toString()} />
+        {/if}
+      {/each}
+    {/if}
+
     {#if openGraph.locale}
       <meta property="og:locale" content={openGraph.locale} />
     {/if}
 
-    {#if openGraph.site_name}
-      <meta property="og:site_name" content={openGraph.site_name} />
+    {#if openGraph.siteName}
+      <meta property="og:site_name" content={openGraph.siteName} />
     {/if}
   {/if}
 
