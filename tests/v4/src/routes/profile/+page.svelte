@@ -42,7 +42,7 @@
         alt: 'Og Image Alt firstlast123 D'
       }
     ],
-    site_name: 'SiteName'
+    siteName: 'SiteName'
   }}
   twitter={{
     handle: '@handle',

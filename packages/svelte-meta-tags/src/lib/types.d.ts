@@ -41,7 +41,7 @@ export interface OpenGraph {
   title?: string;
   description?: string;
   images?: ReadonlyArray<OpenGraphImage>;
-  videos?: ReadonlyArray<OpenGraphVideo>;
+  videos?: ReadonlyArray<OpenGraphVideos>;
   audio?: ReadonlyArray<OpenGraphAudio>;
   locale?: string;
   siteName?: string;
@@ -60,7 +60,7 @@ interface OpenGraphImage {
   alt?: string;
 }
 
-interface OpenGraphVideo {
+interface OpenGraphVideos {
   url: string;
   secureUrl?: string;
   type?: string;
