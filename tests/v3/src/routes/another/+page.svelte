@@ -35,7 +35,7 @@
         alt: 'Og Image Alt Another Second'
       }
     ],
-    site_name: 'SiteName Another'
+    siteName: 'SiteName Another'
   }}
   additionalMetaTags={[
     {

@@ -45,7 +45,7 @@
         alt: 'Og Image Alt Book Title D'
       }
     ],
-    site_name: 'SiteName'
+    siteName: 'SiteName'
   }}
   twitter={{
     handle: '@handle',
