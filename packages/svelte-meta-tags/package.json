@@ -58,7 +58,8 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "../../README.md"
   ],
   "svelte": "./dist/index.js",
   "types": "./dist/index.d.ts"
