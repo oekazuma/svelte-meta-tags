@@ -5,9 +5,9 @@
   export let output: JsonLdProps['output'] = 'head';
   export let schema: JsonLdProps['schema'] = undefined;
 
-  $: isValid = schema && typeof schema === 'object';
-
   type OmitContext<T> = Omit<T, '@context'>;
+
+  $: isValid = schema && typeof schema === 'object';
 
   const createSchema = (schema: JsonLdProps['schema']) => {
     const addContext = (context: OmitContext<Thing> | OmitContext<WithContext<Thing>>) => ({

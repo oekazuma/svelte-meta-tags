@@ -20,6 +20,7 @@ export interface AdditionalRobotsProps {
   noimageindex?: boolean;
   notranslate?: boolean;
 }
+
 export interface Twitter {
   cardType?: 'summary' | 'summary_large_image' | 'app' | 'player';
   site?: string;
@@ -48,12 +49,14 @@ export interface OpenGraph {
   article?: OpenGraphArticle;
   video?: OpenGraphVideo;
 }
+
 interface OpenGraphImages {
   url: string;
   alt?: string;
   width?: number;
   height?: number;
 }
+
 interface OpenGraphVideos {
   url: string;
   alt?: string;
@@ -62,6 +65,7 @@ interface OpenGraphVideos {
   secureUrl?: string;
   type?: string;
 }
+
 interface OpenGraphProfile {
   firstName?: string;
   lastName?: string;
@@ -75,6 +79,7 @@ interface OpenGraphBook {
   releaseDate?: string;
   tags?: ReadonlyArray<string>;
 }
+
 interface OpenGraphArticle {
   publishedTime?: string;
   modifiedTime?: string;
