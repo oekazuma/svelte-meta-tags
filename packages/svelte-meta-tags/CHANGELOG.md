@@ -1,5 +1,3 @@
-## 2.8.0
-
 ## 3.0.0
 
 ### Major Changes
@@ -7,6 +5,8 @@
 - 5ab9f93: feat: Overhaul `robots`
 - 5ab9f93: feat: Improved type definitions
 - 5ab9f93: feat: remove the `googlebot` tag
+
+## 2.8.0
 
 ### Minor Changes
 
