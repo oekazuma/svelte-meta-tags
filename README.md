@@ -9,7 +9,7 @@ Svelte Meta Tags provides components designed to help you manage SEO for Svelte 
 
 [Demo](https://svelte.dev/repl/ffd783c9b8e54d97b6b7cac6eadace42)
 
-This library is inspired by [next-seo](https://github.com/garmeeh/next-seo)
+**Note: If you are migrating from v2.x to v3.x, [Please Read Migration Guide](https://github.com/oekazuma/svelte-meta-tags/issues/786)**
 
 **Table of Contents**
 
