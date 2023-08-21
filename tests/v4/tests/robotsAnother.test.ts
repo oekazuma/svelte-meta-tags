@@ -1,6 +1,10 @@
 import { test, expect } from '@playwright/test';
 
-const checkConsoleMessagesFor = (expectedMessage) => (msg) => {
+interface Message {
+  text(): string;
+}
+
+const checkConsoleMessagesFor = (expectedMessage: string) => (msg: Message) => {
   return msg.text().includes(expectedMessage);
 };
 
