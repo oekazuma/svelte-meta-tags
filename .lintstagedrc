@@ -1,4 +1,0 @@
-{
-  "*.{js,ts,cjs,svelte,md,html,css,json,yml,yaml}": "pnpm format",
-  "*.{js,ts,svelte}": ["pnpm lint", "pnpm check"]
-}

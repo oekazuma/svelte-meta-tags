@@ -23,6 +23,12 @@
     {
       "groupName": "sveltekit",
       "matchPackagePrefixes": ["@sveltejs/"]
+    },
+    {
+      "paths": ["tests/v3/**"],
+      "groupName": "svelte",
+      "matchPackageNames": ["svelte"],
+      "allowedVersions": "^3.0.0"
     }
   ]
 }
