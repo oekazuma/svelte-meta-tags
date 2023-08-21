@@ -106,7 +106,7 @@ pnpm add -D svelte-meta-tags
       { url: 'https://www.example.ie/og-image-03.jpg' },
       { url: 'https://www.example.ie/og-image-04.jpg' }
     ],
-    site_name: 'SiteName'
+    siteName: 'SiteName'
   }}
   twitter={{
     handle: '@handle',
@@ -154,7 +154,7 @@ pnpm add -D svelte-meta-tags
 | `openGraph.videos`                 | array                                      | An array of videos (object)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | `openGraph.audio`                  | array                                      | An array of audio(object)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | `openGraph.locale`                 | string                                     | The locale in which the open graph tags are highlighted                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| `openGraph.site_name`              | string                                     | If your item is part of a larger website, the name that should be displayed for the entire site                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `openGraph.siteName`               | string                                     | If your item is part of a larger website, the name that should be displayed for the entire site                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | `openGraph.profile.firstName`      | string                                     | Person's first name                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | `openGraph.profile.lastName`       | string                                     | Person's last name                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | `openGraph.profile.username`       | string                                     | Person's username                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
@@ -463,7 +463,7 @@ Full info on [http://ogp.me/](http://ogp.me/#type_video)
       releaseDate: '2022-12-21T22:04:11Z',
       tags: ['Tag A', 'Tag B', 'Tag C']
     },
-    site_name: 'SiteName'
+    siteName: 'SiteName'
   }}
 />
 ```
@@ -943,11 +943,11 @@ interface OpenGraph {
   type?: string;
   title?: string;
   description?: string;
-  images?: ReadonlyArray<OpenGraphMedia>;
-  videos?: ReadonlyArray<OpenGraphMedia>;
-  audio?: ReadonlyArray<OpenGraphMedia>;
+  images?: ReadonlyArray<OpenGraphImage>;
+  videos?: ReadonlyArray<OpenGraphVideo>;
+  audio?: ReadonlyArray<OpenGraphAudio>;
   locale?: string;
-  site_name?: string;
+  siteName?: string;
   profile?: OpenGraphProfile;
   book?: OpenGraphBook;
   article?: OpenGraphArticle;
@@ -982,16 +982,38 @@ interface LinkTag {
 
 The following are referenced by the public types documented above, but cannot be imported directly
 
-### OpenGraphMedia
+### OpenGraphImage
 
 ```ts
-interface OpenGraphMedia {
+interface OpenGraphImage {
   url: string;
+  secureUrl?: string;
+  type?: string;
   width?: number;
   height?: number;
   alt?: string;
-  type?: string;
+}
+```
+
+### OpenGraphVideo
+
+```ts
+interface OpenGraphVideo {
+  url: string;
   secureUrl?: string;
+  type?: string;
+  width?: number;
+  height?: number;
+}
+```
+
+### OpenGraphAudio
+
+```ts
+interface OpenGraphAudio {
+  url: string;
+  secureUrl?: string;
+  type?: string;
 }
 ```
 

@@ -39,7 +39,7 @@
         type: 'audio/mp3'
       }
     ],
-    site_name: 'SiteName'
+    siteName: 'SiteName'
   }}
   twitter={{
     handle: '@handle',
