@@ -1,5 +1,12 @@
 ## 3.0.0
 
+## 3.0.1
+
+### Patch Changes
+
+- edeb45b: fix: Fix incorrect type definitions and openGraph rendering
+- edeb45b: fix: openGraph.site_name has been renamed to openGraph.siteName
+
 ### Major Changes
 
 - 5ab9f93: feat: Overhaul `robots`
