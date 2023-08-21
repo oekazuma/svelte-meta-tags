@@ -152,6 +152,7 @@ pnpm add -D svelte-meta-tags
 | `openGraph.description`            | string                                     | The open graph description, which may be different from your meta description                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | `openGraph.images`                 | array                                      | An array of images to use as previews. If multiple are provided, you can choose one when sharing [See Examples](#open-graph-examples)                                                                                                                                                                                                                                                                                                                                                                                                 |
 | `openGraph.videos`                 | array                                      | An array of videos (object)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `openGraph.audio`                  | array                                      | An array of audio(object)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | `openGraph.locale`                 | string                                     | The locale in which the open graph tags are highlighted                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | `openGraph.site_name`              | string                                     | If your item is part of a larger website, the name that should be displayed for the entire site                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | `openGraph.profile.firstName`      | string                                     | Person's first name                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
@@ -942,8 +943,9 @@ interface OpenGraph {
   type?: string;
   title?: string;
   description?: string;
-  images?: ReadonlyArray<OpenGraphImages>;
-  videos?: ReadonlyArray<OpenGraphVideos>;
+  images?: ReadonlyArray<OpenGraphMedia>;
+  videos?: ReadonlyArray<OpenGraphMedia>;
+  audio?: ReadonlyArray<OpenGraphMedia>;
   locale?: string;
   site_name?: string;
   profile?: OpenGraphProfile;
@@ -965,9 +967,14 @@ type MetaTag = HTML5MetaTag | RDFaMetaTag | HTTPEquivMetaTag;
 interface LinkTag {
   rel: string;
   href: string;
+  hrefLang?: string;
+  media?: string;
   sizes?: string;
   type?: string;
   color?: string;
+  as?: string;
+  crossOrigin?: string;
+  referrerPolicy?: string;
 }
 ```
 
@@ -975,27 +982,16 @@ interface LinkTag {
 
 The following are referenced by the public types documented above, but cannot be imported directly
 
-### OpenGraphImages
+### OpenGraphMedia
 
 ```ts
-interface OpenGraphImages {
+interface OpenGraphMedia {
   url: string;
-  alt?: string;
   width?: number;
   height?: number;
-}
-```
-
-### OpenGraphVideos
-
-```ts
-interface OpenGraphVideos {
-  url: string;
   alt?: string;
-  width?: number;
-  height?: number;
-  secureUrl?: string;
   type?: string;
+  secureUrl?: string;
 }
 ```
 
