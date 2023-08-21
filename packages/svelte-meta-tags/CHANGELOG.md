@@ -1,4 +1,4 @@
-## 3.0.0
+# svelte-meta-tags
 
 ## 3.0.1
 
@@ -6,6 +6,8 @@
 
 - edeb45b: fix: Fix incorrect type definitions and openGraph rendering
 - edeb45b: fix: openGraph.site_name has been renamed to openGraph.siteName
+
+## 3.0.0
 
 ### Major Changes
 
