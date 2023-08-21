@@ -263,7 +263,7 @@
     {/if}
   {/if}
 
-  {#if additionalMetaTags && Object.keys(additionalMetaTags).length > 0}
+  {#if additionalMetaTags && Array.isArray(additionalMetaTags)}
     {#each additionalMetaTags as tag}
       <meta {...tag} />
     {/each}
