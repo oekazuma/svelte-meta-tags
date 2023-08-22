@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 3.0.2
+
+### Patch Changes
+
+- 2070b2a: chore: fix to include README.md as a release target at the time of release
+
 ## 3.0.1
 
 ### Patch Changes
