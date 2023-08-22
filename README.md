@@ -150,24 +150,25 @@ pnpm add -D svelte-meta-tags
 `+page.ts`
 
 ```ts
-import type { MetaTagsProps } from 'svelte-meta-tags';  // Import type for meta tags properties.
+import type { MetaTagsProps } from 'svelte-meta-tags'; // Import type for meta tags properties.
 
 export const load = async ({ url }) => {
   // Define meta tags for this specific child page.
   const metaTags: MetaTagsProps = Object.freeze({
-    title: 'page title',  // Page-specific title.
-    description: 'Description for Child Page',  // This description will override the default.
-    openGraph: {  // OpenGraph meta tags specific to this page.
+    title: 'page title', // Page-specific title.
+    description: 'Description for Child Page', // This description will override the default.
+    openGraph: {
+      // OpenGraph meta tags specific to this page.
       type: 'website',
       url: new URL(url.pathname, url.origin).href,
       locale: 'en_IE',
       title: 'Open Graph Title',
-      description: 'Open Graph Description',
-    },
+      description: 'Open Graph Description'
+    }
   });
 
   return {
-    metaTagsChild: metaTags,  // Return meta tags so they can be consumed by layout.svelte.
+    metaTagsChild: metaTags // Return meta tags so they can be consumed by layout.svelte.
   };
 };
 ```
