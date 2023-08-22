@@ -24,7 +24,7 @@
     "package": "svelte-kit sync && svelte-package && publint",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "prepublishOnly": "pnpm package"
+    "prepublishOnly": "pnpm package && cp README.md packages/svelte-meta-tags/dist/"
   },
   "dependencies": {
     "schema-dts": "^1.1.2"
@@ -58,8 +58,7 @@
     }
   },
   "files": [
-    "dist",
-    "../../README.md"
+    "dist"
   ],
   "svelte": "./dist/index.js",
   "types": "./dist/index.d.ts"
