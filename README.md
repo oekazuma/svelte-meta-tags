@@ -126,18 +126,19 @@ pnpm add -D svelte-meta-tags
 **Overwriting default values with a child page:**
 
 `+layout.svelte`
+
 ```svelte
 <script>
-  import { MetaTags } from 'svelte-meta-tags';  // Import the MetaTags component.
-  import { page } from '$app/stores';  // Import the page store to access route-specific data.
+  import { MetaTags } from 'svelte-meta-tags'; // Import the MetaTags component.
+  import { page } from '$app/stores'; // Import the page store to access route-specific data.
 
-  export let data;  // Exported so that child components/pages can provide data.
+  export let data; // Exported so that child components/pages can provide data.
 
   // Create a reactive statement to compute meta tags.
   $: metaTags = {
-    titleTemplate: '%s | Svelte Meta Tags',  // Default title template.
-    description: 'Default Description for the Website',  // Default description.
-    ...$page.data.metaTagsChild,  // Override with child page meta tags if they exist.
+    titleTemplate: '%s | Svelte Meta Tags', // Default title template.
+    description: 'Default Description for the Website', // Default description.
+    ...$page.data.metaTagsChild // Override with child page meta tags if they exist.
   };
 </script>
 
@@ -147,7 +148,8 @@ pnpm add -D svelte-meta-tags
 ```
 
 `+page.ts`
-```svelte
+
+```ts
 import type { MetaTagsProps } from 'svelte-meta-tags';  // Import type for meta tags properties.
 
 export const load = async ({ url }) => {
