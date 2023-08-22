@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 3.0.2
+
+### Patch Changes
+
+- 811c70f: chore: fix README.md is no longer included due to monorepo
+
 ## 3.0.1
 
 ### Patch Changes
