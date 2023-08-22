@@ -1,4 +1,4 @@
-<img src="./.github/logo.svg" alt="svelte-meta-tags" width="512" />
+<img src="https://raw.githubusercontent.com/oekazuma/svelte-meta-tags/main/.github/logo.svg" alt="svelte-meta-tags" width="512" />
 
 [![CI](https://github.com/oekazuma/svelte-meta-tags/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/oekazuma/svelte-meta-tags/actions/workflows/ci.yml)
 [![download](https://img.shields.io/npm/dt/svelte-meta-tags.svg)](https://www.npmjs.com/package/svelte-meta-tags)
