@@ -1,6 +1,6 @@
 {
   "name": "svelte-meta-tags",
-  "version": "3.0.2",
+  "version": "3.0.1",
   "description": "Svelte Meta Tags provides components designed to help you manage SEO for Svelte projects",
   "license": "MIT",
   "type": "module",
@@ -24,7 +24,7 @@
     "package": "svelte-kit sync && svelte-package && publint",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "prepublishOnly": "pnpm package && cp README.md packages/svelte-meta-tags/dist/"
+    "prepublishOnly": "pnpm package && cp ../../README.md dist/"
   },
   "dependencies": {
     "schema-dts": "^1.1.2"
