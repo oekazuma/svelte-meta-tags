@@ -123,6 +123,53 @@ pnpm add -D svelte-meta-tags
 />
 ```
 
+**Overwriting default values with a child page:**
+
+`+layout.svelte`
+```svelte
+<script>
+  import { MetaTags } from 'svelte-meta-tags';  // Import the MetaTags component.
+  import { page } from '$app/stores';  // Import the page store to access route-specific data.
+
+  export let data;  // Exported so that child components/pages can provide data.
+
+  // Create a reactive statement to compute meta tags.
+  $: metaTags = {
+    titleTemplate: '%s | Svelte Meta Tags',  // Default title template.
+    description: 'Default Description for the Website',  // Default description.
+    ...$page.data.metaTagsChild,  // Override with child page meta tags if they exist.
+  };
+</script>
+
+<MetaTags {...metaTags} />
+
+<!-- The rest of your layout content and the slot for child content would go here. -->
+```
+
+`+page.ts`
+```svelte
+import type { MetaTagsProps } from 'svelte-meta-tags';  // Import type for meta tags properties.
+
+export const load = async ({ url }) => {
+  // Define meta tags for this specific child page.
+  const metaTags: MetaTagsProps = Object.freeze({
+    title: 'page title',  // Page-specific title.
+    description: 'Description for Child Page',  // This description will override the default.
+    openGraph: {  // OpenGraph meta tags specific to this page.
+      type: 'website',
+      url: new URL(url.pathname, url.origin).href,
+      locale: 'en_IE',
+      title: 'Open Graph Title',
+      description: 'Open Graph Description',
+    },
+  });
+
+  return {
+    metaTagsChild: metaTags,  // Return meta tags so they can be consumed by layout.svelte.
+  };
+};
+```
+
 ### MetaTags Properties
 
 | Property                           | Type                                       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
