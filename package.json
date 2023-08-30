@@ -20,7 +20,7 @@
     "eslint": "^8.48.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-svelte": "^2.33.0",
-    "prettier": "^3.0.2",
+    "prettier": "^3.0.3",
     "prettier-plugin-svelte": "^3.0.3"
   },
   "packageManager": "pnpm@8.7.0",
