@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.17.1'
+          node-version: '18.18.0'
           cache: pnpm
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -28,6 +28,6 @@ jobs:
       - name: Run Build
         run: pnpm build
       - name: Install Playwright
-        run: pnpx playwright install --with-deps
+        run: pnpx playwright@latest install --with-deps
       - name: Run Playwright
         run: pnpm test
