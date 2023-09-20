@@ -12,7 +12,7 @@
   export let facebook: MetaTagsProps['facebook'] = undefined;
   export let openGraph: MetaTagsProps['openGraph'] = undefined;
   export let canonical: MetaTagsProps['canonical'] = undefined;
-  export let additionalMetaTags: MetaTagsProps['additionalRobotsProps'] = undefined;
+  export let additionalMetaTags: MetaTagsProps['additionalMetaTags'] = undefined;
   export let additionalLinkTags: MetaTagsProps['additionalLinkTags'] = undefined;
 
   $: updatedTitle = titleTemplate ? (title ? titleTemplate.replace(/%s/g, title) : title) : title;
