@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 3.0.4
+
+### Patch Changes
+
+- 336767f: fix: additionalMetaTags types
+
 ## 3.0.3
 
 ### Patch Changes
