@@ -9,7 +9,6 @@ const checkConsoleMessagesFor = (expectedMessage: string) => (msg: Message) => {
 };
 
 test('Another Robots props SEO applied correctly', async ({ page }) => {
-
   const consoleMessagePromise = new Promise((resolve) => {
     page.on('console', (msg) => {
       if (checkConsoleMessagesFor('additionalRobotsProps cannot be used when robots is set to false')(msg)) {
@@ -27,5 +26,4 @@ test('Another Robots props SEO applied correctly', async ({ page }) => {
     consoleMessagePromise,
     new Promise((_, reject) => setTimeout(() => reject(new Error('Console message not found')), 5000))
   ]);
-
 });
