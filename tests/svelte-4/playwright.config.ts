@@ -5,8 +5,8 @@ const config: PlaywrightTestConfig = {
   retries: process.env.CI ? 5 : 0,
   workers: process.env.CI ? 2 : undefined,
   webServer: {
-    command: 'pnpm build && pnpm preview',
-    port: 4174,
+    command: 'pnpm build && pnpm preview --port 4175',
+    port: 4175,
     reuseExistingServer: !process.env.CI
   },
   projects: [
