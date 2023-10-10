@@ -11,13 +11,13 @@
   "devDependencies": {
     "@playwright/test": "^1.38.1",
     "@sveltejs/adapter-auto": "^2.1.0",
-    "@sveltejs/kit": "^1.25.1",
-    "svelte": "3.59.2",
+    "@sveltejs/kit": "^1.25.2",
+    "svelte": "4.2.1",
     "svelte-check": "^3.5.2",
     "svelte-meta-tags": "workspace:*",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
-    "vite": "^4.4.10"
+    "vite": "^4.4.11"
   },
   "type": "module"
 }
