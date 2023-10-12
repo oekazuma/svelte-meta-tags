@@ -22,15 +22,14 @@ const config: PlaywrightTestConfig = {
       use: {
         ...devices['Desktop Firefox']
       }
-    }
+    },
 
-    // Desktop Safari test is now crashing for some reason, so I'm temporarily commenting out.
-    // {
-    //   name: 'webkit',
-    //   use: {
-    //     ...devices['Desktop Safari']
-    //   }
-    // }
+    {
+      name: 'webkit',
+      use: {
+        ...devices['Desktop Safari']
+      }
+    }
   ]
 };
 
