@@ -14,6 +14,7 @@
   export let canonical: MetaTagsProps['canonical'] = undefined;
   export let additionalMetaTags: MetaTagsProps['additionalMetaTags'] = undefined;
   export let additionalLinkTags: MetaTagsProps['additionalLinkTags'] = undefined;
+  export let keywords: MetaTagsProps['keywords'] = undefined;
 
   $: updatedTitle = titleTemplate ? (title ? titleTemplate.replace(/%s/g, title) : title) : title;
 
@@ -288,5 +289,9 @@
     {#each additionalLinkTags as tag}
       <link {...tag} />
     {/each}
+  {/if}
+
+  {#if keywords?.length}
+    <meta name="keywords" content={keywords.join(', ')} />
   {/if}
 </svelte:head>
