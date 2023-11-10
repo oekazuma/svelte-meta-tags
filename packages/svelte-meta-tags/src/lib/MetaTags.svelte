@@ -12,9 +12,9 @@
   export let facebook: MetaTagsProps['facebook'] = undefined;
   export let openGraph: MetaTagsProps['openGraph'] = undefined;
   export let canonical: MetaTagsProps['canonical'] = undefined;
+  export let keywords: MetaTagsProps['keywords'] = undefined;
   export let additionalMetaTags: MetaTagsProps['additionalMetaTags'] = undefined;
   export let additionalLinkTags: MetaTagsProps['additionalLinkTags'] = undefined;
-  export let keywords: MetaTagsProps['keywords'] = undefined;
 
   $: updatedTitle = titleTemplate ? (title ? titleTemplate.replace(/%s/g, title) : title) : title;
 
@@ -56,6 +56,10 @@
 
   {#if canonical}
     <link rel="canonical" href={canonical} />
+  {/if}
+
+  {#if keywords?.length}
+    <meta name="keywords" content={keywords.join(', ')} />
   {/if}
 
   {#if mobileAlternate}
@@ -289,9 +293,5 @@
     {#each additionalLinkTags as tag}
       <link {...tag} />
     {/each}
-  {/if}
-
-  {#if keywords?.length}
-    <meta name="keywords" content={keywords.join(', ')} />
   {/if}
 </svelte:head>
