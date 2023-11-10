@@ -7,6 +7,7 @@
   titleTemplate="%s | Svelte Meta Tags"
   description="Description"
   canonical="https://www.canonical.ie/"
+  keywords={['first keyword', 'second keyword']}
   openGraph={{
     type: 'website',
     url: 'https://www.example.com/page',
