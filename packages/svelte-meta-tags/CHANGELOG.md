@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 3.1.0
+
+### Minor Changes
+
+- e0503fc: Add support to keywords meta tag
+
 ## 3.0.4
 
 ### Patch Changes
