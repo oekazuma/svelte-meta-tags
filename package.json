@@ -8,20 +8,20 @@
     "preview": "pnpm -r preview",
     "package": "pnpm -r package",
     "check": "pnpm -r check",
-    "lint": "prettier --check . --plugin prettier-plugin-svelte && eslint .",
-    "format": "prettier --write . --plugin prettier-plugin-svelte",
+    "lint": "prettier --check . && eslint .",
+    "format": "prettier --write .",
     "test": "pnpm -r test",
     "release": "changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
-    "@typescript-eslint/eslint-plugin": "^6.10.0",
-    "@typescript-eslint/parser": "^6.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@typescript-eslint/parser": "^6.11.0",
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-svelte": "^2.35.0",
-    "prettier": "^3.0.3",
-    "prettier-plugin-svelte": "^3.0.3"
+    "prettier": "^3.1.0",
+    "prettier-plugin-svelte": "^3.1.0"
   },
   "packageManager": "pnpm@8.10.4",
   "engines": {
