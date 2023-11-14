@@ -8,8 +8,8 @@
     "preview": "pnpm -r preview",
     "package": "pnpm -r package",
     "check": "pnpm -r check",
-    "lint": "prettier --check . --plugin prettier-plugin-svelte && eslint .",
-    "format": "prettier --write . --plugin prettier-plugin-svelte",
+    "lint": "prettier --check . && eslint .",
+    "format": "prettier --write .",
     "test": "pnpm -r test",
     "release": "changeset publish"
   },
