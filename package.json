@@ -23,7 +23,7 @@
     "prettier": "^3.0.3",
     "prettier-plugin-svelte": "^3.0.3"
   },
-  "packageManager": "pnpm@8.10.2",
+  "packageManager": "pnpm@8.10.4",
   "engines": {
     "pnpm": "8.x"
   }
