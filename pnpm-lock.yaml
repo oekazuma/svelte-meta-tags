@@ -49,8 +49,8 @@ importers:
         specifier: ^2.2.3
         version: 2.2.3(svelte@4.2.8)(typescript@5.3.2)
       publint:
-        specifier: ^0.2.5
-        version: 0.2.5
+        specifier: ^0.2.6
+        version: 0.2.6
       svelte:
         specifier: ^4.2.8
         version: 4.2.8
@@ -2949,8 +2949,8 @@ packages:
     resolution: {integrity: sha512-b/YwNhb8lk1Zz2+bXXpS/LK9OisiZZ1SNsSLxN1x2OXVEhW2Ckr/7mWE5vrC1ZTiJlD9g19jWszTmJsB+oEpFQ==}
     dev: true
 
-  /publint@0.2.5:
-    resolution: {integrity: sha512-eoQiP0WXkxkpth1fMLoS1I/6BQoxKNZxTAAnFjPgURFrJulC5D5Uifk49a9kfNCYmcza9E/ZkbFhQQdjkmKAbg==}
+  /publint@0.2.6:
+    resolution: {integrity: sha512-zMwDVwrlLnCsviDXlczhuc5nIljsjZUgbLeKNyMYqbIJLRhcW81xrKsHlEu21YUaIxpa8T66tdIqP0mZm9ym3A==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
