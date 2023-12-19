@@ -125,50 +125,80 @@ pnpm add -D svelte-meta-tags
 
 **Overwriting default values with a child page:**
 
+[Example](https://github.com/oekazuma/svelte-meta-tags/tree/main/example)
+
 `+layout.svelte`
 
 ```svelte
 <script>
-  import { MetaTags } from 'svelte-meta-tags'; // Import the MetaTags component.
-  import { page } from '$app/stores'; // Import the page store to access route-specific data.
+  import { MetaTags } from 'svelte-meta-tags';
+  import { page } from '$app/stores';
+  import extend from 'just-extend'; // Please provide functions that allow deep merging of objects, such as lodash.merge, deepmerge, just-extend.
 
-  export let data; // Exported so that child components/pages can provide data.
+  export let data;
 
-  // Create a reactive statement to compute meta tags.
-  $: metaTags = {
-    titleTemplate: '%s | Svelte Meta Tags', // Default title template.
-    description: 'Default Description for the Website', // Default description.
-    ...$page.data.metaTagsChild // Override with child page meta tags if they exist.
-  };
+  $: metaTags = extend(true, {}, data.baseMetaTags, $page.data.pageMetaTags);
 </script>
 
 <MetaTags {...metaTags} />
 
-<!-- The rest of your layout content and the slot for child content would go here. -->
+<slot/>
+```
+
+`+layout.ts`
+
+```ts
+import type { MetaTagsProps } from 'svelte-meta-tags';
+
+export const load = ({ url }) => {
+  const baseMetaTags = Object.freeze({
+    title: 'Default',
+    titleTemplate: '%s | Svelte Meta Tags',
+    description: 'Svelte Meta Tags is a Svelte component for managing meta tags and SEO in your Svelte applications.',
+    canonical: new URL(url.pathname, url.origin).href,
+    openGraph: {
+      type: 'website',
+      url: new URL(url.pathname, url.origin).href,
+      locale: 'en_IE',
+      title: 'Open Graph Title',
+      description: 'Open Graph Description',
+      siteName: 'SiteName',
+      images: [
+        {
+          url: 'https://www.example.ie/og-image.jpg',
+          alt: 'Og Image Alt',
+          width: 800,
+          height: 600,
+          secureUrl: 'https://www.example.ie/og-image.jpg',
+          type: 'image/jpeg'
+        }
+      ]
+    }
+  }) satisfies MetaTagsProps;
+
+  return {
+    baseMetaTags
+  };
+};
 ```
 
 `+page.ts`
 
 ```ts
-import type { MetaTagsProps } from 'svelte-meta-tags'; // Import type for meta tags properties.
+import type { MetaTagsProps } from 'svelte-meta-tags';
 
-export const load = async ({ url }) => {
-  // Define meta tags for this specific child page.
-  const metaTags: MetaTagsProps = Object.freeze({
-    title: 'page title', // Page-specific title.
-    description: 'Description for Child Page', // This description will override the default.
+export const load = () => {
+  const pageMetaTags = Object.freeze({
+    title: 'TOP',
+    description: 'Description TOP',
     openGraph: {
-      // OpenGraph meta tags specific to this page.
-      type: 'website',
-      url: new URL(url.pathname, url.origin).href,
-      locale: 'en_IE',
-      title: 'Open Graph Title',
-      description: 'Open Graph Description'
+      title: 'Open Graph Title TOP',
+      description: 'Open Graph Description TOP'
     }
-  });
+  }) satisfies MetaTagsProps;
 
   return {
-    metaTagsChild: metaTags // Return meta tags so they can be consumed by layout.svelte.
+    pageMetaTags
   };
 };
 ```
