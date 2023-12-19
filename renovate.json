@@ -25,10 +25,7 @@
       "matchPackagePrefixes": ["@sveltejs/"]
     },
     {
-      "paths": ["tests/svelte-3/**"],
-      "groupName": "svelte",
-      "matchPackageNames": ["svelte"],
-      "allowedVersions": "^3.0.0"
+      "ignorePaths": ["tests/svelte-3/**"]
     }
   ]
 }

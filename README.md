@@ -142,7 +142,7 @@ pnpm add -D svelte-meta-tags
 
 <MetaTags {...metaTags} />
 
-<slot/>
+<slot />
 ```
 
 `+layout.ts`
