@@ -21,7 +21,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-svelte": "^2.35.1",
     "prettier": "^3.2.5",
-    "prettier-plugin-svelte": "^3.2.0"
+    "prettier-plugin-svelte": "^3.2.1"
   },
   "packageManager": "pnpm@8.15.2",
   "engines": {
