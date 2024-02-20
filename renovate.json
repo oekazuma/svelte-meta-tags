@@ -3,6 +3,9 @@
   "extends": ["config:base", ":disablePeerDependencies"],
   "labels": ["renovate"],
   "rangeStrategy": "bump",
+  "lockFileMaintenance": {
+    "enabled": true
+  },
   "packageRules": [
     {
       "groupName": "dependencies",
