@@ -1,5 +1,5 @@
 <script lang="ts">
-import type { MetaTagsProps } from './types';
+  import type { MetaTagsProps } from './types';
 
   export let title: MetaTagsProps['title'] = '';
   export let titleTemplate: MetaTagsProps['titleTemplate'] = '';
