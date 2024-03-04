@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { MetaTagsProps } from './types';
+import type { MetaTagsProps } from './types';
 
   export let title: MetaTagsProps['title'] = '';
   export let titleTemplate: MetaTagsProps['titleTemplate'] = '';
@@ -44,7 +44,9 @@
 </script>
 
 <svelte:head>
-  <title>{updatedTitle}</title>
+  {#if updatedTitle}
+    <title>{updatedTitle}</title>
+  {/if}
 
   {#if robots !== false}
     <meta name="robots" content="{robots}{robotsParams}" />
