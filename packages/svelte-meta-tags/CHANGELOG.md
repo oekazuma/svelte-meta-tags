@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 3.1.1
+
+### Patch Changes
+
+- 88528fe: Fix to not generate an empty `<title>` tag if no title is set
+
 ## 3.1.0
 
 ### Minor Changes
