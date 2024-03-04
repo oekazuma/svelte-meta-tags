@@ -44,7 +44,9 @@
 </script>
 
 <svelte:head>
-  <title>{updatedTitle}</title>
+  {#if updatedTitle}
+    <title>{updatedTitle}</title>
+  {/if}
 
   {#if robots !== false}
     <meta name="robots" content="{robots}{robotsParams}" />
