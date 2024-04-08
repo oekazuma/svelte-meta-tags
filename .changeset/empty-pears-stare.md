@@ -1,5 +1,5 @@
 ---
-"svelte-meta-tags": patch
+'svelte-meta-tags': patch
 ---
 
 Fix reactivity of title tag
