@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 3.1.2
+
+### Patch Changes
+
+- fffe615: Fix reactivity of title tag
+
 ## 3.1.1
 
 ### Patch Changes
