@@ -43,10 +43,6 @@
   }
 </script>
 
-{#if updatedTitle}
-  {updatedTitle}
-{/if}
-
 <svelte:head>
   {#key updatedTitle}
     {#if updatedTitle}
