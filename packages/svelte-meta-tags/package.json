@@ -32,7 +32,7 @@
   "devDependencies": {
     "@sveltejs/adapter-auto": "^3.2.0",
     "@sveltejs/kit": "^2.5.5",
-    "@sveltejs/package": "^2.3.0",
+    "@sveltejs/package": "^2.3.1",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
     "publint": "^0.2.7",
     "svelte": "^4.2.12",
