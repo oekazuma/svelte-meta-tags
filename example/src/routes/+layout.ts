@@ -1,6 +1,6 @@
 import type { MetaTagsProps } from 'svelte-meta-tags';
 
-export const load = ({ url }) => {
+export const load = ({ url }: { url:URL }) => {
   const baseMetaTags = Object.freeze({
     title: 'Normal',
     titleTemplate: '%s | Svelte Meta Tags',
