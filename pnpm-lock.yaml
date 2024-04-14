@@ -43,19 +43,19 @@ importers:
         version: 3.2.0(@sveltejs/kit@2.5.5)
       '@sveltejs/kit':
         specifier: ^2.5.5
-        version: 2.5.5(@sveltejs/vite-plugin-svelte@3.1.0)(svelte@4.2.13)(vite@5.2.8)
+        version: 2.5.5(@sveltejs/vite-plugin-svelte@3.1.0)(svelte@4.2.14)(vite@5.2.8)
       '@sveltejs/vite-plugin-svelte':
         specifier: ^3.1.0
-        version: 3.1.0(svelte@4.2.13)(vite@5.2.8)
+        version: 3.1.0(svelte@4.2.14)(vite@5.2.8)
       just-extend:
         specifier: ^6.2.0
         version: 6.2.0
       svelte:
-        specifier: ^4.2.13
-        version: 4.2.13
+        specifier: ^4.2.14
+        version: 4.2.14
       svelte-check:
         specifier: ^3.6.9
-        version: 3.6.9(postcss@8.4.38)(svelte@4.2.13)
+        version: 3.6.9(postcss@8.4.38)(svelte@4.2.14)
       svelte-meta-tags:
         specifier: workspace:^
         version: link:../packages/svelte-meta-tags
