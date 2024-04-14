@@ -36,6 +36,39 @@ importers:
         specifier: ^7.6.0
         version: 7.6.0(eslint@9.0.0)(typescript@5.4.5)
 
+  example:
+    devDependencies:
+      '@sveltejs/adapter-auto':
+        specifier: ^3.2.0
+        version: 3.2.0(@sveltejs/kit@2.5.5)
+      '@sveltejs/kit':
+        specifier: ^2.5.5
+        version: 2.5.5(@sveltejs/vite-plugin-svelte@3.1.0)(svelte@4.2.13)(vite@5.2.8)
+      '@sveltejs/vite-plugin-svelte':
+        specifier: ^3.1.0
+        version: 3.1.0(svelte@4.2.13)(vite@5.2.8)
+      just-extend:
+        specifier: ^6.2.0
+        version: 6.2.0
+      svelte:
+        specifier: ^4.2.13
+        version: 4.2.13
+      svelte-check:
+        specifier: ^3.6.9
+        version: 3.6.9(postcss@8.4.38)(svelte@4.2.13)
+      svelte-meta-tags:
+        specifier: workspace:^
+        version: link:../packages/svelte-meta-tags
+      tslib:
+        specifier: ^2.6.2
+        version: 2.6.2
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+      vite:
+        specifier: ^5.2.8
+        version: 5.2.8
+
   packages/svelte-meta-tags:
     dependencies:
       schema-dts:
@@ -2871,6 +2904,10 @@ packages:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
     optionalDependencies:
       graceful-fs: 4.2.11
+    dev: true
+
+  /just-extend@6.2.0:
+    resolution: {integrity: sha512-cYofQu2Xpom82S6qD778jBDpwvvy39s1l/hrYij2u9AMdQcGRpaBu6kY4mVhuno5kJVi1DAz4aiphA2WI1/OAw==}
     dev: true
 
   /keyv@4.5.4:
