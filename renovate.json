@@ -28,7 +28,8 @@
       "matchPackagePrefixes": ["@sveltejs/"]
     },
     {
-      "ignorePaths": ["tests/svelte-3/"]
+      "ignorePaths": ["tests/svelte-3/**/*"],
+      "packagePatterns": ["*"]
     }
   ],
   "ignoreDeps": ["pnpm"]
