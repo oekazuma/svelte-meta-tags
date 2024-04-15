@@ -32,7 +32,5 @@
       "packagePatterns": ["*"]
     }
   ],
-  "ignoreDeps": [
-    "engines.pnpm"
-  ]
+  "ignoreDeps": ["engines.pnpm"]
 }
