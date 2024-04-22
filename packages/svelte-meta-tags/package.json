@@ -35,11 +35,11 @@
     "@sveltejs/package": "^2.3.1",
     "@sveltejs/vite-plugin-svelte": "^3.1.0",
     "publint": "^0.2.7",
-    "svelte": "^4.2.14",
+    "svelte": "^4.2.15",
     "svelte-check": "^3.6.9",
     "tslib": "^2.6.2",
     "typescript": "^5.4.5",
-    "vite": "^5.2.9"
+    "vite": "^5.2.10"
   },
   "peerDependencies": {
     "svelte": "^3.55.0 || ^4.0.0"
