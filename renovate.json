@@ -31,12 +31,7 @@
     {
       "ignorePaths": ["tests/svelte-3/**/*"],
       "packagePatterns": ["*"]
-    },
-    {
-      "description": "Ignore pnpm in engines",
-      "matchManagers": ["pnpm"],
-      "matchDepTypes": ["engines"],
-      "enabled": false
     }
-  ]
+  ],
+  "ignoreDeps": ["pnpm"]
 }
