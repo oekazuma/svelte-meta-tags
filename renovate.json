@@ -2,10 +2,11 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base", ":disablePeerDependencies"],
   "labels": ["renovate"],
-  "rangeStrategy": "bump",
   "lockFileMaintenance": {
-    "enabled": true
+    "enabled": true,
+    "automerge": true
   },
+  "rangeStrategy": "bump",
   "packageRules": [
     {
       "groupName": "dependencies",
@@ -30,7 +31,12 @@
     {
       "ignorePaths": ["tests/svelte-3/**/*"],
       "packagePatterns": ["*"]
+    },
+    {
+      "description": "Ignore pnpm in engines",
+      "matchManagers": ["pnpm"],
+      "matchDepTypes": ["engines"],
+      "enabled": false
     }
-  ],
-  "ignoreDeps": ["pnpm"]
+  ]
 }
