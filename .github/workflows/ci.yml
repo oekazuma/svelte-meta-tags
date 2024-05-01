@@ -29,5 +29,5 @@ jobs:
         run: pnpm build
       - name: Install Playwright
         run: pnpm dlx playwright@latest install --with-deps
-      - name: Run Playwright
+      - name: Run Vitest & Playwright
         run: pnpm test
