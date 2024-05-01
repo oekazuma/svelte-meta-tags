@@ -1,0 +1,21 @@
+{
+  "name": "site",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-static": "^3.0.1",
+    "@sveltejs/kit": "^2.5.1",
+    "@sveltejs/vite-plugin-svelte": "^3.0.2",
+    "@sveltepress/theme-default": "^2.0.2",
+    "@sveltepress/vite": "^0.33.2",
+    "@types/node": "^20.11.20",
+    "svelte": "^4.2.12",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.4"
+  }
+}
