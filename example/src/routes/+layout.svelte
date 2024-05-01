@@ -1,11 +1,10 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import { MetaTags } from 'svelte-meta-tags';
-  import extend from 'just-extend'; // Please provide functions that allow deep merging of objects, such as lodash.merge, deepmerge, just-extend.
+  import { MetaTags, deepMerge } from 'svelte-meta-tags';
 
   export let data;
 
-  $: metaTags = extend(true, {}, data.baseMetaTags, $page.data.pageMetaTags);
+  $: metaTags = deepMerge(data.baseMetaTags, $page.data.pageMetaTags);
 </script>
 
 <MetaTags {...metaTags} />
