@@ -1,62 +1,62 @@
-import { defineConfig } from 'vite'
-import { sveltepress } from '@sveltepress/vite'
-import { defaultTheme } from '@sveltepress/theme-default'
+import { defineConfig } from 'vite';
+import { sveltepress } from '@sveltepress/vite';
+import { defaultTheme } from '@sveltepress/theme-default';
 
 const config = defineConfig({
   plugins: [
     sveltepress({
       theme: defaultTheme({
-        navbar : [
+        navbar: [
           {
-            title : 'Foo page',
-            to : '/foo/'
+            title: 'Foo page',
+            to: '/foo/'
           },
           {
-            title : 'With dropdown',
-            items : [
+            title: 'With dropdown',
+            items: [
               {
-                title : 'Bar page',
-                to : '/bar/'
+                title: 'Bar page',
+                to: '/bar/'
               },
               {
-                title : 'External Github page',
-                to : 'https://github.com/',
-                external : true
+                title: 'External Github page',
+                to: 'https://github.com/',
+                external: true
               }
             ]
           }
         ],
-        sidebar : {
+        sidebar: {
           '/foo/': [
             {
-              title : 'Bar',
-              to : '/foo/bar/',
+              title: 'Bar',
+              to: '/foo/bar/'
             },
             {
-              title : 'Zoo',
-              collapsible : true,
-              items : [
+              title: 'Zoo',
+              collapsible: true,
+              items: [
                 {
-                  title : 'Sub item',
-                  to : '/sub/item/link'
+                  title: 'Sub item',
+                  to: '/sub/item/link'
                 }
               ]
             },
             {
-              title : 'External github page',
-              to : 'https://github.com'
+              title: 'External github page',
+              to: 'https://github.com'
             }
           ]
         },
         github: 'https://github.com/oekazuma/svelte-meta-tags',
-        logo: '/logo.svg',
+        logo: '/logo.svg'
       }),
       siteConfig: {
         title: 'Svelte Meta Tags',
-        description: 'Svelte Meta Tags provides components designed to help you manage SEO for Svelte projects.',
-      },
-    }),
-  ],
-})
+        description: 'Svelte Meta Tags provides components designed to help you manage SEO for Svelte projects.'
+      }
+    })
+  ]
+});
 
-export default config
+export default config;
