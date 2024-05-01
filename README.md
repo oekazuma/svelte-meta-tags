@@ -131,13 +131,12 @@ pnpm add -D svelte-meta-tags
 
 ```svelte
 <script>
-  import { MetaTags } from 'svelte-meta-tags';
   import { page } from '$app/stores';
-  import extend from 'just-extend'; // Please provide functions that allow deep merging of objects, such as lodash.merge, deepmerge, just-extend.
+  import { MetaTags, deepMerge } from 'svelte-meta-tags';
 
   export let data;
 
-  $: metaTags = extend(true, {}, data.baseMetaTags, $page.data.pageMetaTags);
+  $: metaTags = deepMerge(data.baseMetaTags, $page.data.pageMetaTags);
 </script>
 
 <MetaTags {...metaTags} />
