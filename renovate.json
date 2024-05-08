@@ -3,8 +3,7 @@
   "extends": ["config:base", ":disablePeerDependencies"],
   "labels": ["renovate"],
   "lockFileMaintenance": {
-    "enabled": true,
-    "automerge": true
+    "enabled": true
   },
   "rangeStrategy": "bump",
   "packageRules": [
