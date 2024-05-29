@@ -14,7 +14,7 @@
     "release": "changeset publish"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.3",
+    "@changesets/cli": "^2.27.5",
     "@types/eslint": "^8.56.10",
     "eslint": "^9.3.0",
     "eslint-config-prettier": "^9.1.0",
