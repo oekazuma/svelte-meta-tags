@@ -20,7 +20,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.10.0'
+          node-version: '20.13.1'
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - name: Create Release Pull Request or Publish to npm
