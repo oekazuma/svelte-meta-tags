@@ -31,5 +31,6 @@
       "ignorePaths": ["tests/svelte-3/**/*"],
       "packagePatterns": ["*"]
     }
-  ]
+  ],
+  "ignoreDeps": ["pnpm"]
 }
