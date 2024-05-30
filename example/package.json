@@ -14,7 +14,7 @@
     "@sveltejs/vite-plugin-svelte": "^3.1.0",
     "just-extend": "^6.2.0",
     "svelte": "^4.2.17",
-    "svelte-check": "^3.7.1",
+    "svelte-check": "^3.8.0",
     "svelte-meta-tags": "workspace:^",
     "tslib": "^2.6.2",
     "typescript": "^5.4.5",
