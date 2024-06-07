@@ -20,8 +20,8 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-svelte": "^2.39.0",
     "globals": "^15.4.0",
-    "prettier": "^3.3.0",
-    "prettier-plugin-svelte": "^3.2.3",
+    "prettier": "^3.3.1",
+    "prettier-plugin-svelte": "^3.2.4",
     "typescript-eslint": "^7.12.0"
   },
   "packageManager": "pnpm@9.1.3",
