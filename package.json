@@ -19,10 +19,10 @@
     "eslint": "^9.6.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-svelte": "^2.41.0",
-    "globals": "^15.7.0",
+    "globals": "^15.8.0",
     "prettier": "^3.3.2",
     "prettier-plugin-svelte": "^3.2.5",
-    "typescript-eslint": "^7.15.0"
+    "typescript-eslint": "^7.16.0"
   },
   "packageManager": "pnpm@9.4.0",
   "engines": {
