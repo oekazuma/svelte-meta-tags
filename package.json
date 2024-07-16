@@ -22,7 +22,7 @@
     "globals": "^15.8.0",
     "prettier": "^3.3.3",
     "prettier-plugin-svelte": "^3.2.5",
-    "typescript-eslint": "^7.16.0"
+    "typescript-eslint": "^7.16.1"
   },
   "packageManager": "pnpm@9.5.0",
   "engines": {
