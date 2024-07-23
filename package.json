@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.7",
-    "@types/eslint": "^8.56.11",
+    "@types/eslint": "^9.6.0",
     "eslint": "^9.7.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-svelte": "^2.43.0",
