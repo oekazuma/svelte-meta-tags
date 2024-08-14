@@ -17,7 +17,12 @@
     },
     {
       "groupName": "linters",
-      "matchPackagePrefixes": ["eslint", "@typescript-eslint/", "prettier"]
+      "matchPackagePrefixes": [
+        "eslint",
+        "typescript-eslint",
+        "publint",
+        "globals"
+      ]
     },
     {
       "groupName": "typescript",
@@ -31,6 +36,5 @@
       "ignorePaths": ["tests/svelte-3/**/*"],
       "packagePatterns": ["*"]
     }
-  ],
-  "ignoreDeps": ["pnpm"]
+  ]
 }
