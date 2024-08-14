@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 3.1.3
+
+### Patch Changes
+
+- f595784: chore: package provenance
+
 ## 3.1.2
 
 ### Patch Changes
