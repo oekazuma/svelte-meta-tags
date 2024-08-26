@@ -140,6 +140,7 @@ export interface LinkTag {
   rel: string;
   href: string;
   hrefLang?: string;
+  title?: string;
   media?: string;
   sizes?: string;
   type?: string;
