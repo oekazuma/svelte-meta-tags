@@ -92,6 +92,12 @@
     {#if twitter.description}
       <meta name="twitter:description" content={twitter.description} />
     {/if}
+    {#if twitter.creator}
+      <meta name="twitter:creator" content={twitter.creator} />
+    {/if}
+    {#if twitter.creatorId}
+      <meta name="twitter:creator:id" content={twitter.creatorId} />
+    {/if}
     {#if twitter.image}
       <meta name="twitter:image" content={twitter.image} />
     {/if}

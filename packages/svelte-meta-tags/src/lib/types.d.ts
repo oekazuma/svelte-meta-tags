@@ -27,6 +27,8 @@ export interface Twitter {
   handle?: string;
   title?: string;
   description?: string;
+  creator?: string;
+  creatorId?: string;
   image?: string;
   imageAlt?: string;
 }
