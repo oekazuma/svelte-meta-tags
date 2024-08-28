@@ -31,6 +31,19 @@ export interface Twitter {
   creatorId?: string;
   image?: string;
   imageAlt?: string;
+  player?: string;
+  playerWidth?: number;
+  playerHeight?: number;
+  playerStream?: string;
+  appNameIphone?: string;
+  appIdIphone?: string;
+  appUrlIphone?: string;
+  appNameIpad?: string;
+  appIdIpad?: string;
+  appUrlIpad?: string;
+  appNameGoogleplay?: string;
+  appIdGoogleplay?: string;
+  appUrlGoogleplay?: string;
 }
 
 export interface Facebook {

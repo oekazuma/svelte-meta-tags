@@ -104,6 +104,42 @@
     {#if twitter.imageAlt}
       <meta name="twitter:image:alt" content={twitter.imageAlt} />
     {/if}
+    {#if twitter.player}
+      <meta name="twitter:player" content={twitter.player} />
+    {/if}
+    {#if twitter.playerWidth}
+      <meta name="twitter:player:width" content={twitter.playerWidth.toString()} />
+    {/if}
+    {#if twitter.playerHeight}
+      <meta name="twitter:player:height" content={twitter.playerHeight.toString()} />
+    {/if}
+    {#if twitter.appNameIphone}
+      <meta name="twitter:app:name:iphone" content={twitter.appNameIphone} />
+    {/if}
+    {#if twitter.appIdIphone}
+      <meta name="twitter:app:id:iphone" content={twitter.appIdIphone} />
+    {/if}
+    {#if twitter.appUrlIphone}
+      <meta name="twitter:app:url:iphone" content={twitter.appUrlIphone} />
+    {/if}
+    {#if twitter.appNameIpad}
+      <meta name="twitter:app:name:ipad" content={twitter.appNameIpad} />
+    {/if}
+    {#if twitter.appIdIpad}
+      <meta name="twitter:app:id:ipad" content={twitter.appIdIpad} />
+    {/if}
+    {#if twitter.appUrlIpad}
+      <meta name="twitter:app:url:ipad" content={twitter.appUrlIpad} />
+    {/if}
+    {#if twitter.appNameGoogleplay}
+      <meta name="twitter:app:name:googleplay" content={twitter.appNameGoogleplay} />
+    {/if}
+    {#if twitter.appIdGoogleplay}
+      <meta name="twitter:app:id:googleplay" content={twitter.appIdGoogleplay} />
+    {/if}
+    {#if twitter.appUrlGoogleplay}
+      <meta name="twitter:app:url:googleplay" content={twitter.appUrlGoogleplay} />
+    {/if}
   {/if}
 
   {#if facebook}
