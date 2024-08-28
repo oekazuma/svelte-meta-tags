@@ -21,6 +21,10 @@ export interface AdditionalRobotsProps {
   notranslate?: boolean;
 }
 
+/**
+ * Twitter card types
+ * @see https://developer.x.com/en/docs/x-for-websites/cards/overview/markup
+ */
 export interface Twitter {
   cardType?: 'summary' | 'summary_large_image' | 'app' | 'player';
   site?: string;
