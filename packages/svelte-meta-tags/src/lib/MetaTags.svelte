@@ -83,9 +83,6 @@
     {#if twitter.site}
       <meta name="twitter:site" content={twitter.site} />
     {/if}
-    {#if twitter.handle}
-      <meta name="twitter:creator" content={twitter.handle} />
-    {/if}
     {#if twitter.title}
       <meta name="twitter:title" content={twitter.title} />
     {/if}

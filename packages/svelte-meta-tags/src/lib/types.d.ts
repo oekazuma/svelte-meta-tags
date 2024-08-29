@@ -28,7 +28,6 @@ export interface AdditionalRobotsProps {
 export interface Twitter {
   cardType?: 'summary' | 'summary_large_image' | 'app' | 'player';
   site?: string;
-  handle?: string;
   title?: string;
   description?: string;
   creator?: string;
