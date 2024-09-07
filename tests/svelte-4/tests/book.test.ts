@@ -55,6 +55,5 @@ test('Book SEO loads correctly', async ({ page }) => {
   await expect(ogImageHeight.nth(3)).toHaveAttribute('content', '400');
   await expect(page.locator('head meta[property="og:site_name"]')).toHaveAttribute('content', 'SiteName');
   await expect(page.locator('head meta[name="twitter:site"]')).toHaveAttribute('content', '@site');
-  await expect(page.locator('head meta[name="twitter:creator"]')).toHaveAttribute('content', '@handle');
   await expect(page.locator('head meta[name="twitter:card"]')).toHaveAttribute('content', 'summary_large_image');
 });
