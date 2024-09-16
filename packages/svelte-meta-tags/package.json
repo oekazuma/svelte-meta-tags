@@ -34,7 +34,7 @@
     "@sveltejs/kit": "^2.5.26",
     "@sveltejs/package": "^2.3.4",
     "@sveltejs/vite-plugin-svelte": "^3.1.2",
-    "publint": "^0.2.10",
+    "publint": "^0.2.11",
     "svelte": "^4.2.19",
     "svelte-check": "^4.0.2",
     "tslib": "^2.7.0",
