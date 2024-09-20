@@ -30,9 +30,9 @@
     "schema-dts": "^1.1.2"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^3.2.4",
-    "@sveltejs/kit": "^2.5.26",
-    "@sveltejs/package": "^2.3.4",
+    "@sveltejs/adapter-auto": "^3.2.5",
+    "@sveltejs/kit": "^2.5.28",
+    "@sveltejs/package": "^2.3.5",
     "@sveltejs/vite-plugin-svelte": "^3.1.2",
     "publint": "^0.2.11",
     "svelte": "^4.2.19",
