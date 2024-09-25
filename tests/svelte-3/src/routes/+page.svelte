@@ -43,7 +43,6 @@
     siteName: 'SiteName'
   }}
   twitter={{
-    handle: '@handle',
     site: '@site',
     cardType: 'summary_large_image',
     title: 'Normal | Svelte Meta Tags',

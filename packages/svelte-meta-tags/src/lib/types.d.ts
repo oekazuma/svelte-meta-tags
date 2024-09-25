@@ -21,14 +21,32 @@ export interface AdditionalRobotsProps {
   notranslate?: boolean;
 }
 
+/**
+ * Twitter card types
+ * @see https://developer.x.com/en/docs/x-for-websites/cards/overview/markup
+ */
 export interface Twitter {
   cardType?: 'summary' | 'summary_large_image' | 'app' | 'player';
   site?: string;
-  handle?: string;
   title?: string;
   description?: string;
+  creator?: string;
+  creatorId?: string;
   image?: string;
   imageAlt?: string;
+  player?: string;
+  playerWidth?: number;
+  playerHeight?: number;
+  playerStream?: string;
+  appNameIphone?: string;
+  appIdIphone?: string;
+  appUrlIphone?: string;
+  appNameIpad?: string;
+  appIdIpad?: string;
+  appUrlIpad?: string;
+  appNameGoogleplay?: string;
+  appIdGoogleplay?: string;
+  appUrlGoogleplay?: string;
 }
 
 export interface Facebook {
