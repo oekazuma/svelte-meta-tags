@@ -17,7 +17,7 @@
     "svelte-check": "^4.0.4",
     "svelte-meta-tags": "workspace:^",
     "tslib": "^2.7.0",
-    "typescript": "^5.6.2",
+    "typescript": "^5.6.3",
     "vite": "^5.4.8"
   },
   "type": "module"
