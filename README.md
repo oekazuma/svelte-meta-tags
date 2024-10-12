@@ -109,7 +109,6 @@ pnpm add -D svelte-meta-tags
     siteName: 'SiteName'
   }}
   twitter={{
-    handle: '@handle',
     site: '@site',
     cardType: 'summary_large_image',
     title: 'Using More of Config',
@@ -221,7 +220,6 @@ export const load = () => {
 | `additionalLinkTags`               | array                                      | Allows you to add a link tag that is not documented here [More Info](#additional-link-tags)                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | `twitter.cardType`                 | string                                     | The card type, which will be one of `summary`, `summary_large_image`, `app`, or `player`                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | `twitter.site`                     | string                                     | @username for the website used in the card footer                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `twitter.handle`                   | string                                     | @username for the creator of the content (output as `twitter:creator`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `twitter.title`                    | string                                     | The concise title for the related content                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | `twitter.description`              | string                                     | The description that concisely summarizes the content in a manner suitable for presentation within a Tweet. You should not reuse the title as the description or use this field to describe the general services provided by the website                                                                                                                                                                                                                                                                                              |
 | `twitter.image`                    | string                                     | The URL to a unique image that represents the content of the page. You should not use a generic image such as your site logo, author photo, or other image that spans multiple pages. Images for this card support a 1:1 aspect ratio with a minimum size of 144x144 pixels or a maximum size of 4096x4096 pixels. Images must be less than 5MB in size. The image will be cropped to a square on all platforms. JPG, PNG, WEBP, and GIF formats are supported. Only the first frame of an animated GIF is used. SVG is not supported |
@@ -271,7 +269,6 @@ titleTemplate = '%s | Svelte Meta Tags'
 
 ```js
 twitter={{
-  handle: '@handle',
   site: '@site',
   cardType: 'summary_large_image',
   title: 'Twitter',
@@ -1000,7 +997,6 @@ interface LanguageAlternate {
 interface Twitter {
   cardType?: 'summary' | 'summary_large_image' | 'app' | 'player';
   site?: string;
-  handle?: string;
   title?: string;
   description?: string;
   image?: string;
