@@ -1,5 +1,17 @@
 # svelte-meta-tags
 
+## 3.1.4
+
+### Patch Changes
+
+- eedec7d: add title attribute to Link type
+
+## 3.1.3
+
+### Patch Changes
+
+- f595784: chore: package provenance
+
 ## 3.1.2
 
 ### Patch Changes

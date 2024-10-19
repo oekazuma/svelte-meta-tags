@@ -3,8 +3,7 @@
   "extends": ["config:base", ":disablePeerDependencies"],
   "labels": ["renovate"],
   "lockFileMaintenance": {
-    "enabled": true,
-    "automerge": true
+    "enabled": true
   },
   "rangeStrategy": "bump",
   "packageRules": [
@@ -18,7 +17,7 @@
     },
     {
       "groupName": "linters",
-      "matchPackagePrefixes": ["eslint", "@typescript-eslint/", "prettier"]
+      "matchPackagePrefixes": ["eslint", "typescript-eslint", "publint", "globals"]
     },
     {
       "groupName": "typescript",
@@ -32,6 +31,5 @@
       "ignorePaths": ["tests/svelte-3/**/*"],
       "packagePatterns": ["*"]
     }
-  ],
-  "ignoreDeps": ["pnpm"]
+  ]
 }
