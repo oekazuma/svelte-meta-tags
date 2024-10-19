@@ -2,12 +2,16 @@
   import type { JsonLdProps } from './types';
   import type { Thing, WithContext } from 'schema-dts';
 
-  export let output: JsonLdProps['output'] = 'head';
-  export let schema: JsonLdProps['schema'] = undefined;
+  interface Props {
+    output?: JsonLdProps['output'];
+    schema?: JsonLdProps['schema'];
+  }
+
+  let { output = 'head', schema = undefined }: Props = $props();
 
   type OmitContext<T> = Omit<T, '@context'>;
 
-  $: isValid = schema && typeof schema === 'object';
+  let isValid = $derived(schema && typeof schema === 'object');
 
   const createSchema = (schema: JsonLdProps['schema']) => {
     const addContext = (context: OmitContext<Thing> | OmitContext<WithContext<Thing>>) => ({
@@ -20,7 +24,7 @@
       : addContext(schema as OmitContext<WithContext<Thing>>);
   };
 
-  $: json = `${'<scri' + 'pt type="application/ld+json">'}${JSON.stringify(createSchema(schema))}${'</scri' + 'pt>'}`;
+  let json = $derived(`${'<scri' + 'pt type="application/ld+json">'}${JSON.stringify(createSchema(schema))}${'</scri' + 'pt>'}`);
 </script>
 
 <svelte:head>

@@ -1,24 +1,43 @@
 <script lang="ts">
   import type { MetaTagsProps } from './types';
+  
+  interface Props {
+    title?: MetaTagsProps['title'];
+    titleTemplate?: MetaTagsProps['titleTemplate'];
+    robots?: MetaTagsProps['robots'];
+    additionalRobotsProps?: MetaTagsProps['additionalRobotsProps'];
+    description?: MetaTagsProps['description'];
+    mobileAlternate?: MetaTagsProps['mobileAlternate'];
+    languageAlternates?: MetaTagsProps['languageAlternates'];
+    twitter?: MetaTagsProps['twitter'];
+    facebook?: MetaTagsProps['facebook'];
+    openGraph?: MetaTagsProps['openGraph'];
+    canonical?: MetaTagsProps['canonical'];
+    keywords?: MetaTagsProps['keywords'];
+    additionalMetaTags?: MetaTagsProps['additionalMetaTags'];
+    additionalLinkTags?: MetaTagsProps['additionalLinkTags'];
+  }
 
-  export let title: MetaTagsProps['title'] = '';
-  export let titleTemplate: MetaTagsProps['titleTemplate'] = '';
-  export let robots: MetaTagsProps['robots'] = 'index,follow';
-  export let additionalRobotsProps: MetaTagsProps['additionalRobotsProps'] = undefined;
-  export let description: MetaTagsProps['description'] = undefined;
-  export let mobileAlternate: MetaTagsProps['mobileAlternate'] = undefined;
-  export let languageAlternates: MetaTagsProps['languageAlternates'] = undefined;
-  export let twitter: MetaTagsProps['twitter'] = undefined;
-  export let facebook: MetaTagsProps['facebook'] = undefined;
-  export let openGraph: MetaTagsProps['openGraph'] = undefined;
-  export let canonical: MetaTagsProps['canonical'] = undefined;
-  export let keywords: MetaTagsProps['keywords'] = undefined;
-  export let additionalMetaTags: MetaTagsProps['additionalMetaTags'] = undefined;
-  export let additionalLinkTags: MetaTagsProps['additionalLinkTags'] = undefined;
+  let {
+    title = '',
+    titleTemplate = '',
+    robots = 'index,follow',
+    additionalRobotsProps = undefined,
+    description = undefined,
+    mobileAlternate = undefined,
+    languageAlternates = undefined,
+    twitter = undefined,
+    facebook = undefined,
+    openGraph = undefined,
+    canonical = undefined,
+    keywords = undefined,
+    additionalMetaTags = undefined,
+    additionalLinkTags = undefined
+  }: Props = $props();
 
-  $: updatedTitle = titleTemplate ? (title ? titleTemplate.replace(/%s/g, title) : title) : title;
+  let updatedTitle = $derived(titleTemplate ? (title ? titleTemplate.replace(/%s/g, title) : title) : title);
 
-  let robotsParams = '';
+  let robotsParams = $state('');
   if (additionalRobotsProps) {
     const {
       nosnippet,
@@ -38,9 +57,11 @@
     }${maxVideoPreview ? `,max-video-preview:${maxVideoPreview}` : ''}${notranslate ? ',notranslate' : ''}`;
   }
 
-  $: if (!robots && additionalRobotsProps) {
-    console.warn('additionalRobotsProps cannot be used when robots is set to false');
-  }
+  $effect(() => {
+    if (!robots && additionalRobotsProps) {
+      console.warn('additionalRobotsProps cannot be used when robots is set to false');
+    }
+  });
 </script>
 
 <svelte:head>
