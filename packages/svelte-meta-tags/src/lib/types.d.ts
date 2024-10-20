@@ -145,7 +145,31 @@ export interface LinkTag {
   sizes?: string;
   type?: string;
   color?: string;
-  as?: string;
+  as?:
+    | 'fetch'
+    | 'audio'
+    | 'audioworklet'
+    | 'document'
+    | 'embed'
+    | 'font'
+    | 'frame'
+    | 'iframe'
+    | 'image'
+    | 'json'
+    | 'manifest'
+    | 'object'
+    | 'paintworklet'
+    | 'report'
+    | 'script'
+    | 'serviceworker'
+    | 'sharedworker'
+    | 'style'
+    | 'track'
+    | 'video'
+    | 'webidentity'
+    | 'worker'
+    | 'xslt'
+    | '';
   crossOrigin?: string;
   referrerPolicy?: string;
 }

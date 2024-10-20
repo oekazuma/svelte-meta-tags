@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { MetaTagsProps } from './types';
-  
+
   interface Props {
     title?: MetaTagsProps['title'];
     titleTemplate?: MetaTagsProps['titleTemplate'];
