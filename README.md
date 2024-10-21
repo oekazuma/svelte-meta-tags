@@ -926,6 +926,7 @@ This plugin uses [schema-dts](https://github.com/google/schema-dts), so it provi
 ```
 
 ## Deep Merge function
+
 Provides a function to deeply merge the enumerable properties of two or more objects.
 
 Use this when you want to override the default values on child pages, as in the following example.
