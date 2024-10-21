@@ -145,6 +145,9 @@ export interface LinkTag {
   sizes?: string;
   type?: string;
   color?: string;
+  imagesrcset?: string;
+  imagesizes?: string;
+  integrity?: string;
   as?:
     | 'fetch'
     | 'audio'
@@ -168,10 +171,9 @@ export interface LinkTag {
     | 'video'
     | 'webidentity'
     | 'worker'
-    | 'xslt'
-    | '';
-  crossOrigin?: string;
-  referrerPolicy?: string;
+    | 'xslt';
+  crossOrigin?: 'anonymous' | 'use-credentials';
+  referrerPolicy?: ReferrerPolicy;
 }
 
 export interface MetaTagsProps {
