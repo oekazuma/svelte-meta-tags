@@ -1,23 +1,6 @@
 <script lang="ts">
   import type { MetaTagsProps } from './types';
 
-  interface Props {
-    title?: MetaTagsProps['title'];
-    titleTemplate?: MetaTagsProps['titleTemplate'];
-    robots?: MetaTagsProps['robots'];
-    additionalRobotsProps?: MetaTagsProps['additionalRobotsProps'];
-    description?: MetaTagsProps['description'];
-    mobileAlternate?: MetaTagsProps['mobileAlternate'];
-    languageAlternates?: MetaTagsProps['languageAlternates'];
-    twitter?: MetaTagsProps['twitter'];
-    facebook?: MetaTagsProps['facebook'];
-    openGraph?: MetaTagsProps['openGraph'];
-    canonical?: MetaTagsProps['canonical'];
-    keywords?: MetaTagsProps['keywords'];
-    additionalMetaTags?: MetaTagsProps['additionalMetaTags'];
-    additionalLinkTags?: MetaTagsProps['additionalLinkTags'];
-  }
-
   let {
     title = '',
     titleTemplate = '',
@@ -33,7 +16,7 @@
     keywords = undefined,
     additionalMetaTags = undefined,
     additionalLinkTags = undefined
-  }: Props = $props();
+  }: Partial<MetaTagsProps> = $props();
 
   let updatedTitle = $derived(titleTemplate ? (title ? titleTemplate.replace(/%s/g, title) : title) : title);
 
