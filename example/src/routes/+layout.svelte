@@ -1,11 +1,12 @@
 <script lang="ts">
+  import type { LayoutData } from './$types';
   import { page } from '$app/stores';
   import type { Snippet } from 'svelte';
   import { MetaTags, deepMerge } from 'svelte-meta-tags';
 
   interface Props {
-    data: any;
-    children?: Snippet;
+    data: LayoutData;
+    children: Snippet;
   }
 
   let { data, children }: Props = $props();
@@ -15,9 +16,7 @@
 
 <MetaTags {...metaTags} />
 
-{#if children}
-  {@render children()}
-{/if}
+{@render children()}
 
 <ul>
   <li>
