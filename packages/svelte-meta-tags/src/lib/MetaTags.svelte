@@ -310,7 +310,7 @@
 
   {#if additionalMetaTags && Array.isArray(additionalMetaTags)}
     {#each additionalMetaTags as tag}
-      <meta {...tag} />
+      <meta {...tag.httpEquiv ? { ...tag, 'http-equiv': tag.httpEquiv } : tag} />
     {/each}
   {/if}
 
