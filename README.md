@@ -9,8 +9,6 @@ Svelte Meta Tags provides components designed to help you manage SEO for Svelte 
 
 [Demo](https://svelte.dev/repl/ffd783c9b8e54d97b6b7cac6eadace42)
 
-**Note: If you are migrating from v2.x to v3.x, [Please Read Migration Guide](https://github.com/oekazuma/svelte-meta-tags/issues/786)**
-
 **Table of Contents**
 
 - [Installing](#-installing)
@@ -131,18 +129,17 @@ pnpm add -D svelte-meta-tags
 
 ```svelte
 <script>
-  import { MetaTags } from 'svelte-meta-tags';
   import { page } from '$app/stores';
-  import extend from 'just-extend'; // Please provide functions that allow deep merging of objects, such as lodash.merge, deepmerge, just-extend.
+  import { MetaTags, deepMerge } from 'svelte-meta-tags';
 
-  export let data;
+  let { data, children } = $props();
 
-  $: metaTags = extend(true, {}, data.baseMetaTags, $page.data.pageMetaTags);
+  let metaTags = $derived(deepMerge(data.baseMetaTags, $page.data.pageMetaTags));
 </script>
 
 <MetaTags {...metaTags} />
 
-<slot />
+{@render children()}
 ```
 
 `+layout.ts`
@@ -928,6 +925,87 @@ This plugin uses [schema-dts](https://github.com/google/schema-dts), so it provi
 />
 ```
 
+## Deep Merge function
+
+Provides a function to deeply merge the enumerable properties of two or more objects.
+
+Use this when you want to override the default values on child pages, as in the following example.
+
+`+layout.svelte`
+
+```svelte
+<script>
+  import { page } from '$app/stores';
+  import { MetaTags, deepMerge } from 'svelte-meta-tags';
+
+  let { data, children } = $props();
+
+  let metaTags = $derived(deepMerge(data.baseMetaTags, $page.data.pageMetaTags));
+</script>
+
+<MetaTags {...metaTags} />
+
+{@render children()}
+```
+
+`+layout.ts`
+
+```ts
+import type { MetaTagsProps } from 'svelte-meta-tags';
+
+export const load = ({ url }) => {
+  const baseMetaTags = Object.freeze({
+    title: 'Default',
+    titleTemplate: '%s | Svelte Meta Tags',
+    description: 'Svelte Meta Tags is a Svelte component for managing meta tags and SEO in your Svelte applications.',
+    canonical: new URL(url.pathname, url.origin).href,
+    openGraph: {
+      type: 'website',
+      url: new URL(url.pathname, url.origin).href,
+      locale: 'en_IE',
+      title: 'Open Graph Title',
+      description: 'Open Graph Description',
+      siteName: 'SiteName',
+      images: [
+        {
+          url: 'https://www.example.ie/og-image.jpg',
+          alt: 'Og Image Alt',
+          width: 800,
+          height: 600,
+          secureUrl: 'https://www.example.ie/og-image.jpg',
+          type: 'image/jpeg'
+        }
+      ]
+    }
+  }) satisfies MetaTagsProps;
+
+  return {
+    baseMetaTags
+  };
+};
+```
+
+`+page.ts`
+
+```ts
+import type { MetaTagsProps } from 'svelte-meta-tags';
+
+export const load = () => {
+  const pageMetaTags = Object.freeze({
+    title: 'TOP',
+    description: 'Description TOP',
+    openGraph: {
+      title: 'Open Graph Title TOP',
+      description: 'Open Graph Description TOP'
+    }
+  }) satisfies MetaTagsProps;
+
+  return {
+    pageMetaTags
+  };
+};
+```
+
 ## Types
 
 The following types can be imported from `svelte-meta-tags`
@@ -1053,7 +1131,31 @@ interface LinkTag {
   sizes?: string;
   type?: string;
   color?: string;
-  as?: string;
+  as?:
+    | 'fetch'
+    | 'audio'
+    | 'audioworklet'
+    | 'document'
+    | 'embed'
+    | 'font'
+    | 'frame'
+    | 'iframe'
+    | 'image'
+    | 'json'
+    | 'manifest'
+    | 'object'
+    | 'paintworklet'
+    | 'report'
+    | 'script'
+    | 'serviceworker'
+    | 'sharedworker'
+    | 'style'
+    | 'track'
+    | 'video'
+    | 'webidentity'
+    | 'worker'
+    | 'xslt'
+    | '';
   crossOrigin?: string;
   referrerPolicy?: string;
 }

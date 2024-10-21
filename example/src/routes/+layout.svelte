@@ -1,16 +1,22 @@
 <script lang="ts">
+  import type { LayoutData } from './$types';
   import { page } from '$app/stores';
-  import { MetaTags } from 'svelte-meta-tags';
-  import extend from 'just-extend'; // Please provide functions that allow deep merging of objects, such as lodash.merge, deepmerge, just-extend.
+  import type { Snippet } from 'svelte';
+  import { MetaTags, deepMerge } from 'svelte-meta-tags';
 
-  export let data;
+  interface Props {
+    data: LayoutData;
+    children: Snippet;
+  }
 
-  $: metaTags = extend(true, {}, data.baseMetaTags, $page.data.pageMetaTags);
+  let { data, children }: Props = $props();
+
+  let metaTags = $derived(deepMerge(data.baseMetaTags, $page.data.pageMetaTags));
 </script>
 
 <MetaTags {...metaTags} />
 
-<slot />
+{@render children()}
 
 <ul>
   <li>

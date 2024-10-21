@@ -145,9 +145,35 @@ export interface LinkTag {
   sizes?: string;
   type?: string;
   color?: string;
-  as?: string;
-  crossOrigin?: string;
-  referrerPolicy?: string;
+  imagesrcset?: string;
+  imagesizes?: string;
+  integrity?: string;
+  as?:
+    | 'fetch'
+    | 'audio'
+    | 'audioworklet'
+    | 'document'
+    | 'embed'
+    | 'font'
+    | 'frame'
+    | 'iframe'
+    | 'image'
+    | 'json'
+    | 'manifest'
+    | 'object'
+    | 'paintworklet'
+    | 'report'
+    | 'script'
+    | 'serviceworker'
+    | 'sharedworker'
+    | 'style'
+    | 'track'
+    | 'video'
+    | 'webidentity'
+    | 'worker'
+    | 'xslt';
+  crossOrigin?: 'anonymous' | 'use-credentials';
+  referrerPolicy?: ReferrerPolicy;
 }
 
 export interface MetaTagsProps {

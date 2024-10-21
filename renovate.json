@@ -26,10 +26,6 @@
     {
       "groupName": "sveltekit",
       "matchPackagePrefixes": ["@sveltejs/"]
-    },
-    {
-      "ignorePaths": ["tests/svelte-3/**/*"],
-      "packagePatterns": ["*"]
     }
   ]
 }
