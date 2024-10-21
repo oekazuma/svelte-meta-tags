@@ -9,8 +9,6 @@ Svelte Meta Tags provides components designed to help you manage SEO for Svelte 
 
 [Demo](https://svelte.dev/repl/ffd783c9b8e54d97b6b7cac6eadace42)
 
-**Note: If you are migrating from v2.x to v3.x, [Please Read Migration Guide](https://github.com/oekazuma/svelte-meta-tags/issues/786)**
-
 **Table of Contents**
 
 - [Installing](#-installing)
@@ -134,14 +132,16 @@ pnpm add -D svelte-meta-tags
   import { page } from '$app/stores';
   import { MetaTags, deepMerge } from 'svelte-meta-tags';
 
-  export let data;
+  let { data, children } = $props();
 
-  $: metaTags = deepMerge(data.baseMetaTags, $page.data.pageMetaTags);
+  let metaTags = $derived(deepMerge(data.baseMetaTags, $page.data.pageMetaTags));
 </script>
 
 <MetaTags {...metaTags} />
 
-<slot />
+{#if children}
+  {@render children()}
+{/if}
 ```
 
 `+layout.ts`

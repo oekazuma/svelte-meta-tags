@@ -1,15 +1,23 @@
 <script lang="ts">
   import { page } from '$app/stores';
+  import type { Snippet } from 'svelte';
   import { MetaTags, deepMerge } from 'svelte-meta-tags';
 
-  export let data;
+  interface Props {
+    data: any;
+    children?: Snippet;
+  }
 
-  $: metaTags = deepMerge(data.baseMetaTags, $page.data.pageMetaTags);
+  let { data, children }: Props = $props();
+
+  let metaTags = $derived(deepMerge(data.baseMetaTags, $page.data.pageMetaTags));
 </script>
 
 <MetaTags {...metaTags} />
 
-<slot />
+{#if children}
+  {@render children()}
+{/if}
 
 <ul>
   <li>
