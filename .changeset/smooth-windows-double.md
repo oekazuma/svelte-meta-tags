@@ -2,4 +2,4 @@
 'svelte-meta-tags': major
 ---
 
-feat: add function to deeply merge objects
+Add `deepMerge` function that allows deep merging of objects

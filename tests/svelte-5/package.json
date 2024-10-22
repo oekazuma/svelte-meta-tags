@@ -14,7 +14,7 @@
     "@sveltejs/adapter-auto": "^3.2.5",
     "@sveltejs/kit": "^2.7.2",
     "@sveltejs/vite-plugin-svelte": "^4.0.0",
-    "svelte": "^5.0.3",
+    "svelte": "^5.0.5",
     "svelte-check": "^4.0.5",
     "svelte-meta-tags": "workspace:*",
     "typescript": "^5.6.3",
