@@ -2,12 +2,7 @@
   import type { JsonLdProps } from './types';
   import type { Thing, WithContext } from 'schema-dts';
 
-  interface Props {
-    output?: JsonLdProps['output'];
-    schema?: JsonLdProps['schema'];
-  }
-
-  let { output = 'head', schema = undefined }: Props = $props();
+  let { output = 'head', schema = undefined }: Partial<JsonLdProps> = $props();
 
   type OmitContext<T> = Omit<T, '@context'>;
 
