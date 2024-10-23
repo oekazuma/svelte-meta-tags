@@ -25,18 +25,21 @@ test('MetaTags component renders correct meta tags for Twitter', async ({ page }
   );
 
   await expect(page.locator('head meta[name="twitter:app:id:iphone"]')).toHaveAttribute('content', '12345');
+  await expect(page.locator('head meta[name="twitter:app:name:iphone"]')).toHaveAttribute('content', 'meta-tags');
   await expect(page.locator('head meta[name="twitter:app:url:iphone"]')).toHaveAttribute(
     'content',
     'https://www.test.ie/og-image-book-title-01.jpg'
   );
 
   await expect(page.locator('head meta[name="twitter:app:id:ipad"]')).toHaveAttribute('content', '12345');
+  await expect(page.locator('head meta[name="twitter:app:name:ipad"]')).toHaveAttribute('content', 'meta-tags');
   await expect(page.locator('head meta[name="twitter:app:url:ipad"]')).toHaveAttribute(
     'content',
     'https://www.test.ie/og-image-book-title-01.jpg'
   );
 
   await expect(page.locator('head meta[name="twitter:app:id:googleplay"]')).toHaveAttribute('content', 'com.meta.tags');
+  await expect(page.locator('head meta[name="twitter:app:name:googleplay"]')).toHaveAttribute('content', 'meta-tags');
   await expect(page.locator('head meta[name="twitter:app:url:googleplay"]')).toHaveAttribute(
     'content',
     'https://www.test.ie/og-image-book-title-01.jpg'
