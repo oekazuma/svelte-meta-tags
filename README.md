@@ -9,6 +9,8 @@ Svelte Meta Tags provides components designed to help you manage SEO for Svelte 
 
 [Demo](https://svelte.dev/repl/ffd783c9b8e54d97b6b7cac6eadace42)
 
+**Note: If you are migrating from v3 to v4, [Please Read Migration Guide](https://github.com/oekazuma/svelte-meta-tags/issues/1015)**
+
 **Table of Contents**
 
 - [Installing](#-installing)
