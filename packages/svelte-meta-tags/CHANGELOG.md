@@ -1,5 +1,14 @@
 # svelte-meta-tags
 
+## 4.0.0
+
+### Major Changes
+
+- 30f9180: Update twitter meta tags to the latest spec.
+  https://developer.x.com/en/docs/x-for-websites/cards/overview/player-card
+- 30f9180: Supports Svelte 5! And Svelte 3 and Svelte 4 are no longer supported
+- 30f9180: Add `deepMerge` function that allows deep merging of objects
+
 ## 3.1.4
 
 ### Patch Changes
