@@ -1,24 +1,26 @@
 <script lang="ts">
   import type { MetaTagsProps } from './types';
 
-  export let title: MetaTagsProps['title'] = '';
-  export let titleTemplate: MetaTagsProps['titleTemplate'] = '';
-  export let robots: MetaTagsProps['robots'] = 'index,follow';
-  export let additionalRobotsProps: MetaTagsProps['additionalRobotsProps'] = undefined;
-  export let description: MetaTagsProps['description'] = undefined;
-  export let mobileAlternate: MetaTagsProps['mobileAlternate'] = undefined;
-  export let languageAlternates: MetaTagsProps['languageAlternates'] = undefined;
-  export let twitter: MetaTagsProps['twitter'] = undefined;
-  export let facebook: MetaTagsProps['facebook'] = undefined;
-  export let openGraph: MetaTagsProps['openGraph'] = undefined;
-  export let canonical: MetaTagsProps['canonical'] = undefined;
-  export let keywords: MetaTagsProps['keywords'] = undefined;
-  export let additionalMetaTags: MetaTagsProps['additionalMetaTags'] = undefined;
-  export let additionalLinkTags: MetaTagsProps['additionalLinkTags'] = undefined;
+  let {
+    title = '',
+    titleTemplate = '',
+    robots = 'index,follow',
+    additionalRobotsProps = undefined,
+    description = undefined,
+    mobileAlternate = undefined,
+    languageAlternates = undefined,
+    twitter = undefined,
+    facebook = undefined,
+    openGraph = undefined,
+    canonical = undefined,
+    keywords = undefined,
+    additionalMetaTags = undefined,
+    additionalLinkTags = undefined
+  }: Partial<MetaTagsProps> = $props();
 
-  $: updatedTitle = titleTemplate ? (title ? titleTemplate.replace(/%s/g, title) : title) : title;
+  let updatedTitle = $derived(titleTemplate ? (title ? titleTemplate.replace(/%s/g, title) : title) : title);
 
-  let robotsParams = '';
+  let robotsParams = $state('');
   if (additionalRobotsProps) {
     const {
       nosnippet,
@@ -38,9 +40,11 @@
     }${maxVideoPreview ? `,max-video-preview:${maxVideoPreview}` : ''}${notranslate ? ',notranslate' : ''}`;
   }
 
-  $: if (!robots && additionalRobotsProps) {
-    console.warn('additionalRobotsProps cannot be used when robots is set to false');
-  }
+  $effect(() => {
+    if (!robots && additionalRobotsProps) {
+      console.warn('additionalRobotsProps cannot be used when robots is set to false');
+    }
+  });
 </script>
 
 <svelte:head>
@@ -83,20 +87,62 @@
     {#if twitter.site}
       <meta name="twitter:site" content={twitter.site} />
     {/if}
-    {#if twitter.handle}
-      <meta name="twitter:creator" content={twitter.handle} />
-    {/if}
     {#if twitter.title}
       <meta name="twitter:title" content={twitter.title} />
     {/if}
     {#if twitter.description}
       <meta name="twitter:description" content={twitter.description} />
     {/if}
+    {#if twitter.creator}
+      <meta name="twitter:creator" content={twitter.creator} />
+    {/if}
+    {#if twitter.creatorId}
+      <meta name="twitter:creator:id" content={twitter.creatorId} />
+    {/if}
     {#if twitter.image}
       <meta name="twitter:image" content={twitter.image} />
     {/if}
     {#if twitter.imageAlt}
       <meta name="twitter:image:alt" content={twitter.imageAlt} />
+    {/if}
+    {#if twitter.player}
+      <meta name="twitter:player" content={twitter.player} />
+    {/if}
+    {#if twitter.playerWidth}
+      <meta name="twitter:player:width" content={twitter.playerWidth.toString()} />
+    {/if}
+    {#if twitter.playerHeight}
+      <meta name="twitter:player:height" content={twitter.playerHeight.toString()} />
+    {/if}
+    {#if twitter.playerStream}
+      <meta name="twitter:player:stream" content={twitter.playerStream} />
+    {/if}
+    {#if twitter.appNameIphone}
+      <meta name="twitter:app:name:iphone" content={twitter.appNameIphone} />
+    {/if}
+    {#if twitter.appIdIphone}
+      <meta name="twitter:app:id:iphone" content={twitter.appIdIphone} />
+    {/if}
+    {#if twitter.appUrlIphone}
+      <meta name="twitter:app:url:iphone" content={twitter.appUrlIphone} />
+    {/if}
+    {#if twitter.appNameIpad}
+      <meta name="twitter:app:name:ipad" content={twitter.appNameIpad} />
+    {/if}
+    {#if twitter.appIdIpad}
+      <meta name="twitter:app:id:ipad" content={twitter.appIdIpad} />
+    {/if}
+    {#if twitter.appUrlIpad}
+      <meta name="twitter:app:url:ipad" content={twitter.appUrlIpad} />
+    {/if}
+    {#if twitter.appNameGoogleplay}
+      <meta name="twitter:app:name:googleplay" content={twitter.appNameGoogleplay} />
+    {/if}
+    {#if twitter.appIdGoogleplay}
+      <meta name="twitter:app:id:googleplay" content={twitter.appIdGoogleplay} />
+    {/if}
+    {#if twitter.appUrlGoogleplay}
+      <meta name="twitter:app:url:googleplay" content={twitter.appUrlGoogleplay} />
     {/if}
   {/if}
 
@@ -289,7 +335,7 @@
 
   {#if additionalMetaTags && Array.isArray(additionalMetaTags)}
     {#each additionalMetaTags as tag}
-      <meta {...tag} />
+      <meta {...tag.httpEquiv ? { ...tag, 'http-equiv': tag.httpEquiv } : tag} />
     {/each}
   {/if}
 

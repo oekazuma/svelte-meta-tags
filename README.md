@@ -9,7 +9,7 @@ Svelte Meta Tags provides components designed to help you manage SEO for Svelte 
 
 [Demo](https://svelte.dev/repl/ffd783c9b8e54d97b6b7cac6eadace42)
 
-**Note: If you are migrating from v2.x to v3.x, [Please Read Migration Guide](https://github.com/oekazuma/svelte-meta-tags/issues/786)**
+**Note: If you are migrating from v3 to v4, [Please Read Migration Guide](https://github.com/oekazuma/svelte-meta-tags/issues/1015)**
 
 **Table of Contents**
 
@@ -109,7 +109,7 @@ pnpm add -D svelte-meta-tags
     siteName: 'SiteName'
   }}
   twitter={{
-    handle: '@handle',
+    creator: '@handle',
     site: '@site',
     cardType: 'summary_large_image',
     title: 'Using More of Config',
@@ -131,18 +131,17 @@ pnpm add -D svelte-meta-tags
 
 ```svelte
 <script>
-  import { MetaTags } from 'svelte-meta-tags';
   import { page } from '$app/stores';
-  import extend from 'just-extend'; // Please provide functions that allow deep merging of objects, such as lodash.merge, deepmerge, just-extend.
+  import { MetaTags, deepMerge } from 'svelte-meta-tags';
 
-  export let data;
+  let { data, children } = $props();
 
-  $: metaTags = extend(true, {}, data.baseMetaTags, $page.data.pageMetaTags);
+  let metaTags = $derived(deepMerge(data.baseMetaTags, $page.data.pageMetaTags));
 </script>
 
 <MetaTags {...metaTags} />
 
-<slot />
+{@render children()}
 ```
 
 `+layout.ts`
@@ -221,11 +220,24 @@ export const load = () => {
 | `additionalLinkTags`               | array                                      | Allows you to add a link tag that is not documented here [More Info](#additional-link-tags)                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | `twitter.cardType`                 | string                                     | The card type, which will be one of `summary`, `summary_large_image`, `app`, or `player`                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | `twitter.site`                     | string                                     | @username for the website used in the card footer                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| `twitter.handle`                   | string                                     | @username for the creator of the content (output as `twitter:creator`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `twitter.creator`                  | string                                     | @username for the creator of the content (output as `twitter:creator`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | `twitter.title`                    | string                                     | The concise title for the related content                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | `twitter.description`              | string                                     | The description that concisely summarizes the content in a manner suitable for presentation within a Tweet. You should not reuse the title as the description or use this field to describe the general services provided by the website                                                                                                                                                                                                                                                                                              |
 | `twitter.image`                    | string                                     | The URL to a unique image that represents the content of the page. You should not use a generic image such as your site logo, author photo, or other image that spans multiple pages. Images for this card support a 1:1 aspect ratio with a minimum size of 144x144 pixels or a maximum size of 4096x4096 pixels. Images must be less than 5MB in size. The image will be cropped to a square on all platforms. JPG, PNG, WEBP, and GIF formats are supported. Only the first frame of an animated GIF is used. SVG is not supported |
 | `twitter.imageAlt`                 | string                                     | The textual description of the image that conveys the essence of the image to visually impaired users. Maximum 420 characters                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `twitter.player`                   | string                                     | HTTPS URL of a video player for this content                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `twitter.playerWidth`              | number                                     | Width of the player in pixels                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `twitter.playerHeight`             | number                                     | Height of the player in pixels                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| `twitter.playerStream`             | string                                     | URL to raw video or audio stream                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `twitter.appNameIPhone`            | string                                     | Name of your iPhone app                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `twitter.appIdIPhone`              | string                                     | Your iPhone app ID                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `twitter.appUrlIPhone`             | string                                     | Your iPhone app URL                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `twitter.appNameIPad`              | string                                     | Name of your iPad app                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `twitter.appIdIPad`                | string                                     | Your iPad app ID                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `twitter.appUrlIPad`               | string                                     | Your iPad app URL                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `twitter.appNameGooglePlay`        | string                                     | Name of your Android app                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| `twitter.appIdGooglePlay`          | string                                     | Your Android app ID                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `twitter.appUrlGooglePlay`         | string                                     | Your Android app URL                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | `facebook.appId`                   | string                                     | For Facebook Insights, you will need to add a Facebook app ID to your page in order to use it                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | `openGraph.url`                    | string                                     | The canonical URL of your object, which will be used as its permanent ID in the graph                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | `openGraph.type`                   | string                                     | The type of your object. Depending on the type you specify, other properties may also be required [More Info](#open-graph)                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -271,7 +283,7 @@ titleTemplate = '%s | Svelte Meta Tags'
 
 ```js
 twitter={{
-  handle: '@handle',
+  creator: '@handle',
   site: '@site',
   cardType: 'summary_large_image',
   title: 'Twitter',
@@ -928,6 +940,87 @@ This plugin uses [schema-dts](https://github.com/google/schema-dts), so it provi
 />
 ```
 
+## Deep Merge function
+
+Provides a function to deeply merge the enumerable properties of two or more objects.
+
+Use this when you want to override the default values on child pages, as in the following example.
+
+`+layout.svelte`
+
+```svelte
+<script>
+  import { page } from '$app/stores';
+  import { MetaTags, deepMerge } from 'svelte-meta-tags';
+
+  let { data, children } = $props();
+
+  let metaTags = $derived(deepMerge(data.baseMetaTags, $page.data.pageMetaTags));
+</script>
+
+<MetaTags {...metaTags} />
+
+{@render children()}
+```
+
+`+layout.ts`
+
+```ts
+import type { MetaTagsProps } from 'svelte-meta-tags';
+
+export const load = ({ url }) => {
+  const baseMetaTags = Object.freeze({
+    title: 'Default',
+    titleTemplate: '%s | Svelte Meta Tags',
+    description: 'Svelte Meta Tags is a Svelte component for managing meta tags and SEO in your Svelte applications.',
+    canonical: new URL(url.pathname, url.origin).href,
+    openGraph: {
+      type: 'website',
+      url: new URL(url.pathname, url.origin).href,
+      locale: 'en_IE',
+      title: 'Open Graph Title',
+      description: 'Open Graph Description',
+      siteName: 'SiteName',
+      images: [
+        {
+          url: 'https://www.example.ie/og-image.jpg',
+          alt: 'Og Image Alt',
+          width: 800,
+          height: 600,
+          secureUrl: 'https://www.example.ie/og-image.jpg',
+          type: 'image/jpeg'
+        }
+      ]
+    }
+  }) satisfies MetaTagsProps;
+
+  return {
+    baseMetaTags
+  };
+};
+```
+
+`+page.ts`
+
+```ts
+import type { MetaTagsProps } from 'svelte-meta-tags';
+
+export const load = () => {
+  const pageMetaTags = Object.freeze({
+    title: 'TOP',
+    description: 'Description TOP',
+    openGraph: {
+      title: 'Open Graph Title TOP',
+      description: 'Open Graph Description TOP'
+    }
+  }) satisfies MetaTagsProps;
+
+  return {
+    pageMetaTags
+  };
+};
+```
+
 ## Types
 
 The following types can be imported from `svelte-meta-tags`
@@ -1000,7 +1093,7 @@ interface LanguageAlternate {
 interface Twitter {
   cardType?: 'summary' | 'summary_large_image' | 'app' | 'player';
   site?: string;
-  handle?: string;
+  creator?: string;
   title?: string;
   description?: string;
   image?: string;
@@ -1053,7 +1146,31 @@ interface LinkTag {
   sizes?: string;
   type?: string;
   color?: string;
-  as?: string;
+  as?:
+    | 'fetch'
+    | 'audio'
+    | 'audioworklet'
+    | 'document'
+    | 'embed'
+    | 'font'
+    | 'frame'
+    | 'iframe'
+    | 'image'
+    | 'json'
+    | 'manifest'
+    | 'object'
+    | 'paintworklet'
+    | 'report'
+    | 'script'
+    | 'serviceworker'
+    | 'sharedworker'
+    | 'style'
+    | 'track'
+    | 'video'
+    | 'webidentity'
+    | 'worker'
+    | 'xslt'
+    | '';
   crossOrigin?: string;
   referrerPolicy?: string;
 }

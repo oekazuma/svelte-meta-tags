@@ -1,24 +1,23 @@
 {
-  "name": "example",
-  "version": "0.0.1",
+  "name": "svelte-5",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "test": "playwright test"
   },
   "devDependencies": {
+    "@playwright/test": "^1.48.1",
     "@sveltejs/adapter-auto": "^3.3.0",
     "@sveltejs/kit": "^2.7.2",
     "@sveltejs/vite-plugin-svelte": "^4.0.0",
-    "just-extend": "^6.2.0",
     "svelte": "^5.0.5",
     "svelte-check": "^4.0.5",
-    "svelte-meta-tags": "workspace:^",
-    "tslib": "^2.8.0",
+    "svelte-meta-tags": "workspace:*",
     "typescript": "^5.6.3",
     "vite": "^5.4.10"
-  },
-  "type": "module"
+  }
 }
