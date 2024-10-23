@@ -2,8 +2,8 @@
   import type { MetaTagsProps } from './types';
 
   let {
-    title = '',
-    titleTemplate = '',
+    title = undefined,
+    titleTemplate = undefined,
     robots = 'index,follow',
     additionalRobotsProps = undefined,
     description = undefined,
@@ -48,11 +48,9 @@
 </script>
 
 <svelte:head>
-  {#key updatedTitle}
-    {#if updatedTitle}
-      <title>{updatedTitle}</title>
-    {/if}
-  {/key}
+  {#if updatedTitle}
+    <title>{updatedTitle}</title>
+  {/if}
 
   {#if robots !== false}
     <meta name="robots" content="{robots}{robotsParams}" />
