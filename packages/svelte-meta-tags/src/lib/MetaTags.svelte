@@ -114,6 +114,9 @@
     {#if twitter.playerHeight}
       <meta name="twitter:player:height" content={twitter.playerHeight.toString()} />
     {/if}
+    {#if twitter.playerStream}
+      <meta name="twitter:player:stream" content={twitter.playerStream} />
+    {/if}
     {#if twitter.appNameIphone}
       <meta name="twitter:app:name:iphone" content={twitter.appNameIphone} />
     {/if}
