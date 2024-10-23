@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 4.0.1
+
+### Patch Changes
+
+- 6c52d8b: Remove `{#key}` that was used reactivity, as it is no longer necessary
+
 ## 4.0.0
 
 ### Major Changes
