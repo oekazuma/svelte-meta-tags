@@ -48,7 +48,7 @@
     siteName: 'SiteName'
   }}
   twitter={{
-    handle: '@handle',
+    creator: '@handle',
     site: '@site',
     cardType: 'summary_large_image'
   }}

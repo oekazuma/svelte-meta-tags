@@ -15,6 +15,9 @@
     <a href="/additionalRobots"> Additional Robots props </a>
   </li>
   <li>
+    <a href="/twitter"> Twitter </a>
+  </li>
+  <li>
     <a href="/another"> Another SEO </a>
   </li>
   <li>
