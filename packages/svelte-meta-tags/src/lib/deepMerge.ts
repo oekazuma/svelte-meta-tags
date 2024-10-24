@@ -1,38 +1,35 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function deepMerge(target: any, source: any) {
-  const sourceKeys = Object.keys(source);
+export const deepMerge = <X extends Record<string | symbol | number, unknown>>(
+  initial: X,
+  override: X
+): X => {
+  if (!initial || !override) return initial ?? override ?? {} as X;
 
-  for (let i = 0; i < sourceKeys.length; i++) {
-    const key = sourceKeys[i];
-
-    const sourceValue = source[key];
-    const targetValue = target[key];
-
-    if (Array.isArray(sourceValue)) {
-      if (Array.isArray(targetValue)) {
-        target[key] = deepMerge(targetValue, sourceValue);
-      } else {
-        target[key] = deepMerge([], sourceValue);
+  return Object.entries({ ...initial, ...override }).reduce(
+    (acc, [key, value]) => {
+      return {
+        ...acc,
+        [key]: (() => {
+          if ((initial[key] instanceof Date) || (typeof initial[key] === 'function')) {
+            return initial[key];
+          }
+          if ((value instanceof Date) || (typeof value === 'function')) {
+            return value;
+          }
+          if (isObject(initial[key]) && isObject(value)) {
+            return deepMerge(initial[key], value);
+          }
+          if (isArray(initial[key]) && isArray(value)) {
+            return value;
+          }
+          return value !== undefined ? value : initial[key];
+        })()
       }
-    } else if (isPlainObject(sourceValue)) {
-      if (isPlainObject(targetValue)) {
-        target[key] = deepMerge(targetValue, sourceValue);
-      } else {
-        target[key] = deepMerge({}, sourceValue);
-      }
-    } else if (targetValue === undefined || sourceValue !== undefined) {
-      target[key] = sourceValue;
-    }
-  }
-
-  return target;
+    },
+    {} as X
+  );
 }
 
-function isPlainObject(object?: unknown): boolean {
-  if (typeof object !== 'object' || object === null) {
-    return false;
-  }
+const isObject = (obj: unknown): obj is Record<string | symbol | number, unknown> =>
+  obj !== null && typeof obj === 'object' && !Array.isArray(obj);
 
-  const proto = Object.getPrototypeOf(object);
-  return proto === Object.prototype || proto === null;
-}
+const isArray = (obj: unknown): obj is unknown[] => Array.isArray(obj);
