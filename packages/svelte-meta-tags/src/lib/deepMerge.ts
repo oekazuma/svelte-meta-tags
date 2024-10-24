@@ -1,4 +1,5 @@
-export const deepMerge = <X extends Record<string | symbol | number, unknown>>(target: X, source: X): X => {
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export const deepMerge = <X extends Record<string | symbol | number, any>>(target: X, source: X): X => {
   if (!target || !source) return target ?? source ?? ({} as X);
 
   return Object.entries({ ...target, ...source }).reduce((acc, [key, value]) => {
@@ -23,7 +24,7 @@ export const deepMerge = <X extends Record<string | symbol | number, unknown>>(t
   }, {} as X);
 };
 
-const isObject = (obj: unknown): obj is Record<string | symbol | number, unknown> =>
+const isObject = (obj: any): obj is Record<string | symbol | number, any> =>
   obj !== null && typeof obj === 'object' && !Array.isArray(obj);
 
-const isArray = (obj: unknown): obj is unknown[] => Array.isArray(obj);
+const isArray = (obj: any): obj is any[] => Array.isArray(obj);
