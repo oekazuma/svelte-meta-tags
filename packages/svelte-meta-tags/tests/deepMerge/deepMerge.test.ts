@@ -52,4 +52,40 @@ describe('deepMerge functionality', () => {
     expect(result.a).toEqual(date);
     expect(result.b).toEqual(func);
   });
+
+  test('merging with scalar values (number, string, boolean)', () => {
+    const result = deepMerge({ a: 10, b: 'hello' }, { b: 'world', c: true });
+    expect(result).toEqual({ a: 10, b: 'world', c: true });
+  });
+
+  test('deep merge when overrides are missing keys present in initial', () => {
+    const result = deepMerge({ a: 1, b: { c: 2, d: 3 } }, { b: { d: 4 } });
+    expect(result).toEqual({ a: 1, b: { c: 2, d: 4 } });
+  });
+
+  test('merging deep structures with different types at the same key level', () => {
+    const result = deepMerge({ a: { b: [1, 2] } }, { a: { b: { c: 3 } } });
+    expect(result).toEqual({ a: { b: { c: 3 } } });
+  });
+
+  test('handling of nested arrays', () => {
+    const result = deepMerge({ a: [[1, 2]], b: 1 }, { a: [[3, 4]], c: 2 });
+    expect(result).toEqual({ a: [[3, 4]], b: 1, c: 2 });
+  });
+
+  test('merging objects with identical nested structure', () => {
+    const result = deepMerge({ a: { b: { c: 1 } } }, { a: { b: { c: 2 } } });
+    expect(result).toEqual({ a: { b: { c: 2 } } });
+  });
+
+  test('merging with undefined in both initial and override', () => {
+    const result = deepMerge({ a: undefined }, { a: undefined });
+    expect(result).toEqual({ a: undefined });
+  });
+
+  test('merging with functions in deep structures', () => {
+    const func = () => {};
+    const result = deepMerge({ a: { b: func } }, { a: { c: 1 } });
+    expect(result).toEqual({ a: { b: func, c: 1 } });
+  });
 });
