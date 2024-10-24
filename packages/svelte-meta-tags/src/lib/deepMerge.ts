@@ -1,33 +1,27 @@
-export const deepMerge = <X extends Record<string | symbol | number, unknown>>(
-  initial: X,
-  override: X
-): X => {
-  if (!initial || !override) return initial ?? override ?? {} as X;
+export const deepMerge = <X extends Record<string | symbol | number, unknown>>(target: X, source: X): X => {
+  if (!target || !source) return target ?? source ?? ({} as X);
 
-  return Object.entries({ ...initial, ...override }).reduce(
-    (acc, [key, value]) => {
-      return {
-        ...acc,
-        [key]: (() => {
-          if ((initial[key] instanceof Date) || (typeof initial[key] === 'function')) {
-            return initial[key];
-          }
-          if ((value instanceof Date) || (typeof value === 'function')) {
-            return value;
-          }
-          if (isObject(initial[key]) && isObject(value)) {
-            return deepMerge(initial[key], value);
-          }
-          if (isArray(initial[key]) && isArray(value)) {
-            return value;
-          }
-          return value !== undefined ? value : initial[key];
-        })()
-      }
-    },
-    {} as X
-  );
-}
+  return Object.entries({ ...target, ...source }).reduce((acc, [key, value]) => {
+    return {
+      ...acc,
+      [key]: (() => {
+        if (target[key] instanceof Date || typeof target[key] === 'function') {
+          return target[key];
+        }
+        if (value instanceof Date || typeof value === 'function') {
+          return value;
+        }
+        if (isObject(target[key]) && isObject(value)) {
+          return deepMerge(target[key], value);
+        }
+        if (isArray(target[key]) && isArray(value)) {
+          return value;
+        }
+        return value !== undefined ? value : target[key];
+      })()
+    };
+  }, {} as X);
+};
 
 const isObject = (obj: unknown): obj is Record<string | symbol | number, unknown> =>
   obj !== null && typeof obj === 'object' && !Array.isArray(obj);
