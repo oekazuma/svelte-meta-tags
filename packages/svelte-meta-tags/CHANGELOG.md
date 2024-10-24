@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 4.0.2
+
+### Patch Changes
+
+- fd1837c: Refactor deepMerge function to improve readability and maintainability
+
 ## 4.0.1
 
 ### Patch Changes
