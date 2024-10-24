@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 4.0.3
+
+### Patch Changes
+
+- 37e6e8d: Refactor deepMerge function to fix type issue
+
 ## 4.0.2
 
 ### Patch Changes
