@@ -4,6 +4,9 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   plugins: [sveltekit()],
   test: {
-    include: ['tests/**/*.test.ts']
+    include: ['tests/**/*.test.ts'],
+    benchmark: {
+      include: ['tests/**/*.bench.ts']
+    }
   }
 });
