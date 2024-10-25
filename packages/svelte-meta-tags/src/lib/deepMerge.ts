@@ -2,26 +2,25 @@
 export const deepMerge = <X extends Record<string | symbol | number, any>>(target: X, source: X): X => {
   if (!target || !source) return target ?? source ?? ({} as X);
 
-  return Object.entries({ ...target, ...source }).reduce((acc, [key, value]) => {
-    return {
-      ...acc,
-      [key]: (() => {
-        if (target[key] instanceof Date || typeof target[key] === 'function') {
-          return target[key];
-        }
-        if (value instanceof Date || typeof value === 'function') {
-          return value;
-        }
-        if (isObject(target[key]) && isObject(value)) {
-          return deepMerge(target[key], value);
-        }
-        if (isArray(target[key]) && isArray(value)) {
-          return value;
-        }
-        return value !== undefined ? value : target[key];
-      })()
-    };
-  }, {} as X);
+  const result: Record<string | symbol | number, any> = { ...target };
+
+  for (const [key, value] of Object.entries(source)) {
+    const targetValue = target[key];
+
+    if (targetValue instanceof Date || typeof targetValue === 'function') {
+      result[key] = targetValue;
+    } else if (value instanceof Date || typeof value === 'function') {
+      result[key] = value;
+    } else if (isObject(targetValue) && isObject(value)) {
+      result[key] = deepMerge(targetValue, value);
+    } else if (isArray(targetValue) && isArray(value)) {
+      result[key] = value;
+    } else {
+      result[key] = value !== undefined ? value : targetValue;
+    }
+  }
+
+  return result as X;
 };
 
 const isObject = (obj: any): obj is Record<string | symbol | number, any> =>
