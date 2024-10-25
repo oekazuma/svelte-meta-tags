@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 4.0.4
+
+### Patch Changes
+
+- 3cf0b94: Refactored deepMerge function to improve performance
+
 ## 4.0.3
 
 ### Patch Changes
