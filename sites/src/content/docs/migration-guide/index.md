@@ -22,6 +22,7 @@ This change aligns with the actual property name.
 ```
 
 ## v4
+
 ```svelte
 <MetaTags
   twitter={{
@@ -45,6 +46,7 @@ See [Example](https://github.com/oekazuma/svelte-meta-tags/tree/main/example/src
 ## v3
 
 `+layout.svelte`
+
 ```svelte
 <script>
   import { MetaTags } from 'svelte-meta-tags';
@@ -64,6 +66,7 @@ See [Example](https://github.com/oekazuma/svelte-meta-tags/tree/main/example/src
 ## v4
 
 `+layout.svelte`
+
 ```svelte
 <script>
   import { MetaTags, deepMerge } from 'svelte-meta-tags';

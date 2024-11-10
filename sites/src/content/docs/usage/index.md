@@ -4,7 +4,6 @@ title: Usage
 
 ## Example with just title and description
 
-
 ```svelte
 <script>
   import { MetaTags } from 'svelte-meta-tags';
@@ -12,7 +11,6 @@ title: Usage
 
 <MetaTags title="Example Title" description="Example Description." />
 ```
-
 
 ## Typical page example
 
