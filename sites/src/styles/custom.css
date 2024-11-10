@@ -1,0 +1,7 @@
+.site-title {
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
+}
+:root[data-theme='dark'] .site-title {
+  background: #fff;
+}
