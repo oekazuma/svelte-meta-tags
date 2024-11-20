@@ -24,8 +24,8 @@
     "prettier-plugin-svelte": "^3.2.8",
     "typescript-eslint": "^8.15.0"
   },
-  "packageManager": "pnpm@9.13.2",
+  "packageManager": "pnpm@9.14.1",
   "engines": {
-    "pnpm": "^9.13.2"
+    "pnpm": "^9.14.1"
   }
 }
