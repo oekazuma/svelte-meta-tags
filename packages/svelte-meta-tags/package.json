@@ -38,12 +38,12 @@
     "@sveltejs/package": "^2.3.7",
     "@sveltejs/vite-plugin-svelte": "^4.0.2",
     "publint": "^0.2.12",
-    "svelte": "^5.2.8",
+    "svelte": "^5.2.9",
     "svelte-check": "^4.1.0",
     "tslib": "^2.8.1",
     "typescript": "^5.7.2",
     "vite": "^5.4.11",
-    "vitest": "^2.1.5"
+    "vitest": "^2.1.6"
   },
   "peerDependencies": {
     "svelte": "^5.0.0"
