@@ -1,5 +1,7 @@
 ---
 title: Additional Meta Tags
+sidebar:
+  order: 7
 ---
 
 This allows you to add any other meta tags that are not required by the `config`.

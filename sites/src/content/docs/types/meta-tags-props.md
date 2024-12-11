@@ -1,5 +1,7 @@
 ---
 title: MetaTagsProps
+sidebar:
+  order: 1
 ---
 
 ```ts

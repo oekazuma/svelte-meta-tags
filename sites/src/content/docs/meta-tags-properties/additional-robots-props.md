@@ -1,5 +1,7 @@
 ---
 title: AdditionalRobotsProps
+sidebar:
+  order: 5
 ---
 
 In addition to `index, follow` the `robots` meta tag accepts more properties to archive a more accurate crawling and serve better snippets for SEO bots that crawl your page.

@@ -1,5 +1,7 @@
 ---
 title: LanguageAlternate
+sidebar:
+  order: 5
 ---
 
 ```ts

@@ -1,5 +1,7 @@
 ---
 title: Video
+sidebar:
+  order: 3
 ---
 
 Full info on [http://ogp.me/](http://ogp.me/#type_video)

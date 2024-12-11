@@ -27,14 +27,6 @@ export default defineConfig({
           collapsed: true
         },
         {
-          label: 'Demo',
-          link: 'https://svelte.dev/repl/ffd783c9b8e54d97b6b7cac6eadace42',
-          attrs: {
-            target: '_blank',
-            rel: 'noreferrer'
-          }
-        },
-        {
           label: 'MetaTags Properties',
           autogenerate: { directory: 'meta-tags-properties' },
           collapsed: true

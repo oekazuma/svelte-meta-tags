@@ -1,5 +1,7 @@
 ---
 title: LinkTag
+sidebar:
+  order: 10
 ---
 
 ```ts

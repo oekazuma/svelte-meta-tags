@@ -1,5 +1,7 @@
 ---
 title: MetaTags Properties
+sidebar:
+  order: 1
 ---
 
 | Property                           | Type                                       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |

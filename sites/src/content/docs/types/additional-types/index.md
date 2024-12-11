@@ -1,5 +1,7 @@
 ---
 title: Additional types
+sidebar:
+  order: 11
 ---
 
-The following are referenced by the public types documented above, but cannot be imported directly
+It is referenced from the public type, but cannot be imported directly.

@@ -1,5 +1,7 @@
 ---
 title: Basic
+sidebar:
+  order: 2
 ---
 
 ```svelte

@@ -1,5 +1,7 @@
 ---
 title: Twitter
+sidebar:
+  order: 3
 ---
 
 ## Example

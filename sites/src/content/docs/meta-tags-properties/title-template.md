@@ -1,5 +1,7 @@
 ---
 title: Title Template
+sidebar:
+  order: 2
 ---
 
 Replace `%s` with your title string.

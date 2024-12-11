@@ -1,5 +1,7 @@
 ---
 title: Alternate
+sidebar:
+  order: 6
 ---
 
 This link relationship is used to indicate a relationship between a desktop and mobile website to search engines.
