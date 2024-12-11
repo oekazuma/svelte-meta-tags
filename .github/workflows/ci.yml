@@ -23,6 +23,6 @@ jobs:
       - name: Run Build
         run: pnpm build
       - name: Install Playwright
-        run: pnpm dlx playwright@1.48.1 install --with-deps
+        run: pnpm dlx playwright@1.49.0 install --with-deps
       - name: Run Vitest and Playwright
         run: pnpm test
