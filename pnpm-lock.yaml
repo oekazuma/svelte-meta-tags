@@ -36,6 +36,24 @@ importers:
         specifier: ^8.18.0
         version: 8.18.0(eslint@9.16.0)(typescript@5.7.2)
 
+  docs:
+    dependencies:
+      '@astrojs/check':
+        specifier: ^0.9.4
+        version: 0.9.4(prettier@3.4.2)(typescript@5.7.2)
+      '@astrojs/starlight':
+        specifier: ^0.29.2
+        version: 0.29.2(astro@4.16.17(rollup@4.28.1)(typescript@5.7.2))
+      astro:
+        specifier: ^4.16.10
+        version: 4.16.17(rollup@4.28.1)(typescript@5.7.2)
+      sharp:
+        specifier: ^0.33.5
+        version: 0.33.5
+      typescript:
+        specifier: ^5.7.2
+        version: 5.7.2
+
   example:
     devDependencies:
       '@sveltejs/adapter-auto':
@@ -108,24 +126,6 @@ importers:
       vitest:
         specifier: ^2.1.6
         version: 2.1.8
-
-  sites:
-    dependencies:
-      '@astrojs/check':
-        specifier: ^0.9.4
-        version: 0.9.4(prettier@3.4.2)(typescript@5.7.2)
-      '@astrojs/starlight':
-        specifier: ^0.29.2
-        version: 0.29.2(astro@4.16.17(rollup@4.28.1)(typescript@5.7.2))
-      astro:
-        specifier: ^4.16.10
-        version: 4.16.17(rollup@4.28.1)(typescript@5.7.2)
-      sharp:
-        specifier: ^0.33.5
-        version: 0.33.5
-      typescript:
-        specifier: ^5.7.2
-        version: 5.7.2
 
   tests/svelte-5:
     devDependencies:
