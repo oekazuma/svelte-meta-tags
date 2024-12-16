@@ -40,10 +40,10 @@ importers:
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^3.3.1
-        version: 3.3.1(@sveltejs/kit@2.11.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.3.1)(vite@6.0.1))(svelte@5.3.1)(vite@6.0.1))
+        version: 3.3.1(@sveltejs/kit@2.12.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.3.1)(vite@6.0.1))(svelte@5.3.1)(vite@6.0.1))
       '@sveltejs/kit':
-        specifier: ^2.11.1
-        version: 2.11.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.3.1)(vite@6.0.1))(svelte@5.3.1)(vite@6.0.1)
+        specifier: ^2.12.1
+        version: 2.12.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.3.1)(vite@6.0.1))(svelte@5.3.1)(vite@6.0.1)
       '@sveltejs/vite-plugin-svelte':
         specifier: ^5.0.2
         version: 5.0.2(svelte@5.3.1)(vite@6.0.1)
@@ -77,10 +77,10 @@ importers:
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^3.3.1
-        version: 3.3.1(@sveltejs/kit@2.11.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.3.1)(vite@6.0.1))(svelte@5.3.1)(vite@6.0.1))
+        version: 3.3.1(@sveltejs/kit@2.12.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.3.1)(vite@6.0.1))(svelte@5.3.1)(vite@6.0.1))
       '@sveltejs/kit':
-        specifier: ^2.11.1
-        version: 2.11.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.3.1)(vite@6.0.1))(svelte@5.3.1)(vite@6.0.1)
+        specifier: ^2.12.1
+        version: 2.12.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.3.1)(vite@6.0.1))(svelte@5.3.1)(vite@6.0.1)
       '@sveltejs/package':
         specifier: ^2.3.7
         version: 2.3.7(svelte@5.3.1)(typescript@5.7.2)
@@ -541,8 +541,8 @@ packages:
     peerDependencies:
       '@sveltejs/kit': ^2.0.0
 
-  '@sveltejs/kit@2.11.1':
-    resolution: {integrity: sha512-dAiHDEd+AOm20eYdMPV1a2eKBOc0s/7XsSs7PCoNv2kKS7BAoVRC9uzR+FQmxLtp8xuEo9z8CtrMQoszkThltQ==}
+  '@sveltejs/kit@2.12.1':
+    resolution: {integrity: sha512-M3rPijGImeOkI0DBJSwjqz+YFX2DyOf6NzWgHVk3mqpT06dlYCpcv5xh1q4rYEqB58yQlk4QA1Y35PUqnUiFKw==}
     engines: {node: '>=18.13'}
     hasBin: true
     peerDependencies:
@@ -2149,9 +2149,9 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.27.4':
     optional: true
 
-  '@sveltejs/adapter-auto@3.3.1(@sveltejs/kit@2.11.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.3.1)(vite@6.0.1))(svelte@5.3.1)(vite@6.0.1))':
+  '@sveltejs/adapter-auto@3.3.1(@sveltejs/kit@2.12.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.3.1)(vite@6.0.1))(svelte@5.3.1)(vite@6.0.1))':
     dependencies:
-      '@sveltejs/kit': 2.11.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.3.1)(vite@6.0.1))(svelte@5.3.1)(vite@6.0.1)
+      '@sveltejs/kit': 2.12.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.3.1)(vite@6.0.1))(svelte@5.3.1)(vite@6.0.1)
       import-meta-resolve: 4.1.0
 
   '@sveltejs/adapter-auto@3.3.1(@sveltejs/kit@2.8.5(@sveltejs/vite-plugin-svelte@5.0.1(svelte@5.2.9)(vite@6.0.0))(svelte@5.2.9)(vite@6.0.0))':
@@ -2159,7 +2159,7 @@ snapshots:
       '@sveltejs/kit': 2.8.5(@sveltejs/vite-plugin-svelte@5.0.1(svelte@5.2.9)(vite@6.0.0))(svelte@5.2.9)(vite@6.0.0)
       import-meta-resolve: 4.1.0
 
-  '@sveltejs/kit@2.11.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.3.1)(vite@6.0.1))(svelte@5.3.1)(vite@6.0.1)':
+  '@sveltejs/kit@2.12.1(@sveltejs/vite-plugin-svelte@5.0.2(svelte@5.3.1)(vite@6.0.1))(svelte@5.3.1)(vite@6.0.1)':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 5.0.2(svelte@5.3.1)(vite@6.0.1)
       '@types/cookie': 0.6.0
@@ -2168,7 +2168,7 @@ snapshots:
       esm-env: 1.2.1
       import-meta-resolve: 4.1.0
       kleur: 4.1.5
-      magic-string: 0.30.14
+      magic-string: 0.30.15
       mrmime: 2.0.0
       sade: 1.8.1
       set-cookie-parser: 2.7.1
@@ -2351,7 +2351,7 @@ snapshots:
     dependencies:
       '@vitest/spy': 2.1.6
       estree-walker: 3.0.3
-      magic-string: 0.30.14
+      magic-string: 0.30.15
     optionalDependencies:
       vite: 6.0.1
 
@@ -2367,7 +2367,7 @@ snapshots:
   '@vitest/snapshot@2.1.6':
     dependencies:
       '@vitest/pretty-format': 2.1.6
-      magic-string: 0.30.14
+      magic-string: 0.30.15
       pathe: 1.1.2
 
   '@vitest/spy@2.1.6':
