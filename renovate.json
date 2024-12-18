@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", ":disablePeerDependencies"],
+  "extends": ["config:recommended", ":disablePeerDependencies"],
   "labels": ["renovate"],
   "lockFileMaintenance": {
     "enabled": true
@@ -17,7 +17,12 @@
     },
     {
       "groupName": "linters",
-      "matchPackagePrefixes": ["eslint", "typescript-eslint", "publint", "globals"]
+      "matchPackageNames": [
+        "eslint{/,}**",
+        "typescript-eslint{/,}**",
+        "publint{/,}**",
+        "globals{/,}**"
+      ]
     },
     {
       "groupName": "typescript",
@@ -25,7 +30,7 @@
     },
     {
       "groupName": "sveltekit",
-      "matchPackagePrefixes": ["@sveltejs/"]
+      "matchPackageNames": ["@sveltejs/{/,}**"]
     }
   ]
 }
