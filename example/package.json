@@ -13,12 +13,12 @@
     "@sveltejs/kit": "^2.12.1",
     "@sveltejs/vite-plugin-svelte": "^5.0.2",
     "just-extend": "^6.2.0",
-    "svelte": "^5.3.1",
-    "svelte-check": "^4.1.0",
+    "svelte": "^5.14.3",
+    "svelte-check": "^4.1.1",
     "svelte-meta-tags": "workspace:^",
     "tslib": "^2.8.1",
     "typescript": "^5.7.2",
-    "vite": "^6.0.1"
+    "vite": "^6.0.3"
   },
   "type": "module"
 }
