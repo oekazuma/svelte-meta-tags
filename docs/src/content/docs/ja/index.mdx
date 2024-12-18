@@ -22,3 +22,20 @@ hero:
       variant: minimal
       link: https://github.com/oekazuma/svelte-meta-tags
 ---
+
+import { CardGrid, Card } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+  <Card title="効率的なSEO管理" icon="rocket">
+    シンプルなインターフェイスでSEOメタタグを簡単に管理し、より効果的な検索エンジン最適化を実現します。
+  </Card>
+  <Card title="JSON-LDのサポート" icon="document">
+    検索エンジン最適化に不可欠な構造化データのJSON-LDサポートを提供します。
+  </Card>
+  <Card title="ディープマージ機能" icon="puzzle">
+    ディープマージ機能により、複雑なSvelteアプリケーションのmetaタグを簡単に管理できます。
+  </Card>
+  <Card title="TypeScript フレンドリー" icon="seti:typescript">
+    TypeScriptをサポートしており、タイプセーフな方法でメタタグを管理できます。
+  </Card>
+</CardGrid>

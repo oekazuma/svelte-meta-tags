@@ -22,3 +22,20 @@ hero:
       variant: minimal
       link: https://github.com/oekazuma/svelte-meta-tags
 ---
+
+import { CardGrid, Card } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+  <Card title="Effortless SEO Management" icon="rocket">
+    Easily manage SEO meta tags with a simple interface for more effective search engine optimization.
+  </Card>
+  <Card title="JSON-LD Support" icon="document">
+    Offers JSON-LD support for structured data, which is essential for search engine optimization.
+  </Card>
+  <Card title="Deep Merge Functionality" icon="puzzle">
+    The deep merge function allows you to easily manage meta tags in complex Svelte applications.
+  </Card>
+  <Card title="TypeScript Friendly" icon="seti:typescript">
+    Includes TypeScript support to help you manage meta tags in a type-safe way.
+  </Card>
+</CardGrid>
