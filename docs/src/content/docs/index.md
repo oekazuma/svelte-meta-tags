@@ -11,7 +11,8 @@ hero:
   title: Svelte Meta Tags
   tagline: Svelte Meta Tags provides components designed to help you manage SEO for Svelte projects.
   image:
-    file: ../../assets/logo.webp
+    dark: ../../assets/dark-logo.webp
+    light: ../../assets/light-logo.webp
   actions:
     - text: Get started
       icon: right-arrow
