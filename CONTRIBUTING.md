@@ -24,9 +24,9 @@ pnpm install
 
 ## Work with Svelte Meta Tags
 
-All the code for the library is located in the `src/lib` directory.
+All the code for the library is located in the `packages/svelte-meta-tags/src/lib` directory.
 
-The `src/routes` directory contains a fully working SvelteKit app. This will be used for end-to-end testing. You can run `pnpm dev` to run this app. You can also run it in a production build by running `pnpm build` and `pnpm preview`.
+The `tests/svelte-5/src/routes` directory contains a fully working SvelteKit app. This will be used for end-to-end testing. You can run `pnpm dev` to run this app. You can also run it in a production build by running `pnpm build` and `pnpm preview`.
 
 To run Playwright, you can run `pnpm test`.
 

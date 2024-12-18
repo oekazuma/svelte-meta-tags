@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "pnpm -r dev",
     "build": "pnpm -r build",
-    "build:docs": "pnpm --filter 'docs' build",
     "preview": "pnpm -r preview",
     "package": "pnpm -r package",
     "check": "pnpm -r check",
