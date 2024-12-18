@@ -14,12 +14,12 @@ Use this when you want to override the default values on child pages, as in the 
 
 ```svelte
 <script>
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import { MetaTags, deepMerge } from 'svelte-meta-tags';
 
   let { data, children } = $props();
 
-  let metaTags = $derived(deepMerge(data.baseMetaTags, $page.data.pageMetaTags));
+  let metaTags = $derived(deepMerge(data.baseMetaTags, page.data.pageMetaTags));
 </script>
 
 <MetaTags {...metaTags} />

@@ -70,11 +70,11 @@ title: 移行ガイド
 ```svelte
 <script>
   import { MetaTags, deepMerge } from 'svelte-meta-tags';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
 
   let { data, children } = $props();
 
-  let metaTags = $derived(deepMerge(data.baseMetaTags, $page.data.pageMetaTags));
+  let metaTags = $derived(deepMerge(data.baseMetaTags, page.data.pageMetaTags));
 </script>
 
 <MetaTags {...metaTags} />
