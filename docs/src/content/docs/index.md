@@ -15,7 +15,7 @@ hero:
   actions:
     - text: Get started
       icon: right-arrow
-      link: /installing/
+      link: /svelte-meta-tags/installing/
     - text: View on GitHub
       icon: external
       variant: minimal

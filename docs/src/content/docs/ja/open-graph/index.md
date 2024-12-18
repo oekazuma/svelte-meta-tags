@@ -8,8 +8,8 @@ sidebar:
 
 Svelte Meta Tags は現在以下をサポートしています:
 
-- [Basic](/ja/open-graph/basic)
-- [Video](/ja/open-graph/video)
-- [Article](/ja/open-graph/article)
-- [Book](/ja/open-graph/book)
-- [Profile](/ja/open-graph/profile)
+- [Basic](/svelte-meta-tags/ja/open-graph/basic)
+- [Video](/svelte-meta-tags/ja/open-graph/video)
+- [Article](/svelte-meta-tags/ja/open-graph/article)
+- [Book](/svelte-meta-tags/ja/open-graph/book)
+- [Profile](/svelte-meta-tags/ja/open-graph/profile)

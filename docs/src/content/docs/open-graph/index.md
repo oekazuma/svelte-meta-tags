@@ -8,8 +8,8 @@ The full specification can be found at <http://ogp.me/>.
 
 Svelte Meta Tags currently supports:
 
-- [Basic](/open-graph/basic)
-- [Video](/open-graph/video)
-- [Article](/open-graph/article)
-- [Book](/open-graph/book)
-- [Profile](/open-graph/profile)
+- [Basic](/svelte-meta-tags/open-graph/basic)
+- [Video](/svelte-meta-tags/open-graph/video)
+- [Article](/svelte-meta-tags/open-graph/article)
+- [Book](/svelte-meta-tags/open-graph/book)
+- [Profile](/svelte-meta-tags/open-graph/profile)

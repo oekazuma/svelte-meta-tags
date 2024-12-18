@@ -15,7 +15,7 @@ hero:
   actions:
     - text: はじめる
       icon: right-arrow
-      link: /ja/installing/
+      link: /svelte-meta-tags/ja/installing/
     - text: GitHubを見る
       icon: external
       variant: minimal
