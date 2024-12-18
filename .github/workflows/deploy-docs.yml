@@ -1,0 +1,38 @@
+name: Deploy for Docs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  packages: read
+  contents: read
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4.0.0
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Run Build
+        run: pnpm build:docs
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/dist
+      - name: Deploy Docs to Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
