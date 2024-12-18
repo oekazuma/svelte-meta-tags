@@ -2,6 +2,8 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
 export default defineConfig({
+  site: 'https://oekazuma.github.io/',
+  base: import.meta.env.DEV ? '/' : '/svelte-meta-tags',
   integrations: [
     starlight({
       title: 'SvelteMetaTags',
