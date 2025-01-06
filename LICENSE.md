@@ -1,4 +1,3 @@
-
 MIT License
 
 Copyright (c) 2021-25 oekazuma
