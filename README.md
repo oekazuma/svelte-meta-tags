@@ -12,4 +12,4 @@
 
 ## License
 
-MIT
+[MIT](https://github.com/sveltejs/svelte/blob/main/LICENSE.md)
