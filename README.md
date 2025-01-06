@@ -12,4 +12,4 @@
 
 ## License
 
-[MIT](https://github.com/sveltejs/svelte/blob/main/LICENSE.md)
+[MIT](https://github.com/oekazuma/svelte-meta-tags/blob/main/LICENSE.md)
