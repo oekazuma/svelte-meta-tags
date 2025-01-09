@@ -211,7 +211,11 @@ export interface MetaTagsProps {
   keywords?: ReadonlyArray<string>;
 }
 
+interface GraphWrappedThing {
+  '@graph': (Thing | WithContext<Thing>)[];
+}
+
 export interface JsonLdProps {
   output?: 'head' | 'body';
-  schema?: Thing | WithContext<Thing> | Thing[] | WithContext<Thing>[];
+  schema?: Thing | WithContext<Thing> | Thing[] | WithContext<Thing>[] | GraphWrappedThing;
 }

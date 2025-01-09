@@ -41,4 +41,7 @@
   <li>
     <a href="/jsonldArray"> JSON-LD Array SEO </a>
   </li>
+  <li>
+    <a href="/jsonldGraph"> JSON-LD Graph SEO </a>
+  </li>
 </ul>

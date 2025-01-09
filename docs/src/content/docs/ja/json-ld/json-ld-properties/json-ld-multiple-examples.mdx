@@ -1,0 +1,131 @@
+---
+title: JSON-LD Multiple Examples
+sidebar:
+  order: 8
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+複数のjsonデータを配列として返すことができます。
+
+<Aside type="caution">
+  配列を使って複数のデータ項目を記述すると、Safariはコンソールにエラーを記録します。ライブラリは正しく機能しますが、Sentryのようなツールでエラーログを集計する場合は注意が必要です。この問題を避けるには、@graphの使用を検討してください。
+</Aside>
+
+配列を使用した例
+
+```svelte
+<script>
+  import { JsonLd } from 'svelte-meta-tags';
+</script>
+
+<JsonLd
+  schema={[
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Books',
+          item: 'https://example.com/books'
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Science Fiction',
+          item: 'https://example.com/books/sciencefiction'
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Award Winners'
+        }
+      ]
+    },
+    {
+      '@type': 'NewsArticle',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': 'https://google.com/article'
+      },
+      headline: 'Article headline',
+      image: [
+        'https://example.com/photos/1x1/photo.jpg',
+        'https://example.com/photos/4x3/photo.jpg',
+        'https://example.com/photos/16x9/photo.jpg'
+      ],
+      datePublished: '2015-02-05T08:00:00+08:00',
+      dateModified: '2015-02-05T09:20:00+08:00',
+      author: {
+        '@type': 'Person',
+        name: 'John Doe'
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Google',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://google.com/logo.jpg'
+        }
+      }
+    }
+  ]}
+/>
+```
+
+`@graph`を使用した例
+
+```svelte
+<script>
+  import { JsonLd } from 'svelte-meta-tags';
+</script>
+
+<JsonLd
+  schema={{
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            item: {
+              '@id': 'https://example.com/articles/1',
+              name: 'foo'
+            }
+          }
+        ]
+      },
+      {
+        '@type': 'NewsArticle',
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': 'https://google.com/article'
+        },
+        headline: 'Article headline',
+        image: [
+          'https://example.com/photos/1x1/photo.jpg',
+          'https://example.com/photos/4x3/photo.jpg',
+          'https://example.com/photos/16x9/photo.jpg'
+        ],
+        datePublished: '2015-02-05T08:00:00+08:00',
+        dateModified: '2015-02-05T09:20:00+08:00',
+        author: {
+          '@type': 'Person',
+          name: 'John Doe'
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Google',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://google.com/logo.jpg'
+          }
+        },
+        description: 'A most wonderful article'
+      }
+    ]
+  }}
+/>
+```
