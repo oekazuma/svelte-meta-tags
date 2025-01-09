@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 4.1.0
+
+### Minor Changes
+
+- efa99d7: Add `@graph` support in JSON-LD
+
 ## 4.0.4
 
 ### Patch Changes
