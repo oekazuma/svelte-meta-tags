@@ -24,8 +24,8 @@
       "matchPackageNames": ["typescript"]
     },
     {
-      "groupName": "sveltekit",
-      "matchPackageNames": ["@sveltejs/{/,}**"]
+      "groupName": "Svelte",
+      "matchPackagePrefixes": ["@sveltejs/", "svelte"]
     }
   ]
 }
