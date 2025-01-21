@@ -42,8 +42,8 @@
     "svelte-check": "^4.1.4",
     "tslib": "^2.8.1",
     "typescript": "^5.7.3",
-    "vite": "^6.0.10",
-    "vitest": "3.0.2"
+    "vite": "^6.0.11",
+    "vitest": "3.0.3"
   },
   "peerDependencies": {
     "svelte": "^5.0.0"
