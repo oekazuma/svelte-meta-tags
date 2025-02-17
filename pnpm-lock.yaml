@@ -20,7 +20,7 @@ catalogs:
       specifier: ^4.0.0
       version: 4.0.0
     '@sveltejs/kit':
-      specifier: ^2.17.1
+      specifier: ^2.17.2
       version: 2.17.2
     '@sveltejs/package':
       specifier: ^2.3.10
@@ -29,7 +29,7 @@ catalogs:
       specifier: ^5.0.3
       version: 5.0.3
     svelte:
-      specifier: ^5.20.0
+      specifier: ^5.20.1
       version: 5.20.1
     svelte-check:
       specifier: ^4.1.4
