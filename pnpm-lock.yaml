@@ -4,6 +4,37 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    typescript:
+      specifier: ^5.7.3
+      version: 5.7.3
+    vite:
+      specifier: ^6.1.0
+      version: 6.1.0
+    vitest:
+      specifier: ^3.0.5
+      version: 3.0.5
+  svelte:
+    '@sveltejs/adapter-auto':
+      specifier: ^4.0.0
+      version: 4.0.0
+    '@sveltejs/kit':
+      specifier: ^2.17.1
+      version: 2.17.2
+    '@sveltejs/package':
+      specifier: ^2.3.10
+      version: 2.3.10
+    '@sveltejs/vite-plugin-svelte':
+      specifier: ^5.0.3
+      version: 5.0.3
+    svelte:
+      specifier: ^5.20.0
+      version: 5.20.1
+    svelte-check:
+      specifier: ^4.1.4
+      version: 4.1.4
+
 importers:
 
   .:
@@ -57,40 +88,34 @@ importers:
         specifier: ^0.33.5
         version: 0.33.5
       typescript:
-        specifier: ^5.7.3
+        specifier: 'catalog:'
         version: 5.7.3
 
   example:
     devDependencies:
       '@sveltejs/adapter-auto':
-        specifier: ^4.0.0
+        specifier: catalog:svelte
         version: 4.0.0(@sveltejs/kit@2.17.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.1)(vite@6.1.0(yaml@2.7.0)))(svelte@5.20.1)(vite@6.1.0(yaml@2.7.0)))
       '@sveltejs/kit':
-        specifier: ^2.17.2
+        specifier: catalog:svelte
         version: 2.17.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.1)(vite@6.1.0(yaml@2.7.0)))(svelte@5.20.1)(vite@6.1.0(yaml@2.7.0))
       '@sveltejs/vite-plugin-svelte':
-        specifier: ^5.0.3
+        specifier: catalog:svelte
         version: 5.0.3(svelte@5.20.1)(vite@6.1.0(yaml@2.7.0))
-      just-extend:
-        specifier: ^6.2.0
-        version: 6.2.0
       svelte:
-        specifier: ^5.20.1
+        specifier: catalog:svelte
         version: 5.20.1
       svelte-check:
-        specifier: ^4.1.4
+        specifier: catalog:svelte
         version: 4.1.4(picomatch@4.0.2)(svelte@5.20.1)(typescript@5.7.3)
       svelte-meta-tags:
         specifier: workspace:^
         version: link:../packages/svelte-meta-tags
-      tslib:
-        specifier: ^2.8.1
-        version: 2.8.1
       typescript:
-        specifier: ^5.7.3
+        specifier: 'catalog:'
         version: 5.7.3
       vite:
-        specifier: ^6.1.0
+        specifier: 'catalog:'
         version: 6.1.0(yaml@2.7.0)
 
   packages/svelte-meta-tags:
@@ -100,37 +125,34 @@ importers:
         version: 1.1.2(typescript@5.7.3)
     devDependencies:
       '@sveltejs/adapter-auto':
-        specifier: ^4.0.0
+        specifier: catalog:svelte
         version: 4.0.0(@sveltejs/kit@2.17.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.1)(vite@6.1.0(yaml@2.7.0)))(svelte@5.20.1)(vite@6.1.0(yaml@2.7.0)))
       '@sveltejs/kit':
-        specifier: ^2.17.2
+        specifier: catalog:svelte
         version: 2.17.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.1)(vite@6.1.0(yaml@2.7.0)))(svelte@5.20.1)(vite@6.1.0(yaml@2.7.0))
       '@sveltejs/package':
-        specifier: ^2.3.10
+        specifier: catalog:svelte
         version: 2.3.10(svelte@5.20.1)(typescript@5.7.3)
       '@sveltejs/vite-plugin-svelte':
-        specifier: ^5.0.3
+        specifier: catalog:svelte
         version: 5.0.3(svelte@5.20.1)(vite@6.1.0(yaml@2.7.0))
       publint:
         specifier: ^0.3.5
         version: 0.3.5
       svelte:
-        specifier: ^5.20.1
+        specifier: catalog:svelte
         version: 5.20.1
       svelte-check:
-        specifier: ^4.1.4
+        specifier: catalog:svelte
         version: 4.1.4(picomatch@4.0.2)(svelte@5.20.1)(typescript@5.7.3)
-      tslib:
-        specifier: ^2.8.1
-        version: 2.8.1
       typescript:
-        specifier: ^5.7.3
+        specifier: 'catalog:'
         version: 5.7.3
       vite:
-        specifier: ^6.1.0
+        specifier: 'catalog:'
         version: 6.1.0(yaml@2.7.0)
       vitest:
-        specifier: 3.0.5
+        specifier: 'catalog:'
         version: 3.0.5(@types/debug@4.1.12)(yaml@2.7.0)
 
   tests/svelte-5:
@@ -139,28 +161,28 @@ importers:
         specifier: ^1.50.0
         version: 1.50.1
       '@sveltejs/adapter-auto':
-        specifier: ^4.0.0
+        specifier: catalog:svelte
         version: 4.0.0(@sveltejs/kit@2.17.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.1)(vite@6.1.0(yaml@2.7.0)))(svelte@5.20.1)(vite@6.1.0(yaml@2.7.0)))
       '@sveltejs/kit':
-        specifier: ^2.16.1
+        specifier: catalog:svelte
         version: 2.17.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.1)(vite@6.1.0(yaml@2.7.0)))(svelte@5.20.1)(vite@6.1.0(yaml@2.7.0))
       '@sveltejs/vite-plugin-svelte':
-        specifier: ^5.0.3
+        specifier: catalog:svelte
         version: 5.0.3(svelte@5.20.1)(vite@6.1.0(yaml@2.7.0))
       svelte:
-        specifier: ^5.19.3
+        specifier: catalog:svelte
         version: 5.20.1
       svelte-check:
-        specifier: ^4.1.4
+        specifier: catalog:svelte
         version: 4.1.4(picomatch@4.0.2)(svelte@5.20.1)(typescript@5.7.3)
       svelte-meta-tags:
         specifier: workspace:*
         version: link:../../packages/svelte-meta-tags
       typescript:
-        specifier: ^5.7.3
+        specifier: 'catalog:'
         version: 5.7.3
       vite:
-        specifier: ^6.0.11
+        specifier: 'catalog:'
         version: 6.1.0(yaml@2.7.0)
 
 packages:
@@ -1884,9 +1906,6 @@ packages:
 
   jsonfile@4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
-
-  just-extend@6.2.0:
-    resolution: {integrity: sha512-cYofQu2Xpom82S6qD778jBDpwvvy39s1l/hrYij2u9AMdQcGRpaBu6kY4mVhuno5kJVi1DAz4aiphA2WI1/OAw==}
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
@@ -5269,8 +5288,6 @@ snapshots:
   jsonfile@4.0.0:
     optionalDependencies:
       graceful-fs: 4.2.11
-
-  just-extend@6.2.0: {}
 
   keyv@4.5.4:
     dependencies:
