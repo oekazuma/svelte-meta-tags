@@ -73,7 +73,7 @@
   {/if}
 
   {#if languageAlternates && languageAlternates.length > 0}
-    {#each languageAlternates as languageAlternate}
+    {#each languageAlternates as languageAlternate (languageAlternate)}
       <link rel="alternate" hrefLang={languageAlternate.hrefLang} href={languageAlternate.href} />
     {/each}
   {/if}
@@ -173,7 +173,7 @@
         {/if}
       {:else if openGraph.type.toLowerCase() === 'book' && openGraph.book}
         {#if openGraph.book.authors && openGraph.book.authors.length}
-          {#each openGraph.book.authors as author}
+          {#each openGraph.book.authors as author (author)}
             <meta property="book:author" content={author} />
           {/each}
         {/if}
@@ -187,7 +187,7 @@
         {/if}
 
         {#if openGraph.book.tags && openGraph.book.tags.length}
-          {#each openGraph.book.tags as tag}
+          {#each openGraph.book.tags as tag (tag)}
             <meta property="book:tag" content={tag} />
           {/each}
         {/if}
@@ -205,7 +205,7 @@
         {/if}
 
         {#if openGraph.article.authors && openGraph.article.authors.length}
-          {#each openGraph.article.authors as author}
+          {#each openGraph.article.authors as author (author)}
             <meta property="article:author" content={author} />
           {/each}
         {/if}
@@ -215,13 +215,13 @@
         {/if}
 
         {#if openGraph.article.tags && openGraph.article.tags.length}
-          {#each openGraph.article.tags as tag}
+          {#each openGraph.article.tags as tag (tag)}
             <meta property="article:tag" content={tag} />
           {/each}
         {/if}
       {:else if openGraph.type.toLowerCase() === 'video.movie' || openGraph.type.toLowerCase() === 'video.episode' || openGraph.type.toLowerCase() === 'video.tv_show' || (openGraph.type.toLowerCase() === 'video.other' && openGraph.video)}
         {#if openGraph.video?.actors && openGraph.video.actors.length}
-          {#each openGraph.video.actors as actor}
+          {#each openGraph.video.actors as actor (actor)}
             {#if actor.profile}
               <meta property="video:actor" content={actor.profile} />
             {/if}
@@ -232,13 +232,13 @@
         {/if}
 
         {#if openGraph.video?.directors && openGraph.video.directors.length}
-          {#each openGraph.video.directors as director}
+          {#each openGraph.video.directors as director (director)}
             <meta property="video:director" content={director} />
           {/each}
         {/if}
 
         {#if openGraph.video?.writers && openGraph.video.writers.length}
-          {#each openGraph.video.writers as writer}
+          {#each openGraph.video.writers as writer (writer)}
             <meta property="video:writer" content={writer} />
           {/each}
         {/if}
@@ -252,7 +252,7 @@
         {/if}
 
         {#if openGraph.video?.tags && openGraph.video.tags.length}
-          {#each openGraph.video.tags as tag}
+          {#each openGraph.video.tags as tag (tag)}
             <meta property="video:tag" content={tag} />
           {/each}
         {/if}
@@ -272,7 +272,7 @@
     {/if}
 
     {#if openGraph.images && openGraph.images.length}
-      {#each openGraph.images as image}
+      {#each openGraph.images as image (image)}
         <meta property="og:image" content={image.url} />
         {#if image.alt}
           <meta property="og:image:alt" content={image.alt} />
@@ -293,7 +293,7 @@
     {/if}
 
     {#if openGraph.videos && openGraph.videos.length}
-      {#each openGraph.videos as video}
+      {#each openGraph.videos as video (video)}
         <meta property="og:video" content={video.url} />
         {#if video.width}
           <meta property="og:video:width" content={video.width.toString()} />
@@ -311,7 +311,7 @@
     {/if}
 
     {#if openGraph.audio && openGraph.audio.length}
-      {#each openGraph.audio as audio}
+      {#each openGraph.audio as audio (audio)}
         <meta property="og:audio" content={audio.url} />
         {#if audio.secureUrl}
           <meta property="og:audio:secure_url" content={audio.secureUrl.toString()} />
@@ -332,13 +332,13 @@
   {/if}
 
   {#if additionalMetaTags && Array.isArray(additionalMetaTags)}
-    {#each additionalMetaTags as tag}
+    {#each additionalMetaTags as tag (tag)}
       <meta {...tag.httpEquiv ? { ...tag, 'http-equiv': tag.httpEquiv } : tag} />
     {/each}
   {/if}
 
   {#if additionalLinkTags?.length}
-    {#each additionalLinkTags as tag}
+    {#each additionalLinkTags as tag (tag)}
       <link {...tag} />
     {/each}
   {/if}
