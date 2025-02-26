@@ -20,8 +20,8 @@ catalogs:
       specifier: ^4.0.0
       version: 4.0.0
     '@sveltejs/kit':
-      specifier: ^2.17.2
-      version: 2.17.2
+      specifier: ^2.17.3
+      version: 2.17.3
     '@sveltejs/package':
       specifier: ^2.3.10
       version: 2.3.10
@@ -95,10 +95,10 @@ importers:
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: catalog:svelte
-        version: 4.0.0(@sveltejs/kit@2.17.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))
+        version: 4.0.0(@sveltejs/kit@2.17.3(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))
       '@sveltejs/kit':
         specifier: catalog:svelte
-        version: 2.17.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0))
+        version: 2.17.3(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0))
       '@sveltejs/vite-plugin-svelte':
         specifier: catalog:svelte
         version: 5.0.3(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0))
@@ -126,10 +126,10 @@ importers:
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: catalog:svelte
-        version: 4.0.0(@sveltejs/kit@2.17.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))
+        version: 4.0.0(@sveltejs/kit@2.17.3(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))
       '@sveltejs/kit':
         specifier: catalog:svelte
-        version: 2.17.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0))
+        version: 2.17.3(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0))
       '@sveltejs/package':
         specifier: catalog:svelte
         version: 2.3.10(svelte@5.20.4)(typescript@5.7.3)
@@ -162,10 +162,10 @@ importers:
         version: 1.50.1
       '@sveltejs/adapter-auto':
         specifier: catalog:svelte
-        version: 4.0.0(@sveltejs/kit@2.17.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))
+        version: 4.0.0(@sveltejs/kit@2.17.3(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))
       '@sveltejs/kit':
         specifier: catalog:svelte
-        version: 2.17.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0))
+        version: 2.17.3(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0))
       '@sveltejs/vite-plugin-svelte':
         specifier: catalog:svelte
         version: 5.0.3(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0))
@@ -1039,8 +1039,8 @@ packages:
     peerDependencies:
       '@sveltejs/kit': ^2.0.0
 
-  '@sveltejs/kit@2.17.2':
-    resolution: {integrity: sha512-Vypk02baf7qd3SOB1uUwUC/3Oka+srPo2J0a8YN3EfJypRshDkNx9HzNKjSmhOnGWwT+SSO06+N0mAb8iVTmTQ==}
+  '@sveltejs/kit@2.17.3':
+    resolution: {integrity: sha512-GcNaPDr0ti4O/TonPewkML2DG7UVXkSxPN3nPMlpmx0Rs4b2kVP4gymz98WEHlfzPXdd4uOOT1Js26DtieTNBQ==}
     engines: {node: '>=18.13'}
     hasBin: true
     peerDependencies:
@@ -4232,12 +4232,12 @@ snapshots:
 
   '@shikijs/vscode-textmate@10.0.2': {}
 
-  '@sveltejs/adapter-auto@4.0.0(@sveltejs/kit@2.17.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))':
+  '@sveltejs/adapter-auto@4.0.0(@sveltejs/kit@2.17.3(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))':
     dependencies:
-      '@sveltejs/kit': 2.17.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0))
+      '@sveltejs/kit': 2.17.3(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0))
       import-meta-resolve: 4.1.0
 
-  '@sveltejs/kit@2.17.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0))':
+  '@sveltejs/kit@2.17.3(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0)))(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0))':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 5.0.3(svelte@5.20.4)(vite@6.2.0(yaml@2.7.0))
       '@types/cookie': 0.6.0
