@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 4.1.1
+
+### Patch Changes
+
+- 7bd5570: Add key to each block for improved rendering
+
 ## 4.1.0
 
 ### Minor Changes
