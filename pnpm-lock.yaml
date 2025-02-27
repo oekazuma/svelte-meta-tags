@@ -55,11 +55,11 @@ importers:
         specifier: ^9.21.0
         version: 9.21.0
       eslint-config-prettier:
-        specifier: ^10.0.1
-        version: 10.0.1(eslint@9.21.0)
+        specifier: ^10.0.2
+        version: 10.0.2(eslint@9.21.0)
       eslint-plugin-svelte:
-        specifier: ^3.0.0
-        version: 3.0.0(eslint@9.21.0)(svelte@5.20.4)
+        specifier: ^3.0.2
+        version: 3.0.2(eslint@9.21.0)(svelte@5.20.4)
       globals:
         specifier: ^16.0.0
         version: 16.0.0
@@ -1607,14 +1607,14 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
 
-  eslint-config-prettier@10.0.1:
-    resolution: {integrity: sha512-lZBts941cyJyeaooiKxAtzoPHTN+GbQTJFAIdQbRhA4/8whaAraEh47Whw/ZFfrjNSnlAxqfm9i0XVAEkULjCw==}
+  eslint-config-prettier@10.0.2:
+    resolution: {integrity: sha512-1105/17ZIMjmCOJOPNfVdbXafLCLj3hPmkmB7dLgt7XsQ/zkxSuDerE/xgO3RxoHysR1N1whmquY0lSn2O0VLg==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-plugin-svelte@3.0.0:
-    resolution: {integrity: sha512-o+DNY7R8RT95vSBN1DkBJhB1/8M25yCrR3Im9guVToIuW6TB93yqMLXHrRkfKmH9X2cv5tQHvLzO2Vllsz2uTA==}
+  eslint-plugin-svelte@3.0.2:
+    resolution: {integrity: sha512-+0QglmWNryvXXxRQKzLF3i+AreTsueCw7PBb0nGVBq+F9HoYqAjQeJ/9N6vFAtjMjK3wgsETrLVyBKPdeufN6Q==}
     engines: {node: ^18.20.4 || ^20.18.0 || >=22.10.0}
     peerDependencies:
       eslint: ^8.57.1 || ^9.0.0
@@ -4966,11 +4966,11 @@ snapshots:
       eslint: 9.21.0
       semver: 7.7.1
 
-  eslint-config-prettier@10.0.1(eslint@9.21.0):
+  eslint-config-prettier@10.0.2(eslint@9.21.0):
     dependencies:
       eslint: 9.21.0
 
-  eslint-plugin-svelte@3.0.0(eslint@9.21.0)(svelte@5.20.4):
+  eslint-plugin-svelte@3.0.2(eslint@9.21.0)(svelte@5.20.4):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.1(eslint@9.21.0)
       '@jridgewell/sourcemap-codec': 1.5.0
