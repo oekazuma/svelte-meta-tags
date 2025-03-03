@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 4.2.0
+
+### Minor Changes
+
+- 5778cbb: update schema-dts to v1.1.5
+
 ## 4.1.1
 
 ### Patch Changes
