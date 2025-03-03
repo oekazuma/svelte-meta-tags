@@ -17,7 +17,12 @@
     },
     {
       "groupName": "linters",
-      "matchPackageNames": ["eslint{/,}**", "typescript-eslint{/,}**", "publint{/,}**", "globals{/,}**"]
+      "matchPackageNames": [
+        "eslint{/,}**",
+        "typescript-eslint{/,}**",
+        "publint{/,}**",
+        "globals{/,}**"
+      ]
     },
     {
       "groupName": "typescript",
@@ -25,7 +30,7 @@
     },
     {
       "groupName": "Svelte",
-      "matchPackagePrefixes": ["@sveltejs/", "svelte"]
+      "matchPackageNames": ["@sveltejs/{/,}**", "svelte{/,}**"]
     }
   ]
 }
