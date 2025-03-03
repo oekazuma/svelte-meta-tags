@@ -137,8 +137,8 @@ importers:
         specifier: catalog:svelte
         version: 5.0.3(svelte@5.20.5)(vite@6.2.0(yaml@2.7.0))
       publint:
-        specifier: ^0.3.6
-        version: 0.3.6
+        specifier: ^0.3.7
+        version: 0.3.7
       svelte:
         specifier: catalog:svelte
         version: 5.20.5
@@ -2552,8 +2552,8 @@ packages:
   property-information@7.0.0:
     resolution: {integrity: sha512-7D/qOz/+Y4X/rzSB6jKxKUsQnphO046ei8qxG59mtM3RG3DHgTK81HrxrmoDVINJb8NKT5ZsRbwHvQ6B68Iyhg==}
 
-  publint@0.3.6:
-    resolution: {integrity: sha512-f6mQw/RsX8GiUaUliYWJsivveYuwIozFLe4wCWE3NGj3vBamr816pxQGN0ycVwFIoTnIeqIJb9wsN7XAS8wRCA==}
+  publint@0.3.7:
+    resolution: {integrity: sha512-UJAdT3pHmhxGHfFadlZZnTZWNyagwPplW4YJ7kM0ysDs45otRnusonRxeWYQHrdryWxAntsjCuXcUHkbUHGk7g==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -6307,7 +6307,7 @@ snapshots:
 
   property-information@7.0.0: {}
 
-  publint@0.3.6:
+  publint@0.3.7:
     dependencies:
       '@publint/pack': 0.1.1
       package-manager-detector: 0.2.9
