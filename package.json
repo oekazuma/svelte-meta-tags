@@ -20,7 +20,7 @@
     "@types/eslint": "^9.6.1",
     "eslint": "^9.21.0",
     "eslint-config-prettier": "^10.0.2",
-    "eslint-plugin-svelte": "^3.0.2",
+    "eslint-plugin-svelte": "^3.0.3",
     "globals": "^16.0.0",
     "prettier": "^3.5.3",
     "prettier-plugin-svelte": "^3.3.3",
