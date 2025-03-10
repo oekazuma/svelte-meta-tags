@@ -59,7 +59,7 @@ importers:
         version: 10.1.1(eslint@9.22.0)
       eslint-plugin-svelte:
         specifier: ^3.0.3
-        version: 3.0.3(eslint@9.22.0)(svelte@5.22.6)
+        version: 3.1.0(eslint@9.22.0)(svelte@5.22.6)
       globals:
         specifier: ^16.0.0
         version: 16.0.0
@@ -1462,8 +1462,8 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-plugin-svelte@3.0.3:
-    resolution: {integrity: sha512-R7HSKkLN33P6WwYhVbO+5xPT0YIpO+YAZfWxow7I1IvjVgZOxuI7zReqxFL3B7F028u16Megx+hn8SEXDNcDvw==}
+  eslint-plugin-svelte@3.1.0:
+    resolution: {integrity: sha512-hSQyLDkuuHPJby1ixZfUVrfLON42mT0Odf18MbwAgFUPuyIwJlhy3acUY1/bxt+Njucq/dQxR543zYDqkBNLmw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.1 || ^9.0.0
@@ -2909,46 +2909,6 @@ packages:
     resolution: {integrity: sha512-6PhR4H9VGlcwXZ+KWCdMqbtG649xCPZqfI9j2PsK1FcXgEzro5bGHcVKFCTqPLaNKZES8Evqv4LwvZARsq5qlg==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
-
-  vite@6.2.0:
-    resolution: {integrity: sha512-7dPxoo+WsT/64rDcwoOjk76XHj+TqNTIvHKcuMQ1k4/SeHDaQt5GFAeLYzrimZrMpn/O6DtdI03WUjdxuPM0oQ==}
-    engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': ^18.0.0 || ^20.0.0 || >=22.0.0
-      jiti: '>=1.21.0'
-      less: '*'
-      lightningcss: ^1.21.0
-      sass: '*'
-      sass-embedded: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.16.0
-      tsx: ^4.8.1
-      yaml: ^2.4.2
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      jiti:
-        optional: true
-      less:
-        optional: true
-      lightningcss:
-        optional: true
-      sass:
-        optional: true
-      sass-embedded:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-      tsx:
-        optional: true
-      yaml:
-        optional: true
 
   vite@6.2.1:
     resolution: {integrity: sha512-n2GnqDb6XPhlt9B8olZPrgMD/es/Nd1RdChF6CBD/fHW6pUyUTt2sQW2fPRX5GiD9XEa6+8A6A4f2vT6pSsE7Q==}
@@ -4723,7 +4683,7 @@ snapshots:
     dependencies:
       eslint: 9.22.0
 
-  eslint-plugin-svelte@3.0.3(eslint@9.22.0)(svelte@5.22.6):
+  eslint-plugin-svelte@3.1.0(eslint@9.22.0)(svelte@5.22.6):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.1(eslint@9.22.0)
       '@jridgewell/sourcemap-codec': 1.5.0
@@ -6670,15 +6630,6 @@ snapshots:
       - tsx
       - yaml
 
-  vite@6.2.0(yaml@2.7.0):
-    dependencies:
-      esbuild: 0.25.0
-      postcss: 8.5.3
-      rollup: 4.35.0
-    optionalDependencies:
-      fsevents: 2.3.3
-      yaml: 2.7.0
-
   vite@6.2.1(yaml@2.7.0):
     dependencies:
       esbuild: 0.25.0
@@ -6687,19 +6638,6 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
       yaml: 2.7.0
-
-  vite@6.2.1(yaml@2.7.0):
-    dependencies:
-      esbuild: 0.25.0
-      postcss: 8.5.3
-      rollup: 4.34.9
-    optionalDependencies:
-      fsevents: 2.3.3
-      yaml: 2.7.0
-
-  vitefu@1.0.6(vite@6.2.0(yaml@2.7.0)):
-    optionalDependencies:
-      vite: 6.2.0(yaml@2.7.0)
 
   vitefu@1.0.6(vite@6.2.1(yaml@2.7.0)):
     optionalDependencies:
