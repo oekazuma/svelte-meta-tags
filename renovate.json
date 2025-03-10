@@ -17,7 +17,13 @@
     },
     {
       "groupName": "linters",
-      "matchPackageNames": ["eslint{/,}**", "@eslint{/,}**", "typescript-eslint{/,}**", "publint{/,}**", "globals{/,}**"]
+      "matchPackageNames": [
+        "eslint{/,}**",
+        "@eslint{/,}**",
+        "typescript-eslint{/,}**",
+        "publint{/,}**",
+        "globals{/,}**"
+      ]
     },
     {
       "groupName": "typescript",
