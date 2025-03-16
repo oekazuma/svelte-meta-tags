@@ -11,7 +11,7 @@ catalogs:
   svelte:
     'svelte': ^5.23.0
     'svelte-check': ^4.1.5
-    '@sveltejs/kit': ^2.19.1
+    '@sveltejs/kit': ^2.19.2
     '@sveltejs/adapter-auto': ^4.0.0
     '@sveltejs/vite-plugin-svelte': ^5.0.3
     '@sveltejs/package': ^2.3.10
