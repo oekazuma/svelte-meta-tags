@@ -5,7 +5,7 @@ packages:
   - 'tests/*'
 catalog:
   'vite': ^6.2.2
-  'vitest': ^3.0.8
+  'vitest': ^3.0.9
   'typescript': ^5.8.2
 catalogs:
   svelte:
