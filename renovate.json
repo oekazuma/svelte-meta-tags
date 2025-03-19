@@ -8,11 +8,6 @@
   "rangeStrategy": "bump",
   "packageRules": [
     {
-      "matchDepTypes": ["action"],
-      "excludePackagePrefixes": ["actions/", "github/"],
-      "pinDigests": true
-    },
-    {
       "groupName": "dependencies",
       "matchDepTypes": ["dependencies"]
     },
