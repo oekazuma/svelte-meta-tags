@@ -10,7 +10,7 @@
     "test": "playwright test"
   },
   "devDependencies": {
-    "@playwright/test": "^1.51.0",
+    "@playwright/test": "^1.51.1",
     "@sveltejs/adapter-auto": "catalog:svelte",
     "@sveltejs/kit": "catalog:svelte",
     "@sveltejs/vite-plugin-svelte": "catalog:svelte",
