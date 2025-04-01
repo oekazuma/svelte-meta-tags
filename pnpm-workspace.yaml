@@ -4,7 +4,7 @@ packages:
   - 'packages/*'
   - 'tests/*'
 catalog:
-  'vite': ^6.2.3
+  'vite': ^6.2.4
   'vitest': ^3.0.9
   'typescript': ^5.8.2
 catalogs:
