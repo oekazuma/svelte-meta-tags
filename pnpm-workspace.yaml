@@ -9,7 +9,7 @@ catalog:
   'typescript': ^5.8.2
 catalogs:
   svelte:
-    'svelte': ^5.25.3
+    'svelte': ^5.25.5
     'svelte-check': ^4.1.5
     '@sveltejs/kit': ^2.20.2
     '@sveltejs/adapter-auto': ^5.0.0
