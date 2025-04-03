@@ -37,7 +37,7 @@
     "@sveltejs/kit": "catalog:svelte",
     "@sveltejs/package": "catalog:svelte",
     "@sveltejs/vite-plugin-svelte": "catalog:svelte",
-    "publint": "^0.3.9",
+    "publint": "^0.3.10",
     "svelte": "catalog:svelte",
     "svelte-check": "catalog:svelte",
     "typescript": "catalog:",
