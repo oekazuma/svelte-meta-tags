@@ -19,9 +19,7 @@ export default defineConfig({
         alt: 'SvelteMetaTags',
         replacesTitle: true
       },
-      social: {
-        github: 'https://github.com/oekazuma/svelte-meta-tags'
-      },
+      social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/oekazuma/svelte-meta-tags' }],
       sidebar: [
         {
           label: 'Installing',
