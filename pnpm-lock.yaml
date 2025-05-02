@@ -32,8 +32,8 @@ catalogs:
       specifier: ^5.28.2
       version: 5.28.2
     svelte-check:
-      specifier: ^4.1.6
-      version: 4.1.6
+      specifier: ^4.1.7
+      version: 4.1.7
 
 importers:
 
@@ -107,7 +107,7 @@ importers:
         version: 5.28.2
       svelte-check:
         specifier: catalog:svelte
-        version: 4.1.6(picomatch@4.0.2)(svelte@5.28.2)(typescript@5.8.3)
+        version: 4.1.7(picomatch@4.0.2)(svelte@5.28.2)(typescript@5.8.3)
       svelte-meta-tags:
         specifier: workspace:^
         version: link:../packages/svelte-meta-tags
@@ -144,7 +144,7 @@ importers:
         version: 5.28.2
       svelte-check:
         specifier: catalog:svelte
-        version: 4.1.6(picomatch@4.0.2)(svelte@5.28.2)(typescript@5.8.3)
+        version: 4.1.7(picomatch@4.0.2)(svelte@5.28.2)(typescript@5.8.3)
       typescript:
         specifier: 'catalog:'
         version: 5.8.3
@@ -174,7 +174,7 @@ importers:
         version: 5.28.2
       svelte-check:
         specifier: catalog:svelte
-        version: 4.1.6(picomatch@4.0.2)(svelte@5.28.2)(typescript@5.8.3)
+        version: 4.1.7(picomatch@4.0.2)(svelte@5.28.2)(typescript@5.8.3)
       svelte-meta-tags:
         specifier: workspace:*
         version: link:../../packages/svelte-meta-tags
@@ -2813,8 +2813,8 @@ packages:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
 
-  svelte-check@4.1.6:
-    resolution: {integrity: sha512-P7w/6tdSfk3zEVvfsgrp3h3DFC75jCdZjTQvgGJtjPORs1n7/v2VMPIoty3PWv7jnfEm3x0G/p9wH4pecTb0Wg==}
+  svelte-check@4.1.7:
+    resolution: {integrity: sha512-1jX4BzXrQJhC/Jt3SqYf6Ntu//vmfc6VWp07JkRfK2nn+22yIblspVUo96gzMkg0Zov8lQicxhxsMzOctwcMQQ==}
     engines: {node: '>= 18.0.0'}
     hasBin: true
     peerDependencies:
@@ -6693,7 +6693,7 @@ snapshots:
     dependencies:
       has-flag: 4.0.0
 
-  svelte-check@4.1.6(picomatch@4.0.2)(svelte@5.28.2)(typescript@5.8.3):
+  svelte-check@4.1.7(picomatch@4.0.2)(svelte@5.28.2)(typescript@5.8.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       chokidar: 4.0.3
