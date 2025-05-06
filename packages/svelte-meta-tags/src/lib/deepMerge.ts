@@ -1,5 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export const deepMerge = <X extends Record<string | symbol | number, any>>(target: X, source: X): X => {
+export const deepMerge = <X extends Record<string | symbol | number, any>>(
+  target: X | null | undefined,
+  source: X | null | undefined
+): X => {
   if (!target || !source) return target ?? source ?? ({} as X);
 
   const result: Record<string | symbol | number, any> = { ...target };
