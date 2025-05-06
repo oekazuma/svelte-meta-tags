@@ -10,7 +10,7 @@ catalog:
 catalogs:
   svelte:
     'svelte': ^5.28.2
-    'svelte-check': ^4.1.6
+    'svelte-check': ^4.1.7
     '@sveltejs/kit': ^2.20.8
     '@sveltejs/adapter-auto': ^6.0.0
     '@sveltejs/vite-plugin-svelte': ^5.0.3
