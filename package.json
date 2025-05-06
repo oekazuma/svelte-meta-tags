@@ -14,7 +14,7 @@
     "release": "changeset publish"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.29.2",
+    "@changesets/cli": "^2.29.3",
     "@eslint/compat": "^1.2.9",
     "@eslint/js": "^9.25.1",
     "@types/eslint": "^9.6.1",
