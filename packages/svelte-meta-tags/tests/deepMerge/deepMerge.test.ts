@@ -88,4 +88,34 @@ describe('deepMerge functionality', () => {
     const result = deepMerge({ a: { b: func } }, { a: { c: 1 } });
     expect(result).toEqual({ a: { b: func, c: 1 } });
   });
+
+  test('when target is null, should return source', () => {
+    const result = deepMerge(null, { a: 1, b: 2 });
+    expect(result).toEqual({ a: 1, b: 2 });
+  });
+
+  test('when source is null, should return target', () => {
+    const result = deepMerge({ a: 1, b: 2 }, null);
+    expect(result).toEqual({ a: 1, b: 2 });
+  });
+
+  test('when both target and source are null, should return empty object', () => {
+    const result = deepMerge(null, null);
+    expect(result).toEqual({});
+  });
+
+  test('when both target and source are undefined, should return empty object', () => {
+    const result = deepMerge(undefined, undefined);
+    expect(result).toEqual({});
+  });
+
+  test('when target is null and source is undefined, should return empty object', () => {
+    const result = deepMerge(null, undefined);
+    expect(result).toEqual({});
+  });
+
+  test('when target is undefined and source is null, should return empty object', () => {
+    const result = deepMerge(undefined, null);
+    expect(result).toEqual({});
+  });
 });
