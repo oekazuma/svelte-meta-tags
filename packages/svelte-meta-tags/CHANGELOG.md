@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 4.3.0
+
+### Minor Changes
+
+- ca545c2: Allow nullable values in `deepMerge`
+
 ## 4.2.0
 
 ### Minor Changes
