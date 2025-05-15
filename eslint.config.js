@@ -5,6 +5,7 @@ import svelte from 'eslint-plugin-svelte';
 import globals from 'globals';
 import { fileURLToPath } from 'node:url';
 import ts from 'typescript-eslint';
+
 const gitignorePath = fileURLToPath(new URL('./.gitignore', import.meta.url));
 
 export default ts.config(
@@ -23,9 +24,12 @@ export default ts.config(
     }
   },
   {
-    files: ['**/*.svelte'],
+    files: ['**/*.svelte', '**/*.svelte.ts', '**/*.svelte.js'],
     languageOptions: {
       parserOptions: {
+        // only enable this if you want linting to take 3 minutes
+        // projectService: true,
+        extraFileExtensions: ['.svelte'],
         parser: ts.parser
       }
     },
