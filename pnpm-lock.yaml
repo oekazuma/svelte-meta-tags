@@ -139,12 +139,18 @@ importers:
       publint:
         specifier: ^0.3.12
         version: 0.3.12
+      runed:
+        specifier: ^0.27.0
+        version: 0.27.0(svelte@5.30.1)
       svelte:
         specifier: catalog:svelte
         version: 5.30.1
       svelte-check:
         specifier: catalog:svelte
         version: 4.2.0(picomatch@4.0.2)(svelte@5.30.1)(typescript@5.8.3)
+      svelte-toolbelt:
+        specifier: ^0.7.1
+        version: 0.7.1(svelte@5.30.1)
       typescript:
         specifier: 'catalog:'
         version: 5.8.3
@@ -2913,6 +2919,16 @@ packages:
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
 
+  runed@0.23.4:
+    resolution: {integrity: sha512-9q8oUiBYeXIDLWNK5DfCWlkL0EW3oGbk845VdKlPeia28l751VpfesaB/+7pI6rnbx1I6rqoZ2fZxptOJLxILA==}
+    peerDependencies:
+      svelte: ^5.7.0
+
+  runed@0.27.0:
+    resolution: {integrity: sha512-Iwn06Yj7tOnN8UKaSYxY1m7lqig03ZUOlZnZJJ6jDvBgcaxSlrDoWL2v/14yvoE8xFdI9ljdut3DwvzpZbz3/w==}
+    peerDependencies:
+      svelte: ^5.7.0
+
   sade@1.8.1:
     resolution: {integrity: sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==}
     engines: {node: '>=6'}
@@ -3096,6 +3112,12 @@ packages:
     peerDependenciesMeta:
       svelte:
         optional: true
+
+  svelte-toolbelt@0.7.1:
+    resolution: {integrity: sha512-HcBOcR17Vx9bjaOceUvxkY3nGmbBmCBBbuWLLEWO6jtmWH8f/QoWmbyUfQZrpDINH39en1b8mptfPQT9VKQ1xQ==}
+    engines: {node: '>=18', pnpm: '>=8.7.0'}
+    peerDependencies:
+      svelte: ^5.0.0
 
   svelte2tsx@0.7.37:
     resolution: {integrity: sha512-uQCWibXwUNPGQBGTZP1axIpFGFHTXXN30/ppodLVXCnX23U1nzEhqiVtFSEQjtUK3pFVxPhdnfyxD6ikxMCzPQ==}
@@ -7076,6 +7098,16 @@ snapshots:
     dependencies:
       queue-microtask: 1.2.3
 
+  runed@0.23.4(svelte@5.30.1):
+    dependencies:
+      esm-env: 1.2.2
+      svelte: 5.30.1
+
+  runed@0.27.0(svelte@5.30.1):
+    dependencies:
+      esm-env: 1.2.2
+      svelte: 5.30.1
+
   sade@1.8.1:
     dependencies:
       mri: 1.2.0
@@ -7328,6 +7360,13 @@ snapshots:
       postcss-scss: 4.0.9(postcss@8.5.3)
       postcss-selector-parser: 7.1.0
     optionalDependencies:
+      svelte: 5.30.1
+
+  svelte-toolbelt@0.7.1(svelte@5.30.1):
+    dependencies:
+      clsx: 2.1.1
+      runed: 0.23.4(svelte@5.30.1)
+      style-to-object: 1.0.8
       svelte: 5.30.1
 
   svelte2tsx@0.7.37(svelte@5.30.1)(typescript@5.8.3):
