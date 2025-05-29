@@ -221,5 +221,10 @@ interface GraphWrappedThing {
 
 export interface JsonLdProps {
   output?: 'head' | 'body';
-  schema?: WithInputOutputProperties<Thing> | WithInputOutputProperties<WithContext<Thing>> | WithInputOutputProperties<Thing>[] | WithInputOutputProperties<WithContext<Thing>>[] | GraphWrappedThing;
+  schema?:
+    | WithInputOutputProperties<Thing>
+    | WithInputOutputProperties<WithContext<Thing>>
+    | WithInputOutputProperties<Thing>[]
+    | WithInputOutputProperties<WithContext<Thing>>[]
+    | GraphWrappedThing;
 }

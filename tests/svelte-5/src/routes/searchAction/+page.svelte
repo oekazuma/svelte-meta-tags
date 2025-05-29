@@ -8,7 +8,7 @@
   schema={{
     '@type': 'SearchAction',
     target: 'https://example.com/search?query={search_term_string}',
-    'query-input': 'required name=search_term_string',
+    'query-input': 'required name=search_term_string'
   }}
 />
 
@@ -17,7 +17,7 @@
     '@type': 'EntryPoint',
     urlTemplate: 'https://example.com/form',
     'form-input': 'required name=form_data',
-    'form-output': 'application/json',
+    'form-output': 'application/json'
   }}
 />
 
