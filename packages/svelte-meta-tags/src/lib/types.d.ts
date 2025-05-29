@@ -1,5 +1,9 @@
 import { Thing, WithContext } from 'schema-dts';
 
+type WithInputOutputProperties<T> = T & {
+  [K in `${string}${'input' | 'output'}`]?: string;
+};
+
 export interface MobileAlternate {
   media: string;
   href: string;
@@ -212,10 +216,10 @@ export interface MetaTagsProps {
 }
 
 interface GraphWrappedThing {
-  '@graph': (Thing | WithContext<Thing>)[];
+  '@graph': (WithInputOutputProperties<Thing> | WithInputOutputProperties<WithContext<Thing>>)[];
 }
 
 export interface JsonLdProps {
   output?: 'head' | 'body';
-  schema?: Thing | WithContext<Thing> | Thing[] | WithContext<Thing>[] | GraphWrappedThing;
+  schema?: WithInputOutputProperties<Thing> | WithInputOutputProperties<WithContext<Thing>> | WithInputOutputProperties<Thing>[] | WithInputOutputProperties<WithContext<Thing>>[] | GraphWrappedThing;
 }
