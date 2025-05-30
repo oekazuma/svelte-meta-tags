@@ -21,4 +21,17 @@
   }}
 />
 
+<JsonLd
+  schema={{
+    '@type': 'WebSite',
+    name: 'Example Website',
+    url: 'https://example.com',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://example.com/search?q={search_term_string}',
+      'query-input': 'required name=search_term_string'
+    }
+  }}
+/>
+
 <h1>SearchAction Test</h1>

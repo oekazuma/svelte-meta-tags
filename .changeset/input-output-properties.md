@@ -1,6 +1,5 @@
 ---
-'svelte-meta-tags': patch
-'svelte-5': patch
+'svelte-meta-tags': minor
 ---
 
 feat: allow properties with -input and -output suffixes in JSON-LD schemas
