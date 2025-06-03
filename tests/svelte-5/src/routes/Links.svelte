@@ -44,4 +44,7 @@
   <li>
     <a href="/jsonldGraph"> JSON-LD Graph SEO </a>
   </li>
+  <li>
+    <a href="/searchAction"> SearchAction Test </a>
+  </li>
 </ul>
