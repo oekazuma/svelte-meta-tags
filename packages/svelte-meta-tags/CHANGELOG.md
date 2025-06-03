@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 4.4.0
+
+### Minor Changes
+
+- e6fb2b1: feat: allow properties with -input and -output suffixes in JSON-LD schemas
+
 ## 4.3.0
 
 ### Minor Changes
