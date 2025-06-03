@@ -4,6 +4,14 @@ type WithInputOutputProperties<T> = T & {
   [K in `${string}${'input' | 'output'}`]?: string;
 };
 
+type JsonLdSchema = Record<string, unknown> & {
+  '@type'?: string | readonly string[];
+  '@context'?: string | Record<string, unknown> | readonly (string | Record<string, unknown>)[];
+  '@id'?: string;
+};
+
+type FlexibleSchema = JsonLdSchema | (Thing & Record<string, unknown>) | (WithContext<Thing> & Record<string, unknown>);
+
 export interface MobileAlternate {
   media: string;
   href: string;
@@ -216,15 +224,10 @@ export interface MetaTagsProps {
 }
 
 interface GraphWrappedThing {
-  '@graph': (WithInputOutputProperties<Thing> | WithInputOutputProperties<WithContext<Thing>>)[];
+  '@graph': WithInputOutputProperties<FlexibleSchema>[];
 }
 
 export interface JsonLdProps {
   output?: 'head' | 'body';
-  schema?:
-    | WithInputOutputProperties<Thing>
-    | WithInputOutputProperties<WithContext<Thing>>
-    | WithInputOutputProperties<Thing>[]
-    | WithInputOutputProperties<WithContext<Thing>>[]
-    | GraphWrappedThing;
+  schema?: WithInputOutputProperties<FlexibleSchema> | WithInputOutputProperties<FlexibleSchema>[] | GraphWrappedThing;
 }
