@@ -6,7 +6,7 @@ packages:
 
 catalog:
   vite: ^6.3.5
-  vitest: ^3.2.3
+  vitest: ^3.2.4
   typescript: ^5.8.3
 
 catalogs:
