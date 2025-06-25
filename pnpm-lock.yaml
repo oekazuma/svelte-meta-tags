@@ -64,11 +64,11 @@ importers:
         specifier: ^16.2.0
         version: 16.2.0
       prettier:
-        specifier: ^3.6.0
-        version: 3.6.0
+        specifier: ^3.6.1
+        version: 3.6.1
       prettier-plugin-svelte:
         specifier: ^3.4.0
-        version: 3.4.0(prettier@3.6.0)(svelte@5.34.7)
+        version: 3.4.0(prettier@3.6.1)(svelte@5.34.7)
       typescript-eslint:
         specifier: ^8.35.0
         version: 8.35.0(eslint@9.29.0)(typescript@5.8.3)
@@ -77,7 +77,7 @@ importers:
     dependencies:
       '@astrojs/check':
         specifier: ^0.9.4
-        version: 0.9.4(prettier@3.6.0)(typescript@5.8.3)
+        version: 0.9.4(prettier@3.6.1)(typescript@5.8.3)
       '@astrojs/starlight':
         specifier: ^0.34.4
         version: 0.34.4(astro@5.10.1(@types/node@24.0.3)(rollup@4.43.0)(typescript@5.8.3)(yaml@2.8.0))
@@ -2569,8 +2569,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  prettier@3.6.0:
-    resolution: {integrity: sha512-ujSB9uXHJKzM/2GBuE0hBOUgC77CN3Bnpqa+g80bkv3T3A93wL/xlzDATHhnhkzifz/UE2SNOvmbTz5hSkDlHw==}
+  prettier@3.6.1:
+    resolution: {integrity: sha512-5xGWRa90Sp2+x1dQtNpIpeOQpTDBs9cZDmA/qs2vDNN2i18PdapqY7CmBeyLlMuGqXJRIOPaCaVZTLNQRWUH/A==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -3458,9 +3458,9 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
 
-  '@astrojs/check@0.9.4(prettier@3.6.0)(typescript@5.8.3)':
+  '@astrojs/check@0.9.4(prettier@3.6.1)(typescript@5.8.3)':
     dependencies:
-      '@astrojs/language-server': 2.15.4(prettier@3.6.0)(typescript@5.8.3)
+      '@astrojs/language-server': 2.15.4(prettier@3.6.1)(typescript@5.8.3)
       chokidar: 4.0.3
       kleur: 4.1.5
       typescript: 5.8.3
@@ -3473,7 +3473,7 @@ snapshots:
 
   '@astrojs/internal-helpers@0.6.1': {}
 
-  '@astrojs/language-server@2.15.4(prettier@3.6.0)(typescript@5.8.3)':
+  '@astrojs/language-server@2.15.4(prettier@3.6.1)(typescript@5.8.3)':
     dependencies:
       '@astrojs/compiler': 2.12.2
       '@astrojs/yaml2ts': 0.2.2
@@ -3487,14 +3487,14 @@ snapshots:
       volar-service-css: 0.0.62(@volar/language-service@2.4.14)
       volar-service-emmet: 0.0.62(@volar/language-service@2.4.14)
       volar-service-html: 0.0.62(@volar/language-service@2.4.14)
-      volar-service-prettier: 0.0.62(@volar/language-service@2.4.14)(prettier@3.6.0)
+      volar-service-prettier: 0.0.62(@volar/language-service@2.4.14)(prettier@3.6.1)
       volar-service-typescript: 0.0.62(@volar/language-service@2.4.14)
       volar-service-typescript-twoslash-queries: 0.0.62(@volar/language-service@2.4.14)
       volar-service-yaml: 0.0.62(@volar/language-service@2.4.14)
       vscode-html-languageservice: 5.5.0
       vscode-uri: 3.1.0
     optionalDependencies:
-      prettier: 3.6.0
+      prettier: 3.6.1
     transitivePeerDependencies:
       - typescript
 
@@ -6410,9 +6410,9 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-svelte@3.4.0(prettier@3.6.0)(svelte@5.34.7):
+  prettier-plugin-svelte@3.4.0(prettier@3.6.1)(svelte@5.34.7):
     dependencies:
-      prettier: 3.6.0
+      prettier: 3.6.1
       svelte: 5.34.7
 
   prettier@2.8.7:
@@ -6420,7 +6420,7 @@ snapshots:
 
   prettier@2.8.8: {}
 
-  prettier@3.6.0: {}
+  prettier@3.6.1: {}
 
   prismjs@1.30.0: {}
 
@@ -7195,12 +7195,12 @@ snapshots:
     optionalDependencies:
       '@volar/language-service': 2.4.14
 
-  volar-service-prettier@0.0.62(@volar/language-service@2.4.14)(prettier@3.6.0):
+  volar-service-prettier@0.0.62(@volar/language-service@2.4.14)(prettier@3.6.1):
     dependencies:
       vscode-uri: 3.1.0
     optionalDependencies:
       '@volar/language-service': 2.4.14
-      prettier: 3.6.0
+      prettier: 3.6.1
 
   volar-service-typescript-twoslash-queries@0.0.62(@volar/language-service@2.4.14):
     dependencies:
