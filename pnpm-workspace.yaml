@@ -11,12 +11,12 @@ catalog:
 
 catalogs:
   svelte:
-    svelte: ^5.34.7
+    svelte: ^5.34.9
     svelte-check: ^4.2.2
-    '@sveltejs/kit': ^2.22.0
+    '@sveltejs/kit': ^2.22.2
     '@sveltejs/adapter-auto': ^6.0.1
     '@sveltejs/vite-plugin-svelte': ^5.1.0
-    '@sveltejs/package': ^2.3.11
+    '@sveltejs/package': ^2.3.12
 
 onlyBuiltDependencies:
   - esbuild
