@@ -5,18 +5,18 @@ packages:
   - tests/*
 
 catalog:
+  typescript: ^5.8.3
   vite: ^7.0.4
   vitest: ^3.2.4
-  typescript: ^5.8.3
 
 catalogs:
   svelte:
+    '@sveltejs/adapter-auto': ^6.0.1
+    '@sveltejs/kit': ^2.22.5
+    '@sveltejs/package': ^2.3.12
+    '@sveltejs/vite-plugin-svelte': ^6.0.0
     svelte: ^5.35.6
     svelte-check: ^4.2.2
-    '@sveltejs/kit': ^2.22.5
-    '@sveltejs/adapter-auto': ^6.0.1
-    '@sveltejs/vite-plugin-svelte': ^6.0.0
-    '@sveltejs/package': ^2.3.12
 
 onlyBuiltDependencies:
   - esbuild
