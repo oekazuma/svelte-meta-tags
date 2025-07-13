@@ -9,12 +9,12 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "catalog:svelte",
-    "@sveltejs/kit": "catalog:svelte",
-    "@sveltejs/vite-plugin-svelte": "catalog:svelte",
-    "svelte": "catalog:svelte",
-    "svelte-check": "catalog:svelte",
-    "svelte-meta-tags": "workspace:^",
+    "@sveltejs/adapter-auto": "catalog:",
+    "@sveltejs/kit": "catalog:",
+    "@sveltejs/vite-plugin-svelte": "catalog:",
+    "svelte": "catalog:",
+    "svelte-check": "catalog:",
+    "svelte-meta-tags": "workspace:*",
     "typescript": "catalog:",
     "vite": "catalog:"
   },

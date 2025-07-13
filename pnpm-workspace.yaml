@@ -5,18 +5,69 @@ packages:
   - tests/*
 
 catalog:
-  typescript: ^5.8.3
+  # ------------------------------
+  # Build Tools & Bundlers
+  # ------------------------------
   vite: ^7.0.4
+
+  # ------------------------------
+  # TypeScript
+  # https://www.typescriptlang.org/
+  # ------------------------------
+  typescript: ^5.8.3
+
+  # ------------------------------
+  # Testing
+  # https://vitest.dev/
+  # ------------------------------
   vitest: ^3.2.4
 
-catalogs:
-  svelte:
-    '@sveltejs/adapter-auto': ^6.0.1
-    '@sveltejs/kit': ^2.22.5
-    '@sveltejs/package': ^2.3.12
-    '@sveltejs/vite-plugin-svelte': ^6.0.0
-    svelte: ^5.35.6
-    svelte-check: ^4.2.2
+  # ------------------------------
+  # Svelte & SvelteKit
+  # https://svelte.dev/
+  # https://kit.svelte.dev/
+  # ------------------------------
+  svelte: ^5.35.6
+  '@sveltejs/adapter-auto': ^6.0.1
+  '@sveltejs/kit': ^2.22.5
+  '@sveltejs/package': ^2.3.12
+  '@sveltejs/vite-plugin-svelte': ^6.0.0
+  'svelte-check': ^4.2.2
+
+  # ------------------------------
+  # Astro
+  # https://astro.build/
+  # ------------------------------
+  '@astrojs/check': ^0.9.4
+  '@astrojs/starlight': ^0.34.5
+  astro: ^5.11.0
+  sharp: ^0.34.3
+
+  # ------------------------------
+  # Linting & Formatting
+  # ------------------------------
+  eslint: ^9.31.0
+  '@eslint/compat': ^1.3.1
+  '@eslint/js': ^9.31.0
+  '@types/eslint': ^9.6.1
+  'eslint-config-prettier': ^10.1.5
+  'eslint-plugin-svelte': ^3.10.1
+  'typescript-eslint': ^8.36.0
+  prettier: ^3.6.2
+  'prettier-plugin-svelte': ^3.4.0
+
+  # ------------------------------
+  # Development Tools
+  # ------------------------------
+  '@changesets/cli': ^2.29.5
+  globals: ^16.3.0
+  publint: ^0.3.12
+
+  # ------------------------------
+  # Testing Tools
+  # https://playwright.dev/
+  # ------------------------------
+  '@playwright/test': ^1.54.1
 
 onlyBuiltDependencies:
   - esbuild

@@ -10,12 +10,12 @@
     "test": "playwright test"
   },
   "devDependencies": {
-    "@playwright/test": "^1.54.1",
-    "@sveltejs/adapter-auto": "catalog:svelte",
-    "@sveltejs/kit": "catalog:svelte",
-    "@sveltejs/vite-plugin-svelte": "catalog:svelte",
-    "svelte": "catalog:svelte",
-    "svelte-check": "catalog:svelte",
+    "@playwright/test": "catalog:",
+    "@sveltejs/adapter-auto": "catalog:",
+    "@sveltejs/kit": "catalog:",
+    "@sveltejs/vite-plugin-svelte": "catalog:",
+    "svelte": "catalog:",
+    "svelte-check": "catalog:",
     "svelte-meta-tags": "workspace:*",
     "typescript": "catalog:",
     "vite": "catalog:"
