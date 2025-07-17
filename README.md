@@ -1,6 +1,7 @@
 <img src="https://raw.githubusercontent.com/oekazuma/svelte-meta-tags/main/.github/logo.svg" alt="svelte-meta-tags" width="512" />
 
 [![CI](https://github.com/oekazuma/svelte-meta-tags/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/oekazuma/svelte-meta-tags/actions/workflows/ci.yml)
+[![Network Dependents](https://dependents.info/oekazuma/svelte-meta-tags/badge?label=users)](https://dependents.info/oekazuma/svelte-meta-tags)
 [![download](https://img.shields.io/npm/dt/svelte-meta-tags.svg)](https://www.npmjs.com/package/svelte-meta-tags)
 [![npm](https://img.shields.io/npm/v/svelte-meta-tags)](https://www.npmjs.com/package/svelte-meta-tags)
 [![MIT](https://img.shields.io/npm/l/svelte-meta-tags)](https://opensource.org/licenses/MIT)
