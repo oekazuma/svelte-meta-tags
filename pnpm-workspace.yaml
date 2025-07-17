@@ -27,7 +27,7 @@ catalog:
   # https://svelte.dev/
   # https://kit.svelte.dev/
   # ------------------------------
-  svelte: ^5.36.2
+  svelte: ^5.36.5
   '@sveltejs/adapter-auto': ^6.0.1
   '@sveltejs/kit': ^2.24.0
   '@sveltejs/package': ^2.4.0
