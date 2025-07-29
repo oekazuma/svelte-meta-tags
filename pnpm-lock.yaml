@@ -10,8 +10,8 @@ catalogs:
       specifier: ^0.9.4
       version: 0.9.4
     '@astrojs/starlight':
-      specifier: ^0.35.1
-      version: 0.35.1
+      specifier: ^0.35.2
+      version: 0.35.2
     '@changesets/cli':
       specifier: ^2.29.5
       version: 2.29.5
@@ -130,7 +130,7 @@ importers:
         version: 0.9.4(prettier@3.6.2)(typescript@5.8.3)
       '@astrojs/starlight':
         specifier: 'catalog:'
-        version: 0.35.1(astro@5.12.4(@types/node@24.1.0)(rollup@4.46.0)(typescript@5.8.3)(yaml@2.8.0))
+        version: 0.35.2(astro@5.12.4(@types/node@24.1.0)(rollup@4.46.0)(typescript@5.8.3)(yaml@2.8.0))
       astro:
         specifier: 'catalog:'
         version: 5.12.4(@types/node@24.1.0)(rollup@4.46.0)(typescript@5.8.3)(yaml@2.8.0)
@@ -281,8 +281,8 @@ packages:
   '@astrojs/sitemap@3.4.1':
     resolution: {integrity: sha512-VjZvr1e4FH6NHyyHXOiQgLiw94LnCVY4v06wN/D0gZKchTMkg71GrAHJz81/huafcmavtLkIv26HnpfDq6/h/Q==}
 
-  '@astrojs/starlight@0.35.1':
-    resolution: {integrity: sha512-/hshlAayMd3B+E+h8wY6JWT1lNmX/K1+ugiZPirW5XFo5QUcNMk/Bsa4oHgg+TFoU6kbxPtijo0VppATfD9XuA==}
+  '@astrojs/starlight@0.35.2':
+    resolution: {integrity: sha512-curGghoW4s5pCbW2tINsJPoxEYPan87ptCOv7GZ+S24N3J6AyaOu/OsjZDEMaIpo3ZlObM5DQn+w7iXl3drDhQ==}
     peerDependencies:
       astro: ^5.5.0
 
@@ -3603,7 +3603,7 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.25.76
 
-  '@astrojs/starlight@0.35.1(astro@5.12.4(@types/node@24.1.0)(rollup@4.46.0)(typescript@5.8.3)(yaml@2.8.0))':
+  '@astrojs/starlight@0.35.2(astro@5.12.4(@types/node@24.1.0)(rollup@4.46.0)(typescript@5.8.3)(yaml@2.8.0))':
     dependencies:
       '@astrojs/markdown-remark': 6.3.3
       '@astrojs/mdx': 4.3.1(astro@5.12.4(@types/node@24.1.0)(rollup@4.46.0)(typescript@5.8.3)(yaml@2.8.0))
@@ -4492,7 +4492,7 @@ snapshots:
 
   '@types/sax@1.2.7':
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 24.1.0
 
   '@types/unist@2.0.11': {}
 
