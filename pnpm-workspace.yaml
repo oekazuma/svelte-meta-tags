@@ -39,7 +39,7 @@ catalog:
   # https://astro.build/
   # ------------------------------
   '@astrojs/check': ^0.9.4
-  '@astrojs/starlight': ^0.35.1
+  '@astrojs/starlight': ^0.35.2
   astro: ^5.12.4
   sharp: ^0.34.3
 
