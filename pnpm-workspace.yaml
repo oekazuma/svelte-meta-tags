@@ -14,7 +14,7 @@ catalog:
   # TypeScript
   # https://www.typescriptlang.org/
   # ------------------------------
-  typescript: ^5.8.3
+  typescript: ^5.9.2
 
   # ------------------------------
   # Testing
