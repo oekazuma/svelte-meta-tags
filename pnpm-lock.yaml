@@ -25,16 +25,16 @@ catalogs:
       specifier: ^1.54.2
       version: 1.54.2
     '@sveltejs/adapter-auto':
-      specifier: ^6.0.1
+      specifier: ^6.0.2
       version: 6.0.2
     '@sveltejs/kit':
-      specifier: ^2.27.1
+      specifier: ^2.27.3
       version: 2.27.3
     '@sveltejs/package':
-      specifier: ^2.4.0
+      specifier: ^2.4.1
       version: 2.4.1
     '@sveltejs/vite-plugin-svelte':
-      specifier: ^6.1.0
+      specifier: ^6.1.1
       version: 6.1.1
     '@types/eslint':
       specifier: ^9.6.1
@@ -67,7 +67,7 @@ catalogs:
       specifier: ^0.34.3
       version: 0.34.3
     svelte:
-      specifier: ^5.38.0
+      specifier: ^5.38.1
       version: 5.38.1
     svelte-check:
       specifier: ^4.3.1
