@@ -40,7 +40,7 @@ catalogs:
       specifier: ^9.6.1
       version: 9.6.1
     astro:
-      specifier: ^5.12.8
+      specifier: ^5.12.9
       version: 5.12.9
     eslint:
       specifier: ^9.33.0
