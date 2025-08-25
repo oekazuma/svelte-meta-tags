@@ -40,8 +40,8 @@ catalogs:
       specifier: ^9.6.1
       version: 9.6.1
     astro:
-      specifier: ^5.13.2
-      version: 5.13.2
+      specifier: ^5.13.3
+      version: 5.13.3
     eslint:
       specifier: ^9.34.0
       version: 9.34.0
@@ -130,10 +130,10 @@ importers:
         version: 0.9.4(prettier@3.6.2)(typescript@5.9.2)
       '@astrojs/starlight':
         specifier: 'catalog:'
-        version: 0.35.2(astro@5.13.2(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1))
+        version: 0.35.2(astro@5.13.3(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1))
       astro:
         specifier: 'catalog:'
-        version: 5.13.2(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1)
+        version: 5.13.3(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1)
       sharp:
         specifier: 'catalog:'
         version: 0.34.3
@@ -1384,8 +1384,8 @@ packages:
     peerDependencies:
       astro: ^4.0.0-beta || ^5.0.0-beta || ^3.3.0
 
-  astro@5.13.2:
-    resolution: {integrity: sha512-yjcXY0Ua3EwjpVd3GoUXa65HQ6qgmURBptA+M9GzE0oYvgfuyM7bIbH8IR/TWIbdefVUJR5b7nZ0oVnMytmyfQ==}
+  astro@5.13.3:
+    resolution: {integrity: sha512-V0mUOUK70UZ7xqXp5Noqse/SREU0P756KgFufBEluq5LkmBejzC2GENMUA2Na+PFwUjemElJtRlpKyrnKpFhSQ==}
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -3575,12 +3575,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@4.3.4(astro@5.13.2(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1))':
+  '@astrojs/mdx@4.3.4(astro@5.13.3(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1))':
     dependencies:
       '@astrojs/markdown-remark': 6.3.6
       '@mdx-js/mdx': 3.1.0(acorn@8.15.0)
       acorn: 8.15.0
-      astro: 5.13.2(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1)
+      astro: 5.13.3(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1)
       es-module-lexer: 1.7.0
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.5
@@ -3604,17 +3604,17 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.25.76
 
-  '@astrojs/starlight@0.35.2(astro@5.13.2(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1))':
+  '@astrojs/starlight@0.35.2(astro@5.13.3(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1))':
     dependencies:
       '@astrojs/markdown-remark': 6.3.6
-      '@astrojs/mdx': 4.3.4(astro@5.13.2(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1))
+      '@astrojs/mdx': 4.3.4(astro@5.13.3(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1))
       '@astrojs/sitemap': 3.5.0
       '@pagefind/default-ui': 1.3.0
       '@types/hast': 3.0.4
       '@types/js-yaml': 4.0.9
       '@types/mdast': 4.0.4
-      astro: 5.13.2(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1)
-      astro-expressive-code: 0.41.3(astro@5.13.2(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1))
+      astro: 5.13.3(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1)
+      astro-expressive-code: 0.41.3(astro@5.13.3(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1))
       bcp-47: 2.1.0
       hast-util-from-html: 2.0.3
       hast-util-select: 6.0.4
@@ -4762,12 +4762,12 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro-expressive-code@0.41.3(astro@5.13.2(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1)):
+  astro-expressive-code@0.41.3(astro@5.13.3(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1)):
     dependencies:
-      astro: 5.13.2(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1)
+      astro: 5.13.3(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1)
       rehype-expressive-code: 0.41.3
 
-  astro@5.13.2(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1):
+  astro@5.13.3(@types/node@24.3.0)(rollup@4.46.2)(typescript@5.9.2)(yaml@2.8.1):
     dependencies:
       '@astrojs/compiler': 2.12.2
       '@astrojs/internal-helpers': 0.7.2
