@@ -10,7 +10,11 @@ type JsonLdSchema = Record<string, unknown> & {
   '@id'?: string;
 };
 
-type FlexibleSchema = JsonLdSchema | (Thing & Record<string, unknown>) | (WithContext<Thing> & Record<string, unknown>);
+type FlexibleSchema =
+  | JsonLdSchema
+  | (Thing & Record<string, unknown>)
+  | (WithContext<Thing> & Record<string, unknown>)
+  | WithContext<Thing>;
 
 export interface MobileAlternate {
   media: string;
@@ -229,5 +233,10 @@ interface GraphWrappedThing {
 
 export interface JsonLdProps {
   output?: 'head' | 'body';
-  schema?: WithInputOutputProperties<FlexibleSchema> | WithInputOutputProperties<FlexibleSchema>[] | GraphWrappedThing;
+  schema?:
+    | FlexibleSchema
+    | WithInputOutputProperties<FlexibleSchema>
+    | FlexibleSchema[]
+    | WithInputOutputProperties<FlexibleSchema>[]
+    | GraphWrappedThing;
 }
