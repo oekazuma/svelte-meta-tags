@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 4.4.1
+
+### Patch Changes
+
+- b458f44: fix: type compatibility issue where schema-dts WithContext<T> types (e.g., WithContext<VideoObject>) were not assignable to JsonLdProps.schema
+
 ## 4.4.0
 
 ### Minor Changes
