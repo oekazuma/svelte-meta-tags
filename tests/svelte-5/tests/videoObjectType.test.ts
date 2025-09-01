@@ -11,7 +11,9 @@ test('VideoObject type test page', async ({ page }) => {
   await expect(jsonLdScript).toBeAttached();
 
   const scriptContent = await jsonLdScript.textContent();
-  const jsonData = JSON.parse(scriptContent || '{}');
+  expect(scriptContent).not.toBeNull();
+  expect(scriptContent?.trim()).not.toBe('');
+  const jsonData = JSON.parse(scriptContent as string);
 
   expect(jsonData['@context']).toBe('https://schema.org');
   expect(jsonData['@type']).toBe('VideoObject');
