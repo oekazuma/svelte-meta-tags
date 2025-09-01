@@ -1,6 +1,6 @@
 {
   "name": "svelte-meta-tags",
-  "version": "4.4.0",
+  "version": "4.4.1",
   "description": "Svelte Meta Tags provides components designed to help you manage SEO for Svelte projects",
   "license": "MIT",
   "type": "module",
