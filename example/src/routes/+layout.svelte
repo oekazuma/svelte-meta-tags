@@ -3,6 +3,7 @@
   import { page } from '$app/state';
   import type { Snippet } from 'svelte';
   import { MetaTags, deepMerge } from 'svelte-meta-tags';
+  import { resolve } from '$app/paths';
 
   interface Props {
     data: LayoutData;
@@ -20,9 +21,9 @@
 
 <ul>
   <li>
-    <a href="/"> TOP </a>
+    <a href={resolve('/')}> TOP </a>
   </li>
   <li>
-    <a href="/about"> About </a>
+    <a href={resolve('/about')}> About </a>
   </li>
 </ul>
