@@ -60,7 +60,7 @@ catalog:
   # Development Tools
   # ------------------------------
   '@changesets/cli': ^2.29.6
-  globals: ^16.3.0
+  globals: ^16.4.0
   publint: ^0.3.12
 
   # ------------------------------
