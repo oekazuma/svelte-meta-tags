@@ -27,11 +27,11 @@ catalog:
   # https://svelte.dev/
   # https://kit.svelte.dev/
   # ------------------------------
-  svelte: ^5.38.7
+  svelte: ^5.38.10
   '@sveltejs/adapter-auto': ^6.1.0
-  '@sveltejs/kit': ^2.37.1
+  '@sveltejs/kit': ^2.38.1
   '@sveltejs/package': ^2.5.0
-  '@sveltejs/vite-plugin-svelte': ^6.1.4
+  '@sveltejs/vite-plugin-svelte': ^6.2.0
   'svelte-check': ^4.3.1
 
   # ------------------------------
