@@ -70,7 +70,7 @@ catalog:
   # Testing Tools
   # https://playwright.dev/
   # ------------------------------
-  '@playwright/test': ^1.55.0
+  '@playwright/test': ^1.55.1
 
 onlyBuiltDependencies:
   - esbuild
