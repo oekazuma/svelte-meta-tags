@@ -4,6 +4,9 @@ packages:
   - packages/*
   - tests/*
 
+# Only packages released at least 1 day prior can be installed
+minimumReleaseAge: 1440
+
 catalog:
   # ------------------------------
   # Build Tools & Bundlers
