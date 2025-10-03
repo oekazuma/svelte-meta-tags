@@ -18,6 +18,7 @@
     "url": "git+https://github.com/oekazuma/svelte-meta-tags.git",
     "directory": "packages/svelte-meta-tags"
   },
+  "homepage": "https://oekazuma.github.io/svelte-meta-tags/",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
