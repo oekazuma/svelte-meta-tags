@@ -11,8 +11,8 @@ catalog:
   '@eslint/compat': ^1.4.0
   '@eslint/js': ^9.37.0
   '@playwright/test': ^1.55.1
-  '@sveltejs/adapter-auto': ^6.1.0
-  '@sveltejs/kit': ^2.43.7
+  '@sveltejs/adapter-auto': ^6.1.1
+  '@sveltejs/kit': ^2.43.8
   '@sveltejs/package': ^2.5.4
   '@sveltejs/vite-plugin-svelte': ^6.2.1
   '@types/eslint': ^9.6.1
