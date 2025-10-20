@@ -123,7 +123,8 @@ export const load = ({ url }) => {
 };
 ```
 
-> Note: `defineBaseMetaTags` is a utility meant to be used by spreading its output into a `+layout.(j|t)s` file.
+> Note: `defineBaseMetaTags` is a utility meant to be used by spreading its output into a `+layout.(j|t)s` file,
+> which will add a `baseMetaTags` property containing the frozen object.
 > You can also use its output frozen object through its `props` property.
 >
 > You can provide a raw object without this utility with `return { baseMetaTags: Object.freeze<MetaTagsProps>({ ... }) }`.
@@ -149,7 +150,7 @@ export const load = () => {
 ```
 
 > Note: like `defineBaseMetaTags`, `definePageMetaTags` is a utility meant to be used by spreading its output
-> into a `+page.(j|t)s` file.
+> into a `+page.(j|t)s` file, which will add a `pageMetaTags` property containing the frozen object.
 > You can also use its output frozen object through its `props` property.
 >
 > You can provide a raw object without this utility with `return { pageMetaTags: Object.freeze<MetaTagsProps>({ ... }) }`.

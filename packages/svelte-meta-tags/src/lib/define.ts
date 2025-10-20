@@ -11,10 +11,10 @@ import type { MetaTagsProps } from './types';
  */
 export const defineBaseMetaTags = (obj: MetaTagsProps) =>
   new (class {
-    private baseMetaProps = Object.freeze(obj);
+    private baseMetaTags = Object.freeze(obj);
 
     get props() {
-      return this.baseMetaProps;
+      return this.baseMetaTags;
     }
   })();
 
@@ -29,9 +29,9 @@ export const defineBaseMetaTags = (obj: MetaTagsProps) =>
  */
 export const definePageMetaTags = (obj: MetaTagsProps) =>
   new (class {
-    private pageMetaProps = Object.freeze(obj);
+    private pageMetaTags = Object.freeze(obj);
 
     get props() {
-      return this.pageMetaProps;
+      return this.pageMetaTags;
     }
   })();
