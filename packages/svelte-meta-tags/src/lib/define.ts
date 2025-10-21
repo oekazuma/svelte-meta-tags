@@ -11,7 +11,7 @@ import type { MetaTagsProps } from './types';
  */
 export const defineBaseMetaTags = (obj: MetaTagsProps) =>
   new (class {
-    private baseMetaTags = Object.freeze(obj);
+    readonly baseMetaTags = Object.freeze(obj);
 
     get props() {
       return this.baseMetaTags;
@@ -29,7 +29,7 @@ export const defineBaseMetaTags = (obj: MetaTagsProps) =>
  */
 export const definePageMetaTags = (obj: MetaTagsProps) =>
   new (class {
-    private pageMetaTags = Object.freeze(obj);
+    readonly pageMetaTags = Object.freeze(obj);
 
     get props() {
       return this.pageMetaTags;
