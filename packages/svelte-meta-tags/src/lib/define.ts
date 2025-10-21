@@ -1,74 +1,37 @@
 import type { MetaTagsProps } from './types';
 
 /**
- * Creates a readonly, type-safe {@link MetaTagsProps} object specifically
- * designed for use in Svelte `+layout` files.
+ * A convenience wrapper for creating a readonly, type-safe
+ * {@link MetaTagsProps} object for `+layout`.
  *
- * This function creates an immutable wrapper around meta tags configuration
- * that serves as base meta tags for child pages. The returned object provides
- * a `props` getter to access the frozen meta tags configuration. The `props`
- * can be spread for merging with other meta tags.
- *
- * @param obj - The base meta tags configuration object
- * @returns An instance with a readonly `props` getter that returns the frozen {@link MetaTagsProps}
- *
- * @example
- * ```typescript
- * // In +layout.ts
- * export const load = () => {
- *   const baseMeta = defineBaseMetaTags({
- *     title: 'My App',
- *     description: 'Welcome to my application'
- *   });
- *   return { baseMeta };
- * };
- * 
- * // In +layout.svelte
- * const metaTags = deepMerge(data.baseMeta, page.data.pageMeta);
- * ```
+ * @param obj the input props
+ * @returns an object containing the readonly input, either
+ * spreadable for a direct use in an existing object, or
+ * accessible through the `props` property for granular use
  */
 export const defineBaseMetaTags = (obj: MetaTagsProps) =>
   new (class {
-    readonly #baseMetaTags = Object.freeze(obj);
+    private baseMetaTags = Object.freeze(obj);
 
     get props() {
-      return this.#baseMetaTags;
+      return this.baseMetaTags;
     }
   })();
 
 /**
- * Creates a readonly, type-safe {@link MetaTagsProps} object specifically
- * designed for use in Svelte `+page` files.
+ * A convenience wrapper for creating a readonly, type-safe
+ * {@link MetaTagsProps} object for `+page`.
  *
- * This function creates an immutable wrapper around meta tags configuration
- * for individual pages. The returned object provides a `props` getter to
- * access the frozen meta tags configuration, which typically overrides or
- * extends base meta tags defined in layout files. The `props` can be spread
- * for merging with base meta tags.
- *
- * @param obj - The page-specific meta tags configuration object
- * @returns An instance with a readonly `props` getter that returns the frozen {@link MetaTagsProps}
- *
- * @example
- * ```typescript
- * // In +page.ts
- * export const load = () => {
- *   const pageMeta = definePageMetaTags({
- *     title: 'About Us',
- *     description: 'Learn more about our company'
- *   });
- *   return { pageMeta };
- * };
- * 
- * // In +layout.svelte  
- * const metaTags = deepMerge(data.baseMeta, page.data.pageMeta);
- * ```
+ * @param obj the input props
+ * @returns an object containing the readonly input, either
+ * spreadable for a direct use in an existing object, or
+ * accessible through the `props` property for granular use
  */
 export const definePageMetaTags = (obj: MetaTagsProps) =>
   new (class {
-    readonly #pageMetaTags = Object.freeze(obj);
+    private pageMetaTags = Object.freeze(obj);
 
     get props() {
-      return this.#pageMetaTags;
+      return this.pageMetaTags;
     }
   })();
