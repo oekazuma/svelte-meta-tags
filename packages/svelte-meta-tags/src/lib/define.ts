@@ -51,7 +51,7 @@ export const defineBaseMetaTags = (obj: MetaTagsProps): { props: Readonly<MetaTa
  * };
  *
  * // In +layout.svelte
- * const metaTags = deepMerge(data.baseMeta, page.data.pageMeta);
+ * const metaTags = deepMerge(data.baseMetaTags, page.data.pageMetaTags);
  * ```
  */
 export const definePageMetaTags = (obj: MetaTagsProps): { props: Readonly<MetaTagsProps> } =>
