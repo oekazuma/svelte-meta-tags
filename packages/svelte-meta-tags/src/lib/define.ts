@@ -37,8 +37,8 @@ export const defineBaseMetaTags = (obj: MetaTagsProps) =>
  * designed for use in Svelte `+page` files.
  *
  * This function creates an immutable wrapper around meta tags configuration
- * for individual pages. The returned object provides a `props` getter to 
- * access the frozen meta tags configuration, which typically overrides or 
+ * for individual pages. The returned object provides a `props` getter to
+ * access the frozen meta tags configuration, which typically overrides or
  * extends base meta tags defined in layout files.
  *
  * @param obj - The page-specific meta tags configuration object
