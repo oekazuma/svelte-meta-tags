@@ -4,11 +4,12 @@ import type { MetaTagsProps } from './types';
  * Creates a readonly, type-safe {@link MetaTagsProps} object specifically
  * designed for use in Svelte `+layout` files.
  *
- * This function provides a convenient way to define base meta tags that can
- * be inherited by child pages while ensuring type safety and immutability.
+ * This function creates an immutable wrapper around meta tags configuration
+ * that serves as base meta tags for child pages. The returned object provides
+ * a `props` getter to access the frozen meta tags configuration.
  *
- * @param obj - The meta tags configuration object
- * @returns An object with a `props` getter that returns the frozen meta tags
+ * @param obj - The base meta tags configuration object
+ * @returns An instance with a readonly `props` getter that returns the frozen {@link MetaTagsProps}
  *
  * @example
  * ```typescript
@@ -24,10 +25,10 @@ import type { MetaTagsProps } from './types';
  */
 export const defineBaseMetaTags = (obj: MetaTagsProps) =>
   new (class {
-    readonly baseMetaTags = Object.freeze(obj);
+    readonly #baseMetaTags = Object.freeze(obj);
 
     get props() {
-      return this.baseMetaTags;
+      return this.#baseMetaTags;
     }
   })();
 
@@ -35,12 +36,13 @@ export const defineBaseMetaTags = (obj: MetaTagsProps) =>
  * Creates a readonly, type-safe {@link MetaTagsProps} object specifically
  * designed for use in Svelte `+page` files.
  *
- * This function provides a convenient way to define page-specific meta tags
- * while ensuring type safety and immutability. Page meta tags typically
- * override or extend base meta tags defined in layout files.
+ * This function creates an immutable wrapper around meta tags configuration
+ * for individual pages. The returned object provides a `props` getter to 
+ * access the frozen meta tags configuration, which typically overrides or 
+ * extends base meta tags defined in layout files.
  *
- * @param obj - The meta tags configuration object
- * @returns An object with a `props` getter that returns the frozen meta tags
+ * @param obj - The page-specific meta tags configuration object
+ * @returns An instance with a readonly `props` getter that returns the frozen {@link MetaTagsProps}
  *
  * @example
  * ```typescript
@@ -56,9 +58,9 @@ export const defineBaseMetaTags = (obj: MetaTagsProps) =>
  */
 export const definePageMetaTags = (obj: MetaTagsProps) =>
   new (class {
-    readonly pageMetaTags = Object.freeze(obj);
+    readonly #pageMetaTags = Object.freeze(obj);
 
     get props() {
-      return this.pageMetaTags;
+      return this.#pageMetaTags;
     }
   })();
