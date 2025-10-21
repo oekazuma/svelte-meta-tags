@@ -5,7 +5,7 @@ packages:
   - tests/*
 
 catalog:
-  '@astrojs/check': ^0.9.4
+  '@astrojs/check': ^0.9.5
   '@astrojs/starlight': ^0.36.1
   '@changesets/cli': ^2.29.7
   '@eslint/compat': ^1.4.0
