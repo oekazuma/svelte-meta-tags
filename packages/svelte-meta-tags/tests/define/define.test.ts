@@ -12,7 +12,7 @@ describe('define functions core functionality', () => {
   test('should create readonly wrapper with props getter', () => {
     const baseResult = defineBaseMetaTags(sampleMetaTags);
     const pageResult = definePageMetaTags(sampleMetaTags);
-    
+
     expect(baseResult.props).toEqual(sampleMetaTags);
     expect(pageResult.props).toEqual(sampleMetaTags);
     expect(typeof baseResult.props).toBe('object');
@@ -22,17 +22,17 @@ describe('define functions core functionality', () => {
   test('should freeze the input object to make it readonly', () => {
     const baseResult = defineBaseMetaTags(sampleMetaTags);
     const pageResult = definePageMetaTags(sampleMetaTags);
-    
+
     expect(Object.isFrozen(baseResult.props)).toBe(true);
     expect(Object.isFrozen(pageResult.props)).toBe(true);
   });
 
   test('should not modify the original input object', () => {
     const original = { ...sampleMetaTags };
-    
+
     const baseResult = defineBaseMetaTags(sampleMetaTags);
     const pageResult = definePageMetaTags(sampleMetaTags);
-    
+
     expect(sampleMetaTags).toEqual(original);
     expect(baseResult.props).toEqual(original);
     expect(pageResult.props).toEqual(original);
@@ -40,10 +40,10 @@ describe('define functions core functionality', () => {
 
   test('should handle empty object', () => {
     const empty: MetaTagsProps = {};
-    
+
     const baseResult = defineBaseMetaTags(empty);
     const pageResult = definePageMetaTags(empty);
-    
+
     expect(baseResult.props).toEqual({});
     expect(pageResult.props).toEqual({});
     expect(Object.isFrozen(baseResult.props)).toBe(true);
@@ -53,7 +53,7 @@ describe('define functions core functionality', () => {
   test('both functions should produce identical results', () => {
     const baseResult = defineBaseMetaTags(sampleMetaTags);
     const pageResult = definePageMetaTags(sampleMetaTags);
-    
+
     expect(baseResult.props).toEqual(pageResult.props);
     expect(Object.isFrozen(baseResult.props)).toBe(Object.isFrozen(pageResult.props));
   });
@@ -62,10 +62,10 @@ describe('define functions core functionality', () => {
 describe('object independence and reference handling', () => {
   test('multiple calls should create independent objects', () => {
     const metaTags: MetaTagsProps = { title: 'Test' };
-    
+
     const result1 = defineBaseMetaTags(metaTags);
     const result2 = defineBaseMetaTags(metaTags);
-    
+
     // Different instances but same content
     expect(result1).not.toBe(result2);
     expect(result1.props).toEqual(result2.props);
@@ -79,13 +79,11 @@ describe('object independence and reference handling', () => {
         title: 'OG Title',
         images: [{ url: 'https://example.com/image.jpg' }]
       },
-      additionalMetaTags: [
-        { name: 'viewport', content: 'width=device-width' }
-      ]
+      additionalMetaTags: [{ name: 'viewport', content: 'width=device-width' }]
     };
 
     const result = defineBaseMetaTags(complexMetaTags);
-    
+
     expect(result.props).toEqual(complexMetaTags);
     expect(result.props.openGraph?.images?.[0]?.url).toBe('https://example.com/image.jpg');
     expect(Object.isFrozen(result.props)).toBe(true);
@@ -99,7 +97,7 @@ describe('object independence and reference handling', () => {
     };
 
     const result = defineBaseMetaTags(metaTags);
-    
+
     expect(result.props.openGraph).toBe(nestedObject);
     expect(Object.isFrozen(result.props)).toBe(true);
   });
@@ -125,7 +123,7 @@ describe('edge cases and type handling', () => {
     };
 
     const result = defineBaseMetaTags(fullMetaTags);
-    
+
     expect(result.props).toEqual(fullMetaTags);
     expect(Object.keys(result.props)).toHaveLength(Object.keys(fullMetaTags).length);
   });
@@ -139,7 +137,7 @@ describe('edge cases and type handling', () => {
     };
 
     const result = definePageMetaTags(metaTagsWithFalsy);
-    
+
     expect(result.props).toEqual(metaTagsWithFalsy);
     expect(result.props.title).toBe('');
     expect(result.props.robots).toBe(false);
@@ -155,11 +153,11 @@ describe('usage patterns as documented', () => {
     };
 
     const result = defineBaseMetaTags(metaTags);
-    
+
     // Granular access pattern
     const title = result.props.title;
     const description = result.props.description;
-    
+
     expect(title).toBe('Direct Access Test');
     expect(description).toBe('Testing direct access');
   });
@@ -177,13 +175,13 @@ describe('usage patterns as documented', () => {
 
     const base = defineBaseMetaTags(baseMetaTags);
     const page = definePageMetaTags(pageMetaTags);
-    
+
     // Simulating spreading in real usage
     const combined = {
       ...base.props,
       ...page.props
     };
-    
+
     expect(combined.title).toBe('Page Title'); // Page overrides base
     expect(combined.description).toBe('Base Description'); // From base
     expect(combined.canonical).toBe('https://example.com/page'); // From page
@@ -192,9 +190,9 @@ describe('usage patterns as documented', () => {
   test('should maintain immutability in combined usage', () => {
     const base = defineBaseMetaTags({ title: 'Base' });
     const page = definePageMetaTags({ title: 'Page' });
-    
+
     const combined = { ...base.props, ...page.props };
-    
+
     // Original objects should remain unchanged
     expect(base.props.title).toBe('Base');
     expect(page.props.title).toBe('Page');
