@@ -345,4 +345,67 @@ describe('usage patterns as documented', () => {
     expect(Object.isFrozen(page.props)).toBe(true);
     expect(Object.isFrozen(newWrapper.props)).toBe(true);
   });
+
+  test('should yield empty object when spreading wrapper itself (not .props)', () => {
+    const metaTags: MetaTagsProps = {
+      title: 'Test Title',
+      description: 'Test description'
+    };
+
+    const base = defineBaseMetaTags(metaTags);
+    const page = definePageMetaTags(metaTags);
+
+    // Spreading the wrapper itself should yield empty object
+    const spreadBase = { ...base };
+    const spreadPage = { ...page };
+
+    // Wrappers are not enumerable, only .props contains the actual meta tags
+    expect(Object.keys(spreadBase).length).toBe(0);
+    expect(Object.keys(spreadPage).length).toBe(0);
+    expect(spreadBase).toEqual({});
+    expect(spreadPage).toEqual({});
+
+    // Verify .props must be used for actual meta tag data
+    expect(base.props).toEqual(metaTags);
+    expect(page.props).toEqual(metaTags);
+  });
+
+  test('should enforce immutability at runtime for frozen props', () => {
+    const metaTags: MetaTagsProps = {
+      title: 'Original Title',
+      description: 'Original description'
+    };
+
+    const base = defineBaseMetaTags(metaTags);
+    const page = definePageMetaTags(metaTags);
+
+    // Verify properties are frozen
+    expect(Object.isFrozen(base.props)).toBe(true);
+    expect(Object.isFrozen(page.props)).toBe(true);
+
+    // Test runtime behavior in strict mode - should throw TypeError
+    expect(() => {
+      // @ts-expect-error - intentionally testing runtime mutation
+      base.props.title = 'Modified Title';
+    }).toThrow(TypeError);
+
+    expect(() => {
+      // @ts-expect-error - intentionally testing runtime mutation
+      page.props.description = 'Modified Description';
+    }).toThrow(TypeError);
+
+    // Verify properties remain unchanged after attempted mutation
+    expect(base.props.title).toBe('Original Title');
+    expect(page.props.description).toBe('Original description');
+
+    // Test that new property assignment also throws
+    expect(() => {
+      // @ts-expect-error - intentionally testing runtime mutation
+      base.props.newProperty = 'Should not work';
+    }).toThrow(TypeError);
+
+    // Verify object structure remains intact
+    expect(base.props).toEqual(metaTags);
+    expect(page.props).toEqual(metaTags);
+  });
 });
