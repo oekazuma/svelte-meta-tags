@@ -21,7 +21,7 @@ import type { MetaTagsProps } from './types';
  * };
  * ```
  */
-export const defineBaseMetaTags = (obj: MetaTagsProps) =>
+export const defineBaseMetaTags = (obj: MetaTagsProps): { props: Readonly<MetaTagsProps> } =>
   new (class {
     private baseMetaTags = Object.freeze(obj);
 
@@ -54,7 +54,7 @@ export const defineBaseMetaTags = (obj: MetaTagsProps) =>
  * const metaTags = deepMerge(data.baseMeta, page.data.pageMeta);
  * ```
  */
-export const definePageMetaTags = (obj: MetaTagsProps) =>
+export const definePageMetaTags = (obj: MetaTagsProps): { props: Readonly<MetaTagsProps> } =>
   new (class {
     private pageMetaTags = Object.freeze(obj);
 
