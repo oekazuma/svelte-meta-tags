@@ -198,4 +198,153 @@ describe('usage patterns as documented', () => {
     expect(page.props.title).toBe('Page');
     expect(combined.title).toBe('Page');
   });
+
+  test('should support spreading wrapper properties for merging meta tags', () => {
+    const baseMetaTags: MetaTagsProps = {
+      title: 'Base App Title',
+      description: 'Base app description',
+      canonical: 'https://example.com'
+    };
+
+    const pageMetaTags: MetaTagsProps = {
+      title: 'Specific Page Title',
+      canonical: 'https://example.com/specific-page'
+    };
+
+    const base = defineBaseMetaTags(baseMetaTags);
+    const page = definePageMetaTags(pageMetaTags);
+
+    // Merging props from both wrappers (documented pattern)
+    const combined = { ...base.props, ...page.props };
+
+    // Should have props from both wrappers, with page overriding base
+    expect(combined.title).toBe('Specific Page Title'); // Page overrides base
+    expect(combined.description).toBe('Base app description'); // From base (not overridden)
+    expect(combined.canonical).toBe('https://example.com/specific-page'); // Page overrides base
+
+    // Original wrappers should remain unchanged
+    expect(base.props.title).toBe('Base App Title');
+    expect(base.props.description).toBe('Base app description');
+    expect(base.props.canonical).toBe('https://example.com');
+    expect(page.props.title).toBe('Specific Page Title');
+    expect(page.props.canonical).toBe('https://example.com/specific-page');
+    expect(page.props.description).toBeUndefined(); // Page didn't define description
+  });
+
+  test('should handle complex merging scenarios with multiple properties', () => {
+    const base = defineBaseMetaTags({
+      title: 'Site Default',
+      description: 'Default site description',
+      robots: 'index,follow',
+      openGraph: {
+        type: 'website',
+        siteName: 'My Site'
+      },
+      twitter: {
+        cardType: 'summary'
+      }
+    });
+
+    const page = definePageMetaTags({
+      title: 'Article Title',
+      canonical: 'https://example.com/article',
+      openGraph: {
+        type: 'article',
+        title: 'OG Article Title'
+      },
+      additionalMetaTags: [
+        { name: 'article:author', content: 'John Doe' }
+      ]
+    });
+
+    const combined = { ...base.props, ...page.props };
+
+    // Verify override semantics
+    expect(combined.title).toBe('Article Title');
+    expect(combined.description).toBe('Default site description');
+    expect(combined.canonical).toBe('https://example.com/article');
+    expect(combined.robots).toBe('index,follow');
+    
+    // OpenGraph should be overridden completely by page
+    expect(combined.openGraph?.type).toBe('article');
+    expect(combined.openGraph?.title).toBe('OG Article Title');
+    expect(combined.openGraph?.siteName).toBeUndefined(); // Not preserved from base
+    
+    // Twitter from base should be preserved
+    expect(combined.twitter?.cardType).toBe('summary');
+    
+    // Additional meta tags from page should be present
+    expect(combined.additionalMetaTags).toHaveLength(1);
+    expect(combined.additionalMetaTags?.[0]?.name).toBe('article:author');
+
+    // Verify immutability - original wrappers unchanged
+    expect(base.props.title).toBe('Site Default');
+    expect(base.props.openGraph?.siteName).toBe('My Site');
+    expect(page.props.description).toBeUndefined();
+    expect(page.props.robots).toBeUndefined();
+  });
+
+  test('should preserve wrapper functionality after property spreading', () => {
+    const base = defineBaseMetaTags({ 
+      title: 'Base Title',
+      description: 'Base Description' 
+    });
+    const page = definePageMetaTags({ 
+      title: 'Page Title',
+      canonical: 'https://example.com' 
+    });
+
+    // Create combined meta tags by spreading props
+    const combinedMetaTags = { ...base.props, ...page.props };
+    
+    // Verify combined result has correct override semantics
+    expect(combinedMetaTags.title).toBe('Page Title'); // Page overrides base
+    expect(combinedMetaTags.description).toBe('Base Description'); // From base
+    expect(combinedMetaTags.canonical).toBe('https://example.com'); // From page
+    
+    // Original wrappers should still be functional and unchanged
+    expect(base.props.title).toBe('Base Title');
+    expect(base.props.description).toBe('Base Description');
+    expect(base.props.canonical).toBeUndefined();
+    
+    expect(page.props.title).toBe('Page Title');
+    expect(page.props.canonical).toBe('https://example.com');
+    expect(page.props.description).toBeUndefined();
+    
+    // Verify immutability is maintained
+    expect(Object.isFrozen(base.props)).toBe(true);
+    expect(Object.isFrozen(page.props)).toBe(true);
+  });
+
+  test('should support creating new wrappers with combined meta tags', () => {
+    const base = defineBaseMetaTags({
+      title: 'Base',
+      description: 'Base description'
+    });
+    
+    const page = definePageMetaTags({
+      title: 'Page',
+      canonical: 'https://example.com/page'
+    });
+
+    // Combine and create new wrapper
+    const combinedMetaTags = { ...base.props, ...page.props };
+    const newWrapper = definePageMetaTags(combinedMetaTags);
+
+    // New wrapper should contain merged properties
+    expect(newWrapper.props.title).toBe('Page');
+    expect(newWrapper.props.description).toBe('Base description');
+    expect(newWrapper.props.canonical).toBe('https://example.com/page');
+
+    // Original wrappers should remain unchanged
+    expect(base.props.title).toBe('Base');
+    expect(page.props.title).toBe('Page');
+    expect(base.props.canonical).toBeUndefined();
+    expect(page.props.description).toBeUndefined();
+
+    // All should be immutable
+    expect(Object.isFrozen(base.props)).toBe(true);
+    expect(Object.isFrozen(page.props)).toBe(true);
+    expect(Object.isFrozen(newWrapper.props)).toBe(true);
+  });
 });
