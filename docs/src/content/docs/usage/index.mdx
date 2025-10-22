@@ -94,7 +94,7 @@ import { LinkButton } from '@astrojs/starlight/components';
 import { defineBaseMetaTags } from 'svelte-meta-tags';
 
 export const load = ({ url }) => {
-  const baseMeta = defineBaseMetaTags({
+  const baseMetaTags = defineBaseMetaTags({
     title: 'Default',
     titleTemplate: '%s | Svelte Meta Tags',
     description: 'Svelte Meta Tags is a Svelte component for managing meta tags and SEO in your Svelte applications.',
@@ -119,15 +119,14 @@ export const load = ({ url }) => {
     }
   });
 
-  return { ...baseMetaTags };
+  return { baseMetaTags };
 };
 ```
 
-> Note: `defineBaseMetaTags` is a utility meant to be used by spreading its output into a `+layout.(j|t)s` file,
-> which will add a `baseMetaTags` property containing the frozen object.
-> You can also use its output frozen object through its `props` property.
+> Note: `defineBaseMetaTags` is a utility meant to be used in a `+layout.(j|t)s` file.
+> It returns a frozen `MetaTagsProps` object that should be assigned to a `baseMetaTags` property in your load data.
 >
-> You can provide a raw object without this utility with `return { baseMetaTags: Object.freeze<MetaTagsProps>({ ... }) }`.
+> You can also provide a raw object without this utility with `return { baseMetaTags: Object.freeze<MetaTagsProps>({ ... }) }`.
 > `MetaTagsProps` is a type provided by this package, imported using `import type { MetaTagsProps } from 'svelte-meta-tags'`.
 
 ### +page.ts
@@ -136,7 +135,7 @@ export const load = ({ url }) => {
 import { definePageMetaTags } from 'svelte-meta-tags';
 
 export const load = () => {
-  const pageMeta = definePageMetaTags({
+  const pageMetaTags = definePageMetaTags({
     title: 'TOP',
     description: 'Description TOP',
     openGraph: {
@@ -145,13 +144,12 @@ export const load = () => {
     }
   });
 
-  return { ...pageMeta };
+  return { pageMetaTags };
 };
 ```
 
-> Note: like `defineBaseMetaTags`, `definePageMetaTags` is a utility meant to be used by spreading its output
-> into a `+page.(j|t)s` file, which will add a `pageMetaTags` property containing the frozen object.
-> You can also use its output frozen object through its `props` property.
+> Note: like `defineBaseMetaTags`, `definePageMetaTags` is a utility meant to be used in a `+page.(j|t)s` file.
+> It returns a frozen `MetaTagsProps` object that should be assigned to a `pageMetaTags` property in your load data.
 >
-> You can provide a raw object without this utility with `return { pageMetaTags: Object.freeze<MetaTagsProps>({ ... }) }`.
+> You can also provide a raw object without this utility with `return { pageMetaTags: Object.freeze<MetaTagsProps>({ ... }) }`.
 > `MetaTagsProps` is a type provided by this package, imported using `import type { MetaTagsProps } from 'svelte-meta-tags'`.

@@ -33,7 +33,7 @@ Use this when you want to override the default values on child pages, as in the 
 import { defineBaseMetaTags } from 'svelte-meta-tags';
 
 export const load = ({ url }) => {
-  const baseMeta = defineBaseMetaTags({
+  const baseMetaTags = defineBaseMetaTags({
     title: 'Default',
     titleTemplate: '%s | Svelte Meta Tags',
     description: 'Svelte Meta Tags is a Svelte component for managing meta tags and SEO in your Svelte applications.',
@@ -58,7 +58,7 @@ export const load = ({ url }) => {
     }
   });
 
-  return { ...baseMeta };
+  return { baseMetaTags };
 };
 ```
 
@@ -68,7 +68,7 @@ export const load = ({ url }) => {
 import { definePageMetaTags } from 'svelte-meta-tags';
 
 export const load = () => {
-  const pageMeta = definePageMetaTags({
+  const pageMetaTags = definePageMetaTags({
     title: 'TOP',
     description: 'Description TOP',
     openGraph: {
@@ -77,6 +77,6 @@ export const load = () => {
     }
   });
 
-  return { ...pageMeta };
+  return { pageMetaTags };
 };
 ```

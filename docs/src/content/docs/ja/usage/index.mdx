@@ -94,7 +94,7 @@ import { LinkButton } from '@astrojs/starlight/components';
 import { defineBaseMetaTags } from 'svelte-meta-tags';
 
 export const load = ({ url }) => {
-  const baseMeta = defineBaseMetaTags({
+  const baseMetaTags = defineBaseMetaTags({
     title: 'Default',
     titleTemplate: '%s | Svelte Meta Tags',
     description: 'Svelte Meta Tags is a Svelte component for managing meta tags and SEO in your Svelte applications.',
@@ -119,13 +119,12 @@ export const load = ({ url }) => {
     }
   });
 
-  return { ...baseMetaTags };
+  return { baseMetaTags };
 };
 ```
 
-> 注意: `defineBaseMetaTags`は、その出力を`+layout.(j|t)s`ファイルにスプレッドして使用することを意図したユーティリティです。
-> これにより、フリーズされたオブジェクトを含む`baseMetaTags`プロパティが追加されます。
-> また、`props`プロパティを通してフリーズされたオブジェクトを使用することもできます。
+> 注意: `defineBaseMetaTags`は、`+layout.(j|t)s`ファイルで使用することを意図したユーティリティです。
+> フリーズされた`MetaTagsProps`オブジェクトを返し、ロードデータの`baseMetaTags`プロパティに割り当てます。
 >
 > このユーティリティを使用せずに、`return { baseMetaTags: Object.freeze<MetaTagsProps>({ ... }) }`のように生のオブジェクトを提供することもできます。
 > `MetaTagsProps`は、`import type { MetaTagsProps } from 'svelte-meta-tags'`を使用してインポートできる、このパッケージで提供される型です。
@@ -136,7 +135,7 @@ export const load = ({ url }) => {
 import { definePageMetaTags } from 'svelte-meta-tags';
 
 export const load = () => {
-  const pageMeta = definePageMetaTags({
+  const pageMetaTags = definePageMetaTags({
     title: 'TOP',
     description: 'Description TOP',
     openGraph: {
@@ -145,13 +144,12 @@ export const load = () => {
     }
   });
 
-  return { ...pageMeta };
+  return { pageMetaTags };
 };
 ```
 
-> 注意: `defineBaseMetaTags`と同様に、`definePageMetaTags`は、その出力を`+page.(j|t)s`ファイルにスプレッドして使用することを意図したユーティリティです。
-> これにより、フリーズされたオブジェクトを含む`pageMetaTags`プロパティが追加されます。
-> また、`props`プロパティを通してフリーズされたオブジェクトを使用することもできます。
+> 注意: `defineBaseMetaTags`と同様に、`definePageMetaTags`は、`+page.(j|t)s`ファイルで使用することを意図したユーティリティです。
+> フリーズされた`MetaTagsProps`オブジェクトを返し、ロードデータの`pageMetaTags`プロパティに割り当てます。
 >
 > このユーティリティを使用せずに、`return { pageMetaTags: Object.freeze<MetaTagsProps>({ ... }) }`のように生のオブジェクトを提供することもできます。
 > `MetaTagsProps`は、`import type { MetaTagsProps } from 'svelte-meta-tags'`を使用してインポートできる、このパッケージで提供される型です。

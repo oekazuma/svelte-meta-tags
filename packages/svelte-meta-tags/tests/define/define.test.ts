@@ -9,23 +9,25 @@ describe('defineBaseMetaTags and definePageMetaTags', () => {
     canonical: 'https://example.com'
   };
 
-  test('should create wrapper with props getter', () => {
+  test('should create frozen readonly object', () => {
     const baseResult = defineBaseMetaTags(sampleMetaTags);
     const pageResult = definePageMetaTags(sampleMetaTags);
 
-    expect(baseResult.props).toEqual(sampleMetaTags);
-    expect(pageResult.props).toEqual(sampleMetaTags);
+    expect(baseResult).toEqual(sampleMetaTags);
+    expect(pageResult).toEqual(sampleMetaTags);
+    expect(Object.isFrozen(baseResult)).toBe(true);
+    expect(Object.isFrozen(pageResult)).toBe(true);
   });
 
   test('should freeze the props to make them readonly', () => {
     const result = defineBaseMetaTags(sampleMetaTags);
 
-    expect(Object.isFrozen(result.props)).toBe(true);
+    expect(Object.isFrozen(result)).toBe(true);
 
     // Should throw when trying to modify frozen object
     expect(() => {
       // @ts-expect-error - intentionally testing runtime mutation
-      result.props.title = 'Modified';
+      result.title = 'Modified';
     }).toThrow(TypeError);
   });
 
@@ -34,14 +36,14 @@ describe('defineBaseMetaTags and definePageMetaTags', () => {
     const result = defineBaseMetaTags(sampleMetaTags);
 
     expect(sampleMetaTags).toEqual(original);
-    expect(result.props).toEqual(original);
+    expect(result).toEqual(original);
   });
 
   test('should handle empty object', () => {
     const result = defineBaseMetaTags({});
 
-    expect(result.props).toEqual({});
-    expect(Object.isFrozen(result.props)).toBe(true);
+    expect(result).toEqual({});
+    expect(Object.isFrozen(result)).toBe(true);
   });
 
   test('should handle falsy values correctly', () => {
@@ -53,9 +55,9 @@ describe('defineBaseMetaTags and definePageMetaTags', () => {
 
     const result = definePageMetaTags(metaTagsWithFalsy);
 
-    expect(result.props.title).toBe('');
-    expect(result.props.robots).toBe(false);
-    expect(result.props.keywords).toEqual([]);
+    expect(result.title).toBe('');
+    expect(result.robots).toBe(false);
+    expect(result.keywords).toEqual([]);
   });
 
   test('should support spreading for object merging', () => {
@@ -69,7 +71,7 @@ describe('defineBaseMetaTags and definePageMetaTags', () => {
       canonical: 'https://example.com/page'
     });
 
-    const combined = { ...baseMeta.props, ...pageMeta.props };
+    const combined = { ...baseMeta, ...pageMeta };
 
     expect(combined.title).toBe('Page Title'); // Page overrides base
     expect(combined.description).toBe('Base Description'); // From base
@@ -88,16 +90,16 @@ describe('defineBaseMetaTags and definePageMetaTags', () => {
 
     const result = defineBaseMetaTags(complexMetaTags);
 
-    expect(result.props).toEqual(complexMetaTags);
-    expect(result.props.openGraph?.images?.[0]?.url).toBe('https://example.com/image.jpg');
-    expect(Object.isFrozen(result.props)).toBe(true);
+    expect(result).toEqual(complexMetaTags);
+    expect(result.openGraph?.images?.[0]?.url).toBe('https://example.com/image.jpg');
+    expect(Object.isFrozen(result)).toBe(true);
   });
 
   test('both functions should behave identically', () => {
     const baseResult = defineBaseMetaTags(sampleMetaTags);
     const pageResult = definePageMetaTags(sampleMetaTags);
 
-    expect(baseResult.props).toEqual(pageResult.props);
-    expect(Object.isFrozen(baseResult.props)).toBe(Object.isFrozen(pageResult.props));
+    expect(baseResult).toEqual(pageResult);
+    expect(Object.isFrozen(baseResult)).toBe(Object.isFrozen(pageResult));
   });
 });

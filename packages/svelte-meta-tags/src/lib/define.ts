@@ -5,66 +5,42 @@ import type { MetaTagsProps } from './types';
  * {@link MetaTagsProps} object for `+layout`.
  *
  * @param obj the input props
- * @returns an object containing the readonly input, either
- * spreadable for a direct use in an existing object, or
- * accessible through the `props` property for granular use
+ * @returns a frozen copy of the input props
  *
  * @example
  * ```typescript
  * // In +layout.ts
  * export const load = () => {
- *   const baseMeta = defineBaseMetaTags({
+ *   const baseMetaTags = defineBaseMetaTags({
  *     title: 'My App',
  *     description: 'Welcome to my application'
  *   });
- *   return { ...baseMeta };
+ *   return { baseMetaTags };
  * };
  * ```
  */
-export const defineBaseMetaTags = (
-  obj: MetaTagsProps
-): { props: Readonly<MetaTagsProps>; baseMetaTags: Readonly<MetaTagsProps> } =>
-  // @ts-expect-error inaccurate type so that spreading is allowed and typed
-  new (class {
-    private baseMetaTags = Object.freeze(obj);
-
-    get props() {
-      return this.baseMetaTags;
-    }
-  })();
+export const defineBaseMetaTags = (obj: MetaTagsProps): Readonly<MetaTagsProps> => Object.freeze(obj);
 
 /**
  * A convenience wrapper for creating a readonly, type-safe
  * {@link MetaTagsProps} object for `+page`.
  *
  * @param obj the input props
- * @returns an object containing the readonly input, either
- * spreadable for a direct use in an existing object, or
- * accessible through the `props` property for granular use
+ * @returns a frozen copy of the input props
  *
  * @example
  * ```typescript
  * // In +page.ts
  * export const load = () => {
- *   const pageMeta = definePageMetaTags({
+ *   const pageMetaTags = definePageMetaTags({
  *     title: 'About Us',
  *     description: 'Learn more about our company'
  *   });
- *   return { ...pageMeta };
+ *   return { pageMetaTags };
  * };
  *
  * // In +layout.svelte
  * const metaTags = deepMerge(data.baseMetaTags, page.data.pageMetaTags);
  * ```
  */
-export const definePageMetaTags = (
-  obj: MetaTagsProps
-): { props: Readonly<MetaTagsProps>; pageMetaTags: Readonly<MetaTagsProps> } =>
-  // @ts-expect-error inaccurate type so that spreading is allowed and typed
-  new (class {
-    private pageMetaTags = Object.freeze(obj);
-
-    get props() {
-      return this.pageMetaTags;
-    }
-  })();
+export const definePageMetaTags = (obj: MetaTagsProps): Readonly<MetaTagsProps> => Object.freeze(obj);
