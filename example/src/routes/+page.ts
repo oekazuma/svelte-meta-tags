@@ -1,7 +1,7 @@
 import { definePageMetaTags } from 'svelte-meta-tags';
 
 export const load = () => {
-  const pageMetaTags = definePageMetaTags({
+  const pageTags = definePageMetaTags({
     title: 'TOP',
     description: 'Description TOP',
     openGraph: {
@@ -10,5 +10,5 @@ export const load = () => {
     }
   });
 
-  return { pageMetaTags };
+  return { ...pageTags };
 };

@@ -9,41 +9,41 @@ describe('defineBaseMetaTags and definePageMetaTags', () => {
     canonical: 'https://example.com'
   };
 
-  test('should create frozen readonly object with type marker', () => {
-    const baseResult = defineBaseMetaTags(sampleMetaTags);
-    const pageResult = definePageMetaTags(sampleMetaTags);
+  test('should create frozen readonly object', () => {
+    const { baseMetaTags } = defineBaseMetaTags(sampleMetaTags);
+    const { pageMetaTags } = definePageMetaTags(sampleMetaTags);
 
-    expect(baseResult).toHaveProperty('_isBaseMetaTags', true);
-    expect(pageResult).toHaveProperty('_isPageMetaTags', true);
-    expect(Object.isFrozen(baseResult)).toBe(true);
-    expect(Object.isFrozen(pageResult)).toBe(true);
+    expect(baseMetaTags).toEqual(sampleMetaTags);
+    expect(pageMetaTags).toEqual(sampleMetaTags);
+    expect(Object.isFrozen(baseMetaTags)).toBe(true);
+    expect(Object.isFrozen(pageMetaTags)).toBe(true);
   });
 
   test('should freeze the props to make them readonly', () => {
-    const result = defineBaseMetaTags(sampleMetaTags);
+    const { baseMetaTags } = defineBaseMetaTags(sampleMetaTags);
 
-    expect(Object.isFrozen(result)).toBe(true);
+    expect(Object.isFrozen(baseMetaTags)).toBe(true);
 
     // Should throw when trying to modify frozen object
     expect(() => {
       // @ts-expect-error - intentionally testing runtime mutation
-      result.title = 'Modified';
+      baseMetaTags.title = 'Modified';
     }).toThrow(TypeError);
   });
 
   test('should not modify the original input object', () => {
     const original = { ...sampleMetaTags };
-    const result = defineBaseMetaTags(sampleMetaTags);
+    const { baseMetaTags } = defineBaseMetaTags(sampleMetaTags);
 
     expect(sampleMetaTags).toEqual(original);
-    expect({ ...result }).toEqual({ ...original, _isBaseMetaTags: true });
+    expect(baseMetaTags).toEqual(original);
   });
 
   test('should handle empty object', () => {
-    const result = defineBaseMetaTags({});
+    const { baseMetaTags } = defineBaseMetaTags({});
 
-    expect(result).toHaveProperty('_isBaseMetaTags', true);
-    expect(Object.isFrozen(result)).toBe(true);
+    expect(baseMetaTags).toEqual({});
+    expect(Object.isFrozen(baseMetaTags)).toBe(true);
   });
 
   test('should handle falsy values correctly', () => {
@@ -53,26 +53,25 @@ describe('defineBaseMetaTags and definePageMetaTags', () => {
       keywords: []
     };
 
-    const result = definePageMetaTags(metaTagsWithFalsy);
+    const { pageMetaTags } = definePageMetaTags(metaTagsWithFalsy);
 
-    expect(result.title).toBe('');
-    expect(result.robots).toBe(false);
-    expect(result.keywords).toEqual([]);
-    expect(result._isPageMetaTags).toBe(true);
+    expect(pageMetaTags.title).toBe('');
+    expect(pageMetaTags.robots).toBe(false);
+    expect(pageMetaTags.keywords).toEqual([]);
   });
 
   test('should support spreading for object merging', () => {
-    const baseMeta = defineBaseMetaTags({
+    const { baseMetaTags } = defineBaseMetaTags({
       title: 'Base Title',
       description: 'Base Description'
     });
 
-    const pageMeta = definePageMetaTags({
+    const { pageMetaTags } = definePageMetaTags({
       title: 'Page Title',
       canonical: 'https://example.com/page'
     });
 
-    const combined = { ...baseMeta, ...pageMeta };
+    const combined = { ...baseMetaTags, ...pageMetaTags };
 
     expect(combined.title).toBe('Page Title'); // Page overrides base
     expect(combined.description).toBe('Base Description'); // From base
@@ -89,20 +88,18 @@ describe('defineBaseMetaTags and definePageMetaTags', () => {
       additionalMetaTags: [{ name: 'viewport', content: 'width=device-width' }]
     };
 
-    const result = defineBaseMetaTags(complexMetaTags);
+    const { baseMetaTags } = defineBaseMetaTags(complexMetaTags);
 
-    expect(result).toHaveProperty('_isBaseMetaTags', true);
-    expect(result.openGraph?.images?.[0]?.url).toBe('https://example.com/image.jpg');
-    expect(Object.isFrozen(result)).toBe(true);
+    expect(baseMetaTags.openGraph?.images?.[0]?.url).toBe('https://example.com/image.jpg');
+    expect(Object.isFrozen(baseMetaTags)).toBe(true);
   });
 
-  test('both functions should behave identically except for markers', () => {
-    const baseResult = defineBaseMetaTags(sampleMetaTags);
-    const pageResult = definePageMetaTags(sampleMetaTags);
+  test('both functions should behave identically', () => {
+    const { baseMetaTags } = defineBaseMetaTags(sampleMetaTags);
+    const { pageMetaTags } = definePageMetaTags(sampleMetaTags);
 
-    expect(baseResult._isBaseMetaTags).toBe(true);
-    expect(pageResult._isPageMetaTags).toBe(true);
-    expect(Object.isFrozen(baseResult)).toBe(Object.isFrozen(pageResult));
+    expect(baseMetaTags).toEqual(pageMetaTags);
+    expect(Object.isFrozen(baseMetaTags)).toBe(Object.isFrozen(pageMetaTags));
   });
 
   test('should clarify that freeze is shallow (nested objects remain mutable)', () => {
@@ -114,19 +111,19 @@ describe('defineBaseMetaTags and definePageMetaTags', () => {
       }
     };
 
-    const result = defineBaseMetaTags(complexMetaTags);
+    const { baseMetaTags } = defineBaseMetaTags(complexMetaTags);
 
     // Top level is frozen
-    expect(Object.isFrozen(result)).toBe(true);
+    expect(Object.isFrozen(baseMetaTags)).toBe(true);
 
     // But nested objects are NOT frozen (limitation of Object.freeze)
-    expect(Object.isFrozen(result.openGraph)).toBe(false);
-    expect(Object.isFrozen(result.openGraph?.images)).toBe(false);
+    expect(Object.isFrozen(baseMetaTags.openGraph)).toBe(false);
+    expect(Object.isFrozen(baseMetaTags.openGraph?.images)).toBe(false);
 
     // Nested objects can still be mutated
-    if (result.openGraph) {
-      result.openGraph.title = 'Modified OG Title'; // This works!
-      expect(result.openGraph.title).toBe('Modified OG Title');
+    if (baseMetaTags.openGraph) {
+      baseMetaTags.openGraph.title = 'Modified OG Title'; // This works!
+      expect(baseMetaTags.openGraph.title).toBe('Modified OG Title');
     }
   });
 });
