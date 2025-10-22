@@ -21,7 +21,10 @@ import type { MetaTagsProps } from './types';
  * };
  * ```
  */
-export const defineBaseMetaTags = (obj: MetaTagsProps): { props: Readonly<MetaTagsProps> } =>
+export const defineBaseMetaTags = (
+  obj: MetaTagsProps
+): { props: Readonly<MetaTagsProps>; baseMetaTags: Readonly<MetaTagsProps> } =>
+  // @ts-expect-error inaccurate type so that spreading is allowed and typed
   new (class {
     private baseMetaTags = Object.freeze(obj);
 
@@ -54,7 +57,10 @@ export const defineBaseMetaTags = (obj: MetaTagsProps): { props: Readonly<MetaTa
  * const metaTags = deepMerge(data.baseMetaTags, page.data.pageMetaTags);
  * ```
  */
-export const definePageMetaTags = (obj: MetaTagsProps): { props: Readonly<MetaTagsProps> } =>
+export const definePageMetaTags = (
+  obj: MetaTagsProps
+): { props: Readonly<MetaTagsProps>; pageMetaTags: Readonly<MetaTagsProps> } =>
+  // @ts-expect-error inaccurate type so that spreading is allowed and typed
   new (class {
     private pageMetaTags = Object.freeze(obj);
 
