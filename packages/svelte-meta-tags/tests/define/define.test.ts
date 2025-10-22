@@ -102,4 +102,29 @@ describe('defineBaseMetaTags and definePageMetaTags', () => {
     expect(baseResult).toEqual(pageResult);
     expect(Object.isFrozen(baseResult)).toBe(Object.isFrozen(pageResult));
   });
+
+  test('should clarify that freeze is shallow (nested objects remain mutable)', () => {
+    const complexMetaTags: MetaTagsProps = {
+      title: 'Complex Title',
+      openGraph: {
+        title: 'OG Title',
+        images: [{ url: 'https://example.com/image.jpg' }]
+      }
+    };
+
+    const result = defineBaseMetaTags(complexMetaTags);
+
+    // Top level is frozen
+    expect(Object.isFrozen(result)).toBe(true);
+
+    // But nested objects are NOT frozen (limitation of Object.freeze)
+    expect(Object.isFrozen(result.openGraph)).toBe(false);
+    expect(Object.isFrozen(result.openGraph?.images)).toBe(false);
+
+    // Nested objects can still be mutated
+    if (result.openGraph) {
+      result.openGraph.title = 'Modified OG Title'; // This works!
+      expect(result.openGraph.title).toBe('Modified OG Title');
+    }
+  });
 });
