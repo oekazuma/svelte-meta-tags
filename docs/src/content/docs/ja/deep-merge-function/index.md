@@ -37,7 +37,7 @@ export const load = ({ url }) => {
     title: 'Default',
     titleTemplate: '%s | Svelte Meta Tags',
     description: 'Svelte Meta Tags is a Svelte component for managing meta tags and SEO in your Svelte applications.',
-    canonical: new URL(url.pathname, url.origin).href,
+    canonical: new URL(url.pathname, url.origin).href, // 現在のURLからクリーンなURL（ハッシュやクエリパラメータなし）を作成します
     openGraph: {
       type: 'website',
       url: new URL(url.pathname, url.origin).href,
