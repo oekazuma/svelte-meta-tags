@@ -227,6 +227,22 @@ export interface MetaTagsProps {
   keywords?: ReadonlyArray<string>;
 }
 
+/**
+ * Base meta tags type with a marker for type-safe identification.
+ * This allows functions to distinguish base meta tags from regular MetaTagsProps.
+ */
+export type BaseMetaTags = Readonly<MetaTagsProps> & {
+  readonly _isBaseMetaTags: true;
+};
+
+/**
+ * Page meta tags type with a marker for type-safe identification.
+ * This allows functions to distinguish page meta tags from regular MetaTagsProps.
+ */
+export type PageMetaTags = Readonly<MetaTagsProps> & {
+  readonly _isPageMetaTags: true;
+};
+
 interface GraphWrappedThing {
   '@graph': WithInputOutputProperties<FlexibleSchema>[];
 }

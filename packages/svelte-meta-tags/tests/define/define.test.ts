@@ -9,12 +9,12 @@ describe('defineBaseMetaTags and definePageMetaTags', () => {
     canonical: 'https://example.com'
   };
 
-  test('should create frozen readonly object', () => {
+  test('should create frozen readonly object with type marker', () => {
     const baseResult = defineBaseMetaTags(sampleMetaTags);
     const pageResult = definePageMetaTags(sampleMetaTags);
 
-    expect(baseResult).toEqual(sampleMetaTags);
-    expect(pageResult).toEqual(sampleMetaTags);
+    expect(baseResult).toHaveProperty('_isBaseMetaTags', true);
+    expect(pageResult).toHaveProperty('_isPageMetaTags', true);
     expect(Object.isFrozen(baseResult)).toBe(true);
     expect(Object.isFrozen(pageResult)).toBe(true);
   });
@@ -36,13 +36,13 @@ describe('defineBaseMetaTags and definePageMetaTags', () => {
     const result = defineBaseMetaTags(sampleMetaTags);
 
     expect(sampleMetaTags).toEqual(original);
-    expect(result).toEqual(original);
+    expect({ ...result }).toEqual({ ...original, _isBaseMetaTags: true });
   });
 
   test('should handle empty object', () => {
     const result = defineBaseMetaTags({});
 
-    expect(result).toEqual({});
+    expect(result).toHaveProperty('_isBaseMetaTags', true);
     expect(Object.isFrozen(result)).toBe(true);
   });
 
@@ -58,6 +58,7 @@ describe('defineBaseMetaTags and definePageMetaTags', () => {
     expect(result.title).toBe('');
     expect(result.robots).toBe(false);
     expect(result.keywords).toEqual([]);
+    expect(result._isPageMetaTags).toBe(true);
   });
 
   test('should support spreading for object merging', () => {
@@ -90,16 +91,17 @@ describe('defineBaseMetaTags and definePageMetaTags', () => {
 
     const result = defineBaseMetaTags(complexMetaTags);
 
-    expect(result).toEqual(complexMetaTags);
+    expect(result).toHaveProperty('_isBaseMetaTags', true);
     expect(result.openGraph?.images?.[0]?.url).toBe('https://example.com/image.jpg');
     expect(Object.isFrozen(result)).toBe(true);
   });
 
-  test('both functions should behave identically', () => {
+  test('both functions should behave identically except for markers', () => {
     const baseResult = defineBaseMetaTags(sampleMetaTags);
     const pageResult = definePageMetaTags(sampleMetaTags);
 
-    expect(baseResult).toEqual(pageResult);
+    expect(baseResult._isBaseMetaTags).toBe(true);
+    expect(pageResult._isPageMetaTags).toBe(true);
     expect(Object.isFrozen(baseResult)).toBe(Object.isFrozen(pageResult));
   });
 

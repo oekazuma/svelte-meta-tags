@@ -1,11 +1,11 @@
-import type { MetaTagsProps } from './types';
+import type { MetaTagsProps, BaseMetaTags, PageMetaTags } from './types';
 
 /**
  * A convenience wrapper for creating a readonly, type-safe
  * {@link MetaTagsProps} object for `+layout`.
  *
  * @param obj the input props
- * @returns a frozen copy of the input props
+ * @returns a frozen copy of the input props with a marker for type identification
  *
  * @example
  * ```typescript
@@ -19,14 +19,15 @@ import type { MetaTagsProps } from './types';
  * };
  * ```
  */
-export const defineBaseMetaTags = (obj: MetaTagsProps): Readonly<MetaTagsProps> => Object.freeze(obj);
+export const defineBaseMetaTags = (obj: MetaTagsProps): BaseMetaTags =>
+  Object.freeze(Object.assign({}, obj, { _isBaseMetaTags: true as const })) as BaseMetaTags;
 
 /**
  * A convenience wrapper for creating a readonly, type-safe
  * {@link MetaTagsProps} object for `+page`.
  *
  * @param obj the input props
- * @returns a frozen copy of the input props
+ * @returns a frozen copy of the input props with a marker for type identification
  *
  * @example
  * ```typescript
@@ -43,4 +44,5 @@ export const defineBaseMetaTags = (obj: MetaTagsProps): Readonly<MetaTagsProps> 
  * const metaTags = deepMerge(data.baseMetaTags, page.data.pageMetaTags);
  * ```
  */
-export const definePageMetaTags = (obj: MetaTagsProps): Readonly<MetaTagsProps> => Object.freeze(obj);
+export const definePageMetaTags = (obj: MetaTagsProps): PageMetaTags =>
+  Object.freeze(Object.assign({}, obj, { _isPageMetaTags: true as const })) as PageMetaTags;
