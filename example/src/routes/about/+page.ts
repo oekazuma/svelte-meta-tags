@@ -1,16 +1,14 @@
-import type { MetaTagsProps } from 'svelte-meta-tags';
+import { definePageMetaTags } from 'svelte-meta-tags';
 
 export const load = () => {
-  const pageMetaTags = Object.freeze({
+  const pageMetaTags = definePageMetaTags({
     title: 'About',
     description: 'Description About',
     openGraph: {
       title: 'Open Graph Title About',
       description: 'Open Graph Description About'
     }
-  }) satisfies MetaTagsProps;
+  });
 
-  return {
-    pageMetaTags
-  };
+  return { ...pageMetaTags };
 };

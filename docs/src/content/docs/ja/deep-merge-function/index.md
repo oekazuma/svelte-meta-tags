@@ -33,32 +33,32 @@ sidebar:
 import { defineBaseMetaTags } from 'svelte-meta-tags';
 
 export const load = ({ url }) => {
-  return {
-    ...defineBaseMetaTags({
-      title: 'Default',
-      titleTemplate: '%s | Svelte Meta Tags',
-      description: 'Svelte Meta Tags is a Svelte component for managing meta tags and SEO in your Svelte applications.',
-      canonical: new URL(url.pathname, url.origin).href,
-      openGraph: {
-        type: 'website',
-        url: new URL(url.pathname, url.origin).href,
-        locale: 'en_IE',
-        title: 'Open Graph Title',
-        description: 'Open Graph Description',
-        siteName: 'SiteName',
-        images: [
-          {
-            url: 'https://www.example.ie/og-image.jpg',
-            alt: 'Og Image Alt',
-            width: 800,
-            height: 600,
-            secureUrl: 'https://www.example.ie/og-image.jpg',
-            type: 'image/jpeg'
-          }
-        ]
-      }
-    })
-  };
+  const baseMetaTags = defineBaseMetaTags({
+    title: 'Default',
+    titleTemplate: '%s | Svelte Meta Tags',
+    description: 'Svelte Meta Tags is a Svelte component for managing meta tags and SEO in your Svelte applications.',
+    canonical: new URL(url.pathname, url.origin).href,
+    openGraph: {
+      type: 'website',
+      url: new URL(url.pathname, url.origin).href,
+      locale: 'en_IE',
+      title: 'Open Graph Title',
+      description: 'Open Graph Description',
+      siteName: 'SiteName',
+      images: [
+        {
+          url: 'https://www.example.ie/og-image.jpg',
+          alt: 'Og Image Alt',
+          width: 800,
+          height: 600,
+          secureUrl: 'https://www.example.ie/og-image.jpg',
+          type: 'image/jpeg'
+        }
+      ]
+    }
+  });
+
+  return { ...baseMetaTags };
 };
 ```
 
@@ -68,15 +68,15 @@ export const load = ({ url }) => {
 import { definePageMetaTags } from 'svelte-meta-tags';
 
 export const load = () => {
-  return {
-    ...definePageMetaTags({
-      title: 'TOP',
-      description: 'Description TOP',
-      openGraph: {
-        title: 'Open Graph Title TOP',
-        description: 'Open Graph Description TOP'
-      }
-    })
-  };
+  const pageMetaTags = definePageMetaTags({
+    title: 'TOP',
+    description: 'Description TOP',
+    openGraph: {
+      title: 'Open Graph Title TOP',
+      description: 'Open Graph Description TOP'
+    }
+  });
+
+  return { ...pageMetaTags };
 };
 ```
