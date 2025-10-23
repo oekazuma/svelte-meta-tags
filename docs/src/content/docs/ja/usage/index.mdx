@@ -67,7 +67,7 @@ import { LinkButton } from '@astrojs/starlight/components';
 />
 ```
 
-## 子ページでデフォルト値を上書きする
+## 子ページでデフォルト値を上書きする:
 
 [Example](https://github.com/oekazuma/svelte-meta-tags/tree/main/example)
 
@@ -148,8 +148,8 @@ export const load = () => {
 };
 ```
 
-> 注意: `defineBaseMetaTags`と同様に、`definePageMetaTags`は、`+page.(j|t)s`ファイルで使用することを意図したユーティリティです。
-> フリーズされた`MetaTagsProps`オブジェクトを返し、ロードデータの`pageMetaTags`プロパティに割り当てます。
+> 注意: `defineBaseMetaTags`と同様に、`definePageMetaTags`は`+page.(j|t)s`ファイルで使用することを意図したユーティリティです。
+> これはフリーズされた`MetaTagsProps`オブジェクトを`pageMetaTags`プロパティにラップして返し、ロードデータで直接使用できます。
 >
 > このユーティリティを使用せずに、`return { pageMetaTags: Object.freeze<MetaTagsProps>({ ... }) }`のように生のオブジェクトを提供することもできます。
 > `MetaTagsProps`は、`import type { MetaTagsProps } from 'svelte-meta-tags'`を使用してインポートできる、このパッケージで提供される型です。
