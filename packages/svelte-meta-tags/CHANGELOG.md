@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 4.5.0
+
+### Minor Changes
+
+- 3ccac3e: feat: add helper functions to define meta tags objects
+
 ## 4.4.1
 
 ### Patch Changes
