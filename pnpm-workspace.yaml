@@ -16,7 +16,7 @@ catalog:
   '@sveltejs/package': ^2.5.4
   '@sveltejs/vite-plugin-svelte': ^6.2.1
   '@types/eslint': ^9.6.1
-  astro: ^5.14.7
+  astro: ^5.14.8
   eslint: ^9.38.0
   eslint-config-prettier: ^10.1.8
   eslint-plugin-svelte: ^3.12.5
