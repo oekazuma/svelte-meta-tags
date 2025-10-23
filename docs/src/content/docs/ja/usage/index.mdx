@@ -124,7 +124,7 @@ export const load = ({ url }) => {
 ```
 
 > 注意: `defineBaseMetaTags`は、`+layout.(j|t)s`ファイルで使用することを意図したユーティリティです。
-> フリーズされた`MetaTagsProps`オブジェクトを返し、ロードデータの`baseMetaTags`プロパティに割り当てます。
+> このユーティリティは、フリーズされた`MetaTagsProps`オブジェクトを`baseMetaTags`プロパティにラップして返し、ロードデータで直接使用できます。
 >
 > このユーティリティを使用せずに、`return { baseMetaTags: Object.freeze<MetaTagsProps>({ ... }) }`のように生のオブジェクトを提供することもできます。
 > `MetaTagsProps`は、`import type { MetaTagsProps } from 'svelte-meta-tags'`を使用してインポートできる、このパッケージで提供される型です。
@@ -149,7 +149,7 @@ export const load = () => {
 ```
 
 > 注意: `defineBaseMetaTags`と同様に、`definePageMetaTags`は`+page.(j|t)s`ファイルで使用することを意図したユーティリティです。
-> これはフリーズされた`MetaTagsProps`オブジェクトを`pageMetaTags`プロパティにラップして返し、ロードデータで直接使用できます。
+> このユーティリティは、フリーズされた`MetaTagsProps`オブジェクトを`pageMetaTags`プロパティにラップして返し、ロードデータで直接使用できます。
 >
 > このユーティリティを使用せずに、`return { pageMetaTags: Object.freeze<MetaTagsProps>({ ... }) }`のように生のオブジェクトを提供することもできます。
 > `MetaTagsProps`は、`import type { MetaTagsProps } from 'svelte-meta-tags'`を使用してインポートできる、このパッケージで提供される型です。
