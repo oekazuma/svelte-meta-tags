@@ -29,15 +29,15 @@ Use this when you want to override the default values on child pages, as in the 
 
 ## +layout.ts
 
-```svelte
-import type { MetaTagsProps } from 'svelte-meta-tags';
+```ts
+import { defineBaseMetaTags } from 'svelte-meta-tags';
 
 export const load = ({ url }) => {
-  const baseMetaTags = Object.freeze({
+  const baseTags = defineBaseMetaTags({
     title: 'Default',
     titleTemplate: '%s | Svelte Meta Tags',
     description: 'Svelte Meta Tags is a Svelte component for managing meta tags and SEO in your Svelte applications.',
-    canonical: new URL(url.pathname, url.origin).href,
+    canonical: new URL(url.pathname, url.origin).href, // creates a cleaned up URL (without hashes or query params) from your current URL
     openGraph: {
       type: 'website',
       url: new URL(url.pathname, url.origin).href,
@@ -56,31 +56,27 @@ export const load = ({ url }) => {
         }
       ]
     }
-  }) satisfies MetaTagsProps;
+  });
 
-  return {
-    baseMetaTags
-  };
+  return { ...baseTags };
 };
 ```
 
 ## +page.ts
 
-```svelte
-import type { MetaTagsProps } from 'svelte-meta-tags';
+```ts
+import { definePageMetaTags } from 'svelte-meta-tags';
 
 export const load = () => {
-  const pageMetaTags = Object.freeze({
+  const pageTags = definePageMetaTags({
     title: 'TOP',
     description: 'Description TOP',
     openGraph: {
       title: 'Open Graph Title TOP',
       description: 'Open Graph Description TOP'
     }
-  }) satisfies MetaTagsProps;
+  });
 
-  return {
-    pageMetaTags
-  };
+  return { ...pageTags };
 };
 ```

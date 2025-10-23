@@ -1,7 +1,7 @@
-import type { MetaTagsProps } from 'svelte-meta-tags';
+import { defineBaseMetaTags } from 'svelte-meta-tags';
 
 export const load = ({ url }) => {
-  const baseMetaTags = Object.freeze({
+  const baseTags = defineBaseMetaTags({
     title: 'Normal',
     titleTemplate: '%s | Svelte Meta Tags',
     description: 'Svelte Meta Tags is a Svelte component for managing meta tags and SEO in your Svelte applications.',
@@ -40,9 +40,7 @@ export const load = ({ url }) => {
         }
       ]
     }
-  }) satisfies MetaTagsProps;
+  });
 
-  return {
-    baseMetaTags
-  };
+  return { ...baseTags };
 };

@@ -1,6 +1,7 @@
 export { default as MetaTags } from './MetaTags.svelte';
 export { default as JsonLd } from './JsonLd.svelte';
 export { deepMerge } from './deepMerge';
+export { defineBaseMetaTags, definePageMetaTags } from './define';
 export type {
   MetaTagsProps,
   JsonLdProps,
