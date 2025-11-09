@@ -24,7 +24,7 @@ catalog:
   prettier: ^3.6.2
   prettier-plugin-svelte: ^3.4.0
   publint: ^0.3.15
-  sharp: ^0.34.4
+  sharp: ^0.34.5
   svelte: ^5.43.5
   svelte-check: ^4.3.3
   typescript: ^5.9.3
