@@ -39,6 +39,9 @@ catalogs:
     '@types/eslint':
       specifier: ^9.6.1
       version: 9.6.1
+    astro:
+      specifier: ^5.15.5
+      version: 5.15.6
     eslint:
       specifier: ^9.39.1
       version: 9.39.1
