@@ -22,7 +22,7 @@ jobs:
         uses: withastro/action@2226b5671ff302b175d9843add614af27e60bbfc # v5.0.0
         with:
           path: docs
-          node-version: 22.19.0
+          node-version: 24.11.1
           package-manager: pnpm@latest
 
   deploy:
