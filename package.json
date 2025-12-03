@@ -29,5 +29,12 @@
   "packageManager": "pnpm@10.24.0",
   "engines": {
     "pnpm": "^10.24.0"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "24.11.1",
+      "onFail": "download"
+    }
   }
 }
