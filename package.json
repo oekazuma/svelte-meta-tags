@@ -33,7 +33,7 @@
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "24.11.1",
+      "version": "22.19.0",
       "onFail": "download"
     }
   }
