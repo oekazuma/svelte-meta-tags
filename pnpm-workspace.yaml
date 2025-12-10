@@ -6,7 +6,7 @@ packages:
 
 catalog:
   '@astrojs/check': ^0.9.6
-  '@astrojs/starlight': ^0.37.0
+  '@astrojs/starlight': ^0.37.1
   '@changesets/cli': ^2.29.8
   '@eslint/compat': ^2.0.0
   '@eslint/js': ^9.39.1
