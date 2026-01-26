@@ -52,8 +52,8 @@ catalogs:
       specifier: ^3.14.0
       version: 3.14.0
     globals:
-      specifier: ^17.0.0
-      version: 17.0.0
+      specifier: ^17.1.0
+      version: 17.1.0
     prettier:
       specifier: ^3.8.1
       version: 3.8.1
@@ -61,8 +61,8 @@ catalogs:
       specifier: ^3.4.1
       version: 3.4.1
     publint:
-      specifier: ^0.3.16
-      version: 0.3.16
+      specifier: ^0.3.17
+      version: 0.3.17
     sharp:
       specifier: ^0.34.5
       version: 0.34.5
@@ -112,7 +112,7 @@ importers:
         version: 3.14.0(eslint@9.39.2)(svelte@5.47.1)
       globals:
         specifier: 'catalog:'
-        version: 17.0.0
+        version: 17.1.0
       node:
         specifier: runtime:22.19.0
         version: runtime:22.19.0
@@ -191,7 +191,7 @@ importers:
         version: 6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.1)(yaml@2.8.1))
       publint:
         specifier: 'catalog:'
-        version: 0.3.16
+        version: 0.3.17
       svelte:
         specifier: 'catalog:'
         version: 5.47.1
@@ -1047,8 +1047,8 @@ packages:
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
 
-  '@publint/pack@0.1.2':
-    resolution: {integrity: sha512-S+9ANAvUmjutrshV4jZjaiG8XQyuJIZ8a4utWmN/vW1sgQ9IfBnPndwkmQYw53QmouOIytT874u65HEmu6H5jw==}
+  '@publint/pack@0.1.3':
+    resolution: {integrity: sha512-dHDWeutAerz+Z2wFYAce7Y51vd4rbLBfUh0BNnyul4xKoVsPUVJBrOAFsJvtvYBwGFJSqKsxyyHf/7evZ8+Q5Q==}
     engines: {node: '>=18'}
 
   '@rollup/pluginutils@5.3.0':
@@ -2061,8 +2061,8 @@ packages:
     resolution: {integrity: sha512-c/c15i26VrJ4IRt5Z89DnIzCGDn9EcebibhAOjw5ibqEHsE1wLUgkPn9RDmNcUKyU87GeaL633nyJ+pplFR2ZQ==}
     engines: {node: '>=18'}
 
-  globals@17.0.0:
-    resolution: {integrity: sha512-gv5BeD2EssA793rlFWVPMMCqefTlpusw6/2TbAVMy0FzcG8wKJn4O+NqJ4+XWmmwrayJgw5TzrmWjFgmz1XPqw==}
+  globals@17.1.0:
+    resolution: {integrity: sha512-8HoIcWI5fCvG5NADj4bDav+er9B9JMj2vyL2pI8D0eismKyUvPLTSs+Ln3wqhwcp306i73iyVnEKx3F6T47TGw==}
     engines: {node: '>=18'}
 
   globby@11.1.0:
@@ -2888,8 +2888,8 @@ packages:
   property-information@7.1.0:
     resolution: {integrity: sha512-TwEZ+X+yCJmYfL7TPUOcvBZ4QfoT5YenQiJuX//0th53DE6w0xxLEtfK3iyryQFddXuvkIk51EEgrJQ0WJkOmQ==}
 
-  publint@0.3.16:
-    resolution: {integrity: sha512-MFqyfRLAExPVZdTQFwkAQELzA8idyXzROVOytg6nEJ/GEypXBUmMGrVaID8cTuzRS1U5L8yTOdOJtMXgFUJAeA==}
+  publint@0.3.17:
+    resolution: {integrity: sha512-Q3NLegA9XM6usW+dYQRG1g9uEHiYUzcCVBJDJ7yMcWRqVU9LYZUWdqbwMZfmTCFC5PZLQpLAmhvRcQRl3exqkw==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -4550,7 +4550,7 @@ snapshots:
 
   '@polka/url@1.0.0-next.29': {}
 
-  '@publint/pack@0.1.2': {}
+  '@publint/pack@0.1.3': {}
 
   '@rollup/pluginutils@5.3.0(rollup@4.53.3)':
     dependencies:
@@ -5721,7 +5721,7 @@ snapshots:
 
   globals@16.5.0: {}
 
-  globals@17.0.0: {}
+  globals@17.1.0: {}
 
   globby@11.1.0:
     dependencies:
@@ -6795,9 +6795,9 @@ snapshots:
 
   property-information@7.1.0: {}
 
-  publint@0.3.16:
+  publint@0.3.17:
     dependencies:
-      '@publint/pack': 0.1.2
+      '@publint/pack': 0.1.3
       package-manager-detector: 1.6.0
       picocolors: 1.1.1
       sade: 1.8.1
