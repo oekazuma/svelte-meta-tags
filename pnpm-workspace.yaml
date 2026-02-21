@@ -37,3 +37,6 @@ minimumReleaseAge: 1440
 onlyBuiltDependencies:
   - esbuild
   - sharp
+minimumReleaseAgeExclude:
+  # Renovate security update: @sveltejs/kit@2.52.2
+  - "@sveltejs/kit@2.52.2"
