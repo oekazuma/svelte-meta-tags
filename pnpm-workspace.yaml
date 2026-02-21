@@ -26,7 +26,7 @@ catalog:
   publint: ^0.3.17
   sharp: ^0.34.5
   svelte: ^5.51.3
-  svelte-check: ^4.4.0
+  svelte-check: ^4.4.3
   typescript: ^5.9.3
   typescript-eslint: ^8.56.0
   vite: ^7.3.1
