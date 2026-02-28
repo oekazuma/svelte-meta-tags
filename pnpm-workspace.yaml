@@ -37,3 +37,6 @@ minimumReleaseAge: 1440
 onlyBuiltDependencies:
   - esbuild
   - sharp
+minimumReleaseAgeExclude:
+  # Renovate security update: svelte@5.53.5
+  - svelte@5.53.5
