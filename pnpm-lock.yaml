@@ -52,8 +52,8 @@ catalogs:
       specifier: ^3.15.0
       version: 3.15.0
     globals:
-      specifier: ^17.3.0
-      version: 17.3.0
+      specifier: ^17.4.0
+      version: 17.4.0
     prettier:
       specifier: ^3.8.1
       version: 3.8.1
@@ -61,8 +61,8 @@ catalogs:
       specifier: ^3.5.0
       version: 3.5.0
     publint:
-      specifier: ^0.3.17
-      version: 0.3.17
+      specifier: ^0.3.18
+      version: 0.3.18
     sharp:
       specifier: ^0.34.5
       version: 0.34.5
@@ -112,7 +112,7 @@ importers:
         version: 3.15.0(eslint@10.0.2)(svelte@5.53.6)
       globals:
         specifier: 'catalog:'
-        version: 17.3.0
+        version: 17.4.0
       node:
         specifier: runtime:22.19.0
         version: runtime:22.19.0
@@ -191,7 +191,7 @@ importers:
         version: 6.2.4(svelte@5.53.6)(vite@7.3.1(@types/node@24.10.1)(yaml@2.8.2))
       publint:
         specifier: 'catalog:'
-        version: 0.3.17
+        version: 0.3.18
       svelte:
         specifier: 'catalog:'
         version: 5.53.6
@@ -2053,8 +2053,8 @@ packages:
     resolution: {integrity: sha512-c/c15i26VrJ4IRt5Z89DnIzCGDn9EcebibhAOjw5ibqEHsE1wLUgkPn9RDmNcUKyU87GeaL633nyJ+pplFR2ZQ==}
     engines: {node: '>=18'}
 
-  globals@17.3.0:
-    resolution: {integrity: sha512-yMqGUQVVCkD4tqjOJf3TnrvaaHDMYp4VlUSObbkIiuCPe/ofdMBFIAcBbCSRFWOnos6qRiTVStDwqPLUclaxIw==}
+  globals@17.4.0:
+    resolution: {integrity: sha512-hjrNztw/VajQwOLsMNT1cbJiH2muO3OROCHnbehc8eY5JyD2gqz4AcMHPqgaOR59DjgUjYAYLeH699g/eWi2jw==}
     engines: {node: '>=18'}
 
   globby@11.1.0:
@@ -2854,8 +2854,8 @@ packages:
   property-information@7.1.0:
     resolution: {integrity: sha512-TwEZ+X+yCJmYfL7TPUOcvBZ4QfoT5YenQiJuX//0th53DE6w0xxLEtfK3iyryQFddXuvkIk51EEgrJQ0WJkOmQ==}
 
-  publint@0.3.17:
-    resolution: {integrity: sha512-Q3NLegA9XM6usW+dYQRG1g9uEHiYUzcCVBJDJ7yMcWRqVU9LYZUWdqbwMZfmTCFC5PZLQpLAmhvRcQRl3exqkw==}
+  publint@0.3.18:
+    resolution: {integrity: sha512-JRJFeBTrfx4qLwEuGFPk+haJOJN97KnPuK01yj+4k/Wj5BgoOK5uNsivporiqBjk2JDaslg7qJOhGRnpltGeog==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -5598,7 +5598,7 @@ snapshots:
 
   globals@16.5.0: {}
 
-  globals@17.3.0: {}
+  globals@17.4.0: {}
 
   globby@11.1.0:
     dependencies:
@@ -6651,7 +6651,7 @@ snapshots:
 
   property-information@7.1.0: {}
 
-  publint@0.3.17:
+  publint@0.3.18:
     dependencies:
       '@publint/pack': 0.1.4
       package-manager-detector: 1.6.0

@@ -20,10 +20,10 @@ catalog:
   eslint: ^10.0.2
   eslint-config-prettier: ^10.1.8
   eslint-plugin-svelte: ^3.15.0
-  globals: ^17.3.0
+  globals: ^17.4.0
   prettier: ^3.8.1
   prettier-plugin-svelte: ^3.5.0
-  publint: ^0.3.17
+  publint: ^0.3.18
   sharp: ^0.34.5
   svelte: ^5.53.6
   svelte-check: ^4.4.4
