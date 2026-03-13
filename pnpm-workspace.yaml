@@ -6,7 +6,7 @@ packages:
 
 catalog:
   '@astrojs/check': ^0.9.7
-  '@astrojs/starlight': ^0.37.7
+  '@astrojs/starlight': ^0.38.1
   '@changesets/cli': ^2.30.0
   '@eslint/compat': ^2.0.3
   '@eslint/js': ^10.0.1
@@ -16,7 +16,7 @@ catalog:
   '@sveltejs/package': ^2.5.7
   '@sveltejs/vite-plugin-svelte': ^6.2.4
   '@types/eslint': ^9.6.1
-  astro: ^5.18.1
+  astro: ^6.0.3
   eslint: ^10.0.3
   eslint-config-prettier: ^10.1.8
   eslint-plugin-svelte: ^3.15.2
