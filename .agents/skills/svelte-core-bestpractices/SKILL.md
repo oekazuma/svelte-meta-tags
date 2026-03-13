@@ -21,7 +21,7 @@ let square = $derived(num * num);
 let square;
 
 $effect(() => {
-	square = num * num;
+  square = num * num;
 });
 ```
 
@@ -90,7 +90,7 @@ Avoid using `onMount` or `$effect` for this.
 
 ```svelte
 {#snippet greeting(name)}
-	<p>hello {name}!</p>
+  <p>hello {name}!</p>
 {/snippet}
 
 {@render greeting('world')}
@@ -128,9 +128,9 @@ The CSS in a component's `<style>` is scoped to that component. If a parent comp
 <h1>Hello</h1>
 
 <style>
-	h1 {
-		color: var(--color);
-	}
+  h1 {
+    color: var(--color);
+  }
 </style>
 ```
 
@@ -138,15 +138,15 @@ If this is impossible (for example, the child component comes from a library) yo
 
 ```svelte
 <div>
-	<Child />
+  <Child />
 </div>
 
 <style>
-	div :global {
-		h1 {
-			color: red;
-		}
-	}
+  div :global {
+    h1 {
+      color: red;
+    }
+  }
 </style>
 ```
 

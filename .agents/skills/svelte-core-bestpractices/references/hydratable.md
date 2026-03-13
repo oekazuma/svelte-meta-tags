@@ -2,12 +2,12 @@ In Svelte, when you want to render asynchronous content data on the server, you 
 
 ```svelte
 <script>
-	import { getUser } from 'my-database-library';
+  import { getUser } from 'my-database-library';
 
-	// This will get the user on the server, render the user's name into the h1,
-	// and then, during hydration on the client, it will get the user _again_,
-	// blocking hydration until it's done.
-	const user = await getUser();
+  // This will get the user on the server, render the user's name into the h1,
+  // and then, during hydration on the client, it will get the user _again_,
+  // blocking hydration until it's done.
+  const user = await getUser();
 </script>
 
 <h1>{user.name}</h1>
@@ -19,14 +19,14 @@ To fix the example above:
 
 ```svelte
 <script>
-	import { hydratable } from 'svelte';
-	import { getUser } from 'my-database-library';
+  import { hydratable } from 'svelte';
+  import { getUser } from 'my-database-library';
 
-	// During server rendering, this will serialize and stash the result of `getUser`, associating
-	// it with the provided key and baking it into the `head` content. During hydration, it will
-	// look for the serialized version, returning it instead of running `getUser`. After hydration
-	// is done, if it's called again, it'll simply invoke `getUser`.
-	const user = await hydratable('user', () => getUser());
+  // During server rendering, this will serialize and stash the result of `getUser`, associating
+  // it with the provided key and baking it into the `head` content. During hydration, it will
+  // look for the serialized version, returning it instead of running `getUser`. After hydration
+  // is done, if it's called again, it'll simply invoke `getUser`.
+  const user = await hydratable('user', () => getUser());
 </script>
 
 <h1>{user.name}</h1>
@@ -47,13 +47,13 @@ All data returned from a `hydratable` function must be serializable. But this do
 
 ```svelte
 <script>
-	import { hydratable } from 'svelte';
-	const promises = hydratable('random', () => {
-		return {
-			one: Promise.resolve(1),
-			two: Promise.resolve(2),
-		};
-	});
+  import { hydratable } from 'svelte';
+  const promises = hydratable('random', () => {
+    return {
+      one: Promise.resolve(1),
+      two: Promise.resolve(2)
+    };
+  });
 </script>
 
 {await promises.one}
@@ -68,7 +68,7 @@ All data returned from a `hydratable` function must be serializable. But this do
 const nonce = crypto.randomUUID();
 
 const { head, body } = await render(App, {
-	csp: { nonce },
+  csp: { nonce }
 });
 ```
 
@@ -84,17 +84,14 @@ If instead you are generating static HTML ahead of time, you must use hashes ins
 
 ```js
 const { head, body, hashes } = await render(App, {
-	csp: { hash: true },
+  csp: { hash: true }
 });
 ```
 
 `hashes.script` will be an array of strings like `["sha256-abcd123"]`. As with `nonce`, the hashes should be used in your CSP header:
 
 ```js
-response.headers.set(
-	'Content-Security-Policy',
-	`script-src ${hashes.script.map((hash) => `'${hash}'`).join(' ')}`,
-);
+response.headers.set('Content-Security-Policy', `script-src ${hashes.script.map((hash) => `'${hash}'`).join(' ')}`);
 ```
 
 We recommend using `nonce` over hash if you can, as `hash` will interfere with streaming SSR in the future.

@@ -16,12 +16,12 @@ The key can be any object, but strings and numbers are recommended since they al
 
 ```svelte
 {#each items as item (item.id)}
-	<li>{item.name} x {item.qty}</li>
+  <li>{item.name} x {item.qty}</li>
 {/each}
 
 <!-- or with additional index value -->
 {#each items as item, i (item.id)}
-	<li>{i + 1}: {item.name} x {item.qty}</li>
+  <li>{i + 1}: {item.name} x {item.qty}</li>
 {/each}
 ```
 
@@ -29,14 +29,14 @@ You can freely use destructuring and rest patterns in each blocks.
 
 ```svelte
 {#each items as { id, name, qty }, i (id)}
-	<li>{i + 1}: {name} x {qty}</li>
+  <li>{i + 1}: {name} x {qty}</li>
 {/each}
 
 {#each objects as { id, ...rest }}
-	<li><span>{id}</span><MyComponent {...rest} /></li>
+  <li><span>{id}</span><MyComponent {...rest} /></li>
 {/each}
 
 {#each items as [id, ...rest]}
-	<li><span>{id}</span><MyComponent values={rest} /></li>
+  <li><span>{id}</span><MyComponent values={rest} /></li>
 {/each}
 ```
