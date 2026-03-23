@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 4.5.1
+
+### Patch Changes
+
+- 1688aa8: docs: add Recommendation section to README
+
 ## 4.5.0
 
 ### Minor Changes
