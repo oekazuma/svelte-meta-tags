@@ -22,8 +22,7 @@
 
 Boost your traffic and outperform competitors with automated backlinks and SEO-ready content—even while you sleep. This tool has been gaining serious traction lately, and the results look solid. [Check it out!](https://outrank.so/?via=svelte-meta-tags)
 
-[![image](https://github.com/user-attachments/assets/5690d158-b24d-4f84-8bc7-1e124d799247)](https://outrank.so/?via=svelte-meta-tags)
-
+[![image](https://github.com/user-attachments/assets/9c0b504c-efe5-4f1d-ad07-0020f72fa56f)](https://outrank.so/?via=svelte-meta-tags)
 
 ## License
 
