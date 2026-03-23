@@ -18,6 +18,13 @@
 - [Documentation](https://oekazuma.github.io/svelte-meta-tags/) (Support for English and Japanese)
 - [Contribution Guide](https://github.com/oekazuma/svelte-meta-tags/blob/main/CONTRIBUTING.md)
 
+## Ad
+
+Boost your traffic and outperform competitors with automated backlinks and SEO-ready content—even while you sleep. This tool has been gaining serious traction lately, and the results look solid. [Check it out!](https://outrank.so/?via=svelte-meta-tags)
+
+[![image](https://github.com/user-attachments/assets/5690d158-b24d-4f84-8bc7-1e124d799247)](https://outrank.so/?via=svelte-meta-tags)
+
+
 ## License
 
 [MIT](https://github.com/oekazuma/svelte-meta-tags/blob/main/LICENSE.md)
