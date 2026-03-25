@@ -30,7 +30,7 @@ catalog:
   typescript: ^5.9.3
   typescript-eslint: ^8.57.1
   vite: ^8.0.2
-  vitest: ^4.1.0
+  vitest: ^4.1.1
 
 minimumReleaseAge: 1440
 
