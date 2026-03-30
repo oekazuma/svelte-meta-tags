@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 4.5.2
+
+### Patch Changes
+
+- 2ec4cb2: Fix `state_referenced_locally` warning by converting `robotsParams` from `$state` to `$derived.by`
+
 ## 4.5.1
 
 ### Patch Changes
