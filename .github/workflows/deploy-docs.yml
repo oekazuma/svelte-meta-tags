@@ -19,7 +19,7 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Install, build, and upload your site
-        uses: withastro/action@74d664f13f9f9063e37b49d74a74613dbf94db3c # v6.0.0
+        uses: withastro/action@44706356b4eb735f8b9035699eb4796241a040c4 # v6.1.0
         with:
           path: docs
           node-version: 24.14.1
