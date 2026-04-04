@@ -8,7 +8,7 @@ catalog:
   '@astrojs/check': ^0.9.8
   '@astrojs/starlight': ^0.38.2
   '@changesets/cli': ^2.30.0
-  '@eslint/compat': ^2.0.3
+  '@eslint/compat': ^2.0.4
   '@eslint/js': ^10.0.1
   '@playwright/test': ^1.59.1
   '@sveltejs/adapter-auto': ^7.0.1
@@ -17,9 +17,9 @@ catalog:
   '@sveltejs/vite-plugin-svelte': ^7.0.0
   '@types/eslint': ^9.6.1
   astro: ^6.1.3
-  eslint: ^10.1.0
+  eslint: ^10.2.0
   eslint-config-prettier: ^10.1.8
-  eslint-plugin-svelte: ^3.16.0
+  eslint-plugin-svelte: ^3.17.0
   globals: ^17.4.0
   prettier: ^3.8.1
   prettier-plugin-svelte: ^3.5.1
