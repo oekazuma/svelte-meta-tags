@@ -1,5 +1,11 @@
 # svelte-meta-tags
 
+## 4.6.0
+
+### Minor Changes
+
+- fb829a3: feat: add automatic fallback behavior for Twitter metadata. When `twitter.title` is not provided, it falls back to `og:title` then `title`. When `twitter.description` is not provided, it falls back to `og:description` then `description`.
+
 ## 4.5.2
 
 ### Patch Changes
