@@ -20,7 +20,7 @@ twitter={{
 
 ## フォールバック動作
 
-`twitter` プロパティで `title` や `description` が明示的に設定されていない場合、他の利用可能な値に自動的にフォールバックします:
+`twitter` プロパティで `twitter.title` や `twitter.description` が明示的に設定されていない場合、他の利用可能な値に自動的にフォールバックします:
 
 - `twitter.title` → `openGraph.title` → `title`
 - `twitter.description` → `openGraph.description` → `description`

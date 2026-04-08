@@ -20,7 +20,7 @@ twitter={{
 
 ## Fallback Behavior
 
-When `title` or `description` is not explicitly set in the `twitter` prop, they automatically fall back to other available values:
+When `twitter.title` or `twitter.description` is not explicitly set in the `twitter` prop, they automatically fall back to other available values:
 
 - `twitter.title` → `openGraph.title` → `title`
 - `twitter.description` → `openGraph.description` → `description`
