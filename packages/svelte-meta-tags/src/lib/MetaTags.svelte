@@ -85,11 +85,11 @@
     {#if twitter.site}
       <meta name="twitter:site" content={twitter.site} />
     {/if}
-    {#if twitter.title}
-      <meta name="twitter:title" content={twitter.title} />
+    {#if twitter.title || openGraph?.title || updatedTitle}
+      <meta name="twitter:title" content={twitter.title || openGraph?.title || updatedTitle} />
     {/if}
-    {#if twitter.description}
-      <meta name="twitter:description" content={twitter.description} />
+    {#if twitter.description || openGraph?.description || description}
+      <meta name="twitter:description" content={twitter.description || openGraph?.description || description} />
     {/if}
     {#if twitter.creator}
       <meta name="twitter:creator" content={twitter.creator} />
