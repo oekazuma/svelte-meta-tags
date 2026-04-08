@@ -153,3 +153,64 @@ export const load = () => {
 >
 > このユーティリティを使用せずに、`return { pageMetaTags: Object.freeze<MetaTagsProps>({ ... }) }`のように生のオブジェクトを提供することもできます。
 > `MetaTagsProps`は、`import type { MetaTagsProps } from 'svelte-meta-tags'`を使用してインポートできる、このパッケージで提供される型です。
+
+## Remote Functionsとの使用（実験的機能）
+
+SvelteKitの[Remote Functions](https://svelte.dev/docs/kit/remote-functions)を使用すると、`.remote.ts`ファイルにサーバー専用の関数を定義し、コンポーネントから直接呼び出すことができます。
+
+> **注意:** SEO目的の場合は、上記で紹介した`load`関数を使用する従来のアプローチを推奨します。この方法はメタタグがサーバーレンダリングされたHTMLに確実に含まれることを保証します。Remote Functionsは、SEOの重要性が低いページ（ダッシュボード、認証済みページなど）でデータ取得をコンポーネントと同じ場所に配置したい場合に適しています。
+
+> 注意: Remote Functionsは実験的な機能です。使用するには`svelte.config.js`で有効にする必要があります:
+>
+> ```js
+> const config = {
+>   kit: {
+>     experimental: {
+>       remoteFunctions: true
+>     }
+>   },
+>   compilerOptions: {
+>     experimental: {
+>       async: true
+>     }
+>   }
+> };
+> ```
+
+### data.remote.ts
+
+```ts
+import { query } from '$app/server';
+import * as v from 'valibot';
+import * as db from '$lib/server/database';
+
+export const getPost = query(v.string(), async (slug) => {
+  return await db.getPost(slug);
+});
+```
+
+### +page.svelte
+
+```svelte
+<script>
+  import { MetaTags } from 'svelte-meta-tags';
+  import { getPost } from './data.remote';
+  import { page } from '$app/state';
+
+  let post = $derived(await getPost(page.params.slug));
+</script>
+
+<MetaTags
+  title={post.title}
+  titleTemplate="%s | My Blog"
+  description={post.excerpt}
+  openGraph={{
+    type: 'article',
+    title: post.title,
+    description: post.excerpt,
+    images: [{ url: post.coverImage, width: 1200, height: 630, alt: post.title }]
+  }}
+/>
+```
+
+> 注意: `await`式を使用するには、Svelteコンパイラオプションで`experimental.async`を有効にする必要があります。`$derived`を使用することで、クライアントサイドナビゲーション時にパラメータが変更された際にクエリが再実行されます。ローディングやエラー状態を処理するために、親コンポーネントに`<svelte:boundary>`を配置する必要があります。
