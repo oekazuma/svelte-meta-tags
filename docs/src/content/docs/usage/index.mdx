@@ -200,23 +200,17 @@ export const getPost = query(v.string(), async (slug) => {
   let post = $derived(await getPost(page.params.slug));
 </script>
 
-<svelte:boundary>
-  <MetaTags
-    title={post.title}
-    titleTemplate="%s | My Blog"
-    description={post.excerpt}
-    openGraph={{
-      type: 'article',
-      title: post.title,
-      description: post.excerpt,
-      images: [{ url: post.coverImage, width: 1200, height: 630, alt: post.title }]
-    }}
-  />
-
-  {#snippet pending()}
-    <MetaTags title="Loading..." titleTemplate="%s | My Blog" />
-  {/snippet}
-</svelte:boundary>
+<MetaTags
+  title={post.title}
+  titleTemplate="%s | My Blog"
+  description={post.excerpt}
+  openGraph={{
+    type: 'article',
+    title: post.title,
+    description: post.excerpt,
+    images: [{ url: post.coverImage, width: 1200, height: 630, alt: post.title }]
+  }}
+/>
 ```
 
-> Note: Using `await` expressions requires enabling `experimental.async` in the Svelte compiler options. When using `await` in the markup, you must wrap it with `<svelte:boundary>`. Using `$derived` ensures the query re-runs on client-side navigation when parameters change.
+> Note: Using `await` expressions requires enabling `experimental.async` in the Svelte compiler options. Using `$derived` ensures the query re-runs on client-side navigation when parameters change. A `<svelte:boundary>` is needed in an ancestor component to handle loading and error states.
