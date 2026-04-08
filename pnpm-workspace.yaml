@@ -37,3 +37,6 @@ minimumReleaseAge: 1440
 onlyBuiltDependencies:
   - esbuild
   - sharp
+minimumReleaseAgeExclude:
+  # Renovate security update: vite@8.0.5
+  - vite@8.0.5
