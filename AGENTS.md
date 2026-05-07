@@ -69,7 +69,7 @@ The public surface is intentionally small (`packages/svelte-meta-tags/src/lib/in
 
 - **Twitter fallback chain**: `twitter.title || openGraph.title || updatedTitle` (and the same shape for `description`). The `twitterFallback*` test routes lock this in — preserve the precedence when touching `MetaTags.svelte`.
 - **`titleTemplate`**: `%s` placeholder is substituted with `title`; if `title` is missing, the raw `title` is used (template is not applied alone).
-- **`og:type`-conditional blocks**: `article`, `book`, `profile`, and `video.movie | video.episode | video.tv_show | video.other` each render a distinct sub-block. Adding a new structured type means matching it in the `og:type.toLowerCase()` chain *and* adding fields to `OpenGraph` in `types.d.ts`.
+- **`og:type`-conditional blocks**: `article`, `book`, `profile`, and `video.movie | video.episode | video.tv_show | video.other` each render a distinct sub-block. Adding a new structured type means matching it in the `og:type.toLowerCase()` chain _and_ adding fields to `OpenGraph` in `types.d.ts`.
 - **`additionalMetaTags`**: when an entry has `httpEquiv`, it is emitted as `http-equiv` (HTML attribute name). Don't normalize this away.
 - **`openGraph.image` vs `openGraph.images`**: `image` (singular) is an alias prepended to `images`; both render as `og:image`. See `openGraphImage.test.ts`.
 - **`robots: false`**: suppresses the `<meta name="robots">` tag entirely. Setting `additionalRobotsProps` while `robots` is falsy logs a `console.warn` (covered by `$effect`).
