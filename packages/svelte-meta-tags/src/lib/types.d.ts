@@ -74,6 +74,7 @@ export interface OpenGraph {
   type?: string;
   title?: string;
   description?: string;
+  image?: OpenGraphImage;
   images?: ReadonlyArray<OpenGraphImage>;
   videos?: ReadonlyArray<OpenGraphVideos>;
   audio?: ReadonlyArray<OpenGraphAudio>;

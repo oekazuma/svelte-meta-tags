@@ -271,8 +271,9 @@
       <meta property="og:description" content={openGraph.description || description} />
     {/if}
 
-    {#if openGraph.images && openGraph.images.length}
-      {#each openGraph.images as image (image)}
+    {#if openGraph.image || (openGraph.images && openGraph.images.length)}
+      {@const ogImages = openGraph.image ? [openGraph.image, ...(openGraph.images || [])] : openGraph.images}
+      {#each ogImages as image (image)}
         <meta property="og:image" content={image.url} />
         {#if image.alt}
           <meta property="og:image:alt" content={image.alt} />
