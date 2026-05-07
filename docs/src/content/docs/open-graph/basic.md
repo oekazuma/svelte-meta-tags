@@ -33,7 +33,7 @@ sidebar:
 />
 ```
 
-### Single image shortcut
+## Single image shortcut
 
 When you only have one image, you can use `image` instead of `images`. This is convenient because most social media cards display only the first image.
 
