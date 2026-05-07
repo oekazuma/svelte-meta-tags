@@ -32,3 +32,22 @@ sidebar:
   }}
 />
 ```
+
+### Single image shortcut
+
+When you only have one image, you can use `image` instead of `images`. This is convenient because most social media cards display only the first image.
+
+```svelte
+<MetaTags
+  openGraph={{
+    image: {
+      url: 'https://www.example.ie/og-image.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Og Image Alt'
+    }
+  }}
+/>
+```
+
+If both `image` and `images` are provided, `image` is rendered first, followed by the items in `images`.
