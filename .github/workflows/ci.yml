@@ -4,26 +4,55 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - '.changeset/**'
+      - '.vscode/**'
+      - '.husky/**'
   pull_request:
+    paths-ignore:
+      - '.changeset/**'
+      - '.vscode/**'
+      - '.husky/**'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
-  ci:
+  lint:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-      - name: Install pnpm
-        uses: pnpm/action-setup@8912a9102ac27614460f54aedde9e1e7f9aec20d # v6.0.5
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - name: Setup Node.js and dependencies
+        uses: ./.github/workflows/setup-node
+      - name: Run Prettier check & ESLint
+        run: pnpm lint
+
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Setup Node.js and dependencies
+        uses: ./.github/workflows/setup-node
       - name: Run svelte-package
         run: pnpm package
       - name: Run svelte-check
         run: pnpm check
-      - name: Run ESLint
-        run: pnpm lint
+
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Setup Node.js and dependencies
+        uses: ./.github/workflows/setup-node
+      - name: Run svelte-package
+        run: pnpm package
       - name: Run Build
         run: pnpm build
-      - name: Install Playwright
-        run: pnpm dlx playwright@1.59.1 install --with-deps
+      - name: Setup Playwright
+        uses: ./.github/workflows/setup-playwright
       - name: Run Vitest and Playwright
         run: pnpm test

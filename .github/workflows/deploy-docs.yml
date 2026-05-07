@@ -18,12 +18,18 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Get Node.js version from .npmrc
+        id: get-node-version
+        run: echo "node-version=$(grep '^use-node-version=' .npmrc | cut -d'=' -f2)" >> "$GITHUB_OUTPUT"
+      - name: Get pnpm version from package.json
+        id: get-pnpm-version
+        run: echo "pnpm-version=$(node -p "require('./package.json').packageManager")" >> "$GITHUB_OUTPUT"
       - name: Install, build, and upload your site
         uses: withastro/action@b7d53628f8b666036b0238aadb0b984a2a489f26 # v6.1.1
         with:
           path: docs
-          node-version: 24.15.0
-          package-manager: pnpm@latest
+          node-version: ${{ steps.get-node-version.outputs.node-version }}
+          package-manager: ${{ steps.get-pnpm-version.outputs.pnpm-version }}
 
   deploy:
     needs: build

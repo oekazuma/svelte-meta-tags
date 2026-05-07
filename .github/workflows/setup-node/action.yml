@@ -1,0 +1,30 @@
+name: 'Setup Node.js and pnpm'
+description: 'Install pnpm, set up Node.js using version from .npmrc, and install dependencies'
+
+inputs:
+  registry-url:
+    description: 'Optional npm registry URL for publishing'
+    required: false
+    default: ''
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Get Node.js version from .npmrc
+      id: get-node-version
+      shell: bash
+      run: echo "node-version=$(grep '^use-node-version=' .npmrc | cut -d'=' -f2)" >> "$GITHUB_OUTPUT"
+
+    - name: Install pnpm
+      uses: pnpm/action-setup@8912a9102ac27614460f54aedde9e1e7f9aec20d # v6.0.5
+
+    - name: Setup Node.js
+      uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+      with:
+        node-version: ${{ steps.get-node-version.outputs.node-version }}
+        cache: 'pnpm'
+        registry-url: ${{ inputs.registry-url }}
+
+    - name: Install dependencies
+      shell: bash
+      run: pnpm install --frozen-lockfile
