@@ -1,0 +1,28 @@
+name: 'Setup Playwright'
+description: 'Cache and install Playwright browsers using the version from pnpm-workspace.yaml'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Get Playwright version from pnpm-workspace.yaml
+      shell: bash
+      run: echo "PLAYWRIGHT_VERSION=$(grep '@playwright/test' pnpm-workspace.yaml | awk '{print $2}' | sed 's/\^//')" >> "${GITHUB_ENV}"
+
+    - name: Cache Playwright browsers
+      id: cache-playwright-browsers
+      uses: actions/cache@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+      with:
+        path: ~/.cache/ms-playwright
+        key: ${{ runner.os }}-playwright-${{ env.PLAYWRIGHT_VERSION }}
+        restore-keys: |
+          ${{ runner.os }}-playwright-
+
+    - name: Install Playwright browsers
+      if: steps.cache-playwright-browsers.outputs.cache-hit != 'true'
+      shell: bash
+      run: pnpm --filter svelte-5 exec playwright install --with-deps
+
+    - name: Install Playwright system dependencies
+      if: steps.cache-playwright-browsers.outputs.cache-hit == 'true'
+      shell: bash
+      run: pnpm --filter svelte-5 exec playwright install-deps
