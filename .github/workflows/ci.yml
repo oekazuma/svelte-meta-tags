@@ -8,15 +8,17 @@ on:
       - '.changeset/**'
       - '.vscode/**'
       - '.husky/**'
+      - '**/.github/**/*.md'
   pull_request:
     paths-ignore:
       - '.changeset/**'
       - '.vscode/**'
       - '.husky/**'
+      - '**/.github/**/*.md'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+  cancel-in-progress: true
 
 jobs:
   lint:
