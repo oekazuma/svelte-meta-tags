@@ -8,7 +8,7 @@ catalog:
   '@astrojs/check': ^0.9.9
   '@astrojs/starlight': ^0.38.5
   '@changesets/cli': ^2.31.0
-  '@eslint/compat': ^2.0.5
+  '@eslint/compat': ^2.1.0
   '@eslint/js': ^10.0.1
   '@playwright/test': ^1.59.1
   '@sveltejs/adapter-auto': ^7.0.1
@@ -23,7 +23,7 @@ catalog:
   globals: ^17.6.0
   prettier: ^3.8.3
   prettier-plugin-svelte: ^3.5.1
-  publint: ^0.3.19
+  publint: ^0.3.20
   sharp: ^0.34.5
   svelte: ^5.55.5
   svelte-check: ^4.4.8
