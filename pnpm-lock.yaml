@@ -16,8 +16,8 @@ catalogs:
       specifier: ^2.31.0
       version: 2.31.0
     '@eslint/compat':
-      specifier: ^2.0.5
-      version: 2.0.5
+      specifier: ^2.1.0
+      version: 2.1.0
     '@eslint/js':
       specifier: ^10.0.1
       version: 10.0.1
@@ -61,8 +61,8 @@ catalogs:
       specifier: ^3.5.1
       version: 3.5.1
     publint:
-      specifier: ^0.3.19
-      version: 0.3.19
+      specifier: ^0.3.20
+      version: 0.3.20
     sharp:
       specifier: ^0.34.5
       version: 0.34.5
@@ -94,7 +94,7 @@ importers:
         version: 2.31.0(@types/node@24.12.0)
       '@eslint/compat':
         specifier: 'catalog:'
-        version: 2.0.5(eslint@10.3.0)
+        version: 2.1.0(eslint@10.3.0)
       '@eslint/js':
         specifier: 'catalog:'
         version: 10.0.1(eslint@10.3.0)
@@ -188,7 +188,7 @@ importers:
         version: 7.1.2(svelte@5.55.5)(vite@8.0.11(@types/node@24.12.0)(esbuild@0.27.4)(yaml@2.8.3))
       publint:
         specifier: 'catalog:'
-        version: 0.3.19
+        version: 0.3.20
       svelte:
         specifier: 'catalog:'
         version: 5.55.5
@@ -584,8 +584,8 @@ packages:
     resolution: {integrity: sha512-EriSTlt5OC9/7SXkRSCAhfSxxoSUgBm33OH+IkwbdpgoqsSsUg7y3uh+IICI/Qg4BBWr3U2i39RpmycbxMq4ew==}
     engines: {node: ^12.0.0 || ^14.0.0 || >=16.0.0}
 
-  '@eslint/compat@2.0.5':
-    resolution: {integrity: sha512-IbHDbHJfkVNv6xjlET8AIVo/K1NQt7YT4Rp6ok/clyBGcpRx1l6gv0Rq3vBvYfPJIZt6ODf66Zq08FJNDpnzgg==}
+  '@eslint/compat@2.1.0':
+    resolution: {integrity: sha512-LgaSCymEpw7tF53xvDw9SNsraPb1IBHxpdABIOM0hW8UAlP8znrjYtuxfR58FSJ3L9BhwD+FaPRFQpZq84Nh6g==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
     peerDependencies:
       eslint: ^8.40 || 9 || 10
@@ -2742,8 +2742,8 @@ packages:
   property-information@7.1.0:
     resolution: {integrity: sha512-TwEZ+X+yCJmYfL7TPUOcvBZ4QfoT5YenQiJuX//0th53DE6w0xxLEtfK3iyryQFddXuvkIk51EEgrJQ0WJkOmQ==}
 
-  publint@0.3.19:
-    resolution: {integrity: sha512-J3p4GOocCRFyLLFRzGfIhAwWgk0Kkcdxj5iFspFvCYbyiJs5IhCM8gsIkcNeQL+tdpV671RtJQiTFSUKhl1Wjg==}
+  publint@0.3.20:
+    resolution: {integrity: sha512-UWqFYP7VBVCe9l/leEEGJrDs6Am4K4KapLmLi5qbt+9fA+Ny38ghdW+bw1nYfVqCK8/3kgsxjjhFjTYqYYRpyw==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -3987,7 +3987,7 @@ snapshots:
 
   '@eslint-community/regexpp@4.12.2': {}
 
-  '@eslint/compat@2.0.5(eslint@10.3.0)':
+  '@eslint/compat@2.1.0(eslint@10.3.0)':
     dependencies:
       '@eslint/core': 1.2.1
     optionalDependencies:
@@ -6502,7 +6502,7 @@ snapshots:
 
   property-information@7.1.0: {}
 
-  publint@0.3.19:
+  publint@0.3.20:
     dependencies:
       '@publint/pack': 0.1.4
       package-manager-detector: 1.6.0
