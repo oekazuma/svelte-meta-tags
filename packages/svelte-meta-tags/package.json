@@ -31,7 +31,7 @@
     "prepublishOnly": "pnpm package && cp ../../README.md ./"
   },
   "dependencies": {
-    "schema-dts": "^1.1.5"
+    "schema-dts": "^2.0.0"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "catalog:",
