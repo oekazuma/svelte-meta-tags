@@ -1,5 +1,5 @@
 name: 'Setup Node.js and pnpm'
-description: 'Install pnpm, set up Node.js using version from .npmrc, and install dependencies'
+description: 'Install pnpm, set up Node.js using version from package.json devEngines, and install dependencies'
 
 inputs:
   registry-url:
@@ -10,13 +10,13 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: Get Node.js version from .npmrc
+    - name: Get Node.js version from package.json
       id: get-node-version
       shell: bash
       run: |
-        NODE_VERSION=$(grep '^use-node-version=' .npmrc | cut -d'=' -f2 | tr -d '[:space:]')
-        if [ -z "$NODE_VERSION" ]; then
-          echo "::error::Could not extract use-node-version from .npmrc"
+        NODE_VERSION=$(jq -r '.devEngines.runtime.version' package.json)
+        if [ -z "$NODE_VERSION" ] || [ "$NODE_VERSION" = "null" ]; then
+          echo "::error::Could not extract devEngines.runtime.version from package.json"
           exit 1
         fi
         echo "node-version=${NODE_VERSION}" >> "$GITHUB_OUTPUT"
