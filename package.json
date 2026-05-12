@@ -29,5 +29,12 @@
   "packageManager": "pnpm@11.0.9",
   "engines": {
     "pnpm": "^11.0.9"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "24.15.0",
+      "onFail": "error"
+    }
   }
 }

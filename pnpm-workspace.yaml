@@ -4,6 +4,12 @@ packages:
   - packages/*
   - tests/*
 
+engineStrict: true
+
+allowBuilds:
+  esbuild: true
+  sharp: true
+
 catalog:
   '@astrojs/check': ^0.9.9
   '@astrojs/starlight': ^0.38.5
@@ -33,7 +39,3 @@ catalog:
   vitest: ^4.1.5
 
 minimumReleaseAge: 1440
-
-onlyBuiltDependencies:
-  - esbuild
-  - sharp
