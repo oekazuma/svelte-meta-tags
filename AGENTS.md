@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository layout
 
-This is a **pnpm workspace monorepo**. The pnpm version is pinned via `packageManager` in the root `package.json`, and the Node version via `use-node-version` in `.npmrc` — check those files for the current values. All shared dependency versions live in the `catalog:` block of `pnpm-workspace.yaml`; package `package.json` files reference them via `"catalog:"` and should not pin versions directly.
+This is a **pnpm workspace monorepo**. The pnpm version is pinned via `packageManager` in the root `package.json`, and the Node version via `devEngines.runtime` in the root `package.json` — check that file for the current values. All shared dependency versions live in the `catalog:` block of `pnpm-workspace.yaml`; package `package.json` files reference them via `"catalog:"` and should not pin versions directly.
 
 Workspace members:
 
