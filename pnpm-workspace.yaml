@@ -4,6 +4,8 @@ packages:
   - packages/*
   - tests/*
 
+minimumReleaseAge: 10080
+
 engineStrict: true
 
 allowBuilds:
@@ -37,5 +39,3 @@ catalog:
   typescript-eslint: ^8.59.2
   vite: ^8.0.11
   vitest: ^4.1.5
-
-minimumReleaseAge: 1440
