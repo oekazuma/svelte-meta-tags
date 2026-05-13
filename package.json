@@ -26,9 +26,9 @@
     "prettier-plugin-svelte": "catalog:",
     "typescript-eslint": "catalog:"
   },
-  "packageManager": "pnpm@11.0.9",
+  "packageManager": "pnpm@11.0.3",
   "engines": {
-    "pnpm": "^11.0.9"
+    "pnpm": "^11.0.3"
   },
   "devEngines": {
     "runtime": {
