@@ -34,7 +34,7 @@
     "runtime": {
       "name": "node",
       "version": "24.15.0",
-      "onFail": "error"
+      "onFail": "download"
     }
   }
 }
