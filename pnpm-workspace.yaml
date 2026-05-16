@@ -39,3 +39,6 @@ catalog:
   typescript-eslint: ^8.59.3
   vite: ^8.0.12
   vitest: ^4.1.6
+minimumReleaseAgeExclude:
+  # Renovate security update: svelte@5.55.7
+  - svelte@5.55.7
