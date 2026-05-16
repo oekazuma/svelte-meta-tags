@@ -31,7 +31,7 @@ catalog:
   globals: ^17.6.0
   prettier: ^3.8.3
   prettier-plugin-svelte: ^3.5.2
-  publint: ^0.3.20
+  publint: ^0.3.21
   sharp: ^0.34.5
   svelte: ^5.55.5
   svelte-check: ^4.4.8

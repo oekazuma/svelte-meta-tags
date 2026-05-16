@@ -61,8 +61,8 @@ catalogs:
       specifier: ^3.5.2
       version: 3.5.2
     publint:
-      specifier: ^0.3.20
-      version: 0.3.20
+      specifier: ^0.3.21
+      version: 0.3.21
     sharp:
       specifier: ^0.34.5
       version: 0.34.5
@@ -191,7 +191,7 @@ importers:
         version: 7.1.2(svelte@5.55.5)(vite@8.0.12(@types/node@24.12.0)(esbuild@0.27.4)(yaml@2.8.3))
       publint:
         specifier: 'catalog:'
-        version: 0.3.20
+        version: 0.3.21
       svelte:
         specifier: 'catalog:'
         version: 5.55.5
@@ -2871,8 +2871,8 @@ packages:
   property-information@7.1.0:
     resolution: {integrity: sha512-TwEZ+X+yCJmYfL7TPUOcvBZ4QfoT5YenQiJuX//0th53DE6w0xxLEtfK3iyryQFddXuvkIk51EEgrJQ0WJkOmQ==}
 
-  publint@0.3.20:
-    resolution: {integrity: sha512-UWqFYP7VBVCe9l/leEEGJrDs6Am4K4KapLmLi5qbt+9fA+Ny38ghdW+bw1nYfVqCK8/3kgsxjjhFjTYqYYRpyw==}
+  publint@0.3.21:
+    resolution: {integrity: sha512-OqejcnMV6E9zel2oCrUOJEiiFkGiAAni0A6ibfQNh1k9Gu5z4F+Yso8lllam7AzmV6Do0vp7u3UpZNRBwuXaHQ==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -6634,7 +6634,7 @@ snapshots:
 
   property-information@7.1.0: {}
 
-  publint@0.3.20:
+  publint@0.3.21:
     dependencies:
       '@publint/pack': 0.1.4
       package-manager-detector: 1.6.0
