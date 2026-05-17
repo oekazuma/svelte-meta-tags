@@ -33,7 +33,7 @@ catalog:
   prettier-plugin-svelte: ^3.5.2
   publint: ^0.3.20
   sharp: ^0.34.5
-  svelte: ^5.55.5
+  svelte: ^5.55.7
   svelte-check: ^4.4.8
   typescript: ^6.0.3
   typescript-eslint: ^8.59.3
