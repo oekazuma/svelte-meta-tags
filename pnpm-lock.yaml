@@ -40,8 +40,8 @@ catalogs:
       specifier: ^9.6.1
       version: 9.6.1
     astro:
-      specifier: ^6.3.3
-      version: 6.3.3
+      specifier: ^6.3.7
+      version: 6.3.7
     eslint:
       specifier: ^10.4.0
       version: 10.4.0
@@ -133,10 +133,10 @@ importers:
         version: 0.9.9(prettier@3.8.3)(typescript@6.0.3)
       '@astrojs/starlight':
         specifier: 'catalog:'
-        version: 0.39.2(astro@6.3.3(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3))(typescript@6.0.3)
+        version: 0.39.2(astro@6.3.7(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3))(typescript@6.0.3)
       astro:
         specifier: 'catalog:'
-        version: 6.3.3(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3)
+        version: 6.3.7(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3)
       sharp:
         specifier: 'catalog:'
         version: 0.34.5
@@ -1499,8 +1499,8 @@ packages:
     peerDependencies:
       astro: ^4.0.0-beta || ^5.0.0-beta || ^3.3.0 || ^6.0.0-beta
 
-  astro@6.3.3:
-    resolution: {integrity: sha512-wvLIZQYbBZt6U8gyflBW4SLBypaqdwLZUH93rT3oT53cmQ0bTGubvMAGjqBRoheOYzYcTJZtW6czztzbu4kQ5g==}
+  astro@6.3.7:
+    resolution: {integrity: sha512-zIeDRrI0qNgN1lcCjNqt6/IVCVej7VwSa326cO8uP9BOk1cg4QuffhLnOn2gCgWQr32/wxpSRFfXiLKHglu1Tw==}
     engines: {node: '>=22.12.0', npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -1686,9 +1686,6 @@ packages:
   detect-libc@2.1.2:
     resolution: {integrity: sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==}
     engines: {node: '>=8'}
-
-  devalue@5.6.4:
-    resolution: {integrity: sha512-Gp6rDldRsFh/7XuouDbxMH3Mx8GMCcgzIb1pDTvNyn8pZGQ22u+Wa+lGV9dQCltFQ7uVw0MhRyb8XDskNFOReA==}
 
   devalue@5.8.1:
     resolution: {integrity: sha512-4CXDYRBGqN+57wVJkuXBYmpAVUSg3L6JAQa/DFqm238G73E1wuyc/JhGQJzN7vUf/CMphYau2zXbfWzDR5aTEw==}
@@ -3778,12 +3775,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@5.0.4(astro@6.3.3(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3))':
+  '@astrojs/mdx@5.0.4(astro@6.3.7(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3))':
     dependencies:
       '@astrojs/markdown-remark': 7.1.1
       '@mdx-js/mdx': 3.1.1
       acorn: 8.16.0
-      astro: 6.3.3(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3)
+      astro: 6.3.7(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3)
       es-module-lexer: 2.0.0
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.5
@@ -3811,17 +3808,17 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 4.3.6
 
-  '@astrojs/starlight@0.39.2(astro@6.3.3(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3))(typescript@6.0.3)':
+  '@astrojs/starlight@0.39.2(astro@6.3.7(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3))(typescript@6.0.3)':
     dependencies:
       '@astrojs/markdown-remark': 7.1.1
-      '@astrojs/mdx': 5.0.4(astro@6.3.3(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3))
+      '@astrojs/mdx': 5.0.4(astro@6.3.7(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3))
       '@astrojs/sitemap': 3.7.2
       '@pagefind/default-ui': 1.4.0
       '@types/hast': 3.0.4
       '@types/js-yaml': 4.0.9
       '@types/mdast': 4.0.4
-      astro: 6.3.3(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3)
-      astro-expressive-code: 0.42.0(astro@6.3.3(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3))
+      astro: 6.3.7(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3)
+      astro-expressive-code: 0.42.0(astro@6.3.7(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3))
       bcp-47: 2.1.0
       hast-util-from-html: 2.0.3
       hast-util-select: 6.0.4
@@ -4980,12 +4977,12 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro-expressive-code@0.42.0(astro@6.3.3(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3)):
+  astro-expressive-code@0.42.0(astro@6.3.7(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3)):
     dependencies:
-      astro: 6.3.3(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3)
+      astro: 6.3.7(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3)
       rehype-expressive-code: 0.42.0
 
-  astro@6.3.3(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3):
+  astro@6.3.7(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3):
     dependencies:
       '@astrojs/compiler': 4.0.0
       '@astrojs/internal-helpers': 0.9.1
@@ -5001,7 +4998,7 @@ snapshots:
       clsx: 2.1.1
       common-ancestor-path: 2.0.0
       cookie: 1.1.1
-      devalue: 5.6.4
+      devalue: 5.8.1
       diff: 8.0.3
       dset: 3.1.4
       es-module-lexer: 2.0.0
@@ -5221,8 +5218,6 @@ snapshots:
   detect-indent@6.1.0: {}
 
   detect-libc@2.1.2: {}
-
-  devalue@5.6.4: {}
 
   devalue@5.8.1: {}
 
