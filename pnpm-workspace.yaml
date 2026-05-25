@@ -30,7 +30,7 @@ catalog:
   eslint-plugin-svelte: ^3.17.1
   globals: ^17.6.0
   prettier: ^3.8.3
-  prettier-plugin-svelte: ^3.5.2
+  prettier-plugin-svelte: ^4.0.1
   publint: ^0.3.21
   sharp: ^0.34.5
   svelte: ^5.55.9
