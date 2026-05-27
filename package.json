@@ -27,13 +27,15 @@
     "typescript-eslint": "catalog:"
   },
   "packageManager": "pnpm@11.2.2",
-  "engines": {
-    "pnpm": "^11.2.2"
-  },
   "devEngines": {
     "runtime": {
       "name": "node",
       "version": "24.15.0",
+      "onFail": "download"
+    },
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.2.2",
       "onFail": "download"
     }
   }

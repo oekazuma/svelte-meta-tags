@@ -6,8 +6,6 @@ packages:
 
 minimumReleaseAge: 4320
 
-engineStrict: true
-
 allowBuilds:
   esbuild: true
   sharp: true
