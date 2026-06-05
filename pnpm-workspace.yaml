@@ -36,4 +36,4 @@ catalog:
   typescript: ^6.0.3
   typescript-eslint: ^8.60.1
   vite: ^8.0.14
-  vitest: ^4.1.7
+  vitest: ^4.1.8
