@@ -2,16 +2,18 @@
   import type { SearchAction, WebSite, WithActionConstraints, WithContext } from 'schema-dts';
   import { MetaTags, JsonLd } from 'svelte-meta-tags';
 
+  const potentialAction: WithActionConstraints<SearchAction> = {
+    '@type': 'SearchAction',
+    target: 'https://example.com/search?q={search_term_string}',
+    'query-input': 'required name=search_term_string'
+  };
+
   const jsonLdSchema: WithContext<WebSite> = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Example Website',
     url: 'https://example.com',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: 'https://example.com/search?q={search_term_string}',
-      'query-input': 'required name=search_term_string'
-    } as WithActionConstraints<SearchAction>
+    potentialAction
   };
 </script>
 
