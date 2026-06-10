@@ -33,6 +33,10 @@
     {
       "groupName": "Svelte",
       "matchPackageNames": ["@sveltejs/{/,}**", "svelte{/,}**"]
+    },
+    {
+      "groupName": "schema-dts",
+      "matchPackageNames": ["schema-dts"]
     }
   ]
 }
