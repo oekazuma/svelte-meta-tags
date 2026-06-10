@@ -11,7 +11,9 @@ Workspace members:
 - `packages/svelte-meta-tags/` — the published library (the only public package). Source is in `src/lib/`. The package consumes itself via the SvelteKit dev app under `src/routes/` for local iteration.
 - `tests/svelte-5/` — a SvelteKit app dedicated to **Playwright e2e tests**. Each route under `src/routes/<feature>/` corresponds to a `tests/<feature>.test.ts` that asserts the rendered `<head>` markup. This is where new feature behavior must be verified (per `CONTRIBUTING.md`).
 - `example/` — a runnable SvelteKit demo of the library; not part of the test pipeline.
-- `docs/` — Astro + Starlight documentation site (deployed to GitHub Pages by `.github/workflows/deploy-docs.yml` only when `docs/**` changes).
+- `docs/` — Astro + Starlight documentation site (deployed to GitHub Pages by `.github/workflows/deploy-docs.yml` only when `docs/**` changes). It is **bilingual**: English pages live in `docs/src/content/docs/`, Japanese translations in `docs/src/content/docs/ja/` (mirrored paths). Sidebar labels and their `translations` live in `docs/astro.config.mjs`. When documenting a feature, update **both** locales.
+
+Non-workspace directories worth knowing: `.agents/skills/` holds vendored Svelte AI skills (`svelte-code-writer`, `svelte-core-bestpractices`) pulled from `sveltejs/ai-tools` and pinned by hash in `skills-lock.json`; `.claude/skills/` symlinks into it. Do **not** hand-edit these files — they are managed by their lock file. Do follow their guidance when writing Svelte code.
 
 ## Common commands
 
@@ -48,9 +50,9 @@ pnpm --filter svelte-5 exec playwright test --project=chromium                  
 
 The public surface is intentionally small (`packages/svelte-meta-tags/src/lib/index.ts`):
 
-- **`<MetaTags>`** — single Svelte 5 component (`MetaTags.svelte`) that renders **all** SEO/meta/link/Twitter/OpenGraph/Facebook tags into `<svelte:head>`. It uses runes (`$props`, `$derived`, `$effect`) and accepts `Partial<MetaTagsProps>`. Adding a new meta surface means: extend `types.d.ts`, render the conditional block in `MetaTags.svelte`, add a route under `tests/svelte-5/src/routes/<feature>/` and a corresponding `tests/<feature>.test.ts`.
+- **`<MetaTags>`** — single Svelte 5 component (`MetaTags.svelte`) that renders **all** SEO/meta/link/Twitter/OpenGraph/Facebook tags into `<svelte:head>`. It uses runes (`$props`, `$derived`, `$effect`) and accepts `Partial<MetaTagsProps>`. Adding a new meta surface means: extend `types.d.ts`, render the conditional block in `MetaTags.svelte`, add a route under `tests/svelte-5/src/routes/<feature>/` and a corresponding `tests/<feature>.test.ts`, document it under `docs/src/content/docs/` (en + ja), and add a changeset (see Releases).
 - **`<JsonLd>`** — renders `application/ld+json` either in `<svelte:head>` (`output="head"`, default) or inline (`output="body"`). The `schema` prop accepts `schema-dts` types, plain objects, arrays (multiple JSON-LD blocks), or a `{ '@graph': [...] }` wrapper. `@context: https://schema.org` is auto-injected. The literal `<script>` string is split (`'<scri' + 'pt'`) on purpose to bypass HTML parser confusion — preserve this when editing.
-- **`deepMerge(target, source)`** — recursive merge utility used by consumers to combine `baseMetaTags` (layout) with `pageMetaTags` (page). Arrays are **replaced**, not concatenated; `Date` and functions are passed through as-is.
+- **`deepMerge(target, source)`** — recursive merge utility used by consumers to combine `baseMetaTags` (layout) with `pageMetaTags` (page). Arrays are **replaced**, not concatenated. `Date` and functions are never merged into — and when the **target** value is a `Date`/function it wins over the source value (the reverse of the usual source-wins rule). A source value of `undefined` keeps the target value.
 - **`defineBaseMetaTags` / `definePageMetaTags`** — thin wrappers that `Object.freeze` the input and namespace it under `baseMetaTags` / `pageMetaTags`. They exist solely to type and shape SvelteKit `load` return values; the canonical consumer pattern is:
 
   ```ts
@@ -68,7 +70,9 @@ The public surface is intentionally small (`packages/svelte-meta-tags/src/lib/in
 ### Behaviors that are easy to break
 
 - **Twitter fallback chain**: `twitter.title || openGraph.title || updatedTitle` (and the same shape for `description`). The `twitterFallback*` test routes lock this in — preserve the precedence when touching `MetaTags.svelte`.
-- **`titleTemplate`**: `%s` placeholder is substituted with `title`; if `title` is missing, the raw `title` is used (template is not applied alone).
+- **OpenGraph fallbacks**: `og:title` falls back to the (templated) `title`, `og:description` to `description`, and `og:url` to `canonical`. These only render when the `openGraph` prop is present at all.
+- **`titleTemplate`**: `%s` placeholder is substituted with `title`; if `title` is missing, the template is **not** applied alone — no `<title>` is rendered.
+- **`robots` default**: `'index,follow'` — a `<meta name="robots">` tag is rendered even when the consumer passes nothing.
 - **`og:type`-conditional blocks**: `article`, `book`, `profile`, and `video.movie | video.episode | video.tv_show | video.other` each render a distinct sub-block. Adding a new structured type means matching it in the `og:type.toLowerCase()` chain _and_ adding fields to `OpenGraph` in `types.d.ts`.
 - **`additionalMetaTags`**: when an entry has `httpEquiv`, it is emitted as `http-equiv` (HTML attribute name). Don't normalize this away.
 - **`openGraph.image` vs `openGraph.images`**: `image` (singular) is an alias prepended to `images`; both render as `og:image`. See `openGraphImage.test.ts`.
@@ -78,10 +82,27 @@ The public surface is intentionally small (`packages/svelte-meta-tags/src/lib/in
 
 Versioning and publishing go through **Changesets**:
 
-1. Add a changeset with `pnpm changeset` describing the user-facing change. Changeset markdown lives in `.changeset/`.
+1. Add a changeset describing the user-facing change. `pnpm changeset` is an interactive prompt — as an agent, write `.changeset/<short-slug>.md` directly instead. The only published package is `svelte-meta-tags`; bump is `patch` / `minor` / `major`:
+
+   ```md
+   ---
+   'svelte-meta-tags': minor
+   ---
+
+   feat: add `openGraph.image` as a shortcut alias for a single image.
+   ```
+
+   Internal-only changes (docs site, tests, CI, example app) need **no** changeset.
+
 2. On merge to `main`, `.github/workflows/release.yml` runs `changesets/action`, which either opens/updates a "Version Packages" PR (bumping `packages/svelte-meta-tags/package.json` + CHANGELOG) or, when that PR is merged, runs `pnpm release` (`changeset publish`) to publish to npm with provenance.
 
 Do **not** bump versions or edit `CHANGELOG.md` manually. `pnpm-workspace.yaml` sets a `minimumReleaseAge` for catalog dependency updates so Renovate waits before pulling new releases — preserve that field when editing the workspace file.
+
+## CI and workflows
+
+- `ci.yml` runs three jobs on every PR: `lint` (`pnpm lint`), `check` (`pnpm package` then `pnpm check`), and `test` (`pnpm package`, `pnpm build`, then `pnpm test` across all three Playwright browsers). Replicate that order locally before opening a PR.
+- All GitHub Actions are **pinned to a commit SHA** with a `# vX.Y.Z` comment (Renovate keeps them updated). Preserve this style when adding or editing workflow steps — never use a bare tag like `@v6`.
+- Node and pnpm versions are resolved at runtime from the root `package.json` (`devEngines.runtime.version` / `packageManager`) by the composite action `.github/workflows/setup-node/` and by `deploy-docs.yml`. To change a toolchain version, edit `package.json` only — not the workflows.
 
 ## Tooling notes
 
