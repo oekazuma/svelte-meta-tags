@@ -18,7 +18,7 @@ catalog:
   '@eslint/js': ^10.0.1
   '@playwright/test': ^1.60.0
   '@sveltejs/adapter-auto': ^7.0.1
-  '@sveltejs/kit': ^2.63.0
+  '@sveltejs/kit': ^2.64.0
   '@sveltejs/package': ^2.5.8
   '@sveltejs/vite-plugin-svelte': ^7.1.2
   '@types/eslint': ^9.6.1
@@ -31,7 +31,7 @@ catalog:
   prettier-plugin-svelte: ^4.1.0
   publint: ^0.3.21
   sharp: ^0.34.5
-  svelte: ^5.56.2
+  svelte: ^5.56.3
   svelte-check: ^4.6.0
   typescript: ^6.0.3
   typescript-eslint: ^8.60.1
