@@ -12,7 +12,7 @@ allowBuilds:
 
 catalog:
   '@astrojs/check': ^0.9.9
-  '@astrojs/starlight': ^0.39.3
+  '@astrojs/starlight': ^0.40.0
   '@changesets/cli': ^2.31.0
   '@eslint/compat': ^2.1.0
   '@eslint/js': ^10.0.1
