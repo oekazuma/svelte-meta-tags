@@ -40,8 +40,8 @@ catalogs:
       specifier: ^9.6.1
       version: 9.6.1
     astro:
-      specifier: ^6.4.4
-      version: 6.4.4
+      specifier: ^6.4.5
+      version: 6.4.5
     eslint:
       specifier: ^10.4.1
       version: 10.4.1
@@ -133,10 +133,10 @@ importers:
         version: 0.9.9(prettier@3.8.3)(typescript@6.0.3)
       '@astrojs/starlight':
         specifier: 'catalog:'
-        version: 0.39.3(astro@6.4.4(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3))(typescript@6.0.3)
+        version: 0.39.3(astro@6.4.5(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3))(typescript@6.0.3)
       astro:
         specifier: 'catalog:'
-        version: 6.4.4(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3)
+        version: 6.4.5(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3)
       sharp:
         specifier: 'catalog:'
         version: 0.34.5
@@ -1508,8 +1508,8 @@ packages:
     peerDependencies:
       astro: ^4.0.0-beta || ^5.0.0-beta || ^3.3.0 || ^6.0.0-beta
 
-  astro@6.4.4:
-    resolution: {integrity: sha512-hVe8tq3lqt/Dr0UyB//yUmQSlHMTU8scTiF/vQddQVahLE4TTaSdH5H0nb7OvRcwo0UmlAO8DWYar4jNaS7H+A==}
+  astro@6.4.5:
+    resolution: {integrity: sha512-0R7WLD1+WD/mTPcZxyKtcF0CztQi9ahFRtGM7oChJhxjNbr4lSBenxi+mk91k5bPTaUEoZ6edg1fDo2qP8bCwg==}
     engines: {node: '>=22.12.0', npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -3799,12 +3799,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@5.0.4(astro@6.4.4(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3))':
+  '@astrojs/mdx@5.0.4(astro@6.4.5(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3))':
     dependencies:
       '@astrojs/markdown-remark': 7.1.1
       '@mdx-js/mdx': 3.1.1
       acorn: 8.16.0
-      astro: 6.4.4(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3)
+      astro: 6.4.5(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3)
       es-module-lexer: 2.0.0
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.5
@@ -3832,17 +3832,17 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 4.3.6
 
-  '@astrojs/starlight@0.39.3(astro@6.4.4(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3))(typescript@6.0.3)':
+  '@astrojs/starlight@0.39.3(astro@6.4.5(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3))(typescript@6.0.3)':
     dependencies:
       '@astrojs/markdown-remark': 7.2.0
-      '@astrojs/mdx': 5.0.4(astro@6.4.4(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3))
+      '@astrojs/mdx': 5.0.4(astro@6.4.5(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3))
       '@astrojs/sitemap': 3.7.2
       '@pagefind/default-ui': 1.4.0
       '@types/hast': 3.0.4
       '@types/js-yaml': 4.0.9
       '@types/mdast': 4.0.4
-      astro: 6.4.4(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3)
-      astro-expressive-code: 0.42.0(astro@6.4.4(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3))
+      astro: 6.4.5(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3)
+      astro-expressive-code: 0.42.0(astro@6.4.5(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3))
       bcp-47: 2.1.0
       hast-util-from-html: 2.0.3
       hast-util-select: 6.0.4
@@ -5006,12 +5006,12 @@ snapshots:
 
   astring@1.9.0: {}
 
-  astro-expressive-code@0.42.0(astro@6.4.4(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3)):
+  astro-expressive-code@0.42.0(astro@6.4.5(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3)):
     dependencies:
-      astro: 6.4.4(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3)
+      astro: 6.4.5(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3)
       rehype-expressive-code: 0.42.0
 
-  astro@6.4.4(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3):
+  astro@6.4.5(@types/node@24.12.0)(lightningcss@1.32.0)(rollup@4.60.0)(yaml@2.8.3):
     dependencies:
       '@astrojs/compiler': 4.0.0
       '@astrojs/internal-helpers': 0.10.0
