@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('JSON-LD Array SEO loads correctly', async ({ page }) => {
-  await page.goto('/jsonldArray');
+  await page.goto('/jsonldArray', { waitUntil: 'domcontentloaded' });
   await expect(page).toHaveTitle('JSON-LD Array Page Title | Svelte Meta Tags');
   await expect(page.locator('h1')).toContainText('JSON-LD Array SEO');
   await expect(page.locator('head meta[name="description"]')).toHaveAttribute(

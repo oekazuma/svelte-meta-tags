@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Another pattern SEO loads correctly', async ({ page }) => {
-  await page.goto('/another');
+  await page.goto('/another', { waitUntil: 'domcontentloaded' });
   await expect(page).toHaveTitle('');
   await expect(page.locator('h1')).toContainText('Another SEO');
   await expect(page.locator('head meta[name="description"]')).toHaveAttribute('content', 'Description Another');
