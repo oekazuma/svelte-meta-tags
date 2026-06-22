@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('SearchAction type test page', async ({ page }) => {
-  await page.goto('/searchActionType');
+  await page.goto('/searchActionType', { waitUntil: 'domcontentloaded' });
 
   await expect(page).toHaveTitle(/SearchAction Type Test/);
 

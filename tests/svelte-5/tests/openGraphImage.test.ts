@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('openGraph.image is rendered as the first og:image and prepended to openGraph.images', async ({ page }) => {
-  await page.goto('/openGraphImage');
+  await page.goto('/openGraphImage', { waitUntil: 'domcontentloaded' });
 
   const ogImage = page.locator('head meta[property="og:image"]');
   await expect(ogImage).toHaveCount(2);

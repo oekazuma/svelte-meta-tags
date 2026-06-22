@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('MetaTags component renders correct meta tags for Twitter', async ({ page }) => {
-  await page.goto('/twitter');
+  await page.goto('/twitter', { waitUntil: 'domcontentloaded' });
   await expect(page.locator('head meta[name="twitter:card"]')).toHaveAttribute('content', 'summary_large_image');
   await expect(page.locator('head meta[name="twitter:site"]')).toHaveAttribute('content', '@site');
   await expect(page.locator('head meta[name="twitter:description"]')).toHaveAttribute('content', 'twitter test');

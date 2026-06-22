@@ -17,7 +17,7 @@ test('Another Robots props SEO applied correctly', async ({ page }) => {
     });
   });
 
-  await page.goto('/robots/another');
+  await page.goto('/robots/another', { waitUntil: 'domcontentloaded' });
   await expect(page).toHaveTitle('Another Robots meta title | Svelte Meta Tags');
   await expect(page.locator('h1')).toContainText('Another Robots props SEO');
   await expect(page.locator('head meta[name="robots"]')).toHaveCount(0);

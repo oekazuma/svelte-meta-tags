@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('VideoObject type test page', async ({ page }) => {
-  await page.goto('/videoObjectType');
+  await page.goto('/videoObjectType', { waitUntil: 'domcontentloaded' });
 
   await expect(page).toHaveTitle(/VideoObject Type Test/);
 

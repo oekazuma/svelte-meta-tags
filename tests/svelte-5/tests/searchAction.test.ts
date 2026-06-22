@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('SearchAction with query-input loads correctly', async ({ page }) => {
-  await page.goto('/searchAction');
+  await page.goto('/searchAction', { waitUntil: 'domcontentloaded' });
   await expect(page).toHaveTitle('SearchAction Test | Svelte Meta Tags');
   await expect(page.locator('h1')).toContainText('SearchAction Test');
   await expect(page.locator('head meta[name="description"]')).toHaveAttribute(

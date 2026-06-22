@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Book SEO loads correctly', async ({ page }) => {
-  await page.goto('/book');
+  await page.goto('/book', { waitUntil: 'domcontentloaded' });
   await expect(page).toHaveTitle('Book Page Title | Svelte Meta Tags');
   await expect(page.locator('h1')).toContainText('Book SEO');
   await expect(page.locator('head meta[name="description"]')).toHaveAttribute('content', 'Description of book page');
