@@ -32,7 +32,7 @@ jobs:
       - name: Setup Node.js and dependencies
         uses: ./.github/workflows/setup-node
       - name: Run Prettier check & ESLint
-        run: pnpm lint
+        run: node --run lint
 
   check:
     runs-on: ubuntu-latest
@@ -42,9 +42,9 @@ jobs:
       - name: Setup Node.js and dependencies
         uses: ./.github/workflows/setup-node
       - name: Run svelte-package
-        run: pnpm package
+        run: node --run package
       - name: Run svelte-check
-        run: pnpm check
+        run: node --run check
 
   test:
     runs-on: ubuntu-latest
@@ -54,10 +54,10 @@ jobs:
       - name: Setup Node.js and dependencies
         uses: ./.github/workflows/setup-node
       - name: Run svelte-package
-        run: pnpm package
+        run: node --run package
       - name: Run Build
-        run: pnpm build
+        run: node --run build
       - name: Setup Playwright
         uses: ./.github/workflows/setup-playwright
       - name: Run Vitest and Playwright
-        run: pnpm test
+        run: node --run test
