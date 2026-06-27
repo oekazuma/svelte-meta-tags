@@ -209,7 +209,7 @@
         {#each openGraph.article?.tags as tag (tag)}
           <meta property="article:tag" content={tag} />
         {/each}
-      {:else if openGraph.type.toLowerCase() === 'video.movie' || openGraph.type.toLowerCase() === 'video.episode' || openGraph.type.toLowerCase() === 'video.tv_show' || (openGraph.type.toLowerCase() === 'video.other' && openGraph.video)}
+      {:else if ['video.movie', 'video.episode', 'video.tv_show'].includes(openGraph.type.toLowerCase()) || (openGraph.type.toLowerCase() === 'video.other' && openGraph.video)}
         {#each openGraph.video?.actors as actor (actor)}
           {#if actor.profile}
             <meta property="video:actor" content={actor.profile} />
