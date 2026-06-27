@@ -253,7 +253,7 @@
       <meta property="og:description" content={openGraph.description || description} />
     {/if}
 
-    {#if openGraph.image || (openGraph.images && openGraph.images.length)}
+    {#if openGraph.image || openGraph.images?.length}
       {@const ogImages = openGraph.image ? [openGraph.image, ...(openGraph.images || [])] : openGraph.images}
       {#each ogImages as image (image)}
         <meta property="og:image" content={image.url} />
