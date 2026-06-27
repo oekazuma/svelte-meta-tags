@@ -72,11 +72,9 @@
     <link rel="alternate" media={mobileAlternate.media} href={mobileAlternate.href} />
   {/if}
 
-  {#if languageAlternates && languageAlternates.length > 0}
     {#each languageAlternates as languageAlternate (languageAlternate)}
       <link rel="alternate" hrefLang={languageAlternate.hrefLang} href={languageAlternate.href} />
     {/each}
-  {/if}
 
   {#if twitter}
     {#if twitter.cardType}
@@ -172,11 +170,9 @@
           <meta property="profile:gender" content={openGraph.profile.gender} />
         {/if}
       {:else if openGraph.type.toLowerCase() === 'book' && openGraph.book}
-        {#if openGraph.book.authors && openGraph.book.authors.length}
-          {#each openGraph.book.authors as author (author)}
+        {#each openGraph.book?.authors as author (author)}
             <meta property="book:author" content={author} />
           {/each}
-        {/if}
 
         {#if openGraph.book.isbn}
           <meta property="book:isbn" content={openGraph.book.isbn} />
@@ -186,11 +182,9 @@
           <meta property="book:release_date" content={openGraph.book.releaseDate} />
         {/if}
 
-        {#if openGraph.book.tags && openGraph.book.tags.length}
-          {#each openGraph.book.tags as tag (tag)}
+        {#each openGraph.book?.tags as tag (tag)}
             <meta property="book:tag" content={tag} />
           {/each}
-        {/if}
       {:else if openGraph.type.toLowerCase() === 'article' && openGraph.article}
         {#if openGraph.article.publishedTime}
           <meta property="article:published_time" content={openGraph.article.publishedTime} />
@@ -204,24 +198,19 @@
           <meta property="article:expiration_time" content={openGraph.article.expirationTime} />
         {/if}
 
-        {#if openGraph.article.authors && openGraph.article.authors.length}
-          {#each openGraph.article.authors as author (author)}
+        {#each openGraph.article?.authors as author (author)}
             <meta property="article:author" content={author} />
           {/each}
-        {/if}
 
         {#if openGraph.article.section}
           <meta property="article:section" content={openGraph.article.section} />
         {/if}
 
-        {#if openGraph.article.tags && openGraph.article.tags.length}
-          {#each openGraph.article.tags as tag (tag)}
+        {#each openGraph.article?.tags as tag (tag)}
             <meta property="article:tag" content={tag} />
           {/each}
-        {/if}
       {:else if openGraph.type.toLowerCase() === 'video.movie' || openGraph.type.toLowerCase() === 'video.episode' || openGraph.type.toLowerCase() === 'video.tv_show' || (openGraph.type.toLowerCase() === 'video.other' && openGraph.video)}
-        {#if openGraph.video?.actors && openGraph.video.actors.length}
-          {#each openGraph.video.actors as actor (actor)}
+        {#each openGraph.video?.actors as actor (actor)}
             {#if actor.profile}
               <meta property="video:actor" content={actor.profile} />
             {/if}
@@ -229,19 +218,14 @@
               <meta property="video:actor:role" content={actor.role} />
             {/if}
           {/each}
-        {/if}
 
-        {#if openGraph.video?.directors && openGraph.video.directors.length}
-          {#each openGraph.video.directors as director (director)}
+        {#each openGraph.video?.directors as director (director)}
             <meta property="video:director" content={director} />
           {/each}
-        {/if}
 
-        {#if openGraph.video?.writers && openGraph.video.writers.length}
-          {#each openGraph.video.writers as writer (writer)}
+        {#each openGraph.video?.writers as writer (writer)}
             <meta property="video:writer" content={writer} />
           {/each}
-        {/if}
 
         {#if openGraph.video?.duration}
           <meta property="video:duration" content={openGraph.video.duration.toString()} />
@@ -251,11 +235,9 @@
           <meta property="video:release_date" content={openGraph.video.releaseDate} />
         {/if}
 
-        {#if openGraph.video?.tags && openGraph.video.tags.length}
-          {#each openGraph.video.tags as tag (tag)}
+        {#each openGraph.video?.tags as tag (tag)}
             <meta property="video:tag" content={tag} />
           {/each}
-        {/if}
 
         {#if openGraph.video?.series}
           <meta property="video:series" content={openGraph.video.series} />
@@ -293,7 +275,6 @@
       {/each}
     {/if}
 
-    {#if openGraph.videos && openGraph.videos.length}
       {#each openGraph.videos as video (video)}
         <meta property="og:video" content={video.url} />
         {#if video.width}
@@ -309,9 +290,7 @@
           <meta property="og:video:type" content={video.type.toString()} />
         {/if}
       {/each}
-    {/if}
 
-    {#if openGraph.audio && openGraph.audio.length}
       {#each openGraph.audio as audio (audio)}
         <meta property="og:audio" content={audio.url} />
         {#if audio.secureUrl}
@@ -321,7 +300,6 @@
           <meta property="og:audio:type" content={audio.type.toString()} />
         {/if}
       {/each}
-    {/if}
 
     {#if openGraph.locale}
       <meta property="og:locale" content={openGraph.locale} />
@@ -332,15 +310,11 @@
     {/if}
   {/if}
 
-  {#if additionalMetaTags && Array.isArray(additionalMetaTags)}
     {#each additionalMetaTags as tag (tag)}
       <meta {...tag.httpEquiv ? { ...tag, 'http-equiv': tag.httpEquiv } : tag} />
     {/each}
-  {/if}
 
-  {#if additionalLinkTags?.length}
     {#each additionalLinkTags as tag (tag)}
       <link {...tag} />
     {/each}
-  {/if}
 </svelte:head>
