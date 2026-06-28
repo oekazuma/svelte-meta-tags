@@ -254,7 +254,7 @@
     {/if}
 
     {#if openGraph.image || openGraph.images?.length}
-      {const ogImages = openGraph.image ? [openGraph.image, ...(openGraph.images || [])] : openGraph.images}
+      {@const ogImages = openGraph.image ? [openGraph.image, ...(openGraph.images || [])] : openGraph.images}
       {#each ogImages as image (image)}
         <meta property="og:image" content={image.url} />
         {#if image.alt}
