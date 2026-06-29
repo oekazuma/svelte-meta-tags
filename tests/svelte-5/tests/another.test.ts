@@ -40,4 +40,6 @@ test('Another pattern SEO loads correctly', async ({ page }) => {
   await expect(page.locator('head meta[property="dc:creator"]')).toHaveAttribute('content', 'Jane Doe');
   await expect(page.locator('head meta[name="application-name"]')).toHaveAttribute('content', 'Svelte-Meta-Tags');
   await expect(page.locator('head meta[http-equiv="x-ua-compatible"]')).toHaveAttribute('content', 'IE=edge; chrome=1');
+  // The internal camelCase `httpEquiv` prop must not leak into the rendered markup
+  await expect(page.locator('head meta[httpequiv]')).toHaveCount(0);
 });
