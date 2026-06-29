@@ -311,7 +311,8 @@
   {/if}
 
   {#each additionalMetaTags as tag (tag)}
-    <meta {...tag.httpEquiv ? { ...tag, 'http-equiv': tag.httpEquiv } : tag} />
+    {@const { httpEquiv, ...metaTag } = tag}
+    <meta {...httpEquiv ? { ...metaTag, 'http-equiv': httpEquiv } : metaTag} />
   {/each}
 
   {#each additionalLinkTags as tag (tag)}
