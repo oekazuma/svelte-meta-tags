@@ -1,5 +1,12 @@
 # svelte-meta-tags
 
+## 5.0.1
+
+### Patch Changes
+
+- ebfde2b: refactor: clean up conditionals and each blocks in `MetaTags.svelte`
+- 28bf130: fix: prevent the internal `httpEquiv` prop from leaking as an attribute on `additionalMetaTags` `<meta>` tags; only the mapped `http-equiv` attribute is rendered now
+
 ## 5.0.0
 
 ### Major Changes
