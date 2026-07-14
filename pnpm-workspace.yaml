@@ -23,7 +23,7 @@ catalog:
   '@sveltejs/vite-plugin-svelte': ^7.2.0
   '@types/eslint': ^9.6.1
   astro: ^7.0.7
-  eslint: ^10.6.0
+  eslint: ^10.7.0
   eslint-config-prettier: ^10.1.8
   eslint-plugin-svelte: ^3.20.0
   globals: ^17.7.0
