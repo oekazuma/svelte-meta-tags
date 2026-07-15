@@ -10,6 +10,11 @@
 
 **Spec:** `superpowers/specs/2026-07-15-blume-migration-design.md`
 
+> **⚠️ ステータス（2026-07-15 時点）: 実装は blume の次期リリース待ちで中断中。**
+> blume 1.0.3 には pnpm の隔離型 node_modules（isolated linker）で、生成される `.blume/` ランタイムが `astro` 等を解決できないバグがある（`.blume/node_modules` のシンボリックリンクが pnpm の sibling レイアウトを想定していない）。修正は upstream の main にマージ済みだが 1.0.3 リリース（2026-07-13）より後のため未リリース。
+> **再開条件:** blume 1.0.4+ がリリースされたら catalog のレンジで取り込まれるので、Task 2 のビルド検証から再開する。待てない場合の既知の回避策: `astro` / `@astrojs/mdx` / `@shikijs/twoslash` / `@tailwindcss/vite` / `@orama/orama` を blume と同じレンジで docs の依存に一時追加する（1.0.4 で削除）。
+> Task 1（依存切り替え）と Task 2 のファイル作成までは検証済み（`blume --version` = 1.0.3 で動作、ビルドのみ上記バグで失敗）。
+
 ## Global Constraints
 
 - blume は `^1.0.3`、Node 22.12+（リポジトリは 24.17.0 で充足。ルート `package.json` の `devEngines` / `packageManager` は変更しない）
