@@ -67,9 +67,16 @@ Types                 ← グループ, meta.ts order: 4
 
 `catalog:` から `'@astrojs/check'`、`'@astrojs/starlight'`、`astro`、`sharp` の4行を削除し（docs 専用依存。他ワークスペースでの未使用は確認済み）、`blume` をアルファベット順の位置（`astro` があった行の位置）に追加する。`allowBuilds:` から `sharp: true` を削除する（`esbuild: true` は残す）。
 
+また、blume 1.0.3 は公開から3日未満で `minimumReleaseAge: 4320` に弾かれるため、`minimumReleaseAgeExclude` に `blume` を追加する（ユーザー承認済み。`minimumReleaseAge` 自体は維持）。
+
 変更後の該当ブロック:
 
 ```yaml
+minimumReleaseAge: 4320
+
+minimumReleaseAgeExclude:
+  - blume
+
 allowBuilds:
   esbuild: true
 
