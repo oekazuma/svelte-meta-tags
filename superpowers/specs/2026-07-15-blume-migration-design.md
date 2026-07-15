@@ -18,7 +18,7 @@
 
 `docs/src/content/docs/` → `docs/content/` へ移動し、以下の構成にする。単独ページしか持たない現在のグループ（Installing / Usage / Deep Merge function / Migration Guide）はトップレベルページにフラット化する。
 
-```
+```text
 docs/
   blume.config.ts
   package.json
@@ -76,9 +76,7 @@ export default defineConfig({
     site: 'https://oekazuma.github.io',
     base: '/svelte-meta-tags'
   },
-  redirects: [
-    /* 移行で URL が変わったページ分をここに列挙する（実装時に新旧対応表を作って確定） */
-  ]
+  redirects: [/* 移行で URL が変わったページ分をここに列挙する（実装時に新旧対応表を作って確定） */]
 });
 ```
 
@@ -90,14 +88,14 @@ export default defineConfig({
 
 全 Markdown/MDX（en 約40 + ja 約40ファイル）に以下を機械的に適用する。en/ja とも同一ルール。
 
-| Starlight | blume |
-| --- | --- |
-| frontmatter `title` / `description` / `sidebar.order` | そのまま互換（変換不要） |
+| Starlight                                                                                | blume                                                                    |
+| ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| frontmatter `title` / `description` / `sidebar.order`                                    | そのまま互換（変換不要）                                                 |
 | `head:` / `template: splash` / `hero:` / `editUrl` / `lastUpdated`（index.mdx のみ使用） | 削除。トップは通常ページ化し `Card` / `CardGroup` で主要セクションへ誘導 |
-| `import { Tabs, TabItem } from '@astrojs/starlight/components'` | import 削除。パッケージマネージャ切り替えは `CodeGroup` に置換 |
-| `Card` / `CardGrid` | 組み込みの `Card` / `CardGroup`（import 不要） |
-| `Aside` | `:::note` / `:::tip` / `:::caution` 記法 |
-| `LinkButton` | `Card` またはリンク付き段落 |
+| `import { Tabs, TabItem } from '@astrojs/starlight/components'`                          | import 削除。パッケージマネージャ切り替えは `CodeGroup` に置換           |
+| `Card` / `CardGrid`                                                                      | 組み込みの `Card` / `CardGroup`（import 不要）                           |
+| `Aside`                                                                                  | `:::note` / `:::tip` / `:::caution` 記法                                 |
+| `LinkButton`                                                                             | `Card` またはリンク付き段落                                              |
 
 撤去するファイル: `astro.config.mjs`、`src/content.config.ts`、`src/styles/custom.css`、`src/assets/`（ロゴ SVG は `public/` へ移動）。`tsconfig.json` は blume の推奨内容に合わせて更新する。
 

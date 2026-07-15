@@ -12,8 +12,9 @@
 
 > **⚠️ ステータス（2026-07-15 時点）: 実装は blume の次期リリース待ちで中断中。**
 > blume 1.0.3 には pnpm の隔離型 node_modules（isolated linker）で、生成される `.blume/` ランタイムが `astro` 等を解決できないバグがある（`.blume/node_modules` のシンボリックリンクが pnpm の sibling レイアウトを想定していない）。修正は upstream の main にマージ済みだが 1.0.3 リリース（2026-07-13）より後のため未リリース。
-> **再開条件:** blume 1.0.4+ がリリースされたら catalog のレンジで取り込まれるので、Task 2 のビルド検証から再開する。待てない場合の既知の回避策: `astro` / `@astrojs/mdx` / `@shikijs/twoslash` / `@tailwindcss/vite` / `@orama/orama` を blume と同じレンジで docs の依存に一時追加する（1.0.4 で削除）。
-> Task 1（依存切り替え）と Task 2 のファイル作成までは検証済み（`blume --version` = 1.0.3 で動作、ビルドのみ上記バグで失敗）。
+> **再開条件:** blume 1.0.4+（isolated linker 修正版）のリリース後に **Task 1 から** 再実行する（Task 1〜2 の実装コミットは破棄済み。内容は本計画に完全な形で記載されている）。Task 1 の `pnpm install` で lockfile が新規生成され、catalog の `^1.0.3` は最新の修正版に解決される（blume は `minimumReleaseAgeExclude` 対象のため公開直後でも取り込まれる）。もし blume 入りの `pnpm-lock.yaml` が既にコミットされた状態から再開する場合は、`pnpm update blume` で lockfile を更新してからコミットすること。
+> 待てない場合の既知の回避策: `astro` / `@astrojs/mdx` / `@shikijs/twoslash` / `@tailwindcss/vite` / `@orama/orama` を blume と同じレンジで docs の依存に一時追加する（1.0.4 で削除）。
+> Task 1〜2 は 1.0.3 で一度実施済みで、ビルド以外は検証済み（`blume --version` 動作確認済み、ビルドのみ上記バグで失敗）。**Task 2 Step 5 以降のビルド成功を期待する記述は、blume 1.0.4+ がインストールされていることが前提。**
 
 ## Global Constraints
 
@@ -28,21 +29,21 @@
 
 ## 新旧対応の全体マップ
 
-| 現在（Starlight） | 移行後（blume） |
-| --- | --- |
-| `docs/astro.config.mjs` | `docs/blume.config.ts` |
-| `docs/src/content/docs/**` | `docs/content/**` |
-| `docs/src/content/docs/ja/**` | `docs/content/ja/**` |
-| `docs/src/assets/*.svg` | `docs/public/*.svg` |
-| `docs/src/styles/custom.css` | 廃止（Task 8 の目視確認で表が崩れる場合のみ `docs/theme.css` を追加） |
-| `docs/src/content.config.ts` | 廃止（blume が内部処理） |
-| `docs/tsconfig.json` | 廃止（blume が `.blume/` 内で管理） |
-| astro.config の `sidebar` + `translations` | フォルダ `meta.ts` / `meta.$.ts` + ページ frontmatter `sidebar.order` |
-| `withastro/action` | `pnpm --filter docs build` + Pages 公式アクション |
+| 現在（Starlight）                          | 移行後（blume）                                                                |
+| ------------------------------------------ | ------------------------------------------------------------------------------ |
+| `docs/astro.config.mjs`                    | `docs/blume.config.ts`                                                         |
+| `docs/src/content/docs/**`                 | `docs/content/**`                                                              |
+| `docs/src/content/docs/ja/**`              | `docs/content/ja/**`                                                           |
+| `docs/src/assets/*.svg`                    | `docs/public/*.svg`                                                            |
+| `docs/src/styles/custom.css`               | 廃止（Task 8 の目視確認で表が崩れる場合のみ `docs/theme.css` を追加）          |
+| `docs/src/content.config.ts`               | 廃止（blume が内部処理）                                                       |
+| `docs/tsconfig.json`                       | blume 推奨内容に更新（`blume check` が authored ファイルを検査するために必要） |
+| astro.config の `sidebar` + `translations` | フォルダ `meta.ts` / `meta.$.ts` + ページ frontmatter `sidebar.order`          |
+| `withastro/action`                         | `pnpm --filter docs build` + Pages 公式アクション                              |
 
 サイドバーの最終形（en。ja は同構造で `meta.ts` のラベルが翻訳される）:
 
-```
+```text
 (index)               ← content/index.mdx
 Installing            ← ページ, sidebar.order: 1
 Usage                 ← ページ, sidebar.order: 2
@@ -61,11 +62,13 @@ Types                 ← グループ, meta.ts order: 4
 ### Task 1: 依存関係を blume に切り替える
 
 **Files:**
+
 - Modify: `pnpm-workspace.yaml`
 - Modify: `docs/package.json`
 - Modify: `.gitignore`
 
 **Interfaces:**
+
 - Produces: `pnpm --filter docs exec blume <cmd>` が動く状態（以降の全タスクが依存）
 
 - [ ] **Step 1: `pnpm-workspace.yaml` の catalog を更新**
@@ -130,7 +133,7 @@ catalog:
 
 `.astro/` の行の直後に追加:
 
-```
+```text
 .astro/
 .blume/
 ```
@@ -159,13 +162,15 @@ git commit -m "docs: replace starlight deps with blume"
 ### Task 2: blume.config.ts とアセットを作成し初回ビルドを通す
 
 **Files:**
+
 - Create: `docs/blume.config.ts`
 - Create: `docs/content/index.mdx`
 - Move: `docs/src/assets/light-logo.svg` → `docs/public/light-logo.svg`
 - Move: `docs/src/assets/dark-logo.svg` → `docs/public/dark-logo.svg`
-- Delete: `docs/tsconfig.json`
+- Modify: `docs/tsconfig.json`
 
 **Interfaces:**
+
 - Produces: `pnpm --filter docs build` が成功する blume プロジェクトの骨格。`content/` 直下が以降のタスクのコンテンツ配置先。
 
 - [ ] **Step 1: ロゴを public/ へ移動**
@@ -247,13 +252,20 @@ seo:
 
 注意: blume のアイコンは Lucide 名（kebab-case）。Starlight の `document` → `file-text`、`seti:typescript` → `code` に置換している。`Card`/`CardGroup` は組み込みで import 不要。内部リンクは `/installing` のように base 抜きで書く（blume が `deployment.base` を付けて書き換える）。
 
-- [ ] **Step 4: 旧 tsconfig を削除**
+- [ ] **Step 4: tsconfig を blume 推奨内容に更新**
 
-```bash
-git rm docs/tsconfig.json
+`docs/tsconfig.json` を全文この内容にする（blume CLI リファレンス記載の推奨構成。プロジェクトルートの tsconfig がないと `blume check` は生成ランタイムしか検査しない）:
+
+```json
+{
+  "extends": "astro/tsconfigs/strict",
+  "include": [".blume/.astro/types.d.ts", ".blume/src/env.d.ts", "**/*"]
+}
 ```
 
 - [ ] **Step 5: ビルド確認**
+
+前提: blume 1.0.4+（isolated linker 修正版）がインストールされていること（冒頭のステータス注記を参照。1.0.3 ではこのステップは既知のバグで失敗する）。
 
 Run: `pnpm --filter docs build`
 Expected: `[build] Complete!` とビルドサマリー（`Output static` / `Search orama` / `Sitemap yes`）が出て `docs/dist/` が生成される。旧 `docs/src/content/docs/**` はまだ残っているが、blume は `content/` しか見ないため干渉しない。
@@ -261,7 +273,7 @@ Expected: `[build] Complete!` とビルドサマリー（`Output static` / `Sear
 - [ ] **Step 6: コミット**
 
 ```bash
-git add docs/blume.config.ts docs/content/index.mdx docs/public docs/src/assets docs/tsconfig.json
+git add -A docs
 git commit -m "docs: scaffold blume config, top page, and assets"
 ```
 
@@ -270,10 +282,12 @@ git commit -m "docs: scaffold blume config, top page, and assets"
 ### Task 3: 英語コンテンツを移行する
 
 **Files:**
+
 - Move+Modify: `docs/src/content/docs/**`（`ja/` 以外の全ファイル）→ `docs/content/**`
 - Create: `docs/content/meta-tags-properties/meta.ts`、`docs/content/open-graph/meta.$.ts`、`docs/content/json-ld/meta.$.ts`、`docs/content/json-ld/json-ld-properties/meta.$.ts`、`docs/content/types/meta.ts`、`docs/content/types/additional-types/meta.$.ts`
 
 **Interfaces:**
+
 - Consumes: Task 2 の `docs/content/` と `blume.config.ts`
 - Produces: 英語全ページのルート（`/installing`、`/meta-tags-properties/...` 等）。Task 4 の `ja/` ミラーはこの構造に対応させる。
 
@@ -469,10 +483,12 @@ git commit -m "docs: migrate English content to blume conventions"
 ### Task 4: 日本語コンテンツを移行する
 
 **Files:**
+
 - Move+Modify: `docs/src/content/docs/ja/**` → `docs/content/ja/**`
 - Create: `docs/content/ja/meta-tags-properties/meta.ts`、`docs/content/ja/types/meta.ts`
 
 **Interfaces:**
+
 - Consumes: Task 3 の en 構造（ja はそのミラー）。共有 `meta.$.ts`（Open Graph / JSON-LD / JSON-LD Properties / Additional types）は ja にも自動適用される。
 - Produces: `/ja/...` 全ルートと日本語サイドバー。
 
@@ -601,9 +617,11 @@ git commit -m "docs: migrate Japanese content to blume conventions"
 ### Task 5: Starlight の残骸を撤去する
 
 **Files:**
+
 - Delete: `docs/astro.config.mjs`、`docs/src/`（`content.config.ts`、`styles/custom.css`）、`docs/README.md`（空ファイル）
 
 **Interfaces:**
+
 - Consumes: Task 3・4 でコンテンツ移動が完了していること
 - Produces: blume のみで完結した `docs/` ワークスペース
 
@@ -642,9 +660,11 @@ git commit -m "docs: remove starlight scaffolding"
 ### Task 6: 新旧 URL を突合し redirects を確定する
 
 **Files:**
+
 - Modify: `docs/blume.config.ts`（差分があった場合のみ）
 
 **Interfaces:**
+
 - Consumes: Task 5 までの完成した `docs/dist/`
 - Produces: 旧 URL がすべて生きていることの保証（`redirects` 配列 or 差分ゼロの確認記録）
 
@@ -653,8 +673,11 @@ git commit -m "docs: remove starlight scaffolding"
 Run:
 
 ```bash
-curl -s https://oekazuma.github.io/svelte-meta-tags/sitemap-0.xml | grep -o '<loc>[^<]*</loc>' | sed -e 's/<\/\?loc>//g' -e 's|https://oekazuma.github.io/svelte-meta-tags||' -e 's|/$||' | sort > /tmp/claude/old-urls.txt
+mkdir -p /tmp/claude
+curl -s https://oekazuma.github.io/svelte-meta-tags/sitemap-0.xml | grep -o '<loc>[^<]*</loc>' | sed -e 's/<\/\?loc>//g' -e 's|https://oekazuma.github.io/svelte-meta-tags||' -e 's|/$||' -e 's|^$|/|' | sort > /tmp/claude/old-urls.txt
 ```
+
+（末尾の `s|^$|/|` はサイトルートを `/` に正規化する。新 URL 側と表現を揃えないと突合で偽差分が出る）
 
 （`sitemap-0.xml` が 404 の場合は `sitemap-index.xml` を見て実ファイル名を確認する）
 
@@ -663,10 +686,10 @@ curl -s https://oekazuma.github.io/svelte-meta-tags/sitemap-0.xml | grep -o '<lo
 Run:
 
 ```bash
-cd docs/dist && find . -name 'index.html' | sed -e 's|^\.||' -e 's|/index.html$||' -e 's|^$|/|' | sed 's|^/svelte-meta-tags||' | sort > /tmp/claude/new-urls.txt && cd -
+cd docs/dist && find . -name 'index.html' | sed -e 's|^\.||' -e 's|/index.html$||' -e 's|^/svelte-meta-tags||' -e 's|^$|/|' | sort > /tmp/claude/new-urls.txt && cd -
 ```
 
-（`deployment.base` 設定により dist 直下が `svelte-meta-tags/` 配下になっている場合は sed が吸収する。構造が違ったら実際の dist を見て調整する）
+（base の除去（`s|^/svelte-meta-tags||`）を先に行ってから空文字列を `/` に正規化する順序が重要。`deployment.base` 設定により dist 直下が `svelte-meta-tags/` 配下になっている場合もこの sed が吸収する。構造が違ったら実際の dist を見て調整する）
 
 - [ ] **Step 3: 突合**
 
@@ -676,9 +699,7 @@ Expected: **空**（旧 URL がすべて新ビルドに存在する）。
 出力がある場合、それが「旧にあって新にない」URL。各行について `docs/blume.config.ts` に redirect を追加する:
 
 ```ts
-redirects: [
-  { from: '/old-path', to: '/new-path' }
-]
+redirects: [{ from: '/old-path', to: '/new-path' }];
 ```
 
 追加後 `pnpm --filter docs build` を再実行し、Step 2〜3 を繰り返して空になることを確認する。ビルドサマリーの `Redirects` 行の件数が追加分と一致すること。
@@ -695,9 +716,11 @@ git commit -m "docs: add redirects for moved pages"
 ### Task 7: GitHub Pages デプロイワークフローを更新する
 
 **Files:**
+
 - Modify: `.github/workflows/deploy-docs.yml`
 
 **Interfaces:**
+
 - Consumes: Task 1 の `docs` build スクリプト（`blume build`）、既存 composite action `.github/workflows/setup-node/`（Node/pnpm をルート `package.json` から解決）
 - Produces: main マージ時に blume ビルドを GitHub Pages へ公開するワークフロー
 
@@ -768,12 +791,16 @@ git commit -m "ci: build docs with blume for GitHub Pages"
 ### Task 8: 最終検証（プレビュー目視）
 
 **Files:**
+
 - Create（必要時のみ）: `docs/theme.css`
 
 **Interfaces:**
+
 - Consumes: 全タスクの成果物
 
 - [ ] **Step 1: フルチェーンを一括実行**
+
+前提: blume 1.0.4+（isolated linker 修正版）がインストールされていること（冒頭のステータス注記を参照）。
 
 Run: `pnpm install && pnpm lint && pnpm --filter docs check && pnpm --filter docs build && pnpm --filter docs exec blume validate && pnpm --filter docs exec blume doctor`
 Expected: すべて成功。ビルドサマリーで `Sitemap yes` / `LLM files yes` / `Search orama` を確認。
