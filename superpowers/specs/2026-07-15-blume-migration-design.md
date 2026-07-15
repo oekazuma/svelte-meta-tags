@@ -23,27 +23,30 @@ docs/
   blume.config.ts
   package.json
   content/
-    meta.ts                    (ルートの並び順: installing → usage → meta-tags-properties → open-graph → json-ld → deep-merge-function → types → migration-guide)
     index.mdx                  → /
     installing.mdx             → /installing
     usage.mdx                  → /usage
-    meta-tags-properties/      → /meta-tags-properties/…   (index + 7ページ + meta.ts)
-    open-graph/                → /open-graph/…             (index + 5ページ + meta.ts)
-    json-ld/                   → /json-ld/…
-      json-ld-properties/      (index + 7ページ + meta.ts)
     deep-merge-function.md     → /deep-merge-function
+    migration-guide.md         → /migration-guide
+    meta-tags-properties/      → /meta-tags-properties/…   (index + 7ページ + meta.ts)
+    open-graph/                → /open-graph/…             (index + 5ページ + meta.$.ts)
+    json-ld/                   → /json-ld/…                (index + meta.$.ts)
+      json-ld-properties/      (index + 7ページ + meta.$.ts)
     types/                     → /types/…                  (index なし・10ページ + meta.ts)
       additional-types/        (index + 12ページ + meta.ts)
-    migration-guide.md         → /migration-guide
     ja/                        (上記の完全ミラー + ロケール別 meta.ts)
   public/
-    favicon.svg
+    favicon.svg                (blume が自動検出。config に favicon 項目は存在しない)
     light-logo.svg
     dark-logo.svg
 ```
 
-- サイドバーはファイルシステムから自動生成する。グループのラベル・順序はフォルダごとの `meta.ts`（`defineMeta`）で指定する。
-- 日本語のグループラベル（インストール、使い方、MetaTags プロパティ、型定義、移行ガイド等 — 現在 `astro.config.mjs` の `translations` にあるもの）は `ja/` 側の同位置の `meta.ts` に移す。
+- サイドバーはファイルシステムから自動生成する。
+- **並び順**: blume の flat 表示（デフォルト）では「グループに属さないページは常に全グループの上」に表示される仕様のため、並びは「トップレベルページ4つ（Installing → Usage → Deep Merge function → Migration Guide）→ グループ4つ（MetaTags Properties → Open Graph → JSON-LD → Types）」とする（承認済み。現行サイトからの並び変更を受け入れる）。
+  - トップレベルページの順序は各ページの frontmatter `sidebar.order` で指定する。
+  - グループの順序は各フォルダの `meta.ts`（`defineMeta`）の `order` フィールドで指定する。
+  - コンテンツルート直下に置く `meta.ts` で最上位の並びを一括指定する方法は文書化されていないため使わない。
+- 日本語のグループラベル（MetaTags プロパティ、型定義等 — 現在 `astro.config.mjs` の `translations` にあるもの）は `ja/` 側の同位置の `meta.ts` に移す。日本語でもラベルが同一のグループ（Open Graph、JSON-LD）は `meta.$.ts`（全ロケール共有メタ）を使い、ja 側の重複ファイルを省く。
 - 日本語 URL は現行どおり `/ja/…` プレフィックス。未翻訳ページは en に自動フォールバックし、言語スイッチャーと `hreflang` は blume が自動生成する。
 - 既存の en/ja ミラー対応関係（どの en ページに ja 訳があるか）を移行で崩さない。
 
@@ -55,6 +58,8 @@ import { defineConfig } from 'blume';
 export default defineConfig({
   title: 'SvelteMetaTags',
   description: 'Svelte Meta Tags provides components designed to help you manage SEO for Svelte projects.',
+  content: { root: 'content' }, // デフォルトは 'docs'（docs/docs/ になってしまう）ため明示必須
+
   logo: {
     image: { light: '/light-logo.svg', dark: '/dark-logo.svg', alt: 'SvelteMetaTags' },
     text: '' // 現行の replacesTitle: true 相当（ロゴ単独表示）
@@ -103,7 +108,7 @@ export default defineConfig({
 ### docs/package.json
 
 - `dependencies`: `blume` のみ（`catalog:` 参照）。`pnpm-workspace.yaml` の catalog に `blume` を追加し、docs 専用だった `@astrojs/starlight` / `astro` / `@astrojs/check` / `sharp` を catalog から削除する（他ワークスペースで未使用であることを実装時に確認）。`minimumReleaseAge` フィールドは維持する。
-- `scripts`: `dev: blume dev` / `build: blume build` / `preview: blume preview`。`check`（現 `astro check`）は blume に相当コマンドがないため削除する。ルートの `pnpm check` は `-r` 実行なので docs が抜けても他ワークスペースに影響しない。
+- `scripts`: `dev: blume dev` / `build: blume build` / `preview: blume preview` / `check: blume check`。`blume check` は `astro check` によるタイプチェックで、現行の `check` スクリプトの置き換えとしてそのまま機能する（ルートの `pnpm check` にも docs が残る）。
 
 ### .github/workflows/deploy-docs.yml
 
@@ -115,10 +120,12 @@ export default defineConfig({
 ## 検証（成功基準）
 
 1. `pnpm install` が通る（catalog 変更後）。
-2. `pnpm --filter docs build` が成功し `docs/dist/` が生成される。
-3. `blume preview` で en/ja 両ロケールについて、全ページの表示・サイドバー構成（グループ名・順序が現行と一致）・言語スイッチャー・検索の動作を確認する。
-4. `pnpm lint`（prettier + eslint）が通る。
-5. ビルドサマリーで sitemap / llms.txt / redirects の出力を確認する。
+2. `pnpm --filter docs build` が成功し `docs/dist/` が生成される（CI では `blume build --strict` の採用を検討）。
+3. `pnpm --filter docs check`（`blume check`）が通る。
+4. `blume validate` でコンテンツ全体のリンク切れがないことを確認する。`blume doctor` で設定・コンテンツの診断が通る。
+5. `blume preview` で en/ja 両ロケールについて、全ページの表示・サイドバー構成（本スペックの並び順どおり）・言語スイッチャー・検索の動作を確認する。
+6. `pnpm lint`（prettier + eslint）が通る。
+7. ビルドサマリーで sitemap / llms.txt / redirects の出力を確認する。
 
 ## リスク
 
