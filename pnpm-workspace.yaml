@@ -6,13 +6,14 @@ packages:
 
 minimumReleaseAge: 4320
 
+minimumReleaseAgeExclude:
+  - blume
+
 allowBuilds:
   esbuild: true
   sharp: true
 
 catalog:
-  '@astrojs/check': ^0.9.9
-  '@astrojs/starlight': ^0.41.3
   '@changesets/cli': ^2.31.0
   '@eslint/compat': ^2.1.0
   '@eslint/js': ^10.0.1
@@ -22,7 +23,7 @@ catalog:
   '@sveltejs/package': ^2.5.8
   '@sveltejs/vite-plugin-svelte': ^7.2.0
   '@types/eslint': ^9.6.1
-  astro: ^7.0.7
+  blume: ^1.0.3
   eslint: ^10.7.0
   eslint-config-prettier: ^10.1.8
   eslint-plugin-svelte: ^3.20.0
@@ -30,7 +31,6 @@ catalog:
   prettier: ^3.9.5
   prettier-plugin-svelte: ^4.1.1
   publint: ^0.3.21
-  sharp: ^0.35.3
   svelte: ^5.56.4
   svelte-check: ^4.7.2
   typescript: ^6.0.3

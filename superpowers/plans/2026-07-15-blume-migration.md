@@ -10,11 +10,8 @@
 
 **Spec:** `superpowers/specs/2026-07-15-blume-migration-design.md`
 
-> **⚠️ ステータス（2026-07-15 時点）: 実装は blume の次期リリース待ちで中断中。**
-> blume 1.0.3 には pnpm の隔離型 node_modules（isolated linker）で、生成される `.blume/` ランタイムが `astro` 等を解決できないバグがある（`.blume/node_modules` のシンボリックリンクが pnpm の sibling レイアウトを想定していない）。修正は upstream の main にマージ済みだが 1.0.3 リリース（2026-07-13）より後のため未リリース。
-> **再開条件:** blume 1.0.4+（isolated linker 修正版）のリリース後に **Task 1 から** 再実行する（Task 1〜2 の実装コミットは破棄済み。内容は本計画に完全な形で記載されている）。Task 1 の `pnpm install` で lockfile が新規生成され、catalog の `^1.0.3` は最新の修正版に解決される（blume は `minimumReleaseAgeExclude` 対象のため公開直後でも取り込まれる）。もし blume 入りの `pnpm-lock.yaml` が既にコミットされた状態から再開する場合は、`pnpm update blume` で lockfile を更新してからコミットすること。
-> 待てない場合の既知の回避策: `astro` / `@astrojs/mdx` / `@shikijs/twoslash` / `@tailwindcss/vite` / `@orama/orama` を blume と同じレンジで docs の依存に一時追加する（1.0.4 で削除）。
-> Task 1〜2 は 1.0.3 で一度実施済みで、ビルド以外は検証済み（`blume --version` 動作確認済み、ビルドのみ上記バグで失敗）。**Task 2 Step 5 以降のビルド成功を期待する記述は、blume 1.0.4+ がインストールされていることが前提。**
+> **ステータス（2026-07-17 時点）: blume 1.0.4（isolated linker 修正版、2026-07-15 公開）で再開・実施中。**
+> Task 1 完了（`pnpm install` で blume 1.0.4 が解決され、`blume --version` は `1.0.4` を確認済み）。sharp は catalog から一度削除したが、blume が内包する astro のトランスパイル依存として再度必要になったため `allowBuilds.sharp: true` を復元している（catalog へは戻していない — 直接の docs 依存ではなくなったため）。
 
 ## Global Constraints
 
@@ -71,7 +68,7 @@ Types                 ← グループ, meta.ts order: 4
 
 - Produces: `pnpm --filter docs exec blume <cmd>` が動く状態（以降の全タスクが依存）
 
-- [ ] **Step 1: `pnpm-workspace.yaml` の catalog を更新**
+- [x] **Step 1: `pnpm-workspace.yaml` の catalog を更新**
 
 `catalog:` から `'@astrojs/check'`、`'@astrojs/starlight'`、`astro`、`sharp` の4行を削除し（docs 専用依存。他ワークスペースでの未使用は確認済み）、`blume` をアルファベット順の位置（`astro` があった行の位置）に追加する。`allowBuilds:` から `sharp: true` を削除する（`esbuild: true` は残す）。
 
@@ -104,7 +101,7 @@ catalog:
 
 （`eslint` 以降の既存行は変更しない。`minimumReleaseAge: 4320` と `packages:` はそのまま）
 
-- [ ] **Step 2: `docs/package.json` を書き換え**
+- [x] **Step 2: `docs/package.json` を書き換え**
 
 全文をこの内容にする:
 
@@ -129,7 +126,7 @@ catalog:
 
 （`typescript` は `blume check`（内部で `astro check`）のために残す。`astro` スクリプトエントリは削除）
 
-- [ ] **Step 3: ルート `.gitignore` に `.blume/` を追加**
+- [x] **Step 3: ルート `.gitignore` に `.blume/` を追加**
 
 `.astro/` の行の直後に追加:
 
@@ -140,17 +137,17 @@ catalog:
 
 （`dist` は既存の行がカバーしている）
 
-- [ ] **Step 4: インストール**
+- [x] **Step 4: インストール**
 
 Run: `pnpm install`
 Expected: エラーなく完了。`docs/node_modules/.bin/blume` が存在する。
 
-- [ ] **Step 5: blume が動くことを確認**
+- [x] **Step 5: blume が動くことを確認**
 
 Run: `pnpm --filter docs exec blume --version`
 Expected: `1.0.3`（またはそれ以降の 1.0.x）
 
-- [ ] **Step 6: コミット**
+- [x] **Step 6: コミット**
 
 ```bash
 git add pnpm-workspace.yaml docs/package.json .gitignore pnpm-lock.yaml

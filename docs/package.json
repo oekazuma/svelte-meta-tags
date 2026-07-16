@@ -3,18 +3,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "check": "astro check",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "blume dev",
+    "start": "blume dev",
+    "check": "blume check",
+    "build": "blume build",
+    "preview": "blume preview"
   },
   "dependencies": {
-    "@astrojs/check": "catalog:",
-    "@astrojs/starlight": "catalog:",
-    "astro": "catalog:",
-    "sharp": "catalog:",
+    "blume": "catalog:",
     "typescript": "catalog:"
   }
 }
