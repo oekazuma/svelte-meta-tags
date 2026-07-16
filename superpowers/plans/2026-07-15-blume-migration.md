@@ -10,8 +10,20 @@
 
 **Spec:** `superpowers/specs/2026-07-15-blume-migration-design.md`
 
-> **ステータス（2026-07-17 時点）: blume 1.0.4（isolated linker 修正版、2026-07-15 公開）で再開・実施中。**
-> Task 1 完了（`pnpm install` で blume 1.0.4 が解決され、`blume --version` は `1.0.4` を確認済み）。sharp は catalog から一度削除したが、blume が内包する astro のトランスパイル依存として再度必要になったため `allowBuilds.sharp: true` を復元している（catalog へは戻していない — 直接の docs 依存ではなくなったため）。
+> **⚠️ ステータス（2026-07-17 時点）: 実装は blume 側 Issue #72 の修正待ちで再度中断中。**
+> blume 1.0.4（2026-07-15 公開）は当初「isolated linker 修正版」と見込んでいたが、実際には同種の pnpm isolated-linker バグが未解消のまま残っている。`ensureDepsLink()` の事前チェックが CommonJS の `createRequire().resolve()`（pnpm の bin ラッパーが設定する `NODE_PATH` を見るため誤って「解決可能」と判定する）を使う一方、実際に `.blume/astro.config.mjs` を読み込む Vite は ESM 解決（`NODE_PATH` を見ない）を使うため、`.blume/node_modules` の依存リンクが作成されず `Cannot find module 'astro/config'` で失敗する。upstream で [Issue #72](https://github.com/haydenbleasel/blume/issues/72)（2026-07-16 起票、本セッション時点で open）として報告済み。
+>
+> **今回のセッションで完了した内容:**
+> - Task 1（依存関係の切り替え）は完了・検証済み（`pnpm install` で blume 1.0.4 が解決され `blume --version` は `1.0.4` を確認済み）。sharp は catalog から一度削除したが、blume が内包する astro のトランスパイル依存として再度必要になったため `allowBuilds.sharp: true` を復元している（catalog へは戻していない — 直接の docs 依存ではなくなったため）。
+> - Task 2 Step 1〜4（ロゴ移動、`blume.config.ts`、トップページ、tsconfig 更新）まで実施。Step 5 の `pnpm --filter docs build` が上記バグで失敗するため、そこで停止。
+> - 作業はローカルの `docs/migrate-to-blume` ブランチ（コミット済み）に保全。
+>
+> **再開条件:** upstream Issue #72 がクローズされ、修正版がリリースされた後に **Task 2 Step 5** から再実行する（Task 1〜2 の実装はやり直し不要、`docs/migrate-to-blume` ブランチに残っている）。
+>
+> **待てない場合の既知の回避策（Issue #72 記載）:**
+> 1. ルートに `.npmrc` を追加し `node-linker=hoisted` を設定する（pnpm 公式の回避策。ただし全ワークスペースの `node_modules` レイアウトに影響する repo-wide な変更）。
+> 2. `astro` / `@astrojs/mdx` / `@shikijs/twoslash` / `@tailwindcss/vite` / `@orama/orama` を blume と同じバージョンレンジで `docs/package.json` に直接追加する（`docs/node_modules` に実体を置くことで ESM 解決を成立させる、docs ワークスペースに閉じた回避策。upstream 修正後に削除するTODOとして残す）。
+> どちらもユーザー未承認のため、再開時に確認すること。
 
 ## Global Constraints
 
@@ -170,7 +182,7 @@ git commit -m "docs: replace starlight deps with blume"
 
 - Produces: `pnpm --filter docs build` が成功する blume プロジェクトの骨格。`content/` 直下が以降のタスクのコンテンツ配置先。
 
-- [ ] **Step 1: ロゴを public/ へ移動**
+- [x] **Step 1: ロゴを public/ へ移動**
 
 ```bash
 git mv docs/src/assets/light-logo.svg docs/public/light-logo.svg
@@ -179,7 +191,7 @@ git mv docs/src/assets/dark-logo.svg docs/public/dark-logo.svg
 
 （`docs/public/favicon.svg` は既存のまま。blume は `public/` の favicon ファイルを自動検出するため設定不要）
 
-- [ ] **Step 2: `docs/blume.config.ts` を作成**
+- [x] **Step 2: `docs/blume.config.ts` を作成**
 
 ```ts
 import { defineConfig } from 'blume';
@@ -209,7 +221,7 @@ export default defineConfig({
 
 （`content.root` のデフォルトは `docs` のため明示必須。`logo.text: ''` は現行 Starlight の `replacesTitle: true` 相当＝ロゴ画像単独表示。`redirects` は Task 6 で必要になった場合のみ追加）
 
-- [ ] **Step 3: トップページ `docs/content/index.mdx` を作成**
+- [x] **Step 3: トップページ `docs/content/index.mdx` を作成**
 
 現行 `docs/src/content/docs/index.mdx`（splash + hero）の置き換え。blume には splash テンプレートがないため通常ページ化する（スペック承認済み）:
 
@@ -249,7 +261,7 @@ seo:
 
 注意: blume のアイコンは Lucide 名（kebab-case）。Starlight の `document` → `file-text`、`seti:typescript` → `code` に置換している。`Card`/`CardGroup` は組み込みで import 不要。内部リンクは `/installing` のように base 抜きで書く（blume が `deployment.base` を付けて書き換える）。
 
-- [ ] **Step 4: tsconfig を blume 推奨内容に更新**
+- [x] **Step 4: tsconfig を blume 推奨内容に更新**
 
 `docs/tsconfig.json` を全文この内容にする（blume CLI リファレンス記載の推奨構成。プロジェクトルートの tsconfig がないと `blume check` は生成ランタイムしか検査しない）:
 
@@ -260,19 +272,23 @@ seo:
 }
 ```
 
-- [ ] **Step 5: ビルド確認**
+- [ ] **Step 5: ビルド確認 — 2026-07-17 時点で失敗（Issue #72 未解決のため）**
 
-前提: blume 1.0.4+（isolated linker 修正版）がインストールされていること（冒頭のステータス注記を参照。1.0.3 ではこのステップは既知のバグで失敗する）。
+前提: blume 1.0.4+（isolated linker 修正版）がインストールされていること（冒頭のステータス注記を参照）。
 
 Run: `pnpm --filter docs build`
 Expected: `[build] Complete!` とビルドサマリー（`Output static` / `Search orama` / `Sitemap yes`）が出て `docs/dist/` が生成される。旧 `docs/src/content/docs/**` はまだ残っているが、blume は `content/` しか見ないため干渉しない。
 
-- [ ] **Step 6: コミット**
+実際の結果（1.0.4）: `ERROR Cannot find module 'astro/config' imported from '.../docs/.blume/astro.config.mjs'` で失敗。冒頭のステータス注記の [Issue #72](https://github.com/haydenbleasel/blume/issues/72) を参照。
+
+- [ ] **Step 6: コミット（Step 5 通過後に実施）**
 
 ```bash
 git add -A docs
 git commit -m "docs: scaffold blume config, top page, and assets"
 ```
+
+（本セッションでは Step 1〜4 の内容を `docs: scaffold blume config, top page, and assets (build blocked)` として先にコミット済み。Step 5 が通ったら差分がなければこのコミットは不要）
 
 ---
 
