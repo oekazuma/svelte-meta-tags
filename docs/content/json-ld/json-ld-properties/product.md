@@ -1,7 +1,7 @@
 ---
 title: Product
 sidebar:
-  order: 4
+  order: 40
 ---
 
 ```svelte

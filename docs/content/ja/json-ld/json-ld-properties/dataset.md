@@ -1,7 +1,7 @@
 ---
 title: DataSet
 sidebar:
-  order: 6
+  order: 60
 ---
 
 ```svelte
@@ -14,7 +14,7 @@ sidebar:
     '@type': 'Dataset',
     name: 'name of the dataset',
     description: 'The description needs to be at least 50 characters long',
-    license: 'https//www.example.com'
+    license: 'https://www.example.com'
   }}
 />
 ```

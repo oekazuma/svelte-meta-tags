@@ -1,7 +1,7 @@
 ---
 title: FAQ
 sidebar:
-  order: 7
+  order: 70
 ---
 
 ```svelte

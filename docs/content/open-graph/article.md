@@ -1,7 +1,7 @@
 ---
 title: Article
 sidebar:
-  order: 4
+  order: 40
 ---
 
 ```svelte

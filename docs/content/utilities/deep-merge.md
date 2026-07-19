@@ -1,7 +1,7 @@
 ---
 title: Deep Merge
 sidebar:
-  order: 1
+  order: 10
 ---
 
 `deepMerge(target, source)` deeply merges two `MetaTagsProps`-shaped objects. Use it to override a layout's default meta tags with page-specific values, as in the following example.

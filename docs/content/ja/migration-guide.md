@@ -1,7 +1,7 @@
 ---
 title: 移行ガイド
 sidebar:
-  order: 4
+  order: 40
 ---
 
 ## v5

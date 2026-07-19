@@ -2,5 +2,5 @@ import { defineMeta } from 'blume';
 
 export default defineMeta({
   title: 'JSON-LD',
-  order: 3
+  order: 30
 });

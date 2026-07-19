@@ -1,7 +1,7 @@
 ---
 title: Open Graph
 sidebar:
-  order: 1
+  order: 10
 ---
 
 The full specification can be found at <http://ogp.me/>.

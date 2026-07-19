@@ -1,7 +1,7 @@
 ---
 title: Book
 sidebar:
-  order: 5
+  order: 50
 ---
 
 ```svelte

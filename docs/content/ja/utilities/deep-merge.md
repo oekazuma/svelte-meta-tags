@@ -1,7 +1,7 @@
 ---
 title: Deep Merge
 sidebar:
-  order: 1
+  order: 10
 ---
 
 `deepMerge(target, source)` は、`MetaTagsProps` 形式の2つのオブジェクトを深くマージします。次の例のように、レイアウトのデフォルトのメタタグをページ固有の値で上書きしたいときに使用します。

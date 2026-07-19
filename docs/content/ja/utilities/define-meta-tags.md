@@ -1,7 +1,7 @@
 ---
 title: Define Meta Tags
 sidebar:
-  order: 2
+  order: 20
 ---
 
 `defineBaseMetaTags` と `definePageMetaTags` は、SvelteKit の `load` 関数内で使う薄いラッパーです。それぞれ、入力したオブジェクトを凍結（freeze）して名前付きプロパティでラップするだけの関数です。

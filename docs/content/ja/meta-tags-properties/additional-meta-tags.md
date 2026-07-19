@@ -1,7 +1,7 @@
 ---
 title: Additional Meta Tags
 sidebar:
-  order: 7
+  order: 70
 ---
 
 このライブラリでカバーしていない他のメタタグを追加できます。

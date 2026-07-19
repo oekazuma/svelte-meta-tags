@@ -1,7 +1,7 @@
 ---
 title: JsonLdProps
 sidebar:
-  order: 2
+  order: 20
 ---
 
 ```ts

@@ -1,7 +1,7 @@
 ---
 title: AdditionalRobotsProps
 sidebar:
-  order: 3
+  order: 30
 ---
 
 ```ts

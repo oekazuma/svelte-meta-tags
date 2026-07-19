@@ -1,7 +1,7 @@
 ---
 title: 使い方
 sidebar:
-  order: 3
+  order: 30
 ---
 
 [デモ ↗](https://svelte.dev/repl/ffd783c9b8e54d97b6b7cac6eadace42)
@@ -123,11 +123,7 @@ export const load = ({ url }) => {
 };
 ```
 
-> 注意: `defineBaseMetaTags`は、`+layout.(j|t)s`ファイルで使用することを意図したユーティリティです。
-> このユーティリティは、フリーズされた`MetaTagsProps`オブジェクトを`baseMetaTags`プロパティにラップして返し、ロードデータで直接使用できます。
->
-> このユーティリティを使用せずに、`return { baseMetaTags: Object.freeze<MetaTagsProps>({ ... }) }`のように生のオブジェクトを提供することもできます。
-> `MetaTagsProps`は、`import type { MetaTagsProps } from 'svelte-meta-tags'`を使用してインポートできる、このパッケージで提供される型です。
+> 注意: `defineBaseMetaTags`は、`+layout.(j|t)s`ファイルで使用することを意図したユーティリティです。詳細と、使わない場合の代替記法については[Define Meta Tags](/ja/utilities/define-meta-tags)を参照してください。
 
 ### +page.ts
 
@@ -148,11 +144,7 @@ export const load = () => {
 };
 ```
 
-> 注意: `defineBaseMetaTags`と同様に、`definePageMetaTags`は`+page.(j|t)s`ファイルで使用することを意図したユーティリティです。
-> このユーティリティは、フリーズされた`MetaTagsProps`オブジェクトを`pageMetaTags`プロパティにラップして返し、ロードデータで直接使用できます。
->
-> このユーティリティを使用せずに、`return { pageMetaTags: Object.freeze<MetaTagsProps>({ ... }) }`のように生のオブジェクトを提供することもできます。
-> `MetaTagsProps`は、`import type { MetaTagsProps } from 'svelte-meta-tags'`を使用してインポートできる、このパッケージで提供される型です。
+> 注意: `defineBaseMetaTags`と同様に、`definePageMetaTags`は`+page.(j|t)s`ファイルで使用することを意図したユーティリティです。詳細は[Define Meta Tags](/ja/utilities/define-meta-tags)を参照してください。
 
 ## Remote Functionsとの使用（実験的機能）
 

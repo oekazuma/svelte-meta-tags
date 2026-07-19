@@ -1,7 +1,7 @@
 ---
 title: Migration Guide
 sidebar:
-  order: 4
+  order: 40
 ---
 
 ## v5

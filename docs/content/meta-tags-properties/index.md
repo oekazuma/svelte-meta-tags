@@ -1,7 +1,7 @@
 ---
 title: MetaTags Properties
 sidebar:
-  order: 1
+  order: 10
 ---
 
 For `title`, `titleTemplate`, `description`, `canonical`, `robots`, and `keywords`, see [Basic](/meta-tags-properties/basic) for detailed behavior and examples.

@@ -1,7 +1,7 @@
 ---
-title: MetaTags Properties
+title: MetaTagsプロパティ
 sidebar:
-  order: 1
+  order: 10
 ---
 
 `title`、`titleTemplate`、`description`、`canonical`、`robots`、`keywords` の詳細な挙動とサンプルについては [Basic](/ja/meta-tags-properties/basic) を参照してください。

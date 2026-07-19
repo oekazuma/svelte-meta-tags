@@ -19,5 +19,16 @@ export default defineConfig({
   deployment: {
     site: 'https://oekazuma.github.io',
     base: '/svelte-meta-tags'
-  }
+  },
+  redirects: [
+    // Installing was merged into Quickstart in the blume migration content overhaul.
+    { from: '/installing', to: '/quickstart' },
+    { from: '/ja/installing', to: '/ja/quickstart' },
+    // deep-merge-function was moved under the new Utilities section.
+    { from: '/deep-merge-function', to: '/utilities/deep-merge' },
+    { from: '/ja/deep-merge-function', to: '/ja/utilities/deep-merge' },
+    // title-template was merged into the new MetaTags Properties > Basic page.
+    { from: '/meta-tags-properties/title-template', to: '/meta-tags-properties/basic' },
+    { from: '/ja/meta-tags-properties/title-template', to: '/ja/meta-tags-properties/basic' }
+  ]
 });

@@ -1,7 +1,7 @@
 ---
 title: LanguageAlternate
 sidebar:
-  order: 5
+  order: 50
 ---
 
 ```ts

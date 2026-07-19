@@ -1,7 +1,7 @@
 ---
 title: Open Graph
 sidebar:
-  order: 1
+  order: 10
 ---
 
 完全な仕様は http://ogp.me/ で参照できます。

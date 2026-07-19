@@ -1,7 +1,7 @@
 ---
 title: Video
 sidebar:
-  order: 3
+  order: 30
 ---
 
 詳しい情報は[http://ogp.me/](http://ogp.me/#type_video)をご覧ください。

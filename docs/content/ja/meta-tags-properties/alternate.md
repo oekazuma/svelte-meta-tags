@@ -1,7 +1,7 @@
 ---
 title: Alternates
 sidebar:
-  order: 6
+  order: 60
 ---
 
 `mobileAlternate` と `languageAlternates` を使うと、検索エンジンに現在のページの関連バージョンを伝えることができます。

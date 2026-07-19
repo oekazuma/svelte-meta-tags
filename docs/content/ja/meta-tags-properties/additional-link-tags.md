@@ -1,7 +1,7 @@
 ---
 title: Additional Link Tags
 sidebar:
-  order: 8
+  order: 80
 ---
 
 このライブラリでカバーしていない他のリンクタグを追加できます。

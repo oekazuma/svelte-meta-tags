@@ -9,7 +9,17 @@ minimumReleaseAge: 4320
 minimumReleaseAgeExclude:
   - blume
   - takumi-js
-  - '@takumi-rs/*'
+  - '@takumi-rs/core'
+  - '@takumi-rs/core-darwin-arm64'
+  - '@takumi-rs/core-darwin-x64'
+  - '@takumi-rs/core-linux-arm64-gnu'
+  - '@takumi-rs/core-linux-arm64-musl'
+  - '@takumi-rs/core-linux-x64-gnu'
+  - '@takumi-rs/core-linux-x64-musl'
+  - '@takumi-rs/core-win32-arm64-msvc'
+  - '@takumi-rs/core-win32-x64-msvc'
+  - '@takumi-rs/helpers'
+  - '@takumi-rs/wasm'
 
 allowBuilds:
   esbuild: true

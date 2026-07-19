@@ -1,7 +1,7 @@
 ---
 title: Additional Link Tags
 sidebar:
-  order: 8
+  order: 80
 ---
 
 This allows you to add any other link tags that are not covered in the `config`.

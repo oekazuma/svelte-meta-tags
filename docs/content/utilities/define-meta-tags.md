@@ -1,7 +1,7 @@
 ---
 title: Define Meta Tags
 sidebar:
-  order: 2
+  order: 20
 ---
 
 `defineBaseMetaTags` and `definePageMetaTags` are thin wrappers used in SvelteKit `load` functions. Each one just freezes your input object and wraps it under a named property:

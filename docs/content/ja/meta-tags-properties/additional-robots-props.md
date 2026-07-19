@@ -1,7 +1,7 @@
 ---
 title: AdditionalRobotsProps
 sidebar:
-  order: 5
+  order: 50
 ---
 
 `index, follow` に加えて、`robots` メタタグは、より正確なクロールをアーカイブし、ページをクロールする SEO ボットに適切なスニペットを提供するために、より多くのプロパティを受け入れます。

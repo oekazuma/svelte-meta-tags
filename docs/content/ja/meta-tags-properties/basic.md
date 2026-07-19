@@ -1,7 +1,7 @@
 ---
 title: Basic
 sidebar:
-  order: 1
+  order: 20
 ---
 
 ## title / titleTemplate

@@ -1,7 +1,7 @@
 ---
 title: JSON-LD Properties
 sidebar:
-  order: 1
+  order: 10
 ---
 
 | プロパティ | 型                          | 説明                                                                                                                 |

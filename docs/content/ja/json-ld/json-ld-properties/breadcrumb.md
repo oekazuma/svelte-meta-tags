@@ -1,7 +1,7 @@
 ---
 title: Breadcrumb
 sidebar:
-  order: 3
+  order: 30
 ---
 
 ```svelte

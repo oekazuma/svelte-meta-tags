@@ -1,7 +1,7 @@
 ---
 title: LinkTag
 sidebar:
-  order: 10
+  order: 100
 ---
 
 ```ts

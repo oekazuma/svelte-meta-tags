@@ -1,7 +1,7 @@
 ---
 title: Profile
 sidebar:
-  order: 6
+  order: 60
 ---
 
 ```svelte

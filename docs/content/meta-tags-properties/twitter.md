@@ -1,7 +1,7 @@
 ---
 title: Twitter
 sidebar:
-  order: 3
+  order: 30
 ---
 
 ## Example

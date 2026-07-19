@@ -1,7 +1,7 @@
 ---
 title: Alternates
 sidebar:
-  order: 6
+  order: 60
 ---
 
 Use `mobileAlternate` and `languageAlternates` to point search engines at related versions of the current page.

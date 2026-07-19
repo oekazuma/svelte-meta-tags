@@ -1,7 +1,7 @@
 ---
 title: Usage
 sidebar:
-  order: 3
+  order: 30
 ---
 
 [Demo ↗](https://svelte.dev/repl/ffd783c9b8e54d97b6b7cac6eadace42)
@@ -123,11 +123,7 @@ export const load = ({ url }) => {
 };
 ```
 
-> Note: `defineBaseMetaTags` is a utility meant to be used in a `+layout.(j|t)s` file.
-> It returns a frozen `MetaTagsProps` object wrapped in a `baseMetaTags` property for direct use in your load data.
->
-> You can also provide a raw object without this utility with `return { baseMetaTags: Object.freeze<MetaTagsProps>({ ... }) }`.
-> `MetaTagsProps` is a type provided by this package, imported using `import type { MetaTagsProps } from 'svelte-meta-tags'`.
+> Note: `defineBaseMetaTags` is a utility meant to be used in a `+layout.(j|t)s` file. See [Define Meta Tags](/utilities/define-meta-tags) for what it does and how to write the equivalent by hand without it.
 
 ### +page.ts
 
@@ -148,11 +144,7 @@ export const load = () => {
 };
 ```
 
-> Note: like `defineBaseMetaTags`, `definePageMetaTags` is a utility meant to be used in a `+page.(j|t)s` file.
-> It returns a frozen `MetaTagsProps` object wrapped in a `pageMetaTags` property for direct use in your load data.
->
-> You can also provide a raw object without this utility with `return { pageMetaTags: Object.freeze<MetaTagsProps>({ ... }) }`.
-> `MetaTagsProps` is a type provided by this package, imported using `import type { MetaTagsProps } from 'svelte-meta-tags'`.
+> Note: like `defineBaseMetaTags`, `definePageMetaTags` is a utility meant to be used in a `+page.(j|t)s` file — see [Define Meta Tags](/utilities/define-meta-tags) for details.
 
 ## With Remote Functions (experimental)
 

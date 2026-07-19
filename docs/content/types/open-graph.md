@@ -1,7 +1,7 @@
 ---
 title: OpenGraph
 sidebar:
-  order: 8
+  order: 80
 ---
 
 ```ts
