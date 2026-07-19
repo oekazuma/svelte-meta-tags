@@ -13,7 +13,7 @@ sidebar:
 1. If `target` or `source` is `null`/`undefined`, the other one is returned as-is (or `{}` if both are missing).
 2. If the **target** value is a `Date` instance or a function, the target value wins — the source value is ignored, even if it's also a `Date`/function.
 3. Otherwise, if the **source** value is a `Date` instance or a function, the source value wins.
-4. If both values are plain objects (not arrays), they're merged recursively.
+4. If both values are non-null objects that aren't arrays — this includes class instances other than `Date`, not just plain object literals — they're merged recursively.
 5. If both values are arrays, the **source array replaces the target array entirely** — arrays are never concatenated.
 6. Otherwise, the source value is used unless it's `undefined`, in which case the target value is kept.
 
