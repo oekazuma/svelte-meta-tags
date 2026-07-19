@@ -35,6 +35,7 @@ Migration Guide                  v3→v4に加えv4→v5(schema-dts v2)のセク
 ## 各ページの記述方針
 
 **MetaTags Properties / Open Graph 配下:**
+
 1. そのプロパティが何のためにあるかの一言説明
 2. 型シグネチャの抜粋（`types.d.ts` から転記、書式を一致させる）
 3. 基本のコード例
@@ -47,15 +48,18 @@ Migration Guide                  v3→v4に加えv4→v5(schema-dts v2)のセク
    - `additionalMetaTags` の `httpEquiv` → `http-equiv` 属性名への正規化
 
 **Types配下:**
+
 - 使い方の解説はせず、`types.d.ts` の型シグネチャをそのまま反映するリファレンスに徹する
 - MetaTags Properties / Open Graph の対応ページへ相互リンクする
 - 執筆時に対象の型定義と一つずつ突き合わせて転記する（自動生成の仕組みは今回のスコープ外）
 
 **Utilities（deepMerge / define系）:**
+
 - `deepMerge` はマージルールを先に明記してから実例を出す: 配列は置換（concatしない）、`Date`/関数は対象外でかつ**targetがDate/関数なら target優先**、source側の `undefined` はtargetの値を保持
 - `defineBaseMetaTags` / `definePageMetaTags` は「`Object.freeze` して `baseMetaTags`/`pageMetaTags` にラップするだけの薄いヘルパー」という位置づけを明記し、使わない場合の代替記法も示す
 
 **Migration Guide:**
+
 - バージョン見出しごとに Breaking Changes / New Features を区切る形式に統一（CHANGELOG.mdの記載を要約）
 - 追加するv5セクション: `schema-dts` v1→v2 移行（型レベルの破壊的変更、`Role`/`Quantity`/型エクスポート名の変更）
 
