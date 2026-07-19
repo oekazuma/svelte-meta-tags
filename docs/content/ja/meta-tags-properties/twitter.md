@@ -18,6 +18,8 @@ twitter={{
 }}
 ```
 
+`Twitter` は他にも、`creatorId`、`player` カードタイプ向けの `app` カードセット（`player`、`playerWidth`、`playerHeight`、`playerStream`）、そして `app` カードタイプ向けのプラットフォームごとのアプリフィールド（`appNameIphone`/`appIdIphone`/`appUrlIphone`、`appNameIpad`/...、`appNameGoogleplay`/...）を受け付けます。全項目は [Twitter](/ja/types/twitter) を参照してください。
+
 ## フォールバック動作
 
 `twitter` プロパティで `twitter.title` や `twitter.description` が明示的に設定されていない場合、他の利用可能な値に自動的にフォールバックします:

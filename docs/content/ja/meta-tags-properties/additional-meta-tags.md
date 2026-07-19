@@ -8,6 +8,8 @@ sidebar:
 
 `content` が必要です。次に、`name`、`property`、または `httpEquiv` のいずれかが必要です (それぞれ 1 つのみ)
 
+`httpEquiv` は `httpEquiv` としてではなく、HTML属性 `http-equiv` としてレンダリングされます。これは `additionalMetaTags` のフィールド名の中で、属性名と1対1で対応しない唯一の項目です。
+
 ## 例
 
 ```js

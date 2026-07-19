@@ -8,6 +8,8 @@ This allows you to add any other meta tags that are not required by the `config`
 
 `content` is required. Then either `name`, `property` or `httpEquiv`. (only one of each)
 
+`httpEquiv` is rendered as the `http-equiv` HTML attribute (not `httpEquiv`) — this is the one field name in `additionalMetaTags` that doesn't map 1:1 to its attribute name.
+
 ## Example
 
 ```js

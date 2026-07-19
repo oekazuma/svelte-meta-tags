@@ -18,6 +18,8 @@ twitter={{
 }}
 ```
 
+`Twitter` also accepts `creatorId`, an `app`-card set (`player`, `playerWidth`, `playerHeight`, `playerStream`) for the `player` card type, and per-platform app fields (`appNameIphone`/`appIdIphone`/`appUrlIphone`, `appNameIpad`/..., `appNameGoogleplay`/...) for the `app` card type. See [Twitter](/types/twitter) for the full list.
+
 ## Fallback Behavior
 
 When `twitter.title` or `twitter.description` is not explicitly set in the `twitter` prop, they automatically fall back to other available values:
