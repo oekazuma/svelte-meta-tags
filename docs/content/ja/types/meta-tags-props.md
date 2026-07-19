@@ -19,5 +19,6 @@ interface MetaTagsProps {
   openGraph?: OpenGraph;
   additionalMetaTags?: ReadonlyArray<MetaTag>;
   additionalLinkTags?: ReadonlyArray<LinkTag>;
+  keywords?: ReadonlyArray<string>;
 }
 ```
