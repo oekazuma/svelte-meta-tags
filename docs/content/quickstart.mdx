@@ -1,0 +1,55 @@
+---
+title: Quickstart
+sidebar:
+  order: 1
+---
+
+Install the package:
+
+<CodeGroup>
+
+```sh npm
+npm install -D svelte-meta-tags
+```
+
+```sh pnpm
+pnpm add -D svelte-meta-tags
+```
+
+```sh Yarn
+yarn add -D svelte-meta-tags
+```
+
+</CodeGroup>
+
+Add `<MetaTags>` to any page or layout:
+
+```svelte
+<script>
+  import { MetaTags } from 'svelte-meta-tags';
+</script>
+
+<MetaTags
+  title="My Page"
+  description="A short description of this page."
+  canonical="https://example.com/my-page"
+  openGraph={{
+    title: 'My Page',
+    description: 'A short description of this page.',
+    images: [{ url: 'https://example.com/og-image.jpg', width: 1200, height: 630, alt: 'My Page' }]
+  }}
+/>
+```
+
+That's it — this renders `<title>`, `<meta name="description">`, `<link rel="canonical">`, and the `og:*` tags into `<svelte:head>`.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Usage" icon="file-text" href="/usage">
+    See patterns for sharing meta tags across a layout and its pages.
+  </Card>
+  <Card title="MetaTags Properties" icon="list" href="/meta-tags-properties/basic">
+    Browse every available property, grouped by purpose.
+  </Card>
+</CardGroup>

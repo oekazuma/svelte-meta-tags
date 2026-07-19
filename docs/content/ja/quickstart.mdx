@@ -1,0 +1,55 @@
+---
+title: クイックスタート
+sidebar:
+  order: 1
+---
+
+パッケージをインストールします:
+
+<CodeGroup>
+
+```sh npm
+npm install -D svelte-meta-tags
+```
+
+```sh pnpm
+pnpm add -D svelte-meta-tags
+```
+
+```sh Yarn
+yarn add -D svelte-meta-tags
+```
+
+</CodeGroup>
+
+任意のページまたはレイアウトに`<MetaTags>`を追加します:
+
+```svelte
+<script>
+  import { MetaTags } from 'svelte-meta-tags';
+</script>
+
+<MetaTags
+  title="My Page"
+  description="A short description of this page."
+  canonical="https://example.com/my-page"
+  openGraph={{
+    title: 'My Page',
+    description: 'A short description of this page.',
+    images: [{ url: 'https://example.com/og-image.jpg', width: 1200, height: 630, alt: 'My Page' }]
+  }}
+/>
+```
+
+これだけで、`<title>`、`<meta name="description">`、`<link rel="canonical">`、そして`og:*`タグが`<svelte:head>`にレンダリングされます。
+
+## 次のステップ
+
+<CardGroup cols={2}>
+  <Card title="使い方" icon="file-text" href="/ja/usage">
+    レイアウトとページ間でメタタグを共有するパターンを確認できます。
+  </Card>
+  <Card title="MetaTags プロパティ" icon="list" href="/ja/meta-tags-properties/basic">
+    目的別に分類された、利用可能なすべてのプロパティを確認できます。
+  </Card>
+</CardGroup>
