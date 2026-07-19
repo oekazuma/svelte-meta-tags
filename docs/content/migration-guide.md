@@ -12,10 +12,13 @@ sidebar:
 - `schema-dts` v2 has its own breaking type changes (non-recursive `Role`, `Quantity` as a core DataType, renamed non-schema.org type exports) — see the [schema-dts v2.0.0 release notes](https://github.com/google/schema-dts/releases/tag/v2.0.0).
 - `schema-dts` v2 depends on `schema-dts-lib`, which declares `typescript >=4.9.5` as a peer dependency. Under strict peer-dependency enforcement (e.g. pnpm's `strict-peer-dependencies=true`), you may need to add `typescript` explicitly.
 
-`twitter.handle` has been renamed `twitter.creator`
+## v4
+
+### `twitter.handle` renamed to `twitter.creator`
+
 This change aligns with the actual property name.
 
-## v3
+**Before (v3)**
 
 ```svelte
 <MetaTags
@@ -31,7 +34,7 @@ This change aligns with the actual property name.
 />
 ```
 
-## v4
+**After (v4)**
 
 ```svelte
 <MetaTags
@@ -47,13 +50,15 @@ This change aligns with the actual property name.
 />
 ```
 
-Add `deepMerge`, a function that deeply merges the enumerable properties of two or more objects.
+### Added `deepMerge`
 
-The use of the deepMerge function provided by this library is not mandatory, so you can continue to use whatever you like, but it is recommended because it reduces dependencies.
+`deepMerge` is a function that deeply merges the enumerable properties of two or more objects.
+
+Using the `deepMerge` function provided by this library is not mandatory, so you can continue to use whatever you like, but it is recommended because it reduces dependencies.
 
 See [Example](https://github.com/oekazuma/svelte-meta-tags/tree/main/example/src/routes) for details on how to use it.
 
-## v3
+**Before (v3)**
 
 `+layout.svelte`
 
@@ -73,7 +78,7 @@ See [Example](https://github.com/oekazuma/svelte-meta-tags/tree/main/example/src
 <slot />
 ```
 
-## v4
+**After (v4)**
 
 `+layout.svelte`
 

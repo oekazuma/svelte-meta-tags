@@ -12,10 +12,13 @@ sidebar:
 - `schema-dts` v2 には独自の破壊的な型変更があります（`Role` の非再帰化、コアの DataType としての `Quantity`、schema.org 以外の型エクスポートのリネームなど）。詳細は [schema-dts v2.0.0 のリリースノート](https://github.com/google/schema-dts/releases/tag/v2.0.0) を参照してください。
 - `schema-dts` v2 は `schema-dts-lib` に依存しており、これは `typescript >=4.9.5` をピア依存関係として宣言しています。厳格なピア依存関係の検証を行う環境（例: pnpm の `strict-peer-dependencies=true`）では、`typescript` を明示的に追加する必要がある場合があります。
 
-`twitter.handle` は `twitter.creator` に名前が変更されました。
+## v4
+
+### `twitter.handle` を `twitter.creator` にリネーム
+
 この変更は実際のプロパティ名と一致します。
 
-## v3
+**変更前 (v3)**
 
 ```svelte
 <MetaTags
@@ -31,7 +34,7 @@ sidebar:
 />
 ```
 
-## v4
+**変更後 (v4)**
 
 ```svelte
 <MetaTags
@@ -47,13 +50,15 @@ sidebar:
 />
 ```
 
-2つ以上のオブジェクトの列挙可能なプロパティを深くマージする関数`deepMerge`を追加しました・
+### `deepMerge` を追加
 
-ライブラリが提供する`deepMerge`関数の使用は必須ではないため、好きなものを使い続けることができますが、依存関係が減るためおすすめします。
+`deepMerge`は、2つ以上のオブジェクトの列挙可能なプロパティを深くマージする関数です。
+
+ライブラリが提供する `deepMerge` 関数の使用は必須ではないため、好きなものを使い続けることができますが、依存関係が減るためおすすめします。
 
 使用方法の詳細については [例](https://github.com/oekazuma/svelte-meta-tags/tree/main/example/src/routes) を参照してください。
 
-## v3
+**変更前 (v3)**
 
 `+layout.svelte`
 
@@ -61,7 +66,7 @@ sidebar:
 <script>
   import { MetaTags } from 'svelte-meta-tags';
   import { page } from '$app/stores';
-  import extend from 'just-extend'; //lodash.merge、deepmerge、just-extendなどのオブジェクトのディープマージを可能にする関数を使用してください
+  import extend from 'just-extend'; // lodash.merge、deepmerge、just-extendなどのオブジェクトのディープマージを可能にする関数を使用してください
 
   export let data;
 
@@ -73,7 +78,7 @@ sidebar:
 <slot />
 ```
 
-## v4
+**変更後 (v4)**
 
 `+layout.svelte`
 
