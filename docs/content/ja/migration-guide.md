@@ -1,5 +1,7 @@
 ---
 title: 移行ガイド
+sidebar:
+  order: 4
 ---
 
 `twitter.handle` は `twitter.creator` に名前が変更されました。
