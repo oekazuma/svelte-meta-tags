@@ -576,7 +576,7 @@ interface MetaTagsProps {
 
 Run（各ファイルを目視で実装と突き合わせる。英語版だけでなく対応する `docs/content/ja/types/**` の日本語版も同じ突き合わせ対象に含める — 型シグネチャ自体は翻訳されないため英語版と同一であるべきだが、日本語版だけ更新が漏れて古いままになっていないかを個別に確認する）:
 
-- `docs/content/types/additional-types/*.md`（9ファイル）と `docs/content/ja/types/additional-types/*.md` を、`packages/svelte-meta-tags/src/lib/types.d.ts` の `BaseMetaTag`, `HTML5MetaTag`, `RDFaMetaTag`, `HTTPEquivMetaTag`, `OpenGraphImage`, `OpenGraphAudio`, `OpenGraphProfile`, `OpenGraphBook`, `OpenGraphArticle`, `OpenGraphVideo`, `OpenGraphVideoActors` と1つずつ突き合わせる
+- `docs/content/types/additional-types/*.md`（`index.md` を除く12ファイル）と `docs/content/ja/types/additional-types/*.md` を、`packages/svelte-meta-tags/src/lib/types.d.ts` の `BaseMetaTag`, `HTML5MetaTag`, `RDFaMetaTag`, `HTTPEquivMetaTag`, `OpenGraphImage`, `OpenGraphVideos`, `OpenGraphAudio`, `OpenGraphProfile`, `OpenGraphBook`, `OpenGraphArticle`, `OpenGraphVideo`, `OpenGraphVideoActors` と1つずつ突き合わせる
 - `docs/content/types/open-graph.md`, `types/facebook.md`, `types/mobile-alternate.md`, `types/language-alternate.md`, `types/additional-robots-props.md`, `types/json-ld-props.md`, `types/meta-tag.md` と、対応する `docs/content/ja/types/*.md` も同様に突き合わせる
 
 Expected: 差分があれば実装に合わせて修正する（英語版・日本語版いずれも。この計画作成時点の監査ではこれらは一致していたが、念のため再確認する）。
