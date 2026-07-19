@@ -4,6 +4,14 @@ sidebar:
   order: 4
 ---
 
+## v5
+
+`schema-dts` (the package providing the types for `JsonLd`'s `schema` prop) was updated from v1 to v2. `JsonLd`'s runtime behavior is unchanged — this is a type-level breaking change only:
+
+- If your app depends on `schema-dts` directly, update it to `^2.0.0`. Mixing v1 and v2 types can cause TypeScript "Excessive stack depth" errors when assigning to the `schema` prop.
+- `schema-dts` v2 has its own breaking type changes (non-recursive `Role`, `Quantity` as a core DataType, renamed non-schema.org type exports) — see the [schema-dts v2.0.0 release notes](https://github.com/google/schema-dts/releases/tag/v2.0.0).
+- `schema-dts` v2 depends on `schema-dts-lib`, which declares `typescript >=4.9.5` as a peer dependency. Under strict peer-dependency enforcement (e.g. pnpm's `strict-peer-dependencies=true`), you may need to add `typescript` explicitly.
+
 `twitter.handle` has been renamed `twitter.creator`
 This change aligns with the actual property name.
 

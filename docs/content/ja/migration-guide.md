@@ -4,6 +4,14 @@ sidebar:
   order: 4
 ---
 
+## v5
+
+`JsonLd` の `schema` プロパティの型を提供するパッケージ `schema-dts` が v1 から v2 に更新されました。`JsonLd` のランタイムの挙動に変更はなく、これは型レベルのみの破壊的変更です。
+
+- アプリが `schema-dts` に直接依存している場合は、`^2.0.0` に更新してください。v1 と v2 の型が混在すると、`schema` プロパティへの代入時に TypeScript の "Excessive stack depth" エラーが発生することがあります。
+- `schema-dts` v2 には独自の破壊的な型変更があります（`Role` の非再帰化、コアの DataType としての `Quantity`、schema.org 以外の型エクスポートのリネームなど）。詳細は [schema-dts v2.0.0 のリリースノート](https://github.com/google/schema-dts/releases/tag/v2.0.0) を参照してください。
+- `schema-dts` v2 は `schema-dts-lib` に依存しており、これは `typescript >=4.9.5` をピア依存関係として宣言しています。厳格なピア依存関係の検証を行う環境（例: pnpm の `strict-peer-dependencies=true`）では、`typescript` を明示的に追加する必要がある場合があります。
+
 `twitter.handle` は `twitter.creator` に名前が変更されました。
 この変更は実際のプロパティ名と一致します。
 
