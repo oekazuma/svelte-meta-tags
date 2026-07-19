@@ -47,5 +47,5 @@ catalog:
   svelte-check: ^4.7.3
   typescript: ^6.0.3
   typescript-eslint: ^8.64.0
-  vite: ^8.1.4
+  vite: ^8.1.5
   vitest: ^4.1.10
