@@ -2,7 +2,6 @@
 title: Deep Merge 関数
 sidebar:
   order: 3
-  badge: 新機能
 ---
 
 2つ以上のオブジェクトの列挙可能なプロパティを深くマージする関数を提供します。

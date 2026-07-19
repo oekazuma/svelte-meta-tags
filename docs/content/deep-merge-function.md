@@ -2,7 +2,6 @@
 title: Deep Merge function
 sidebar:
   order: 3
-  badge: New
 ---
 
 Provides a function to deeply merge the enumerable properties of two or more objects.
