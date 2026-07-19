@@ -395,9 +395,11 @@ git commit -m "docs: add Utilities section with accurate deepMerge merge rules"
 - Modify: `docs/content/types/twitter.md`
 - Modify: `docs/content/types/link-tag.md`
 - Modify: `docs/content/types/meta-tags-props.md`
+- Modify: `docs/content/types/meta.ts` (order を 4→5 に変更)
 - Modify: `docs/content/ja/types/twitter.md`
 - Modify: `docs/content/ja/types/link-tag.md`
 - Modify: `docs/content/ja/types/meta-tags-props.md`
+- Modify: `docs/content/ja/types/meta.ts` (order を 4→5 に変更)
 
 **Interfaces:**
 - Consumes: 上記「参照」セクションの `Twitter`, `LinkTag`, `MetaTagsProps` 型定義
@@ -543,6 +545,32 @@ Run（各ファイルを目視で実装と突き合わせる）:
 - `docs/content/types/open-graph.md`, `types/facebook.md`, `types/mobile-alternate.md`, `types/language-alternate.md`, `types/additional-robots-props.md`, `types/json-ld-props.md`, `types/meta-tag.md` も同様に突き合わせる
 
 Expected: 差分があれば実装に合わせて修正する（この計画作成時点の監査ではこれらは一致していたが、念のため再確認する）。
+
+- [ ] **Step 5.5: Types グループの表示順序を Utilities の後ろに修正**
+
+Task 1 で新設した `Utilities` グループが `order: 4` を使っているため、既存の `Types` グループ（同じく `order: 4`）と衝突している。`Types` を `order: 5` に変更する:
+
+`docs/content/types/meta.ts` を以下に変更:
+
+```ts
+import { defineMeta } from 'blume';
+
+export default defineMeta({
+  title: 'Types',
+  order: 5
+});
+```
+
+`docs/content/ja/types/meta.ts` を以下に変更:
+
+```ts
+import { defineMeta } from 'blume';
+
+export default defineMeta({
+  title: '型定義',
+  order: 5
+});
+```
 
 - [ ] **Step 6: ビルドと型チェック**
 
