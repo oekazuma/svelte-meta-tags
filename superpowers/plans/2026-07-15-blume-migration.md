@@ -10,20 +10,12 @@
 
 **Spec:** `superpowers/specs/2026-07-15-blume-migration-design.md`
 
-> **⚠️ ステータス（2026-07-17 時点）: 実装は blume 側 Issue #72 の修正待ちで再度中断中。**
-> blume 1.0.4（2026-07-15 公開）は当初「isolated linker 修正版」と見込んでいたが、実際には同種の pnpm isolated-linker バグが未解消のまま残っている。`ensureDepsLink()` の事前チェックが CommonJS の `createRequire().resolve()`（pnpm の bin ラッパーが設定する `NODE_PATH` を見るため誤って「解決可能」と判定する）を使う一方、実際に `.blume/astro.config.mjs` を読み込む Vite は ESM 解決（`NODE_PATH` を見ない）を使うため、`.blume/node_modules` の依存リンクが作成されず `Cannot find module 'astro/config'` で失敗する。upstream で [Issue #72](https://github.com/haydenbleasel/blume/issues/72)（2026-07-16 起票、本セッション時点で open）として報告済み。
+> **✅ ステータス（2026-07-19 時点）: upstream Issue #72 が解消され、blume 1.1.0（2026-07-19 公開）で再開。**
+> [Issue #72](https://github.com/haydenbleasel/blume/issues/72) は closed 済み。`catalog.blume` を `^1.1.0` に更新し `pnpm install` → `pnpm --filter docs build` で **Task 2 Step 5 が成功**することを確認した（`docs/dist/` に `index.html` / `ja/index.html` などが生成され、`deployment.base: /svelte-meta-tags` も全リンクに正しく反映されている）。
 >
-> **今回のセッションで完了した内容:**
-> - Task 1（依存関係の切り替え）は完了・検証済み（`pnpm install` で blume 1.0.4 が解決され `blume --version` は `1.0.4` を確認済み）。sharp は catalog から一度削除したが、blume が内包する astro のトランスパイル依存として再度必要になったため `allowBuilds.sharp: true` を復元している（catalog へは戻していない — 直接の docs 依存ではなくなったため）。
-> - Task 2 Step 1〜4（ロゴ移動、`blume.config.ts`、トップページ、tsconfig 更新）まで実施。Step 5 の `pnpm --filter docs build` が上記バグで失敗するため、そこで停止。
-> - 作業はローカルの `docs/migrate-to-blume` ブランチ（コミット済み）に保全。
+> blume 1.1.0 は新たな推移依存 `takumi-js` / `@takumi-rs/*`（ネイティブバイナリ含む）を追加しており、これらも公開直後で `minimumReleaseAge: 4320` に一度ブロックされたため、`minimumReleaseAgeExclude` に `takumi-js` と `'@takumi-rs/*'` を追加している（`blume` 自体の exclude と同じ理由）。
 >
-> **再開条件:** upstream Issue #72 がクローズされ、修正版がリリースされた後に **Task 2 Step 5** から再実行する（Task 1〜2 の実装はやり直し不要、`docs/migrate-to-blume` ブランチに残っている）。
->
-> **待てない場合の既知の回避策（Issue #72 記載）:**
-> 1. ルートに `.npmrc` を追加し `node-linker=hoisted` を設定する（pnpm 公式の回避策。ただし全ワークスペースの `node_modules` レイアウトに影響する repo-wide な変更）。
-> 2. `astro` / `@astrojs/mdx` / `@shikijs/twoslash` / `@tailwindcss/vite` / `@orama/orama` を blume と同じバージョンレンジで `docs/package.json` に直接追加する（`docs/node_modules` に実体を置くことで ESM 解決を成立させる、docs ワークスペースに閉じた回避策。upstream 修正後に削除するTODOとして残す）。
-> どちらもユーザー未承認のため、再開時に確認すること。
+> Task 1〜2 は全ステップ完了。Task 3 以降（コンテンツ移行、Starlight 撤去、redirects、CI、最終検証）へ進む。
 
 ## Global Constraints
 
@@ -272,23 +264,21 @@ seo:
 }
 ```
 
-- [ ] **Step 5: ビルド確認 — 2026-07-17 時点で失敗（Issue #72 未解決のため）**
-
-前提: blume 1.0.4+（isolated linker 修正版）がインストールされていること（冒頭のステータス注記を参照）。
+- [x] **Step 5: ビルド確認 — 2026-07-19 時点で成功（blume 1.1.0、Issue #72 解消後）**
 
 Run: `pnpm --filter docs build`
 Expected: `[build] Complete!` とビルドサマリー（`Output static` / `Search orama` / `Sitemap yes`）が出て `docs/dist/` が生成される。旧 `docs/src/content/docs/**` はまだ残っているが、blume は `content/` しか見ないため干渉しない。
 
-実際の結果（1.0.4）: `ERROR Cannot find module 'astro/config' imported from '.../docs/.blume/astro.config.mjs'` で失敗。冒頭のステータス注記の [Issue #72](https://github.com/haydenbleasel/blume/issues/72) を参照。
+実際の結果（1.1.0）: 成功。`Sitemap yes` / `Robots yes` / `LLM files yes` / `Search orama` を確認、`index.html` / `ja/index.html` のリンクに `deployment.base` (`/svelte-meta-tags`) が正しく反映されていることも確認済み。
 
-- [ ] **Step 6: コミット（Step 5 通過後に実施）**
+- [x] **Step 6: コミット**
 
 ```bash
-git add -A docs
-git commit -m "docs: scaffold blume config, top page, and assets"
+git add pnpm-workspace.yaml pnpm-lock.yaml
+git commit -m "docs: bump blume to 1.1.0 (fixes upstream isolated-linker bug)"
 ```
 
-（本セッションでは Step 1〜4 の内容を `docs: scaffold blume config, top page, and assets (build blocked)` として先にコミット済み。Step 5 が通ったら差分がなければこのコミットは不要）
+（Step 1〜4 の内容は本セッションでは既に `docs: scaffold blume config, top page, and assets (build blocked)` としてコミット済みのため、追加の差分なし）
 
 ---
 
