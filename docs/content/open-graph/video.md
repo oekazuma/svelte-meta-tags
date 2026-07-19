@@ -46,3 +46,5 @@ Full info on [http://ogp.me/](http://ogp.me/#type_video)
   }}
 />
 ```
+
+`type` also accepts `video.episode`, `video.tv_show`, and `video.other` — all four render the same `video:*` properties from the `video` object. `video.movie`, `video.episode`, and `video.tv_show` render the block unconditionally; `video.other` only renders it when `video` is also provided.

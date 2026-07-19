@@ -46,3 +46,5 @@ sidebar:
   }}
 />
 ```
+
+`type` には `video.episode`、`video.tv_show`、`video.other` も指定できます。これら4種類はいずれも `video` オブジェクトから同じ `video:*` プロパティを出力します。`video.movie`、`video.episode`、`video.tv_show` は無条件でこのブロックを出力しますが、`video.other` は `video` が指定されている場合にのみ出力されます。
