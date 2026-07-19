@@ -31,7 +31,7 @@ title: JSON-LD
 
 ## Multiple schemas
 
-Pass an array to render multiple `<script>` blocks, or wrap them in `{ '@graph': [...] }` to render them as a single linked graph (recommended — some tools, like Safari, log a console error for the array form even though it works correctly). See [JSON-LD Multiple Examples](/json-ld/json-ld-properties/json-ld-multiple-examples).
+Pass an array to render multiple JSON-LD objects within the same `<script>` block, or wrap them in `{ '@graph': [...] }` to represent them as a single linked graph instead of a plain array (recommended — some tools, like Safari, log a console error for the array form even though it works correctly). See [JSON-LD Multiple Examples](/json-ld/json-ld-properties/json-ld-multiple-examples).
 
 ## TypeScript support
 

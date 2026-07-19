@@ -31,7 +31,7 @@ title: JSON-LD
 
 ## 複数のスキーマ
 
-配列を渡すと複数の `<script>` ブロックがレンダリングされます。また、`{ '@graph': [...] }` でラップすると、単一のリンクされたグラフとしてレンダリングされます（推奨の方法です — 配列形式は正しく動作するものの、Safari などの一部のツールがコンソールにエラーを出力することがあります）。詳しくは [JSON-LD Multiple Examples](/ja/json-ld/json-ld-properties/json-ld-multiple-examples) を参照してください。
+配列を渡すと、同じ `<script>` ブロック内に複数の JSON-LD オブジェクトがレンダリングされます。また、`{ '@graph': [...] }` でラップすると、単純な配列ではなく単一のリンクされたグラフとして表現できます（推奨の方法です — 配列形式は正しく動作するものの、Safari などの一部のツールがコンソールにエラーを出力することがあります）。詳しくは [JSON-LD Multiple Examples](/ja/json-ld/json-ld-properties/json-ld-multiple-examples) を参照してください。
 
 ## TypeScriptサポート
 
