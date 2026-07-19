@@ -1,0 +1,208 @@
+---
+title: Usage
+sidebar:
+  order: 30
+---
+
+[Demo ↗](https://svelte.dev/repl/ffd783c9b8e54d97b6b7cac6eadace42)
+
+`<MetaTags>` and `<JsonLd>` only write into `<svelte:head>` (or, for `<JsonLd output="body">`, inline) — they don't depend on SvelteKit internals. They work in any Svelte project. The `load`-based patterns below (`+layout.ts`/`+page.ts`, `deepMerge`) are SvelteKit-specific; in a plain Svelte app, pass the same props directly to `<MetaTags>` from your own data-fetching logic.
+
+## Example with just title and description
+
+```svelte
+<script>
+  import { MetaTags } from 'svelte-meta-tags';
+</script>
+
+<MetaTags title="Example Title" description="Example Description." />
+```
+
+## Typical page example
+
+```svelte
+<script>
+  import { MetaTags } from 'svelte-meta-tags';
+</script>
+
+<MetaTags
+  title="Using More of Config"
+  titleTemplate="%s | Svelte Meta Tags"
+  description="This example uses more of the available config options."
+  canonical="https://www.canonical.ie/"
+  openGraph={{
+    url: 'https://www.url.ie/a',
+    title: 'Open Graph Title',
+    description: 'Open Graph Description',
+    images: [
+      {
+        url: 'https://www.example.ie/og-image-01.jpg',
+        width: 800,
+        height: 600,
+        alt: 'Og Image Alt'
+      },
+      {
+        url: 'https://www.example.ie/og-image-02.jpg',
+        width: 900,
+        height: 800,
+        alt: 'Og Image Alt Second'
+      },
+      { url: 'https://www.example.ie/og-image-03.jpg' },
+      { url: 'https://www.example.ie/og-image-04.jpg' }
+    ],
+    siteName: 'SiteName'
+  }}
+  twitter={{
+    creator: '@handle',
+    site: '@site',
+    cardType: 'summary_large_image',
+    title: 'Using More of Config',
+    description: 'This example uses more of the available config options.',
+    image: 'https://www.example.ie/twitter-image.jpg',
+    imageAlt: 'Twitter image alt'
+  }}
+  facebook={{
+    appId: '1234567890'
+  }}
+/>
+```
+
+## Overwriting default values with a child page:
+
+[Example](https://github.com/oekazuma/svelte-meta-tags/tree/main/example)
+
+### +layout.svelte
+
+```svelte
+<script>
+  import { page } from '$app/state';
+  import { MetaTags, deepMerge } from 'svelte-meta-tags';
+
+  let { data, children } = $props();
+
+  let metaTags = $derived(deepMerge(data.baseMetaTags, page.data.pageMetaTags));
+</script>
+
+<MetaTags {...metaTags} />
+
+{@render children()}
+```
+
+### +layout.ts
+
+```ts
+import { defineBaseMetaTags } from 'svelte-meta-tags';
+
+export const load = ({ url }) => {
+  const baseTags = defineBaseMetaTags({
+    title: 'Default',
+    titleTemplate: '%s | Svelte Meta Tags',
+    description: 'Svelte Meta Tags is a Svelte component for managing meta tags and SEO in your Svelte applications.',
+    canonical: new URL(url.pathname, url.origin).href, // creates a cleaned up URL (without hashes or query params) from your current URL
+    openGraph: {
+      type: 'website',
+      url: new URL(url.pathname, url.origin).href,
+      locale: 'en_IE',
+      title: 'Open Graph Title',
+      description: 'Open Graph Description',
+      siteName: 'SiteName',
+      images: [
+        {
+          url: 'https://www.example.ie/og-image.jpg',
+          alt: 'Og Image Alt',
+          width: 800,
+          height: 600,
+          secureUrl: 'https://www.example.ie/og-image.jpg',
+          type: 'image/jpeg'
+        }
+      ]
+    }
+  });
+
+  return { ...baseTags };
+};
+```
+
+> Note: `defineBaseMetaTags` is a utility meant to be used in a `+layout.(j|t)s` file. See [Define Meta Tags](/utilities/define-meta-tags) for what it does and how to write the equivalent by hand without it.
+
+### +page.ts
+
+```ts
+import { definePageMetaTags } from 'svelte-meta-tags';
+
+export const load = () => {
+  const pageTags = definePageMetaTags({
+    title: 'TOP',
+    description: 'Description TOP',
+    openGraph: {
+      title: 'Open Graph Title TOP',
+      description: 'Open Graph Description TOP'
+    }
+  });
+
+  return { ...pageTags };
+};
+```
+
+> Note: like `defineBaseMetaTags`, `definePageMetaTags` is a utility meant to be used in a `+page.(j|t)s` file — see [Define Meta Tags](/utilities/define-meta-tags) for details.
+
+## With Remote Functions (experimental)
+
+SvelteKit's [remote functions](https://svelte.dev/docs/kit/remote-functions) allow you to define server-only functions in `.remote.ts` files and call them directly from components.
+
+> **Note:** For SEO purposes, the traditional approach using `load` functions (shown above) is recommended, as it guarantees meta tags are included in the server-rendered HTML. Remote functions are better suited for pages where SEO is less critical (e.g., dashboards, authenticated pages) and you want to colocate data fetching with the component.
+
+> Note: Remote functions are an experimental feature. You need to enable them in your `svelte.config.js`:
+>
+> ```js
+> const config = {
+>   kit: {
+>     experimental: {
+>       remoteFunctions: true
+>     }
+>   },
+>   compilerOptions: {
+>     experimental: {
+>       async: true
+>     }
+>   }
+> };
+> ```
+
+### data.remote.ts
+
+```ts
+import { query } from '$app/server';
+import * as v from 'valibot';
+import * as db from '$lib/server/database';
+
+export const getPost = query(v.string(), async (slug) => {
+  return await db.getPost(slug);
+});
+```
+
+### +page.svelte
+
+```svelte
+<script>
+  import { MetaTags } from 'svelte-meta-tags';
+  import { getPost } from './data.remote';
+  import { page } from '$app/state';
+
+  let post = $derived(await getPost(page.params.slug));
+</script>
+
+<MetaTags
+  title={post.title}
+  titleTemplate="%s | My Blog"
+  description={post.excerpt}
+  openGraph={{
+    type: 'article',
+    title: post.title,
+    description: post.excerpt,
+    images: [{ url: post.coverImage, width: 1200, height: 630, alt: post.title }]
+  }}
+/>
+```
+
+> Note: Using `await` expressions requires enabling `experimental.async` in the Svelte compiler options. Using `$derived` ensures the query re-runs on client-side navigation when parameters change. A `<svelte:boundary>` is needed in an ancestor component to handle loading and error states.

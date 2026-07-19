@@ -18,30 +18,16 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
-      - name: Get Node.js version from package.json
-        id: get-node-version
-        run: |
-          NODE_VERSION=$(jq -r '.devEngines.runtime.version' package.json)
-          if [ -z "$NODE_VERSION" ] || [ "$NODE_VERSION" = "null" ]; then
-            echo "::error::Could not extract devEngines.runtime.version from package.json"
-            exit 1
-          fi
-          echo "node-version=${NODE_VERSION}" >> "$GITHUB_OUTPUT"
-      - name: Get pnpm version from package.json
-        id: get-pnpm-version
-        run: |
-          PNPM_VERSION=$(node -p "require('./package.json').packageManager || ''")
-          if [ -z "$PNPM_VERSION" ] || [ "$PNPM_VERSION" = "undefined" ]; then
-            echo "::error::Missing packageManager in package.json"
-            exit 1
-          fi
-          echo "pnpm-version=${PNPM_VERSION}" >> "$GITHUB_OUTPUT"
-      - name: Install, build, and upload your site
-        uses: withastro/action@e84f40bd8d2caa9e768ec82ad30dd81f0b280853 # v6.1.2
+      - name: Setup Node.js and dependencies
+        uses: ./.github/workflows/setup-node
+      - name: Build docs
+        run: pnpm --filter docs build
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4.0.0
         with:
-          path: docs
-          node-version: ${{ steps.get-node-version.outputs.node-version }}
-          package-manager: ${{ steps.get-pnpm-version.outputs.pnpm-version }}
+          path: docs/dist
 
   deploy:
     needs: build
