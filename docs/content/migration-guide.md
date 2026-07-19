@@ -1,5 +1,7 @@
 ---
 title: Migration Guide
+sidebar:
+  order: 4
 ---
 
 `twitter.handle` has been renamed `twitter.creator`

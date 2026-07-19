@@ -4,15 +4,13 @@ sidebar:
   order: 8
 ---
 
-import { Aside } from '@astrojs/starlight/components';
-
 You can return multiple json data as an array.
 
-<Aside type="caution">
-  Safari will log an error to the console when you use an array to describe multiple data items. Although the library
-  functions correctly, be cautious if you're aggregating error logs with tools like Sentry. To avoid this issue,
-  consider using @graph.
-</Aside>
+:::caution
+Safari will log an error to the console when you use an array to describe multiple data items. Although the library
+functions correctly, be cautious if you're aggregating error logs with tools like Sentry. To avoid this issue,
+consider using @graph.
+:::
 
 Example using arrays
 
