@@ -6,7 +6,7 @@ sidebar:
 
 `mobileAlternate` と `languageAlternates` を使うと、検索エンジンに現在のページの関連バージョンを伝えることができます。
 
-## Mobile alternate
+## モバイル代替
 
 このデスクトップページと、別途用意されたモバイル版との関係を、モバイル版を配信すべき画面サイズとあわせて示します。
 
@@ -17,10 +17,10 @@ sidebar:
     href: 'https://m.example.com/page'
   }}
 />
-<!-- outputs: <link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.example.com/page" /> -->
+<!-- 出力: <link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.example.com/page" /> -->
 ```
 
-## Language alternates
+## 言語代替
 
 `{ hrefLang, href }` のペアの配列です。各エントリごとに `<link rel="alternate" hrefLang="...">` が1つずつレンダリングされます。
 

@@ -18,7 +18,7 @@ twitter={{
 }}
 ```
 
-`Twitter` also accepts `creatorId`, an `app`-card set (`player`, `playerWidth`, `playerHeight`, `playerStream`) for the `player` card type, and per-platform app fields (`appNameIphone`/`appIdIphone`/`appUrlIphone`, `appNameIpad`/..., `appNameGoogleplay`/...) for the `app` card type. See [Twitter](/types/twitter) for the full list.
+`Twitter` also accepts `creatorId`, a `player`-card set (`player`, `playerWidth`, `playerHeight`, `playerStream`) for the `player` card type, and per-platform app fields (`appNameIphone`/`appIdIphone`/`appUrlIphone`, `appNameIpad`/..., `appNameGoogleplay`/...) for the `app` card type. See [Twitter](/types/twitter) for the full list.
 
 ## Fallback Behavior
 
