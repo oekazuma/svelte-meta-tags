@@ -1,4 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "skipLibCheck": true
+  },
   "include": [".blume/.astro/types.d.ts", ".blume/src/env.d.ts", "**/*"]
 }
