@@ -42,7 +42,7 @@ sidebar:
 
 ```svelte
 <MetaTags robots={false} />
-<!-- no <meta name="robots"> tag is rendered -->
+<!-- <meta name="robots"> タグはレンダリングされません -->
 ```
 
 > `robots` が `false`（またはその他の falsy な値）のときに `additionalRobotsProps` を設定すると、追加のディレクティブを紐付ける先がなくなるため、コンソールに警告が出力されます。[Additional Robots Props](/ja/meta-tags-properties/additional-robots-props) を参照してください。

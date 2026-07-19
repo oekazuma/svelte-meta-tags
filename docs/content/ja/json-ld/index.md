@@ -16,7 +16,7 @@ title: JSON-LD
     url: 'https://www.example.com'
   }}
 />
-<!-- outputs: <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization",...}</script> -->
+<!-- 出力: <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization",...}</script> -->
 ```
 
 `@context: "https://schema.org"` は自動的に追加されるため、自分で指定する必要はありません。
