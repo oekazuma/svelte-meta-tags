@@ -6,6 +6,8 @@ sidebar:
 
 [Demo ↗](https://svelte.dev/repl/ffd783c9b8e54d97b6b7cac6eadace42)
 
+`<MetaTags>` and `<JsonLd>` only write into `<svelte:head>` (or, for `<JsonLd output="body">`, inline) — they don't depend on SvelteKit internals. They work in any Svelte project. The `load`-based patterns below (`+layout.ts`/`+page.ts`, `deepMerge`) are SvelteKit-specific; in a plain Svelte app, pass the same props directly to `<MetaTags>` from your own data-fetching logic.
+
 ## Example with just title and description
 
 ```svelte

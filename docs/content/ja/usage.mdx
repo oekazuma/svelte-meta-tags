@@ -6,6 +6,8 @@ sidebar:
 
 [デモ ↗](https://svelte.dev/repl/ffd783c9b8e54d97b6b7cac6eadace42)
 
+`<MetaTags>`と`<JsonLd>`は`<svelte:head>`への書き込み（`<JsonLd output="body">`の場合はインライン出力）のみを行い、SvelteKit内部の仕組みには依存していません。そのため、どのSvelteプロジェクトでも利用できます。以下で紹介する`load`ベースのパターン（`+layout.ts`/`+page.ts`、`deepMerge`）はSvelteKit特有のものです。プレーンなSvelteアプリでは、同じpropsを自前のデータ取得ロジックから`<MetaTags>`に直接渡してください。
+
 ## titleとdescriptionの例
 
 ```svelte
