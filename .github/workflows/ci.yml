@@ -7,13 +7,11 @@ on:
     paths-ignore:
       - '.changeset/**'
       - '.vscode/**'
-      - '.husky/**'
       - '**/.github/**/*.md'
   pull_request:
     paths-ignore:
       - '.changeset/**'
       - '.vscode/**'
-      - '.husky/**'
       - '**/.github/**/*.md'
 
 concurrency:
@@ -55,8 +53,8 @@ jobs:
         uses: ./.github/workflows/setup-node
       - name: Run svelte-package
         run: pnpm package
-      - name: Run Build
-        run: pnpm build
+      - name: Build example app
+        run: pnpm --filter example build
       - name: Setup Playwright
         uses: ./.github/workflows/setup-playwright
       - name: Run Vitest and Playwright
