@@ -52,7 +52,7 @@ This change aligns with the actual property name.
 
 ### Added `deepMerge`
 
-`deepMerge` is a function that deeply merges the enumerable properties of two or more objects.
+`deepMerge` is a function that deeply merges the enumerable properties of two objects.
 
 Using the `deepMerge` function provided by this library is not mandatory, so you can continue to use whatever you like, but it is recommended because it reduces dependencies.
 
