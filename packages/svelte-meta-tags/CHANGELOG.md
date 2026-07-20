@@ -1,5 +1,13 @@
 # svelte-meta-tags
 
+## 5.0.2
+
+### Patch Changes
+
+- 61616a4: fix: harden `deepMerge` against `__proto__` / `constructor` / `prototype` keys in the source object
+- 474f6ba: fix: escape `<` as the JSON escape sequence `\u003c` in JSON-LD output so schema values containing `</script>` cannot break out of the script tag
+- 66dfb4c: fix: `titleTemplate` no longer misinterprets replacement patterns (e.g. `$&`) in `title`, and `fb:app_id` is only rendered when `facebook.appId` is set
+
 ## 5.0.1
 
 ### Patch Changes
