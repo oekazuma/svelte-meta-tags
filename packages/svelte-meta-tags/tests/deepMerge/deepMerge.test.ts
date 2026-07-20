@@ -118,4 +118,56 @@ describe('deepMerge functionality', () => {
     const result = deepMerge(undefined, null);
     expect(result).toEqual({});
   });
+
+  test('target Date wins over source value at the same key', () => {
+    const date = new Date('2020-01-01');
+    const result = deepMerge({ a: date }, { a: 5 });
+    expect(result.a).toEqual(date);
+  });
+
+  test('target function wins over source value at the same key', () => {
+    const func = () => {};
+    const result = deepMerge({ a: func }, { a: 5 });
+    expect(result.a).toBe(func);
+  });
+
+  test('source Date wins when target value is a plain value', () => {
+    const date = new Date('2021-06-15');
+    const result = deepMerge({ a: 5 }, { a: date });
+    expect(result.a).toEqual(date);
+  });
+
+  test('source function wins when target value is a plain value', () => {
+    const func = () => {};
+    const result = deepMerge({ a: 5 }, { a: func });
+    expect(result.a).toBe(func);
+  });
+
+  test('undefined source value keeps the target value', () => {
+    const result = deepMerge({ a: 1, b: 2 }, { a: undefined });
+    expect(result).toEqual({ a: 1, b: 2 });
+  });
+
+  test('symbol-keyed source properties are not merged (characterization)', () => {
+    const sym = Symbol('meta');
+    const source: Record<string | symbol, unknown> = { a: 1 };
+    source[sym] = 'dropped';
+    const result = deepMerge({ b: 2 }, source);
+    expect(result).toEqual({ a: 1, b: 2 });
+    expect((result as Record<string | symbol, unknown>)[sym]).toBeUndefined();
+  });
+
+  test('__proto__ key from JSON-parsed source does not alter the result prototype', () => {
+    const source = JSON.parse('{"__proto__": {"polluted": true}, "a": 1}');
+    const result = deepMerge({ b: 2 }, source);
+    expect(result).toEqual({ a: 1, b: 2 });
+    expect((result as Record<string, unknown>).polluted).toBeUndefined();
+    expect(Object.getPrototypeOf(result)).toBe(Object.prototype);
+  });
+
+  test('constructor and prototype keys are skipped', () => {
+    const source = JSON.parse('{"constructor": {"x": 1}, "prototype": {"y": 2}, "a": 1}');
+    const result = deepMerge({ b: 2 }, source);
+    expect(result).toEqual({ a: 1, b: 2 });
+  });
 });

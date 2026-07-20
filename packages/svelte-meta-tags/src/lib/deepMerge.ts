@@ -8,6 +8,8 @@ export const deepMerge = <X extends Record<string | symbol | number, any>>(
   const result: Record<string | symbol | number, any> = { ...target };
 
   for (const [key, value] of Object.entries(source)) {
+    if (key === '__proto__' || key === 'constructor' || key === 'prototype') continue;
+
     const targetValue = target[key];
 
     if (targetValue instanceof Date || typeof targetValue === 'function') {
