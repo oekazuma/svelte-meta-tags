@@ -31,7 +31,7 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "test": "vitest run",
     "test:bench": "vitest bench",
-    "prepublishOnly": "pnpm package && cp ../../README.md ./"
+    "prepublishOnly": "pnpm package"
   },
   "dependencies": {
     "schema-dts": "^2.0.0"
