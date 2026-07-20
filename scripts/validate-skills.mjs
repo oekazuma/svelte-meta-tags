@@ -8,10 +8,10 @@ import { join } from 'node:path';
 const skillsDir = 'skills';
 
 function parseFrontmatter(content) {
-  const match = content.match(/^---\n([\s\S]*?)\n---/);
+  const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
   if (!match) return null;
   const fields = {};
-  for (const line of match[1].split('\n')) {
+  for (const line of match[1].split(/\r?\n/)) {
     const fieldMatch = line.match(/^(\w+):\s*(.*)$/);
     if (fieldMatch) fields[fieldMatch[1]] = fieldMatch[2].trim();
   }
