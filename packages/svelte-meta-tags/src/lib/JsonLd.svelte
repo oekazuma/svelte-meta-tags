@@ -19,9 +19,9 @@
       : addContext(schema as OmitContext<WithContext<Thing>>);
   };
 
-  let json = $derived(
-    `${'<scri' + 'pt type="application/ld+json">'}${JSON.stringify(createSchema(schema))}${'</scri' + 'pt>'}`
-  );
+  let escapedJson = $derived(JSON.stringify(createSchema(schema)).replace(/</g, '\\u003c'));
+
+  let json = $derived(`${'<scri' + 'pt type="application/ld+json">'}${escapedJson}${'</scri' + 'pt>'}`);
 </script>
 
 <svelte:head>
