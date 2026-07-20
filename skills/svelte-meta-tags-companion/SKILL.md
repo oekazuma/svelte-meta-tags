@@ -42,7 +42,7 @@ import { deepMerge } from 'svelte-meta-tags';
 const metaTags = deepMerge(baseMetaTags, pageMetaTags);
 ```
 
-`deepMerge` correctly merges nested objects (like `openGraph.images`), replaces arrays instead of concatenating them, and has defined precedence rules for `Date`/function values. A shallow spread silently drops nested overrides; third-party merge libraries don't know about these library-specific rules.
+`deepMerge` correctly merges nested objects (like `openGraph` itself — its individual fields such as `title` or `description` merge independently rather than one override replacing the whole object), replaces arrays instead of concatenating them (e.g. `openGraph.images`), and has defined precedence rules for `Date`/function values. A shallow spread silently drops nested overrides; third-party merge libraries don't know about these library-specific rules.
 
 ### 3. Spreading the wrong prop into `<MetaTags>`
 
