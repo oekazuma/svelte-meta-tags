@@ -2,5 +2,5 @@ import { defineMeta } from 'blume';
 
 export default defineMeta({
   title: '型定義',
-  order: 50
+  order: 80
 });

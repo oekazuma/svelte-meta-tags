@@ -2,5 +2,5 @@ import { defineMeta } from 'blume';
 
 export default defineMeta({
   title: 'MetaTagsプロパティ',
-  order: 10
+  order: 40
 });
