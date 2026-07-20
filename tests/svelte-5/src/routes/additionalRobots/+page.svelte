@@ -9,6 +9,7 @@
     notranslate: true,
     noimageindex: true,
     noarchive: true,
+    unavailableAfter: '2030-12-31',
     maxSnippet: -1,
     maxImagePreview: 'none',
     maxVideoPreview: -1

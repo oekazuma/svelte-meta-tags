@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('JSON-LD Head SEO loads correctly', async ({ page }) => {
+test('JSON-LD Body SEO loads correctly', async ({ page }) => {
   await page.goto('/jsonldBody', { waitUntil: 'domcontentloaded' });
   await expect(page).toHaveTitle('JSON-LD Body Page Title | Svelte Meta Tags');
   await expect(page.locator('h1')).toContainText('JSON-LD Body SEO');
@@ -9,8 +9,9 @@ test('JSON-LD Head SEO loads correctly', async ({ page }) => {
     'Description of JSON-LD Body page'
   );
   await expect(page.locator('head meta[name="robots"]')).toHaveAttribute('content', 'index,follow');
+  await expect(page.locator('head script[type="application/ld+json"]')).toHaveCount(0);
   const jsonLd = await page
-    .locator('script[type="application/ld+json"]')
+    .locator('body script[type="application/ld+json"]')
     .evaluateAll((list) => list.map((element) => element.textContent));
   expect(jsonLd[0]).toEqual(
     '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Books","item":"https://example.com/books"},{"@type":"ListItem","position":2,"name":"Science Fiction","item":"https://example.com/books/sciencefiction"},{"@type":"ListItem","position":3,"name":"Award Winners"}]}'
