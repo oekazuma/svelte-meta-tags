@@ -20,7 +20,17 @@ pnpm install
 2. Make your modifications / additions
 3. Update / Add Documentation
 4. Write / Update Tests. End to end tests are required for all changes and new features.
-5. Open pull request
+5. Run the same checks CI runs before opening a pull request:
+
+```bash
+pnpm lint    # prettier --check . && eslint .
+pnpm check   # svelte-kit sync && svelte-check
+pnpm test    # vitest + Playwright
+```
+
+Run `pnpm format` to auto-fix Prettier issues found by `pnpm lint`.
+
+6. Open pull request
 
 ## Work with Svelte Meta Tags
 
