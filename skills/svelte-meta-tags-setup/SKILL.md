@@ -94,7 +94,7 @@ export const load = () => {
 };
 ```
 
-Every route doesn't need its own `+page.ts` — only add one where the page needs to override the base tags.
+Not every route needs its own `+page.ts` — only add one where the page needs to override the base tags.
 
 ## Step 5: Wire up `+layout.svelte`
 

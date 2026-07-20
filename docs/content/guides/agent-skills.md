@@ -22,7 +22,7 @@ If `svelte-meta-tags` is already set up and you want an agent to catch common mi
 npx skills add oekazuma/svelte-meta-tags --skill svelte-meta-tags-companion
 ```
 
-You can install both at once by running the command twice, or list every skill in the repo with:
+You can install both by running the command once per skill, or list every skill in the repo with:
 
 ```sh
 npx skills add oekazuma/svelte-meta-tags --list

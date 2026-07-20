@@ -16,13 +16,13 @@ npx skills add oekazuma/svelte-meta-tags --skill svelte-meta-tags-setup
 
 ## 導入済みのコードを改善したい場合
 
-すでに `svelte-meta-tags` を導入済みで、コードを書く・レビューする際にエージェントによくある間違い(誤ったモジュールから `page` を import してしまう、`deepMerge` を使わず自前でマージしてしまう、など)を指摘してもらいたい場合は、伴走用スキルをインストールしてください。
+すでに `svelte-meta-tags` を導入済みで、コードを書く・レビューする際にエージェントによくある間違い（誤ったモジュールから `page` を import してしまう、`deepMerge` を使わず自前でマージしてしまう、など）を指摘してもらいたい場合は、伴走用スキルをインストールしてください。
 
 ```sh
 npx skills add oekazuma/svelte-meta-tags --skill svelte-meta-tags-companion
 ```
 
-両方を一度にインストールするには上記コマンドを2回実行してください。リポジトリ内のスキル一覧を確認するには次のコマンドを使います:
+両方をインストールするには、上記コマンドをスキルごとに1回ずつ実行してください。リポジトリ内のスキル一覧を確認するには次のコマンドを使います:
 
 ```sh
 npx skills add oekazuma/svelte-meta-tags --list
