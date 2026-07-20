@@ -20,7 +20,7 @@
   };
 
   let json = $derived(
-    `${'<scri' + 'pt type="application/ld+json">'}${JSON.stringify(createSchema(schema))}${'</scri' + 'pt>'}`
+    `${'<scri' + 'pt type="application/ld+json">'}${JSON.stringify(createSchema(schema)).replace(/</g, '\\u003c')}${'</scri' + 'pt>'}`
   );
 </script>
 
