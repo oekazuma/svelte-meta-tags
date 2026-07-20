@@ -71,4 +71,4 @@ renders:
 <meta property="dc:creator" content="John Doe" /> <meta property="dc:creator" content="Jane Doe" />
 ```
 
-If you combine base and page meta tags with `deepMerge`, arrays are **replaced**, not concatenated — so a page-level `additionalMetaTags` fully replaces the layout-level one, which is the intended way to avoid duplicates.
+If you combine base and page meta tags with `deepMerge`, arrays are **replaced**, not concatenated — so a page-level `additionalMetaTags` fully replaces the layout-level one. This avoids duplicates that would otherwise arise from combining the two layers, but it does not deduplicate entries within a single `additionalMetaTags` array — that's on you to avoid when authoring the array.

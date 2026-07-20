@@ -71,4 +71,4 @@ additionalMetaTags={[
 <meta property="dc:creator" content="John Doe" /> <meta property="dc:creator" content="Jane Doe" />
 ```
 
-`deepMerge` でベースとページのメタタグを結合する場合、配列は連結ではなく**置換**されます。つまりページ側の `additionalMetaTags` はレイアウト側のものを丸ごと置き換えるため、これが重複を避ける本来の方法です。
+`deepMerge` でベースとページのメタタグを結合する場合、配列は連結ではなく**置換**されます。つまりページ側の `additionalMetaTags` はレイアウト側のものを丸ごと置き換えるため、両階層を結合したときに生じる重複は避けられます。ただし同一の `additionalMetaTags` 配列内の重複までは解消されないため、配列を書く際にご自身で避ける必要があります。
