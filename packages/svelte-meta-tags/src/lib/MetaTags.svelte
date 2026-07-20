@@ -18,7 +18,11 @@
     additionalLinkTags = undefined
   }: Partial<MetaTagsProps> = $props();
 
-  let updatedTitle = $derived(title && (titleTemplate?.replace(/%s/g, title) ?? title));
+  let updatedTitle = $derived.by(() => {
+    const t = title;
+    if (!t) return t;
+    return titleTemplate ? titleTemplate.replace(/%s/g, () => t) : t;
+  });
 
   let robotsParams = $derived.by(() => {
     if (!additionalRobotsProps) return '';
@@ -142,7 +146,7 @@
     {/if}
   {/if}
 
-  {#if facebook}
+  {#if facebook?.appId}
     <meta property="fb:app_id" content={facebook.appId} />
   {/if}
 
