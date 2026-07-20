@@ -48,10 +48,9 @@ additionalMetaTags={[
 ]}
 ```
 
-この点について注意すべき点は、現在、一意のタグのみがサポートされていることです。
-つまり、一意の `name` / `property` / `httpEquiv` ごとに 1 つのタグのみがレンダリングされます。最後に定義されたタグがレンダリングされます。
+## タグの重複
 
-## 例
+`additionalMetaTags` の各エントリは、それぞれ独立した `<meta>` タグとしてレンダリングされます。重複排除は行われません。同じ `name` / `property` / `httpEquiv` を持つ 2 つのエントリを渡すと、**両方**がレンダリングされます:
 
 ```js
 additionalMetaTags={[
@@ -66,8 +65,10 @@ additionalMetaTags={[
 ]}
 ```
 
-レンダリングされる結果
+レンダリングされる結果:
 
 ```html
-<meta property="dc:creator" content="Jane Doe" />,
+<meta property="dc:creator" content="John Doe" /> <meta property="dc:creator" content="Jane Doe" />
 ```
+
+`deepMerge` でベースとページのメタタグを結合する場合、配列は連結ではなく**置換**されます。つまりページ側の `additionalMetaTags` はレイアウト側のものを丸ごと置き換えるため、両階層を結合したときに生じる重複は避けられます。ただし同一の `additionalMetaTags` 配列内の重複までは解消されないため、配列を書く際にご自身で避ける必要があります。

@@ -48,12 +48,9 @@ additionalMetaTags={[
 ]}
 ```
 
-One thing to note on this is that it currently only supports unique tags.
-This means it will only render one tag per unique `name` / `property` / `httpEquiv`. The last one defined will be rendered.
+## Duplicate tags
 
-## Example
-
-If you pass:
+Each entry in `additionalMetaTags` renders its own `<meta>` tag — there is no deduplication. If you pass two entries with the same `name` / `property` / `httpEquiv`, **both** are rendered:
 
 ```js
 additionalMetaTags={[
@@ -68,8 +65,10 @@ additionalMetaTags={[
 ]}
 ```
 
-it will result in this being rendered:
+renders:
 
 ```html
-<meta property="dc:creator" content="Jane Doe" />,
+<meta property="dc:creator" content="John Doe" /> <meta property="dc:creator" content="Jane Doe" />
 ```
+
+If you combine base and page meta tags with `deepMerge`, arrays are **replaced**, not concatenated — so a page-level `additionalMetaTags` fully replaces the layout-level one. This avoids duplicates that would otherwise arise from combining the two layers, but it does not deduplicate entries within a single `additionalMetaTags` array — that's on you to avoid when authoring the array.
