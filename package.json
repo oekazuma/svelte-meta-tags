@@ -8,7 +8,7 @@
     "preview": "pnpm -r preview",
     "package": "pnpm -r package",
     "check": "pnpm -r check",
-    "lint": "prettier --check . && eslint .",
+    "lint": "prettier --check . && eslint . && node scripts/validate-skills.mjs",
     "format": "prettier --write .",
     "test": "pnpm -r test",
     "release": "changeset publish"
