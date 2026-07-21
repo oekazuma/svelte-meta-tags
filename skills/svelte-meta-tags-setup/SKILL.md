@@ -1,13 +1,9 @@
 ---
 name: svelte-meta-tags-setup
-description: Use when adding svelte-meta-tags to a Svelte/SvelteKit project for the first time, or when asked to add SEO/meta tag support. Detects project structure and wires up the correct base+page merge pattern.
+description: Use when adding svelte-meta-tags or SEO/meta tag support to a Svelte/SvelteKit project for the first time.
 ---
 
 # svelte-meta-tags: Setup
-
-## When to use
-
-Use this when adding `svelte-meta-tags` to a Svelte or SvelteKit project for the first time, or when asked to add SEO/meta tag support to a project that doesn't have it wired up yet.
 
 ## Step 1: Detect whether this is a SvelteKit project
 
@@ -50,8 +46,6 @@ export const load = () => {
   };
 };
 ```
-
-If the file already has a `load` function returning other data, add the spread into the existing return object instead of replacing the function.
 
 ## Step 3: Check for nested layouts
 
@@ -115,7 +109,7 @@ Not every route needs its own `+page.ts` — only add one where the page needs t
 {@render children()}
 ```
 
-Import `page` from **`$app/state`**, not `$app/stores` — `$app/stores` is the pre-Svelte-5 API and requires extra work (a `{#key}` block) to stay reactive across navigation. `$app/state` with `$derived` handles this correctly with no extra wrapping needed.
+Import `page` from **`$app/state`**, not `$app/stores` — the pre-Svelte-5 API that needs extra reactivity workarounds this pattern doesn't require.
 
 If Step 3 added nested-layout overrides, read the base tags from `page.data` instead, so section-level overrides actually reach this component:
 
