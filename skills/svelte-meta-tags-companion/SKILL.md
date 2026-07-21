@@ -1,13 +1,13 @@
 ---
 name: svelte-meta-tags-companion
-description: Use when writing or reviewing code that imports from svelte-meta-tags (MetaTags, JsonLd, deepMerge, defineBaseMetaTags, definePageMetaTags) in an already-set-up project. Catches common mistakes.
+description: Use when writing or reviewing code that imports from svelte-meta-tags (MetaTags, JsonLd, deepMerge, defineBaseMetaTags, definePageMetaTags) in an already-set-up project.
 ---
 
 # svelte-meta-tags: Companion
 
 ## When to use
 
-Use this when writing or reviewing code in this project that imports from `svelte-meta-tags` (`MetaTags`, `JsonLd`, `deepMerge`, `defineBaseMetaTags`, `definePageMetaTags`) in a project that has already set it up. This is a reference for catching common mistakes — not a setup guide (see the `svelte-meta-tags-setup` skill for that).
+This is a reference for catching common mistakes — not a setup guide (see the `svelte-meta-tags-setup` skill for that).
 
 ## Common mistakes
 
