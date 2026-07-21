@@ -74,6 +74,8 @@ export const load: LayoutLoad = async ({ parent }) => {
 };
 ```
 
+When a nested layout overrides `baseMetaTags` like this, wire Step 5 with `page.data.baseMetaTags` instead of `data.baseMetaTags`. A layout's `data` prop only contains its own and ancestor `load` results — a child layout's override never reaches the root layout through `data`. It only surfaces through `page.data`, which merges every `load` on the current page with the deepest one winning.
+
 If there are no nested layouts, skip this step — the standard two-layer (base + page) pattern from Step 2 and Step 4 is enough.
 
 ## Step 4: Add page-level tags with `definePageMetaTags`
@@ -114,6 +116,12 @@ Not every route needs its own `+page.ts` — only add one where the page needs t
 ```
 
 Import `page` from **`$app/state`**, not `$app/stores` — `$app/stores` is the pre-Svelte-5 API and requires extra work (a `{#key}` block) to stay reactive across navigation. `$app/state` with `$derived` handles this correctly with no extra wrapping needed.
+
+If Step 3 added nested-layout overrides, read the base tags from `page.data` instead, so section-level overrides actually reach this component:
+
+```ts
+let metaTags = $derived(deepMerge(page.data.baseMetaTags, page.data.pageMetaTags));
+```
 
 ## Step 6: JSON-LD (optional)
 

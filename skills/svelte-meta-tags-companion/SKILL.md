@@ -61,7 +61,7 @@ const metaTags = deepMerge(baseMetaTags, pageMetaTags);
 const twitterTitle = twitter?.title ?? openGraph?.title ?? title;
 ```
 
-`<MetaTags>` already falls back `twitter.title → openGraph.title → title` (and the same shape for `description`) — don't compute this yourself before passing props in.
+`<MetaTags>` already falls back `twitter.title → openGraph.title → title` (using the title with `titleTemplate` applied, and the same shape for `description`) — don't compute this yourself before passing props in.
 
 ## Suggestion (not a bug)
 

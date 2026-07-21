@@ -22,8 +22,16 @@ npx skills add oekazuma/svelte-meta-tags --skill svelte-meta-tags-setup
 npx skills add oekazuma/svelte-meta-tags --skill svelte-meta-tags-companion
 ```
 
-両方をインストールするには、上記コマンドをスキルごとに1回ずつ実行してください。リポジトリ内のスキル一覧を確認するには次のコマンドを使います:
+両方をインストールする場合は、`--skill` フラグを繰り返すことで1つのコマンドにまとめられます:
+
+```sh
+npx skills add oekazuma/svelte-meta-tags --skill svelte-meta-tags-setup --skill svelte-meta-tags-companion
+```
+
+CLI がリポジトリ内で見つけられるスキルの一覧を確認するには次のコマンドを使います:
 
 ```sh
 npx skills add oekazuma/svelte-meta-tags --list
 ```
+
+なお `--list` には、このリポジトリが開発用に他プロジェクトから取り込んでいるスキル（`.agents/skills/` 配下）も表示されます。svelte-meta-tags 自体が提供するスキルは上記の2つです。
