@@ -17,12 +17,22 @@ Use this when writing or reviewing code in this project that imports from `svelt
 <!-- ❌ Wrong: pre-Svelte-5 API, requires a {#key $page} wrapper to stay reactive -->
 <script>
   import { page } from '$app/stores';
+  import { deepMerge } from 'svelte-meta-tags';
+
+  export let data;
+
   $: metaTags = deepMerge(data.baseMetaTags, $page.data.pageMetaTags);
 </script>
+```
 
+```svelte
 <!-- ✅ Correct: Svelte 5 API, $derived tracks page changes correctly with no extra wrapping -->
 <script>
   import { page } from '$app/state';
+  import { deepMerge } from 'svelte-meta-tags';
+
+  let { data } = $props();
+
   let metaTags = $derived(deepMerge(data.baseMetaTags, page.data.pageMetaTags));
 </script>
 ```

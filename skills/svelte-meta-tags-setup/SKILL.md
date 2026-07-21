@@ -119,7 +119,7 @@ Import `page` from **`$app/state`**, not `$app/stores` — `$app/stores` is the 
 
 If Step 3 added nested-layout overrides, read the base tags from `page.data` instead, so section-level overrides actually reach this component:
 
-```ts
+```js
 let metaTags = $derived(deepMerge(page.data.baseMetaTags, page.data.pageMetaTags));
 ```
 
