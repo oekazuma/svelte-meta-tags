@@ -31,7 +31,7 @@ catalog:
   '@eslint/js': ^10.0.1
   '@playwright/test': ^1.61.1
   '@sveltejs/adapter-auto': ^7.0.1
-  '@sveltejs/kit': ^2.70.0
+  '@sveltejs/kit': ^2.70.1
   '@sveltejs/package': ^2.5.8
   '@sveltejs/vite-plugin-svelte': ^7.2.0
   '@types/eslint': ^9.6.1
