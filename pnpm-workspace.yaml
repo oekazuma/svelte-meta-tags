@@ -8,6 +8,7 @@ minimumReleaseAge: 4320
 
 allowBuilds:
   esbuild: true
+  sharp: true
 
 catalog:
   '@changesets/cli': ^2.31.1
