@@ -41,8 +41,10 @@
       "matchPackageNames": ["@sveltejs/{/,}**", "svelte{/,}**"]
     },
     {
+      "description": "schema-dts ships as a runtime dependency of the published package, so its updates reach every consumer — keep them manually reviewed.",
       "groupName": "schema-dts",
-      "matchPackageNames": ["schema-dts"]
+      "matchPackageNames": ["schema-dts"],
+      "automerge": false
     }
   ]
 }
