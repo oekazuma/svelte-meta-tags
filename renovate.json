@@ -7,7 +7,13 @@
     "enabled": true
   },
   "rangeStrategy": "bump",
+  "platformAutomerge": true,
   "packageRules": [
+    {
+      "description": "Auto-merge everything except major updates (those need review) — CI still has to pass first.",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    },
     {
       "groupName": "dependencies",
       "matchDepTypes": ["dependencies"]
