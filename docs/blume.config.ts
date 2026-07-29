@@ -8,6 +8,7 @@ export default defineConfig({
     image: { light: '/light-logo.svg', dark: '/dark-logo.svg', alt: 'SvelteMetaTags' },
     text: ''
   },
+  feedback: false,
   github: { owner: 'oekazuma', repo: 'svelte-meta-tags', dir: 'docs' },
   i18n: {
     defaultLocale: 'en',
