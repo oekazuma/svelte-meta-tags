@@ -24,7 +24,7 @@ catalog:
   eslint: ^10.8.0
   eslint-config-prettier: ^10.1.8
   eslint-plugin-svelte: ^3.22.0
-  globals: ^17.7.0
+  globals: ^17.8.0
   prettier: ^3.9.6
   prettier-plugin-svelte: ^4.1.1
   publint: ^0.3.22
