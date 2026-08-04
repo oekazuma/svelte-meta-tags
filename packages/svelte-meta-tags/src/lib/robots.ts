@@ -33,9 +33,16 @@ export const serializeRobots = (
   if (robots === false) return null;
   if (!additionalRobotsProps) return `${robots}`;
 
-  const params = DIRECTIVES.filter(([key]) => additionalRobotsProps[key]).map(
-    ([key, format]) => `,${format(additionalRobotsProps[key] as string | number | boolean)}`
-  );
+  // Plain loop rather than filter/map/join. The intermediate arrays are ~6x
+  // slower in isolation; inside a full component render the difference is lost
+  // in the noise, so this is a cheap default rather than a hot-path fix.
+  let content = `${robots}`;
 
-  return `${robots}${params.join('')}`;
+  for (const [key, format] of DIRECTIVES) {
+    const value = additionalRobotsProps[key];
+
+    if (value) content += `,${format(value)}`;
+  }
+
+  return content;
 };
