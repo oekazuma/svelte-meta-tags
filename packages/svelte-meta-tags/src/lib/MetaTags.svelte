@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { MetaTagsProps } from './types';
+  import { ROBOTS_CONFLICT_WARNING, serializeRobots } from './robots';
 
   let {
     title = undefined,
@@ -24,29 +25,11 @@
     return titleTemplate ? titleTemplate.replace(/%s/g, () => t) : t;
   });
 
-  let robotsParams = $derived.by(() => {
-    if (!additionalRobotsProps) return '';
-    const {
-      nosnippet,
-      maxSnippet,
-      maxImagePreview,
-      maxVideoPreview,
-      noarchive,
-      noimageindex,
-      notranslate,
-      unavailableAfter
-    } = additionalRobotsProps;
-
-    return `${nosnippet ? ',nosnippet' : ''}${maxSnippet ? `,max-snippet:${maxSnippet}` : ''}${
-      maxImagePreview ? `,max-image-preview:${maxImagePreview}` : ''
-    }${noarchive ? ',noarchive' : ''}${unavailableAfter ? `,unavailable_after:${unavailableAfter}` : ''}${
-      noimageindex ? ',noimageindex' : ''
-    }${maxVideoPreview ? `,max-video-preview:${maxVideoPreview}` : ''}${notranslate ? ',notranslate' : ''}`;
-  });
+  let robotsContent = $derived(serializeRobots(robots, additionalRobotsProps));
 
   $effect(() => {
     if (!robots && additionalRobotsProps) {
-      console.warn('additionalRobotsProps cannot be used when robots is set to false');
+      console.warn(ROBOTS_CONFLICT_WARNING);
     }
   });
 </script>
@@ -56,8 +39,8 @@
     <title>{updatedTitle}</title>
   {/if}
 
-  {#if robots !== false}
-    <meta name="robots" content="{robots}{robotsParams}" />
+  {#if robotsContent !== null}
+    <meta name="robots" content={robotsContent} />
   {/if}
 
   {#if description}

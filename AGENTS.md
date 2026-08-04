@@ -33,7 +33,7 @@ pnpm test                  # runs every workspace's `test` (vitest in lib, playw
 Per-workspace commands (use these to scope work):
 
 ```bash
-# Vitest: helper units (deepMerge / define) + in-process rendering of
+# Vitest: helper units (deepMerge / define / robots) + in-process rendering of
 # MetaTags and JsonLd. No build, no browser — this is the fast feedback loop.
 pnpm --filter svelte-meta-tags test
 pnpm --filter svelte-meta-tags test:bench
@@ -80,7 +80,7 @@ The public surface is intentionally small (`packages/svelte-meta-tags/src/lib/in
 - **Twitter fallback chain**: `twitter.title || openGraph.title || updatedTitle` (and the same shape for `description`). The `twitterFallback*` test routes lock this in — preserve the precedence when touching `MetaTags.svelte`.
 - **OpenGraph fallbacks**: `og:title` falls back to the (templated) `title`, `og:description` to `description`, and `og:url` to `canonical`. These only render when the `openGraph` prop is present at all.
 - **`titleTemplate`**: `%s` placeholder is substituted with `title`; if `title` is missing, the template is **not** applied alone — no `<title>` is rendered.
-- **`robots` default**: `'index,follow'` — a `<meta name="robots">` tag is rendered even when the consumer passes nothing.
+- **`robots` default**: `'index,follow'` — a `<meta name="robots">` tag is rendered even when the consumer passes nothing. `serializeRobots` in `robots.ts` (internal, not exported from `index.ts`) owns the content string and returns `null` when no tag should render. The directive order in its `DIRECTIVES` table is asserted by tests — append, don't insert. Falsy values are dropped, so `maxSnippet: 0` emits nothing.
 - **`og:type`-conditional blocks**: `article`, `book`, `profile`, and `video.movie | video.episode | video.tv_show | video.other` each render a distinct sub-block. Adding a new structured type means matching it in the `og:type.toLowerCase()` chain _and_ adding fields to `OpenGraph` in `types.d.ts`.
 - **`additionalMetaTags`**: when an entry has `httpEquiv`, it is emitted as `http-equiv` (HTML attribute name). Don't normalize this away.
 - **`openGraph.image` vs `openGraph.images`**: `image` (singular) is an alias prepended to `images`; both render as `og:image`. See `openGraphImage.test.ts`.
