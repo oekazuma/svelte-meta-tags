@@ -9,7 +9,7 @@ This is a **pnpm workspace monorepo**. The pnpm version is pinned via `packageMa
 Workspace members:
 
 - `packages/svelte-meta-tags/` — the published library (the only public package). Source is in `src/lib/`. The package consumes itself via the SvelteKit dev app under `src/routes/` for local iteration.
-- `tests/svelte-5/` — a SvelteKit app dedicated to **Playwright e2e tests**. Each route under `src/routes/<feature>/` corresponds to a `tests/<feature>.test.ts` that asserts the rendered `<head>` markup. This is where new feature behavior must be verified (per `CONTRIBUTING.md`).
+- `tests/svelte-5/` — a SvelteKit app dedicated to **Playwright e2e tests**. Each route under `src/routes/<feature>/` corresponds to a `tests/<feature>.test.ts` that asserts the rendered `<head>` markup. This layer proves the tags reach a real browser; the tag-by-tag assertions belong in the in-process tests described below.
 - `example/` — a runnable SvelteKit demo of the library; not part of the test pipeline.
 - `docs/` — Blume (a markdown-first docs framework on Astro) documentation site (deployed to GitHub Pages by `.github/workflows/deploy-docs.yml` only when `docs/**` changes). It is **bilingual**: English pages live in `docs/content/`, Japanese translations in `docs/content/ja/` (mirrored paths). Site config (i18n, redirects, deployment base) lives in `docs/blume.config.ts`; section ordering comes from `meta.$.ts` files in the English content directories plus each page's `sidebar.order` frontmatter. When documenting a feature, update **both** locales.
 
@@ -33,7 +33,8 @@ pnpm test                  # runs every workspace's `test` (vitest in lib, playw
 Per-workspace commands (use these to scope work):
 
 ```bash
-# Unit tests + benchmarks for deepMerge / define helpers
+# Vitest: helper units (deepMerge / define) + in-process rendering of
+# MetaTags and JsonLd. No build, no browser — this is the fast feedback loop.
 pnpm --filter svelte-meta-tags test
 pnpm --filter svelte-meta-tags test:bench
 pnpm --filter svelte-meta-tags exec vitest run tests/deepMerge/deepMerge.test.ts   # single file
@@ -46,11 +47,17 @@ pnpm --filter svelte-5 exec playwright test --project=chromium                  
 
 **`tests/svelte-5` imports `svelte-meta-tags` as `workspace:*` and resolves it from `dist/`.** Run `pnpm package` (or `pnpm --filter svelte-meta-tags package`) first whenever you change library source — CI does this before `pnpm build` and `pnpm test`. Without it, e2e tests will run against stale published artifacts.
 
+### In-process rendering tests
+
+`packages/svelte-meta-tags/tests/helpers/head.ts` renders a component with `render()` from `svelte/server` and parses what it emitted, so `<head>` output can be asserted without a build or a browser. `renderHead(MetaTags, props)` / `renderBody(JsonLd, props)` return `{ title, tags, jsonLd, html }`; `metaContent`, `metaContents`, `metaTags` and `links` read tags back out.
+
+**Assert new tag behavior here first** (`tests/metaTags/`, `tests/jsonLd/`) — it needs no fixture route and runs in milliseconds. Add an e2e route under `tests/svelte-5/` only when the behavior genuinely depends on the browser. Two things the in-process layer cannot see: `$effect` does not run during SSR (the `additionalRobotsProps` warning is covered by `robotsAnother.test.ts`), and client-side navigation.
+
 ## Library architecture
 
 The public surface is intentionally small (`packages/svelte-meta-tags/src/lib/index.ts`):
 
-- **`<MetaTags>`** — single Svelte 5 component (`MetaTags.svelte`) that renders **all** SEO/meta/link/Twitter/OpenGraph/Facebook tags into `<svelte:head>`. It uses runes (`$props`, `$derived`, `$effect`) and accepts `Partial<MetaTagsProps>`. Adding a new meta surface means: extend `types.d.ts`, render the conditional block in `MetaTags.svelte`, add a route under `tests/svelte-5/src/routes/<feature>/` and a corresponding `tests/<feature>.test.ts`, document it under `docs/content/` (en + ja), and add a changeset (see Releases).
+- **`<MetaTags>`** — single Svelte 5 component (`MetaTags.svelte`) that renders **all** SEO/meta/link/Twitter/OpenGraph/Facebook tags into `<svelte:head>`. It uses runes (`$props`, `$derived`, `$effect`) and accepts `Partial<MetaTagsProps>`. Adding a new meta surface means: extend `types.d.ts`, render the conditional block in `MetaTags.svelte`, assert it in `packages/svelte-meta-tags/tests/metaTags/`, document it under `docs/content/` (en + ja), and add a changeset (see Releases).
 - **Agent Skills** (`skills/svelte-meta-tags-setup/`, `skills/svelte-meta-tags-companion/`) — distributed via `npx skills add` (see `docs/content/guides/agent-skills.md`). If the canonical `deepMerge` + `define*` + `<MetaTags>` wiring pattern changes, or a new common usage mistake is identified, update the relevant `SKILL.md` alongside the docs change.
 - **`<JsonLd>`** — renders `application/ld+json` either in `<svelte:head>` (`output="head"`, default) or inline (`output="body"`). The `schema` prop accepts `schema-dts` types, plain objects, arrays (multiple JSON-LD blocks), or a `{ '@graph': [...] }` wrapper. `@context: https://schema.org` is auto-injected. The literal `<script>` string is split (`'<scri' + 'pt'`) on purpose to bypass HTML parser confusion — preserve this when editing.
 - **`deepMerge(target, source)`** — recursive merge utility used by consumers to combine `baseMetaTags` (layout) with `pageMetaTags` (page). Arrays are **replaced**, not concatenated. `Date` and functions are never merged into — and when the **target** value is a `Date`/function it wins over the source value (the reverse of the usual source-wins rule). A source value of `undefined` keeps the target value.
