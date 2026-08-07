@@ -55,8 +55,8 @@ catalogs:
       specifier: ^4.1.1
       version: 4.1.1
     publint:
-      specifier: ^0.3.22
-      version: 0.3.22
+      specifier: ^0.3.23
+      version: 0.3.23
     svelte:
       specifier: ^5.56.8
       version: 5.56.8
@@ -173,7 +173,7 @@ importers:
         version: 7.2.0(svelte@5.56.8(@typescript-eslint/types@8.66.0))(vite@8.2.0(@types/node@24.12.0)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0))
       publint:
         specifier: 'catalog:'
-        version: 0.3.22
+        version: 0.3.23
       svelte:
         specifier: 'catalog:'
         version: 5.56.8(@typescript-eslint/types@8.66.0)
@@ -4506,8 +4506,8 @@ packages:
     resolution: {integrity: sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==}
     engines: {node: '>= 0.10'}
 
-  publint@0.3.22:
-    resolution: {integrity: sha512-6Z/scsr5CA7APdwyF35EY88CqgDj1textWuY788DVTJYPCWVv/Wn9G6KmLnrVRnStgYcahqN4wCDLZGSbQJ69w==}
+  publint@0.3.23:
+    resolution: {integrity: sha512-5MQipUPcB7MWw84zLUkHrg/H/UBtk3LL+A0GngTTBSsiNJLQurMUaSIRG3edlOrRz4UFe0AOKK9TZdIWviV+jQ==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -10104,7 +10104,7 @@ snapshots:
       forwarded: 0.2.0
       ipaddr.js: 1.9.1
 
-  publint@0.3.22:
+  publint@0.3.23:
     dependencies:
       '@publint/pack': 0.1.6
       package-manager-detector: 1.7.0
