@@ -46,7 +46,7 @@
       "matchPackageNames": ["schema-dts"],
       "automerge": false
     },
-        {
+    {
       "groupName": "changesets",
       "matchPackageNames": ["@changesets/cli", "changesets/action"]
     }
