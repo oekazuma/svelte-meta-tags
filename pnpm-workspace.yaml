@@ -12,7 +12,7 @@ allowBuilds:
   sharp: true
 
 catalog:
-  '@changesets/cli': ^2.31.1
+  '@changesets/cli': ^3.0.0
   '@eslint/compat': ^2.1.0
   '@eslint/js': ^10.0.1
   '@playwright/test': ^1.62.1
