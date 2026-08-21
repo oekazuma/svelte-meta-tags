@@ -33,5 +33,3 @@ CLI がリポジトリ内で見つけられるスキルの一覧を確認する�
 ```sh
 npx skills add oekazuma/svelte-meta-tags --list
 ```
-
-なお `--list` には、このリポジトリが開発用に他プロジェクトから取り込んでいるスキル（`.agents/skills/` 配下）も表示されます。svelte-meta-tags 自体が提供するスキルは上記の2つです。

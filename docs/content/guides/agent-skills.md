@@ -33,5 +33,3 @@ To list every skill the CLI can find in the repo, run:
 ```sh
 npx skills add oekazuma/svelte-meta-tags --list
 ```
-
-Note that `--list` also picks up skills this repository vendors from other projects for its own development (under `.agents/skills/`) — the two skills above are the ones svelte-meta-tags itself provides.
