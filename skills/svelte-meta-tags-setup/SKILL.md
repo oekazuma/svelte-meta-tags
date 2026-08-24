@@ -18,6 +18,8 @@ If it isn't, pick the command from the project's lockfile — not from whatever 
 | `yarn.lock`                            | `yarn add --dev svelte-meta-tags`         |
 | `bun.lock` (or the legacy `bun.lockb`) | `bun add --dev svelte-meta-tags`          |
 
+If none of these lockfiles exists, fall back to the `packageManager` field in `package.json`; if that is absent too, ask which package manager to use rather than guessing.
+
 Install it as a **dev** dependency: the components compile into the consuming app, so nothing from this package is needed at runtime.
 
 ## Step 2: Detect whether this is a SvelteKit project

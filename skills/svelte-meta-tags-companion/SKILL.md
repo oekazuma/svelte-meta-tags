@@ -85,7 +85,7 @@ const metaTags = deepMerge(deepMerge(siteMetaTags, sectionMetaTags), pageMetaTag
 
 TypeScript flags the extra argument, so this only slips through in a `.svelte` file without `lang="ts"` — which is exactly where layout wiring tends to live.
 
-Note also that when both arguments are present, `deepMerge` iterates the source with `Object.entries`, so **symbol keys on the source are dropped**. (If either argument is nullish it short-circuits and returns the other one untouched.) Meta tag props are string-keyed, so this only matters if you are merging your own data through the same helper.
+Note also that when both arguments are present, `deepMerge` iterates the source with `Object.entries`, so **symbol keys on the source are dropped**. (A nullish argument short-circuits the merge entirely: `deepMerge` returns the other argument untouched, or `{}` when both are nullish.) Meta tag props are string-keyed, so this only matters if you are merging your own data through the same helper.
 
 ## Why a tag isn't rendering
 
