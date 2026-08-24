@@ -22,6 +22,8 @@ twitter={{
 
 ## フォールバック動作
 
+`twitter` プロパティを渡さない限り、`twitter:*` タグは 1 つも出力されません。以下のフォールバックは `twitter` ブロックの内側で機能するものであり、プロパティ自体の代わりにはなりません。カードを出力するには、最低でも `twitter={{ cardType: 'summary' }}` を渡してください。
+
 `twitter` プロパティで `twitter.title` や `twitter.description` が明示的に設定されていない場合、他の利用可能な値に自動的にフォールバックします:
 
 - `twitter.title` → `openGraph.title` → `title`

@@ -40,4 +40,6 @@ sidebar:
 | `noimageindex`     | boolean                   | このページの画像をインデックスしない                                                                                                                                                        |
 | `unavailableAfter` | string                    | 指定した日付/時刻以降はこのページを検索結果に表示しません。日付/時刻は、RFC 822、RFC 850、ISO 8601 など、広く受け入れられている形式でなければなりません                                     |
 
+各ディレクティブは値が truthy な場合にのみ出力されるため、`0` は出力されません（`maxSnippet: 0` と `maxVideoPreview: 0` は何も出力しません）。テキストスニペットを抑止する場合は `nosnippet: true` を、画像プレビューを抑止する場合は `maxImagePreview: 'none'` を使用してください。
+
 `X-Robots-Tag` の詳細については、[Google 検索セントラル - クロールとインデックス登録の制御](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag?hl=ja#directives) をご覧ください。
