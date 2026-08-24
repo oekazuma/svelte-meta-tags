@@ -1,11 +1,28 @@
 ---
 name: svelte-meta-tags-setup
-description: Use when adding svelte-meta-tags or SEO/meta tag support to a Svelte/SvelteKit project for the first time.
+description: Use when adding svelte-meta-tags, or SEO / meta tag / Open Graph (OGP) / social preview support, to a Svelte/SvelteKit project for the first time.
 ---
 
 # svelte-meta-tags: Setup
 
-## Step 1: Detect whether this is a SvelteKit project
+## Step 1: Install the package
+
+Check whether `svelte-meta-tags` is already in `package.json`. If it is, skip to Step 2.
+
+If it isn't, pick the command from the project's lockfile — not from whatever package manager happens to be installed globally:
+
+| Lockfile                               | Command                                   |
+| -------------------------------------- | ----------------------------------------- |
+| `pnpm-lock.yaml`                       | `pnpm add -D svelte-meta-tags`            |
+| `package-lock.json`                    | `npm install --save-dev svelte-meta-tags` |
+| `yarn.lock`                            | `yarn add --dev svelte-meta-tags`         |
+| `bun.lock` (or the legacy `bun.lockb`) | `bun add --dev svelte-meta-tags`          |
+
+If none of these lockfiles exists, fall back to the `packageManager` field in `package.json`; if that is absent too, ask which package manager to use rather than guessing.
+
+Install it as a **dev** dependency: the components compile into the consuming app, so nothing from this package is needed at runtime.
+
+## Step 2: Detect whether this is a SvelteKit project
 
 Check for `@sveltejs/kit` in `package.json` dependencies/devDependencies, and for a `src/routes/` directory.
 
@@ -21,9 +38,9 @@ Check for `@sveltejs/kit` in `package.json` dependencies/devDependencies, and fo
 
 Do not introduce `deepMerge`, `defineBaseMetaTags`, or `definePageMetaTags` — those exist specifically for SvelteKit's `load`-based data flow across `+layout.ts`/`+page.ts`, and add unnecessary complexity outside that context.
 
-**If this IS a SvelteKit project**, continue to Step 2.
+**If this IS a SvelteKit project**, continue to Step 3.
 
-## Step 2: Find or create the base layout `load` file
+## Step 3: Find or create the base layout `load` file
 
 Look for `src/routes/+layout.ts` (or `+layout.server.ts` if the project uses server-only data).
 
@@ -47,7 +64,7 @@ export const load = () => {
 };
 ```
 
-## Step 3: Check for nested layouts
+## Step 4: Check for nested layouts
 
 Look for additional `+layout.ts` files in nested route directories (e.g. `src/routes/blog/+layout.ts`). If a section of the site needs its own base tags on top of the root layout's, chain `deepMerge` calls rather than duplicating `defineBaseMetaTags` calls:
 
@@ -68,11 +85,11 @@ export const load: LayoutLoad = async ({ parent }) => {
 };
 ```
 
-When a nested layout overrides `baseMetaTags` like this, wire Step 5 with `page.data.baseMetaTags` instead of `data.baseMetaTags`. A layout's `data` prop only contains its own and ancestor `load` results — a child layout's override never reaches the root layout through `data`. It only surfaces through `page.data`, which merges every `load` on the current page with the deepest one winning.
+When a nested layout overrides `baseMetaTags` like this, wire Step 6 with `page.data.baseMetaTags` instead of `data.baseMetaTags`. A layout's `data` prop only contains its own and ancestor `load` results — a child layout's override never reaches the root layout through `data`. It only surfaces through `page.data`, which merges every `load` on the current page with the deepest one winning.
 
-If there are no nested layouts, skip this step — the standard two-layer (base + page) pattern from Step 2 and Step 4 is enough.
+If there are no nested layouts, skip this step — the standard two-layer (base + page) pattern from Step 3 and Step 5 is enough.
 
-## Step 4: Add page-level tags with `definePageMetaTags`
+## Step 5: Add page-level tags with `definePageMetaTags`
 
 In the relevant `+page.ts` (or `+page.server.ts`), return page-specific overrides:
 
@@ -92,7 +109,7 @@ export const load = () => {
 
 Not every route needs its own `+page.ts` — only add one where the page needs to override the base tags.
 
-## Step 5: Wire up `+layout.svelte`
+## Step 6: Wire up `+layout.svelte`
 
 ```svelte
 <script>
@@ -111,16 +128,16 @@ Not every route needs its own `+page.ts` — only add one where the page needs t
 
 Import `page` from **`$app/state`**, not `$app/stores` — the pre-Svelte-5 API that needs extra reactivity workarounds this pattern doesn't require.
 
-If Step 3 added nested-layout overrides, read the base tags from `page.data` instead, so section-level overrides actually reach this component:
+If Step 4 added nested-layout overrides, read the base tags from `page.data` instead, so section-level overrides actually reach this component:
 
 ```js
 let metaTags = $derived(deepMerge(page.data.baseMetaTags, page.data.pageMetaTags));
 ```
 
-## Step 6: JSON-LD (optional)
+## Step 7: JSON-LD (optional)
 
 If the project needs structured data (e.g. for rich search results), mention that `<JsonLd schema={...} />` exists as a separate component and point to https://oekazuma.github.io/svelte-meta-tags/json-ld/ for details — don't design a JSON-LD schema as part of this setup flow.
 
-## Step 7: Verify
+## Step 8: Verify
 
 Run the project's typecheck command (e.g. `pnpm check`, `svelte-check`, or whatever `package.json` defines) and confirm it passes with no new errors before considering the setup done.
