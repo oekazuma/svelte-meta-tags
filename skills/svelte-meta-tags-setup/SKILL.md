@@ -7,13 +7,18 @@ description: Use when adding svelte-meta-tags, or SEO / meta tag / Open Graph (O
 
 ## Step 1: Install the package
 
-Check whether `svelte-meta-tags` is already in `package.json`. If it isn't, install it as a dev dependency — the components compile into the consuming app, so nothing from this package is needed at runtime:
+Check whether `svelte-meta-tags` is already in `package.json`. If it is, skip to Step 2.
 
-```sh
-pnpm add -D svelte-meta-tags
-```
+If it isn't, pick the command from the project's lockfile — not from whatever package manager happens to be installed globally:
 
-Use whichever package manager the project already uses — pick it from the lockfile (`pnpm-lock.yaml` → pnpm, `package-lock.json` → npm, `yarn.lock` → yarn, `bun.lockb` → bun), not from what happens to be installed globally.
+| Lockfile                               | Command                                   |
+| -------------------------------------- | ----------------------------------------- |
+| `pnpm-lock.yaml`                       | `pnpm add -D svelte-meta-tags`            |
+| `package-lock.json`                    | `npm install --save-dev svelte-meta-tags` |
+| `yarn.lock`                            | `yarn add --dev svelte-meta-tags`         |
+| `bun.lock` (or the legacy `bun.lockb`) | `bun add --dev svelte-meta-tags`          |
+
+Install it as a **dev** dependency: the components compile into the consuming app, so nothing from this package is needed at runtime.
 
 ## Step 2: Detect whether this is a SvelteKit project
 
