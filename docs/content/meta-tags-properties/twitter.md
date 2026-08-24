@@ -22,6 +22,8 @@ twitter={{
 
 ## Fallback Behavior
 
+No `twitter:*` tag is rendered unless the `twitter` prop is present — the fallbacks below apply inside that block, not in place of it. Pass at least `twitter={{ cardType: 'summary' }}` to render the card.
+
 When `twitter.title` or `twitter.description` is not explicitly set in the `twitter` prop, they automatically fall back to other available values:
 
 - `twitter.title` → `openGraph.title` → `title`

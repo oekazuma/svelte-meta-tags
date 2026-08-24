@@ -40,4 +40,6 @@ In addition to `index, follow` the `robots` meta tag accepts more properties to 
 | `noimageindex`     | boolean                   | Do not index images on this page                                                                                                                                                               |
 | `unavailableAfter` | string                    | Do not show this page in search results after the specified date/time. The date/time must be in a widely accepted format, including but not limited to RFC 822, RFC 850, and ISO 8601          |
 
+Each directive is emitted only when its value is truthy, so `0` is dropped: `maxSnippet: 0` and `maxVideoPreview: 0` render nothing. Use `nosnippet: true` to suppress the text snippet, and `maxImagePreview: 'none'` to suppress the image preview.
+
 For more information on the `X-Robots-Tag` visit [Google Search Central - Control Crawling and Indexing](https://developers.google.com/search/reference/robots_meta_tag?hl=en-GB#directives)

@@ -4,6 +4,8 @@ sidebar:
   order: 20
 ---
 
+No `og:*` tag is rendered unless the `openGraph` prop is present. `og:title` falls back to `title` and `og:description` to `description`, but those fallbacks only apply inside the `openGraph` block — a page that sets just `title` and `description` emits no OpenGraph tags. Pass `openGraph={{}}` to opt in on the fallbacks alone.
+
 ```svelte
 <script>
   import { MetaTags } from 'svelte-meta-tags';

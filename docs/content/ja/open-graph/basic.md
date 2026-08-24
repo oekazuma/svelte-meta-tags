@@ -4,6 +4,8 @@ sidebar:
   order: 20
 ---
 
+`openGraph` プロパティを渡さない限り、`og:*` タグは 1 つも出力されません。`og:title` は `title` に、`og:description` は `description` にフォールバックしますが、これらは `openGraph` ブロックの内側でのみ機能するため、`title` と `description` だけを設定したページには OpenGraph タグが一切出力されません。フォールバックだけを利用したい場合は `openGraph={{}}` を渡してください。
+
 ```svelte
 <script>
   import { MetaTags } from 'svelte-meta-tags';
