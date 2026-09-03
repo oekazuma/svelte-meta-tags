@@ -126,7 +126,7 @@ Not every route needs its own `+page.ts` — only add one where the page needs t
 {@render children()}
 ```
 
-Import `page` from **`$app/state`**, not `$app/stores` — the pre-Svelte-5 API that needs extra reactivity workarounds this pattern doesn't require.
+Import `page` from **`$app/state`**, not `$app/stores` — the store-based module is deprecated since SvelteKit 2.12 and `$app/state` is its Svelte 5 replacement.
 
 If Step 4 added nested-layout overrides, read the base tags from `page.data` instead, so section-level overrides actually reach this component:
 
