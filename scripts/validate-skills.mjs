@@ -15,10 +15,13 @@ function parseFrontmatter(content) {
   if (!match) return null;
   const fields = {};
   for (const line of match[1].split(/\r?\n/)) {
+    if (line.trim() === '') continue;
     const fieldMatch = line.match(/^(\w+):\s*(.*)$/);
-    if (fieldMatch) fields[fieldMatch[1]] = fieldMatch[2].trim();
+    // A continuation line or a `|` / `>` block scalar would silently truncate the value.
+    if (!fieldMatch || /^[|>]/.test(fieldMatch[2])) return { error: `"${line}" is not a single-line key: value pair` };
+    fields[fieldMatch[1]] = fieldMatch[2].trim();
   }
-  return fields;
+  return { fields };
 }
 
 if (!existsSync(skillsDir)) {
@@ -48,12 +51,18 @@ for (const name of entries) {
     continue;
   }
 
-  const frontmatter = parseFrontmatter(content);
-  if (!frontmatter) {
+  const parsed = parseFrontmatter(content);
+  if (!parsed) {
     console.error(`✗ ${displayPath}: missing frontmatter (expected --- name/description --- block)`);
     hasError = true;
     continue;
   }
+  if (parsed.error) {
+    console.error(`✗ ${displayPath}: ${parsed.error}`);
+    hasError = true;
+    continue;
+  }
+  const frontmatter = parsed.fields;
 
   if (!frontmatter.name) {
     console.error(`✗ ${displayPath}: frontmatter missing "name"`);
