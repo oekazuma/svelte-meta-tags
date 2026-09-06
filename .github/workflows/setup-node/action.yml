@@ -1,36 +1,12 @@
 name: 'Setup Node.js and pnpm'
-description: 'Install pnpm, set up Node.js using version from package.json devEngines, and install dependencies'
-
-inputs:
-  registry-url:
-    description: 'Optional npm registry URL for publishing'
-    required: false
-    default: ''
+description: 'Install pnpm and Node.js from package.json (packageManager / devEngines) and install dependencies'
 
 runs:
   using: 'composite'
   steps:
-    - name: Get Node.js version from package.json
-      id: get-node-version
-      shell: bash
-      run: |
-        NODE_VERSION=$(jq -r '.devEngines.runtime.version' package.json)
-        if [ -z "$NODE_VERSION" ] || [ "$NODE_VERSION" = "null" ]; then
-          echo "::error::Could not extract devEngines.runtime.version from package.json"
-          exit 1
-        fi
-        echo "node-version=${NODE_VERSION}" >> "$GITHUB_OUTPUT"
-
-    - name: Install pnpm
-      uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
-
-    - name: Setup Node.js
-      uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+    # Installs only `node`, no `npm`; anything that shells out to npm gets the runner image's copy.
+    - name: Install pnpm, Node.js and dependencies
+      uses: pnpm/setup@703c52620218391530e48b9e8870d5c0082e1b9b # v2.1.0
       with:
-        node-version: ${{ steps.get-node-version.outputs.node-version }}
-        cache: 'pnpm'
-        registry-url: ${{ inputs.registry-url }}
-
-    - name: Install dependencies
-      shell: bash
-      run: pnpm install --frozen-lockfile
+        cache: true
+        require-lockfile: true
