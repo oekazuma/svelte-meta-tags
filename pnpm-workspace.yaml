@@ -15,7 +15,7 @@ catalog:
   '@changesets/cli': ^3.0.2
   '@eslint/compat': ^2.1.1
   '@eslint/js': ^10.0.1
-  '@playwright/test': ^1.62.1
+  '@playwright/test': ^1.63.0
   '@sveltejs/adapter-auto': ^7.0.1
   '@sveltejs/kit': ^2.70.3
   '@sveltejs/package': ^2.5.8
