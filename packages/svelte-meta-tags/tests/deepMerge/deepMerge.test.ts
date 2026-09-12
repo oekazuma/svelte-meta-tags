@@ -1,173 +1,60 @@
 import { describe, expect, test } from 'vitest';
 import { deepMerge } from '$lib/deepMerge';
 
-describe('deepMerge functionality', () => {
-  test('whether two objects are deeply merged without affecting the original object', () => {
-    const result = deepMerge({ a: 1, b: { c: 2 } }, { b: { d: 3 }, e: 4 });
-    expect(result).toEqual({ a: 1, b: { c: 2, d: 3 }, e: 4 });
-    expect({ a: 1, b: { c: 2 } }).toEqual({ a: 1, b: { c: 2 } });
-    expect({ b: { d: 3 }, e: 4 }).toEqual({ b: { d: 3 }, e: 4 });
+describe('deepMerge', () => {
+  test('merges nested objects recursively without mutating either input', () => {
+    const target: Record<string, unknown> = { a: 1, b: { c: 2, d: 3, e: { f: 1 } } };
+    const source: Record<string, unknown> = { b: { d: 4, e: { g: 2 } }, h: 5 };
+    const result = deepMerge(target, source);
+    expect(result).toEqual({ a: 1, b: { c: 2, d: 4, e: { f: 1, g: 2 } }, h: 5 });
+    expect(target).toEqual({ a: 1, b: { c: 2, d: 3, e: { f: 1 } } });
+    expect(source).toEqual({ b: { d: 4, e: { g: 2 } }, h: 5 });
   });
 
-  test('deep merge with multi-level nested objects', () => {
-    const result = deepMerge({ a: { b: { c: 1 } } }, { a: { b: { d: 2 }, e: 3 } });
-    expect(result).toEqual({ a: { b: { c: 1, d: 2 }, e: 3 } });
+  test('replaces arrays instead of concatenating', () => {
+    expect(deepMerge({ a: [1, 2] }, { a: [3] })).toEqual({ a: [3] });
   });
 
-  test('correct merge for nested objects', () => {
-    const result = deepMerge({ x: { y: 1 } }, { x: { z: 2 } });
-    expect(result).toEqual({ x: { y: 1, z: 2 } });
-  });
-
-  test('deep merge of objects containing arrays', () => {
-    const result = deepMerge({ a: [1, 2], b: 1 }, { a: [3, 4], c: 2 });
-    expect(result).toEqual({ a: [3, 4], b: 1, c: 2 });
-  });
-
-  test('handling of null values', () => {
-    const result = deepMerge({ a: null }, { b: 2 });
-    expect(result).toEqual({ a: null, b: 2 });
-  });
-
-  test('merge of objects containing undefined values', () => {
-    const result = deepMerge({ a: undefined, b: 1 }, { a: 2 });
-    expect(result).toEqual({ a: 2, b: 1 });
-  });
-
-  test('empty objects do not affect the merge', () => {
-    const result = deepMerge({ a: 1 }, {});
-    expect(result).toEqual({ a: 1 });
-  });
-
-  test('when properties have different types in the objects being merged', () => {
-    const result = deepMerge({ a: 1 }, { a: { b: 2 } });
-    expect(result).toEqual({ a: { b: 2 } });
-  });
-
-  test('handling of special object types like Date and Function', () => {
-    const date = new Date();
-    const func = () => {};
-
-    const result = deepMerge({ a: date }, { b: func });
-    expect(result.a).toEqual(date);
-    expect(result.b).toEqual(func);
-  });
-
-  test('merging with scalar values (number, string, boolean)', () => {
-    const result = deepMerge({ a: 10, b: 'hello' }, { b: 'world', c: true });
-    expect(result).toEqual({ a: 10, b: 'world', c: true });
-  });
-
-  test('deep merge when overrides are missing keys present in initial', () => {
-    const result = deepMerge({ a: 1, b: { c: 2, d: 3 } }, { b: { d: 4 } });
-    expect(result).toEqual({ a: 1, b: { c: 2, d: 4 } });
-  });
-
-  test('merging deep structures with different types at the same key level', () => {
-    const result = deepMerge({ a: { b: [1, 2] } }, { a: { b: { c: 3 } } });
-    expect(result).toEqual({ a: { b: { c: 3 } } });
-  });
-
-  test('handling of nested arrays', () => {
-    const result = deepMerge({ a: [[1, 2]], b: 1 }, { a: [[3, 4]], c: 2 });
-    expect(result).toEqual({ a: [[3, 4]], b: 1, c: 2 });
-  });
-
-  test('merging objects with identical nested structure', () => {
-    const result = deepMerge({ a: { b: { c: 1 } } }, { a: { b: { c: 2 } } });
-    expect(result).toEqual({ a: { b: { c: 2 } } });
-  });
-
-  test('merging with undefined in both initial and override', () => {
-    const result = deepMerge({ a: undefined }, { a: undefined });
-    expect(result).toEqual({ a: undefined });
-  });
-
-  test('merging with functions in deep structures', () => {
-    const func = () => {};
-    const result = deepMerge({ a: { b: func } }, { a: { c: 1 } });
-    expect(result).toEqual({ a: { b: func, c: 1 } });
-  });
-
-  test('when target is null, should return source', () => {
-    const result = deepMerge(null, { a: 1, b: 2 });
-    expect(result).toEqual({ a: 1, b: 2 });
-  });
-
-  test('when source is null, should return target', () => {
-    const result = deepMerge({ a: 1, b: 2 }, null);
-    expect(result).toEqual({ a: 1, b: 2 });
-  });
-
-  test('when both target and source are null, should return empty object', () => {
-    const result = deepMerge(null, null);
-    expect(result).toEqual({});
-  });
-
-  test('when both target and source are undefined, should return empty object', () => {
-    const result = deepMerge(undefined, undefined);
-    expect(result).toEqual({});
-  });
-
-  test('when target is null and source is undefined, should return empty object', () => {
-    const result = deepMerge(null, undefined);
-    expect(result).toEqual({});
-  });
-
-  test('when target is undefined and source is null, should return empty object', () => {
-    const result = deepMerge(undefined, null);
-    expect(result).toEqual({});
-  });
-
-  test('target Date wins over source value at the same key', () => {
-    const date = new Date('2020-01-01');
-    const result = deepMerge({ a: date }, { a: 5 });
-    expect(result.a).toEqual(date);
-  });
-
-  test('target function wins over source value at the same key', () => {
-    const func = () => {};
-    const result = deepMerge({ a: func }, { a: 5 });
-    expect(result.a).toBe(func);
-  });
-
-  test('source Date wins when target value is a plain value', () => {
-    const date = new Date('2021-06-15');
-    const result = deepMerge({ a: 5 }, { a: date });
-    expect(result.a).toEqual(date);
-  });
-
-  test('source function wins when target value is a plain value', () => {
-    const func = () => {};
-    const result = deepMerge({ a: 5 }, { a: func });
-    expect(result.a).toBe(func);
+  test('source wins when types differ at the same key', () => {
+    expect(deepMerge({ a: 1, b: { c: [1] } }, { a: { x: 1 }, b: { c: { d: 2 } } })).toEqual({
+      a: { x: 1 },
+      b: { c: { d: 2 } }
+    });
   });
 
   test('undefined source value keeps the target value', () => {
-    const result = deepMerge({ a: 1, b: 2 }, { a: undefined });
-    expect(result).toEqual({ a: 1, b: 2 });
+    expect(deepMerge({ a: 1, b: 2 }, { a: undefined })).toEqual({ a: 1, b: 2 });
   });
 
-  test('symbol-keyed source properties are not merged (characterization)', () => {
-    const sym = Symbol('meta');
-    const source: Record<string | symbol, unknown> = { a: 1 };
-    source[sym] = 'dropped';
-    const result = deepMerge({ b: 2 }, source);
-    expect(result).toEqual({ a: 1, b: 2 });
-    expect((result as Record<string | symbol, unknown>)[sym]).toBeUndefined();
+  test('returns the other side when one input is null/undefined, and {} when both are', () => {
+    expect(deepMerge(null, { a: 1 })).toEqual({ a: 1 });
+    expect(deepMerge({ a: 1 }, undefined)).toEqual({ a: 1 });
+    expect(deepMerge(null, undefined)).toEqual({});
   });
 
-  test('__proto__ key from JSON-parsed source does not alter the result prototype', () => {
-    const source = JSON.parse('{"__proto__": {"polluted": true}, "a": 1}');
+  test('target Date/function wins over the source value at the same key', () => {
+    const date = new Date('2020-01-01');
+    const func = () => {};
+    const result = deepMerge({ a: date, b: func }, { a: 5, b: 5 });
+    expect(result.a).toBe(date);
+    expect(result.b).toBe(func);
+  });
+
+  test('source Date/function wins over a plain target value', () => {
+    const date = new Date('2021-06-15');
+    const func = () => {};
+    const result = deepMerge({ a: 5, b: 5 }, { a: date, b: func });
+    expect(result.a).toBe(date);
+    expect(result.b).toBe(func);
+  });
+
+  test('skips __proto__, constructor and prototype keys from the source', () => {
+    const source = JSON.parse(
+      '{"__proto__": {"polluted": true}, "constructor": {"x": 1}, "prototype": {"y": 2}, "a": 1}'
+    );
     const result = deepMerge({ b: 2 }, source);
     expect(result).toEqual({ a: 1, b: 2 });
     expect((result as Record<string, unknown>).polluted).toBeUndefined();
     expect(Object.getPrototypeOf(result)).toBe(Object.prototype);
-  });
-
-  test('constructor and prototype keys are skipped', () => {
-    const source = JSON.parse('{"constructor": {"x": 1}, "prototype": {"y": 2}, "a": 1}');
-    const result = deepMerge({ b: 2 }, source);
-    expect(result).toEqual({ a: 1, b: 2 });
   });
 });

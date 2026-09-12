@@ -2,13 +2,14 @@
   import { MetaTags } from 'svelte-meta-tags';
 </script>
 
-<!-- Test 1: Twitter fallback to OpenGraph values -->
+<!-- title: explicit twitter value wins; description: no twitter value, falls back to OpenGraph -->
 <MetaTags
   title="Page Title"
   description="Page Description"
   twitter={{
     cardType: 'summary_large_image',
-    site: '@site'
+    site: '@site',
+    title: 'Twitter Title'
   }}
   openGraph={{
     title: 'OG Title',

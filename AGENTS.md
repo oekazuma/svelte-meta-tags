@@ -33,9 +33,8 @@ pnpm test                  # runs every workspace's `test` (vitest in lib, playw
 Per-workspace commands (use these to scope work):
 
 ```bash
-# Unit tests + benchmarks for deepMerge / define helpers
+# Unit tests for deepMerge / define helpers and JsonLd schema types
 pnpm --filter svelte-meta-tags test
-pnpm --filter svelte-meta-tags test:bench
 pnpm --filter svelte-meta-tags exec vitest run tests/deepMerge/deepMerge.test.ts   # single file
 
 # Playwright e2e (chromium / firefox / webkit). vite build && preview is started by playwright.config.ts.

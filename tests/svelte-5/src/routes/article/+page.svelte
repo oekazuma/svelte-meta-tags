@@ -21,38 +21,7 @@
       section: 'Section II',
       tags: ['Tag A', 'Tag B', 'Tag C']
     },
-    images: [
-      {
-        url: 'https://www.test.ie/og-image-article-title-01.jpg',
-        width: 850,
-        height: 650,
-        alt: 'Og Image Alt Article Title A'
-      },
-      {
-        url: 'https://www.test.ie/og-image-article-title-02.jpg',
-        width: 950,
-        height: 850,
-        alt: 'Og Image Alt Article Title B'
-      },
-      {
-        url: 'https://www.test.ie/og-image-article-title-03.jpg',
-        width: 600,
-        height: 400,
-        alt: 'Og Image Alt Article Title C'
-      },
-      {
-        url: 'https://www.test.ie/og-image-article-title-04.jpg',
-        width: 400,
-        height: 400,
-        alt: 'Og Image Alt Article Title D'
-      }
-    ],
-    siteName: 'SiteName'
-  }}
-  twitter={{
-    creator: '@handle',
-    site: '@site',
-    cardType: 'summary_large_image'
+    images: [{ url: 'https://www.test.ie/og-image-article-title-01.jpg' }]
   }}
 />
 

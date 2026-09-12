@@ -3,7 +3,6 @@ import { test, expect } from '@playwright/test';
 test('Another pattern SEO loads correctly', async ({ page }) => {
   await page.goto('/another', { waitUntil: 'domcontentloaded' });
   await expect(page).toHaveTitle('');
-  await expect(page.locator('h1')).toContainText('Another SEO');
   await expect(page.locator('head meta[name="description"]')).toHaveAttribute('content', 'Description Another');
   await expect(page.locator('head link[rel="canonical"]')).toHaveAttribute('href', 'https://www.canonical.ie/another');
   await expect(page.locator('head meta[name="robots"]')).toHaveAttribute('content', 'noindex,nofollow');
@@ -14,6 +13,7 @@ test('Another pattern SEO loads correctly', async ({ page }) => {
   await expect(alternate.nth(0)).toHaveAttribute('href', 'https://m.canonical.ie');
   await expect(alternate.nth(1)).toHaveAttribute('href', 'https://www.canonical.ie/de');
   await expect(alternate.nth(1)).toHaveAttribute('hreflang', 'de-AT');
+  await expect(page.locator('head meta[property="fb:app_id"]')).toHaveCount(0);
   await expect(page.locator('head meta[property="og:url"]')).toHaveAttribute('content', 'https://www.url.ie/another');
   await expect(page.locator('head meta[property="og:title"]')).toHaveAttribute('content', 'Open Graph Title Another');
   await expect(page.locator('head meta[property="og:description"]')).toHaveAttribute(

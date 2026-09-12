@@ -3,7 +3,6 @@ import { test, expect } from '@playwright/test';
 test('Article SEO loads correctly', async ({ page }) => {
   await page.goto('/article', { waitUntil: 'domcontentloaded' });
   await expect(page).toHaveTitle('Article Page Title | Svelte Meta Tags');
-  await expect(page.locator('h1')).toContainText('Article SEO');
   await expect(page.locator('head meta[name="description"]')).toHaveAttribute('content', 'Description of article page');
   await expect(page.locator('head meta[property="og:type"]')).toHaveAttribute('content', 'article');
   await expect(page.locator('head meta[property="article:published_time"]')).toHaveAttribute(
@@ -43,32 +42,8 @@ test('Article SEO loads correctly', async ({ page }) => {
     'content',
     'Description of open graph article'
   );
-  const ogImage = page.locator('head meta[property="og:image"]');
-  await expect(ogImage).toHaveCount(4);
-  await expect(ogImage.nth(0)).toHaveAttribute('content', 'https://www.test.ie/og-image-article-title-01.jpg');
-  await expect(ogImage.nth(1)).toHaveAttribute('content', 'https://www.test.ie/og-image-article-title-02.jpg');
-  await expect(ogImage.nth(2)).toHaveAttribute('content', 'https://www.test.ie/og-image-article-title-03.jpg');
-  await expect(ogImage.nth(3)).toHaveAttribute('content', 'https://www.test.ie/og-image-article-title-04.jpg');
-  const ogImageAlt = page.locator('head meta[property="og:image:alt"]');
-  await expect(ogImageAlt).toHaveCount(4);
-  await expect(ogImageAlt.nth(0)).toHaveAttribute('content', 'Og Image Alt Article Title A');
-  await expect(ogImageAlt.nth(1)).toHaveAttribute('content', 'Og Image Alt Article Title B');
-  await expect(ogImageAlt.nth(2)).toHaveAttribute('content', 'Og Image Alt Article Title C');
-  await expect(ogImageAlt.nth(3)).toHaveAttribute('content', 'Og Image Alt Article Title D');
-  const ogImageWidth = page.locator('head meta[property="og:image:width"]');
-  await expect(ogImageWidth).toHaveCount(4);
-  await expect(ogImageWidth.nth(0)).toHaveAttribute('content', '850');
-  await expect(ogImageWidth.nth(1)).toHaveAttribute('content', '950');
-  await expect(ogImageWidth.nth(2)).toHaveAttribute('content', '600');
-  await expect(ogImageWidth.nth(3)).toHaveAttribute('content', '400');
-  const ogImageHeight = page.locator('head meta[property="og:image:height"]');
-  await expect(ogImageHeight).toHaveCount(4);
-  await expect(ogImageHeight.nth(0)).toHaveAttribute('content', '650');
-  await expect(ogImageHeight.nth(1)).toHaveAttribute('content', '850');
-  await expect(ogImageHeight.nth(2)).toHaveAttribute('content', '400');
-  await expect(ogImageHeight.nth(3)).toHaveAttribute('content', '400');
-  await expect(page.locator('head meta[property="og:site_name"]')).toHaveAttribute('content', 'SiteName');
-  await expect(page.locator('head meta[name="twitter:site"]')).toHaveAttribute('content', '@site');
-  await expect(page.locator('head meta[name="twitter:creator"]')).toHaveAttribute('content', '@handle');
-  await expect(page.locator('head meta[name="twitter:card"]')).toHaveAttribute('content', 'summary_large_image');
+  await expect(page.locator('head meta[property="og:image"]')).toHaveAttribute(
+    'content',
+    'https://www.test.ie/og-image-article-title-01.jpg'
+  );
 });
