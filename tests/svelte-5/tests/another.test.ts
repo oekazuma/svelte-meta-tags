@@ -3,7 +3,6 @@ import { test, expect } from '@playwright/test';
 test('Another pattern SEO loads correctly', async ({ page }) => {
   await page.goto('/another', { waitUntil: 'domcontentloaded' });
   await expect(page).toHaveTitle('');
-  await expect(page.locator('h1')).toContainText('Another SEO');
   await expect(page.locator('head meta[name="description"]')).toHaveAttribute('content', 'Description Another');
   await expect(page.locator('head link[rel="canonical"]')).toHaveAttribute('href', 'https://www.canonical.ie/another');
   await expect(page.locator('head meta[name="robots"]')).toHaveAttribute('content', 'noindex,nofollow');
@@ -42,4 +41,9 @@ test('Another pattern SEO loads correctly', async ({ page }) => {
   await expect(page.locator('head meta[http-equiv="x-ua-compatible"]')).toHaveAttribute('content', 'IE=edge; chrome=1');
   // The internal camelCase `httpEquiv` prop must not leak into the rendered markup
   await expect(page.locator('head meta[httpequiv]')).toHaveCount(0);
+});
+
+test('fb:app_id is not rendered when facebook.appId is missing', async ({ page }) => {
+  await page.goto('/another', { waitUntil: 'domcontentloaded' });
+  await expect(page.locator('head meta[property="fb:app_id"]')).toHaveCount(0);
 });

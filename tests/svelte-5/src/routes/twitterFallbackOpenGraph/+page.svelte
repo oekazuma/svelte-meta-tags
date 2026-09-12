@@ -2,7 +2,7 @@
   import { MetaTags } from 'svelte-meta-tags';
 </script>
 
-<!-- Test 4: Mixed fallback - OG has title only, description falls back to standard meta -->
+<!-- no twitter title/description: both fall back to the OpenGraph values, not the page ones -->
 <MetaTags
   title="Page Title"
   description="Page Description"
@@ -10,8 +10,9 @@
     cardType: 'summary'
   }}
   openGraph={{
-    title: 'OG Title'
+    title: 'OG Title',
+    description: 'OG Description'
   }}
 />
 
-<h1>Twitter Fallback Mixed SEO</h1>
+<h1>Twitter Fallback OpenGraph SEO</h1>

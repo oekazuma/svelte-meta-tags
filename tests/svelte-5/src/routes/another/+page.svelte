@@ -8,6 +8,7 @@
   robots="noindex,nofollow"
   description="Description Another"
   canonical="https://www.canonical.ie/another"
+  facebook={{}}
   languageAlternates={[
     {
       hrefLang: 'de-AT',

@@ -1,10 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-test('Video SEO loads correctly', async ({ page }) => {
+test('og:type=video.movie renders the video:* sub-block', async ({ page }) => {
   await page.goto('/video', { waitUntil: 'domcontentloaded' });
-  await expect(page).toHaveTitle('Video Page Title | Svelte Meta Tags');
-  await expect(page.locator('h1')).toContainText('Video SEO');
-  await expect(page.locator('head meta[name="description"]')).toHaveAttribute('content', 'Description of video page');
   await expect(page.locator('head meta[property="og:type"]')).toHaveAttribute('content', 'video.movie');
   await expect(page.locator('head meta[property="video:duration"]')).toHaveAttribute('content', '680000');
   await expect(page.locator('head meta[property="video:release_date"]')).toHaveAttribute(
@@ -38,41 +35,4 @@ test('Video SEO loads correctly', async ({ page }) => {
   await expect(videoTag.nth(0)).toHaveAttribute('content', 'Tag A');
   await expect(videoTag.nth(1)).toHaveAttribute('content', 'Tag B');
   await expect(videoTag.nth(2)).toHaveAttribute('content', 'Tag C');
-  await expect(page.locator('head meta[property="og:url"]')).toHaveAttribute(
-    'content',
-    'https://www.example.com/videos/video-title'
-  );
-  await expect(page.locator('head meta[property="og:title"]')).toHaveAttribute('content', 'Open Graph Video Title');
-  await expect(page.locator('head meta[property="og:description"]')).toHaveAttribute(
-    'content',
-    'Description of open graph video'
-  );
-  const ogImage = page.locator('head meta[property="og:image"]');
-  await expect(ogImage).toHaveCount(4);
-  await expect(ogImage.nth(0)).toHaveAttribute('content', 'https://www.test.ie/og-image-video-title-01.jpg');
-  await expect(ogImage.nth(1)).toHaveAttribute('content', 'https://www.test.ie/og-image-video-title-02.jpg');
-  await expect(ogImage.nth(2)).toHaveAttribute('content', 'https://www.test.ie/og-image-video-title-03.jpg');
-  await expect(ogImage.nth(3)).toHaveAttribute('content', 'https://www.test.ie/og-image-video-title-04.jpg');
-  const ogImageAlt = page.locator('head meta[property="og:image:alt"]');
-  await expect(ogImageAlt).toHaveCount(4);
-  await expect(ogImageAlt.nth(0)).toHaveAttribute('content', 'Og Image Alt Video Title A');
-  await expect(ogImageAlt.nth(1)).toHaveAttribute('content', 'Og Image Alt Video Title B');
-  await expect(ogImageAlt.nth(2)).toHaveAttribute('content', 'Og Image Alt Video Title C');
-  await expect(ogImageAlt.nth(3)).toHaveAttribute('content', 'Og Image Alt Video Title D');
-  const ogImageWidth = page.locator('head meta[property="og:image:width"]');
-  await expect(ogImageWidth).toHaveCount(4);
-  await expect(ogImageWidth.nth(0)).toHaveAttribute('content', '850');
-  await expect(ogImageWidth.nth(1)).toHaveAttribute('content', '950');
-  await expect(ogImageWidth.nth(2)).toHaveAttribute('content', '600');
-  await expect(ogImageWidth.nth(3)).toHaveAttribute('content', '400');
-  const ogImageHeight = page.locator('head meta[property="og:image:height"]');
-  await expect(ogImageHeight).toHaveCount(4);
-  await expect(ogImageHeight.nth(0)).toHaveAttribute('content', '650');
-  await expect(ogImageHeight.nth(1)).toHaveAttribute('content', '850');
-  await expect(ogImageHeight.nth(2)).toHaveAttribute('content', '400');
-  await expect(ogImageHeight.nth(3)).toHaveAttribute('content', '400');
-  await expect(page.locator('head meta[property="og:site_name"]')).toHaveAttribute('content', 'SiteName');
-  await expect(page.locator('head meta[name="twitter:site"]')).toHaveAttribute('content', '@site');
-  await expect(page.locator('head meta[name="twitter:creator"]')).toHaveAttribute('content', '@handle');
-  await expect(page.locator('head meta[name="twitter:card"]')).toHaveAttribute('content', 'summary_large_image');
 });

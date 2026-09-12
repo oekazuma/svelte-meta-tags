@@ -14,7 +14,6 @@
     "@sveltejs/adapter-auto": "catalog:",
     "@sveltejs/kit": "catalog:",
     "@sveltejs/vite-plugin-svelte": "catalog:",
-    "schema-dts": "^2.0.0",
     "svelte": "catalog:",
     "svelte-check": "catalog:",
     "svelte-meta-tags": "workspace:*",

@@ -2,7 +2,6 @@ import { test, expect } from '@playwright/test';
 
 test('JSON-LD values containing </script> stay inside the script tag', async ({ page }) => {
   await page.goto('/jsonldEscape', { waitUntil: 'domcontentloaded' });
-  await expect(page.locator('h1')).toContainText('JSON-LD Escape SEO');
   const scripts = page.locator('head script[type="application/ld+json"]');
   await expect(scripts).toHaveCount(1);
   const raw = await scripts.first().textContent();

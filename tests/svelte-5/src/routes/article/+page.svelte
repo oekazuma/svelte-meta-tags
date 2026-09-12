@@ -3,12 +3,7 @@
 </script>
 
 <MetaTags
-  title="Article Page Title | Svelte Meta Tags"
-  description="Description of article page"
   openGraph={{
-    title: 'Open Graph Article Title',
-    description: 'Description of open graph article',
-    url: 'https://www.example.com/articles/article-title',
     type: 'article',
     article: {
       publishedTime: '2017-06-21T23:04:13Z',
@@ -20,39 +15,7 @@
       ],
       section: 'Section II',
       tags: ['Tag A', 'Tag B', 'Tag C']
-    },
-    images: [
-      {
-        url: 'https://www.test.ie/og-image-article-title-01.jpg',
-        width: 850,
-        height: 650,
-        alt: 'Og Image Alt Article Title A'
-      },
-      {
-        url: 'https://www.test.ie/og-image-article-title-02.jpg',
-        width: 950,
-        height: 850,
-        alt: 'Og Image Alt Article Title B'
-      },
-      {
-        url: 'https://www.test.ie/og-image-article-title-03.jpg',
-        width: 600,
-        height: 400,
-        alt: 'Og Image Alt Article Title C'
-      },
-      {
-        url: 'https://www.test.ie/og-image-article-title-04.jpg',
-        width: 400,
-        height: 400,
-        alt: 'Og Image Alt Article Title D'
-      }
-    ],
-    siteName: 'SiteName'
-  }}
-  twitter={{
-    creator: '@handle',
-    site: '@site',
-    cardType: 'summary_large_image'
+    }
   }}
 />
 

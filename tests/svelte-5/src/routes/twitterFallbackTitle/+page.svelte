@@ -2,9 +2,10 @@
   import { MetaTags } from 'svelte-meta-tags';
 </script>
 
-<!-- Test 2: Twitter fallback to standard title/description (no OG) -->
+<!-- no twitter/OpenGraph values: falls back to the templated title and description -->
 <MetaTags
-  title="Page Title"
+  title="Rock $& Roll"
+  titleTemplate="%s | MySite"
   description="Page Description"
   twitter={{
     cardType: 'summary'

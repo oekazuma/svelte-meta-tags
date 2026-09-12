@@ -7,13 +7,7 @@
     <a href={resolve('/')}> Normal SEO </a>
   </li>
   <li>
-    <a href={resolve('/robots')}> Robots props </a>
-  </li>
-  <li>
-    <a href={resolve('/robots/another')}> Another Robots props </a>
-  </li>
-  <li>
-    <a href={resolve('/robots/googlebot')}> GoogleBot Robots props </a>
+    <a href={resolve('/robotsAnother')}> Another Robots props </a>
   </li>
   <li>
     <a href={resolve('/additionalRobots')}> Additional Robots props </a>
@@ -26,9 +20,6 @@
   </li>
   <li>
     <a href={resolve('/video')}> Video SEO </a>
-  </li>
-  <li>
-    <a href={resolve('/videoObjectType')}> VideoObjectType SEO </a>
   </li>
   <li>
     <a href={resolve('/article')}> Article SEO </a>
@@ -47,11 +38,5 @@
   </li>
   <li>
     <a href={resolve('/jsonldArray')}> JSON-LD Array SEO </a>
-  </li>
-  <li>
-    <a href={resolve('/jsonldGraph')}> JSON-LD Graph SEO </a>
-  </li>
-  <li>
-    <a href={resolve('/searchAction')}> SearchAction Test </a>
   </li>
 </ul>
