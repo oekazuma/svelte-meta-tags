@@ -13,7 +13,6 @@ test('Another pattern SEO loads correctly', async ({ page }) => {
   await expect(alternate.nth(0)).toHaveAttribute('href', 'https://m.canonical.ie');
   await expect(alternate.nth(1)).toHaveAttribute('href', 'https://www.canonical.ie/de');
   await expect(alternate.nth(1)).toHaveAttribute('hreflang', 'de-AT');
-  await expect(page.locator('head meta[property="fb:app_id"]')).toHaveCount(0);
   await expect(page.locator('head meta[property="og:url"]')).toHaveAttribute('content', 'https://www.url.ie/another');
   await expect(page.locator('head meta[property="og:title"]')).toHaveAttribute('content', 'Open Graph Title Another');
   await expect(page.locator('head meta[property="og:description"]')).toHaveAttribute(
@@ -42,4 +41,9 @@ test('Another pattern SEO loads correctly', async ({ page }) => {
   await expect(page.locator('head meta[http-equiv="x-ua-compatible"]')).toHaveAttribute('content', 'IE=edge; chrome=1');
   // The internal camelCase `httpEquiv` prop must not leak into the rendered markup
   await expect(page.locator('head meta[httpequiv]')).toHaveCount(0);
+});
+
+test('fb:app_id is not rendered when facebook.appId is missing', async ({ page }) => {
+  await page.goto('/another', { waitUntil: 'domcontentloaded' });
+  await expect(page.locator('head meta[property="fb:app_id"]')).toHaveCount(0);
 });

@@ -3,12 +3,7 @@
 </script>
 
 <MetaTags
-  title="Book Page Title | Svelte Meta Tags"
-  description="Description of book page"
   openGraph={{
-    title: 'Open Graph Book Title',
-    description: 'Description of open graph book',
-    url: 'https://www.example.com/books/book-title',
     type: 'book',
     book: {
       releaseDate: '2018-09-17T11:08:13Z',
@@ -18,8 +13,7 @@
         'https://www.example.com/authors/@firstnameB-lastnameB'
       ],
       tags: ['Tag A', 'Tag B', 'Tag C']
-    },
-    images: [{ url: 'https://www.test.ie/og-image-book-title-01.jpg' }]
+    }
   }}
 />
 

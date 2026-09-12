@@ -1,9 +1,7 @@
 import { test, expect } from '@playwright/test';
 
-test('Video SEO loads correctly', async ({ page }) => {
+test('og:type=video.movie renders the video:* sub-block', async ({ page }) => {
   await page.goto('/video', { waitUntil: 'domcontentloaded' });
-  await expect(page).toHaveTitle('Video Page Title | Svelte Meta Tags');
-  await expect(page.locator('head meta[name="description"]')).toHaveAttribute('content', 'Description of video page');
   await expect(page.locator('head meta[property="og:type"]')).toHaveAttribute('content', 'video.movie');
   await expect(page.locator('head meta[property="video:duration"]')).toHaveAttribute('content', '680000');
   await expect(page.locator('head meta[property="video:release_date"]')).toHaveAttribute(
@@ -37,17 +35,4 @@ test('Video SEO loads correctly', async ({ page }) => {
   await expect(videoTag.nth(0)).toHaveAttribute('content', 'Tag A');
   await expect(videoTag.nth(1)).toHaveAttribute('content', 'Tag B');
   await expect(videoTag.nth(2)).toHaveAttribute('content', 'Tag C');
-  await expect(page.locator('head meta[property="og:url"]')).toHaveAttribute(
-    'content',
-    'https://www.example.com/videos/video-title'
-  );
-  await expect(page.locator('head meta[property="og:title"]')).toHaveAttribute('content', 'Open Graph Video Title');
-  await expect(page.locator('head meta[property="og:description"]')).toHaveAttribute(
-    'content',
-    'Description of open graph video'
-  );
-  await expect(page.locator('head meta[property="og:image"]')).toHaveAttribute(
-    'content',
-    'https://www.test.ie/og-image-video-title-01.jpg'
-  );
 });

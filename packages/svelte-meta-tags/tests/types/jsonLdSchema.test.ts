@@ -1,43 +1,39 @@
-import { expect, test } from 'vitest';
+import { assertType, test } from 'vitest';
 import type { SearchAction, VideoObject, WebSite, WithActionConstraints, WithContext } from 'schema-dts';
 import type { JsonLdProps } from '$lib/types';
 
-// Type-level guard: `pnpm check` (svelte-check) fails if `JsonLdProps['schema']` stops accepting
-// any of these shapes. The runtime assertion only keeps vitest from reporting an empty file.
-const potentialAction: WithActionConstraints<SearchAction> = {
-  '@type': 'SearchAction',
-  target: 'https://example.com/search?q={search_term_string}',
-  'query-input': 'required name=search_term_string'
-};
+// Enforced by `pnpm check` (svelte-check), not by vitest: vitest strips types before running.
+test('JsonLdProps.schema accepts schema-dts and plain object shapes', () => {
+  const potentialAction: WithActionConstraints<SearchAction> = {
+    '@type': 'SearchAction',
+    target: 'https://example.com/search?q={search_term_string}',
+    'query-input': 'required name=search_term_string'
+  };
+  const website: WithContext<WebSite> = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Example Website',
+    url: 'https://example.com',
+    potentialAction
+  };
+  const video: WithContext<VideoObject> = {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: 'Learn Svelte',
+    uploadDate: '2024-01-15T10:00:00Z'
+  };
 
-const website: WithContext<WebSite> = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'Example Website',
-  url: 'https://example.com',
-  potentialAction
-};
-
-const video: WithContext<VideoObject> = {
-  '@context': 'https://schema.org',
-  '@type': 'VideoObject',
-  name: 'Learn Svelte',
-  uploadDate: '2024-01-15T10:00:00Z'
-};
-
-const schemas: JsonLdProps['schema'][] = [
-  website,
-  video,
-  {
+  assertType<JsonLdProps['schema']>(website);
+  assertType<JsonLdProps['schema']>(video);
+  assertType<JsonLdProps['schema']>({
     '@type': 'EntryPoint',
     urlTemplate: 'https://example.com/form',
     'form-input': 'required name=form_data',
     'form-output': 'application/json'
-  },
-  { '@graph': [{ '@type': 'BreadcrumbList' }, { '@type': 'NewsArticle', headline: 'Article headline' }] },
-  [{ '@type': 'BreadcrumbList' }, { '@type': 'NewsArticle', headline: 'Article headline' }]
-];
+  });
+  assertType<JsonLdProps['schema']>({ '@graph': [{ '@type': 'BreadcrumbList' }] });
+  assertType<JsonLdProps['schema']>([{ '@type': 'BreadcrumbList' }, { '@type': 'NewsArticle' }]);
 
-test('JsonLdProps.schema accepts schema-dts and plain object shapes', () => {
-  expect(schemas).toHaveLength(5);
+  // @ts-expect-error a primitive must be rejected; svelte-check fails on the unused directive if schema is widened
+  assertType<JsonLdProps['schema']>(42);
 });

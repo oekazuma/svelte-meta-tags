@@ -7,7 +7,7 @@
     <a href={resolve('/')}> Normal SEO </a>
   </li>
   <li>
-    <a href={resolve('/robots/another')}> Another Robots props </a>
+    <a href={resolve('/robotsAnother')}> Another Robots props </a>
   </li>
   <li>
     <a href={resolve('/additionalRobots')}> Additional Robots props </a>

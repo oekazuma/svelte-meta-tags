@@ -3,12 +3,7 @@
 </script>
 
 <MetaTags
-  title="Article Page Title | Svelte Meta Tags"
-  description="Description of article page"
   openGraph={{
-    title: 'Open Graph Article Title',
-    description: 'Description of open graph article',
-    url: 'https://www.example.com/articles/article-title',
     type: 'article',
     article: {
       publishedTime: '2017-06-21T23:04:13Z',
@@ -20,8 +15,7 @@
       ],
       section: 'Section II',
       tags: ['Tag A', 'Tag B', 'Tag C']
-    },
-    images: [{ url: 'https://www.test.ie/og-image-article-title-01.jpg' }]
+    }
   }}
 />
 

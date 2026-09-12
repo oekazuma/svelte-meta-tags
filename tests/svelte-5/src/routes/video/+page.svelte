@@ -3,12 +3,7 @@
 </script>
 
 <MetaTags
-  title="Video Page Title | Svelte Meta Tags"
-  description="Description of video page"
   openGraph={{
-    title: 'Open Graph Video Title',
-    description: 'Description of open graph video',
-    url: 'https://www.example.com/videos/video-title',
     type: 'video.movie',
     video: {
       actors: [
@@ -32,8 +27,7 @@
       duration: 680000,
       releaseDate: '2022-12-21T22:04:11Z',
       tags: ['Tag A', 'Tag B', 'Tag C']
-    },
-    images: [{ url: 'https://www.test.ie/og-image-video-title-01.jpg' }]
+    }
   }}
 />
 

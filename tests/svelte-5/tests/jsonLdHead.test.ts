@@ -1,12 +1,12 @@
 import { test, expect } from '@playwright/test';
 
-test('JSON-LD renders one head script per component with @context injected', async ({ page }) => {
+test('JSON-LD renders one head script per schema (@context injected once per object), none when schema is omitted', async ({
+  page
+}) => {
   await page.goto('/jsonldHead', { waitUntil: 'domcontentloaded' });
-  const jsonLd = await page
-    .locator('head script[type="application/ld+json"]')
-    .evaluateAll((list) => list.map((element) => element.textContent));
-  expect(jsonLd).toEqual([
+  expect(await page.locator('head script[type="application/ld+json"]').allTextContents()).toEqual([
     '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Books"}]}',
-    '{"@context":"https://schema.org","@type":"NewsArticle","headline":"Article headline"}'
+    '{"@context":"https://schema.org","@type":"NewsArticle","headline":"Article headline"}',
+    '{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList"},{"@type":"NewsArticle","headline":"Graph headline"}]}'
   ]);
 });

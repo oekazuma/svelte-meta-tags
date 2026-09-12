@@ -362,9 +362,6 @@ importers:
       '@sveltejs/vite-plugin-svelte':
         specifier: 'catalog:'
         version: 7.3.0(svelte@5.57.0(@typescript-eslint/types@8.69.0))(vite@8.2.2(@types/node@24.12.0)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0))
-      schema-dts:
-        specifier: ^2.0.0
-        version: 2.0.0(typescript@6.0.3)
       svelte:
         specifier: 'catalog:'
         version: 5.57.0(@typescript-eslint/types@8.69.0)

@@ -10,4 +10,10 @@
 
 <JsonLd schema={{ '@type': 'NewsArticle', headline: 'Article headline' }} />
 
+<JsonLd
+  schema={{ '@graph': [{ '@type': 'BreadcrumbList' }, { '@type': 'NewsArticle', headline: 'Graph headline' }] }}
+/>
+
+<JsonLd />
+
 <h1>JSON-LD Head SEO</h1>
