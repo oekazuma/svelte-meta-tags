@@ -192,8 +192,8 @@ catalogs:
       specifier: ^9.6.1
       version: 9.6.1
     blume:
-      specifier: ^1.7.2
-      version: 1.7.2
+      specifier: ^1.7.3
+      version: 1.7.3
     eslint:
       specifier: ^10.11.0
       version: 10.11.0
@@ -279,7 +279,7 @@ importers:
     dependencies:
       blume:
         specifier: 'catalog:'
-        version: 1.7.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@shikijs/themes@4.3.1)(@sveltejs/kit@2.70.3(@opentelemetry/api@1.9.0)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.0(@typescript-eslint/types@8.69.0))(vite@8.3.0(@types/node@24.12.0)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0)))(svelte@5.57.0(@typescript-eslint/types@8.69.0))(typescript@6.0.3)(vite@8.3.0(@types/node@24.12.0)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0)))(@types/node@24.12.0)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(@vercel/functions@3.7.5)(csstype@3.2.3)(esbuild@0.28.1)(prettier@3.9.8)(rollup@4.60.0)(svelte@5.57.0(@typescript-eslint/types@8.69.0))(vite@8.3.0(@types/node@24.12.0)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0))(yaml@2.9.0)
+        version: 1.7.3(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@shikijs/themes@4.3.1)(@sveltejs/kit@2.70.3(@opentelemetry/api@1.9.0)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.0(@typescript-eslint/types@8.69.0))(vite@8.3.0(@types/node@24.12.0)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0)))(svelte@5.57.0(@typescript-eslint/types@8.69.0))(typescript@6.0.3)(vite@8.3.0(@types/node@24.12.0)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0)))(@types/node@24.12.0)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(@vercel/functions@3.7.5)(csstype@3.2.3)(esbuild@0.28.1)(prettier@3.9.8)(rollup@4.60.0)(svelte@5.57.0(@typescript-eslint/types@8.69.0))(vite@8.3.0(@types/node@24.12.0)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0))(yaml@2.9.0)
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
@@ -2617,8 +2617,8 @@ packages:
   bindings@1.5.0:
     resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
 
-  blume@1.7.2:
-    resolution: {integrity: sha512-icdgj7SjLjBh0cpY7/SSqeKcBrAXmtzbU2Z6EjsXVspissscLqRHgYimCHsZZ4wKcrNvHMtYQ2Ysvn1G5xxXWw==}
+  blume@1.7.3:
+    resolution: {integrity: sha512-+pZzMfphSI+Lg8tH7tzKvg6O4xijMk6kkcqXFybyuyDZajnKJB/2MuJSFO8c+IQrIYuZaQYyis5ez/x/vrqHAw==}
     engines: {node: '>=22.12.0'}
     hasBin: true
     peerDependencies:
@@ -8244,7 +8244,7 @@ snapshots:
     dependencies:
       file-uri-to-path: 1.0.0
 
-  blume@1.7.2(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@shikijs/themes@4.3.1)(@sveltejs/kit@2.70.3(@opentelemetry/api@1.9.0)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.0(@typescript-eslint/types@8.69.0))(vite@8.3.0(@types/node@24.12.0)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0)))(svelte@5.57.0(@typescript-eslint/types@8.69.0))(typescript@6.0.3)(vite@8.3.0(@types/node@24.12.0)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0)))(@types/node@24.12.0)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(@vercel/functions@3.7.5)(csstype@3.2.3)(esbuild@0.28.1)(prettier@3.9.8)(rollup@4.60.0)(svelte@5.57.0(@typescript-eslint/types@8.69.0))(vite@8.3.0(@types/node@24.12.0)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0))(yaml@2.9.0):
+  blume@1.7.3(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@shikijs/themes@4.3.1)(@sveltejs/kit@2.70.3(@opentelemetry/api@1.9.0)(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.0(@typescript-eslint/types@8.69.0))(vite@8.3.0(@types/node@24.12.0)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0)))(svelte@5.57.0(@typescript-eslint/types@8.69.0))(typescript@6.0.3)(vite@8.3.0(@types/node@24.12.0)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0)))(@types/node@24.12.0)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(@vercel/functions@3.7.5)(csstype@3.2.3)(esbuild@0.28.1)(prettier@3.9.8)(rollup@4.60.0)(svelte@5.57.0(@typescript-eslint/types@8.69.0))(vite@8.3.0(@types/node@24.12.0)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0))(yaml@2.9.0):
     dependencies:
       '@astrojs/check': 0.9.10(prettier@3.9.8)(typescript@6.0.3)
       '@astrojs/markdown-satteri': 0.4.1
