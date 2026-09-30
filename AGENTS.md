@@ -10,7 +10,7 @@ Workspace members:
 
 - `packages/svelte-meta-tags/` — the published library (the only public package). Source is in `src/lib/`. The package consumes itself via the SvelteKit dev app under `src/routes/` for local iteration.
 - `tests/svelte-5/` — a SvelteKit app dedicated to **Playwright e2e tests**. Each route under `src/routes/<feature>/` corresponds to a `tests/<feature>.test.ts` that asserts the rendered `<head>` markup. This is where new feature behavior must be verified (per `CONTRIBUTING.md`).
-- `example/` — a runnable SvelteKit demo of the library; not part of the test pipeline.
+- `example/` — a runnable SvelteKit demo of the library. It has no tests of its own, but CI's `test` job builds it (`pnpm --filter example build`) as a smoke check.
 - `docs/` — Blume (a markdown-first docs framework on Astro) documentation site (deployed to GitHub Pages by `.github/workflows/deploy-docs.yml` only when `docs/**` changes). It is **bilingual**: English pages live in `docs/content/`, Japanese translations in `docs/content/ja/` (mirrored paths). Site config (i18n, redirects, deployment base) lives in `docs/blume.config.ts`; section ordering comes from `meta.$.ts` files in the English content directories plus each page's `sidebar.order` frontmatter. When documenting a feature, update **both** locales.
 
 Non-workspace directories worth knowing: `.agents/skills/` holds vendored Svelte AI skills (`svelte-code-writer`, `svelte-core-bestpractices`) pulled from `sveltejs/ai-tools` and pinned by hash in `skills-lock.json`; `.claude/skills/` symlinks into it. Do **not** hand-edit these files — they are managed by their lock file. Do follow their guidance when writing Svelte code.
@@ -43,7 +43,7 @@ pnpm --filter svelte-5 exec playwright test tests/twitter.test.ts               
 pnpm --filter svelte-5 exec playwright test --project=chromium                     # one browser
 ```
 
-**`tests/svelte-5` imports `svelte-meta-tags` as `workspace:*` and resolves it from `dist/`.** Run `pnpm package` (or `pnpm --filter svelte-meta-tags package`) first whenever you change library source — CI does this before `pnpm build` and `pnpm test`. Without it, e2e tests will run against stale published artifacts.
+**`tests/svelte-5` imports `svelte-meta-tags` as `workspace:*` and resolves it from `dist/`.** Run `pnpm package` (or `pnpm --filter svelte-meta-tags package`) first whenever you change library source — CI does this before building the example app and running `pnpm test`. Without it, e2e tests will run against stale published artifacts.
 
 ## Library architecture
 
@@ -100,7 +100,7 @@ Do **not** bump versions or edit `CHANGELOG.md` manually. `pnpm-workspace.yaml` 
 
 ## CI and workflows
 
-- `ci.yml` runs three jobs on every PR: `lint` (`pnpm lint`), `check` (`pnpm package` then `pnpm check`), and `test` (`pnpm package`, `pnpm build`, then `pnpm test` across all three Playwright browsers). Replicate that order locally before opening a PR.
+- `ci.yml` runs three jobs on every PR: `lint` (`pnpm lint`), `check` (`pnpm package` then `pnpm check`), and `test` (`pnpm package`, `pnpm --filter example build`, then `pnpm test` across all three Playwright browsers; Playwright's `webServer` builds `tests/svelte-5` itself). Replicate that order locally before opening a PR.
 - All GitHub Actions are **pinned to a commit SHA** with a `# vX.Y.Z` comment (Renovate keeps them updated). Preserve this style when adding or editing workflow steps — never use a bare tag like `@v6`.
 - Node and pnpm versions are resolved at runtime from the root `package.json` (`devEngines.runtime.version` / `packageManager`) by the composite action `.github/workflows/setup-node/` and by `deploy-docs.yml`. To change a toolchain version, edit `package.json` only — not the workflows.
 
