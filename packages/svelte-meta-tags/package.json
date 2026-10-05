@@ -33,7 +33,7 @@
     "prepublishOnly": "pnpm package"
   },
   "dependencies": {
-    "schema-dts": "^2.0.0"
+    "schema-dts": "^2.1.0"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "catalog:",
