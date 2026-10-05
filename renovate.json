@@ -49,6 +49,11 @@
     {
       "groupName": "changesets",
       "matchPackageNames": ["@changesets/cli", "changesets/action"]
+    },
+    {
+      "description": "lockFileMaintenance has no release timestamp, so renovate/stability-days would stay pending forever. pnpm-workspace.yaml minimumReleaseAge already enforces the cooldown when the lockfile is regenerated.",
+      "matchUpdateTypes": ["lockFileMaintenance"],
+      "minimumReleaseAge": null
     }
   ]
 }
