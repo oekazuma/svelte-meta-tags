@@ -179,7 +179,7 @@ SvelteKitの[Remote Functions](https://svelte.dev/docs/kit/remote-functions)を�
 ```ts
 import { query } from '$app/server';
 import * as v from 'valibot';
-import * as db from '#lib/server/database.js';
+import * as db from '#lib/server/database.ts';
 
 export const getPost = query(v.string(), async (slug) => {
   return await db.getPost(slug);
