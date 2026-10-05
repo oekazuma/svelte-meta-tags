@@ -70,7 +70,7 @@
   "svelte": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "imports": {
-    "#lib": "./src/lib/index.js",
+    "#lib": "./src/lib/index.ts",
     "#lib/*": "./src/lib/*"
   }
 }
