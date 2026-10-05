@@ -7,36 +7,36 @@
     <a href={resolve('/')}> Normal SEO </a>
   </li>
   <li>
-    <a href={resolve('/robotsAnother')}> Another Robots props </a>
+    <a href={resolve('robotsAnother')}> Another Robots props </a>
   </li>
   <li>
-    <a href={resolve('/additionalRobots')}> Additional Robots props </a>
+    <a href={resolve('additionalRobots')}> Additional Robots props </a>
   </li>
   <li>
-    <a href={resolve('/twitter')}> Twitter </a>
+    <a href={resolve('twitter')}> Twitter </a>
   </li>
   <li>
-    <a href={resolve('/another')}> Another SEO </a>
+    <a href={resolve('another')}> Another SEO </a>
   </li>
   <li>
-    <a href={resolve('/video')}> Video SEO </a>
+    <a href={resolve('video')}> Video SEO </a>
   </li>
   <li>
-    <a href={resolve('/article')}> Article SEO </a>
+    <a href={resolve('article')}> Article SEO </a>
   </li>
   <li>
-    <a href={resolve('/book')}> Book SEO </a>
+    <a href={resolve('book')}> Book SEO </a>
   </li>
   <li>
-    <a href={resolve('/profile')}> Profile SEO </a>
+    <a href={resolve('profile')}> Profile SEO </a>
   </li>
   <li>
-    <a href={resolve('/jsonldHead')}> JSON-LD Head SEO </a>
+    <a href={resolve('jsonldHead')}> JSON-LD Head SEO </a>
   </li>
   <li>
-    <a href={resolve('/jsonldBody')}> JSON-LD Body SEO </a>
+    <a href={resolve('jsonldBody')}> JSON-LD Body SEO </a>
   </li>
   <li>
-    <a href={resolve('/jsonldArray')}> JSON-LD Array SEO </a>
+    <a href={resolve('jsonldArray')}> JSON-LD Array SEO </a>
   </li>
 </ul>
