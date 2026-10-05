@@ -14,7 +14,7 @@ This is a reference for catching common mistakes — not a setup guide (see the 
 ### 1. Importing `page` from `$app/stores` instead of `$app/state`
 
 ```svelte
-<!-- ❌ Wrong: $app/stores is deprecated since SvelteKit 2.12 in favor of $app/state -->
+<!-- ❌ Wrong: $app/stores was removed in SvelteKit 3 in favor of $app/state -->
 <script>
   import { page } from '$app/stores';
   import { deepMerge } from 'svelte-meta-tags';

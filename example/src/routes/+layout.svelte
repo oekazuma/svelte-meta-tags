@@ -17,6 +17,6 @@
     <a href={resolve('/')}> TOP </a>
   </li>
   <li>
-    <a href={resolve('/about')}> About </a>
+    <a href={resolve('about')}> About </a>
   </li>
 </ul>

@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest';
-import { defineBaseMetaTags, definePageMetaTags } from '$lib/define';
+import { defineBaseMetaTags, definePageMetaTags } from '#lib/define.js';
 
 test('define helpers namespace the props under the expected key and freeze them', () => {
   // Separate inputs so one helper freezing its object cannot mask the other helper not freezing

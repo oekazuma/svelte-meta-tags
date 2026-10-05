@@ -152,21 +152,26 @@ SvelteKitの[Remote Functions](https://svelte.dev/docs/kit/remote-functions)を�
 
 > **注意:** SEO目的の場合は、上記で紹介した`load`関数を使用する従来のアプローチを推奨します。この方法はメタタグがサーバーレンダリングされたHTMLに確実に含まれることを保証します。Remote Functionsは、SEOの重要性が低いページ（ダッシュボード、認証済みページなど）でデータ取得をコンポーネントと同じ場所に配置したい場合に適しています。
 
-> 注意: Remote Functionsは実験的な機能です。使用するには`svelte.config.js`で有効にする必要があります:
+> 注意: Remote Functionsは実験的な機能です。使用するには`vite.config.ts`の`sveltekit()`プラグインオプションで有効にする必要があります:
 >
-> ```js
-> const config = {
->   kit: {
->     experimental: {
->       remoteFunctions: true
->     }
->   },
->   compilerOptions: {
->     experimental: {
->       async: true
->     }
->   }
-> };
+> ```ts
+> import { sveltekit } from '@sveltejs/kit/vite';
+> import { defineConfig } from 'vite';
+>
+> export default defineConfig({
+>   plugins: [
+>     sveltekit({
+>       experimental: {
+>         remoteFunctions: true
+>       },
+>       compilerOptions: {
+>         experimental: {
+>           async: true
+>         }
+>       }
+>     })
+>   ]
+> });
 > ```
 
 ### data.remote.ts
@@ -174,7 +179,7 @@ SvelteKitの[Remote Functions](https://svelte.dev/docs/kit/remote-functions)を�
 ```ts
 import { query } from '$app/server';
 import * as v from 'valibot';
-import * as db from '$lib/server/database';
+import * as db from '#lib/server/database.js';
 
 export const getPost = query(v.string(), async (slug) => {
   return await db.getPost(slug);

@@ -152,21 +152,26 @@ SvelteKit's [remote functions](https://svelte.dev/docs/kit/remote-functions) all
 
 > **Note:** For SEO purposes, the traditional approach using `load` functions (shown above) is recommended, as it guarantees meta tags are included in the server-rendered HTML. Remote functions are better suited for pages where SEO is less critical (e.g., dashboards, authenticated pages) and you want to colocate data fetching with the component.
 
-> Note: Remote functions are an experimental feature. You need to enable them in your `svelte.config.js`:
+> Note: Remote functions are an experimental feature. You need to enable them in the `sveltekit()` plugin options of your `vite.config.ts`:
 >
-> ```js
-> const config = {
->   kit: {
->     experimental: {
->       remoteFunctions: true
->     }
->   },
->   compilerOptions: {
->     experimental: {
->       async: true
->     }
->   }
-> };
+> ```ts
+> import { sveltekit } from '@sveltejs/kit/vite';
+> import { defineConfig } from 'vite';
+>
+> export default defineConfig({
+>   plugins: [
+>     sveltekit({
+>       experimental: {
+>         remoteFunctions: true
+>       },
+>       compilerOptions: {
+>         experimental: {
+>           async: true
+>         }
+>       }
+>     })
+>   ]
+> });
 > ```
 
 ### data.remote.ts
@@ -174,7 +179,7 @@ SvelteKit's [remote functions](https://svelte.dev/docs/kit/remote-functions) all
 ```ts
 import { query } from '$app/server';
 import * as v from 'valibot';
-import * as db from '$lib/server/database';
+import * as db from '#lib/server/database.js';
 
 export const getPost = query(v.string(), async (slug) => {
   return await db.getPost(slug);
