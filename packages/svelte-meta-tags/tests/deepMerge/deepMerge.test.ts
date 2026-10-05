@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest';
-import { deepMerge } from '$lib/deepMerge';
+import { deepMerge } from '../../src/lib/deepMerge';
 
 describe('deepMerge', () => {
   test('merges nested objects recursively without mutating either input', () => {

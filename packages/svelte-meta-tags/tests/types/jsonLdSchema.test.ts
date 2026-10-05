@@ -1,6 +1,6 @@
 import { assertType, test } from 'vitest';
 import type { SearchAction, VideoObject, WebSite, WithActionConstraints, WithContext } from 'schema-dts';
-import type { JsonLdProps } from '$lib/types';
+import type { JsonLdProps } from '../../src/lib/types';
 
 // Enforced by `pnpm check` (svelte-check), not by vitest: vitest strips types before running.
 test('JsonLdProps.schema accepts schema-dts and plain object shapes', () => {
