@@ -4,12 +4,14 @@ description: 'Cache and install Playwright browsers using the version from pnpm-
 runs:
   using: 'composite'
   steps:
-    - name: Get Playwright version from pnpm-workspace.yaml
+    # Mirrors playwright.config.ts: PRs test chromium only, so skip the other browsers' system packages.
+    - name: Resolve Playwright version and browsers
       shell: bash
-      run: echo "PLAYWRIGHT_VERSION=$(grep '@playwright/test' pnpm-workspace.yaml | awk '{print $2}' | sed 's/\^//')" >> "${GITHUB_ENV}"
+      run: |
+        echo "PLAYWRIGHT_VERSION=$(grep '@playwright/test' pnpm-workspace.yaml | awk '{print $2}' | sed 's/\^//')" >> "${GITHUB_ENV}"
+        echo "PLAYWRIGHT_BROWSERS=${{ github.event_name == 'pull_request' && 'chromium' || 'chromium firefox webkit' }}" >> "${GITHUB_ENV}"
 
     - name: Cache Playwright browsers
-      id: cache-playwright-browsers
       uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
       with:
         path: ~/.cache/ms-playwright
@@ -17,12 +19,7 @@ runs:
         restore-keys: |
           ${{ runner.os }}-playwright-
 
-    - name: Install Playwright browsers
-      if: steps.cache-playwright-browsers.outputs.cache-hit != 'true'
+    # Skips browser downloads already restored from cache; system packages are always installed.
+    - name: Install Playwright browsers and system dependencies
       shell: bash
-      run: pnpm --filter svelte-5 exec playwright install --with-deps
-
-    - name: Install Playwright system dependencies
-      if: steps.cache-playwright-browsers.outputs.cache-hit == 'true'
-      shell: bash
-      run: pnpm --filter svelte-5 exec playwright install-deps
+      run: pnpm --filter svelte-5 exec playwright install --with-deps ${PLAYWRIGHT_BROWSERS}
