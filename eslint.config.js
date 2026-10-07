@@ -6,7 +6,7 @@ import ts from 'typescript-eslint';
 
 export default defineConfig(
   includeIgnoreFile(fileURLToPath(new URL('./.gitignore', import.meta.url))),
-  globalIgnores(['.agents', '.superpowers', 'docs']),
+  globalIgnores(['.agents', 'docs']),
   ...svelte.configs.recommended,
   {
     files: ['**/*.svelte', '**/*.svelte.ts', '**/*.svelte.js'],

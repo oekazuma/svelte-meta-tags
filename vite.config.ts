@@ -2,18 +2,13 @@ import { defineConfig } from 'vite-plus';
 
 export default defineConfig({
   lint: {
-    plugins: ['oxc', 'typescript', 'unicorn'],
     jsPlugins: [
       {
         name: 'vite-plus',
         specifier: 'vite-plus/oxlint-plugin'
       }
     ],
-    categories: {
-      correctness: 'warn'
-    },
     env: {
-      builtin: true,
       browser: true,
       node: true
     },
@@ -152,6 +147,6 @@ export default defineConfig({
     printWidth: 120,
     sortPackageJson: false,
     svelte: {},
-    ignorePatterns: ['pnpm-lock.yaml', 'package-lock.json', 'yarn.lock', '.agents', '.superpowers']
+    ignorePatterns: ['.agents']
   }
 });

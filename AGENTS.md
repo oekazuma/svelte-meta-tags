@@ -25,7 +25,7 @@ pnpm dev                   # run dev servers across workspaces
 pnpm build                 # build all workspaces
 pnpm package               # svelte-kit sync && svelte-package && publint (library output -> packages/svelte-meta-tags/dist)
 pnpm check                 # svelte-check across workspaces
-pnpm lint                  # vp fmt --check . && vp lint . && eslint . && node scripts/validate-skills.mjs (SKILL.md frontmatter)
+pnpm lint                  # vp check (Oxfmt + Oxlint) && eslint . && node scripts/validate-skills.mjs (SKILL.md frontmatter)
 pnpm format                # vp fmt .
 pnpm test                  # runs every workspace's `test` (vitest in lib, playwright in tests/svelte-5)
 ```

@@ -8,7 +8,7 @@
     "preview": "pnpm -r preview",
     "package": "pnpm -r package",
     "check": "pnpm -r check",
-    "lint": "vp fmt --check . && vp lint . && eslint . && node scripts/validate-skills.mjs",
+    "lint": "vp check && eslint . && node scripts/validate-skills.mjs",
     "format": "vp fmt .",
     "test": "pnpm -r test",
     "release": "changeset publish"
