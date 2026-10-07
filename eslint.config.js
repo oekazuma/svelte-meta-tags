@@ -17,7 +17,11 @@ export default defineConfig(
         parser: ts.parser
       }
     },
-    rules: { 'svelte/no-at-html-tags': 'off' }
+    rules: {
+      'svelte/no-at-html-tags': 'off',
+      // Catches a field added to an imported props type (e.g. MetaTagsProps) that the component never destructures.
+      'svelte/no-unused-props': ['error', { checkImportedTypes: true }]
+    }
   },
   {
     // Oxlint skips no-unused-vars in .svelte because it can't see template usages; svelte-eslint-parser can.
