@@ -24,13 +24,12 @@
     },
     {
       "groupName": "linters",
-      "matchPackageNames": [
-        "eslint{/,}**",
-        "@eslint{/,}**",
-        "typescript-eslint{/,}**",
-        "publint{/,}**",
-        "globals{/,}**"
-      ]
+      "matchPackageNames": ["eslint{/,}**", "typescript-eslint{/,}**", "publint{/,}**"]
+    },
+    {
+      "description": "vite is aliased to @voidzero-dev/vite-plus-core, which must stay on the same version as vite-plus.",
+      "groupName": "Vite+",
+      "matchPackageNames": ["vite-plus", "@voidzero-dev/{/,}**"]
     },
     {
       "groupName": "typescript",

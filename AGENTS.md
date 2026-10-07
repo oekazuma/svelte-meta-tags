@@ -25,8 +25,8 @@ pnpm dev                   # run dev servers across workspaces
 pnpm build                 # build all workspaces
 pnpm package               # svelte-kit sync && svelte-package && publint (library output -> packages/svelte-meta-tags/dist)
 pnpm check                 # svelte-check across workspaces
-pnpm lint                  # prettier --check . && eslint . && node scripts/validate-skills.mjs (SKILL.md frontmatter)
-pnpm format                # prettier --write .
+pnpm lint                  # vp fmt --check . && vp lint . && eslint . && node scripts/validate-skills.mjs (SKILL.md frontmatter)
+pnpm format                # vp fmt .
 pnpm test                  # runs every workspace's `test` (vitest in lib, playwright in tests/svelte-5)
 ```
 
@@ -35,9 +35,9 @@ Per-workspace commands (use these to scope work):
 ```bash
 # Unit tests for deepMerge / define helpers and JsonLd schema types
 pnpm --filter svelte-meta-tags test
-pnpm --filter svelte-meta-tags exec vitest run tests/deepMerge/deepMerge.test.ts   # single file
+pnpm --filter svelte-meta-tags exec vp test run tests/deepMerge/deepMerge.test.ts  # single file
 
-# Playwright e2e (chromium / firefox / webkit). vite build && preview is started by playwright.config.ts.
+# Playwright e2e (chromium / firefox / webkit). vp build && vp preview is started by playwright.config.ts.
 pnpm --filter svelte-5 test
 pnpm --filter svelte-5 exec playwright test tests/twitter.test.ts                  # single file
 pnpm --filter svelte-5 exec playwright test --project=chromium                     # one browser
@@ -106,7 +106,9 @@ Do **not** bump versions or edit `CHANGELOG.md` manually. `pnpm-workspace.yaml` 
 
 ## Tooling notes
 
-- **Prettier**: 120 col, single quotes, no trailing commas, `prettier-plugin-svelte` for `*.svelte`. Run `pnpm format` before committing — CI's `lint` job will fail otherwise.
-- **ESLint**: flat config (`eslint.config.js`) with TS + Svelte. `svelte/no-at-html-tags` is intentionally disabled (required by `JsonLd.svelte`'s `{@html}` injection).
+- **Vite+** (`vite-plus`, `vp` CLI) provides Vite, Vitest, Oxlint and Oxfmt. `vite` in the catalog is aliased to `@voidzero-dev/vite-plus-core` and forced on every package via `overrides`. Lint and format config live in the `lint` / `fmt` blocks of the root `vite.config.ts`; there is no Prettier config.
+- **Oxfmt**: 120 col, single quotes, no trailing commas, formats `*.svelte` natively. Run `pnpm format` before committing — CI's `lint` job will fail otherwise.
+- **Oxlint**: lints all JS/TS, but only the `<script>` blocks of `.svelte` files. Type-aware linting is off; `svelte-check` (`pnpm check`) covers types.
+- **ESLint**: runs only `eslint-plugin-svelte` on `*.svelte` / `*.svelte.{ts,js}` (`eslint.config.js`) to cover the template rules Oxlint can't see. Don't add general JS/TS rules here — those belong in Oxlint. `svelte/no-at-html-tags` is intentionally disabled (required by `JsonLd.svelte`'s `{@html}` injection).
 - **Svelte 5 only**: use runes (`$props`, `$state`, `$derived`, `$effect`) — do not introduce Svelte 4 reactive `$:` syntax. The supported Svelte range lives in `peerDependencies` of `packages/svelte-meta-tags/package.json`.
 - **`schema-dts`** is a runtime dependency (used purely for types in `JsonLd`). Keep it in `dependencies`, not `devDependencies`.
