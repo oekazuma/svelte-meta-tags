@@ -55,6 +55,9 @@ jobs:
         run: pnpm package
       - name: Build example app
         run: pnpm --filter example build
+      # docs only deploys on docs/** changes, yet the vite@* override also swaps Astro's Vite.
+      - name: Build docs
+        run: pnpm --filter docs build
       - name: Setup Playwright
         uses: ./.github/workflows/setup-playwright
       - name: Run Vitest and Playwright

@@ -35,7 +35,7 @@ Per-workspace commands (use these to scope work):
 ```bash
 # Unit tests for deepMerge / define helpers and JsonLd schema types
 pnpm --filter svelte-meta-tags test
-pnpm --filter svelte-meta-tags exec vp test run tests/deepMerge/deepMerge.test.ts  # single file
+pnpm --filter svelte-meta-tags exec vp test tests/deepMerge/deepMerge.test.ts      # single file
 
 # Playwright e2e (chromium / firefox / webkit). vp build && vp preview is started by playwright.config.ts.
 pnpm --filter svelte-5 test
@@ -100,7 +100,7 @@ Do **not** bump versions or edit `CHANGELOG.md` manually. `pnpm-workspace.yaml` 
 
 ## CI and workflows
 
-- `ci.yml` runs three jobs on every PR: `lint` (`pnpm lint`), `check` (`pnpm package` then `pnpm check`), and `test` (`pnpm package`, `pnpm --filter example build`, then `pnpm test` across all three Playwright browsers; Playwright's `webServer` builds `tests/svelte-5` itself). Replicate that order locally before opening a PR.
+- `ci.yml` runs three jobs on every PR: `lint` (`pnpm lint`), `check` (`pnpm package` then `pnpm check`), and `test` (`pnpm package`, `pnpm --filter example build`, `pnpm --filter docs build`, then `pnpm test` across all three Playwright browsers; Playwright's `webServer` builds `tests/svelte-5` itself). Replicate that order locally before opening a PR.
 - All GitHub Actions are **pinned to a commit SHA** with a `# vX.Y.Z` comment (Renovate keeps them updated). Preserve this style when adding or editing workflow steps — never use a bare tag like `@v6`.
 - Node and pnpm versions are resolved at runtime from the root `package.json` (`devEngines.runtime.version` / `packageManager`) by the composite action `.github/workflows/setup-node/` and by `deploy-docs.yml`. To change a toolchain version, edit `package.json` only — not the workflows.
 
