@@ -1,25 +1,21 @@
 <script lang="ts">
   import type { JsonLdProps } from './types';
-  import type { Thing, WithContext } from 'schema-dts';
 
   let { output = 'head', schema = undefined }: Partial<JsonLdProps> = $props();
 
-  type OmitContext<T> = Omit<T, '@context'>;
+  // Narrowing or passing the huge schema-dts unions in `schema` makes type-checking this file take tens of seconds.
+  let data = $derived<unknown>(schema);
 
-  let isValid = $derived(schema && typeof schema === 'object');
+  let isValid = $derived(!!data && typeof data === 'object');
 
-  const createSchema = (schema: JsonLdProps['schema']) => {
-    const addContext = (context: OmitContext<Thing> | OmitContext<WithContext<Thing>>) => ({
-      '@context': 'https://schema.org',
-      ...context
-    });
+  const addContext = (context: unknown) => ({
+    '@context': 'https://schema.org',
+    ...(context as object)
+  });
 
-    return Array.isArray(schema)
-      ? schema.map((context) => addContext(context as OmitContext<Thing>))
-      : addContext(schema as OmitContext<WithContext<Thing>>);
-  };
-
-  let escapedJson = $derived(JSON.stringify(createSchema(schema)).replace(/</g, '\\u003c'));
+  let escapedJson = $derived(
+    JSON.stringify(Array.isArray(data) ? data.map(addContext) : addContext(data)).replace(/</g, '\\u003c')
+  );
 
   let json = $derived(`${'<scri' + 'pt type="application/ld+json">'}${escapedJson}${'</scri' + 'pt>'}`);
 </script>
