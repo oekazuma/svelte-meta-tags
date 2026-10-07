@@ -30,7 +30,7 @@ const config: PlaywrightTestConfig = {
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 2 : undefined,
   webServer: {
-    command: 'vite build && vite preview --port 4000',
+    command: 'vp build && vp preview --port 4000',
     port: 4000,
     reuseExistingServer: !process.env.CI
   },

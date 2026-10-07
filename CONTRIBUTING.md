@@ -23,12 +23,12 @@ pnpm install
 5. Run the same checks CI runs before opening a pull request:
 
 ```bash
-pnpm lint    # prettier --check . && eslint .
+pnpm lint    # Oxfmt + Oxlint (via Vite+) + ESLint for Svelte templates
 pnpm check   # svelte-kit sync && svelte-check
-pnpm test    # vitest + Playwright
+pnpm test    # Vitest + Playwright
 ```
 
-Run `pnpm format` to auto-fix Prettier issues found by `pnpm lint`.
+Run `pnpm format` to auto-fix formatting issues found by `pnpm lint`.
 
 6. Open pull request
 

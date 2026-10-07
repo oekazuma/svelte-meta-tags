@@ -18,3 +18,4 @@ playwright-report
 playwright/.cache
 .astro/
 .blume/
+.vitest/

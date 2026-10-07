@@ -29,7 +29,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Setup Node.js and dependencies
         uses: ./.github/workflows/setup-node
-      - name: Run Prettier check & ESLint
+      - name: Run Oxfmt, Oxlint & ESLint
         run: pnpm lint
 
   check:
@@ -55,6 +55,9 @@ jobs:
         run: pnpm package
       - name: Build example app
         run: pnpm --filter example build
+      # docs only deploys on docs/** changes, yet the vite@* override also swaps Astro's Vite.
+      - name: Build docs
+        run: pnpm --filter docs build
       - name: Setup Playwright
         uses: ./.github/workflows/setup-playwright
       - name: Run Vitest and Playwright

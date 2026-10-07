@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* oxlint-disable @typescript-eslint/no-explicit-any */
 export const deepMerge = <X extends Record<string | symbol | number, any>>(
   target: X | null | undefined,
   source: X | null | undefined

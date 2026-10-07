@@ -1,4 +1,4 @@
-import { assertType, test } from 'vitest';
+import { assertType, test } from 'vite-plus/test';
 import type { SearchAction, VideoObject, WebSite, WithActionConstraints, WithContext } from 'schema-dts';
 import type { JsonLdProps } from '#lib/types.d.ts';
 

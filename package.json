@@ -8,23 +8,17 @@
     "preview": "pnpm -r preview",
     "package": "pnpm -r package",
     "check": "pnpm -r check",
-    "lint": "prettier --check . && eslint . && node scripts/validate-skills.mjs",
-    "format": "prettier --write .",
+    "lint": "vp check && eslint . && node scripts/validate-skills.mjs",
+    "format": "vp fmt .",
     "test": "pnpm -r test",
     "release": "changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "catalog:",
-    "@eslint/compat": "catalog:",
-    "@eslint/js": "catalog:",
-    "@types/eslint": "catalog:",
     "eslint": "catalog:",
-    "eslint-config-prettier": "catalog:",
     "eslint-plugin-svelte": "catalog:",
-    "globals": "catalog:",
-    "prettier": "catalog:",
-    "prettier-plugin-svelte": "catalog:",
-    "typescript-eslint": "catalog:"
+    "typescript-eslint": "catalog:",
+    "vite-plus": "catalog:"
   },
   "packageManager": "pnpm@12.9.1",
   "devEngines": {

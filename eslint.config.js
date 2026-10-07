@@ -1,28 +1,13 @@
-import prettier from 'eslint-config-prettier';
-import js from '@eslint/js';
-import { includeIgnoreFile } from '@eslint/compat';
+// Oxlint only sees the <script> blocks of .svelte files, so ESLint stays to run eslint-plugin-svelte's template rules.
+import { defineConfig, globalIgnores, includeIgnoreFile } from 'eslint/config';
 import svelte from 'eslint-plugin-svelte';
-import globals from 'globals';
 import { fileURLToPath } from 'node:url';
 import ts from 'typescript-eslint';
-const gitignorePath = fileURLToPath(new URL('./.gitignore', import.meta.url));
 
-export default ts.config(
-  includeIgnoreFile(gitignorePath),
-  js.configs.recommended,
-  ...ts.configs.recommended,
+export default defineConfig(
+  includeIgnoreFile(fileURLToPath(new URL('./.gitignore', import.meta.url))),
+  globalIgnores(['.agents', 'docs']),
   ...svelte.configs.recommended,
-  prettier,
-  ...svelte.configs.prettier,
-  {
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-        ...globals.node
-      }
-    },
-    rules: { 'svelte/no-at-html-tags': 'off' }
-  },
   {
     files: ['**/*.svelte', '**/*.svelte.ts', '**/*.svelte.js'],
     languageOptions: {
@@ -31,6 +16,17 @@ export default ts.config(
         extraFileExtensions: ['.svelte'],
         parser: ts.parser
       }
+    },
+    rules: {
+      'svelte/no-at-html-tags': 'off',
+      // Catches a field added to an imported props type (e.g. MetaTagsProps) that the component never destructures.
+      'svelte/no-unused-props': ['error', { checkImportedTypes: true }]
     }
+  },
+  {
+    // Oxlint skips no-unused-vars in .svelte because it can't see template usages; svelte-eslint-parser can.
+    files: ['**/*.svelte'],
+    plugins: { '@typescript-eslint': ts.plugin },
+    rules: { '@typescript-eslint/no-unused-vars': 'error' }
   }
 );
