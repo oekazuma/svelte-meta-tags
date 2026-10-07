@@ -147,6 +147,6 @@ export default defineConfig({
     printWidth: 120,
     sortPackageJson: false,
     svelte: {},
-    ignorePatterns: ['.agents']
+    ignorePatterns: ['.agents', '.superpowers']
   }
 });
