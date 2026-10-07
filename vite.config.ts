@@ -17,28 +17,6 @@ export default defineConfig({
       browser: true,
       node: true
     },
-    ignorePatterns: [
-      '**/.DS_Store',
-      '**/node_modules',
-      '**/dist',
-      '**/build',
-      '**/.svelte-kit',
-      '**/.env',
-      '**/.env.*',
-      '!**/.env.example',
-      '!**/.env.test',
-      '**/vite.config.js.timestamp-*',
-      '**/vite.config.ts.timestamp-*',
-      '**/package-lock.json',
-      '**/yarn.lock',
-      '**/.pnpm-debug.log',
-      '**/.pnpm-store',
-      '**/test-results',
-      '**/playwright-report',
-      'playwright/.cache',
-      '**/.astro/',
-      '**/.blume/'
-    ],
     rules: {
       'constructor-super': 'error',
       'for-direction': 'error',
