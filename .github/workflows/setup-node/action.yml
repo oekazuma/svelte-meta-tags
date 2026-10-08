@@ -1,12 +1,10 @@
-name: 'Setup Node.js and pnpm'
-description: 'Install pnpm and Node.js from package.json (packageManager / devEngines) and install dependencies'
+name: 'Setup Vite+'
+description: 'Install Vite+, Node.js (devEngines.runtime) and pnpm (packageManager) from package.json, then run vp install'
 
 runs:
   using: 'composite'
   steps:
-    # Installs only `node`, no `npm`; anything that shells out to npm gets the runner image's copy.
-    - name: Install pnpm, Node.js and dependencies
-      uses: pnpm/setup@fbda4c85fc2e1e08721cd8763afea8f48d60f024 # v3.0.0
+    - name: Install Vite+, Node.js and dependencies
+      uses: voidzero-dev/setup-vp@3754dd7dbdb32bd8f6d28b6043de13ad3a75f21f # v1.21.1
       with:
         cache: true
-        require-lockfile: true

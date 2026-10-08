@@ -22,4 +22,5 @@ runs:
     # Skips browser downloads already restored from cache; system packages are always installed.
     - name: Install Playwright browsers and system dependencies
       shell: bash
-      run: pnpm --filter svelte-5 exec playwright install --with-deps ${PLAYWRIGHT_BROWSERS}
+      working-directory: tests/svelte-5
+      run: vp exec playwright install --with-deps ${PLAYWRIGHT_BROWSERS}
