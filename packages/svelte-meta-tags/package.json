@@ -30,7 +30,7 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "test": "vp test",
-    "prepublishOnly": "pnpm package"
+    "prepublishOnly": "vp run package"
   },
   "dependencies": {
     "schema-dts": "^2.1.0"

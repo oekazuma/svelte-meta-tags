@@ -2,7 +2,7 @@ import { assertType, test } from 'vite-plus/test';
 import type { SearchAction, VideoObject, WebSite, WithActionConstraints, WithContext } from 'schema-dts';
 import type { JsonLdProps } from '#lib/types.d.ts';
 
-// Enforced by `pnpm check` (svelte-check), not by vitest: vitest strips types before running.
+// Enforced by `vp run check` (svelte-check), not by vitest: vitest strips types before running.
 test('JsonLdProps.schema accepts schema-dts and plain object shapes', () => {
   const potentialAction: WithActionConstraints<SearchAction> = {
     '@type': 'SearchAction',

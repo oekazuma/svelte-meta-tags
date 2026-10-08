@@ -4,17 +4,19 @@ Hi! We are really excited that you are interested in contributing to Svelte Meta
 
 ## Project Set Up
 
-It requires the use of [pnpm](https://pnpm.js.org/en/). You can [install pnpm](https://pnpm.io/installation) with:
+It requires the [Vite+](https://viteplus.dev/) `vp` CLI. It reads the Node.js and pnpm versions from `package.json` and runs pnpm for you, so you don't need to install pnpm yourself. You can [install Vite+](https://viteplus.dev/guide/) with:
 
 ```bash
-npm i -g pnpm
+curl -fsSL https://vite.plus | bash
 ```
+
+The installer adds `vp` to your shell profile, so open a new terminal (or run `. "$HOME/.config/vite-plus/env"`) before continuing.
 
 1. Pull the repo and install the dependencies:
 
 ```
 git clone git@github.com:oekazuma/svelte-meta-tags.git
-pnpm install
+vp install
 ```
 
 2. Make your modifications / additions
@@ -23,12 +25,12 @@ pnpm install
 5. Run the same checks CI runs before opening a pull request:
 
 ```bash
-pnpm lint    # Oxfmt + Oxlint (via Vite+) + ESLint for Svelte templates
-pnpm check   # svelte-kit sync && svelte-check
-pnpm test    # Vitest + Playwright
+vp run lint    # Oxfmt + Oxlint (via Vite+) + ESLint for Svelte templates
+vp run check   # svelte-kit sync && svelte-check
+vp run test    # Vitest + Playwright
 ```
 
-Run `pnpm format` to auto-fix formatting issues found by `pnpm lint`.
+Run `vp run format` to auto-fix formatting issues found by `vp run lint`.
 
 6. Open pull request
 
@@ -36,9 +38,9 @@ Run `pnpm format` to auto-fix formatting issues found by `pnpm lint`.
 
 All the code for the library is located in the `packages/svelte-meta-tags/src/lib` directory.
 
-The `tests/svelte-5/src/routes` directory contains a fully working SvelteKit app. This will be used for end-to-end testing. You can run `pnpm dev` to run this app. You can also run it in a production build by running `pnpm build` and `pnpm preview`.
+The `tests/svelte-5/src/routes` directory contains a fully working SvelteKit app. This will be used for end-to-end testing. You can run `vp run dev` to run this app. You can also run it in a production build by running `vp run build` and `vp run preview`.
 
-To run Playwright, you can run `pnpm test`.
+To run Playwright, you can run `vp run test`.
 
 ## Releases
 
