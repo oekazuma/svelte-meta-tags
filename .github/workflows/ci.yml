@@ -27,8 +27,8 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Setup Node.js and dependencies
-        uses: ./.github/workflows/setup-node
+      - name: Setup Vite+ and dependencies
+        uses: ./.github/workflows/setup-vp
       - name: Run Oxfmt, Oxlint & ESLint
         run: vp run lint
 
@@ -37,8 +37,8 @@ jobs:
     timeout-minutes: 8
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Setup Node.js and dependencies
-        uses: ./.github/workflows/setup-node
+      - name: Setup Vite+ and dependencies
+        uses: ./.github/workflows/setup-vp
       - name: Run svelte-package
         run: vp run package
       - name: Run svelte-check
@@ -49,8 +49,8 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Setup Node.js and dependencies
-        uses: ./.github/workflows/setup-node
+      - name: Setup Vite+ and dependencies
+        uses: ./.github/workflows/setup-vp
       - name: Run svelte-package
         run: vp run package
       - name: Build example app

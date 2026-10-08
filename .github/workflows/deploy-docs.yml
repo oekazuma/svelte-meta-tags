@@ -18,8 +18,8 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Setup Node.js and dependencies
-        uses: ./.github/workflows/setup-node
+      - name: Setup Vite+ and dependencies
+        uses: ./.github/workflows/setup-vp
       - name: Build docs
         run: vp run --filter docs build
       - name: Configure GitHub Pages
