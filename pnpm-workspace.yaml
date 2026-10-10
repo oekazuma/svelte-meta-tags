@@ -24,7 +24,7 @@ catalog:
   publint: ^0.3.25
   svelte: ^5.57.2
   svelte-check: ^4.7.6
-  typescript: ^6.0.3
+  typescript: ^7.0.2
   typescript-eslint: ^8.71.1
   vite: npm:@voidzero-dev/vite-plus-core@1.0.0
   vite-plus: 1.0.0
