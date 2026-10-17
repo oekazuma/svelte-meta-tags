@@ -168,8 +168,8 @@ catalogs:
       specifier: ^3.0.3
       version: 3.0.3
     '@playwright/test':
-      specifier: ^1.64.0
-      version: 1.64.0
+      specifier: ^1.64.1
+      version: 1.64.1
     '@sveltejs/adapter-auto':
       specifier: ^8.0.0
       version: 8.0.0
@@ -237,7 +237,7 @@ importers:
         version: 8.71.2(eslint@10.12.0(jiti@2.7.0))(typescript@6.0.3)
       vite-plus:
         specifier: 'catalog:'
-        version: 1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.0)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1)
+        version: 1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.1)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1)
 
   docs:
     dependencies:
@@ -276,7 +276,7 @@ importers:
         version: '@voidzero-dev/vite-plus-core@1.1.0(@types/node@22.20.5)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(publint@0.3.25)(typescript@6.0.3)(yaml@2.9.1)'
       vite-plus:
         specifier: 'catalog:'
-        version: 1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.0)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1)
+        version: 1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.1)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1)
 
   packages/svelte-meta-tags:
     dependencies:
@@ -313,13 +313,13 @@ importers:
         version: '@voidzero-dev/vite-plus-core@1.1.0(@types/node@22.20.5)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(publint@0.3.25)(typescript@6.0.3)(yaml@2.9.1)'
       vite-plus:
         specifier: 'catalog:'
-        version: 1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.0)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1)
+        version: 1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.1)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1)
 
   tests/svelte-5:
     devDependencies:
       '@playwright/test':
         specifier: 'catalog:'
-        version: 1.64.0
+        version: 1.64.1
       '@sveltejs/adapter-auto':
         specifier: 'catalog:'
         version: 8.0.0(@sveltejs/kit@3.0.1(@sveltejs/vite-plugin-svelte@7.3.1(@voidzero-dev/vite-plus-core@1.1.0(@types/node@22.20.5)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(publint@0.3.25)(typescript@6.0.3)(yaml@2.9.1))(svelte@5.57.2(@typescript-eslint/types@8.71.2)))(@voidzero-dev/vite-plus-core@1.1.0(@types/node@22.20.5)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(publint@0.3.25)(typescript@6.0.3)(yaml@2.9.1))(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3))
@@ -346,7 +346,7 @@ importers:
         version: '@voidzero-dev/vite-plus-core@1.1.0(@types/node@22.20.5)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(publint@0.3.25)(typescript@6.0.3)(yaml@2.9.1)'
       vite-plus:
         specifier: 'catalog:'
-        version: 1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.0)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1)
+        version: 1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.1)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1)
 
 packages:
 
@@ -1514,8 +1514,8 @@ packages:
       shiki:
         optional: true
 
-  '@playwright/test@1.64.0':
-    resolution: {integrity: sha512-oTN9FNYuN6bqQMwiho6jJKLCG2/QOYCixGXuCjRmzOq23eODeukuY2XiAVoVpAECbuezMt1MHQjAiQxK8F+Y+g==}
+  '@playwright/test@1.64.1':
+    resolution: {integrity: sha512-IaYGml/nSOiZWROfPtuIL7neuu9qDOZ3TNvNljUIrhDMxiGTgPjzj/g9p9RxpS2tSepPDRY+UwAaEeiKtUvIAg==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -4714,13 +4714,13 @@ packages:
     resolution: {integrity: sha512-wQ0b/W4Fr01qtpHlqSqspcj3EhBvimsdh0KlHhH8HRZnMsEa0ea2fTULOXOS9ccQr3om+GcGRk4e+isrZWV8qQ==}
     engines: {node: '>=16.20.0'}
 
-  playwright-core@1.64.0:
-    resolution: {integrity: sha512-T9r+MZkTECl2+oUcZ26YgZzTrYidTsIhYYkJix+6iDOymOb1FB2RLLSOxRGnZGv5DStt+aduIVbt+E8WygXYpg==}
+  playwright-core@1.64.1:
+    resolution: {integrity: sha512-BC4s8y6SEVA6Q1rSxZTto8hI1KUI3xXlHGZgvGqP4IqPdI/a6FX9H29IDNz7vKo9l21b6LfYosScPL6M3xxyDQ==}
     engines: {node: '>=20'}
     hasBin: true
 
-  playwright@1.64.0:
-    resolution: {integrity: sha512-kVzTnYFYEyQ9RGzBjNCd2+yEqWmVbxl3AHPynv3qQ6JTjv4a+kwRcnqQwIpuP3NnrnIrE/Q6wWAIAvMfIE2/Yg==}
+  playwright@1.64.1:
+    resolution: {integrity: sha512-HCrVhHr5QQuwYoswEUGTb7gGp522yflbv/ST8nF4sFWGuLjQCt17Q/EubpGGSNKYn1tsTCPZxqHhHCfVURu7UA==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -6683,9 +6683,9 @@ snapshots:
       react-dom: 19.3.0(react@19.3.0)
       shiki: 4.5.0
 
-  '@playwright/test@1.64.0':
+  '@playwright/test@1.64.1':
     dependencies:
-      playwright: 1.64.0
+      playwright: 1.64.1
 
   '@pnpm/deps.graph-sequencer@1100.0.1': {}
 
@@ -9837,7 +9837,7 @@ snapshots:
       '@oxc-transform-react/binding-win32-ia32-msvc': 0.145.0
       '@oxc-transform-react/binding-win32-x64-msvc': 0.145.0
 
-  oxfmt@0.72.0(svelte@5.57.2(@typescript-eslint/types@8.71.2))(vite-plus@1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.0)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1)):
+  oxfmt@0.72.0(svelte@5.57.2(@typescript-eslint/types@8.71.2))(vite-plus@1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.1)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1)):
     dependencies:
       tinypool: 2.2.0
     optionalDependencies:
@@ -9861,7 +9861,7 @@ snapshots:
       '@oxfmt/binding-win32-ia32-msvc': 0.72.0
       '@oxfmt/binding-win32-x64-msvc': 0.72.0
       svelte: 5.57.2(@typescript-eslint/types@8.71.2)
-      vite-plus: 1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.0)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1)
+      vite-plus: 1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.1)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1)
 
   oxlint-tsgolint@7.0.2003:
     optionalDependencies:
@@ -9872,7 +9872,7 @@ snapshots:
       '@oxlint-tsgolint/win32-arm64': 7.0.2003
       '@oxlint-tsgolint/win32-x64': 7.0.2003
 
-  oxlint@1.87.0(oxlint-tsgolint@7.0.2003)(vite-plus@1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.0)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1)):
+  oxlint@1.87.0(oxlint-tsgolint@7.0.2003)(vite-plus@1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.1)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1)):
     optionalDependencies:
       '@oxlint/binding-android-arm-eabi': 1.87.0
       '@oxlint/binding-android-arm64': 1.87.0
@@ -9894,7 +9894,7 @@ snapshots:
       '@oxlint/binding-win32-ia32-msvc': 1.87.0
       '@oxlint/binding-win32-x64-msvc': 1.87.0
       oxlint-tsgolint: 7.0.2003
-      vite-plus: 1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.0)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1)
+      vite-plus: 1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.1)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1)
 
   p-limit@3.1.0:
     dependencies:
@@ -9974,11 +9974,11 @@ snapshots:
 
   pkce-challenge@5.0.1: {}
 
-  playwright-core@1.64.0: {}
+  playwright-core@1.64.1: {}
 
-  playwright@1.64.0:
+  playwright@1.64.1:
     dependencies:
-      playwright-core: 1.64.0
+      playwright-core: 1.64.1
 
   pngjs@7.0.0: {}
 
@@ -10658,7 +10658,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite-plus@1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.0)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1):
+  vite-plus@1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.1)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1):
     dependencies:
       '@oxc-project/types': 0.153.0
       '@oxlint/plugins': 1.79.0
@@ -10669,8 +10669,8 @@ snapshots:
       '@vitest/snapshot': 5.0.3
       '@vitest/spy': 5.0.3
       '@vitest/utils': 5.0.3
-      oxfmt: 0.72.0(svelte@5.57.2(@typescript-eslint/types@8.71.2))(vite-plus@1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.0)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1))
-      oxlint: 1.87.0(oxlint-tsgolint@7.0.2003)(vite-plus@1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.0)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1))
+      oxfmt: 0.72.0(svelte@5.57.2(@typescript-eslint/types@8.71.2))(vite-plus@1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.1)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1))
+      oxlint: 1.87.0(oxlint-tsgolint@7.0.2003)(vite-plus@1.1.0(@types/node@22.20.5)(@vitest/ui@5.0.3)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(playwright@1.64.1)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.71.2))(typescript@6.0.3)(yaml@2.9.1))
       oxlint-tsgolint: 7.0.2003
       vite: '@voidzero-dev/vite-plus-core@1.1.0(@types/node@22.20.5)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(publint@0.3.25)(typescript@6.0.3)(yaml@2.9.1)'
       vitest: 5.0.3(@types/node@22.20.5)(@vitest/browser-preview@5.0.3)(@vitest/ui@5.0.3)(@voidzero-dev/vite-plus-core@1.1.0(@types/node@22.20.5)(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(publint@0.3.25)(typescript@6.0.3)(yaml@2.9.1))(@volar/typescript@2.4.28(typescript@6.0.3))(jiti@2.7.0)(publint@0.3.25)(typescript@6.0.3)(yaml@2.9.1)
@@ -10683,7 +10683,7 @@ snapshots:
       '@voidzero-dev/vite-plus-linux-x64-musl': 1.1.0
       '@voidzero-dev/vite-plus-win32-arm64-msvc': 1.1.0
       '@voidzero-dev/vite-plus-win32-x64-msvc': 1.1.0
-      playwright: 1.64.0
+      playwright: 1.64.1
     transitivePeerDependencies:
       - '@arethetypeswrong/core'
       - '@edge-runtime/vm'
