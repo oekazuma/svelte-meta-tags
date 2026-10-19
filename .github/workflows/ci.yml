@@ -13,6 +13,8 @@ on:
       - '.changeset/**'
       - '.vscode/**'
       - '**/.github/**/*.md'
+  # release.yml starts it on the Version Packages branch: a pull request opened with GITHUB_TOKEN triggers no workflow
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
