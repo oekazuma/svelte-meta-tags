@@ -101,6 +101,7 @@ Do **not** bump versions or edit `CHANGELOG.md` manually. `pnpm-workspace.yaml` 
 ## CI and workflows
 
 - `ci.yml` runs three jobs on every PR: `lint` (`vp run lint`), `check` (`vp run package` then `vp run check`), and `test` (`vp run package`, `vp run --filter example build`, `vp run --filter docs build`, then `vp run test` across all three Playwright browsers; Playwright's `webServer` builds `tests/svelte-5` itself). Replicate that order locally before opening a PR.
+- The Version Packages pull request is opened by `changesets/action` with `GITHUB_TOKEN`, which triggers no workflow, so `release.yml` starts `ci.yml` on `changeset-release/main` with `workflow_dispatch` (the exception to that rule). Its checks then satisfy the branch protection on `main`.
 - All GitHub Actions are **pinned to a commit SHA** with a `# vX.Y.Z` comment (Renovate keeps them updated). Preserve this style when adding or editing workflow steps — never use a bare tag like `@v6`. Local composite actions use the self-repository syntax (`uses: $/.github/workflows/<name>`), not `./`, so they resolve from the workflow's commit rather than the runner workspace.
 - Node and pnpm versions are resolved at runtime from the root `package.json` (`devEngines.runtime.version` / `packageManager`) by `vp`, which the composite action `.github/workflows/setup-vp/` installs via `voidzero-dev/setup-vp` (used by `ci.yml`, `release.yml` and `deploy-docs.yml`). To change a toolchain version, edit `package.json` only — not the workflows.
 

@@ -12,6 +12,7 @@ jobs:
       contents: write # to create release (changesets/action)
       id-token: write # OpenID Connect token needed for provenance
       pull-requests: write # to create pull request (changesets/action)
+      actions: write # to start CI on the Version Packages branch
     name: Release
     runs-on: ubuntu-latest
     steps:
@@ -26,3 +27,10 @@ jobs:
           publish-script: vp run release
         env:
           NPM_CONFIG_PROVENANCE: true
+      # the Version Packages pull request is opened with GITHUB_TOKEN, which triggers no workflow,
+      # so the required checks would never run; workflow_dispatch is the exception
+      - name: Run CI on the Version Packages pull request
+        if: steps.changesets.outputs.pr-number != ''
+        run: gh workflow run ci.yml --ref "changeset-release/${GITHUB_REF_NAME}"
+        env:
+          GH_TOKEN: ${{ github.token }}
