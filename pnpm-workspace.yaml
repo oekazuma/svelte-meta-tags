@@ -23,7 +23,7 @@ catalog:
   eslint-plugin-svelte: ^3.23.1
   publint: ^0.3.25
   svelte: ^5.57.2
-  svelte-check: ^4.7.6
+  svelte-check: ^4.7.7
   typescript: ^6.0.3
   typescript-eslint: ^8.71.2
   vite: npm:@voidzero-dev/vite-plus-core@1.1.0
