@@ -18,7 +18,7 @@ catalog:
   '@sveltejs/kit': ^3.1.0
   '@sveltejs/package': ^3.0.1
   '@sveltejs/vite-plugin-svelte': ^7.3.1
-  blume: ^2.2.3
+  blume: ^2.2.4
   eslint: ^10.13.0
   eslint-plugin-svelte: ^3.23.1
   publint: ^0.3.25
