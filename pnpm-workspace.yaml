@@ -31,7 +31,7 @@ catalog:
 overrides:
   # takumi 2.16 renamed FontSubset's `ranges`, which blume 2.2.3 still reads; the docs build
   # then fails on the OG images of the Japanese pages. Drop this once blume reads the new field.
-  takumi-js: 2.14.0
+  takumi-js: 2.16.3
   vite@*: 'catalog:'
 peerDependencyRules:
   allowAny:
