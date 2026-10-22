@@ -51,6 +51,11 @@
       "matchPackageNames": ["@changesets/cli", "changesets/action"]
     },
     {
+      "description": "takumi-js is pinned via pnpm-workspace.yaml overrides because blume still reads a FontSubset field that takumi 2.16 renamed. Re-enable together with dropping that override once blume supports takumi 2.16+.",
+      "matchPackageNames": ["takumi-js"],
+      "enabled": false
+    },
+    {
       "description": "lockFileMaintenance has no release timestamp, so the default timestamp-required behaviour leaves renovate/stability-days pending forever. pnpm-workspace.yaml minimumReleaseAge enforces the cooldown when the lockfile is regenerated.",
       "matchUpdateTypes": ["lockFileMaintenance"],
       "minimumReleaseAgeBehaviour": "timestamp-optional",
