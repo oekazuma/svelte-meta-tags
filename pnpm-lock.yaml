@@ -183,8 +183,8 @@ catalogs:
       specifier: ^7.3.1
       version: 7.3.1
     blume:
-      specifier: ^2.2.4
-      version: 2.2.4
+      specifier: ^2.2.5
+      version: 2.2.5
     eslint:
       specifier: ^10.13.0
       version: 10.13.0
@@ -244,7 +244,7 @@ importers:
     dependencies:
       blume:
         specifier: 'catalog:'
-        version: 2.2.4(@emnapi/runtime@1.11.3)(@shikijs/themes@4.5.0)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(@vercel/functions@3.10.3(ws@8.22.0))(@voidzero-dev/vite-plus-core@1.1.0(@types/node@22.20.5)(@volar/typescript@2.4.30(typescript@6.0.3))(jiti@2.7.0)(publint@0.3.25)(typescript@6.0.3)(yaml@2.9.1))(@volar/typescript@2.4.30(typescript@6.0.3))(csstype@3.2.3)(prettier@3.9.10)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.72.0))(ws@8.22.0)(yaml@2.9.1)
+        version: 2.2.5(@emnapi/runtime@1.11.3)(@shikijs/themes@4.5.0)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(@vercel/functions@3.10.3(ws@8.22.0))(@voidzero-dev/vite-plus-core@1.1.0(@types/node@22.20.5)(@volar/typescript@2.4.30(typescript@6.0.3))(jiti@2.7.0)(publint@0.3.25)(typescript@6.0.3)(yaml@2.9.1))(@volar/typescript@2.4.30(typescript@6.0.3))(csstype@3.2.3)(prettier@3.9.10)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.72.0))(ws@8.22.0)(yaml@2.9.1)
       typescript:
         specifier: 'catalog:'
         version: 6.0.3
@@ -2810,8 +2810,8 @@ packages:
   bindings@1.5.0:
     resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
 
-  blume@2.2.4:
-    resolution: {integrity: sha512-QIX+tCH5e83rgPhQY/KKQgSxggjXby+Z6qChq2zkApborfS+yz8Y0Ik25YEvyOCjiarcjNh8d53xcAOm77wfzw==}
+  blume@2.2.5:
+    resolution: {integrity: sha512-YggQ+/FZ1RHIvsfOERqvOHdzHqXW1NbqujCmlZCNOLVLLcrorBrnl3XPiFvMbSOOnP2RiG+i7uXTMWnVsAwtGA==}
     engines: {node: '>=22.19.0'}
     hasBin: true
     peerDependencies:
@@ -7954,7 +7954,7 @@ snapshots:
     dependencies:
       file-uri-to-path: 1.0.0
 
-  blume@2.2.4(@emnapi/runtime@1.11.3)(@shikijs/themes@4.5.0)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(@vercel/functions@3.10.3(ws@8.22.0))(@voidzero-dev/vite-plus-core@1.1.0(@types/node@22.20.5)(@volar/typescript@2.4.30(typescript@6.0.3))(jiti@2.7.0)(publint@0.3.25)(typescript@6.0.3)(yaml@2.9.1))(@volar/typescript@2.4.30(typescript@6.0.3))(csstype@3.2.3)(prettier@3.9.10)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.72.0))(ws@8.22.0)(yaml@2.9.1):
+  blume@2.2.5(@emnapi/runtime@1.11.3)(@shikijs/themes@4.5.0)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(@vercel/functions@3.10.3(ws@8.22.0))(@voidzero-dev/vite-plus-core@1.1.0(@types/node@22.20.5)(@volar/typescript@2.4.30(typescript@6.0.3))(jiti@2.7.0)(publint@0.3.25)(typescript@6.0.3)(yaml@2.9.1))(@volar/typescript@2.4.30(typescript@6.0.3))(csstype@3.2.3)(prettier@3.9.10)(publint@0.3.25)(svelte@5.57.2(@typescript-eslint/types@8.72.0))(ws@8.22.0)(yaml@2.9.1):
     dependencies:
       '@astrojs/check': 0.9.12(@emnapi/runtime@1.11.3)(prettier@3.9.10)(typescript@6.0.3)
       '@astrojs/markdown-satteri': 0.4.5
