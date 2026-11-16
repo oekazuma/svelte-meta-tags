@@ -20,7 +20,7 @@
     "typescript-eslint": "catalog:",
     "vite-plus": "catalog:"
   },
-  "packageManager": "pnpm@12.16.1",
+  "packageManager": "pnpm@12.20.0",
   "devEngines": {
     "runtime": {
       "name": "node",
