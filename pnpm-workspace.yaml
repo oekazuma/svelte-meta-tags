@@ -14,16 +14,16 @@ allowBuilds:
 catalog:
   '@changesets/cli': ^3.0.3
   '@playwright/test': ^1.64.1
-  '@sveltejs/adapter-auto': ^8.0.0
+  '@sveltejs/adapter-auto': ^8.0.1
   '@sveltejs/kit': ^3.1.0
-  '@sveltejs/package': ^3.0.1
+  '@sveltejs/package': ^3.0.2
   '@sveltejs/vite-plugin-svelte': ^7.3.1
   blume: ^2.2.7
   eslint: ^10.13.0
   eslint-plugin-svelte: ^3.23.1
   publint: ^0.3.25
   svelte: ^5.57.3
-  svelte-check: ^4.7.7
+  svelte-check: ^4.7.8
   typescript: ^6.0.3
   typescript-eslint: ^8.72.1
   vite: npm:@voidzero-dev/vite-plus-core@1.4.0
