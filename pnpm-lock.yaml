@@ -226,7 +226,7 @@ overrides:
   takumi-js: 2.14.0
   vite@*: npm:@voidzero-dev/vite-plus-core@1.4.0
   '@vercel/routing-utils>path-to-regexp': ^6.3.0
-  '@tailwindcss/typography>postcss-selector-parser': ^6.1.6
+  '@tailwindcss/typography>postcss-selector-parser': ^7.2.1
 
 importers:
 
@@ -4861,12 +4861,12 @@ packages:
     peerDependencies:
       postcss: ^8.4.29
 
-  postcss-selector-parser@6.1.6:
-    resolution: {integrity: sha512-BK87/Qgti3DIcgS2PaCVoteFIkjIFvCJBizZDIVSjdlFNg4Jv+SRqbN2JONb/qQUH4ZFqfXYF+izg15W2HVRvA==}
-    engines: {node: '>=4'}
-
   postcss-selector-parser@7.1.7:
     resolution: {integrity: sha512-wWBro/7hJ40ye6TPiXkUQoXKCw23xSsjriUvqd7Uls9Sso3oLiON1flc18cCdnjgCRXw4fBVqUJJeOdDTh3P3g==}
+    engines: {node: '>=4'}
+
+  postcss-selector-parser@7.2.1:
+    resolution: {integrity: sha512-GwxlMgTTXwIom+ebC7an3k6RaJDwklRQQnfiXsLPGicu8FYV/k/+1/9YY2OU2+r938H2t4X0TDxoif+HP2rjzQ==}
     engines: {node: '>=4'}
 
   postcss@8.5.31:
@@ -7248,7 +7248,7 @@ snapshots:
 
   '@tailwindcss/typography@0.5.20(tailwindcss@4.3.3)':
     dependencies:
-      postcss-selector-parser: 6.1.6
+      postcss-selector-parser: 7.2.1
       tailwindcss: 4.3.3
 
   '@tailwindcss/vite@4.3.3(@voidzero-dev/vite-plus-core@1.4.0(@types/node@22.20.5)(@volar/typescript@2.4.30(typescript@6.0.3))(jiti@2.7.0)(publint@0.3.25)(typescript@6.0.3)(yaml@2.9.1))':
@@ -10194,13 +10194,13 @@ snapshots:
     dependencies:
       postcss: 8.5.31
 
-  postcss-selector-parser@6.1.6:
-    dependencies:
-      util-deprecate: 1.0.2
-
   postcss-selector-parser@7.1.7:
     dependencies:
       cssesc: 3.0.0
+      util-deprecate: 1.0.2
+
+  postcss-selector-parser@7.2.1:
+    dependencies:
       util-deprecate: 1.0.2
 
   postcss@8.5.31:
