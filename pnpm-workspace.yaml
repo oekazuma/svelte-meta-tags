@@ -36,7 +36,7 @@ overrides:
   vite@*: 'catalog:'
   # Both parents pin a vulnerable exact version even in their latest release. Drop each override once
   # its parent's own pin reaches the patched version.
-  '@vercel/routing-utils>path-to-regexp': ^6.3.0
+  '@vercel/routing-utils>path-to-regexp': ^9.0.0
   '@tailwindcss/typography>postcss-selector-parser': ^6.1.6
 peerDependencyRules:
   allowAny:
