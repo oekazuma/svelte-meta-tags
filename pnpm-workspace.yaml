@@ -15,7 +15,7 @@ catalog:
   '@changesets/cli': ^3.0.3
   '@playwright/test': ^1.65.1
   '@sveltejs/adapter-auto': ^8.0.1
-  '@sveltejs/kit': ^3.1.0
+  '@sveltejs/kit': ^3.2.0
   '@sveltejs/package': ^3.0.2
   '@sveltejs/vite-plugin-svelte': ^7.3.1
   blume: ^2.2.7
@@ -34,6 +34,10 @@ overrides:
   # together with the takumi-js rule in renovate.json that disables its updates.
   takumi-js: 2.14.0
   vite@*: 'catalog:'
+  # Both parents pin a vulnerable exact version even in their latest release. Drop each override once
+  # its parent's own pin reaches the patched version.
+  '@vercel/routing-utils>path-to-regexp': ^6.3.0
+  '@tailwindcss/typography>postcss-selector-parser': ^6.1.5
 peerDependencyRules:
   allowAny:
     - vite
