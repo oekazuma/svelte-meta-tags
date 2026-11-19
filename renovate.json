@@ -56,6 +56,12 @@
       "enabled": false
     },
     {
+      "description": "pnpm-workspace.yaml overrides force a version onto a parent that was built against one major, so a new major can break that parent without CI noticing (the docs build never loads the Vercel adapter, for example). Patch and minor updates within the major still flow.",
+      "matchDepTypes": ["pnpm-workspace.overrides"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
       "description": "lockFileMaintenance has no release timestamp, so the default timestamp-required behaviour leaves renovate/stability-days pending forever. pnpm-workspace.yaml minimumReleaseAge enforces the cooldown when the lockfile is regenerated.",
       "matchUpdateTypes": ["lockFileMaintenance"],
       "minimumReleaseAgeBehaviour": "timestamp-optional",
