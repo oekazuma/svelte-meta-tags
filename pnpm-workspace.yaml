@@ -15,8 +15,8 @@ catalog:
   '@changesets/cli': ^3.0.3
   '@playwright/test': ^1.65.1
   '@sveltejs/adapter-auto': ^8.0.1
-  '@sveltejs/kit': ^3.2.0
-  '@sveltejs/package': ^3.0.2
+  '@sveltejs/kit': ^3.3.0
+  '@sveltejs/package': ^3.0.3
   '@sveltejs/vite-plugin-svelte': ^7.3.1
   blume: ^2.2.7
   eslint: ^10.15.0
