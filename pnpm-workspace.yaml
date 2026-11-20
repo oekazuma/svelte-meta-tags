@@ -26,8 +26,8 @@ catalog:
   svelte-check: ^4.7.8
   typescript: ^6.0.3
   typescript-eslint: ^8.73.0
-  vite: npm:@voidzero-dev/vite-plus-core@1.6.0
-  vite-plus: 1.6.0
+  vite: npm:@voidzero-dev/vite-plus-core@8.3.8000
+  vite-plus: 1.7.0
 overrides:
   # takumi 2.16 renamed FontSubset's `ranges`, which blume (as of 2.2.4) still reads; the docs build
   # then fails on the OG images of the Japanese pages. Drop this once blume reads the new field,
@@ -38,6 +38,3 @@ overrides:
   # its parent's own pin reaches the patched version.
   '@vercel/routing-utils>path-to-regexp': ^6.3.0
   '@tailwindcss/typography>postcss-selector-parser': ^6.1.6
-peerDependencyRules:
-  allowAny:
-    - vite
