@@ -22,7 +22,7 @@ catalog:
   eslint: ^10.15.0
   eslint-plugin-svelte: ^3.24.1
   publint: ^0.3.25
-  svelte: ^5.58.0
+  svelte: ^5.58.1
   svelte-check: ^4.7.8
   typescript: ^6.0.3
   typescript-eslint: ^8.73.0
