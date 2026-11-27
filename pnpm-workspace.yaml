@@ -17,7 +17,7 @@ catalog:
   '@sveltejs/adapter-auto': ^8.0.1
   '@sveltejs/kit': ^3.4.0
   '@sveltejs/package': ^3.0.3
-  '@sveltejs/vite-plugin-svelte': ^7.3.1
+  '@sveltejs/vite-plugin-svelte': ^7.3.2
   blume: ^2.2.7
   eslint: ^10.15.0
   eslint-plugin-svelte: ^3.24.1
